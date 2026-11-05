@@ -117,6 +117,14 @@
     return asset ? asset.url : "";
   };
 
+  // o arquivo original (para reenquadrar sem perder resolução); se o Storage recusar a leitura pelo navegador, a cópia cheia do CDN
+  window.originalUrls = (assetId) => {
+    const asset = assetsById.get(assetId);
+    if (!asset) return [];
+    const original = sb.storage.from(asset.bucket).getPublicUrl(asset.storage_path).data.publicUrl;
+    return ["localhost", "127.0.0.1"].includes(location.hostname) ? [original] : [original, `/.netlify/images?url=${encodeURIComponent(original)}&fm=png`];
+  };
+
   // as fotos originais têm cerca de 1 MB; no ar, o CDN de imagens do Netlify entrega versões reduzidas
   function imageUrl(bucket, path) {
     const original = sb.storage.from(bucket).getPublicUrl(path).data.publicUrl;

@@ -1592,14 +1592,34 @@ function toggle(id){
     had?mine.add(id):mine.delete(id);counts[id]=(counts[id]||0)+(had?1:-1);refreshCounts();
     toast(err&&err.code==="permission_denied"?"Seu acesso é só de visualização, então não dá para curtir.":"Não deu para salvar a curtida. Tente de novo.");});
 }
+/* ---------- tamanho padrão do carro nas fotos ----------
+   Medido nas fotos do site: na maioria, o carro (a parte não transparente) cabe numa caixa de 68% x 61,3% da imagem,
+   centralizado e apoiado a 16,9% da borda de baixo, numa imagem de 1672 x 941. Toda foto enviada é encaixada nesse padrão,
+   e o painel de imagens reenquadra as antigas que estejam mais de 10% maiores ou menores. */
+const FRAME={W:1672,H:941,bw:.68,bh:.613,bottom:.169,tol:.10};
+async function bitmapOf(src){const b=src instanceof Blob?src:await fetch(src,{mode:"cors"}).then(r=>{if(!r.ok)throw new Error("HTTP "+r.status);return r.blob()});return createImageBitmap(b)}
+/* a caixa do carro na imagem; null quando a imagem não tem fundo transparente e não dá para medir */
+function carBox(bmp){const c=document.createElement("canvas"),W=c.width=bmp.width,H=c.height=bmp.height,x=c.getContext("2d",{willReadFrequently:true});x.drawImage(bmp,0,0);
+  const d=x.getImageData(0,0,W,H).data;let x0=W,y0=H,x1=-1,y1=-1,n=0;
+  for(let y=0;y<H;y++)for(let i=y*W*4+3,k=0;k<W;k++,i+=4)if(d[i]>24){n++;if(k<x0)x0=k;if(k>x1)x1=k;if(y<y0)y0=y;if(y>y1)y1=y}
+  return x1<0||n>.97*W*H?null:{x:x0,y:y0,w:x1-x0+1,h:y1-y0+1,W,H}}
+const frameScale=b=>Math.max(b.w/b.W/FRAME.bw,b.h/b.H/FRAME.bh); // 1 = tamanho padrão
+function reframe(bmp,b){const c=document.createElement("canvas");c.width=FRAME.W;c.height=FRAME.H;const x=c.getContext("2d");x.imageSmoothingQuality="high";
+  const s=Math.min(FRAME.bw*FRAME.W/b.w,FRAME.bh*FRAME.H/b.h),w=b.w*s,h=b.h*s;
+  x.drawImage(bmp,b.x,b.y,b.w,b.h,(FRAME.W-w)/2,FRAME.H*(1-FRAME.bottom)-h,w,h);
+  return new Promise((ok,no)=>c.toBlob(bl=>bl?ok(bl):no(new Error("png")),"image/png"))}
+/* a foto que vai ser enviada, já no tamanho padrão; sem fundo transparente, vai como veio */
+async function standardFile(file){try{const bmp=await bitmapOf(file),b=carBox(bmp);if(!b)return {file,framed:false};
+  return {file:new File([await reframe(bmp,b)],file.name.replace(/\.[a-z0-9]+$/i,"")+".png",{type:"image/png"}),framed:true}}catch(e){return {file,framed:false}}}
+const unframedNote=" A imagem não tem fundo transparente e foi enviada como veio, sem ajustar o tamanho.";
 async function upload(id,file,col="photos"){
   if(!assets||!db)return;
   if(file.size>20*1024*1024)return toast("A imagem passa de 20 MB. Envie um arquivo menor.");
   toast("Enviando foto…");
-  try{const old=(col==="logos"?logos:photos)[id];const r=await assets.upload(file);
+  try{const old=(col==="logos"?logos:photos)[id],sf=col==="logos"?{file,framed:true}:await standardFile(file),r=await assets.upload(sf.file);
     await db.collection(col).doc(id).set({asset:r.id,at:Date.now()});
     if(col==="logos"){if(old)assets.delete(old).catch(()=>{})}else dropAsset(old,id);
-    toast(col==="logos"?"Logo salvo em todos os carros da marca.":"Foto salva. Todos já veem a nova imagem.");}
+    toast(col==="logos"?"Logo salvo em todos os carros da marca.":"Foto salva. Todos já veem a nova imagem."+(sf.framed?"":unframedNote));}
   catch(e){toast("Não deu para enviar a foto"+(e&&e.code?` (${e.code})`:"")+".")}
 }
 async function removePhoto(id){
@@ -1969,7 +1989,7 @@ async function rqChange(e){const f=e.target.closest("input[data-rq=up]");if(!f||
   const i=RADAR.find(x=>x.id===f.dataset.id),m=i&&rdModel(i),file=f.files[0];f.value="";if(!m)return;
   if(file.size>20*1024*1024){toast("Imagem maior que 20 MB.");return}
   toast("Enviando imagem…");
-  try{const old=photos[m.id],r=await assets.upload(file);await db.collection("photos").doc(m.id).set({asset:r.id,at:Date.now(),ai:true});dropAsset(old,m.id);toast(`Imagem do ${m.mk} ${m.nm}${m.ano?` ${m.ano}`:""} enviada ✓`)}
+  try{const old=photos[m.id],sf=await standardFile(file),r=await assets.upload(sf.file);await db.collection("photos").doc(m.id).set({asset:r.id,at:Date.now(),ai:true});dropAsset(old,m.id);toast(`Imagem do ${m.mk} ${m.nm}${m.ano?` ${m.ano}`:""} enviada ✓`+(sf.framed?"":unframedNote))}
   catch(err){toast("Falhou o envio da imagem.")}}
 rdBody.addEventListener("click",rqClick);rdBody.addEventListener("change",rqChange);
 dbBody.addEventListener("click",rqClick);dbBody.addEventListener("change",rqChange);
@@ -2125,6 +2145,10 @@ function renderImgPanel(){
      <ul class="ig-cars" style="margin-top:10px">${brs.map(b=>`<li class="${logos[b.slug]?"ok":""}"><i>${logos[b.slug]?"✓":""}</i><span>${esc(b.mk)}</span><small>${logos[b.slug]?"com logo":`logo-${b.slug}.png`}</small></li>`).join("")}</ul>
      <label class="dr-go ip-pick" style="margin-top:10px">Enviar logos<input type="file" id="lgFiles" accept="image/png,image/webp,image/svg+xml" multiple></label>
      <div id="lgQueue"></div></section>
+   <section class="dr-group"><h3>4 · Tamanho padrão</h3>
+     <p class="sh-meta">Toda foto enviada já entra no tamanho padrão, com o carro do mesmo tamanho das outras. Aqui você confere as fotos que já estão no site: as que tiverem o carro mais de 10% maior ou menor que o padrão são reenquadradas. As imagens antigas ficam guardadas.</p>
+     <button type="button" class="dr-clear" id="fsCheck" style="width:100%">Verificar o tamanho das fotos</button>
+     <div id="fsOut"></div></section>
    <section class="dr-group"><h3>Ajustes</h3>
      <button type="button" class="dr-clear" id="ipCards">${document.body.classList.contains("editing")?"Parar de editar nos cards":"Editar fotos e logos nos cards"}</button></section>`;
   {const ab=ipBody.querySelector("#ipAll");if(ab)ab.onclick=()=>copyText(allBlock(miss),ab);}
@@ -2134,8 +2158,35 @@ function renderImgPanel(){
   ipBody.querySelector("#lgFiles").onchange=e=>sendLogos([...e.target.files],brs);
   drawLogoQueue();
   ipBody.querySelector("#ipCards").onclick=()=>{const on=!document.body.classList.contains("editing");document.body.classList.toggle("editing",on);closeImg()};
-  drawQueue();
+  ipBody.querySelector("#fsCheck").onclick=checkFrames;
+  drawQueue();drawFrames();
 }
+/* ---------- conferir e reenquadrar as fotos que já estão no site ---------- */
+let FS={busy:false,done:0,total:0,list:null,fail:0};
+const photoName=k=>{const m=/^(.+)_((?:19|20)\d{2})$/.exec(k),mid=m?m[1]:k,c=ALLCARS.find(x=>x.mid===mid);return c?`${c.mk} ${c.nm}${m?` ${m[2]}`:""}`:k};
+async function pool(items,n,fn){let i=0;await Promise.all(Array.from({length:Math.min(n,items.length)},async()=>{while(i<items.length)await fn(items[i++])}))}
+async function checkFrames(){if(FS.busy)return;const keys=Object.keys(photos);FS={busy:true,done:0,total:keys.length,list:[],fail:0};drawFrames();
+  await pool(keys,4,async k=>{try{const b=carBox(await bitmapOf(blobUrl(photos[k])));if(b){const sc=frameScale(b);if(Math.abs(sc-1)>FRAME.tol)FS.list.push({k,name:photoName(k),sc,st:""})}}catch(e){FS.fail++}FS.done++;drawFrames()});
+  FS.list.sort((a,b)=>b.sc-a.sc);FS.busy=false;drawFrames()}
+/* o arquivo original, sem a redução do CDN; se o navegador não conseguir lê-lo, usa a cópia do CDN no tamanho cheio */
+async function originalBitmap(asset){const urls=window.originalUrls?originalUrls(asset):[blobUrl(asset)];let err;
+  for(const u of urls){try{return await bitmapOf(u)}catch(e){err=e}}throw err}
+async function fixFrames(){if(FS.busy||!FS.list||!assets||!db)return;FS.busy=true;
+  for(const it of FS.list){if(it.st==="ajustada ✓")continue;it.st="ajustando…";drawFrames();
+    try{const asset=photos[it.k],bmp=await originalBitmap(asset),b=carBox(bmp);if(!b)throw new Error("sem fundo transparente");
+      const r=await assets.upload(new File([await reframe(bmp,b)],it.k+".png",{type:"image/png"}));
+      await db.collection("photos").doc(it.k).set({asset:r.id,at:Date.now(),ai:!!photoAI[it.k]});it.st="ajustada ✓"}
+    catch(e){it.st="falhou"+(e&&e.message?` (${e.message})`:"")}
+    drawFrames()}
+  FS.busy=false;drawFrames();toast("Fotos ajustadas.")}
+function drawFrames(){const o=ipBody.querySelector("#fsOut");if(!o)return;const b=ipBody.querySelector("#fsCheck");if(b)b.disabled=FS.busy;
+  if(!FS.list){o.innerHTML="";return}
+  if(FS.busy&&FS.done<FS.total){o.innerHTML=`<p class="sh-meta" style="margin-top:8px">Medindo ${FS.done} de ${FS.total} fotos…</p>`;return}
+  const pend=FS.list.filter(x=>x.st!=="ajustada ✓").length;
+  o.innerHTML=`<p class="sh-meta" style="margin-top:8px">${FS.list.length?`${FS.list.length} ${FS.list.length>1?"fotos fora":"foto fora"} do padrão, de ${FS.total} medidas.`:`Todas as ${FS.total} fotos estão no tamanho padrão.`}${FS.fail?` ${FS.fail} não puderam ser medidas.`:""}</p>
+    ${FS.list.length?`<div class="sh-vers" style="margin-top:8px">${FS.list.map(x=>`<div class="ip-row"><span>${esc(x.name)}</span><b>${x.sc>1?`${Math.round((x.sc-1)*100)}% maior`:`${Math.round((1-x.sc)*100)}% menor`}${x.st?` · ${esc(x.st)}`:""}</b></div>`).join("")}</div>
+    ${pend?`<button type="button" class="dr-go" id="fsFix" style="margin-top:10px;width:100%"${FS.busy?" disabled":""}>Padronizar ${pend} ${pend>1?"fotos":"foto"}</button>`:""}`:""}`;
+  const f=o.querySelector("#fsFix");if(f)f.onclick=fixFrames}
 function matchFiles(files){
   // só o código liga o arquivo a um carro: nome parecido não basta, para a imagem de um ano não cair em outro
   const by=new Map();carList().forEach(m=>by.set(m.code,by.has(m.code)?null:m));
@@ -2158,9 +2209,9 @@ async function sendQueue(){
   for(const p of pending){if(!p.m||p.st!=="pronto")continue;
     if(p.f.size>20*1024*1024){p.st="maior que 20 MB";drawQueue();continue}
     p.st="enviando…";drawQueue();
-    try{const old=photos[p.m.id];const r=await assets.upload(p.f);
+    try{const old=photos[p.m.id],sf=await standardFile(p.f),r=await assets.upload(sf.file);
       await db.collection("photos").doc(p.m.id).set({asset:r.id,at:Date.now(),ai:true});
-      dropAsset(old,p.m.id);p.st="enviado ✓";}
+      dropAsset(old,p.m.id);p.st=sf.framed?"enviado ✓":"enviado ✓ · sem fundo transparente, tamanho não ajustado";}
     catch(e){p.st="falhou"+(e&&e.code?` (${e.code})`:"")}
     drawQueue();}
   sending=false;toast("Envio concluído.");
