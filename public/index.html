@@ -199,14 +199,6 @@ button,input{font:inherit;color:inherit}
 .ro-btns .jump{width:auto;min-width:50px;height:30px;padding:0 8px;border-radius:9px;border:0;background:var(--accent-soft);color:var(--accent);font:700 11.5px var(--mono);letter-spacing:-.03em;display:inline-flex;align-items:baseline;justify-content:center;gap:2px;padding-top:8px;box-sizing:border-box}
 .ro-btns .jump small{font:700 8.5px var(--body);letter-spacing:0;opacity:.8}
 .ro-btns .jump:hover{background:var(--accent);color:#fff;box-shadow:0 8px 18px -10px rgba(29,107,255,.8)}
-.ro-btns .jump.next{min-width:0;padding:0 9px;align-items:center;gap:3px;background:var(--accent);color:#fff;white-space:nowrap}
-.ro-btns .jump.next small{font:700 10.5px var(--body);opacity:1}
-.ro-btns .jump.next svg{width:9px;height:9px;flex:none}
-.ro-btns .jump.next.back svg.nc-arrow{transform:rotate(180deg)}
-.ro-btns .jump.next svg.nc-car{display:none;width:15px;height:15px}
-.ro-btns .jump.next:hover{background:#1558d6;border:0}
-.ro-btns .jump.next:disabled{opacity:.4;cursor:default;box-shadow:none}
-@media (max-width:760px){.ro-btns .jump.next{padding:0 6px;box-shadow:0 0 0 3px #fff}.ro-btns .jump.next svg.nc-car{display:block}}
 .ro-btns button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer;display:grid;place-items:center;transition:all .2s var(--ease)}
 .ro-btns button:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .ro-btns svg{width:12px;height:12px}
@@ -708,7 +700,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .ro-btns .jump small{display:none}
   .ro-btns button:not(.jump){margin-left:8px}
   .ro-btns .jump{margin-left:0;background:#e8f0ff;box-shadow:0 0 0 3px #fff}
-  .ro-btns{gap:9px}
+  .ro-btns{gap:16px}
   .ro-btns.up{bottom:calc(50% + 38px)}
   .ro-btns.dn{top:calc(50% + 38px)}
   /* iPhone: header row on top, dial + cards below, note at the end — nothing overlays the cards */
@@ -825,7 +817,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <div class="dial" id="dial" tabindex="0" role="slider" aria-label="Orçamento máximo">
       <canvas></canvas>
       <div class="readout"><span class="ro-band" id="roBand">135 – 150 mil</span><span class="ro-pill"><span class="ro-lbl">até</span><span class="ro-val">150<small>mil</small></span></span></div>
-      <div class="ro-btns up" role="group" aria-label="Diminuir orçamento ou ir ao próximo carro"><button type="button" data-step="-1" aria-label="Menos R$ 5 mil"><svg viewBox="0 0 16 16"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="-50" aria-label="Menos R$ 50 mil" title="Menos R$ 50 mil">−50<small>mil</small></button><button type="button" class="jump next" id="nextCar" aria-label="Ir para o próximo carro" title="Ir para o próximo carro" disabled><svg class="nc-car" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16v-3l2-5.5A2 2 0 0 1 7.9 6h8.2a2 2 0 0 1 1.9 1.5L20 13v3M4 13h16M6 16h12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="2" fill="currentColor"/><circle cx="16.5" cy="17" r="2" fill="currentColor"/></svg><small id="nextCarText">Próximo</small><svg class="nc-arrow" viewBox="0 0 10 10" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div><div class="ro-btns dn" role="group" aria-label="Aumentar orçamento"><button type="button" data-step="1" aria-label="Mais R$ 5 mil"><svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="50" aria-label="Mais R$ 50 mil" title="Mais R$ 50 mil">+50<small>mil</small></button></div>
+      <div class="ro-btns up" role="group" aria-label="Diminuir orçamento"><button type="button" data-step="-1" aria-label="Menos R$ 5 mil"><svg viewBox="0 0 16 16"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="-50" aria-label="Menos R$ 50 mil" title="Menos R$ 50 mil">−50<small>mil</small></button></div><div class="ro-btns dn" role="group" aria-label="Aumentar orçamento"><button type="button" data-step="1" aria-label="Mais R$ 5 mil"><svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="50" aria-label="Mais R$ 50 mil" title="Mais R$ 50 mil">+50<small>mil</small></button></div>
     </div>
 
     <section class="showroom" aria-live="polite">
@@ -1017,13 +1009,7 @@ function makeDial(el,start,onChange){
     const mobile=matchMedia("(max-width:760px)").matches;
     const R=Math.max(d.H*.72,300);d.G=mobile?{R,cx:74-R,cy:d.H/2,base:0,dir:1,mobile,px:30,lab:30,ptrX:d.W-9}:{R,cx:150-R,cy:d.H/2,base:0,dir:1,mobile,px:32,lab:38,ptrX:d.W-9};
     d.G.step=d.G.px/d.G.R;d.G.Rd=d.G.R+d.G.lab+(mobile?18:22);
-    cv.style.clipPath=cv.style.webkitClipPath="none";d.place();};
-  /* os botões acompanham a curva: o mais distante do centro encosta na margem e define o raio do arco */
-  d.place=()=>{const G=d.G;if(!G)return;
-    const items=[...el.querySelectorAll(".ro-btns button")].filter(b=>b.offsetWidth).map(b=>({b,w:b.offsetWidth,left:b.parentElement.offsetLeft,y:b.parentElement.offsetTop+b.offsetTop+b.offsetHeight/2-G.cy}));
-    if(!items.length)return;
-    const edge=items.reduce((a,x)=>Math.abs(x.y)>Math.abs(a.y)?x:a),radius=Math.hypot(edge.left+edge.w/2-G.cx,edge.y);
-    items.forEach(x=>{x.b.style.marginLeft=(G.cx+Math.sqrt(Math.max(0,radius*radius-x.y*x.y))-x.w/2-x.left).toFixed(1)+"px"})};
+    cv.style.clipPath=cv.style.webkitClipPath="none";};
   d.draw=()=>{const G=d.G;if(!G)return;const {R,cx,cy,base,dir,step}=G,pos=d.pos;
     ctx.clearRect(0,0,d.CW||d.W,d.H);
     // round backdrop that follows the end of the ticks: cars slide behind a disc, never a rectangle
@@ -1103,7 +1089,6 @@ const roBand=document.getElementById("roBand");
 function bandChanged(d){
   if(typeof closeTip==="function")closeTip();
   const [lo,hi]=band();{const t=krange(lo,hi),m=t.match(/^(.*?)\s(mil|mi)$/);roBand.innerHTML=m?`${esc(m[1])}<span class="rb-u">${m[2]}</span>`:esc(t)}
-  if(typeof paintNextCar==="function")paintNextCar();
   headerFor();syncRows(false);rewindRows();
 }
 const dial=makeDial(document.getElementById("dial"),VALUES.indexOf(150),bandChanged);
@@ -1112,7 +1097,7 @@ function fitStage(){
   const r=document.getElementById("rows");if(!r)return;
   const mob=matchMedia("(max-width:760px)").matches,H=r.parentElement.clientHeight,W=r.parentElement.clientWidth;
   const k=mob&&H&&W?Math.max(.55,Math.min(1,(H-12)/400,(W-(document.getElementById("dial").offsetWidth||0))/(2.35*164))):1;
-  const dEl=document.getElementById("dial"),dw=dEl.offsetWidth||0;dEl.classList.toggle("short",mob&&dEl.offsetHeight<300);dial.place();r.style.setProperty("--padl",(dw/k+8)+"px");
+  const dEl=document.getElementById("dial"),dw=dEl.offsetWidth||0;dEl.classList.toggle("short",mob&&dEl.offsetHeight<300);r.style.setProperty("--padl",(dw/k+8)+"px");
   if(k>=1){r.style.top=r.style.height=r.style.width=r.style.bottom=r.style.transform=r.style.transformOrigin="";return}
   Object.assign(r.style,{top:"50%",bottom:"auto",height:(100/k)+"%",width:(100/k)+"%",transformOrigin:"0 50%",transform:`translateY(-50%) scale(${k})`});
 }
@@ -1327,14 +1312,7 @@ dial.onFrame=()=>{if(!rowAnim)rowAnim=requestAnimationFrame(rowsTick)};
 function rewindRows(){for(const el of rowMap.values())if(el.scrollLeft>0)el.scrollTo({left:0,behavior:reduce?"auto":"smooth"})}
 /* which dial values have at least one car (respecting filters): drawn as dots on the dial */
 function computeHas(){HAS=new Uint8Array(VALUES.length);CARS.forEach(c=>{if(!c.p||!matches(c))return;const i=VALUES.findIndex(x=>x>=K(c));if(i>=0)HAS[i]=1});dial.draw()}
-function nextCarTarget(){const [lo,hi]=bandAt(clamp(dial.target)),pool=CARS.filter(c=>c.p&&matches(c));
-  const above=pool.filter(c=>K(c)>hi).sort((a,b)=>a.p-b.p)[0],car=above||pool.filter(c=>K(c)<lo).sort((a,b)=>b.p-a.p)[0];
-  return car?{i:clamp(VALUES.findIndex(v=>v>=K(car))),car,back:!above}:null}
-function paintNextCar(){const b=document.getElementById("nextCar"),t=nextCarTarget();b.disabled=!t;b.classList.toggle("back",!!(t&&t.back));
-  document.getElementById("nextCarText").textContent=t&&t.back?"Anterior":"Próximo";
-  const label=t?`Ir para ${kmoney(VALUES[t.i])}: ${t.car.mk} ${t.car.nm}`:"Nenhum carro com esses filtros";b.title=label;b.setAttribute("aria-label",label);dial.place()}
-document.getElementById("nextCar").onclick=()=>{const t=nextCarTarget();if(t)dial.goTo(t.i)};
-const swap=()=>{computeHas();paintNextCar();headerFor();syncRows(true);rewindRows()};
+const swap=()=>{computeHas();headerFor();syncRows(true);rewindRows()};
 const refresh=swap;
 const curRow=()=>rowMap.get(dial.sel);
 /* strength icon → small popover explaining it */
@@ -2095,7 +2073,7 @@ document.getElementById("ipClose").onclick=closeImg;
 
 (async()=>{
   renderPills();swap();
-  if(document.fonts)document.fonts.ready.then(()=>{dial.place();dial.draw()});
+  if(document.fonts)document.fonts.ready.then(()=>dial.draw());
   bandChanged();
   try{
     const [d,u]=await Promise.all([claude.use("db"),claude.use("user")]);
