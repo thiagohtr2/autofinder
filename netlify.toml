@@ -6,3 +6,7 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+
+# CDN de imagens do Netlify: entrega as fotos do Supabase em tamanho reduzido
+[images]
+  remote_images = ["https://ljgcvxadsekaicffztbi\\.supabase\\.co/storage/v1/object/public/.*"]
