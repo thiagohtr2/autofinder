@@ -1,3 +1,7 @@
+-- DESFEITA em 20261105210000_desfaz_fotos_por_ano.sql: rodou enquanto o site oficial ainda estava na
+-- versão antiga, e a maioria das fotos sumiu. NÃO RODAR DE NOVO: o ano de cada foto vai ser guardado sem
+-- renomear nada, para funcionar com qualquer versão do site.
+--
 -- Fotos por carro: modelo + ano-modelo.
 --
 -- Até aqui cada modelo tinha uma foto só, guardada pelo id do modelo (ex.: jeep-compass). O site
