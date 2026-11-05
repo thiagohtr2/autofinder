@@ -36,11 +36,11 @@ Curtidas e comentários de usuários **não** estão neste repositório (são da
 O site publicado na Netlify lê e grava no Supabase. O `public/index.html` continua falando com um banco de documentos, e o `public/supabase-adapter.js` traduz cada chamada para as tabelas do Supabase.
 
 - **Visitante**: vê o catálogo, as fotos, as notícias e os alertas.
-- **Conta**: quem entra pode curtir e comentar. Não há tela de cadastro; a conta é criada no painel do Supabase (veja `supabase/README.md`).
+- **Conta**: os botões Entrar e Cadastrar ficam no topo do site. Quem entra pode curtir e comentar. O cadastro depende de duas configurações do Supabase (veja `supabase/README.md`).
 - **Administrador**: vê também Banco, Radar e Imagens.
 
 ## Próximos passos
 
-1. **Cadastro público** de usuários, com recuperação de senha.
+1. **Recuperação de senha** para quem esquecer a sua.
 2. **Pesquisa e radar**: os scripts de `tools/pipeline/` ainda gravam no banco original do Claude e precisam passar a gravar no Supabase.
 3. **Domínio** definitivo, quando o nome for escolhido.

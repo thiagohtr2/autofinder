@@ -80,10 +80,24 @@
   };
 
   window.giroAuth = {
+    ready,
     current: () => (currentUser ? { email: currentUser.email, isAdmin } : null),
     async signIn(email, password) {
       const { error } = await sb.auth.signInWithPassword({ email, password });
       if (error) throw toError(error);
+    },
+    async signUp(name, email, password) {
+      const { data, error } = await sb.auth.signUp({
+        email,
+        password,
+        options: { data: { full_name: name }, emailRedirectTo: location.origin + location.pathname },
+      });
+      if (error) throw toError(error);
+      // com a confirmação de e-mail ligada, um e-mail já cadastrado volta sem erro e sem identidades
+      if (data.user && data.user.identities && !data.user.identities.length) {
+        throw Object.assign(new Error("E-mail já cadastrado."), { code: "user_already_exists" });
+      }
+      return { needsConfirmation: !data.session };
     },
     async signOut() {
       const { error } = await sb.auth.signOut();
