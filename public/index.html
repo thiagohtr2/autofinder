@@ -289,6 +289,8 @@ button,input{font:inherit;color:inherit}
 .pc-line s{font-family:var(--mono)}
 .pc-line svg{width:12px;height:12px;flex:none;color:#0f8a4b}
 .pc-line.up svg{color:#b45309}
+.pc-line{position:relative}
+.pc-line::after{content:"";position:absolute;inset:-9px -6px}
 .pc-line:hover{background:var(--panel)}
 .pc-line:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .card.has-pc .spec{margin-top:3px;padding-top:4px}
