@@ -1,0 +1,2072 @@
+[
+ {
+  "kind": "model_photo",
+  "owner": "agrale-marrua-am200-mo",
+  "bucket": "car-photos",
+  "path": "agrale-marrua-am200-mo.png",
+  "legacy": "9f39352779e180e50f5ede11222ee323",
+  "ai": true,
+  "bytes": 879570
+ },
+ {
+  "kind": "model_photo",
+  "owner": "agrale-marrua-am250",
+  "bucket": "car-photos",
+  "path": "agrale-marrua-am250.png",
+  "legacy": "4339731a801fbe24acf05737d959a309",
+  "ai": true,
+  "bytes": 1015100
+ },
+ {
+  "kind": "model_photo",
+  "owner": "aston-martin-db12",
+  "bucket": "car-photos",
+  "path": "aston-martin-db12.png",
+  "legacy": "91a95ae2c43d71525a09fad3942bf787",
+  "ai": true,
+  "bytes": 994844
+ },
+ {
+  "kind": "model_photo",
+  "owner": "aston-martin-dbx",
+  "bucket": "car-photos",
+  "path": "aston-martin-dbx.png",
+  "legacy": "8d2c213f1d7b065418a1ec560e06d861",
+  "ai": true,
+  "bytes": 1076166
+ },
+ {
+  "kind": "model_photo",
+  "owner": "aston-martin-vanquish",
+  "bucket": "car-photos",
+  "path": "aston-martin-vanquish.png",
+  "legacy": "ed1748aeeee78f8a8752dcf97e0e50cf",
+  "ai": true,
+  "bytes": 965698
+ },
+ {
+  "kind": "model_photo",
+  "owner": "aston-martin-vantage",
+  "bucket": "car-photos",
+  "path": "aston-martin-vantage.png",
+  "legacy": "f4284a898fd9707f3aa4f176225c6567",
+  "ai": true,
+  "bytes": 1013197
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-a3-sedan",
+  "bucket": "car-photos",
+  "path": "audi-a3-sedan.png",
+  "legacy": "d167362ead843aed8f5edbf3f40706cd",
+  "ai": true,
+  "bytes": 1015399
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-a3-sportback",
+  "bucket": "car-photos",
+  "path": "audi-a3-sportback.png",
+  "legacy": "7b02401b8d75e7ef4afe26abde676560",
+  "ai": true,
+  "bytes": 1103860
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-a5",
+  "bucket": "car-photos",
+  "path": "audi-a5.png",
+  "legacy": "1bd3fd5ef89512641373da5e610b8865",
+  "ai": true,
+  "bytes": 1004252
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-a5-avant",
+  "bucket": "car-photos",
+  "path": "audi-a5-avant.png",
+  "legacy": "6626a33dc0ce2741411ad2bdf5b783e6",
+  "ai": true,
+  "bytes": 1084385
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-a6-avant-e-tron",
+  "bucket": "car-photos",
+  "path": "audi-a6-avant-e-tron.png",
+  "legacy": "975a41036d3947eaf59eed2a550d9927",
+  "ai": true,
+  "bytes": 957463
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-a6-sportback-e-tron",
+  "bucket": "car-photos",
+  "path": "audi-a6-sportback-e-tron.png",
+  "legacy": "0f51176113cf7faa939d38488555fd6a",
+  "ai": true,
+  "bytes": 882348
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q3",
+  "bucket": "car-photos",
+  "path": "audi-q3.png",
+  "legacy": "76f69f2281709b15abeea6b02a367a4e",
+  "ai": true,
+  "bytes": 1151209
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q3-sportback",
+  "bucket": "car-photos",
+  "path": "audi-q3-sportback.png",
+  "legacy": "78271de2beb81823e0dc321f0ec95e96",
+  "ai": true,
+  "bytes": 1106583
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q5",
+  "bucket": "car-photos",
+  "path": "audi-q5.png",
+  "legacy": "b246831f06bfde192a430f2131df20f6",
+  "ai": true,
+  "bytes": 1064015
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q5-sportback",
+  "bucket": "car-photos",
+  "path": "audi-q5-sportback.png",
+  "legacy": "768ccad3cbbf61ccfcaa52426f9b6e66",
+  "ai": true,
+  "bytes": 1193738
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q6-e-tron",
+  "bucket": "car-photos",
+  "path": "audi-q6-e-tron.png",
+  "legacy": "af1d549978d7cea02ccd5d77c1193b1f",
+  "ai": true,
+  "bytes": 1108562
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q6-sportback-e-tron",
+  "bucket": "car-photos",
+  "path": "audi-q6-sportback-e-tron.png",
+  "legacy": "6d5298a7353f49e2c17168a8e955db4f",
+  "ai": true,
+  "bytes": 1150008
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q7",
+  "bucket": "car-photos",
+  "path": "audi-q7.png",
+  "legacy": "c8701451ed00aed2d98fe5123bc5c61b",
+  "ai": true,
+  "bytes": 1044153
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-q8",
+  "bucket": "car-photos",
+  "path": "audi-q8.png",
+  "legacy": "263e1e061a7c7394d64ddffe0eef2154",
+  "ai": true,
+  "bytes": 1149553
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-rs-3-sedan",
+  "bucket": "car-photos",
+  "path": "audi-rs-3-sedan.png",
+  "legacy": "cb445fd84abebaf6df9715cddaab3080",
+  "ai": true,
+  "bytes": 1130440
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-rs-6-avant",
+  "bucket": "car-photos",
+  "path": "audi-rs-6-avant.png",
+  "legacy": "0960ce83ee6886e95f38e5c3941ae617",
+  "ai": true,
+  "bytes": 987780
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-rs-e-tron-gt",
+  "bucket": "car-photos",
+  "path": "audi-rs-e-tron-gt.png",
+  "legacy": "5864d83e3574507e7e3d9026ed236cb9",
+  "ai": true,
+  "bytes": 908214
+ },
+ {
+  "kind": "model_photo",
+  "owner": "audi-rs-q8",
+  "bucket": "car-photos",
+  "path": "audi-rs-q8.png",
+  "legacy": "3d8485e114885ec1bca07e6181d36815",
+  "ai": true,
+  "bytes": 1038900
+ },
+ {
+  "kind": "model_photo",
+  "owner": "avatr-11",
+  "bucket": "car-photos",
+  "path": "avatr-11.png",
+  "legacy": "9b6ddd4b69a3cc8afc1ec819cba0058d",
+  "ai": true,
+  "bytes": 1025529
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-i4",
+  "bucket": "car-photos",
+  "path": "bmw-i4.png",
+  "legacy": "67316c59c6676f4df1507ae9df5ebf22",
+  "ai": true,
+  "bytes": 984928
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-i7",
+  "bucket": "car-photos",
+  "path": "bmw-i7.png",
+  "legacy": "32284e56765e1e34a350782f74a1d7b7",
+  "ai": true,
+  "bytes": 981802
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-ix1",
+  "bucket": "car-photos",
+  "path": "bmw-ix1.png",
+  "legacy": "fbc7579c759f526fd927cf68f5ec1fa1",
+  "ai": true,
+  "bytes": 1131909
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-ix2",
+  "bucket": "car-photos",
+  "path": "bmw-ix2.png",
+  "legacy": "ea8f4c457923b2e80a9c53661c4ee1ca",
+  "ai": true,
+  "bytes": 1156759
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-ix3",
+  "bucket": "car-photos",
+  "path": "bmw-ix3.png",
+  "legacy": "bef169fa7842317aac119f9764eb41ac",
+  "ai": true,
+  "bytes": 1106771
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-m2",
+  "bucket": "car-photos",
+  "path": "bmw-m2.png",
+  "legacy": "6d03a1a85b2d3fabdfd09f15a2f02695",
+  "ai": true,
+  "bytes": 1064876
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-m3",
+  "bucket": "car-photos",
+  "path": "bmw-m3.png",
+  "legacy": "ba8ba2a6e388f43394c79bca185dd7b4",
+  "ai": true,
+  "bytes": 1089467
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-m4",
+  "bucket": "car-photos",
+  "path": "bmw-m4.png",
+  "legacy": "e5308567ba4f76867a7d0e2177710f39",
+  "ai": true,
+  "bytes": 1059622
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-serie-1",
+  "bucket": "car-photos",
+  "path": "bmw-serie-1.png",
+  "legacy": "407160bf915521a5c997de6be59bcf6f",
+  "ai": true,
+  "bytes": 1170549
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-serie-2-gran-coupe",
+  "bucket": "car-photos",
+  "path": "bmw-serie-2-gran-coupe.png",
+  "legacy": "5bf9d82eed22ff853769dd7ea32c5943",
+  "ai": true,
+  "bytes": 1147047
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-serie-3",
+  "bucket": "car-photos",
+  "path": "bmw-serie-3.png",
+  "legacy": "e6f859b84931abfe516468815869c12e",
+  "ai": true,
+  "bytes": 1048121
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-serie-4-cabrio",
+  "bucket": "car-photos",
+  "path": "bmw-serie-4-cabrio.png",
+  "legacy": "351debdfee73cfc998e0bf4512878fee",
+  "ai": true,
+  "bytes": 1037889
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-serie-5",
+  "bucket": "car-photos",
+  "path": "bmw-serie-5.png",
+  "legacy": "f04b6f4eb5c4bd779c1e48b3afab5918",
+  "ai": true,
+  "bytes": 928534
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-x1",
+  "bucket": "car-photos",
+  "path": "bmw-x1.png",
+  "legacy": "0513214d4574e6504099c281686ce1b8",
+  "ai": true,
+  "bytes": 1068673
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-x2",
+  "bucket": "car-photos",
+  "path": "bmw-x2.png",
+  "legacy": "76dc5bc00c2febb5dd34231670a72508",
+  "ai": true,
+  "bytes": 1105456
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-x3",
+  "bucket": "car-photos",
+  "path": "bmw-x3.png",
+  "legacy": "d4b313ffa653ff1c29156482cecde854",
+  "ai": true,
+  "bytes": 1039014
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-x5",
+  "bucket": "car-photos",
+  "path": "bmw-x5.png",
+  "legacy": "3f20c0580fac7f241079ad96be57efea",
+  "ai": true,
+  "bytes": 1003087
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-x6",
+  "bucket": "car-photos",
+  "path": "bmw-x6.png",
+  "legacy": "05352d15cd97a661e66135e60c099299",
+  "ai": true,
+  "bytes": 1150387
+ },
+ {
+  "kind": "model_photo",
+  "owner": "bmw-x7",
+  "bucket": "car-photos",
+  "path": "bmw-x7.png",
+  "legacy": "e41bf552c86416fcbc2d785af89ea65b",
+  "ai": true,
+  "bytes": 1098683
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-atto-2-dm-i",
+  "bucket": "car-photos",
+  "path": "byd-atto-2-dm-i.png",
+  "legacy": "4276528d3bc5812ae9bbdbd2eb9986c1",
+  "ai": true,
+  "bytes": 754262
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-atto-8",
+  "bucket": "car-photos",
+  "path": "byd-atto-8.png",
+  "legacy": "856c0b67ab0ce781d8f5fd719894a6f1",
+  "ai": true,
+  "bytes": 767097
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-dolphin",
+  "bucket": "car-photos",
+  "path": "byd-dolphin.png",
+  "legacy": "8e38b3853f9e7250b85c9109ac58ede6",
+  "ai": true,
+  "bytes": 783935
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-dolphin-mini",
+  "bucket": "car-photos",
+  "path": "byd-dolphin-mini.png",
+  "legacy": "84248302403c2279ade7325592e050c7",
+  "ai": true,
+  "bytes": 745432
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-han",
+  "bucket": "car-photos",
+  "path": "byd-han.png",
+  "legacy": "552f03d58e6a670c45b8e4fd7d9149d0",
+  "ai": true,
+  "bytes": 669413
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-king",
+  "bucket": "car-photos",
+  "path": "byd-king.png",
+  "legacy": "a57a1c6c5bb89bf2b7b14dc709383961",
+  "ai": true,
+  "bytes": 736241
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-seal",
+  "bucket": "car-photos",
+  "path": "byd-seal.png",
+  "legacy": "8eb4887487b395d764c300754dbcb8f9",
+  "ai": true,
+  "bytes": 728380
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-sealion-7",
+  "bucket": "car-photos",
+  "path": "byd-sealion-7.png",
+  "legacy": "bb8b758ad5a87234c108e11c74c6597f",
+  "ai": true,
+  "bytes": 824462
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-shark",
+  "bucket": "car-photos",
+  "path": "byd-shark.png",
+  "legacy": "2f3226ec1865356ac2cb6780a1e56244",
+  "ai": true,
+  "bytes": 803447
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-song-plus",
+  "bucket": "car-photos",
+  "path": "byd-song-plus.png",
+  "legacy": "867577e758bec7c655d265003d94be89",
+  "ai": true,
+  "bytes": 772385
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-song-plus-premium",
+  "bucket": "car-photos",
+  "path": "byd-song-plus-premium.png",
+  "legacy": "365bdc36c6c06f69527d05e6139265db",
+  "ai": true,
+  "bytes": 648746
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-song-pro",
+  "bucket": "car-photos",
+  "path": "byd-song-pro.png",
+  "legacy": "ee34429ff391256569ac7b19af25caf8",
+  "ai": true,
+  "bytes": 647875
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-tan",
+  "bucket": "car-photos",
+  "path": "byd-tan.png",
+  "legacy": "4a0953a2a3b47897d14ea972c23b7b0b",
+  "ai": true,
+  "bytes": 715620
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-yuan-plus",
+  "bucket": "car-photos",
+  "path": "byd-yuan-plus.png",
+  "legacy": "3445c939700274f81f11ff6e3f672a33",
+  "ai": true,
+  "bytes": 732603
+ },
+ {
+  "kind": "model_photo",
+  "owner": "byd-yuan-pro",
+  "bucket": "car-photos",
+  "path": "byd-yuan-pro.png",
+  "legacy": "3162cf198eb67e82001974aa8f0385d9",
+  "ai": true,
+  "bytes": 726787
+ },
+ {
+  "kind": "model_photo",
+  "owner": "caoa-changan-cs55",
+  "bucket": "car-photos",
+  "path": "caoa-changan-cs55.png",
+  "legacy": "b80c2ec268d95d653343c3a386c5f277",
+  "ai": true,
+  "bytes": 979153
+ },
+ {
+  "kind": "model_photo",
+  "owner": "caoa-changan-cs75",
+  "bucket": "car-photos",
+  "path": "caoa-changan-cs75.png",
+  "legacy": "86180a35ddbd5a6fa0cf9789e265875d",
+  "ai": true,
+  "bytes": 961647
+ },
+ {
+  "kind": "model_photo",
+  "owner": "caoa-changan-uni-t",
+  "bucket": "car-photos",
+  "path": "caoa-changan-uni-t.png",
+  "legacy": "c0d6e7a4dbb430c0fb33ffa997dd46ac",
+  "ai": true,
+  "bytes": 1044371
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chery-tiggo-5x",
+  "bucket": "car-photos",
+  "path": "chery-tiggo-5x.png",
+  "legacy": "b97902da226ee138e53521fee35a887a",
+  "ai": true,
+  "bytes": 998066
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chery-tiggo-7",
+  "bucket": "car-photos",
+  "path": "chery-tiggo-7.png",
+  "legacy": "3ddb1865aac602be0088366bd54ddd37",
+  "ai": true,
+  "bytes": 1015773
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chery-tiggo-8",
+  "bucket": "car-photos",
+  "path": "chery-tiggo-8.png",
+  "legacy": "87f1b6e24dfbceb63f27a29f20190e20",
+  "ai": true,
+  "bytes": 1025586
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-blazer-ev",
+  "bucket": "car-photos",
+  "path": "chevrolet-blazer-ev.png",
+  "legacy": "d3d2db48b6fa67a9c44f69cbd637b03a",
+  "ai": true,
+  "bytes": 671476
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-captiva-ev",
+  "bucket": "car-photos",
+  "path": "chevrolet-captiva-ev.png",
+  "legacy": "41c00757a4d33cffaddcc97cec879f92",
+  "ai": true,
+  "bytes": 709143
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-equinox",
+  "bucket": "car-photos",
+  "path": "chevrolet-equinox.png",
+  "legacy": "a78961870120fdf213d2c28380773f4e",
+  "ai": true,
+  "bytes": 612863
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-montana",
+  "bucket": "car-photos",
+  "path": "chevrolet-montana.png",
+  "legacy": "189c0fdc57d4c6d51bd05a40b55b56f2",
+  "ai": true,
+  "bytes": 659135
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-onix",
+  "bucket": "car-photos",
+  "path": "chevrolet-onix.png",
+  "legacy": "b7aa01d34f4076aaaf4ab3a0d8ede505",
+  "ai": true,
+  "bytes": 661749
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-onix-plus",
+  "bucket": "car-photos",
+  "path": "chevrolet-onix-plus.png",
+  "legacy": "eecff64b8c72302808418c18d3d9c1ce",
+  "ai": true,
+  "bytes": 642134
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-s10",
+  "bucket": "car-photos",
+  "path": "chevrolet-s10.png",
+  "legacy": "0f5511528c66b8e727b4f7e1e913e4c2",
+  "ai": true,
+  "bytes": 647170
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-silverado",
+  "bucket": "car-photos",
+  "path": "chevrolet-silverado.png",
+  "legacy": "2f72abece4fd1eaa3ac29a6916a290e2",
+  "ai": true,
+  "bytes": 647347
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-sonic",
+  "bucket": "car-photos",
+  "path": "chevrolet-sonic.png",
+  "legacy": "5e11c102ed16e33251780ad97b95525e",
+  "ai": true,
+  "bytes": 633386
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-spark-euv",
+  "bucket": "car-photos",
+  "path": "chevrolet-spark-euv.png",
+  "legacy": "154573171c0d6196a92b51319c516395",
+  "ai": true,
+  "bytes": 600405
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-spin",
+  "bucket": "car-photos",
+  "path": "chevrolet-spin.png",
+  "legacy": "8c2a206e52c3884b38795e6308564670",
+  "ai": true,
+  "bytes": 729551
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-tracker",
+  "bucket": "car-photos",
+  "path": "chevrolet-tracker.png",
+  "legacy": "2a0bc316422fb313d223ffc98d60eb4b",
+  "ai": true,
+  "bytes": 650079
+ },
+ {
+  "kind": "model_photo",
+  "owner": "chevrolet-trailblazer",
+  "bucket": "car-photos",
+  "path": "chevrolet-trailblazer.png",
+  "legacy": "b5113604dcc47e99c53c53d02e9e8277",
+  "ai": true,
+  "bytes": 687479
+ },
+ {
+  "kind": "model_photo",
+  "owner": "citroen-aircross",
+  "bucket": "car-photos",
+  "path": "citroen-aircross.png",
+  "legacy": "2e0a425e3b11fc7262fde7d1a5678079",
+  "ai": true,
+  "bytes": 598384
+ },
+ {
+  "kind": "model_photo",
+  "owner": "citroen-basalt",
+  "bucket": "car-photos",
+  "path": "citroen-basalt.png",
+  "legacy": "3d635fa98e8d4573f27225b3e676e6e8",
+  "ai": true,
+  "bytes": 611947
+ },
+ {
+  "kind": "model_photo",
+  "owner": "citroen-c3",
+  "bucket": "car-photos",
+  "path": "citroen-c3.png",
+  "legacy": "15275448e690b0954f339f4578543a62",
+  "ai": true,
+  "bytes": 616577
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-500e",
+  "bucket": "car-photos",
+  "path": "fiat-500e.png",
+  "legacy": "4929428c7fa98c81c0380706f0d64856",
+  "ai": true,
+  "bytes": 673027
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-argo",
+  "bucket": "car-photos",
+  "path": "fiat-argo.png",
+  "legacy": "d7da15fea24aa266450c25329a5d1f52",
+  "ai": true,
+  "bytes": 638802
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-cronos",
+  "bucket": "car-photos",
+  "path": "fiat-cronos.png",
+  "legacy": "96dd808681a10df65fa72edb4ef641bf",
+  "ai": true,
+  "bytes": 651063
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-fastback",
+  "bucket": "car-photos",
+  "path": "fiat-fastback.png",
+  "legacy": "907fcb5bdcf3dade2076173262ffcfe7",
+  "ai": true,
+  "bytes": 674656
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-mobi",
+  "bucket": "car-photos",
+  "path": "fiat-mobi.png",
+  "legacy": "46d4a3fe09e6281212d88a5466efaf75",
+  "ai": true,
+  "bytes": 657305
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-pulse",
+  "bucket": "car-photos",
+  "path": "fiat-pulse.png",
+  "legacy": "27f4b22f9686d1c0fab521369ab1aa8a",
+  "ai": true,
+  "bytes": 623570
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-strada",
+  "bucket": "car-photos",
+  "path": "fiat-strada.png",
+  "legacy": "9cd03506b9b47839efba07c249525157",
+  "ai": true,
+  "bytes": 719800
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-titano",
+  "bucket": "car-photos",
+  "path": "fiat-titano.png",
+  "legacy": "d792e8b62e4d8069acffe00151a6c9ca",
+  "ai": true,
+  "bytes": 881939
+ },
+ {
+  "kind": "model_photo",
+  "owner": "fiat-toro",
+  "bucket": "car-photos",
+  "path": "fiat-toro.png",
+  "legacy": "4925392dda16c088416a5676d156c86a",
+  "ai": true,
+  "bytes": 740938
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ford-bronco-sport",
+  "bucket": "car-photos",
+  "path": "ford-bronco-sport.png",
+  "legacy": "5f0aedba971e858172b2fe1b2995f707",
+  "ai": true,
+  "bytes": 641216
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ford-f-150",
+  "bucket": "car-photos",
+  "path": "ford-f-150.png",
+  "legacy": "bafc7de0dcfbf757ea270c5be10e9b5e",
+  "ai": true,
+  "bytes": 663183
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ford-maverick",
+  "bucket": "car-photos",
+  "path": "ford-maverick.png",
+  "legacy": "3c77098eb8aadc49316ed8792a466e58",
+  "ai": true,
+  "bytes": 625095
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ford-mustang",
+  "bucket": "car-photos",
+  "path": "ford-mustang.png",
+  "legacy": "1875908e9b4c41469ba5fd98b781ed3d",
+  "ai": true,
+  "bytes": 607309
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ford-mustang-mach-e",
+  "bucket": "car-photos",
+  "path": "ford-mustang-mach-e.png",
+  "legacy": "51de64d97e2c228c1f73575d413c88b4",
+  "ai": true,
+  "bytes": 649191
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ford-ranger",
+  "bucket": "car-photos",
+  "path": "ford-ranger.png",
+  "legacy": "817817f65c51ec81e49f23da0a042539",
+  "ai": true,
+  "bytes": 675908
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ford-territory",
+  "bucket": "car-photos",
+  "path": "ford-territory.png",
+  "legacy": "6ef1e6650e9e4cf2c9123e60cd1749af",
+  "ai": true,
+  "bytes": 657117
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-haval-h6",
+  "bucket": "car-photos",
+  "path": "gwm-haval-h6.png",
+  "legacy": "86000dbf43c0bf6315a3f19fa556d410",
+  "ai": true,
+  "bytes": 668851
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-haval-h7",
+  "bucket": "car-photos",
+  "path": "gwm-haval-h7.png",
+  "legacy": "698cbb372b723a31c0677dd59b582ab2",
+  "ai": true,
+  "bytes": 630290
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-haval-h9",
+  "bucket": "car-photos",
+  "path": "gwm-haval-h9.png",
+  "legacy": "a936eeabc9c4b568100d28a6b97e65f0",
+  "ai": true,
+  "bytes": 649486
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-ora-03",
+  "bucket": "car-photos",
+  "path": "gwm-ora-03.png",
+  "legacy": "44c4e3f2bb99b2ed471148db971015b9",
+  "ai": true,
+  "bytes": 631017
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-ora-5",
+  "bucket": "car-photos",
+  "path": "gwm-ora-5.png",
+  "legacy": "040930e3a0628da4a847ecbfcf8c9001",
+  "ai": true,
+  "bytes": 600953
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-poer-p30",
+  "bucket": "car-photos",
+  "path": "gwm-poer-p30.png",
+  "legacy": "5cff01b34a811c6441bcc5160b850a4f",
+  "ai": true,
+  "bytes": 660681
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-tank-300",
+  "bucket": "car-photos",
+  "path": "gwm-tank-300.png",
+  "legacy": "3b8edc3f56ebcd1cb9c3112efaf5f5f0",
+  "ai": true,
+  "bytes": 891842
+ },
+ {
+  "kind": "model_photo",
+  "owner": "gwm-wey-07",
+  "bucket": "car-photos",
+  "path": "gwm-wey-07.png",
+  "legacy": "eef0edf222a8ddbc96c06be5b20baaf8",
+  "ai": true,
+  "bytes": 852738
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-accord",
+  "bucket": "car-photos",
+  "path": "honda-accord.png",
+  "legacy": "4aaaa4c3ba6593ec26dffe8f4d304cbd",
+  "ai": true,
+  "bytes": 706766
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-city",
+  "bucket": "car-photos",
+  "path": "honda-city.png",
+  "legacy": "e97762af4d45f8564397f828daa5c2f2",
+  "ai": true,
+  "bytes": 732273
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-city-hatchback",
+  "bucket": "car-photos",
+  "path": "honda-city-hatchback.png",
+  "legacy": "2beaa7616ed08250fd270cb8146a6371",
+  "ai": true,
+  "bytes": 688581
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-civic",
+  "bucket": "car-photos",
+  "path": "honda-civic.png",
+  "legacy": "9b3ecc4e9b13dd012fa8b96429621481",
+  "ai": true,
+  "bytes": 703033
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-cr-v",
+  "bucket": "car-photos",
+  "path": "honda-cr-v.png",
+  "legacy": "0264133c5d80e1d7ae97f7a5104489d7",
+  "ai": true,
+  "bytes": 806934
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-hr-v",
+  "bucket": "car-photos",
+  "path": "honda-hr-v.png",
+  "legacy": "6f1a9ece405311aab2bbbeb2bc9ab21c",
+  "ai": true,
+  "bytes": 648736
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-prelude",
+  "bucket": "car-photos",
+  "path": "honda-prelude.png",
+  "legacy": "81b1e0671911a08588b176925e0f532b",
+  "ai": true,
+  "bytes": 621677
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-wr-v",
+  "bucket": "car-photos",
+  "path": "honda-wr-v.png",
+  "legacy": "fdebf3ce31eb2f2e3aac8ae5e1a255f8",
+  "ai": true,
+  "bytes": 700370
+ },
+ {
+  "kind": "model_photo",
+  "owner": "honda-zr-v",
+  "bucket": "car-photos",
+  "path": "honda-zr-v.png",
+  "legacy": "6ff17af82dfce952899fca7400e8a87f",
+  "ai": true,
+  "bytes": 654910
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-creta",
+  "bucket": "car-photos",
+  "path": "hyundai-creta.png",
+  "legacy": "191b0050878b660123bfb4a38f3c1aa5",
+  "ai": true,
+  "bytes": 652734
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-hb20",
+  "bucket": "car-photos",
+  "path": "hyundai-hb20.png",
+  "legacy": "8d6a37c4dbfb0994caca4f0147574171",
+  "ai": true,
+  "bytes": 695287
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-hb20s",
+  "bucket": "car-photos",
+  "path": "hyundai-hb20s.png",
+  "legacy": "5eb8dfc882e5ee184cfb847697ad4a44",
+  "ai": true,
+  "bytes": 669139
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-i20",
+  "bucket": "car-photos",
+  "path": "hyundai-i20.png",
+  "legacy": "2ae88321fa229a0ec68cf5d6e09a44f5",
+  "ai": true,
+  "bytes": 709426
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-ioniq-5",
+  "bucket": "car-photos",
+  "path": "hyundai-ioniq-5.png",
+  "legacy": "11cc28e3fd70c8dca69d9b299d276ed2",
+  "ai": true,
+  "bytes": 654946
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-kona",
+  "bucket": "car-photos",
+  "path": "hyundai-kona.png",
+  "legacy": "71c83661c7a66cc02dfc07ff99593969",
+  "ai": true,
+  "bytes": 637737
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-palisade",
+  "bucket": "car-photos",
+  "path": "hyundai-palisade.png",
+  "legacy": "679c20265010d6f74b6f6f95a20eb033",
+  "ai": true,
+  "bytes": 681116
+ },
+ {
+  "kind": "model_photo",
+  "owner": "hyundai-tucson",
+  "bucket": "car-photos",
+  "path": "hyundai-tucson.png",
+  "legacy": "5b0536947236d0f89ef24f8e16eae226",
+  "ai": true,
+  "bytes": 699631
+ },
+ {
+  "kind": "model_photo",
+  "owner": "jeep-avenger",
+  "bucket": "car-photos",
+  "path": "jeep-avenger.png",
+  "legacy": "caabb6593a2175d35d0c3b33a7500791",
+  "ai": true,
+  "bytes": 727565
+ },
+ {
+  "kind": "model_photo",
+  "owner": "jeep-commander",
+  "bucket": "car-photos",
+  "path": "jeep-commander.png",
+  "legacy": "371b669798ddbe21685b83c00b977528",
+  "ai": true,
+  "bytes": 771707
+ },
+ {
+  "kind": "model_photo",
+  "owner": "jeep-compass",
+  "bucket": "car-photos",
+  "path": "jeep-compass.png",
+  "legacy": "1fe5d100fb7ebe621c844631bde173c7",
+  "ai": true,
+  "bytes": 785632
+ },
+ {
+  "kind": "model_photo",
+  "owner": "jeep-gladiator",
+  "bucket": "car-photos",
+  "path": "jeep-gladiator.png",
+  "legacy": "79b993dba6b60b4d9dd70d00e45896d0",
+  "ai": true,
+  "bytes": 760857
+ },
+ {
+  "kind": "model_photo",
+  "owner": "jeep-renegade",
+  "bucket": "car-photos",
+  "path": "jeep-renegade.png",
+  "legacy": "04d3c91b3d638d742db5915303c56f7b",
+  "ai": true,
+  "bytes": 729170
+ },
+ {
+  "kind": "model_photo",
+  "owner": "jeep-wrangler",
+  "bucket": "car-photos",
+  "path": "jeep-wrangler.png",
+  "legacy": "17a012a59ff6d931e9c3f1677eb98fed",
+  "ai": true,
+  "bytes": 688498
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-carnival",
+  "bucket": "car-photos",
+  "path": "kia-carnival.png",
+  "legacy": "c51c119d76381a4886bc262275bc905e",
+  "ai": true,
+  "bytes": 677653
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-ev5",
+  "bucket": "car-photos",
+  "path": "kia-ev5.png",
+  "legacy": "203f25fb2ec6e0f63ea90cc73f23606a",
+  "ai": true,
+  "bytes": 620660
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-ev9",
+  "bucket": "car-photos",
+  "path": "kia-ev9.png",
+  "legacy": "e3816e5b10cdefb13aeb39b9187d0bda",
+  "ai": true,
+  "bytes": 618752
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-niro",
+  "bucket": "car-photos",
+  "path": "kia-niro.png",
+  "legacy": "ae97a2a5981aad4d2817d5fd6c9c804a",
+  "ai": true,
+  "bytes": 651084
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-sorento",
+  "bucket": "car-photos",
+  "path": "kia-sorento.png",
+  "legacy": "177e65d618fb6bef57eec17d06c60600",
+  "ai": true,
+  "bytes": 684431
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-sportage",
+  "bucket": "car-photos",
+  "path": "kia-sportage.png",
+  "legacy": "b236edffc46732fb66673e1a567a2a6b",
+  "ai": true,
+  "bytes": 670389
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-stonic",
+  "bucket": "car-photos",
+  "path": "kia-stonic.png",
+  "legacy": "aed4a9d7034f472361fd56a495510377",
+  "ai": true,
+  "bytes": 689762
+ },
+ {
+  "kind": "model_photo",
+  "owner": "kia-tasman",
+  "bucket": "car-photos",
+  "path": "kia-tasman.png",
+  "legacy": "04b9e98cb0b28a8c74eacce132ba966d",
+  "ai": true,
+  "bytes": 668892
+ },
+ {
+  "kind": "model_photo",
+  "owner": "leapmotor-b10",
+  "bucket": "car-photos",
+  "path": "leapmotor-b10.png",
+  "legacy": "e579911ce98e93502252d01bcefac80a",
+  "ai": true,
+  "bytes": 631792
+ },
+ {
+  "kind": "model_photo",
+  "owner": "leapmotor-c10",
+  "bucket": "car-photos",
+  "path": "leapmotor-c10.png",
+  "legacy": "1795865ea137745adf940f2b50451c72",
+  "ai": true,
+  "bytes": 708062
+ },
+ {
+  "kind": "model_photo",
+  "owner": "mitsubishi-eclipse-cross",
+  "bucket": "car-photos",
+  "path": "mitsubishi-eclipse-cross.png",
+  "legacy": "18ac5b1489545d3fd571f97842c97b65",
+  "ai": true,
+  "bytes": 689471
+ },
+ {
+  "kind": "model_photo",
+  "owner": "mitsubishi-outlander",
+  "bucket": "car-photos",
+  "path": "mitsubishi-outlander.png",
+  "legacy": "2c82f16680668fcfbaa38e1a8e44c728",
+  "ai": true,
+  "bytes": 703153
+ },
+ {
+  "kind": "model_photo",
+  "owner": "mitsubishi-triton",
+  "bucket": "car-photos",
+  "path": "mitsubishi-triton.png",
+  "legacy": "f397775cd6d169f659e04b7c78aebe6f",
+  "ai": true,
+  "bytes": 711900
+ },
+ {
+  "kind": "model_photo",
+  "owner": "nissan-kait",
+  "bucket": "car-photos",
+  "path": "nissan-kait.png",
+  "legacy": "3dd81717432f02b973c7ea7444936a0f",
+  "ai": true,
+  "bytes": 743318
+ },
+ {
+  "kind": "model_photo",
+  "owner": "nissan-kicks",
+  "bucket": "car-photos",
+  "path": "nissan-kicks.png",
+  "legacy": "68762187098862055c0242af89fd2cc1",
+  "ai": true,
+  "bytes": 624306
+ },
+ {
+  "kind": "model_photo",
+  "owner": "nissan-versa",
+  "bucket": "car-photos",
+  "path": "nissan-versa.png",
+  "legacy": "dbd8cbc59035e9864f769e832be38fc1",
+  "ai": true,
+  "bytes": 675033
+ },
+ {
+  "kind": "model_photo",
+  "owner": "peugeot-2008",
+  "bucket": "car-photos",
+  "path": "peugeot-2008.png",
+  "legacy": "0ae210c3830bae5b02167d816a7f35ea",
+  "ai": true,
+  "bytes": 717086
+ },
+ {
+  "kind": "model_photo",
+  "owner": "peugeot-208",
+  "bucket": "car-photos",
+  "path": "peugeot-208.png",
+  "legacy": "c686441dcf84a84f5391c1bd4a9f2df7",
+  "ai": true,
+  "bytes": 699743
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ram-1500",
+  "bucket": "car-photos",
+  "path": "ram-1500.png",
+  "legacy": "8844e7b3dc7fd0cd912f1ad37c90fc43",
+  "ai": true,
+  "bytes": 737293
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ram-2500",
+  "bucket": "car-photos",
+  "path": "ram-2500.png",
+  "legacy": "3a0c41e822a3d8cf0ec85160c408585d",
+  "ai": true,
+  "bytes": 766397
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ram-3500",
+  "bucket": "car-photos",
+  "path": "ram-3500.png",
+  "legacy": "5f2b339e3788dc4485f19f66721ca066",
+  "ai": true,
+  "bytes": 774584
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ram-dakota",
+  "bucket": "car-photos",
+  "path": "ram-dakota.png",
+  "legacy": "d380086c19b64ec745a8b7a9c60aae14",
+  "ai": true,
+  "bytes": 697105
+ },
+ {
+  "kind": "model_photo",
+  "owner": "ram-rampage",
+  "bucket": "car-photos",
+  "path": "ram-rampage.png",
+  "legacy": "c225113886563188cf7dce490802bd32",
+  "ai": true,
+  "bytes": 685874
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-boreal",
+  "bucket": "car-photos",
+  "path": "renault-boreal.png",
+  "legacy": "654079381ddcd2fe71f347a82d98312d",
+  "ai": true,
+  "bytes": 648452
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-duster",
+  "bucket": "car-photos",
+  "path": "renault-duster.png",
+  "legacy": "adf2ab69a6c71047326cc20d6fef9369",
+  "ai": true,
+  "bytes": 639834
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-kardian",
+  "bucket": "car-photos",
+  "path": "renault-kardian.png",
+  "legacy": "2fd38af02034808c03df6ca0a1146a5a",
+  "ai": true,
+  "bytes": 656008
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-koleos",
+  "bucket": "car-photos",
+  "path": "renault-koleos.png",
+  "legacy": "c7741f3ed338a2b31cf6510f06c00999",
+  "ai": true,
+  "bytes": 696041
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-kwid",
+  "bucket": "car-photos",
+  "path": "renault-kwid.png",
+  "legacy": "c69a18913ab0a82885307b24635d7ac7",
+  "ai": true,
+  "bytes": 655777
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-kwid-e-tech",
+  "bucket": "car-photos",
+  "path": "renault-kwid-e-tech.png",
+  "legacy": "40219b3f9c6ac310e0eabb60b4c69025",
+  "ai": true,
+  "bytes": 658652
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-megane-e-tech",
+  "bucket": "car-photos",
+  "path": "renault-megane-e-tech.png",
+  "legacy": "114df1741bb5d6b9f14fda7f8d7458f2",
+  "ai": true,
+  "bytes": 670074
+ },
+ {
+  "kind": "model_photo",
+  "owner": "renault-oroch",
+  "bucket": "car-photos",
+  "path": "renault-oroch.png",
+  "legacy": "4eb2001a6899771b5ebf5f440a92f4cf",
+  "ai": true,
+  "bytes": 739114
+ },
+ {
+  "kind": "model_photo",
+  "owner": "suzuki-e-vitara",
+  "bucket": "car-photos",
+  "path": "suzuki-e-vitara.png",
+  "legacy": "6e81a16ef585c6ee5a3086d4740dd118",
+  "ai": true,
+  "bytes": 678722
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-bz4x",
+  "bucket": "car-photos",
+  "path": "toyota-bz4x.png",
+  "legacy": "cab3505b06cbb0b2bcec992fbf90d836",
+  "ai": true,
+  "bytes": 635284
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-corolla",
+  "bucket": "car-photos",
+  "path": "toyota-corolla.png",
+  "legacy": "0fa9fd7030be29e1285ec5fc16da37c0",
+  "ai": true,
+  "bytes": 657527
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-corolla-cross",
+  "bucket": "car-photos",
+  "path": "toyota-corolla-cross.png",
+  "legacy": "0e256df32cbcb34d1ef62b427d3a5d80",
+  "ai": true,
+  "bytes": 671998
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-gr-corolla",
+  "bucket": "car-photos",
+  "path": "toyota-gr-corolla.png",
+  "legacy": "f5fd4427bf5d6534c95dc817a5dbaca9",
+  "ai": true,
+  "bytes": 675816
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-gr-yaris",
+  "bucket": "car-photos",
+  "path": "toyota-gr-yaris.png",
+  "legacy": "750761088fc477391370e56f21453479",
+  "ai": true,
+  "bytes": 673969
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-hilux",
+  "bucket": "car-photos",
+  "path": "toyota-hilux.png",
+  "legacy": "a11cf6d62ca57f074d2a042381f0c5ae",
+  "ai": true,
+  "bytes": 771530
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-hilux-sw4",
+  "bucket": "car-photos",
+  "path": "toyota-hilux-sw4.png",
+  "legacy": "2685702e8c062b28bb7a1497b6f4203b",
+  "ai": true,
+  "bytes": 869493
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-rav4",
+  "bucket": "car-photos",
+  "path": "toyota-rav4.png",
+  "legacy": "0d2b75c325a9a79c0625a97079351574",
+  "ai": true,
+  "bytes": 680082
+ },
+ {
+  "kind": "model_photo",
+  "owner": "toyota-yaris-cross",
+  "bucket": "car-photos",
+  "path": "toyota-yaris-cross.png",
+  "legacy": "e6e6546f54b3edc98a0a04d689b656cc",
+  "ai": true,
+  "bytes": 724907
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-amarok",
+  "bucket": "car-photos",
+  "path": "volkswagen-amarok.png",
+  "legacy": "aeda87fb766fbc27a513a4d9f0b2afb3",
+  "ai": true,
+  "bytes": 847731
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-golf",
+  "bucket": "car-photos",
+  "path": "volkswagen-golf.png",
+  "legacy": "a11dab62d771a709f0dfffe541dc1e81",
+  "ai": true,
+  "bytes": 703649
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-id-4",
+  "bucket": "car-photos",
+  "path": "volkswagen-id-4.png",
+  "legacy": "abc4b6e36b494debb51f0eb88c4c3a45",
+  "ai": true,
+  "bytes": 618080
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-jetta",
+  "bucket": "car-photos",
+  "path": "volkswagen-jetta.png",
+  "legacy": "5eb41c7bd630dc2b1e49353e2f3057a0",
+  "ai": true,
+  "bytes": 635310
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-nivus",
+  "bucket": "car-photos",
+  "path": "volkswagen-nivus.png",
+  "legacy": "effe37daaf46ec8ab74ce9077a4b2d25",
+  "ai": true,
+  "bytes": 606221
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-polo",
+  "bucket": "car-photos",
+  "path": "volkswagen-polo.png",
+  "legacy": "f152d911fb5d69a9e6312789e988a79d",
+  "ai": true,
+  "bytes": 651232
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-saveiro",
+  "bucket": "car-photos",
+  "path": "volkswagen-saveiro.png",
+  "legacy": "69ba643082eb3f3f806e26f17bc7bf78",
+  "ai": true,
+  "bytes": 677807
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-t-cross",
+  "bucket": "car-photos",
+  "path": "volkswagen-t-cross.png",
+  "legacy": "ee0cfeac9718bd50a4d2b1227065c96d",
+  "ai": true,
+  "bytes": 652119
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-taos",
+  "bucket": "car-photos",
+  "path": "volkswagen-taos.png",
+  "legacy": "8dbdefbfa0ba31d3a7f4658a13a235ad",
+  "ai": true,
+  "bytes": 692408
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-tera",
+  "bucket": "car-photos",
+  "path": "volkswagen-tera.png",
+  "legacy": "5566e24f94126abeb5f841ae29bff07f",
+  "ai": true,
+  "bytes": 665137
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-tiguan",
+  "bucket": "car-photos",
+  "path": "volkswagen-tiguan.png",
+  "legacy": "bde6e0db383ee8420d0ec9499c50f190",
+  "ai": true,
+  "bytes": 688614
+ },
+ {
+  "kind": "model_photo",
+  "owner": "volkswagen-virtus",
+  "bucket": "car-photos",
+  "path": "volkswagen-virtus.png",
+  "legacy": "72f2abec7a409db555e90333f053154c",
+  "ai": true,
+  "bytes": 1017462
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "agrale",
+  "bucket": "brand-logos",
+  "path": "agrale.png",
+  "legacy": "95e4187e4c9e5694891ac0f0d06413b6",
+  "ai": false,
+  "bytes": 16565
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "astonmartin",
+  "bucket": "brand-logos",
+  "path": "astonmartin.png",
+  "legacy": "9fea3bd93d640bf983d86cfc3d6ad6ac",
+  "ai": false,
+  "bytes": 14059
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "audi",
+  "bucket": "brand-logos",
+  "path": "audi.png",
+  "legacy": "94610b29b85bf6cb1bdd6edbacd41898",
+  "ai": false,
+  "bytes": 11372
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "avatr",
+  "bucket": "brand-logos",
+  "path": "avatr.png",
+  "legacy": "00bacea17a1f0bec2024da9729e88fc4",
+  "ai": false,
+  "bytes": 3352
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "bmw",
+  "bucket": "brand-logos",
+  "path": "bmw.png",
+  "legacy": "2a35b6e14c93fcdedec860020b8626f4",
+  "ai": false,
+  "bytes": 69116
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "byd",
+  "bucket": "brand-logos",
+  "path": "byd.png",
+  "legacy": "c9a66c9078808395486bc10a60e9cd72",
+  "ai": false,
+  "bytes": 7274
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "caoachangan",
+  "bucket": "brand-logos",
+  "path": "caoachangan.png",
+  "legacy": "6427d8c6fbf994e3fb4ea80611e0d1cd",
+  "ai": false,
+  "bytes": 19546
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "chery",
+  "bucket": "brand-logos",
+  "path": "chery.png",
+  "legacy": "87c12460081b88e176d32d21fefe1720",
+  "ai": false,
+  "bytes": 7846
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "chevrolet",
+  "bucket": "brand-logos",
+  "path": "chevrolet.png",
+  "legacy": "ac1f86942d3a8ce2499683a2be86fb93",
+  "ai": false,
+  "bytes": 4964
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "citroen",
+  "bucket": "brand-logos",
+  "path": "citroen.png",
+  "legacy": "0ece9884d445d1d6761bcef024aea6d6",
+  "ai": false,
+  "bytes": 26044
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "denza",
+  "bucket": "brand-logos",
+  "path": "denza.png",
+  "legacy": "6dc89555e651ba104fff8a88f882c67c",
+  "ai": false,
+  "bytes": 140997
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "ferrari",
+  "bucket": "brand-logos",
+  "path": "ferrari.png",
+  "legacy": "ff8a94e3e9ee9e88cd78944b05c7f0a8",
+  "ai": false,
+  "bytes": 26178
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "fiat",
+  "bucket": "brand-logos",
+  "path": "fiat.png",
+  "legacy": "4fd9aacbc7f7ec62f44e2457710cffda",
+  "ai": false,
+  "bytes": 40340
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "ford",
+  "bucket": "brand-logos",
+  "path": "ford.png",
+  "legacy": "076cc3bfb75f57a0dffb5a4abf45b8d7",
+  "ai": false,
+  "bytes": 23712
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "foton",
+  "bucket": "brand-logos",
+  "path": "foton.png",
+  "legacy": "bfecdffe6534877c6614306d07d2631a",
+  "ai": false,
+  "bytes": 17404
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "gac",
+  "bucket": "brand-logos",
+  "path": "gac.png",
+  "legacy": "c474d00e2051c39a8d3b1b20e8ea5c67",
+  "ai": false,
+  "bytes": 93198
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "geely",
+  "bucket": "brand-logos",
+  "path": "geely.png",
+  "legacy": "6dfa2ab7c1244a1a72febe38e3174afc",
+  "ai": false,
+  "bytes": 6905
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "gwm",
+  "bucket": "brand-logos",
+  "path": "gwm.png",
+  "legacy": "863e21805e84120f1958735602bb3f44",
+  "ai": false,
+  "bytes": 141116
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "hitechelectric",
+  "bucket": "brand-logos",
+  "path": "hitechelectric.png",
+  "legacy": "347b5ef7b71ffafde68947aed8612032",
+  "ai": false,
+  "bytes": 20310
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "honda",
+  "bucket": "brand-logos",
+  "path": "honda.png",
+  "legacy": "38dc4902a36206e086a5caf91655e2d2",
+  "ai": false,
+  "bytes": 20779
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "hyundai",
+  "bucket": "brand-logos",
+  "path": "hyundai.png",
+  "legacy": "d7a26d96b4975c5348f6210a011df0e6",
+  "ai": false,
+  "bytes": 16820
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "iveco",
+  "bucket": "brand-logos",
+  "path": "iveco.png",
+  "legacy": "6c967c5469918c1f9dea76d832aba08e",
+  "ai": false,
+  "bytes": 6410
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "jac",
+  "bucket": "brand-logos",
+  "path": "jac.png",
+  "legacy": "5b1d033d8738e3682ebe561cf7b0cc00",
+  "ai": false,
+  "bytes": 12468
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "jaecoo",
+  "bucket": "brand-logos",
+  "path": "jaecoo.png",
+  "legacy": "93313d6d9c2f115dfbd15244b597a8b1",
+  "ai": false,
+  "bytes": 7674
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "jeep",
+  "bucket": "brand-logos",
+  "path": "jeep.png",
+  "legacy": "f85efc494c615158f61f46643a92c196",
+  "ai": false,
+  "bytes": 11950
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "jetour",
+  "bucket": "brand-logos",
+  "path": "jetour.png",
+  "legacy": "04ddd835722436225545b8707e15ab1c",
+  "ai": false,
+  "bytes": 7434
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "kia",
+  "bucket": "brand-logos",
+  "path": "kia.png",
+  "legacy": "d8170473be3a5519300ad313e27f50cf",
+  "ai": false,
+  "bytes": 8450
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "lamborghini",
+  "bucket": "brand-logos",
+  "path": "lamborghini.png",
+  "legacy": "75683878d1d78bbd9c84b82abb4ecd19",
+  "ai": false,
+  "bytes": 156040
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "landrover",
+  "bucket": "brand-logos",
+  "path": "landrover.png",
+  "legacy": "1909f4571ec0402fa368adb3a1f495a7",
+  "ai": false,
+  "bytes": 69175
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "leapmotor",
+  "bucket": "brand-logos",
+  "path": "leapmotor.png",
+  "legacy": "40f8ff8333c48e4a3a7d7a8559aec50d",
+  "ai": false,
+  "bytes": 50131
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "lexus",
+  "bucket": "brand-logos",
+  "path": "lexus.png",
+  "legacy": "82b08a7df3549efefb85a9354814a0a2",
+  "ai": false,
+  "bytes": 11730
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "lotus",
+  "bucket": "brand-logos",
+  "path": "lotus.png",
+  "legacy": "de32318362b8ba9f1352dae887be6d92",
+  "ai": false,
+  "bytes": 102242
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "mclaren",
+  "bucket": "brand-logos",
+  "path": "mclaren.png",
+  "legacy": "1272a8797e239b0dd94931c3de654b24",
+  "ai": false,
+  "bytes": 12128
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "mercedesbenz",
+  "bucket": "brand-logos",
+  "path": "mercedesbenz.png",
+  "legacy": "a5cb8227523e48a1ebb11227affd18ef",
+  "ai": false,
+  "bytes": 93484
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "mg",
+  "bucket": "brand-logos",
+  "path": "mg.png",
+  "legacy": "65d1fc2a243f479e02d47eb1678d2cc0",
+  "ai": false,
+  "bytes": 21156
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "mini",
+  "bucket": "brand-logos",
+  "path": "mini.png",
+  "legacy": "0d34cb86f3b85cbfd33b35e5614f4c69",
+  "ai": false,
+  "bytes": 18990
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "mitsubishi",
+  "bucket": "brand-logos",
+  "path": "mitsubishi.png",
+  "legacy": "a38f1401a25a4b33678ffc54cf6a4ead",
+  "ai": false,
+  "bytes": 10796
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "nissan",
+  "bucket": "brand-logos",
+  "path": "nissan.png",
+  "legacy": "2cc28412f6389bbc1d36c1175bac4f42",
+  "ai": false,
+  "bytes": 18253
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "omoda",
+  "bucket": "brand-logos",
+  "path": "omoda.png",
+  "legacy": "24798b4ee6364e48e589d2058c6f1e0a",
+  "ai": false,
+  "bytes": 32040
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "peugeot",
+  "bucket": "brand-logos",
+  "path": "peugeot.png",
+  "legacy": "85563a33adea4037266ae508991cd3ad",
+  "ai": false,
+  "bytes": 27275
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "porsche",
+  "bucket": "brand-logos",
+  "path": "porsche.png",
+  "legacy": "545227e5e9169ba1aaba5fa6c520b93e",
+  "ai": false,
+  "bytes": 134079
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "ram",
+  "bucket": "brand-logos",
+  "path": "ram.png",
+  "legacy": "61f7bfc50358bac548ca031e6836fddb",
+  "ai": false,
+  "bytes": 28494
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "renault",
+  "bucket": "brand-logos",
+  "path": "renault.png",
+  "legacy": "64ba0ede563eaff75307b72fb1ace53e",
+  "ai": false,
+  "bytes": 19875
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "shineray",
+  "bucket": "brand-logos",
+  "path": "shineray.png",
+  "legacy": "c6deed39452ebf1ea9cb2ba22bcc25e0",
+  "ai": false,
+  "bytes": 125428
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "suzuki",
+  "bucket": "brand-logos",
+  "path": "suzuki.png",
+  "legacy": "5d000b7fd0141d7790043cba679405bb",
+  "ai": false,
+  "bytes": 17178
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "toyota",
+  "bucket": "brand-logos",
+  "path": "toyota.png",
+  "legacy": "a212b03a8c546cceb604afdc8fbcb723",
+  "ai": false,
+  "bytes": 22057
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "volkswagen",
+  "bucket": "brand-logos",
+  "path": "volkswagen.png",
+  "legacy": "268395351212be95618b185d358b11b3",
+  "ai": false,
+  "bytes": 30823
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "volvo",
+  "bucket": "brand-logos",
+  "path": "volvo.png",
+  "legacy": "d0807153c85ec20d9ce543519ec941be",
+  "ai": false,
+  "bytes": 22835
+ },
+ {
+  "kind": "brand_logo",
+  "owner": "zeekr",
+  "bucket": "brand-logos",
+  "path": "zeekr.png",
+  "legacy": "fb69ae22d9e13b6b120574918162c917",
+  "ai": false,
+  "bytes": 14053
+ }
+]
