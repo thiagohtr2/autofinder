@@ -1,5 +1,8 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>giroauto</title>
-<meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
@@ -281,6 +284,10 @@ button,input{font:inherit;color:inherit}
 .nw.al.on.recall:hover{background:#dc2626;color:#fff}
 .cm-form{display:flex;flex-direction:column;gap:8px;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
 .cm-form textarea{width:100%;min-height:92px;max-height:260px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:500 14px/1.5 var(--body);color:var(--ink);background:var(--bg);box-sizing:border-box}
+.auth-form label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.auth-form input{height:42px;border:1px solid var(--line);border-radius:12px;padding:0 12px;font:500 16px var(--body);color:var(--ink);background:var(--bg)}
+.auth-form input:focus{outline:2px solid var(--accent);outline-offset:1px}
+.auth-err{margin:0;font-size:12.5px;font-weight:600;color:#b42318}
 .cm-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .cm-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
 .cm-count{font:600 11.5px var(--mono);color:var(--faint)}
@@ -820,6 +827,10 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="dr-head"><div><h2 id="nfTitle">Notícias</h2><div class="nf-sub" id="nfSub"></div></div><button type="button" class="dr-x" id="nfClose" aria-label="Fechar notícias">✕</button></div>
   <div class="dr-body" id="nfBody"></div>
 </aside>
+<aside class="drawer sheet" id="authPanel" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
+  <div class="dr-head"><h2 id="authTitle">Sua conta</h2><button type="button" class="dr-x" id="authClose" aria-label="Fechar">✕</button></div>
+  <div class="dr-body" id="authBody"></div>
+</aside>
 <aside class="drawer sheet" id="cmPanel" role="dialog" aria-modal="true" aria-labelledby="cmTitle" hidden>
   <div class="dr-head"><div><h2 id="cmTitle">Comentários</h2><div class="nf-sub" id="cmSub"></div></div><button type="button" class="dr-x" id="cmClose" aria-label="Fechar comentários">✕</button></div>
   <div class="dr-body" id="cmBody"></div>
@@ -844,6 +855,8 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </aside>
 <div class="toast" id="toast" hidden></div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.js" integrity="sha384-rwykjmWNwVxboyFmvK9OXN0wj9hnMHA2aAHtits54DuACyCq0M2PrSNxhRb+hvXT" crossorigin="anonymous"></script>
+<script src="/supabase-adapter.js"></script>
 <script>
 let CARS=[];let loaded=false,loadErr=null;
 const ICONS={
@@ -921,7 +934,7 @@ const fmt=n=>"R$ "+n.toLocaleString("pt-BR");
 
 /* ---------- image slot: uploaded photo, otherwise the model name ---------- */
 function carImg(c){const k=c.mid||c.id,ph=photos[k];
-  return ph?`<img src="/_blob/${encodeURIComponent(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}" draggable="false" decoding="async">${photoAI[k]?'<span class="aitag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}`
+  return ph?`<img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}" draggable="false" loading="lazy" decoding="async">${photoAI[k]?'<span class="aitag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}`
            :`<div class="ph" aria-hidden="true"><span class="ph-nm">${esc(c.nm)}</span></div>`}
 /* ---------- state ---------- */
 /* roleta em mil reais, com passo que cresce com o preço: 5 mil até 500 mil, 10 mil até 1 mi, 50 mil até 3 mi, 250 mil acima */
@@ -1057,7 +1070,20 @@ const rowsEl=document.getElementById("rows");
 {const cr=document.getElementById("chiprow"),top=document.querySelector(".top"),logo=top.querySelector(".logo"),mainEl=document.querySelector(".main"),mq=matchMedia("(max-width:760px)");
  const place=()=>{if(mq.matches){if(cr.parentElement!==mainEl)mainEl.insertBefore(cr,mainEl.firstChild)}else if(cr.parentElement!==top)logo.after(cr)};
  place();mq.addEventListener?mq.addEventListener("change",place):mq.addListener(place);}
-document.getElementById("pbtn").onclick=()=>toast("Perfil do usuário em breve: aqui vão ficar suas curtidas e preferências.");
+const authPanel=document.getElementById("authPanel"),authBody=document.getElementById("authBody");
+function renderAuth(){const me=giroAuth.current();
+  if(me){authBody.innerHTML=`<div class="cm-form auth-form"><div><div class="nf-sub">Conectado como</div><b>${esc(me.email)}</b></div>${me.isAdmin?'<div class="nf-sub">Conta master: banco, radar e imagens liberados.</div>':""}<button type="button" class="cm-send" id="authOut">Sair</button></div>`;
+    document.getElementById("authOut").onclick=async()=>{try{await giroAuth.signOut();location.reload()}catch(e){toast("Não deu para sair. Tente de novo.")}};return}
+  authBody.innerHTML=`<form class="cm-form auth-form" id="authForm"><label>E-mail<input type="email" id="authEmail" autocomplete="username" required></label><label>Senha<input type="password" id="authPass" autocomplete="current-password" required></label><p class="auth-err" id="authErr" role="alert" hidden></p><button type="submit" class="cm-send" id="authIn">Entrar</button></form>`;
+  document.getElementById("authForm").onsubmit=async e=>{e.preventDefault();const btn=document.getElementById("authIn"),err=document.getElementById("authErr");btn.disabled=true;err.hidden=true;
+    try{await giroAuth.signIn(document.getElementById("authEmail").value.trim(),document.getElementById("authPass").value);location.reload()}
+    catch(x){err.textContent=x&&x.code==="invalid_credentials"?"E-mail ou senha incorretos.":"Não deu para entrar agora. Tente de novo.";err.hidden=false;btn.disabled=false}};
+}
+function openAuth(){lastFocus=document.activeElement;renderAuth();authPanel.hidden=false;scrim.hidden=false;document.getElementById("authClose").focus()}
+function closeAuth(){authPanel.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+document.getElementById("pbtn").onclick=openAuth;
+document.getElementById("authClose").onclick=closeAuth;
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!authPanel.hidden)closeAuth()});
 if(window.ResizeObserver){new ResizeObserver(()=>fitStage()).observe(rowsEl.parentElement);new ResizeObserver(()=>{dial.geom();dial.draw()}).observe(document.getElementById("dial"))}
 fitStage();
 const ROWH=()=>matchMedia("(max-width:760px)").matches?350:362;
@@ -1088,7 +1114,7 @@ function cardHTML(c,i,anim){
   const na='<b class="na">—</b>';
   return `<article class="card${i===0&&sc>0?" first":""}" data-id="${c.id}">
     <div class="c-up">
-      <div class="c-top c-brandtop"><span class="cb-mk" title="${esc(c.mk)}"><span class="cb-badge${lg?"":" ini"}">${lg?`<img src="/_blob/${encodeURIComponent(lg)}" alt="">`:esc(c.mk.slice(0,2).toUpperCase())}</span><span class="cb-name">${esc(c.mk)}</span></span><span class="rank">${String(i+1).padStart(2,"0")}</span></div>
+      <div class="c-top c-brandtop"><span class="cb-mk" title="${esc(c.mk)}"><span class="cb-badge${lg?"":" ini"}">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(c.mk.slice(0,2).toUpperCase())}</span><span class="cb-name">${esc(c.mk)}</span></span><span class="rank">${String(i+1).padStart(2,"0")}</span></div>
       <div class="stage">${img}<i class="floor"></i>${ph?'<span class="ctag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}
         <div class="edit"><label>Enviar PNG<input type="file" accept="image/png,image/webp,image/jpeg" data-up="${mid}"></label><label class="lg">Logo ${esc(c.mk)}<input type="file" accept="image/png,image/webp,image/svg+xml" data-logo="${bs}"></label>${ph?`<button type="button" data-rm="${mid}">Remover foto</button>`:""}</div>
       </div>
@@ -1265,7 +1291,7 @@ const FUELK={"Elétrico":"eletrico","Híbrido":"hibrido","Híbrido plug-in":"hib
 function optBadge(g,k){
   if(g.key==="k")return `<span class="bdg">${ico(TAGICON[k])}</span>`;
   if(g.key==="fu"&&FUELK[k])return `<span class="bdg">${ico(FUELK[k])}</span>`;
-  if(g.key==="mk"){const lg=logos[brandSlug(k)];return lg?`<span class="bdg"><img src="/_blob/${encodeURIComponent(lg)}" alt=""></span>`:`<span class="bdg ini">${esc(k.slice(0,2).toUpperCase())}</span>`}
+  if(g.key==="mk"){const lg=logos[brandSlug(k)];return lg?`<span class="bdg"><img src="${blobUrl(lg)}" alt=""></span>`:`<span class="bdg ini">${esc(k.slice(0,2).toUpperCase())}</span>`}
   return "";
 }
 function renderDrawer(){
@@ -1305,7 +1331,7 @@ let lastFocus=null;
 function openDrawer(){lastFocus=document.activeElement;DRCAT="mk";renderDrawer();drawer.hidden=false;scrim.hidden=false;document.getElementById("drClose").focus()}
 function closeDrawer(){drawer.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("fbtn").onclick=openDrawer;
-document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
+document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
 document.getElementById("drGo").onclick=closeDrawer;
 document.getElementById("drClear").onclick=()=>{GROUPS.forEach(g=>F[g.key].clear());filtersChanged()};
 addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)return closeImg();if(!sheet.hidden)closeSheet();else if(!drawer.hidden)closeDrawer()});
@@ -1339,8 +1365,8 @@ function renderSearch(){
   qRes=searchCars(q);qSel=qRes.length?0:-1;
   qList.innerHTML=qRes.length?qRes.map((g,i)=>{const ph=photos[g.mid],lg=logos[brandSlug(g.mk)],c=g.pick;
     return `<li class="q-item" role="option" id="qo${i}" data-i="${i}" aria-selected="${i===qSel}">
-      <span class="q-th">${ph?`<img src="/_blob/${encodeURIComponent(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
-      <span class="q-tx"><span class="q-br">${lg?`<img src="/_blob/${encodeURIComponent(lg)}" alt="">`:""}${esc(g.mk)}</span>
+      <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
+      <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
         <span class="q-nm">${hl(g.nm,q)}</span><span class="q-sub">${g.hit?esc(c.ver):`${g.vs.length} ${g.vs.length>1?"versões":"versão"}`}</span></span>
       <span class="q-pr">${g.hit?"":"a partir de<br>"}${fmt(c.p)}</span></li>`}).join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");qIn.setAttribute("aria-activedescendant",qSel>=0?"qo"+qSel:"");
@@ -1441,9 +1467,9 @@ async function openInfo(id){
   setSheetNav(c);
   document.getElementById("shTitle").textContent=`${c.mk} ${c.nm}`;
   {const lg=logos[brandSlug(c.mk)],el=document.getElementById("shLogo");el.hidden=false;el.classList.toggle("ini",!lg);
-   el.innerHTML=lg?`<img src="/_blob/${encodeURIComponent(lg)}" alt="${esc(c.mk)}">`:esc(c.mk.slice(0,2).toUpperCase());el.title=c.mk;}
+   el.innerHTML=lg?`<img src="${blobUrl(lg)}" alt="${esc(c.mk)}">`:esc(c.mk.slice(0,2).toUpperCase());el.title=c.mk;}
   const sib=CARS.filter(x=>x.mid===c.mid).sort((a,b)=>(a.p||0)-(b.p||0));
-  const ph=photos[c.mid||c.id],hero=ph?`<figure class="sh-hero"><img src="/_blob/${encodeURIComponent(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
+  const ph=photos[c.mid||c.id],hero=ph?`<figure class="sh-hero"><img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
   const base=(v,src)=>`${hero}
     <section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
       <div class="sh-price">${c.p?fmt(c.p):NA}</div>
@@ -1613,11 +1639,11 @@ function renderDB(){
   const open=dbOpenAll||!!q?" open":"";
   dbBody.innerHTML=[...byB.keys()].sort((a,b)=>(hasNew(a)?0:1)-(hasNew(b)?0:1)||a.localeCompare(b,"pt-BR")).map(b=>{const mm=byB.get(b),lg=logos[brandSlug(b)],nv=[...mm.values()].reduce((t,v)=>t+v.length,0),pb=pendBy.get(b)||[],al=alertOf(b),rc=recentB.get(b)||0,newBrand=!mm.size;
     const bNoP=[...mm.values()].flat().filter(r=>typeof r.p!=="number").length;
-    return `<details class="dbb"${open||(hasNew(b)?" open":"")}><summary><span class="dbb-badge">${lg?`<img src="/_blob/${encodeURIComponent(lg)}" alt="">`:esc(b.slice(0,2).toUpperCase())}</span><span><span class="dbb-nm">${esc(b)}</span><br><span class="dbb-co">${esc(BRANDCO[b]||"Origem não informada")}</span></span>
+    return `<details class="dbb"${open||(hasNew(b)?" open":"")}><summary><span class="dbb-badge">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(b.slice(0,2).toUpperCase())}</span><span><span class="dbb-nm">${esc(b)}</span><br><span class="dbb-co">${esc(BRANDCO[b]||"Origem não informada")}</span></span>
       <span class="dbb-meta">${al?`<span class="tagx alert">${al} ${al>1?"novidades":"novidade"}</span>`:""}${rc?`<span class="tagx new">${rc} ${rc>1?"novidades adicionadas":"novidade adicionada"}</span>`:""}${newBrand?'<span class="tagx new">marca nova</span>':""}<span class="tagx">${mm.size} ${mm.size>1?"modelos":"modelo"}</span><span class="tagx">${nv} ${nv>1?"versões":"versão"}</span>${bNoP?`<span class="tagx warn">${bNoP} sem preço</span>`:""}${lg?'<span class="tagx ok">logo ✓</span>':'<span class="tagx warn">sem logo</span>'}</span></summary>
       ${pb.map(nvPendBlock).join("")}${[...mm.entries()].sort((a,b2)=>a[1][0].mn.localeCompare(b2[1][0].mn,"pt-BR")).map(([m,vs])=>{vs.sort((a,b2)=>(a.p||0)-(b2.p||0));const ph=photos[m],ps=vs.map(r=>r.p).filter(x=>typeof x==="number"),nn=NEWS[m];
         const fr=vs.some(isFresh);
-        return `<details class="dbm${fr?" pend":""}"${open||(fr?" open":"")}><summary><span class="dbm-th">${ph?`<img src="/_blob/${encodeURIComponent(ph)}" alt="">`:"sem foto"}</span><span><span class="dbm-nm">${vs.some(r=>isRecent(r.nv))?'<span class="tagx new">NOVO</span> ':fr?'<span class="tagx new">NOVO · ATUALIZADO</span> ':""}${esc(vs[0].mn)}</span><br><span class="dbm-sub">${esc(vs[0].b||"—")} · ${vs.length} ${vs.length>1?"versões":"versão"}${ps.length?` · ${fmt(Math.min(...ps))}${ps.length>1&&Math.max(...ps)!==Math.min(...ps)?` a ${fmt(Math.max(...ps))}`:""}`:""}</span></span>
+        return `<details class="dbm${fr?" pend":""}"${open||(fr?" open":"")}><summary><span class="dbm-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:"sem foto"}</span><span><span class="dbm-nm">${vs.some(r=>isRecent(r.nv))?'<span class="tagx new">NOVO</span> ':fr?'<span class="tagx new">NOVO · ATUALIZADO</span> ':""}${esc(vs[0].mn)}</span><br><span class="dbm-sub">${esc(vs[0].b||"—")} · ${vs.length} ${vs.length>1?"versões":"versão"}${ps.length?` · ${fmt(Math.min(...ps))}${ps.length>1&&Math.max(...ps)!==Math.min(...ps)?` a ${fmt(Math.max(...ps))}`:""}`:""}</span></span>
           <span class="dbb-meta">${ph?'<span class="tagx ok">foto ✓</span>':'<span class="tagx warn">sem foto</span>'}${nn?`<span class="tagx">${nn.items.length} notícias</span>`:""}</span></summary>
           <div class="dbv-wrap"><table class="dbv"><thead><tr><th>Versão</th><th>Ano</th><th>Preço</th><th>Tipo</th><th>Combustível</th><th>Câmbio</th><th>Potência</th><th>Situação</th><th>Pontos fortes</th><th></th></tr></thead><tbody>
           ${vs.map(r=>`<tr><td>${isRecent(r.nv)?'<span class="tagx new">novo</span> ':""}${r.rn&&isRecent(r.up)&&!isRecent(r.nv)?'<span class="tagx new">atualizado</span> ':""}${esc(r.v)}</td><td class="num">${r.y||'<span class="na">—</span>'}</td><td class="num">${typeof r.p==="number"?fmt(r.p):'<span class="na">sem preço</span>'}</td><td>${r.pk==="fipe"?"FIPE":r.pk?"Tabela":'<span class="na">—</span>'}</td><td>${esc(r.f||"—")}</td><td>${esc(r.t||"—")}</td><td class="num">${r.cv?Math.round(r.cv)+" cv":'<span class="na">—</span>'}</td><td><span class="st ${esc(r.st||"on_sale")}">${STLBL[r.st||"on_sale"]||esc(r.st)}</span></td><td><span class="ics">${(()=>{const d=deriveTags(r);return d.k.map(k=>`<span class="ic" data-k="${k}" title="${TAGS[k]}: ${esc(d.why[k])}">${ico(k)}</span>`).join("")})()}</span></td><td>${(!r.st||r.st==="on_sale")?`<button type="button" data-dbinfo="${esc(r.i)}">Ficha</button>`:""}</td></tr>`).join("")}
@@ -1934,15 +1960,10 @@ document.getElementById("ipClose").onclick=closeImg;
     db.collection("logos").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const a=(x.data()||{}).asset;if(typeof a==="string"&&/^[0-9a-f]{32}$/.test(a))p[x.id]=a});logos=p;refresh();if(!imgPanel.hidden)renderImgPanel();if(!drawer.hidden)renderDrawer();},()=>{});
     db.collection("photos").onSnapshot(snap=>{const p={},ai={};snap.docs.forEach(x=>{const d=x.data()||{},a=d.asset;if(typeof a==="string"&&/^[0-9a-f]{32}$/.test(a)){p[x.id]=a;if(d.ai===true)ai[x.id]=1}});photos=p;photoAI=ai;refresh();if(!imgPanel.hidden)renderImgPanel();if(!rdPanel.hidden)renderRadar();},()=>{});
     db.collection("votes").onSnapshot(snap=>{
-      const c={};let n=0;
-      snap.docs.forEach(doc=>{const arr=Array.isArray((doc.data()||{}).cars)?doc.data().cars:[];if(arr.length)n++;
-        arr.forEach(id=>{if(typeof id==="string")c[id]=(c[id]||0)+1});
-        if(doc.id===myId)mine=new Set(arr.filter(x=>typeof x==="string"));});
-      counts=c;live=true;
-      if(!snap.metadata.fromCache){clearTimeout(timer);status(`${n} ${n===1?"pessoa votou":"pessoas votaram"}`,true)}
+      counts=snap.counts;mine=new Set(snap.mine);live=true;clearTimeout(timer);
+      status(myId?`${snap.people} ${snap.people===1?"pessoa votou":"pessoas votaram"}`:"Entre para curtir",!!myId);
       refreshCounts();
     },()=>{clearTimeout(timer);status("Curtidas fora do ar",false)});
-    if(!myId)status("Entre para curtir",false);
     if(u&&await u.canEdit()){
       assets=await claude.use("assets");
       if(assets){const eb=document.getElementById("editbtn");eb.hidden=false;
