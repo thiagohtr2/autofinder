@@ -1,0 +1,5207 @@
+[
+ {
+  "marca": "BMW",
+  "modelo": "Série 1",
+  "carroceria": "Hatch",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "M135 xDrive",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 462950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 317 cv",
+    "cambio": "automático dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km) / AutoPapo",
+    "fonte_url": "https://www.webmotors.com.br/bmw/m-135i/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Modelo não apareceu nas páginas do site oficial consultadas (configurador/lista de modelos). Lançado no 1º semestre de 2026 por R$ 459.950 segundo AutoPapo/Auto+ TV; Webmotors mostra R$ 462.950."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "Série 2 Gran Coupé",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "220 M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 334950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (configurador, preços válidos 01-30/11/2026)",
+    "fonte_url": "https://www.bmw.com.br/pt/configurador.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site lista apenas nome e preço; ano/modelo pela Webmotors."
+   },
+   {
+    "versao": "M235 xDrive",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 492950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 4 cilindros 317 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/m235-xdrive-gran-coupe/bmw-m235-xdrive-gran-coupe.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "Série 3",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "320i GP",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 356950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 184 cv",
+    "cambio": null,
+    "combustivel": null,
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial, preços válidos 01-30/11/2026)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/3-series/bmw-3-series-sedan/bmw-serie-3-Seda.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site informa 184 cv, sem cilindrada nem combustível; 2.0 e 'ActiveFlex' aparecem no nome FIPE. Nota de preço indica 2025/2026."
+   },
+   {
+    "versao": "320i Sport GP",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 369950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 184 cv",
+    "cambio": null,
+    "combustivel": null,
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/3-series/bmw-3-series-sedan/bmw-serie-3-Seda.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "320i M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 391950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 184 cv",
+    "cambio": null,
+    "combustivel": null,
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/3-series/bmw-3-series-sedan/bmw-serie-3-Seda.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "330e M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 467950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "híbrido plug-in 292 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/3-series/bmw-3-series-sedan/bmw-serie-3-seda-plug-in-hibrido.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia elétrica de 61 km. Nota de preço 2026/2026; nota de financiamento cita 2025/2026."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "M3",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Competition",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 894950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6 cilindros em linha biturbo 510 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/bmw-3-series-m-models/bmw-m3-seda.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Tração traseira; cilindrada não informada no site."
+   },
+   {
+    "versao": "Competition Track",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1001950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/bmw-3-series-m-models/bmw-m3-seda.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site não traz ficha técnica separada da versão Track."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "Série 4 Cabrio",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "420i Cabrio M Sport",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 514950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 184 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/4-series/4-series-cabrio/bmw-4-series-convertible.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site informa 184 cv sem cilindrada; '2.0' inferido da versão 420i - confirmar."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "M2",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Coupé",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 690950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6 cilindros em linha biturbo 480 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/bmw-2-series-m-models/m2-coupe-2024-g87.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Tração traseira."
+   },
+   {
+    "versao": "Coupé Track",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 744950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/bmw-2-series-m-models/m2-coupe-2024-g87.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site não traz ficha técnica separada da versão Track."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "M4",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Competition Coupé",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 915950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6 cilindros em linha biturbo 510 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/bmw-4-series-m-models/bmw-m4-coupe.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Tração traseira."
+   },
+   {
+    "versao": "Competition Track",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1022950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/bmw-4-series-m-models/bmw-m4-coupe.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site não traz ficha técnica separada da versão Track."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "Série 5",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "530e M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 647950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "híbrido plug-in 299 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/5-series/sedan/bmw-serie-5-seda-phev-visao-geral.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia elétrica de 70 km. Ano 2025/2026. i5 saiu de linha no Brasil (AutoPapo, maio/2026)."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "i4",
+  "carroceria": "Sedã",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "eDrive40 M Sport",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 582950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 340 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/bmw-i/i4/bmw-i4-gran-coupe.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 2025/2025 (possível saldo de estoque). Autonomia: 399 km na tabela e 590 km no FAQ do site (conflito)."
+   },
+   {
+    "versao": "M50 xDrive",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 675950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/bmw",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial só cita a versão no menu, sem preço. Preço da faixa do i4 2025 na Webmotors; disponibilidade a confirmar."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "i7",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "xDrive60 M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1373950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 544 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/bmw-i/i7/bmw-i7.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 467 km (Inmetro). Ano 2025/2026."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "X1",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "sDrive20i GP",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 334950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 204 cv",
+    "cambio": "automático dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial, preços válidos 01-30/11/2026)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/x1/bmw-x1.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site informa 204 cv e câmbio Steptronic de dupla embreagem de 7 marchas; cilindrada pelo nome FIPE."
+   },
+   {
+    "versao": "sDrive20i X Line",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 367950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 204 cv",
+    "cambio": "automático dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/x1/bmw-x1.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "sDrive20i M Sport",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 389950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 204 cv",
+    "cambio": "automático dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/x1/bmw-x1.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "iX1",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "xDrive30 M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 485950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 313 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/bmw-i/ix1/bmw-ix1.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia: 324 km na ficha e 303 km no texto do site (conflito). Ano 2025/2026."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "X2",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "xDrive20i M Sport",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 415950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "turbo 204 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://bmw.com.br/pt/all-models/serie-x/X2/2017/visao-geral.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "M35i xDrive",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 545950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "turbo 317 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial / configurador)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/x2-m35i/bmw-x2-m35ixdrive-visao-geral.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Nota de preço da página do modelo ainda indica validade de 01 a 31/10/2026; o configurador mostra o mesmo valor."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "iX2",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "xDrive30 M Sport",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 495950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 306 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/bmw-i/ix2/bmw-ix2-overview.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "313 cv com boost temporário; autonomia até 327 km (PBEV)."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "X3",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "30 xDrive M Sport",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 528950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "turbo híbrido leve 258 cv",
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/x3/bmw-x3.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site descreve como MHEV a gasolina."
+   },
+   {
+    "versao": "M50 xDrive",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 659950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6 cilindros em linha turbo híbrido leve 398 cv",
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/m-series/x3-m50/bmw-x3-m50.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Página também cita 'preço sugerido de R$ 868.950' numa nota de bônus de troca (aparente erro copiado do X5); configurador confirma R$ 659.950."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "iX3",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "50 xDrive",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 587950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 469 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/ix3/bmw-ix3.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia até 570 km (PBEV). Recarga DC: 320 kW no texto e 372 kW no FAQ (conflito)."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "X5",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "xDrive50e M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 868950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbo híbrido plug-in 489 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/x5/bmw-x5.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "489 cv combinados e autonomia elétrica de 76 km pelo site; 3.0 6 cilindros pela Webmotors. Webmotors também lista versão X-Line (R$ 786.950) que não aparece no site oficial."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "iX5",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "60 xDrive",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/suv/bmw-ix5.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Página no site oficial indica que ainda não está disponível para venda no Brasil; sem preço, ano ou ficha técnica."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "X6",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "xDrive40i M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 892950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros em linha turbo 381 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/x6/bmw-x6.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Página cita também a versão M60i xDrive, mas sem preço; não incluída. Webmotors lista versão Dark Edition (R$ 889.950) ausente do site oficial."
+   }
+  ]
+ },
+ {
+  "marca": "BMW",
+  "modelo": "X7",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "xDrive40i M Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1033950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6 cilindros em linha turbo 381 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "BMW Brasil (site oficial / configurador)",
+    "fonte_url": "https://www.bmw.com.br/pt/all-models/serie-x/x7/bmw-x7.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Conflito no site: destaque e configurador mostram R$ 1.033.950; nota de rodapé mostra R$ 1.026.950 (2025/2026)."
+   }
+  ]
+ },
+ {
+  "marca": "MINI",
+  "modelo": "Cooper Elétrico",
+  "carroceria": "Hatch",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Cooper E",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 264990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Tabela oficial mais recente encontrada é a de outubro/2026."
+   },
+   {
+    "versao": "Cooper SE",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 314990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "JCW E",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 349990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 258 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026 / página JCW)",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/range/john-cooper-works.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 306 km segundo o site."
+   }
+  ]
+ },
+ {
+  "marca": "MINI",
+  "modelo": "Cooper 3 portas",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cooper S Exclusive",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 274990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Cooper S Top",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 314990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "turbo 204 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026 / página do modelo)",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/range/mini-cooper-3-portas.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Cooper S Sport",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 324990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 2026 na tabela (as demais versões S são 2027)."
+   },
+   {
+    "versao": "JCW",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 364990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "JCW 1965 Victory Edition",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 389990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/mini-victory-edition.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Edição especial; tabela chama de 'MINI JCW Victory Edition', site de '1965 Victory Edition'."
+   },
+   {
+    "versao": "JCW GP Inspired Edition",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 394990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 258 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "MINI Brasil (tabela outubro/2026) / Auto+ TV 27/08/2026",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/mini-jcw-gp-inspired-edition.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Motor e potência pela Auto+ TV."
+   }
+  ]
+ },
+ {
+  "marca": "MINI",
+  "modelo": "Cooper 5 portas",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cooper S Exclusive",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 289990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Cooper S Top",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 329990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/range/mini-cooper-5-door.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "MINI",
+  "modelo": "Cooper Cabrio",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Cooper S Cabrio",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 349990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/range/mini-cooper-convertible.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "JCW Cabrio",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 389990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "MINI",
+  "modelo": "Aceman",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "E",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 275990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/range/all-electric-mini-aceman.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "SE",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 325990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "JCW Aceman E",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 359990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Destaque do site mostra 'a partir de R$ 349.990' junto com o JCW E; tabela e texto legal mostram R$ 359.990."
+   }
+  ]
+ },
+ {
+  "marca": "MINI",
+  "modelo": "Countryman",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "JCW Countryman ALL4 Exclusive",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 399990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://www.mini.com.br/content/dam/MINI/marketBR/mini_com_br/pdf/mini_tabela_de_precos_outubro_2026.pdf.asset.1791306327823.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors mostra R$ 398.990 para o Countryman 2027."
+   },
+   {
+    "versao": "JCW Countryman ALL4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 439990,
+    "tipo": "sugerido",
+    "preco_promocional": 399990,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "MINI Brasil (tabela de preços outubro/2026 / site)",
+    "fonte_url": "https://www.mini.com.br/pt_BR/home/range/john-cooper-works.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site chama de 'JCW Countryman ALL4 Top' e anuncia 'de R$ 439.990 por R$ 399.990' (campanha outubro/2026, estoque limitado)."
+   },
+   {
+    "versao": "S ALL4",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": "2.0 turbo híbrido leve",
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Auto+ TV 27/08/2026",
+    "fonte_url": "https://www.automaistv.com.br/novidades/mini-cooper-gp-inspired-edition-countryman-s-all4-2026/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Anunciado para o 4º trimestre de 2026; preço e potência para o Brasil não divulgados."
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "Classe A",
+  "carroceria": "Hatch",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Mercedes-AMG A 45 S 4MATIC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 619900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026, imprensa)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Tabela oficial mais recente publicada (outubro/2026, base São Paulo); ano 25/26."
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "CLA",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "200 AMG Line",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 329900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Geração anterior (25/26), ainda na tabela de outubro/2026."
+   },
+   {
+    "versao": "200 AMG Line (nova geração)",
+    "ano_modelo": null,
+    "status": "pre_order",
+    "preco_reais": 364900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": null,
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (pré-venda, out/2026)",
+    "fonte_url": "https://www.automaistv.com.br/novidades/novo-mercedes-benz-cla-200-abre-pre-venda-no-brasil-por-r-364-900/",
+    "consultado_em": "2026-11-04",
+    "observacao": "3ª geração em pré-venda; motorização para o Brasil não confirmada (na Europa é 1.5 turbo híbrido leve 48V, 184 cv combinados). Sem data de entrega."
+   },
+   {
+    "versao": "Mercedes-AMG CLA 35 4MATIC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 511900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 25/26."
+   },
+   {
+    "versao": "Mercedes-AMG CLA 45 S 4MATIC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 648900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 25/26."
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "GLA",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "200 Progressive",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 362900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "200 AMG Line",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 387900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "200 Night Edition",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 392900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG GLA 35 4MATIC",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 552900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "GLB",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "220 4MATIC Progressive",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 381900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "220 4MATIC AMG Line",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 411900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "220 4MATIC Night Edition",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 416900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG GLB 35 4MATIC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 562900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "Classe C",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "C 200 AMG Line",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 396900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "C 300 AMG Line",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 459900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG C 63 S E Performance",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 928900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "GLC",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "300 4MATIC AMG Line",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 532900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG GLC 43 4MATIC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 699900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG GLC 53 4MATIC+",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 729900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "GLC Coupé",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GLC 300 4MATIC Coupé AMG Line",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 547900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG GLC 43 4MATIC Coupé",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 720900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG GLC 53 4MATIC+ Coupé",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 749900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG GLC 63 S 4MATIC E PERFORMANCE Coupé",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 968900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "Classe E",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "E 300 Exclusive",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 629900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "Classe V",
+  "carroceria": "Minivan",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "V 300 Avantgarde",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 729900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "hibrido",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "V 300 Elegance",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 834900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "hibrido",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "GLE",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "450 d 4MATIC AMG Line",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 784900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "hibrido",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Tabela classifica a propulsão como 'Diesel/Híbrido Leve'."
+   },
+   {
+    "versao": "Mercedes-AMG GLE 53 4MATIC+",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 921900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "GLE Coupé",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "GLE 450 d 4MATIC Coupé AMG Line",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 859900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "hibrido",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Tabela classifica a propulsão como 'Diesel/Híbrido Leve'."
+   },
+   {
+    "versao": "Mercedes-AMG GLE 63 S 4MATIC+ Coupé",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1332900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "GLS",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "450 4MATIC AMG Line",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1070900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "x4",
+     "hibrido",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "AMG GT 4 portas",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "Mercedes-AMG GT 63 S E PERFORMANCE 4-Dr",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 1617900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 25/25 na tabela."
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "Classe S",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Mercedes-AMG S 63 4MATIC E PERFORMANCE",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1731900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Única versão da Classe S na tabela."
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "AMG GT",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Mercedes-AMG GT 63 E PERFORMANCE 2-Dr",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1735900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "SL",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Mercedes-AMG SL 63 S E PERFORMANCE",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1755900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "Classe G",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Mercedes-AMG G 63 4MATIC",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 2153900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Mercedes-AMG G 63 4MATIC MANUFAKTUR",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 2337900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "hibrido"
+    ],
+    "fonte_nome": "Mercedes-Benz Brasil (tabela de preços outubro/2026)",
+    "fonte_url": "https://imprensa.mercedes-benz.com.br/storage/files/lHYvjyp0WF5LtyADSjgCoB7A0BmdDjhhLinfiuTU.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "A3 Sedan",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Advanced 40 TFSI S tronic",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 314990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI",
+    "cambio": "S tronic",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Sorana Audi (concessionária, preço sugerido válido até 30/11/2026) / Webmotors",
+    "fonte_url": "https://www.soranaaudi.com.br/novos/audi-a3-sedan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial da Audi bloqueou a consulta. Faixa Webmotors do A3 (R$ 314.990 a R$ 374.990) confere. Cilindrada pelo nome FIPE; potência não informada."
+   },
+   {
+    "versao": "Performance 40 TFSI S tronic",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 339990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI",
+    "cambio": "S tronic",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Sorana Audi (concessionária, preço sugerido)",
+    "fonte_url": "https://www.soranaaudi.com.br/novos/audi-a3-sedan",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Performance Black 40 TFSI S tronic",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 369990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI",
+    "cambio": "S tronic",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Sorana Audi (concessionária, preço sugerido)",
+    "fonte_url": "https://www.soranaaudi.com.br/novos/audi-a3-sedan",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "A3 Sportback",
+  "carroceria": "Hatch",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Performance 40 TFSI S tronic",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 344990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI",
+    "cambio": "S tronic",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Sorana Audi (concessionária, preço sugerido válido até 30/11/2026)",
+    "fonte_url": "https://www.soranaaudi.com.br/novos/a3-sportback",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial da Audi bloqueou a consulta."
+   },
+   {
+    "versao": "Performance Black 40 TFSI S tronic",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 374990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI",
+    "cambio": "S tronic",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Sorana Audi (concessionária, preço sugerido)",
+    "fonte_url": "https://www.soranaaudi.com.br/novos/a3-sportback",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q3",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Launch Edition 2.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 389990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI 258 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Audi Imprensa (release 15/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/press-release-15",
+    "consultado_em": "2026-11-04",
+    "observacao": "Montado em São José dos Pinhais (PR). FIPE nov/2026: R$ 394.131. Ano/modelo não informado no release."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q3 Sportback",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Launch Edition 2.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 399990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI 258 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Audi Imprensa (release 15/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/press-release-15",
+    "consultado_em": "2026-11-04",
+    "observacao": "Release fala da produção nacional da 3ª geração sem separar carrocerias. FIPE nov/2026: R$ 404.131."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "A5",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "S line 2.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 424990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI 272 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica de Campo Grande 05/05/2026",
+    "fonte_url": "https://acritica.net/automoveis/audi-a5-2026-chega-ao-brasil-em-versao-unica-s-line/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão única do sedã na linha 2026. Webmotors confirma 'a partir de R$ 424.990'. FIPE ainda lista Performance S Edition (R$ 398.079)."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "A5 Avant",
+  "carroceria": "Perua",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "S line 2.0 TFSI quattro S tronic",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 481637,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI",
+    "cambio": "S tronic",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "FIPE 0 km nov/2026 (via tabelacarros.com)",
+    "fonte_url": "https://tabelacarros.com/0km_marca/audi",
+    "consultado_em": "2026-11-04",
+    "observacao": "Sem preço oficial encontrado; disponibilidade atual não confirmada (não aparece na lista Webmotors de 0 km)."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q5",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Dynamic 2.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 449990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI 272 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Audi Imprensa (release 08/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-lanca-q5-e-sq-5-2026-com-tecnologias-ineditas",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026 ainda lista versões Advanced/Prestige (geração/linha anterior)."
+   },
+   {
+    "versao": "S Line 2.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 513990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI 272 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Audi Imprensa (release 08/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-lanca-q5-e-sq-5-2026-com-tecnologias-ineditas",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "SQ5 3.0 V6 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 644990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 TFSI 367 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Audi Imprensa (release 08/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-lanca-q5-e-sq-5-2026-com-tecnologias-ineditas",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q5 Sportback",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Dynamic 2.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 479990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI 272 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Audi Imprensa (release 08/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-lanca-q5-e-sq-5-2026-com-tecnologias-ineditas",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "S Line 2.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 528990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TFSI 272 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Audi Imprensa (release 08/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-lanca-q5-e-sq-5-2026-com-tecnologias-ineditas",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "SQ5 Sportback 3.0 V6 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 659990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 TFSI 367 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Audi Imprensa (release 08/05/2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-lanca-q5-e-sq-5-2026-com-tecnologias-ineditas",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "A6 Sportback e-tron",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Performance Black",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 629990,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "FIPE 0 km nov/2026 (via tabelacarros.com)",
+    "fonte_url": "https://tabelacarros.com/0km_marca/audi",
+    "consultado_em": "2026-11-04",
+    "observacao": "Sem preço oficial encontrado; na Webmotors aparece só em anúncios de lojas (2025/2026, R$ 649.990). Disponibilidade como 0 km a confirmar."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q6 e-tron",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "S Line quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 695990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 428 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Audi Imprensa (linha 2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-anuncia-q6-e-tron-e-q6-sportback-e-tron-2026-1",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 424 km (Inmetro). S Line substitui a Performance Black na linha 2026; FIPE ainda lista versões Performance."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "A6 Avant e-tron",
+  "carroceria": "Perua",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "S Line",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 699990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 367 cv",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/a6-e-tron/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial da Audi bloqueou a consulta. FIPE nov/2026: R$ 706.712."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q6 Sportback e-tron",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "S Line quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 710990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 428 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Audi Imprensa (linha 2026)",
+    "fonte_url": "https://www.audi-imprensa.com.br/pressreleases/audi-do-brasil-anuncia-q6-e-tron-e-q6-sportback-e-tron-2026-1",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 431 km (Inmetro)."
+   },
+   {
+    "versao": "SQ6 Sportback e-tron quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 790990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 517 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/sq6-e-tron/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia até 428 km. FIPE nov/2026: R$ 810.740."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q7",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "S-Line 55 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 729990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 turbo híbrido leve 340 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "espaco",
+     "hibrido"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/q7/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão única. FIPE nov/2026: R$ 735.329."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "Q8",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Performance Black 3.0 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 819990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 turbo híbrido leve 340 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "hibrido",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/q8/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 821.208."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "RS 3 Sedan",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "2.5 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 659990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 TFSI 5 cilindros 400 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/rs3/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 679.187."
+   },
+   {
+    "versao": "Track 2.5 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 714990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 TFSI 5 cilindros 400 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/rs3/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 733.003."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "RS 6 Avant",
+  "carroceria": "Perua",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Performance 4.0 V8 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1251990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo híbrido leve 630 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/rs6/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 1.273.842."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "RS e-tron GT",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Performance quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1334990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km) / Audi Imprensa",
+    "fonte_url": "https://www.webmotors.com.br/audi/rs-e-tron-gt/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Vendido sob encomenda (Audi Imprensa). Potência conflitante na Webmotors (748 cv no texto, 925 cv no resumo). Autonomia até 348 km."
+   }
+  ]
+ },
+ {
+  "marca": "Audi",
+  "modelo": "RS Q8",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Performance 4.0 V8 TFSI quattro",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1339990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo híbrido leve 640 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/audi/rs-q8/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Audi Imprensa anunciou a pré-venda do RS Q8 Performance; FIPE nov/2026: R$ 1.364.907."
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "Macan",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Macan",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 530000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Macan a combustão (2026); preço base sem frete, 'Pacote Brasil'."
+   },
+   {
+    "versao": "T",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 580000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Macan a combustão (2026)."
+   },
+   {
+    "versao": "4 Elétrico",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 690000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 408 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Potência com overboost/launch control."
+   },
+   {
+    "versao": "S",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 690000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Macan a combustão (2026)."
+   },
+   {
+    "versao": "GTS",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 780000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Macan a combustão (2026)."
+   },
+   {
+    "versao": "4S Elétrico",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 810000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 516 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com / configurador pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Potência overboost (Webmotors cita 448 cv nominais). Autonomia 438 km segundo Webmotors."
+   },
+   {
+    "versao": "GTS Elétrico",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 880000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 571 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Potência overboost (Webmotors cita 516 cv nominais)."
+   },
+   {
+    "versao": "Turbo Elétrico",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 970000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 639 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/macan",
+    "consultado_em": "2026-11-04",
+    "observacao": "Potência overboost (Webmotors cita 585 cv nominais)."
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "718",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "Cayman GTS 4.0",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 755000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 6 cilindros 400 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/718",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 2025, provável saldo final (linha 718 a combustão encerrada na Europa)."
+   },
+   {
+    "versao": "Boxster GTS 4.0",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 775000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 6 cilindros 400 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/718",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 2025, provável saldo final."
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "Cayenne",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "E-Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 900000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 híbrido plug-in 470 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Motor e câmbio (Tiptronic S) pela Webmotors."
+   },
+   {
+    "versao": "Electric",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 900000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 442 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche: 442 cv (overboost); Webmotors: 408 cv."
+   },
+   {
+    "versao": "S",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 950000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 2026; potência não informada."
+   },
+   {
+    "versao": "S E-Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 970000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 híbrido plug-in 519 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "GTS",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1080000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 500 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "S Electric",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1080000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 666 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche: 666 cv (overboost); Webmotors: 544 cv."
+   },
+   {
+    "versao": "Turbo Electric",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1410000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 1.156 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche: 1.156 cv (overboost); Webmotors: 857 cv."
+   },
+   {
+    "versao": "Turbo E-Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1500000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 híbrido plug-in 739 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "Cayenne Coupé",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Electric",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 950000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 442 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche: 442 cv (overboost); Webmotors: 408 cv."
+   },
+   {
+    "versao": "Cayenne E-Hybrid Coupé",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 950000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 híbrido plug-in 470 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Cayenne S Coupé",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 975000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 2026; potência não informada."
+   },
+   {
+    "versao": "Cayenne S E-Hybrid Coupé",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1010000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 híbrido plug-in 519 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Cayenne GTS Coupé",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1120000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 500 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Cayenne S Coupé Electric",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1130000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 666 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche: 666 cv (overboost); Webmotors: 544 cv."
+   },
+   {
+    "versao": "Cayenne Turbo Coupé Electric",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1460000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 1.156 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche: 1.156 cv (overboost); Webmotors: 857 cv."
+   },
+   {
+    "versao": "Cayenne Turbo E-Hybrid Coupé",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1540000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 híbrido plug-in 739 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/cayenne",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Cayenne Turbo GT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1620000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 turbo 673 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/porsche/cayenne/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Aparece no site Porsche, mas o preço ficou cortado na consulta; preço e potência pela Webmotors (que também cita 659 cv numa tabela)."
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "911",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Carrera",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 990000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros boxer turbo 394 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": "Motor, potência e câmbio pela Webmotors; ano pela Webmotors."
+   },
+   {
+    "versao": "Carrera Cabriolet",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1040000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros boxer turbo 394 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Carrera T",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1050000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros boxer turbo 394 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Carrera S",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 1080000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros boxer turbo 480 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 2025 no site Porsche; Webmotors 2027 não lista preço desta versão."
+   },
+   {
+    "versao": "Carrera T Cabriolet",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1110000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros boxer turbo 394 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Carrera S Cabriolet",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 1130000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros boxer turbo 480 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano 2025 no site Porsche."
+   },
+   {
+    "versao": "Carrera GTS",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1270000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.6 6 cilindros boxer T-Hybrid 541 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": "541 cv combinados (T-Hybrid, não plug-in)."
+   },
+   {
+    "versao": "Carrera GTS Cabriolet",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1320000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.6 6 cilindros boxer T-Hybrid 541 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Targa 4 GTS",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1440000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.6 6 cilindros boxer T-Hybrid 541 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "GT3",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1670000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 6 cilindros boxer 510 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas (PDK)",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/porsche/911/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão listada no site Porsche, mas o preço não foi exibido na consulta; preço pela Webmotors."
+   },
+   {
+    "versao": "GT3 Touring",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1670000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 6 cilindros boxer 510 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/porsche/911/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche: 'GT3 Pacote Touring'; preço pela Webmotors."
+   },
+   {
+    "versao": "GT3 S/C",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 2060000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 6 cilindros boxer 510 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/porsche/911/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Conversível de edição especial; preço pela Webmotors."
+   },
+   {
+    "versao": "Turbo S",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 2160000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.6 6 cilindros boxer T-Hybrid 711 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Turbo S Cabriolet",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 2210000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.6 6 cilindros boxer T-Hybrid 711 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR) / Webmotors",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/911",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "Panamera",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "4 E-Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 990000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "V6 turbo híbrido plug-in 470 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/panamera",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors indica cilindrada 2.9 no catálogo e 3.0 no texto (conflito)."
+   },
+   {
+    "versao": "4S E-Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1120000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "V6 turbo híbrido plug-in 544 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/panamera",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Turbo E-Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1640000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 turbo híbrido plug-in 680 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/panamera",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Turbo S E-Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1870000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "4.0 V8 turbo híbrido plug-in 782 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas (PDK)",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Porsche Brasil (models.porsche.com pt-BR)",
+    "fonte_url": "https://models.porsche.com/pt-BR/model-start/panamera",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "Taycan",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GTS",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1110000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 700 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km) / Porsche Brasil",
+    "fonte_url": "https://www.webmotors.com.br/porsche/taycan/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site Porsche lista a versão (potência overboost) mas não exibiu preço; preço pela Webmotors. Autonomia 428 km."
+   },
+   {
+    "versao": "Turbo S",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1580000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 952 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km) / Porsche Brasil",
+    "fonte_url": "https://www.webmotors.com.br/porsche/taycan/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço pela Webmotors; autonomia 425 km."
+   },
+   {
+    "versao": "Turbo GT Pacote Weissach",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1690000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 1.034 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km) / Porsche Brasil",
+    "fonte_url": "https://www.webmotors.com.br/porsche/taycan/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço pela Webmotors; autonomia 442 km."
+   }
+  ]
+ },
+ {
+  "marca": "Porsche",
+  "modelo": "Taycan Cross Turismo",
+  "carroceria": "Perua",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Taycan 4S Cross Turismo",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1080000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 598 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km) / Porsche Brasil",
+    "fonte_url": "https://www.webmotors.com.br/porsche/taycan/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço pela Webmotors (site Porsche não exibiu preço); autonomia 415 km."
+   },
+   {
+    "versao": "Taycan Turbo Cross Turismo",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1350000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 884 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km) / Porsche Brasil",
+    "fonte_url": "https://www.webmotors.com.br/porsche/taycan/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço pela Webmotors; autonomia 415 km."
+   }
+  ]
+ },
+ {
+  "marca": "Volvo",
+  "modelo": "EX30",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Plus Single Motor",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 249950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 272 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial) / Motor Show 30/01/2026",
+    "fonte_url": "https://www.volvocars.com/br/cars/ex30-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço atual do site; Motor Show (jan/2026) informava R$ 239.950. Motor Single (272 cv, 250 km) pela Motor Show."
+   },
+   {
+    "versao": "Ultra Twin Motor",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 319950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 428 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial) / Motor Show 30/01/2026",
+    "fonte_url": "https://www.volvocars.com/br/cars/ex30-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Twin Motor Performance (428 cv, 316 km) pela Motor Show; Motor Show citava R$ 310.000."
+   },
+   {
+    "versao": "Cross Country Twin Motor",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 324950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 428 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ex30-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 327 km. Ano/modelo não informado no site."
+   }
+  ]
+ },
+ {
+  "marca": "Volvo",
+  "modelo": "EX40",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Plus",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 345950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ex40-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site não associa motorização à versão: opções Single Motor (238 cv, 364 km) e Twin Motor Performance (442 cv, 393 km)."
+   },
+   {
+    "versao": "Ultra",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 400950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ex40-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Motorização não associada à versão no site."
+   },
+   {
+    "versao": "Black Edition Twin Motor",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 405950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 442 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ex40-electric-black-edition/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 393 km (Inmetro, preliminar). Ano não informado na página da edição; 2027 pela página do EX40."
+   }
+  ]
+ },
+ {
+  "marca": "Volvo",
+  "modelo": "EC40",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Plus",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 350950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ec40-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site não associa motorização à versão: Single Motor (238 cv, 385 km) ou Twin Motor Performance (442 cv, 404 km)."
+   },
+   {
+    "versao": "Ultra",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 405950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ec40-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Black Edition",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ec40-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Aparece no seletor do site sem preço nem ficha técnica."
+   }
+  ]
+ },
+ {
+  "marca": "Volvo",
+  "modelo": "XC60",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Plus T8 AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 469950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo híbrido plug-in 462 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "economico"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/xc60-hybrid/",
+    "consultado_em": "2026-11-04",
+    "observacao": "462 cv combinados (317 cv gasolina + 145 cv elétrico), 48 km de autonomia elétrica (preliminar). Cilindrada 2.0 pela AutoPapo (jan/2024)."
+   },
+   {
+    "versao": "Ultra T8 AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 519950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo híbrido plug-in 462 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/xc60-hybrid/",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volvo",
+  "modelo": "ES90",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Ultra Twin Motor Performance",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 659950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 680 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/es90-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 524 km (Inmetro, preliminar). Site não associa explicitamente o preço ao Twin Motor (único conjunto com dados completos); cita também Single Motor sem dados."
+   }
+  ]
+ },
+ {
+  "marca": "Volvo",
+  "modelo": "XC90",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Plus T8 AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 699950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "turbo híbrido plug-in 462 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/xc90-hybrid/",
+    "consultado_em": "2026-11-04",
+    "observacao": "7 lugares; 47 km de autonomia elétrica (preliminar)."
+   },
+   {
+    "versao": "Ultra T8 AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 749950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "turbo híbrido plug-in 462 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/xc90-hybrid/",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volvo",
+  "modelo": "EX90",
+  "carroceria": "SUV",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "Ultra Twin Motor Performance",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 849950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 517 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Volvo Car Brasil (site oficial)",
+    "fonte_url": "https://www.volvocars.com/br/cars/ex90-electric/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 459 km (Inmetro, preliminar). Ano/modelo 2025 no site; seletor de versões não carregou totalmente."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Discovery Sport",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Landmark 2.0 P250 Flex",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 461455,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 249 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/discovery-sport/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial não exibe preços. Linha 2026 sem o D200 e com Landmark no lugar do R-Dynamic SE. FIPE nov/2026: R$ 467.340."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Range Rover Evoque",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Autobiography 2.0 P250 Flex AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 521610,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 250 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/range-rover-evoque/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial não exibe preços. Ficha Webmotors cita 250 cv e 249 cv. FIPE nov/2026: R$ 508.988."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Range Rover Velar",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Autobiography 2.0 P400e PHEV",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 797920,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo híbrido plug-in 404 cv",
+    "cambio": "automático",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/range-rover-velar/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial não exibe preços. FIPE nov/2026: R$ 777.573."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Discovery",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Metropolitan Edition 3.0 D350 MHEV",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 797990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbodiesel híbrido leve 350 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/discovery/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial não exibe preços. Diesel com sistema híbrido leve (MHEV). FIPE nov/2026: R$ 796.561."
+   },
+   {
+    "versao": "Tempest 3.0 D350 MHEV",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 817990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbodiesel híbrido leve 350 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/discovery/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 817.990."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Defender",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "90 X-Dynamic HSE D350",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 799490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbodiesel híbrido leve 350 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/defender/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial não exibe preços. Diesel MHEV. FIPE nov/2026: R$ 802.405. Defender OCTA não encontrado nas fontes brasileiras consultadas."
+   },
+   {
+    "versao": "110 X-Dynamic HSE D350",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 844990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbodiesel híbrido leve 350 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/defender/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 848.731."
+   },
+   {
+    "versao": "110 Trophy Edition D350",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 899990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbodiesel híbrido leve 350 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/defender/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 904.770."
+   },
+   {
+    "versao": "110 X D350",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 909990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbodiesel híbrido leve 350 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/defender/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 913.130."
+   },
+   {
+    "versao": "130 X D350",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 969990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbodiesel híbrido leve 350 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/defender/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Até 8 lugares. FIPE nov/2026: R$ 973.970."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Range Rover Sport",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Dynamic 3.0 P550e PHEV",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 1063950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 híbrido plug-in 550 cv",
+    "cambio": "automático",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/range-rover-sport/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial não exibe preços. FIPE nov/2026 lista Dynamic HSE P550e (R$ 1.158.914) e Autobiography P550e (R$ 1.297.515), não confirmadas para 2027."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Range Rover",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Autobiography 3.0 P550e PHEV",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 1738950,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbo híbrido plug-in 550 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/range-rover/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial não exibe preços. FIPE nov/2026: R$ 1.744.350."
+   },
+   {
+    "versao": "SV 3.0 P550e PHEV",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 2084350,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 6 cilindros turbo híbrido plug-in 550 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/land-rover/range-rover/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026: R$ 2.104.140."
+   }
+  ]
+ },
+ {
+  "marca": "Land Rover",
+  "modelo": "Range Rover GT",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "(elétrico)",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "Reino Unido",
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "Forbes Brasil / Revista Business 29/10/2026",
+    "fonte_url": "https://revistabusiness.com.br/2026/10/29/range-rover-gt-chega-ao-brasil-em-2027-e-estreia-nova-plataforma-eletrica-da-marca/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Chegada ao Brasil confirmada para 2027, sem data, preço nem versões. Produção em Halewood (Reino Unido), plataforma EMA."
+   }
+  ]
+ },
+ {
+  "marca": "Lexus",
+  "modelo": "UX",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "300h",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 314990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 híbrido 198 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus/ux-300h/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial Lexus não exibe preço do UX (preços de referência Brasília/DF)."
+   }
+  ]
+ },
+ {
+  "marca": "Lexus",
+  "modelo": "ES",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "350h",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 399990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido 247 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Lexus Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.lexus.com.br/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço 'a partir de' com base Brasília/DF, pintura metalizada e frete incluso. Motor pela Webmotors. Webmotors ainda lista ES 300h 2025 (R$ 360.990), provável estoque da geração anterior, não incluído."
+   }
+  ]
+ },
+ {
+  "marca": "Lexus",
+  "modelo": "NX",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "350h Dynamic",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 409990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido 246 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus/nx-350h/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial Lexus não exibe preço do NX."
+   },
+   {
+    "versao": "350h Luxury",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 429990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido 246 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus/nx-350h/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "350h F-Sport",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 474990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido 246 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus/nx-350h/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "450h+",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 499990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (lista 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus",
+    "consultado_em": "2026-11-04",
+    "observacao": "Somente preço da listagem Webmotors (1 versão); ficha técnica não consultada."
+   }
+  ]
+ },
+ {
+  "marca": "Lexus",
+  "modelo": "RZ",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "500e",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 499990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (lista 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus",
+    "consultado_em": "2026-11-04",
+    "observacao": "Somente preço da listagem Webmotors (1 versão); site oficial sem preço."
+   }
+  ]
+ },
+ {
+  "marca": "Lexus",
+  "modelo": "RX",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "450h+",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 614990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (lista 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus",
+    "consultado_em": "2026-11-04",
+    "observacao": "Somente preço da listagem Webmotors (1 versão); ficha técnica não consultada."
+   },
+   {
+    "versao": "500h F-Sport",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 619990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.4 turbo híbrido 371 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/lexus/rx-500h/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors: 371 cv no card; componentes descritos (275+87+54 cv) não batem com o total."
+   }
+  ]
+ }
+]

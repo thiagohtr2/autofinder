@@ -1,0 +1,450 @@
+{
+ "2026-10-15-vw-id-4": {
+  "action": "Nada a fazer",
+  "brand": "Volkswagen",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-10-15",
+  "essential": false,
+  "in_db": "sim",
+  "kind": "novo_carro",
+  "model": "ID.4",
+  "model_id": "volkswagen-id-4",
+  "run": "2026-11-04T22-20",
+  "source": "DGABC",
+  "status": "novo",
+  "summary": "Primeiro elétrico da VW vendido oficialmente em lojas no Brasil. Versão Pro, R$ 299.990, cerca de 389 km de autonomia.",
+  "title": "Volkswagen ID.4 chega às concessionárias por R$ 299.990",
+  "url": "https://www.dgabc.com.br/Noticia/4345333/volkswagen-leva-eletrico-id-4-as-concessionarias-por-rs-299-990"
+ },
+ "2026-10-19-jeep-compass-2027": {
+  "action": "Versões MHEV já cadastradas",
+  "brand": "Jeep",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-10-19",
+  "essential": false,
+  "in_db": "sim",
+  "kind": "nova_versao",
+  "model": "Compass",
+  "model_id": "jeep-compass",
+  "run": "2026-11-04T22-20",
+  "source": "Vrum",
+  "status": "novo",
+  "summary": "Linha 2027 estreia motor 1.3 turbo com sistema híbrido de 48 V, até 11% mais econômico. Preços a partir de R$ 174.990.",
+  "title": "Jeep Compass 2027 ganha híbrido leve (MHEV)",
+  "url": "https://www.vrum.com.br/mercado/2026/10/7523515-novo-jeep-compass-2027-estreia-motor-hibrido-e-fica-ate-11-mais-economico.html"
+ },
+ "2026-10-30-jetour-g700": {
+  "action": "Criar as versões 5 lugares (R$ 469.900) e 6 lugares (R$ 499.900); a versão provisória 'AWD' continua no banco",
+  "add": {
+   "brand_id": "jetour",
+   "model": {
+    "body": "SUV",
+    "name": "G700"
+   },
+   "model_id": "jetour-g700",
+   "versions": [
+    {
+     "highlights": [
+      "potente",
+      "x4",
+      "turbo"
+     ],
+     "id": "jetour-g700-5-lugares",
+     "model_year": 2027,
+     "notes": "Lançado em 30/10/2026. Bateria 34,13 kWh, 73 km elétricos, 0-100 em 4,8 s, garantia 7 anos (fonte: AutoPapo).",
+     "powertrain": {
+      "drive": "Integral",
+      "engine_desc": "2.0 turbo + 2 motores elétricos (PHEV) 905 cv",
+      "fuel": "Gasolina",
+      "power_cv": 905,
+      "propulsion": "híbrido plug-in",
+      "transmission": "Automático",
+      "transmission_raw": "DHT 2 marchas",
+      "turbo": true
+     },
+     "price": {
+      "kind": "sugerido",
+      "ref_month": "2026-11",
+      "value": 469900
+     },
+     "status": "on_sale",
+     "version": "5 lugares 2.0 Turbo PHEV AWD"
+    },
+    {
+     "highlights": [
+      "potente",
+      "x4",
+      "turbo",
+      "espaco"
+     ],
+     "id": "jetour-g700-6-lugares",
+     "model_year": 2027,
+     "notes": "Lançado em 30/10/2026. Bateria 34,13 kWh, 73 km elétricos, 0-100 em 4,8 s, garantia 7 anos (fonte: AutoPapo).",
+     "powertrain": {
+      "drive": "Integral",
+      "engine_desc": "2.0 turbo + 2 motores elétricos (PHEV) 905 cv",
+      "fuel": "Gasolina",
+      "power_cv": 905,
+      "propulsion": "híbrido plug-in",
+      "transmission": "Automático",
+      "transmission_raw": "DHT 2 marchas",
+      "turbo": true
+     },
+     "price": {
+      "kind": "sugerido",
+      "ref_month": "2026-11",
+      "value": 499900
+     },
+     "status": "on_sale",
+     "version": "6 lugares 2.0 Turbo PHEV AWD"
+    }
+   ]
+  },
+  "brand": "Jetour",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-10-30",
+  "essential": true,
+  "in_db": "parcial",
+  "kind": "novo_carro",
+  "model": "G700",
+  "model_id": "jetour-g700",
+  "run": "2026-11-04T22-20",
+  "source": "AutoPapo",
+  "status": "novo",
+  "summary": "SUV off-road híbrido plug-in com 2.0 turbo e dois motores elétricos (905 cv declarados). 5 lugares R$ 469.900; 6 lugares R$ 499.900. 73 km de autonomia elétrica, garantia de 7 anos.",
+  "title": "Jetour G700 é lançado: 905 cv a partir de R$ 469.900",
+  "url": "https://autopapo.com.br/noticia/jetour-g700-lancamento/"
+ },
+ "2026-10-31-dfm-box": {
+  "action": "Box está como 'anunciado' e sem preço; atualizar para à venda com R$ 135.900. Conferir preço do Vigo",
+  "add": {
+   "brand_id": "dfm",
+   "model_id": "dfm-box",
+   "versions": [
+    {
+     "id": "dfm-box-e3",
+     "price": {
+      "kind": "sugerido",
+      "promo": "preço especial até 31/12/2026 (depois R$ 138.900)",
+      "ref_month": "2026-11",
+      "value": 135900
+     },
+     "status": "on_sale"
+    }
+   ]
+  },
+  "brand": "DFM",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-10-31",
+  "essential": true,
+  "in_db": "parcial",
+  "kind": "novo_carro",
+  "model": "Box",
+  "model_id": "dfm-box",
+  "run": "2026-11-04T22-20",
+  "source": "TV Sim Brasil",
+  "status": "novo",
+  "summary": "Hatch elétrico compacto da DFM (Dongfeng) chega às lojas por R$ 135.900 e também é vendido direto pelo Mercado Livre. Rival de BYD Dolphin e Geely EX2.",
+  "title": "DFM Box começa a ser vendido, também pelo Mercado Livre",
+  "url": "https://tvsimbrasil.com.br/brasil/automotivo/noticia/2026/11/04/omoda-e5-suv-eletrico-chega-brasil"
+ },
+ "2026-11-01-baic-arcfox-t1": {
+  "action": "Versão Pro sem preço no banco (R$ 129.900) e status ainda em pré-venda",
+  "add": {
+   "brand_id": "baic",
+   "model_id": "baic-arcfox-t1",
+   "versions": [
+    {
+     "id": "baic-arcfox-t1-pro",
+     "price": {
+      "kind": "sugerido",
+      "promo": "preço de lançamento até 31/12/2026 ou 600 unidades",
+      "ref_month": "2026-11",
+      "value": 129900
+     },
+     "status": "on_sale"
+    },
+    {
+     "id": "baic-arcfox-t1-max",
+     "price": {
+      "kind": "sugerido",
+      "promo": "preço de lançamento até 31/12/2026 ou 600 unidades",
+      "ref_month": "2026-11",
+      "value": 139900
+     },
+     "status": "on_sale"
+    }
+   ]
+  },
+  "applied_at": "2026-11-05T10:31:59.485Z",
+  "applied_brand": "BAIC",
+  "applied_log": [
+   "Pro: preço sem preço → R$ 129.900; situação Pré-venda → À venda",
+   "Max: situação Pré-venda → À venda"
+  ],
+  "applied_model": "Arcfox T1",
+  "brand": "BAIC",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-11-01",
+  "essential": true,
+  "in_db": "parcial",
+  "kind": "marca",
+  "model": "Arcfox T1",
+  "model_id": "baic-arcfox-t1",
+  "run": "2026-11-04T22-20",
+  "source": "TV Sim Brasil",
+  "status": "feito",
+  "summary": "Nova marca chinesa estreia com o crossover elétrico Arcfox T1: Pro R$ 129.900 e Max R$ 139.900 (preço de lançamento até 31/12 ou 600 unidades). 95 cv, 42,3 kWh, 283 km de autonomia Inmetro. Primeiras entregas em 11/11; meta de 50 concessionárias.",
+  "title": "BAIC estreia no Brasil com o Arcfox T1",
+  "url": "https://tvsimbrasil.com.br/brasil/automotivo/noticia/2026/11/01/baic-estreia-brasil-eletrico-arcfox-t1"
+ },
+ "2026-11-01-cadillac-entregas": {
+  "action": "Quando as entregas começarem, mudar status de pré-venda para à venda",
+  "brand": "Cadillac",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-11-01",
+  "essential": false,
+  "in_db": "sim",
+  "kind": "evento",
+  "model": "Lyriq / Vistiq",
+  "model_id": "cadillac-lyriq",
+  "run": "2026-11-04T22-20",
+  "source": "Carpedia",
+  "status": "novo",
+  "summary": "Os SUVs elétricos da Cadillac, em pré-venda desde setembro (até R$ 990 mil), começam a ser entregues a partir de novembro.",
+  "title": "Cadillac começa entregas de Lyriq e Vistiq em novembro",
+  "url": "https://www.carpedia.com.br/lancamentos"
+ },
+ "2026-11-03-gwm-tank-400": {
+  "action": "Confirmar preço oficial e mudar status para à venda em 12/11",
+  "brand": "GWM",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-11-03",
+  "essential": true,
+  "in_db": "sim",
+  "kind": "novo_carro",
+  "model": "Tank 400",
+  "model_id": "gwm-tank-400",
+  "run": "2026-11-04T22-20",
+  "source": "Encontracarros",
+  "status": "novo",
+  "summary": "SUV híbrido plug-in flex 4x4 de 421 cv. Reserva de R$ 9 mil desde 3/11 (site da GWM, Mercado Livre e lojas). Preço não oficial de R$ 399 mil; tabela oficial ainda não divulgada. Vendas ao público a partir de 12/11.",
+  "title": "GWM Tank 400 abre pré-venda; vendas em 12/11",
+  "url": "https://www.encontracarros.com.br/gwm-tank-400-chega-ao-brasil/"
+ },
+ "2026-11-04-byd-ti7": {
+  "action": "Só acompanhar; cadastrar quando houver versões e preços no Brasil",
+  "brand": "BYD",
+  "created_at": "2026-11-05T08:20:00-03:00",
+  "date": "2026-11-04",
+  "essential": false,
+  "in_db": "nao",
+  "kind": "evento",
+  "model": "Ti7",
+  "model_id": "byd-ti7",
+  "run": "2026-11-05T08-20",
+  "source": "Notícias Automotivas",
+  "status": "novo",
+  "summary": "Em 4/11/2026 a Notícias Automotivas (citando CNN Brasil Auto) informou que a BYD trará no próximo ano o Ti7 (Fang Cheng Bao na China): SUV de 5,15 m, 1.5 turbo + 2 motores elétricos (DM-p), 354 cv, tração integral, bateria 35,6 kWh, 115 km elétricos e 1.015 km combinados. Preço não confirmado (estimativa da matéria: abaixo de R$ 304 mil).",
+  "title": "BYD confirma SUV híbrido Ti7 para o Brasil em 2027",
+  "url": "https://www.noticiasautomotivas.com.br/byd-confirma-suv-hibrido-de-mais-de-cinco-metros-para-o-brasil-no-proximo-ano-com-porte-de-denza-b5-e-autonomia-combinada-de-1-015-km/"
+ },
+ "2026-11-04-freelander-chery": {
+  "action": "Só acompanhar; não cadastrar até haver confirmação para o Brasil",
+  "brand": "Chery",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-11-04",
+  "essential": false,
+  "in_db": "nao",
+  "kind": "evento",
+  "model": "Freelander",
+  "run": "2026-11-04T22-20",
+  "source": "TV Sim Brasil",
+  "status": "novo",
+  "summary": "SUV desenvolvido com a Land Rover sob a nova marca Freelander foi revelado na China. Ainda não há confirmação de venda no Brasil.",
+  "title": "Chery revela o primeiro modelo da Freelander",
+  "url": "https://tvsimbrasil.com.br/brasil/automotivo/noticia/2026/11/04/omoda-e5-suv-eletrico-chega-brasil"
+ },
+ "2026-11-04-lexus-es-500e": {
+  "action": "Criar a versão 500e elétrica (R$ 549.990) no modelo ES; o 350h continua como está",
+  "add": {
+   "brand_id": "lexus",
+   "model": {
+    "body": "Sedã",
+    "name": "ES"
+   },
+   "model_id": "lexus-es",
+   "versions": [
+    {
+     "highlights": [
+      "potente",
+      "economico",
+      "eletrico",
+      "x4",
+      "tech"
+     ],
+     "id": "lexus-es-500e",
+     "model_year": null,
+     "notes": "Notícias Automotivas/Piranot (4–5/11/2026): bateria 74,7 kWh, até 378 km (Inmetro), DC 10–80% em 28 min; torque combinado não divulgado.",
+     "powertrain": {
+      "drive": "Integral",
+      "engine_desc": "2 motores elétricos (227 cv + 98 cv) 343 cv",
+      "fuel": "Elétrico",
+      "power_cv": 343,
+      "propulsion": "elétrico",
+      "torque_kgfm": null,
+      "transmission": "Automático",
+      "turbo": false
+     },
+     "price": {
+      "kind": "sugerido",
+      "promo": null,
+      "ref_month": "2026-11",
+      "value": 549990
+     },
+     "status": "on_sale",
+     "version": "500e"
+    }
+   ]
+  },
+  "brand": "Lexus",
+  "created_at": "2026-11-05T08:20:00-03:00",
+  "date": "2026-11-04",
+  "essential": true,
+  "in_db": "parcial",
+  "kind": "novo_carro",
+  "model": "ES 500e",
+  "model_id": "lexus-es",
+  "run": "2026-11-05T08-20",
+  "source": "Notícias Automotivas",
+  "status": "novo",
+  "summary": "Em 4/11/2026 (Quatro Rodas, repercutido por Notícias Automotivas e Piranot) a Lexus começou a vender no Brasil o ES 500e, seu primeiro sedã elétrico, em versão única topo de linha por R$ 549.990. Dois motores (227 cv dianteiro + 98 cv traseiro), 343 cv combinados, tração integral Direct4, bateria de 74,7 kWh, até 378 km de autonomia (Inmetro) e recarga DC de 10% a 80% em 28 min. Ano-modelo, garantia e data de entregas não informados.",
+  "title": "Lexus ES 500e chega às lojas por R$ 549.990",
+  "url": "https://www.noticiasautomotivas.com.br/lexus-estreia-seu-primeiro-seda-eletrico-no-brasil-com-tracao-integral-e-343-cv-o-es-500e-chega-as-lojas-por-r-549-990/"
+ },
+ "2026-11-04-omoda-e5": {
+  "action": "Já cadastrado com preço cheio; avaliar mostrar preço de lançamento até o fim da promoção",
+  "brand": "Omoda",
+  "created_at": "2026-11-04T22:20:00-03:00",
+  "date": "2026-11-04",
+  "essential": true,
+  "in_db": "parcial",
+  "kind": "novo_carro",
+  "model": "E5",
+  "model_id": "omoda-e5",
+  "run": "2026-11-04T22-20",
+  "source": "TV Sim Brasil",
+  "status": "novo",
+  "summary": "SUV elétrico de 210 cv lançado em 4/11, nas concessionárias a partir de 5/11. Elite R$ 149.990 (depois R$ 159.990) e Prestige R$ 179.990 (depois R$ 184.990). Bateria de 50,6 ou 60,9 kWh, 7 airbags, ADAS 2.5, garantia de 7 anos.",
+  "title": "Omoda E5 chega às lojas com preço promocional",
+  "url": "https://tvsimbrasil.com.br/brasil/automotivo/noticia/2026/11/04/omoda-e5-suv-eletrico-chega-brasil"
+ },
+ "2026-11-04-renault-oroch": {
+  "action": "Só acompanhar: marcar como 'discontinued' quando a Renault confirmar o fim no Brasil. Conferir motor da Iconic no banco (está 1.6 SCe manual; matéria diz 1.3 TCe CVT)",
+  "brand": "Renault",
+  "created_at": "2026-11-05T08:20:00-03:00",
+  "date": "2026-11-04",
+  "essential": false,
+  "in_db": "sim",
+  "kind": "fim_de_linha",
+  "model": "Oroch",
+  "model_id": "renault-oroch",
+  "run": "2026-11-05T08-20",
+  "source": "Notícias Automotivas",
+  "status": "novo",
+  "summary": "Em 4/11/2026 a Notícias Automotivas (via Webmotors) mostrou a Oroch Iconic, tabelada em R$ 147.690, anunciada por R$ 116.900 em loja (outras ofertas perto de R$ 120 mil), enquanto a picape se despede: o fim de linha foi declarado oficialmente pela Renault na Argentina e a Niagara chega como substituta. Data de saída de linha no Brasil ainda não informada. A matéria descreve a Iconic com motor 1.3 TCe (156/163 cv) e câmbio CVT.",
+  "title": "Renault Oroch em despedida: Iconic anunciada por R$ 116.900",
+  "url": "https://www.noticiasautomotivas.com.br/na-despedida-da-renault-oroch-versao-iconic-cai-para-r-116-900-e-fica-r-90-abaixo-da-fiat-strada-endurance-na-tabela-de-precos/"
+ },
+ "2026-11-05-mg-s5": {
+  "action": "Trocar preço Fipe pelo preço da MG: Comfort R$ 179.800 e Luxury R$ 219.800 (promoção até 30/11)",
+  "add": {
+   "brand_id": "mg",
+   "model_id": "mg-s5",
+   "versions": [
+    {
+     "id": "mg-s5-comfort",
+     "price": {
+      "kind": "sugerido",
+      "promo": "oferta até 30/11/2026 (antes R$ 218.800)",
+      "ref_month": "2026-11",
+      "value": 179800
+     }
+    },
+    {
+     "id": "mg-s5-luxury",
+     "price": {
+      "kind": "sugerido",
+      "promo": "oferta até 30/11/2026 (redução de R$ 19 mil)",
+      "ref_month": "2026-11",
+      "value": 219800
+     }
+    }
+   ]
+  },
+  "brand": "MG",
+  "created_at": "2026-11-05T08:20:00-03:00",
+  "date": "2026-11-05",
+  "essential": false,
+  "in_db": "parcial",
+  "kind": "preco",
+  "model": "S5",
+  "model_id": "mg-s5",
+  "run": "2026-11-05T08-20",
+  "source": "Notícias Automotivas",
+  "status": "novo",
+  "summary": "Em 5/11/2026 a Notícias Automotivas informou oferta da MG válida até 30/11: S5 Comfort (já ano/modelo 2027) de R$ 218.800 por R$ 179.800 e S5 Luxury com redução de R$ 19 mil, por R$ 219.800. Taxa zero em 36 meses com 60% de entrada na Comfort. Motor traseiro de 205 cv e 35,7 kgfm, bateria 62,1 kWh úteis, 351 km (Inmetro), garantia 7 anos (bateria 8 anos).",
+  "title": "MG corta até R$ 39 mil do S5 elétrico até 30/11",
+  "url": "https://www.noticiasautomotivas.com.br/mg-corta-r-39-mil-do-s5-eletrico-e-coloca-suv-de-205-cv-perto-dos-compactos-a-combustao-agora-ele-custa-r-190-menos-que-o-nissan-kicks/"
+ },
+ "2026-11-05-toyota-corolla-precos": {
+  "action": "Atualizar preços: Corolla XEi para R$ 159.990 (banco: R$ 178.990), Corolla Cross XRE para R$ 169.990 (banco: R$ 194.790) e SW4 SRX Platinum 5 lugares para R$ 359.990 (banco: R$ 417.590), como preço de campanha",
+  "add": {
+   "brand_id": "toyota",
+   "model_id": "toyota-corolla",
+   "versions": [
+    {
+     "id": "corolla",
+     "price": {
+      "kind": "sugerido",
+      "promo": "preço de campanha Toyota (nov/2026), sem data de término informada; antes R$ 169.990 na campanha de outubro",
+      "ref_month": "2026-11",
+      "value": 159990
+     }
+    },
+    {
+     "id": "corollacross",
+     "price": {
+      "kind": "sugerido",
+      "promo": "preço de campanha Toyota (nov/2026), sem data de término informada; antes R$ 174.990",
+      "ref_month": "2026-11",
+      "value": 169990
+     }
+    },
+    {
+     "id": "toyota-hilux-sw4-srx-platinum-5-lugares-2-8-turbo-diesel-4x4-at",
+     "price": {
+      "kind": "sugerido",
+      "promo": "preço de campanha Toyota (nov/2026), sem data de término informada; antes R$ 369.990 na campanha de outubro",
+      "ref_month": "2026-11",
+      "value": 359990
+     }
+    }
+   ]
+  },
+  "brand": "Toyota",
+  "created_at": "2026-11-05T08:20:00-03:00",
+  "date": "2026-11-05",
+  "essential": true,
+  "in_db": "parcial",
+  "kind": "preco",
+  "model": "Corolla / Corolla Cross / SW4",
+  "model_id": "toyota-corolla",
+  "run": "2026-11-05T08-20",
+  "source": "Notícias Automotivas",
+  "status": "novo",
+  "summary": "Em 5/11/2026 a Notícias Automotivas (citando CNN Brasil Auto) informou nova rodada de ajustes da Toyota: Corolla XEi 2.0 de R$ 169.990 (campanha de outubro) para R$ 159.990; Corolla Cross XRE de R$ 174.990 para R$ 169.990; SW4 Platinum 5 lugares 2.8 diesel de R$ 369.990 para R$ 359.990. Data de término não informada. Yaris Cross XRX e XRE híbrida seguem a R$ 159.990.",
+  "title": "Toyota reduz preços de Corolla, Corolla Cross e SW4",
+  "url": "https://www.noticiasautomotivas.com.br/toyota-volta-a-mexer-nos-precos-de-corolla-corolla-cross-e-sw4-no-brasil-e-seda-fica-r-10-mil-abaixo-do-suv-com-o-mesmo-motor/"
+ }
+}

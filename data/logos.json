@@ -1,0 +1,198 @@
+{
+ "agrale": {
+  "asset": "95e4187e4c9e5694891ac0f0d06413b6",
+  "at": 1793839016968
+ },
+ "astonmartin": {
+  "asset": "9fea3bd93d640bf983d86cfc3d6ad6ac",
+  "at": 1793839017905
+ },
+ "audi": {
+  "asset": "94610b29b85bf6cb1bdd6edbacd41898",
+  "at": 1793839018774
+ },
+ "avatr": {
+  "asset": "00bacea17a1f0bec2024da9729e88fc4",
+  "at": 1793839019677
+ },
+ "bmw": {
+  "asset": "2a35b6e14c93fcdedec860020b8626f4",
+  "at": 1793839020661
+ },
+ "byd": {
+  "asset": "c9a66c9078808395486bc10a60e9cd72",
+  "at": 1793813386216
+ },
+ "caoachangan": {
+  "asset": "6427d8c6fbf994e3fb4ea80611e0d1cd",
+  "at": 1793839031344
+ },
+ "chery": {
+  "asset": "87c12460081b88e176d32d21fefe1720",
+  "at": 1793839032217
+ },
+ "chevrolet": {
+  "asset": "ac1f86942d3a8ce2499683a2be86fb93",
+  "at": 1793813384528
+ },
+ "citroen": {
+  "asset": "0ece9884d445d1d6761bcef024aea6d6",
+  "at": 1793813383348
+ },
+ "denza": {
+  "asset": "6dc89555e651ba104fff8a88f882c67c",
+  "at": 1793839040636
+ },
+ "ferrari": {
+  "asset": "ff8a94e3e9ee9e88cd78944b05c7f0a8",
+  "at": 1793839041572
+ },
+ "fiat": {
+  "asset": "4fd9aacbc7f7ec62f44e2457710cffda",
+  "at": 1793813382108
+ },
+ "ford": {
+  "asset": "076cc3bfb75f57a0dffb5a4abf45b8d7",
+  "at": 1793813380549
+ },
+ "foton": {
+  "asset": "bfecdffe6534877c6614306d07d2631a",
+  "at": 1793838772350
+ },
+ "gac": {
+  "asset": "c474d00e2051c39a8d3b1b20e8ea5c67",
+  "at": 1793838771499
+ },
+ "geely": {
+  "asset": "6dfa2ab7c1244a1a72febe38e3174afc",
+  "at": 1793838770373
+ },
+ "gwm": {
+  "asset": "863e21805e84120f1958735602bb3f44",
+  "at": 1793813379294
+ },
+ "hitechelectric": {
+  "asset": "347b5ef7b71ffafde68947aed8612032",
+  "at": 1793838769433
+ },
+ "honda": {
+  "asset": "38dc4902a36206e086a5caf91655e2d2",
+  "at": 1793813378002
+ },
+ "hyundai": {
+  "asset": "d7a26d96b4975c5348f6210a011df0e6",
+  "at": 1793813376487
+ },
+ "iveco": {
+  "asset": "6c967c5469918c1f9dea76d832aba08e",
+  "at": 1793838768436
+ },
+ "jac": {
+  "asset": "5b1d033d8738e3682ebe561cf7b0cc00",
+  "at": 1793838767554
+ },
+ "jaecoo": {
+  "asset": "93313d6d9c2f115dfbd15244b597a8b1",
+  "at": 1793838766660
+ },
+ "jeep": {
+  "asset": "f85efc494c615158f61f46643a92c196",
+  "at": 1793813375348
+ },
+ "jetour": {
+  "asset": "04ddd835722436225545b8707e15ab1c",
+  "at": 1793838765729
+ },
+ "kia": {
+  "asset": "d8170473be3a5519300ad313e27f50cf",
+  "at": 1793813373416
+ },
+ "lamborghini": {
+  "asset": "75683878d1d78bbd9c84b82abb4ecd19",
+  "at": 1793838764713
+ },
+ "landrover": {
+  "asset": "1909f4571ec0402fa368adb3a1f495a7",
+  "at": 1793838763437
+ },
+ "leapmotor": {
+  "asset": "40f8ff8333c48e4a3a7d7a8559aec50d",
+  "at": 1793813372249
+ },
+ "lexus": {
+  "asset": "82b08a7df3549efefb85a9354814a0a2",
+  "at": 1793838762462
+ },
+ "lotus": {
+  "asset": "de32318362b8ba9f1352dae887be6d92",
+  "at": 1793838761535
+ },
+ "mclaren": {
+  "asset": "1272a8797e239b0dd94931c3de654b24",
+  "at": 1793838760498
+ },
+ "mercedesbenz": {
+  "asset": "a5cb8227523e48a1ebb11227affd18ef",
+  "at": 1793838759457
+ },
+ "mg": {
+  "asset": "65d1fc2a243f479e02d47eb1678d2cc0",
+  "at": 1793838758438
+ },
+ "mini": {
+  "asset": "0d34cb86f3b85cbfd33b35e5614f4c69",
+  "at": 1793838757531
+ },
+ "mitsubishi": {
+  "asset": "a38f1401a25a4b33678ffc54cf6a4ead",
+  "at": 1793813371165
+ },
+ "nissan": {
+  "asset": "2cc28412f6389bbc1d36c1175bac4f42",
+  "at": 1793813370136
+ },
+ "omoda": {
+  "asset": "24798b4ee6364e48e589d2058c6f1e0a",
+  "at": 1793838756611
+ },
+ "peugeot": {
+  "asset": "85563a33adea4037266ae508991cd3ad",
+  "at": 1793813369062
+ },
+ "porsche": {
+  "asset": "545227e5e9169ba1aaba5fa6c520b93e",
+  "at": 1793838755696
+ },
+ "ram": {
+  "asset": "61f7bfc50358bac548ca031e6836fddb",
+  "at": 1793813368056
+ },
+ "renault": {
+  "asset": "64ba0ede563eaff75307b72fb1ace53e",
+  "at": 1793813366830
+ },
+ "shineray": {
+  "asset": "c6deed39452ebf1ea9cb2ba22bcc25e0",
+  "at": 1793838754628
+ },
+ "suzuki": {
+  "asset": "5d000b7fd0141d7790043cba679405bb",
+  "at": 1793813365212
+ },
+ "toyota": {
+  "asset": "a212b03a8c546cceb604afdc8fbcb723",
+  "at": 1793813363944
+ },
+ "volkswagen": {
+  "asset": "268395351212be95618b185d358b11b3",
+  "at": 1793813362491
+ },
+ "volvo": {
+  "asset": "d0807153c85ec20d9ce543519ec941be",
+  "at": 1793838753552
+ },
+ "zeekr": {
+  "asset": "fb69ae22d9e13b6b120574918162c917",
+  "at": 1793838751986
+ }
+}

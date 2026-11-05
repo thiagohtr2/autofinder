@@ -1,0 +1,267 @@
+{
+ "renault": {
+  "name": "Renault",
+  "group": "Renault Group",
+  "country": "França"
+ },
+ "fiat": {
+  "name": "Fiat",
+  "group": "Stellantis",
+  "country": "Itália"
+ },
+ "citroen": {
+  "name": "Citroën",
+  "group": "Stellantis",
+  "country": "França"
+ },
+ "hyundai": {
+  "name": "Hyundai",
+  "group": "Hyundai Motor Group",
+  "country": "Coreia do Sul"
+ },
+ "volkswagen": {
+  "name": "Volkswagen",
+  "group": "Grupo Volkswagen",
+  "country": "Alemanha"
+ },
+ "chevrolet": {
+  "name": "Chevrolet",
+  "group": "General Motors",
+  "country": "EUA"
+ },
+ "peugeot": {
+  "name": "Peugeot",
+  "group": "Stellantis",
+  "country": "França"
+ },
+ "byd": {
+  "name": "BYD",
+  "group": "BYD",
+  "country": "China"
+ },
+ "toyota": {
+  "name": "Toyota",
+  "group": "Toyota",
+  "country": "Japão"
+ },
+ "honda": {
+  "name": "Honda",
+  "group": "Honda",
+  "country": "Japão"
+ },
+ "jeep": {
+  "name": "Jeep",
+  "group": "Stellantis",
+  "country": "EUA"
+ },
+ "gwm": {
+  "name": "GWM",
+  "group": "Great Wall Motor",
+  "country": "China"
+ },
+ "ford": {
+  "name": "Ford",
+  "group": "Ford",
+  "country": "EUA"
+ },
+ "ram": {
+  "name": "RAM",
+  "group": "Stellantis",
+  "country": "EUA"
+ },
+ "leapmotor": {
+  "name": "Leapmotor",
+  "group": "Stellantis / Leapmotor",
+  "country": "China"
+ },
+ "nissan": {
+  "name": "Nissan",
+  "group": "Aliança Renault-Nissan",
+  "country": "Japão"
+ },
+ "mitsubishi": {
+  "name": "Mitsubishi",
+  "group": "Mitsubishi (HPE no Brasil)",
+  "country": "Japão"
+ },
+ "suzuki": {
+  "name": "Suzuki",
+  "group": "Suzuki (HPE no Brasil)",
+  "country": "Japão"
+ },
+ "kia": {
+  "name": "Kia",
+  "group": "Hyundai Motor Group",
+  "country": "Coreia do Sul"
+ },
+ "chery": {
+  "name": "Chery",
+  "group": "CAOA / Chery Automobile",
+  "country": "China"
+ },
+ "omoda": {
+  "name": "Omoda",
+  "group": "Omoda & Jaecoo / Chery Automobile",
+  "country": "China"
+ },
+ "jaecoo": {
+  "name": "Jaecoo",
+  "group": "Omoda & Jaecoo / Chery Automobile",
+  "country": "China"
+ },
+ "jac": {
+  "name": "JAC",
+  "group": "SHC (importador) / JAC Motors (Anhui Jianghuai)",
+  "country": "China"
+ },
+ "jetour": {
+  "name": "Jetour",
+  "group": "Chery Automobile",
+  "country": "China"
+ },
+ "ferrari": {
+  "name": "Ferrari",
+  "group": "Ferrari N.V.",
+  "country": "Itália"
+ },
+ "lamborghini": {
+  "name": "Lamborghini",
+  "group": "Volkswagen Group (Audi)",
+  "country": "Itália"
+ },
+ "mclaren": {
+  "name": "McLaren",
+  "group": "McLaren Group",
+  "country": "Reino Unido"
+ },
+ "aston-martin": {
+  "name": "Aston Martin",
+  "group": "Aston Martin Lagonda",
+  "country": "Reino Unido"
+ },
+ "lotus": {
+  "name": "Lotus",
+  "group": "Geely",
+  "country": "Reino Unido"
+ },
+ "foton": {
+  "name": "Foton",
+  "group": "BAIC Group",
+  "country": "China"
+ },
+ "iveco": {
+  "name": "Iveco",
+  "group": "Iveco Group",
+  "country": "Itália"
+ },
+ "mercedes-benz": {
+  "name": "Mercedes-Benz",
+  "group": "Mercedes-Benz Group",
+  "country": "Alemanha"
+ },
+ "geely": {
+  "name": "Geely",
+  "group": "Geely (Renault Geely do Brasil)",
+  "country": "China"
+ },
+ "caoa-changan": {
+  "name": "CAOA Changan",
+  "group": "Grupo CAOA / Changan Automobile",
+  "country": "China"
+ },
+ "avatr": {
+  "name": "Avatr",
+  "group": "Grupo CAOA / Changan Automobile",
+  "country": "China"
+ },
+ "zeekr": {
+  "name": "Zeekr",
+  "group": "Geely Holding (Zeekr)",
+  "country": "China"
+ },
+ "gac": {
+  "name": "GAC",
+  "group": "GAC Group",
+  "country": "China"
+ },
+ "mg": {
+  "name": "MG",
+  "group": "SAIC Motor",
+  "country": "China"
+ },
+ "denza": {
+  "name": "Denza",
+  "group": "BYD",
+  "country": "China"
+ },
+ "baic": {
+  "name": "BAIC",
+  "group": "BAIC Group",
+  "country": "China"
+ },
+ "dfm": {
+  "name": "DFM",
+  "group": "Dongfeng Motor Corporation",
+  "country": "China"
+ },
+ "bmw": {
+  "name": "BMW",
+  "group": "BMW Group",
+  "country": "Alemanha"
+ },
+ "mini": {
+  "name": "MINI",
+  "group": "BMW Group",
+  "country": "Reino Unido"
+ },
+ "audi": {
+  "name": "Audi",
+  "group": "Grupo Volkswagen",
+  "country": "Alemanha"
+ },
+ "porsche": {
+  "name": "Porsche",
+  "group": "Grupo Volkswagen",
+  "country": "Alemanha"
+ },
+ "volvo": {
+  "name": "Volvo",
+  "group": "Geely Holding",
+  "country": "Suécia"
+ },
+ "land-rover": {
+  "name": "Land Rover",
+  "group": "JLR (Tata Motors)",
+  "country": "Reino Unido"
+ },
+ "lexus": {
+  "name": "Lexus",
+  "group": "Toyota Motor Corporation",
+  "country": "Japão"
+ },
+ "cadillac": {
+  "name": "Cadillac",
+  "group": "General Motors",
+  "country": "EUA"
+ },
+ "agrale": {
+  "name": "Agrale",
+  "group": "Grupo Francisco Stedile",
+  "country": "Brasil"
+ },
+ "effa": {
+  "name": "EFFA",
+  "group": "EFFA Motors",
+  "country": "Brasil"
+ },
+ "hitech-electric": {
+  "name": "Hitech Electric",
+  "group": "Grupo Positivo",
+  "country": "Brasil"
+ },
+ "shineray": {
+  "name": "Shineray",
+  "group": "Shineray Group",
+  "country": "China"
+ }
+}

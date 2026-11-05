@@ -1,0 +1,2924 @@
+[
+ {
+  "marca": "Chevrolet",
+  "modelo": "Onix",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.0 Turbo AT Eco (só etanol)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 99990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "etanol",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 102990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 103990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 82 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "1.0 MT Pro",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 105490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 82 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "1.0 Turbo MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 105790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial agrupa \"Turbo MT/AT\" num só bloco a R$ 102.990; Webmotors lista o Turbo MT a R$ 105.790 (mantido). Confirmar."
+   },
+   {
+    "versao": "1.0 MT Log",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 105990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 82 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Activ 1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 117390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Premier 1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 122490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "RS 1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 122490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial descreve o RS sem preço próprio no bloco; R$ 122.490 conforme catálogo Webmotors (mesmo preço do Premier)."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Onix Plus",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.0 Turbo AT Eco (só etanol)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 103990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "etanol",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix-plus",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "1.0 Turbo MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 110090,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix-plus",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 110990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix-plus",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial agrupa Turbo MT e Turbo AT num só bloco a R$ 110.090; Webmotors lista o AT a R$ 110.990 (mantido). Confirmar."
+   },
+   {
+    "versao": "1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 112790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 82 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix-plus",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão aspirada mais cara que a Turbo MT, tanto no site oficial quanto no Webmotors."
+   },
+   {
+    "versao": "LTZ 1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 121390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix-plus",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Premier 1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 126590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/carros/novo-onix-plus",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Virtus",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Sense 170 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 116690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 170 TSI 109 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/virtus/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "170 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 135690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 170 TSI 116 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/virtus/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Comfortline 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 152690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 200 TSI 128 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/virtus/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Highline 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 163690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 200 TSI 128 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/virtus/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Exclusive 250 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 176690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.4 250 TSI 150 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/virtus/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Polo",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Track 1.0 MPI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 97990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 MPI 84 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027) / Vrum e EncontraCarros (21/10/2026)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/polo/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Pacote opcional VW Play + Alarme: +R$ 2.660 (R$ 100.650)."
+   },
+   {
+    "versao": "Robust 1.0 MPI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 97990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 MPI 84 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027) / Vrum e EncontraCarros (21/10/2026)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/polo/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão citada só no catálogo Webmotors; as notícias da linha 2027 (out/2026) listam Track, Sense e Highline."
+   },
+   {
+    "versao": "Sense 170 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 114990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 170 TSI 116 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027) / Vrum e EncontraCarros (21/10/2026)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/polo/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Highline 170 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 138990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 170 TSI 116 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027) / Vrum e EncontraCarros (21/10/2026)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/polo/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Tera",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "MPI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 108490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 MPI aspirado 84 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/tera/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "CONFLITO: lançamento da linha 2027 (CarBlog/Webmotors. 08/10/2026) dava R$ 107.190; catálogo Webmotors atual mostra o novo valor."
+   },
+   {
+    "versao": "170 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 124290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 170 TSI 116 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/tera/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "CONFLITO: lançamento da linha 2027 (CarBlog/Webmotors. 08/10/2026) dava R$ 123.190; catálogo Webmotors atual mostra o novo valor."
+   },
+   {
+    "versao": "Comfort 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 134790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 200 TSI 128 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/tera/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "High 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 147190,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 200 TSI 128 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km 2027)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/tera/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Tracker",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-tracker",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço anterior na base: R$ 119.990 (A Tarde, ago/2026). Potência divulgada varia: 1.0 115-117 cv, 1.2 139-141 cv conforme a fonte."
+   },
+   {
+    "versao": "LT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 147990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-tracker",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço anterior na base: R$ 146.690 (A Tarde, ago/2026). Potência divulgada varia: 1.0 115-117 cv, 1.2 139-141 cv conforme a fonte."
+   },
+   {
+    "versao": "LTZ",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 164590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-tracker",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço anterior na base: R$ 162.890 (A Tarde, ago/2026). Potência divulgada varia: 1.0 115-117 cv, 1.2 139-141 cv conforme a fonte."
+   },
+   {
+    "versao": "Premier 1.2",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 181590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.2 turbo 141 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-tracker",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço anterior na base: R$ 179.790 (A Tarde, ago/2026). Potência divulgada varia: 1.0 115-117 cv, 1.2 139-141 cv conforme a fonte."
+   },
+   {
+    "versao": "RS 1.2",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 182590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.2 turbo 141 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-tracker",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço anterior na base: R$ 180.790 (A Tarde, ago/2026). Potência divulgada varia: 1.0 115-117 cv, 1.2 139-141 cv conforme a fonte."
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "T-Cross",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Sense 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 128 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Garagem360",
+    "fonte_url": "https://garagem360.com.br/tcross-2027-ganha-cambio-de-8-marchas-mas-volkswagen-aumenta-preco-em-ate-r-1800/",
+    "consultado_em": null,
+    "observacao": "Preços da linha 2027 (lançamento jul/2026). Não reconfirmados em 04/11/2026 (catálogo Webmotors indisponível). DGABC (03/07/2026, ainda linha 2026) dava 200 TSI R$ 151.490 e Comfortline R$ 171.990. Pacote Urban (Sense) existe como opcional, sem preço divulgado."
+   },
+   {
+    "versao": "200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 152890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 128 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Garagem360",
+    "fonte_url": "https://garagem360.com.br/tcross-2027-ganha-cambio-de-8-marchas-mas-volkswagen-aumenta-preco-em-ate-r-1800/",
+    "consultado_em": null,
+    "observacao": "Preços da linha 2027 (lançamento jul/2026). Não reconfirmados em 04/11/2026 (catálogo Webmotors indisponível). DGABC (03/07/2026, ainda linha 2026) dava 200 TSI R$ 151.490 e Comfortline R$ 171.990. Pacote Urban (Sense) existe como opcional, sem preço divulgado."
+   },
+   {
+    "versao": "Comfortline 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 173790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 128 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Garagem360",
+    "fonte_url": "https://garagem360.com.br/tcross-2027-ganha-cambio-de-8-marchas-mas-volkswagen-aumenta-preco-em-ate-r-1800/",
+    "consultado_em": null,
+    "observacao": "Preços da linha 2027 (lançamento jul/2026). Não reconfirmados em 04/11/2026 (catálogo Webmotors indisponível). DGABC (03/07/2026, ainda linha 2026) dava 200 TSI R$ 151.490 e Comfortline R$ 171.990. Pacote Urban (Sense) existe como opcional, sem preço divulgado."
+   },
+   {
+    "versao": "Highline 250 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 186290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.4 turbo 150 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Garagem360",
+    "fonte_url": "https://garagem360.com.br/tcross-2027-ganha-cambio-de-8-marchas-mas-volkswagen-aumenta-preco-em-ate-r-1800/",
+    "consultado_em": null,
+    "observacao": "Preços da linha 2027 (lançamento jul/2026). Não reconfirmados em 04/11/2026 (catálogo Webmotors indisponível). DGABC (03/07/2026, ainda linha 2026) dava 200 TSI R$ 151.490 e Comfortline R$ 171.990. Pacote Urban (Sense) existe como opcional, sem preço divulgado."
+   },
+   {
+    "versao": "Extreme 250 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 193490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.4 turbo 150 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Itatiaia",
+    "fonte_url": "https://www.itatiaia.com.br/auto/volkswagen-t-cross-2027-ganha-cambio-automatico-de-8-marchas-veja-os-precos/",
+    "consultado_em": null,
+    "observacao": "Preços da linha 2027 (lançamento jul/2026). Não reconfirmados em 04/11/2026 (catálogo Webmotors indisponível). DGABC (03/07/2026, ainda linha 2026) dava 200 TSI R$ 151.490 e Comfortline R$ 171.990. Pacote Urban (Sense) existe como opcional, sem preço divulgado."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Ranger",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Black 2.0 4x2 CD Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 242600,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel 170 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/black-2-0-diesel-4x2-at.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 210.030."
+   },
+   {
+    "versao": "XL 2.0 4x4 CS Mec.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 256600,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel 170 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/xl-20-cs-4x4-mt.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Cabine simples com caçamba (versão comercial). Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 225.021."
+   },
+   {
+    "versao": "XL 2.0 4x4 CS Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 266600,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel 170 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/xl-20-cs-4x4-at.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Cabine simples com caçamba (versão comercial). Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 232.768."
+   },
+   {
+    "versao": "XL 2.0 4x4 CD Mec.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 272600,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel 170 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/xl-20-cd-4x4-mt.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 224.562. Site oficial lista esta versão como ano-modelo 2026 (demais 2.0 já são 2027)."
+   },
+   {
+    "versao": "XL 2.0 4x4 CD Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 282600,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel 170 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/xl-20-cd-4x4-at.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 248.115."
+   },
+   {
+    "versao": "XLS 2.0 4x4 CD Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 285900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel 170 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/xls-2-0-diesel-4x4-at.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 232.894."
+   },
+   {
+    "versao": "XLS 3.0 V6 4x4 CD Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 309600,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 turbodiesel 250 cv",
+    "cambio": "automático 10 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/xls-3-0-diesel-4wd-at.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 263.175."
+   },
+   {
+    "versao": "XLT 3.0 V6 4x4 CD Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 315900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 turbodiesel 250 cv",
+    "cambio": "automático 10 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/xlt-30-diesel-4wd-at.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 283.431."
+   },
+   {
+    "versao": "Limited+ 3.0 V6 4x4 CD Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 372900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 turbodiesel 250 cv",
+    "cambio": "automático 10 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, compare as versões)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger/compare-as-versoes/limited-30-diesel-4wd-at-kit-opcional.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de site \"a partir de\". FIPE 0 km nov/2026: R$ 328.505. No site oficial: \"Limited 3.0 V6 Diesel 4WD AT + Kit Opcional\" (única Limited listada)."
+   },
+   {
+    "versao": "Raptor 3.0 V6 biturbo 4WD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 499000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 biturbo gasolina 397 cv",
+    "cambio": "automático 10 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, todos os veículos)",
+    "fonte_url": "https://www.ford.com.br/picapes/ranger-raptor.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Mustang",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "GT Performance",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 569000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "5.0 V8 aspirado 492 cv",
+    "cambio": "automático",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": "EUA",
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (out/2026) / AutoPapo",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7530107-ford-mustang-gt-performance-com-quase-500cv-volta-ao-brasil-por-rs-569-mil.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Relançado em out/2026. Site oficial da Ford ainda o lista em \"Futuros Lançamentos\"."
+   },
+   {
+    "versao": "Dark Horse",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 649000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "5.0 V8 aspirado 507 cv",
+    "cambio": "automático",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": "EUA",
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial, todos os veículos)",
+    "fonte_url": "https://www.ford.com.br/performance/mustang-dark-horse.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial: a partir de R$ 649.000; link de proposta indica ano-modelo 2025."
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Nivus",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Sense 1.0 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 200 TSI turbo 128 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/nivus/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Comfortline 1.0 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 158290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 200 TSI turbo 128 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/nivus/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Highline 1.0 200 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 173290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 200 TSI turbo 128 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/nivus/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "GTS 1.4 250 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 193290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.4 250 TSI turbo 150 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/nivus/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Taos",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Comfortline 1.4 250 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 199990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.4 250 TSI turbo 150 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "flex",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/taos/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Highline 1.4 250 TSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 214490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.4 250 TSI turbo 150 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "flex",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/taos/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Tiguan",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "R-Line 2.0 350 TSI 4Motion",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 299990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 350 TSI turbo 272 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/tiguan/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Versão única R-Line; nova geração lançada em mar/2026 por R$ 299.990 (autoo.com.br). Página 2027 da Webmotors inexistente (404)."
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Jetta",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "GLI 2.0 350 TSI DSG",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 278490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 350 TSI turbo 231 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (reajuste de abr/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/volkswagen-aplica-aumento-e-jetta-gli-beira-os-r-280-mil/",
+    "consultado_em": "2026-11-03",
+    "observacao": "CONFLITO de preço: R$ 278.490 (tabela após reajuste de 29/04/2026, cor sólida; cores especiais R$ 280.690). Webmotors catálogo 2026 mostra R$ 258.490, mesmo valor da campanha promocional de jul/2026 (vrum.com.br) — pode ter virado preço fixo; confirmar no site VW. FIPE nov/2026: R$ 228.118. Webmotors cita DSG de 6 e de 7 marchas; imprensa diz 7. Sem linha 2027 encontrada."
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Golf",
+  "carroceria": "Hatch",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "GTI 2.0 370 TSI DSG (bancos xadrez)",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 430000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TSI turbo 245 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (mai/2026)",
+    "fonte_url": "https://acritica.net/automoveis/vw-golf-gti-volkswagen-abre-segundo-lote-com-novas-cores/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Vendido em lotes limitados (1 por CPF/CNPJ); 2º lote de 150 unidades aberto em 15/05/2026, entregas em 2026. Disponibilidade em nov/2026 não confirmada. CONFLITO de potência: 245 cv (imprensa/ficha Webmotors) vs 265 cv (texto Webmotors)."
+   },
+   {
+    "versao": "GTI 2.0 370 TSI DSG (bancos couro Vienna)",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 445000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 TSI turbo 245 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (mai/2026)",
+    "fonte_url": "https://acritica.net/automoveis/vw-golf-gti-volkswagen-abre-segundo-lote-com-novas-cores/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Vendido em lotes limitados (1 por CPF/CNPJ); 2º lote de 150 unidades aberto em 15/05/2026, entregas em 2026. Disponibilidade em nov/2026 não confirmada. CONFLITO de potência: 245 cv (imprensa/ficha Webmotors) vs 265 cv (texto Webmotors)."
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Amarok",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Comfortline CD 3.0 V6 TDI 4Motion",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 358890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 TDI 258 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/amarok/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Geração atual em fim de vida; nova Amarok prevista para 2027. Descontos grandes no varejo (não considerados). FIPE nov/2026: Comfortline R$ 309.864, Highline R$ 322.332, Extreme R$ 323.201."
+   },
+   {
+    "versao": "Highline CD 3.0 V6 TDI 4Motion",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 376890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 TDI 258 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/amarok/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Geração atual em fim de vida; nova Amarok prevista para 2027. Descontos grandes no varejo (não considerados). FIPE nov/2026: Comfortline R$ 309.864, Highline R$ 322.332, Extreme R$ 323.201."
+   },
+   {
+    "versao": "Barretos 70 Anos CD 3.0 V6 TDI 4Motion",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 389990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 TDI 258 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/amarok/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série especial; disponibilidade em nov/2026 não confirmada. Geração atual em fim de vida; nova Amarok prevista para 2027. Descontos grandes no varejo (não considerados). FIPE nov/2026: Comfortline R$ 309.864, Highline R$ 322.332, Extreme R$ 323.201."
+   },
+   {
+    "versao": "Extreme CD 3.0 V6 TDI 4Motion",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 399890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 V6 TDI 258 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/amarok/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Geração atual em fim de vida; nova Amarok prevista para 2027. Descontos grandes no varejo (não considerados). FIPE nov/2026: Comfortline R$ 309.864, Highline R$ 322.332, Extreme R$ 323.201."
+   },
+   {
+    "versao": "V6 Unlimited CD 3.0 V6 TDI 4Motion",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": "3.0 V6 TDI 258 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Garagem360 (16/09/2026)",
+    "fonte_url": "https://garagem360.com.br/?p=320285",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série de despedida limitada a 200 unidades, baseada na Extreme, vendas a partir de out/2026; preço não divulgado. Ano-modelo não confirmado. Geração atual em fim de vida; nova Amarok prevista para 2027. Descontos grandes no varejo (não considerados). FIPE nov/2026: Comfortline R$ 309.864, Highline R$ 322.332, Extreme R$ 323.201."
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Saveiro",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Robust CS 1.6 MSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 111490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 MSI 116 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "etanol",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/saveiro/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors lista duas Robust CS: esta (combustível 'etanol', R$ 111.490) e outra flex (R$ 115.690); a diferença não é explicada — possivelmente versão de frotista/pacote. Confirmar."
+   },
+   {
+    "versao": "Trendline CS 1.6 MSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 123690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 MSI 116 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/saveiro/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Robust CD 1.6 MSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 132890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 MSI 116 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/saveiro/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Extreme CD 1.6 MSI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 137890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 MSI 116 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/volkswagen/saveiro/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "ID.4",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Pro",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 299990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico traseiro 286 cv, bateria 84 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Tribuna PR / DGABC (lançamento set-out/2026)",
+    "fonte_url": "https://www.tribunapr.com.br/noticias/automoveis/novo-volkswagen-id4-pro-2027-preco-especificacoes-brasil/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Versão única; vendas nas concessionárias a partir de out/2026; autonomia 389 km (Inmetro). Importado; país de origem não informado."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Montana",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.2 Turbo MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 134990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.2 turbo 141 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/chevrolet-montana",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "LT 1.2 Turbo MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 140990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.2 turbo 141 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/chevrolet-montana",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "LTZ 1.2 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 157990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.2 turbo 141 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/chevrolet-montana",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Premier 1.2 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 165990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.2 turbo 141 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/chevrolet-montana",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "RS 1.2 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 173190,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.2 turbo 141 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/chevrolet-montana",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "S10",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cabine Simples WT 2.8 4x4 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 268990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/s10",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site oficial mostra banner 'a partir de R$ 239.990' (condição comercial, não corresponde a versão)."
+   },
+   {
+    "versao": "WT CD 2.8 4x4 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 290190,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/s10",
+    "consultado_em": "2026-11-03",
+    "observacao": "Texto do site oficial menciona 'automática 6 velocidades' na WT MT (inconsistência do site)."
+   },
+   {
+    "versao": "WT CD 2.8 4x4 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 307690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/s10",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Z71 CD 2.8 4x4 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 328590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/s10",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "LTZ CD 2.8 4x4 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 337490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/s10",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Trail Boss CD 2.8 4x4 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 344790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/s10",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançada em jul/2026 por R$ 341.290 (Itatiaia); site oficial atual R$ 344.790."
+   },
+   {
+    "versao": "High Country CD 2.8 4x4 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 352290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/s10",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Trailblazer",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "High Country 2.8 4x4 AT (7 lugares)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 422590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-trailblazer",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Midnight 2.8 4x4 AT (7 lugares)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 438590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 207 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-trailblazer",
+    "consultado_em": "2026-11-03",
+    "observacao": "CONFLITO: Itatiaia (28/07/2026) informou Midnight pelo mesmo preço da High Country (R$ 422.590), série limitada a 100 unidades; site oficial mostra R$ 438.590."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Spin",
+  "carroceria": "Minivan",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.8 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 8V 111 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-spin",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançamento abr/2026 citava R$ 119.990 (autopapo/encontracarros)."
+   },
+   {
+    "versao": "LT 1.8 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 139990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 8V 111 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-spin",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançamento abr/2026: R$ 138.590."
+   },
+   {
+    "versao": "LTZ 1.8 AT (5 ou 7 lugares)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 156990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 8V 111 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-spin",
+    "consultado_em": "2026-11-03",
+    "observacao": "Mesmo preço para 5 e 7 lugares. Lançamento abr/2026: R$ 154.090."
+   },
+   {
+    "versao": "Premier 1.8 AT (7 lugares)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 168990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 8V 111 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/novo-spin",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançamento abr/2026: R$ 165.590. Site oficial também exibe R$ 119.900 no topo (preço de entrada da linha)."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Sonic",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Premier 1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 129990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/sonic",
+    "consultado_em": "2026-11-03",
+    "observacao": "CONFLITO: Webmotors (catálogo 2027) lista Premier R$ 136.390 e RS R$ 142.390; site oficial mostra R$ 129.990 / R$ 135.990 (pode ser preço vigente reduzido)."
+   },
+   {
+    "versao": "RS 1.0 Turbo AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 135990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/sonic",
+    "consultado_em": "2026-11-03",
+    "observacao": "CONFLITO: Webmotors (catálogo 2027) lista Premier R$ 136.390 e RS R$ 142.390; site oficial mostra R$ 129.990 / R$ 135.990 (pode ser preço vigente reduzido)."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Spark EUV",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Activ",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 152790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 102 cv, bateria 42 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Vrum (21/10/2026)",
+    "fonte_url": "https://www.chevrolet.com.br/eletrico/spark-euv",
+    "consultado_em": "2026-11-03",
+    "observacao": "Preço público sugerido R$ 152.790; promoções oficiais a R$ 146.990/R$ 144.990 (até 03/11/2026). Ano-modelo 2027 consta na FIPE (R$ 144.069, nov/2026). Montado no Ceará (Olhar Digital, dez/2025)."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Captiva EV",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Premier",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 219990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 204 cv, bateria 60 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/eletrico/captiva-ev",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site oficial: sugerido R$ 219.990 e 'preço especial de lançamento' R$ 199.990. Potência 201 cv segundo Garagem360/Webmotors vs 204 cv no site oficial."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Equinox",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Activ 1.5 Turbo AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 296090,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo 177 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/equinox",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "RS 1.5 Turbo AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 296090,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo 177 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.chevrolet.com.br/suvs/equinox",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Blazer EV",
+  "carroceria": "SUV",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "RS",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 503190,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico traseiro 370 cv, bateria 102 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial)",
+    "fonte_url": "https://www.chevrolet.com.br/eletrico/blazer-ev",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site oficial ainda exibe ano-modelo 2025 (não há 2026/2027 anunciado)."
+   }
+  ]
+ },
+ {
+  "marca": "Chevrolet",
+  "modelo": "Silverado",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "High Country 5.3 V8 AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 483990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "5.3 V8",
+    "cambio": "automático 10 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Chevrolet Brasil (site oficial) / Auto+ TV",
+    "fonte_url": "https://www.chevrolet.com.br/picapes/nova-silverado",
+    "consultado_em": "2026-11-03",
+    "observacao": "Versão única. FIPE nov/2026: R$ 426.485. Potência não informada na fonte."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Maverick",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Lariat 2.0 EcoBoost AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 209900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBoost turbo 253 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial / From the Road 07/10/2026)",
+    "fonte_url": "https://www.fromtheroad.ford.com/br/pt/articles/2026/ford-amplia-a-linha-maverick-2026-com-nova-versao-lariat-",
+    "consultado_em": "2026-11-03",
+    "observacao": "Nova versão de entrada (edição limitada) lançada em out/2026."
+   },
+   {
+    "versao": "Lariat Black 2.0 EcoBoost AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 219900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBoost turbo 253 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Ford Brasil (From the Road 07/10/2026) / Webmotors",
+    "fonte_url": "https://www.fromtheroad.ford.com/br/pt/articles/2026/ford-amplia-a-linha-maverick-2026-com-nova-versao-lariat-",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Hybrid 2.5 e-CVT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 229900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido 194 cv",
+    "cambio": "e-CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico"
+    ],
+    "fonte_nome": "Ford Brasil (From the Road 07/10/2026) / Webmotors",
+    "fonte_url": "https://www.fromtheroad.ford.com/br/pt/articles/2026/ford-amplia-a-linha-maverick-2026-com-nova-versao-lariat-",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors indica tração AWD; ficha oficial não confirmada."
+   },
+   {
+    "versao": "Tremor 2.0 EcoBoost AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 229900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBoost turbo 253 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Ford Brasil (From the Road 07/10/2026) / Webmotors",
+    "fonte_url": "https://www.fromtheroad.ford.com/br/pt/articles/2026/ford-amplia-a-linha-maverick-2026-com-nova-versao-lariat-",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Bronco Sport",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Badlands 2.0 EcoBoost 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 249900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBoost turbo 253 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.ford.com.br/suvs-e-crossovers/bronco-sport.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "Versão única. Ano-modelo inconsistente no site oficial (materiais 2025 e 2026)."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Territory",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Titanium 1.5 EcoBoost",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 194900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 EcoBoost turbo 169 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.ford.com.br/suvs-e-crossovers/territory.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "Versão única."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "F-150",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Lariat Black 5.0 V8 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 540000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "5.0 V8 Coyote 405 cv",
+    "cambio": "automático 10 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.ford.com.br/picapes/f-150.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site oficial cita versões Lariat, Lariat Black e Tremor, mas só há preço para Lariat Black (a partir de R$ 540.000) e Tremor; 'Lariat' sem preço não incluída. FIPE nov/2026: R$ 520.867."
+   },
+   {
+    "versao": "Tremor 5.0 V8 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 580000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "5.0 V8 Coyote 405 cv",
+    "cambio": "automático 10 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial) / Webmotors",
+    "fonte_url": "https://www.ford.com.br/picapes/f-150-tremor.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "FIPE nov/2026: R$ 522.303."
+   },
+   {
+    "versao": "Raptor",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Ford Brasil (Futuros Lançamentos)",
+    "fonte_url": "https://www.ford.com.br/todos-os-veiculos/futuros-lancamentos.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "Listada como futuro lançamento no site oficial; sem preço, motor ou data."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Mustang Mach-E",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "GT Performance eAWD",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 449000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico dianteiro+traseiro 487 cv",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Ford Brasil (site oficial)",
+    "fonte_url": "https://www.ford.com.br/performance/mustang-mach-e.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site oficial lista 'a partir de R$ 449.000' e versão de 487 cv/eAWD (GT Performance, conforme FIPE). Ano-modelo não informado (materiais 2025/2026)."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Transit",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão Médio 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 285200,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003487-8). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Furgão Longo 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 290410,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003488-6). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Furgão Médio 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 291867,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003517-3). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Furgão Longo 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 301556,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003494-0). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus Vidrada 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 304695,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003482-7). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus Vidrada 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 314995,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003493-2). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 15 lugares 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 347324,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003483-5). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 15 lugares 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 352859,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003491-6). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 18 lugares 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 371174,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003484-3). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 18 lugares 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 375107,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003492-4). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "E-Transit",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão Longo Teto Alto",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 544700,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/e-transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003514-9). Potência/bateria não levantadas."
+   }
+  ]
+ },
+ {
+  "marca": "Volkswagen",
+  "modelo": "Tukan",
+  "carroceria": "Picape",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Robust CS 1.6 MSI",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": "1.6 MSI aspirado 116 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Itatiaia (28/10/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/volkswagen-tukan-picape-tem-a-data-de-lancamento-confirmada/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Revelada oficialmente; estreia prevista para os primeiros meses de 2027 (VW). Sem preço. Variante 1.6 só a etanol também prevista. Outras versões intermediárias são esperadas."
+   },
+   {
+    "versao": "Extreme CD 1.0 TSI híbrido leve",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": "1.0 turbo + híbrido leve 12V",
+    "cambio": null,
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Itatiaia (28/10/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/volkswagen-tukan-picape-tem-a-data-de-lancamento-confirmada/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Topo de linha revelado; estreia prevista para o início de 2027. Sem preço, potência ou câmbio divulgados."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Transit City",
+  "carroceria": "Van",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Furgão Teto Normal",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Ford From the Road (14/09/2026)",
+    "fonte_url": "https://www.fromtheroad.ford.com/br/pt/articles/2026/ford-revela-as-tres-versoes-da-transit-city-eletrica-para-o-bras",
+    "consultado_em": "2026-11-04",
+    "observacao": "Van elétrica anunciada para chegar \"ainda em 2026\"; consta em Futuros Lançamentos no site oficial. Sem preço e ficha brasileira (na Europa: 150 cv, bateria LFP 56 kWh, 254 km WLTP). Versão chassi-cabine anunciada fica fora."
+   },
+   {
+    "versao": "Furgão Teto Alto",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Ford From the Road (14/09/2026)",
+    "fonte_url": "https://www.fromtheroad.ford.com/br/pt/articles/2026/ford-revela-as-tres-versoes-da-transit-city-eletrica-para-o-bras",
+    "consultado_em": "2026-11-04",
+    "observacao": "Van elétrica anunciada para chegar \"ainda em 2026\"; consta em Futuros Lançamentos no site oficial. Sem preço e ficha brasileira (na Europa: 150 cv, bateria LFP 56 kWh, 254 km WLTP). Versão chassi-cabine anunciada fica fora."
+   }
+  ]
+ }
+]

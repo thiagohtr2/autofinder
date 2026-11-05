@@ -1,0 +1,911 @@
+{
+ "agrale": {
+  "country": "Brasil",
+  "group": "Grupo Francisco Stedile",
+  "id": "agrale",
+  "models": [
+   "agrale-marrua-am250",
+   "agrale-marrua-am200-mo"
+  ],
+  "name": "Agrale",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 5
+ },
+ "aston-martin": {
+  "country": "Reino Unido",
+  "group": "Aston Martin Lagonda",
+  "id": "aston-martin",
+  "models": [
+   "aston-martin-vantage",
+   "aston-martin-db12",
+   "aston-martin-dbx",
+   "aston-martin-vanquish"
+  ],
+  "name": "Aston Martin",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 7
+ },
+ "audi": {
+  "country": "Alemanha",
+  "group": "Grupo Volkswagen",
+  "id": "audi",
+  "models": [
+   "audi-a3-sedan",
+   "audi-a3-sportback",
+   "audi-q3",
+   "audi-q3-sportback",
+   "audi-a5",
+   "audi-a5-avant",
+   "audi-q5",
+   "audi-q5-sportback",
+   "audi-a6-sportback-e-tron",
+   "audi-q6-e-tron",
+   "audi-a6-avant-e-tron",
+   "audi-q6-sportback-e-tron",
+   "audi-q7",
+   "audi-q8",
+   "audi-rs-3-sedan",
+   "audi-rs-6-avant",
+   "audi-rs-e-tron-gt",
+   "audi-rs-q8"
+  ],
+  "name": "Audi",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 27
+ },
+ "avatr": {
+  "country": "China",
+  "group": "Grupo CAOA / Changan Automobile",
+  "id": "avatr",
+  "models": [
+   "avatr-11"
+  ],
+  "name": "Avatr",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 2
+ },
+ "baic": {
+  "country": "China",
+  "group": "BAIC Group",
+  "id": "baic",
+  "models": [
+   "baic-arcfox-t1"
+  ],
+  "name": "BAIC",
+  "status": "on_sale",
+  "updated_at": "2026-11-05",
+  "versions_count": 2
+ },
+ "bmw": {
+  "country": "Alemanha",
+  "group": "BMW Group",
+  "id": "bmw",
+  "models": [
+   "bmw-serie-1",
+   "bmw-serie-2-gran-coupe",
+   "bmw-serie-3",
+   "bmw-m3",
+   "bmw-serie-4-cabrio",
+   "bmw-m2",
+   "bmw-m4",
+   "bmw-serie-5",
+   "bmw-i4",
+   "bmw-i7",
+   "bmw-x1",
+   "bmw-ix1",
+   "bmw-x2",
+   "bmw-ix2",
+   "bmw-x3",
+   "bmw-ix3",
+   "bmw-x5",
+   "bmw-ix5",
+   "bmw-x6",
+   "bmw-x7"
+  ],
+  "name": "BMW",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 32
+ },
+ "byd": {
+  "country": "China",
+  "group": "BYD",
+  "id": "byd",
+  "models": [
+   "byd-dolphin-mini",
+   "byd-dolphin",
+   "byd-song-pro",
+   "byd-seal",
+   "byd-yuan-pro",
+   "byd-yuan-plus",
+   "byd-atto-2-dm-i",
+   "byd-king",
+   "byd-song-plus",
+   "byd-song-plus-premium",
+   "byd-sealion-7",
+   "byd-atto-8",
+   "byd-shark",
+   "byd-han",
+   "byd-tan"
+  ],
+  "name": "BYD",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 22
+ },
+ "cadillac": {
+  "country": "EUA",
+  "group": "General Motors",
+  "id": "cadillac",
+  "models": [
+   "cadillac-lyriq",
+   "cadillac-vistiq",
+   "cadillac-optiq"
+  ],
+  "name": "Cadillac",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 3
+ },
+ "caoa-changan": {
+  "country": "China",
+  "group": "Grupo CAOA / Changan Automobile",
+  "id": "caoa-changan",
+  "models": [
+   "caoa-changan-cs55",
+   "caoa-changan-uni-t",
+   "caoa-changan-cs75"
+  ],
+  "name": "CAOA Changan",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 5
+ },
+ "chery": {
+  "country": "China",
+  "group": "CAOA / Chery Automobile",
+  "id": "chery",
+  "models": [
+   "chery-tiggo-5x",
+   "chery-tiggo-7",
+   "chery-tiggo-8",
+   "chery-tiggo-9"
+  ],
+  "name": "Chery",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 10
+ },
+ "chevrolet": {
+  "country": "EUA",
+  "group": "General Motors",
+  "id": "chevrolet",
+  "models": [
+   "chevrolet-onix",
+   "chevrolet-onix-plus",
+   "chevrolet-tracker",
+   "chevrolet-montana",
+   "chevrolet-s10",
+   "chevrolet-trailblazer",
+   "chevrolet-spin",
+   "chevrolet-sonic",
+   "chevrolet-spark-euv",
+   "chevrolet-captiva-ev",
+   "chevrolet-equinox",
+   "chevrolet-blazer-ev",
+   "chevrolet-silverado"
+  ],
+  "name": "Chevrolet",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 46
+ },
+ "citroen": {
+  "country": "França",
+  "group": "Stellantis",
+  "id": "citroen",
+  "models": [
+   "citroen-c3",
+   "citroen-basalt",
+   "citroen-aircross",
+   "citroen-jumpy",
+   "citroen-jumper"
+  ],
+  "name": "Citroën",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 19
+ },
+ "denza": {
+  "country": "China",
+  "group": "BYD",
+  "id": "denza",
+  "models": [
+   "denza-b5",
+   "denza-z9-gt",
+   "denza-d9"
+  ],
+  "name": "Denza",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 4
+ },
+ "dfm": {
+  "country": "China",
+  "group": "Dongfeng Motor Corporation",
+  "id": "dfm",
+  "models": [
+   "dfm-box",
+   "dfm-vigo"
+  ],
+  "name": "DFM",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 3
+ },
+ "effa": {
+  "country": "Brasil",
+  "group": "EFFA Motors",
+  "id": "effa",
+  "models": [
+   "effa-v21",
+   "effa-v22",
+   "effa-v25"
+  ],
+  "name": "EFFA",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 4
+ },
+ "ferrari": {
+  "country": "Itália",
+  "group": "Ferrari N.V.",
+  "id": "ferrari",
+  "models": [
+   "ferrari-amalfi",
+   "ferrari-roma",
+   "ferrari-296",
+   "ferrari-purosangue",
+   "ferrari-12cilindri",
+   "ferrari-849-testarossa"
+  ],
+  "name": "Ferrari",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 10
+ },
+ "fiat": {
+  "country": "Itália",
+  "group": "Stellantis",
+  "id": "fiat",
+  "models": [
+   "fiat-mobi",
+   "fiat-argo",
+   "fiat-argo-x",
+   "fiat-strada",
+   "fiat-pulse",
+   "fiat-fastback",
+   "fiat-toro",
+   "fiat-cronos",
+   "fiat-titano",
+   "fiat-500e",
+   "fiat-fiorino",
+   "fiat-ducato",
+   "fiat-scudo"
+  ],
+  "name": "Fiat",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 46
+ },
+ "ford": {
+  "country": "EUA",
+  "group": "Ford",
+  "id": "ford",
+  "models": [
+   "ford-ranger",
+   "ford-mustang",
+   "ford-maverick",
+   "ford-bronco-sport",
+   "ford-territory",
+   "ford-f-150",
+   "ford-mustang-mach-e",
+   "ford-transit",
+   "ford-e-transit",
+   "ford-transit-city"
+  ],
+  "name": "Ford",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 35
+ },
+ "foton": {
+  "country": "China",
+  "group": "BAIC Group",
+  "id": "foton",
+  "models": [
+   "foton-tunland",
+   "foton-eview",
+   "foton-etoano-pro"
+  ],
+  "name": "Foton",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 7
+ },
+ "gac": {
+  "country": "China",
+  "group": "GAC Group",
+  "id": "gac",
+  "models": [
+   "gac-gs3",
+   "gac-aion-ut",
+   "gac-aion-es",
+   "gac-aion-y",
+   "gac-gs4",
+   "gac-aion-v",
+   "gac-hyptec-ht",
+   "gac-gs9"
+  ],
+  "name": "GAC",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 13
+ },
+ "geely": {
+  "country": "China",
+  "group": "Geely (Renault Geely do Brasil)",
+  "id": "geely",
+  "models": [
+   "geely-ex2",
+   "geely-ex5-em-i",
+   "geely-ex5"
+  ],
+  "name": "Geely",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 7
+ },
+ "gwm": {
+  "country": "China",
+  "group": "Great Wall Motor",
+  "id": "gwm",
+  "models": [
+   "gwm-haval-h6",
+   "gwm-haval-h9",
+   "gwm-haval-h7",
+   "gwm-tank-300",
+   "gwm-tank-400",
+   "gwm-poer-p30",
+   "gwm-ora-03",
+   "gwm-ora-5",
+   "gwm-wey-07"
+  ],
+  "name": "GWM",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 18
+ },
+ "hitech-electric": {
+  "country": "Brasil",
+  "group": "Grupo Positivo",
+  "id": "hitech-electric",
+  "models": [
+   "hitech-electric-delivery",
+   "hitech-electric-e-work-ec31",
+   "hitech-electric-e-work-ec35"
+  ],
+  "name": "Hitech Electric",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 9
+ },
+ "honda": {
+  "country": "Japão",
+  "group": "Honda",
+  "id": "honda",
+  "models": [
+   "honda-hr-v",
+   "honda-civic",
+   "honda-city",
+   "honda-city-hatchback",
+   "honda-wr-v",
+   "honda-zr-v",
+   "honda-cr-v",
+   "honda-accord",
+   "honda-prelude"
+  ],
+  "name": "Honda",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 21
+ },
+ "hyundai": {
+  "country": "Coreia do Sul",
+  "group": "Hyundai Motor Group",
+  "id": "hyundai",
+  "models": [
+   "hyundai-hb20",
+   "hyundai-creta",
+   "hyundai-hb20s",
+   "hyundai-i20",
+   "hyundai-tucson",
+   "hyundai-kona",
+   "hyundai-palisade",
+   "hyundai-ioniq-5"
+  ],
+  "name": "Hyundai",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 25
+ },
+ "iveco": {
+  "country": "Itália",
+  "group": "Iveco Group",
+  "id": "iveco",
+  "models": [
+   "iveco-daily-furgao"
+  ],
+  "name": "Iveco",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 4
+ },
+ "jac": {
+  "country": "China",
+  "group": "SHC (importador) / JAC Motors (Anhui Jianghuai)",
+  "id": "jac",
+  "models": [
+   "jac-e-js1",
+   "jac-e-js4",
+   "jac-e-j7",
+   "jac-hunter",
+   "jac-ev-hunter"
+  ],
+  "name": "JAC",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 9
+ },
+ "jaecoo": {
+  "country": "China",
+  "group": "Omoda & Jaecoo / Chery Automobile",
+  "id": "jaecoo",
+  "models": [
+   "jaecoo-jaecoo-5",
+   "jaecoo-jaecoo-7",
+   "jaecoo-jaecoo-8"
+  ],
+  "name": "Jaecoo",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 6
+ },
+ "jeep": {
+  "country": "EUA",
+  "group": "Stellantis",
+  "id": "jeep",
+  "models": [
+   "jeep-compass",
+   "jeep-renegade",
+   "jeep-avenger",
+   "jeep-commander",
+   "jeep-wrangler",
+   "jeep-gladiator"
+  ],
+  "name": "Jeep",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 21
+ },
+ "jetour": {
+  "country": "China",
+  "group": "Chery Automobile",
+  "id": "jetour",
+  "models": [
+   "jetour-s06",
+   "jetour-t1",
+   "jetour-s08",
+   "jetour-t2",
+   "jetour-g700"
+  ],
+  "name": "Jetour",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 9
+ },
+ "kia": {
+  "country": "Coreia do Sul",
+  "group": "Hyundai Motor Group",
+  "id": "kia",
+  "models": [
+   "kia-stonic",
+   "kia-niro",
+   "kia-sportage",
+   "kia-tasman",
+   "kia-sorento",
+   "kia-ev5",
+   "kia-carnival",
+   "kia-ev9"
+  ],
+  "name": "Kia",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 11
+ },
+ "lamborghini": {
+  "country": "Itália",
+  "group": "Volkswagen Group (Audi)",
+  "id": "lamborghini",
+  "models": [
+   "lamborghini-urus",
+   "lamborghini-temerario",
+   "lamborghini-revuelto"
+  ],
+  "name": "Lamborghini",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 3
+ },
+ "land-rover": {
+  "country": "Reino Unido",
+  "group": "JLR (Tata Motors)",
+  "id": "land-rover",
+  "models": [
+   "land-rover-discovery-sport",
+   "land-rover-range-rover-evoque",
+   "land-rover-range-rover-velar",
+   "land-rover-discovery",
+   "land-rover-defender",
+   "land-rover-range-rover-sport",
+   "land-rover-range-rover",
+   "land-rover-range-rover-gt"
+  ],
+  "name": "Land Rover",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 14
+ },
+ "leapmotor": {
+  "country": "China",
+  "group": "Stellantis / Leapmotor",
+  "id": "leapmotor",
+  "models": [
+   "leapmotor-b10",
+   "leapmotor-c10"
+  ],
+  "name": "Leapmotor",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 4
+ },
+ "lexus": {
+  "country": "Japão",
+  "group": "Toyota Motor Corporation",
+  "id": "lexus",
+  "models": [
+   "lexus-ux",
+   "lexus-es",
+   "lexus-nx",
+   "lexus-rz",
+   "lexus-rx"
+  ],
+  "name": "Lexus",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 9
+ },
+ "lotus": {
+  "country": "Reino Unido",
+  "group": "Geely",
+  "id": "lotus",
+  "models": [
+   "lotus-eletre",
+   "lotus-emeya",
+   "lotus-emira"
+  ],
+  "name": "Lotus",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 5
+ },
+ "mclaren": {
+  "country": "Reino Unido",
+  "group": "McLaren Group",
+  "id": "mclaren",
+  "models": [
+   "mclaren-artura",
+   "mclaren-gts",
+   "mclaren-750s"
+  ],
+  "name": "McLaren",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 5
+ },
+ "mercedes-benz": {
+  "country": "Alemanha",
+  "group": "Mercedes-Benz Group",
+  "id": "mercedes-benz",
+  "models": [
+   "mercedes-benz-classe-a",
+   "mercedes-benz-cla",
+   "mercedes-benz-gla",
+   "mercedes-benz-glb",
+   "mercedes-benz-classe-c",
+   "mercedes-benz-glc",
+   "mercedes-benz-glc-coupe",
+   "mercedes-benz-classe-e",
+   "mercedes-benz-classe-v",
+   "mercedes-benz-gle",
+   "mercedes-benz-gle-coupe",
+   "mercedes-benz-gls",
+   "mercedes-benz-amg-gt-4-portas",
+   "mercedes-benz-classe-s",
+   "mercedes-benz-amg-gt",
+   "mercedes-benz-sl",
+   "mercedes-benz-classe-g",
+   "mercedes-benz-sprinter",
+   "mercedes-benz-esprinter"
+  ],
+  "name": "Mercedes-Benz",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 71
+ },
+ "mg": {
+  "country": "China",
+  "group": "SAIC Motor",
+  "id": "mg",
+  "models": [
+   "mg-mg4-urban",
+   "mg-mg4",
+   "mg-s5",
+   "mg-cyberster"
+  ],
+  "name": "MG",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 9
+ },
+ "mini": {
+  "country": "Reino Unido",
+  "group": "BMW Group",
+  "id": "mini",
+  "models": [
+   "mini-cooper-eletrico",
+   "mini-cooper-3-portas",
+   "mini-cooper-5-portas",
+   "mini-cooper-cabrio",
+   "mini-aceman",
+   "mini-countryman"
+  ],
+  "name": "MINI",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 19
+ },
+ "mitsubishi": {
+  "country": "Japão",
+  "group": "Mitsubishi (HPE no Brasil)",
+  "id": "mitsubishi",
+  "models": [
+   "mitsubishi-eclipse-cross",
+   "mitsubishi-triton",
+   "mitsubishi-outlander"
+  ],
+  "name": "Mitsubishi",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 19
+ },
+ "nissan": {
+  "country": "Japão",
+  "group": "Aliança Renault-Nissan",
+  "id": "nissan",
+  "models": [
+   "nissan-versa",
+   "nissan-kait",
+   "nissan-kicks"
+  ],
+  "name": "Nissan",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 11
+ },
+ "omoda": {
+  "country": "China",
+  "group": "Omoda & Jaecoo / Chery Automobile",
+  "id": "omoda",
+  "models": [
+   "omoda-e5",
+   "omoda-omoda-5",
+   "omoda-omoda-7",
+   "omoda-omoda-4"
+  ],
+  "name": "Omoda",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 7
+ },
+ "peugeot": {
+  "country": "França",
+  "group": "Stellantis",
+  "id": "peugeot",
+  "models": [
+   "peugeot-208",
+   "peugeot-2008",
+   "peugeot-partner-rapid",
+   "peugeot-expert",
+   "peugeot-boxer"
+  ],
+  "name": "Peugeot",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 13
+ },
+ "porsche": {
+  "country": "Alemanha",
+  "group": "Grupo Volkswagen",
+  "id": "porsche",
+  "models": [
+   "porsche-macan",
+   "porsche-718",
+   "porsche-cayenne",
+   "porsche-cayenne-coupe",
+   "porsche-911",
+   "porsche-panamera",
+   "porsche-taycan",
+   "porsche-taycan-cross-turismo"
+  ],
+  "name": "Porsche",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 50
+ },
+ "ram": {
+  "country": "EUA",
+  "group": "Stellantis",
+  "id": "ram",
+  "models": [
+   "ram-rampage",
+   "ram-dakota",
+   "ram-1500",
+   "ram-2500",
+   "ram-3500"
+  ],
+  "name": "RAM",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 18
+ },
+ "renault": {
+  "country": "França",
+  "group": "Renault Group",
+  "id": "renault",
+  "models": [
+   "renault-kwid",
+   "renault-kardian",
+   "renault-duster",
+   "renault-boreal",
+   "renault-oroch",
+   "renault-koleos",
+   "renault-megane-e-tech",
+   "renault-kwid-e-tech",
+   "renault-niagara",
+   "renault-kangoo",
+   "renault-kangoo-e-tech",
+   "renault-master"
+  ],
+  "name": "Renault",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 32
+ },
+ "shineray": {
+  "country": "China",
+  "group": "Shineray Group",
+  "id": "shineray",
+  "models": [
+   "shineray-tlux",
+   "shineray-dtruck"
+  ],
+  "name": "Shineray",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 3
+ },
+ "suzuki": {
+  "country": "Japão",
+  "group": "Suzuki (HPE no Brasil)",
+  "id": "suzuki",
+  "models": [
+   "suzuki-e-vitara"
+  ],
+  "name": "Suzuki",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 1
+ },
+ "toyota": {
+  "country": "Japão",
+  "group": "Toyota",
+  "id": "toyota",
+  "models": [
+   "toyota-yaris-cross",
+   "toyota-corolla",
+   "toyota-corolla-cross",
+   "toyota-hilux",
+   "toyota-hilux-sw4",
+   "toyota-rav4",
+   "toyota-bz4x",
+   "toyota-gr-yaris",
+   "toyota-gr-corolla",
+   "toyota-hiace"
+  ],
+  "name": "Toyota",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 35
+ },
+ "volkswagen": {
+  "country": "Alemanha",
+  "group": "Grupo Volkswagen",
+  "id": "volkswagen",
+  "models": [
+   "volkswagen-virtus",
+   "volkswagen-polo",
+   "volkswagen-tera",
+   "volkswagen-t-cross",
+   "volkswagen-nivus",
+   "volkswagen-taos",
+   "volkswagen-tiguan",
+   "volkswagen-jetta",
+   "volkswagen-golf",
+   "volkswagen-amarok",
+   "volkswagen-saveiro",
+   "volkswagen-id-4",
+   "volkswagen-tukan"
+  ],
+  "name": "Volkswagen",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 40
+ },
+ "volvo": {
+  "country": "Suécia",
+  "group": "Geely Holding",
+  "id": "volvo",
+  "models": [
+   "volvo-ex30",
+   "volvo-ex40",
+   "volvo-ec40",
+   "volvo-xc60",
+   "volvo-es90",
+   "volvo-xc90",
+   "volvo-ex90"
+  ],
+  "name": "Volvo",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 15
+ },
+ "zeekr": {
+  "country": "China",
+  "group": "Geely Holding (Zeekr)",
+  "id": "zeekr",
+  "models": [
+   "zeekr-x",
+   "zeekr-7x",
+   "zeekr-001"
+  ],
+  "name": "Zeekr",
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions_count": 6
+ }
+}

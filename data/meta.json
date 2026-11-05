@@ -1,0 +1,588 @@
+{
+ "imggroups": {
+  "groups": [
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "byd-song-plus-premium",
+     "byd-song-pro",
+     "byd-tan",
+     "byd-yuan-plus",
+     "byd-yuan-pro",
+     "chevrolet-blazer-ev",
+     "chevrolet-captiva-ev",
+     "chevrolet-equinox",
+     "chevrolet-montana",
+     "chevrolet-onix"
+    ],
+    "n": 1
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "citroen-c3",
+     "fiat-500e",
+     "fiat-argo",
+     "fiat-cronos",
+     "fiat-fastback",
+     "fiat-mobi",
+     "fiat-pulse",
+     "fiat-strada",
+     "fiat-titano",
+     "fiat-toro"
+    ],
+    "n": 2
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "gwm-tank-400",
+     "kia-ev9",
+     "kia-niro",
+     "kia-sorento",
+     "kia-sportage",
+     "kia-stonic",
+     "kia-tasman",
+     "leapmotor-b10",
+     "leapmotor-c10",
+     "mitsubishi-eclipse-cross"
+    ],
+    "n": 3
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "mitsubishi-outlander",
+     "renault-niagara",
+     "volkswagen-virtus"
+    ],
+    "n": 4
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "agrale-marrua-am200-mo",
+     "agrale-marrua-am250",
+     "aston-martin-db12",
+     "aston-martin-dbx",
+     "aston-martin-vanquish",
+     "aston-martin-vantage",
+     "audi-a3-sedan",
+     "audi-a3-sportback",
+     "audi-a5",
+     "audi-a5-avant"
+    ],
+    "n": 5
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "audi-a6-avant-e-tron",
+     "audi-a6-sportback-e-tron",
+     "audi-q3",
+     "audi-q3-sportback",
+     "audi-q5",
+     "audi-q5-sportback",
+     "audi-q6-e-tron",
+     "audi-q6-sportback-e-tron",
+     "audi-q7",
+     "audi-q8"
+    ],
+    "n": 6
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "audi-rs-3-sedan",
+     "audi-rs-6-avant",
+     "audi-rs-e-tron-gt",
+     "audi-rs-q8",
+     "avatr-11",
+     "bmw-i4",
+     "bmw-i7",
+     "bmw-ix1",
+     "bmw-ix2",
+     "bmw-ix3"
+    ],
+    "n": 7
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "bmw-m2",
+     "bmw-m3",
+     "bmw-m4",
+     "bmw-serie-1",
+     "bmw-serie-2-gran-coupe",
+     "bmw-serie-3",
+     "bmw-serie-4-cabrio",
+     "bmw-serie-5",
+     "bmw-x1",
+     "bmw-x2"
+    ],
+    "n": 8
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "bmw-x3",
+     "bmw-x5",
+     "bmw-x6",
+     "bmw-x7",
+     "caoa-changan-cs55",
+     "caoa-changan-cs75",
+     "caoa-changan-uni-t",
+     "chery-tiggo-5x",
+     "chery-tiggo-7",
+     "chery-tiggo-8"
+    ],
+    "n": 9
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "chery-tiggo-9",
+     "citroen-jumper",
+     "citroen-jumpy",
+     "denza-b5",
+     "denza-z9-gt",
+     "effa-v21",
+     "effa-v22",
+     "effa-v25",
+     "ferrari-12cilindri",
+     "ferrari-296"
+    ],
+    "n": 10
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "ferrari-849-testarossa",
+     "ferrari-amalfi",
+     "ferrari-purosangue",
+     "ferrari-roma",
+     "fiat-ducato",
+     "fiat-fiorino",
+     "fiat-scudo",
+     "ford-e-transit",
+     "ford-transit",
+     "foton-etoano-pro"
+    ],
+    "n": 11
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "foton-eview",
+     "foton-tunland",
+     "gac-aion-es",
+     "gac-aion-ut",
+     "gac-aion-v",
+     "gac-aion-y",
+     "gac-gs3",
+     "gac-gs4",
+     "gac-gs9",
+     "gac-hyptec-ht"
+    ],
+    "n": 12
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "geely-ex2",
+     "geely-ex5",
+     "geely-ex5-em-i",
+     "hitech-electric-delivery",
+     "hitech-electric-e-work-ec31",
+     "hitech-electric-e-work-ec35",
+     "iveco-daily-furgao",
+     "jac-e-j7",
+     "jac-e-js1",
+     "jac-e-js4"
+    ],
+    "n": 13
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "jac-hunter",
+     "jaecoo-jaecoo-5",
+     "jaecoo-jaecoo-7",
+     "jetour-s06",
+     "jetour-s08",
+     "jetour-t1",
+     "jetour-t2",
+     "lamborghini-revuelto",
+     "lamborghini-temerario",
+     "lamborghini-urus"
+    ],
+    "n": 14
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "land-rover-defender",
+     "land-rover-discovery",
+     "land-rover-discovery-sport",
+     "land-rover-range-rover",
+     "land-rover-range-rover-evoque",
+     "land-rover-range-rover-sport",
+     "land-rover-range-rover-velar",
+     "lexus-es",
+     "lexus-nx",
+     "lexus-rx"
+    ],
+    "n": 15
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "lexus-rz",
+     "lexus-ux",
+     "lotus-eletre",
+     "lotus-emeya",
+     "lotus-emira",
+     "mclaren-750s",
+     "mclaren-artura",
+     "mclaren-gts",
+     "mercedes-benz-amg-gt",
+     "mercedes-benz-amg-gt-4-portas"
+    ],
+    "n": 16
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "mercedes-benz-cla",
+     "mercedes-benz-classe-a",
+     "mercedes-benz-classe-c",
+     "mercedes-benz-classe-e",
+     "mercedes-benz-classe-g",
+     "mercedes-benz-classe-s",
+     "mercedes-benz-classe-v",
+     "mercedes-benz-esprinter",
+     "mercedes-benz-gla",
+     "mercedes-benz-glb"
+    ],
+    "n": 17
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "mercedes-benz-glc",
+     "mercedes-benz-glc-coupe",
+     "mercedes-benz-gle",
+     "mercedes-benz-gle-coupe",
+     "mercedes-benz-gls",
+     "mercedes-benz-sl",
+     "mercedes-benz-sprinter",
+     "mg-cyberster",
+     "mg-mg4",
+     "mg-mg4-urban"
+    ],
+    "n": 18
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "mg-s5",
+     "mini-aceman",
+     "mini-cooper-3-portas",
+     "mini-cooper-5-portas",
+     "mini-cooper-cabrio",
+     "mini-cooper-eletrico",
+     "mini-countryman",
+     "omoda-e5",
+     "omoda-omoda-5",
+     "omoda-omoda-7"
+    ],
+    "n": 19
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "peugeot-boxer",
+     "peugeot-expert",
+     "peugeot-partner-rapid",
+     "porsche-718",
+     "porsche-911",
+     "porsche-cayenne",
+     "porsche-cayenne-coupe",
+     "porsche-macan",
+     "porsche-panamera",
+     "porsche-taycan"
+    ],
+    "n": 20
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "porsche-taycan-cross-turismo",
+     "renault-kangoo",
+     "renault-kangoo-e-tech",
+     "renault-master",
+     "shineray-dtruck",
+     "shineray-tlux",
+     "toyota-hiace",
+     "volvo-ec40",
+     "volvo-es90",
+     "volvo-ex30"
+    ],
+    "n": 21
+   },
+   {
+    "at": "2026-11-04",
+    "ids": [
+     "volvo-ex40",
+     "volvo-ex90",
+     "volvo-xc60",
+     "volvo-xc90",
+     "zeekr-001",
+     "zeekr-7x",
+     "zeekr-x"
+    ],
+    "n": 22
+   }
+  ],
+  "updated_at": "2026-11-05T00:45:00Z"
+ },
+ "news_log": {
+  "counts": {
+   "alerts_updated": 4,
+   "news_updated": 36
+  },
+  "covered": [
+   "chevrolet-spin",
+   "chevrolet-sonic",
+   "chevrolet-captiva-ev",
+   "chevrolet-equinox",
+   "chevrolet-trailblazer",
+   "fiat-titano",
+   "fiat-fiorino",
+   "ford-maverick",
+   "ford-bronco-sport",
+   "hyundai-tucson",
+   "toyota-rav4",
+   "honda-civic",
+   "honda-zr-v",
+   "honda-city-hatchback",
+   "honda-cr-v",
+   "jeep-avenger",
+   "renault-oroch",
+   "renault-boreal",
+   "volkswagen-tukan",
+   "volkswagen-taos",
+   "volkswagen-tiguan",
+   "nissan-kait",
+   "nissan-versa",
+   "citroen-c3",
+   "citroen-aircross",
+   "byd-atto-2-dm-i",
+   "byd-yuan-pro",
+   "byd-seal",
+   "byd-shark",
+   "byd-sealion-7",
+   "chery-tiggo-7",
+   "chery-tiggo-5x",
+   "gwm-ora-03",
+   "gwm-poer-p30",
+   "gwm-tank-300",
+   "mitsubishi-eclipse-cross",
+   "kia-sportage",
+   "geely-ex5",
+   "jaecoo-jaecoo-7",
+   "byd-yuan-plus",
+   "geely-ex5-em-i"
+  ],
+  "history": [
+   {
+    "date": "2026-11-05T09:19:02Z",
+    "model_ids": [
+     "chevrolet-spin",
+     "chevrolet-sonic",
+     "chevrolet-captiva-ev",
+     "chevrolet-equinox",
+     "chevrolet-trailblazer",
+     "fiat-titano",
+     "fiat-fiorino",
+     "ford-maverick",
+     "ford-bronco-sport",
+     "hyundai-tucson",
+     "toyota-rav4",
+     "honda-civic",
+     "honda-zr-v",
+     "honda-city-hatchback",
+     "honda-cr-v",
+     "jeep-avenger",
+     "renault-oroch",
+     "renault-boreal",
+     "volkswagen-tukan",
+     "volkswagen-taos",
+     "volkswagen-tiguan",
+     "nissan-kait",
+     "nissan-versa",
+     "citroen-c3",
+     "citroen-aircross",
+     "byd-atto-2-dm-i",
+     "byd-yuan-pro",
+     "byd-seal",
+     "byd-shark",
+     "byd-sealion-7",
+     "chery-tiggo-7",
+     "chery-tiggo-5x",
+     "gwm-ora-03",
+     "gwm-poer-p30",
+     "gwm-tank-300",
+     "mitsubishi-eclipse-cross",
+     "kia-sportage",
+     "geely-ex5",
+     "jaecoo-jaecoo-7",
+     "byd-yuan-plus",
+     "geely-ex5-em-i"
+    ]
+   },
+   {
+    "date": "2026-11-05T03:17:26Z",
+    "model_ids": [
+     "chevrolet-onix",
+     "chevrolet-onix-plus",
+     "chevrolet-tracker",
+     "chevrolet-montana",
+     "chevrolet-s10",
+     "fiat-mobi",
+     "fiat-pulse",
+     "fiat-fastback",
+     "fiat-cronos",
+     "fiat-toro",
+     "volkswagen-polo",
+     "volkswagen-t-cross",
+     "volkswagen-nivus",
+     "volkswagen-tera",
+     "volkswagen-saveiro",
+     "volkswagen-amarok",
+     "hyundai-hb20s",
+     "toyota-corolla-cross",
+     "toyota-yaris-cross",
+     "toyota-hilux-sw4",
+     "jeep-renegade",
+     "jeep-compass",
+     "jeep-commander",
+     "renault-kardian",
+     "renault-duster",
+     "honda-hr-v",
+     "honda-wr-v",
+     "nissan-kicks",
+     "byd-dolphin-mini",
+     "byd-song-plus",
+     "byd-dolphin",
+     "byd-song-pro",
+     "gwm-haval-h6",
+     "ford-ranger",
+     "ford-territory",
+     "ram-rampage",
+     "mitsubishi-triton",
+     "peugeot-208",
+     "peugeot-2008",
+     "citroen-basalt"
+    ]
+   },
+   {
+    "date": "2026-11-04T21:07:30Z",
+    "model_ids": [
+     "volkswagen-jetta",
+     "hyundai-hb20",
+     "honda-city",
+     "gwm-tank-400",
+     "renault-niagara",
+     "fiat-strada",
+     "toyota-corolla",
+     "byd-king",
+     "volkswagen-virtus",
+     "hyundai-creta",
+     "renault-kwid",
+     "fiat-argo",
+     "toyota-hilux",
+     "chevrolet-spark-euv"
+    ]
+   }
+  ],
+  "last_run": "2026-11-05T09:19:02Z"
+ },
+ "procedure": {
+  "artifact": "giroauto (roleta de preço). A página lê apenas a coleção catalog; versions/models/brands/sources guardam a ficha completa.",
+  "collections": {
+   "brands/{brand_id}": "{id,name,group,country,status,models[ids],versions_count,updated_at}",
+   "catalog/{brand_id}": "{brand,brand_id,updated_at,rows:[{i:id,m:model_id,mn:modelo,v:versão,y:ano,p:preço,pk:sugerido|fipe,b:carroceria,f:combustível,pr:propulsão,t:câmbio,cv:potência,k:highlights,st:status,e:motor}]} — ordenado por preço. A roleta só mostra st=on_sale com p numérico. Atualize SEMPRE o catalog da marca por último, depois de gravar as versões.",
+   "import_jobs/{id}": "Registro de cada lote: counts, completeness_avg, excluded_not_on_sale, source_files.",
+   "meta/progress": "Estado da expansão: stage, counts, brands_done, last_job, next_task, queue[], pending_checks[].",
+   "models/{model_id}": "{id,brand_id,name,body,status,versions[ids],price_min,price_max,updated_at}",
+   "sources/{sha1(url)[:16]}": "{url,name,type (oficial|imprensa|fipe),consulted_at}",
+   "versions/{id}": "Uma versão comercial. Campos: schema, id, brand_id, model_id (\"<marca>-<modelo>\" em slug), brand, model, version, display_name, model_year, status (on_sale|announced|pre_order|discontinued|independent_import|unverified), body (Hatch|Sedã|SUV|Picape|Esportivo|Minivan|Perua|Van), origin{brand_country,manufactured_in,national}, price{value,kind (sugerido|fipe),ref_month,source_id,validity,promo}, price_k, powertrain{engine_desc,fuel (Flex|Gasolina|Etanol|Diesel|Híbrido|Híbrido plug-in|Elétrico),fuel_raw,propulsion,power_cv,power_cv_status,torque_kgfm,displacement_l,turbo (true|null, nunca false sem fonte),transmission (Manual|Automático|CVT|Dupla embreagem|Automático (elétrico/DHT)),transmission_raw,drive (Integral|null)}, highlights[eletrico,hibrido,potente,economico,turbo,x4,diesel,espaco,tech], specs{dimensions,performance,efficiency,battery,safety,technology,comfort,mechanical,warranty: null até haver fonte}, images[], sources[source_id], notes, quality{essential_filled,essential_total,missing,completeness_pct,confidence}, created_at, updated_at. ID novo = \"<model_id>-<slug da versão>\". Nunca reutilize nem renomeie IDs existentes (curtidas apontam para eles)."
+  },
+  "rules": [
+   "Nunca inventar preço, potência ou equipamento; desconhecido = null",
+   "Preço de tabela cheio (não oferta, PCD ou CNPJ); oferta vai em price.promo",
+   "Prioridade: site oficial > notícia de lançamento com lista de versões > FIPE 0 km (kind=fipe)",
+   "Registrar conflitos em notes",
+   "Só on_sale entra na roleta; anunciado/pré-venda ficam gravados com o status",
+   "Escritas com if_version para documentos existentes; nunca apagar votes, photos ou logos",
+   "Lotes pequenos (uma marca ou poucas), em batches de até 50 escritas, catalog por último"
+  ],
+  "schema": 1,
+  "updated_at": "2026-11-03"
+ },
+ "progress": {
+  "brands_done": [
+   "byd",
+   "chevrolet",
+   "citroen",
+   "fiat",
+   "ford",
+   "gwm",
+   "honda",
+   "hyundai",
+   "jeep",
+   "kia",
+   "leapmotor",
+   "mitsubishi",
+   "nissan",
+   "peugeot",
+   "ram",
+   "renault",
+   "suzuki",
+   "toyota",
+   "volkswagen"
+  ],
+  "brands_in_progress": [],
+  "brands_pending_confirmed": [],
+  "counts": {
+   "brands": 19,
+   "models": 133,
+   "versions": 384
+  },
+  "last_job": "l02-l03",
+  "next_task": "L04: chinesas confirmadas — CAOA Chery (Tiggo), Omoda, Jaecoo, CAOA Changan/Deepal, Geely, Zeekr, GAC/Aion, MG Motor, JAC, Jetour, Avatr, Denza, Yangwang, DFM (Dongfeng), BAIC/Arcfox, Emova (JMEV)",
+  "pending_checks": [
+   "Triton: 9 preços só via Webmotors",
+   "Kia Stonic/EV5 ano 2025 (estoque)",
+   "Suzuki e Vitara: preço pode ser oferta",
+   "Jetta GLI: 278.490 vs 258.490",
+   "BYD King GL e Shark: preços divergentes",
+   "Peugeot 2008 2027: possível reajuste",
+   "Titano Ranch: pode ter saído de linha",
+   "Origem de fabricação: maioria null"
+  ],
+  "queue": [
+   "L04 chinesas",
+   "L05 premium (BMW, MINI, Mercedes-Benz, Audi, Porsche, Volvo, Land Rover, Lexus)",
+   "L06 luxo (Ferrari, Lamborghini, Maserati, Bentley, Rolls-Royce, Aston Martin, McLaren, Lotus)",
+   "L07 utilitários leves (Foton, DFSK)",
+   "L08 marcas a confirmar (Lynk & Co, IM, Lepas, iCar, Jaguar, Subaru, Tesla, KGM, ...)",
+   "L09 auditoria de cobertura",
+   "Fichas técnicas: dimensões, consumo Inmetro, segurança/Latin NCAP, equipamentos"
+  ],
+  "schema": 1,
+  "stage": "Etapa 4 — marcas chinesas",
+  "updated_at": "2026-11-03"
+ }
+}

@@ -1,0 +1,4756 @@
+{
+ "agrale-marrua-am200-mo": {
+  "body": "Van",
+  "brand_id": "agrale",
+  "id": "agrale-marrua-am200-mo",
+  "name": "Marruá AM200 MO",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "agrale-marrua-am200-mo-am200-mo-3-8-tdi-4x4-11-lugares"
+  ]
+ },
+ "agrale-marrua-am250": {
+  "body": "Picape",
+  "brand_id": "agrale",
+  "id": "agrale-marrua-am250",
+  "name": "Marruá AM250",
+  "price_max": 717666,
+  "price_min": 590000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "agrale-marrua-am250-cabine-dupla-3-8-tdi",
+   "agrale-marrua-am250-cabine-dupla-3-8-tdi-automatico",
+   "agrale-marrua-am250-cabine-simples-3-8-tdi",
+   "agrale-marrua-am250-cabine-simples-3-8-tdi-automatico"
+  ]
+ },
+ "aston-martin-db12": {
+  "body": "Esportivo",
+  "brand_id": "aston-martin",
+  "id": "aston-martin-db12",
+  "name": "DB12",
+  "price_max": 3800000,
+  "price_min": 3500000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "aston-martin-db12-coupe-4-0-v8-biturbo",
+   "aston-martin-db12-volante-4-0-v8-biturbo"
+  ]
+ },
+ "aston-martin-dbx": {
+  "body": "SUV",
+  "brand_id": "aston-martin",
+  "id": "aston-martin-dbx",
+  "name": "DBX",
+  "price_max": 3800000,
+  "price_min": 3700000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "aston-martin-dbx-707-4-0-v8-biturbo",
+   "aston-martin-dbx-s-4-0-v8-biturbo"
+  ]
+ },
+ "aston-martin-vanquish": {
+  "body": "Esportivo",
+  "brand_id": "aston-martin",
+  "id": "aston-martin-vanquish",
+  "name": "Vanquish",
+  "price_max": 6000000,
+  "price_min": 6000000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "aston-martin-vanquish-5-2-v12-biturbo"
+  ]
+ },
+ "aston-martin-vantage": {
+  "body": "Esportivo",
+  "brand_id": "aston-martin",
+  "id": "aston-martin-vantage",
+  "name": "Vantage",
+  "price_max": 2800000,
+  "price_min": 2700000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "aston-martin-vantage-s-coupe-4-0-v8-biturbo",
+   "aston-martin-vantage-s-roadster-4-0-v8-biturbo"
+  ]
+ },
+ "audi-a3-sedan": {
+  "body": "Sedã",
+  "brand_id": "audi",
+  "id": "audi-a3-sedan",
+  "name": "A3 Sedan",
+  "price_max": 369990,
+  "price_min": 314990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-a3-sedan-advanced-40-tfsi-s-tronic",
+   "audi-a3-sedan-performance-40-tfsi-s-tronic",
+   "audi-a3-sedan-performance-black-40-tfsi-s-tronic"
+  ]
+ },
+ "audi-a3-sportback": {
+  "body": "Hatch",
+  "brand_id": "audi",
+  "id": "audi-a3-sportback",
+  "name": "A3 Sportback",
+  "price_max": 374990,
+  "price_min": 344990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-a3-sportback-performance-40-tfsi-s-tronic",
+   "audi-a3-sportback-performance-black-40-tfsi-s-tronic"
+  ]
+ },
+ "audi-a5": {
+  "body": "Sedã",
+  "brand_id": "audi",
+  "id": "audi-a5",
+  "name": "A5",
+  "price_max": 424990,
+  "price_min": 424990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-a5-s-line-2-0-tfsi-quattro"
+  ]
+ },
+ "audi-a5-avant": {
+  "body": "Perua",
+  "brand_id": "audi",
+  "id": "audi-a5-avant",
+  "name": "A5 Avant",
+  "price_max": 481637,
+  "price_min": 481637,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-a5-avant-s-line-2-0-tfsi-quattro-s-tronic"
+  ]
+ },
+ "audi-a6-avant-e-tron": {
+  "body": "Perua",
+  "brand_id": "audi",
+  "id": "audi-a6-avant-e-tron",
+  "name": "A6 Avant e-tron",
+  "price_max": 699990,
+  "price_min": 699990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-a6-avant-e-tron-s-line"
+  ]
+ },
+ "audi-a6-sportback-e-tron": {
+  "body": "Sedã",
+  "brand_id": "audi",
+  "id": "audi-a6-sportback-e-tron",
+  "name": "A6 Sportback e-tron",
+  "price_max": 629990,
+  "price_min": 629990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-a6-sportback-e-tron-performance-black"
+  ]
+ },
+ "audi-q3": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q3",
+  "name": "Q3",
+  "price_max": 389990,
+  "price_min": 389990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q3-launch-edition-2-0-tfsi-quattro"
+  ]
+ },
+ "audi-q3-sportback": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q3-sportback",
+  "name": "Q3 Sportback",
+  "price_max": 399990,
+  "price_min": 399990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q3-sportback-launch-edition-2-0-tfsi-quattro"
+  ]
+ },
+ "audi-q5": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q5",
+  "name": "Q5",
+  "price_max": 644990,
+  "price_min": 449990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q5-dynamic-2-0-tfsi-quattro",
+   "audi-q5-s-line-2-0-tfsi-quattro",
+   "audi-q5-sq5-3-0-v6-tfsi-quattro"
+  ]
+ },
+ "audi-q5-sportback": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q5-sportback",
+  "name": "Q5 Sportback",
+  "price_max": 659990,
+  "price_min": 479990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q5-sportback-dynamic-2-0-tfsi-quattro",
+   "audi-q5-sportback-s-line-2-0-tfsi-quattro",
+   "audi-q5-sportback-sq5-sportback-3-0-v6-tfsi-quattro"
+  ]
+ },
+ "audi-q6-e-tron": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q6-e-tron",
+  "name": "Q6 e-tron",
+  "price_max": 695990,
+  "price_min": 695990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q6-e-tron-s-line-quattro"
+  ]
+ },
+ "audi-q6-sportback-e-tron": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q6-sportback-e-tron",
+  "name": "Q6 Sportback e-tron",
+  "price_max": 790990,
+  "price_min": 710990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q6-sportback-e-tron-s-line-quattro",
+   "audi-q6-sportback-e-tron-sq6-sportback-e-tron-quattro"
+  ]
+ },
+ "audi-q7": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q7",
+  "name": "Q7",
+  "price_max": 729990,
+  "price_min": 729990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q7-s-line-55-tfsi-quattro"
+  ]
+ },
+ "audi-q8": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-q8",
+  "name": "Q8",
+  "price_max": 819990,
+  "price_min": 819990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-q8-performance-black-3-0-tfsi-quattro"
+  ]
+ },
+ "audi-rs-3-sedan": {
+  "body": "Sedã",
+  "brand_id": "audi",
+  "id": "audi-rs-3-sedan",
+  "name": "RS 3 Sedan",
+  "price_max": 714990,
+  "price_min": 659990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-rs-3-sedan-2-5-tfsi-quattro",
+   "audi-rs-3-sedan-track-2-5-tfsi-quattro"
+  ]
+ },
+ "audi-rs-6-avant": {
+  "body": "Perua",
+  "brand_id": "audi",
+  "id": "audi-rs-6-avant",
+  "name": "RS 6 Avant",
+  "price_max": 1251990,
+  "price_min": 1251990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-rs-6-avant-performance-4-0-v8-tfsi-quattro"
+  ]
+ },
+ "audi-rs-e-tron-gt": {
+  "body": "Esportivo",
+  "brand_id": "audi",
+  "id": "audi-rs-e-tron-gt",
+  "name": "RS e-tron GT",
+  "price_max": 1334990,
+  "price_min": 1334990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-rs-e-tron-gt-performance-quattro"
+  ]
+ },
+ "audi-rs-q8": {
+  "body": "SUV",
+  "brand_id": "audi",
+  "id": "audi-rs-q8",
+  "name": "RS Q8",
+  "price_max": 1339990,
+  "price_min": 1339990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "audi-rs-q8-performance-4-0-v8-tfsi-quattro"
+  ]
+ },
+ "avatr-11": {
+  "body": "SUV",
+  "brand_id": "avatr",
+  "id": "avatr-11",
+  "name": "11",
+  "price_max": 619900,
+  "price_min": 599990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "avatr-11-4-lugares-2-2",
+   "avatr-11-5-lugares"
+  ]
+ },
+ "baic-arcfox-t1": {
+  "body": "SUV",
+  "brand_id": "baic",
+  "id": "baic-arcfox-t1",
+  "name": "Arcfox T1",
+  "price_max": 139900,
+  "price_min": 129900,
+  "status": "on_sale",
+  "updated_at": "2026-11-05",
+  "versions": [
+   "baic-arcfox-t1-max",
+   "baic-arcfox-t1-pro"
+  ]
+ },
+ "baic-arcfox-t5": {
+  "body": "SUV",
+  "brand_id": "baic",
+  "id": "baic-arcfox-t5",
+  "name": "Arcfox T5",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": []
+ },
+ "bmw-i4": {
+  "body": "Sedã",
+  "brand_id": "bmw",
+  "id": "bmw-i4",
+  "name": "i4",
+  "price_max": 675950,
+  "price_min": 582950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-i4-edrive40-m-sport",
+   "bmw-i4-m50-xdrive"
+  ]
+ },
+ "bmw-i7": {
+  "body": "Sedã",
+  "brand_id": "bmw",
+  "id": "bmw-i7",
+  "name": "i7",
+  "price_max": 1373950,
+  "price_min": 1373950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-i7-xdrive60-m-sport"
+  ]
+ },
+ "bmw-ix1": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-ix1",
+  "name": "iX1",
+  "price_max": 485950,
+  "price_min": 485950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-ix1-xdrive30-m-sport"
+  ]
+ },
+ "bmw-ix2": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-ix2",
+  "name": "iX2",
+  "price_max": 495950,
+  "price_min": 495950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-ix2-xdrive30-m-sport"
+  ]
+ },
+ "bmw-ix3": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-ix3",
+  "name": "iX3",
+  "price_max": 587950,
+  "price_min": 587950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-ix3-50-xdrive"
+  ]
+ },
+ "bmw-ix5": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-ix5",
+  "name": "iX5",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-ix5-60-xdrive"
+  ]
+ },
+ "bmw-m2": {
+  "body": "Esportivo",
+  "brand_id": "bmw",
+  "id": "bmw-m2",
+  "name": "M2",
+  "price_max": 744950,
+  "price_min": 690950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-m2-coupe",
+   "bmw-m2-coupe-track"
+  ]
+ },
+ "bmw-m3": {
+  "body": "Sedã",
+  "brand_id": "bmw",
+  "id": "bmw-m3",
+  "name": "M3",
+  "price_max": 1001950,
+  "price_min": 894950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-m3-competition",
+   "bmw-m3-competition-track"
+  ]
+ },
+ "bmw-m4": {
+  "body": "Esportivo",
+  "brand_id": "bmw",
+  "id": "bmw-m4",
+  "name": "M4",
+  "price_max": 1022950,
+  "price_min": 915950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-m4-competition-coupe",
+   "bmw-m4-competition-track"
+  ]
+ },
+ "bmw-serie-1": {
+  "body": "Hatch",
+  "brand_id": "bmw",
+  "id": "bmw-serie-1",
+  "name": "Série 1",
+  "price_max": 462950,
+  "price_min": 462950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-serie-1-m135-xdrive"
+  ]
+ },
+ "bmw-serie-2-gran-coupe": {
+  "body": "Sedã",
+  "brand_id": "bmw",
+  "id": "bmw-serie-2-gran-coupe",
+  "name": "Série 2 Gran Coupé",
+  "price_max": 492950,
+  "price_min": 334950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-serie-2-gran-coupe-220-m-sport",
+   "bmw-serie-2-gran-coupe-m235-xdrive"
+  ]
+ },
+ "bmw-serie-3": {
+  "body": "Sedã",
+  "brand_id": "bmw",
+  "id": "bmw-serie-3",
+  "name": "Série 3",
+  "price_max": 467950,
+  "price_min": 356950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-serie-3-320i-gp",
+   "bmw-serie-3-320i-m-sport",
+   "bmw-serie-3-320i-sport-gp",
+   "bmw-serie-3-330e-m-sport"
+  ]
+ },
+ "bmw-serie-4-cabrio": {
+  "body": "Esportivo",
+  "brand_id": "bmw",
+  "id": "bmw-serie-4-cabrio",
+  "name": "Série 4 Cabrio",
+  "price_max": 514950,
+  "price_min": 514950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-serie-4-cabrio-420i-cabrio-m-sport"
+  ]
+ },
+ "bmw-serie-5": {
+  "body": "Sedã",
+  "brand_id": "bmw",
+  "id": "bmw-serie-5",
+  "name": "Série 5",
+  "price_max": 647950,
+  "price_min": 647950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-serie-5-530e-m-sport"
+  ]
+ },
+ "bmw-x1": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-x1",
+  "name": "X1",
+  "price_max": 389950,
+  "price_min": 334950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-x1-sdrive20i-gp",
+   "bmw-x1-sdrive20i-m-sport",
+   "bmw-x1-sdrive20i-x-line"
+  ]
+ },
+ "bmw-x2": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-x2",
+  "name": "X2",
+  "price_max": 545950,
+  "price_min": 415950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-x2-m35i-xdrive",
+   "bmw-x2-xdrive20i-m-sport"
+  ]
+ },
+ "bmw-x3": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-x3",
+  "name": "X3",
+  "price_max": 659950,
+  "price_min": 528950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-x3-30-xdrive-m-sport",
+   "bmw-x3-m50-xdrive"
+  ]
+ },
+ "bmw-x5": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-x5",
+  "name": "X5",
+  "price_max": 868950,
+  "price_min": 868950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-x5-xdrive50e-m-sport"
+  ]
+ },
+ "bmw-x6": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-x6",
+  "name": "X6",
+  "price_max": 892950,
+  "price_min": 892950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-x6-xdrive40i-m-sport"
+  ]
+ },
+ "bmw-x7": {
+  "body": "SUV",
+  "brand_id": "bmw",
+  "id": "bmw-x7",
+  "name": "X7",
+  "price_max": 1033950,
+  "price_min": 1033950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "bmw-x7-xdrive40i-m-sport"
+  ]
+ },
+ "byd-atto-2-dm-i": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-atto-2-dm-i",
+  "name": "Atto 2 DM-i",
+  "price_max": 169990,
+  "price_min": 166660,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-atto-2-dm-i-gl-1-5-dm-i-flex-7-85-kwh",
+   "byd-atto-2-dm-i-gs-1-5-dm-i-flex-18-03-kwh"
+  ]
+ },
+ "byd-atto-8": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-atto-8",
+  "name": "Atto 8",
+  "price_max": 399990,
+  "price_min": 399990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-atto-8-1-5-turbo-phev-awd"
+  ]
+ },
+ "byd-dolphin": {
+  "body": "Hatch",
+  "brand_id": "byd",
+  "id": "byd-dolphin",
+  "name": "Dolphin",
+  "price_max": 184800,
+  "price_min": 149990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "dolphin",
+   "dolphin-plus",
+   "dolphin-special-edition-se"
+  ]
+ },
+ "byd-dolphin-mini": {
+  "body": "Hatch",
+  "brand_id": "byd",
+  "id": "byd-dolphin-mini",
+  "name": "Dolphin Mini",
+  "price_max": 119990,
+  "price_min": 118990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "dolphinmini",
+   "dolphinmini-gs-38-kwh"
+  ]
+ },
+ "byd-han": {
+  "body": "Sedã",
+  "brand_id": "byd",
+  "id": "byd-han",
+  "name": "Han",
+  "price_max": 559800,
+  "price_min": 559800,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-han-awd-76-9-kwh"
+  ]
+ },
+ "byd-king": {
+  "body": "Sedã",
+  "brand_id": "byd",
+  "id": "byd-king",
+  "name": "King",
+  "price_max": 175990,
+  "price_min": 172990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-king-gl-1-5-dm-i",
+   "byd-king-gs-1-5-dm-i"
+  ]
+ },
+ "byd-seal": {
+  "body": "Sedã",
+  "brand_id": "byd",
+  "id": "byd-seal",
+  "name": "Seal",
+  "price_max": 299990,
+  "price_min": 299990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "seal"
+  ]
+ },
+ "byd-sealion-7": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-sealion-7",
+  "name": "Sealion 7",
+  "price_max": 339990,
+  "price_min": 339990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-sealion-7-82-5-kwh-awd"
+  ]
+ },
+ "byd-shark": {
+  "body": "Picape",
+  "brand_id": "byd",
+  "id": "byd-shark",
+  "name": "Shark",
+  "price_max": 344990,
+  "price_min": 344990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-shark-gs-1-5-turbo-phev-awd"
+  ]
+ },
+ "byd-song-plus": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-song-plus",
+  "name": "Song Plus",
+  "price_max": 249990,
+  "price_min": 249990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-song-plus-1-5-dm-i-turbo"
+  ]
+ },
+ "byd-song-plus-premium": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-song-plus-premium",
+  "name": "Song Plus Premium",
+  "price_max": 299800,
+  "price_min": 299800,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-song-plus-premium-1-5-dm-i-turbo-awd"
+  ]
+ },
+ "byd-song-pro": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-song-pro",
+  "name": "Song Pro",
+  "price_max": 199990,
+  "price_min": 176990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "songpro",
+   "songpro-gs-1-5-dm-i-flex"
+  ]
+ },
+ "byd-tan": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-tan",
+  "name": "Tan",
+  "price_max": 426800,
+  "price_min": 426800,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-tan-awd-108-8-kwh"
+  ]
+ },
+ "byd-yuan-plus": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-yuan-plus",
+  "name": "Yuan Plus",
+  "price_max": 269990,
+  "price_min": 235990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-yuan-plus-60-8-kwh",
+   "byd-yuan-plus-awd-74-8-kwh"
+  ]
+ },
+ "byd-yuan-pro": {
+  "body": "SUV",
+  "brand_id": "byd",
+  "id": "byd-yuan-pro",
+  "name": "Yuan Pro",
+  "price_max": 182990,
+  "price_min": 182990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "byd-yuan-pro-45-1-kwh"
+  ]
+ },
+ "cadillac-lyriq": {
+  "body": "SUV",
+  "brand_id": "cadillac",
+  "id": "cadillac-lyriq",
+  "name": "Lyriq",
+  "price_max": 820000,
+  "price_min": 820000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "cadillac-lyriq-signature-luxury"
+  ]
+ },
+ "cadillac-optiq": {
+  "body": "SUV",
+  "brand_id": "cadillac",
+  "id": "cadillac-optiq",
+  "name": "Optiq",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "cadillac-optiq-a-definir"
+  ]
+ },
+ "cadillac-vistiq": {
+  "body": "SUV",
+  "brand_id": "cadillac",
+  "id": "cadillac-vistiq",
+  "name": "Vistiq",
+  "price_max": 990000,
+  "price_min": 990000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "cadillac-vistiq-versao-unica-6-lugares-2-2-2"
+  ]
+ },
+ "caoa-changan-cs55": {
+  "body": "SUV",
+  "brand_id": "caoa-changan",
+  "id": "caoa-changan-cs55",
+  "name": "CS55",
+  "price_max": 189990,
+  "price_min": 144990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "caoa-changan-cs55-infinity-1-5-tgdi-turbo-flex-7dct",
+   "caoa-changan-cs55-prime-1-5-tgdi-turbo-flex-7dct",
+   "caoa-changan-cs55-ultra-hybrid-phev-flex"
+  ]
+ },
+ "caoa-changan-cs75": {
+  "body": "SUV",
+  "brand_id": "caoa-changan",
+  "id": "caoa-changan-cs75",
+  "name": "CS75",
+  "price_max": 199990,
+  "price_min": 199990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "caoa-changan-cs75-1-5-tgdi-turbo-flex-at8"
+  ]
+ },
+ "caoa-changan-uni-t": {
+  "body": "SUV",
+  "brand_id": "caoa-changan",
+  "id": "caoa-changan-uni-t",
+  "name": "Uni-T",
+  "price_max": 174990,
+  "price_min": 174990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "caoa-changan-uni-t-infinity-1-5-tgdi-turbo-flex"
+  ]
+ },
+ "chery-tiggo-5x": {
+  "body": "SUV",
+  "brand_id": "chery",
+  "id": "chery-tiggo-5x",
+  "name": "Tiggo 5X",
+  "price_max": 139990,
+  "price_min": 124990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chery-tiggo-5x-hybrid-hev-1-5-dht",
+   "chery-tiggo-5x-pro-1-5-turbo-cvt",
+   "chery-tiggo-5x-sport-1-5-turbo-cvt"
+  ]
+ },
+ "chery-tiggo-7": {
+  "body": "SUV",
+  "brand_id": "chery",
+  "id": "chery-tiggo-7",
+  "name": "Tiggo 7",
+  "price_max": 209990,
+  "price_min": 141990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chery-tiggo-7-pro-1-6-tgdi-dct",
+   "chery-tiggo-7-pro-phev-1-5-turbo-dht",
+   "chery-tiggo-7-sport-1-5-tci-cvt"
+  ]
+ },
+ "chery-tiggo-8": {
+  "body": "SUV",
+  "brand_id": "chery",
+  "id": "chery-tiggo-8",
+  "name": "Tiggo 8",
+  "price_max": 249990,
+  "price_min": 196990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chery-tiggo-8-pro-1-6-tgdi-dct",
+   "chery-tiggo-8-pro-phev-1-5-turbo-dht"
+  ]
+ },
+ "chery-tiggo-9": {
+  "body": "SUV",
+  "brand_id": "chery",
+  "id": "chery-tiggo-9",
+  "name": "Tiggo 9",
+  "price_max": 299990,
+  "price_min": 249990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chery-tiggo-9-2-0-tgdi-awd",
+   "chery-tiggo-9-phev-awd"
+  ]
+ },
+ "chevrolet-blazer-ev": {
+  "body": "SUV",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-blazer-ev",
+  "name": "Blazer EV",
+  "price_max": 503190,
+  "price_min": 503190,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-blazer-ev-rs"
+  ]
+ },
+ "chevrolet-captiva-ev": {
+  "body": "SUV",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-captiva-ev",
+  "name": "Captiva EV",
+  "price_max": 219990,
+  "price_min": 219990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-captiva-ev-premier"
+  ]
+ },
+ "chevrolet-equinox": {
+  "body": "SUV",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-equinox",
+  "name": "Equinox",
+  "price_max": 296090,
+  "price_min": 296090,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-equinox-activ-1-5-turbo-awd",
+   "chevrolet-equinox-rs-1-5-turbo-awd"
+  ]
+ },
+ "chevrolet-montana": {
+  "body": "Picape",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-montana",
+  "name": "Montana",
+  "price_max": 173190,
+  "price_min": 134990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-montana-1-2-turbo-mt",
+   "chevrolet-montana-lt-1-2-turbo-mt",
+   "chevrolet-montana-ltz-1-2-turbo-at",
+   "chevrolet-montana-premier-1-2-turbo-at",
+   "chevrolet-montana-rs-1-2-turbo-at"
+  ]
+ },
+ "chevrolet-onix": {
+  "body": "Hatch",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-onix",
+  "name": "Onix",
+  "price_max": 122490,
+  "price_min": 99990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "onix",
+   "onix-1-0-mt",
+   "onix-1-0-mt-log",
+   "onix-1-0-mt-pro",
+   "onix-1-0-turbo-at",
+   "onix-1-0-turbo-mt",
+   "onix-activ-1-0-turbo-at",
+   "onix-premier-1-0-turbo-at",
+   "onix-rs-1-0-turbo-at"
+  ]
+ },
+ "chevrolet-onix-plus": {
+  "body": "Sedã",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-onix-plus",
+  "name": "Onix Plus",
+  "price_max": 126590,
+  "price_min": 103990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "onixplus",
+   "onixplus-1-0-mt",
+   "onixplus-1-0-turbo-at",
+   "onixplus-1-0-turbo-mt",
+   "onixplus-ltz-1-0-turbo-at",
+   "onixplus-premier-1-0-turbo-at"
+  ]
+ },
+ "chevrolet-s10": {
+  "body": "Picape",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-s10",
+  "name": "S10",
+  "price_max": 352290,
+  "price_min": 268990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-s10-cabine-simples-wt-2-8-4x4-mt",
+   "chevrolet-s10-high-country-cd-2-8-4x4-at",
+   "chevrolet-s10-ltz-cd-2-8-4x4-at",
+   "chevrolet-s10-trail-boss-cd-2-8-4x4-at",
+   "chevrolet-s10-wt-cd-2-8-4x4-at",
+   "chevrolet-s10-wt-cd-2-8-4x4-mt",
+   "chevrolet-s10-z71-cd-2-8-4x4-at"
+  ]
+ },
+ "chevrolet-silverado": {
+  "body": "Picape",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-silverado",
+  "name": "Silverado",
+  "price_max": 483990,
+  "price_min": 483990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-silverado-high-country-5-3-v8-awd"
+  ]
+ },
+ "chevrolet-sonic": {
+  "body": "SUV",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-sonic",
+  "name": "Sonic",
+  "price_max": 135990,
+  "price_min": 129990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-sonic-premier-1-0-turbo-at",
+   "chevrolet-sonic-rs-1-0-turbo-at"
+  ]
+ },
+ "chevrolet-spark-euv": {
+  "body": "SUV",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-spark-euv",
+  "name": "Spark EUV",
+  "price_max": 152790,
+  "price_min": 152790,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-spark-euv-activ"
+  ]
+ },
+ "chevrolet-spin": {
+  "body": "Minivan",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-spin",
+  "name": "Spin",
+  "price_max": 168990,
+  "price_min": 119900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-spin-1-8-at",
+   "chevrolet-spin-lt-1-8-mt",
+   "chevrolet-spin-ltz-1-8-at-5-ou-7-lugares",
+   "chevrolet-spin-premier-1-8-at-7-lugares"
+  ]
+ },
+ "chevrolet-tracker": {
+  "body": "SUV",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-tracker",
+  "name": "Tracker",
+  "price_max": 182590,
+  "price_min": 119900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "tracker",
+   "tracker-lt",
+   "tracker-ltz",
+   "tracker-premier-1-2",
+   "tracker-rs-1-2"
+  ]
+ },
+ "chevrolet-trailblazer": {
+  "body": "SUV",
+  "brand_id": "chevrolet",
+  "id": "chevrolet-trailblazer",
+  "name": "Trailblazer",
+  "price_max": 438590,
+  "price_min": 422590,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "chevrolet-trailblazer-high-country-2-8-4x4-at-7-lugares",
+   "chevrolet-trailblazer-midnight-2-8-4x4-at-7-lugares"
+  ]
+ },
+ "citroen-aircross": {
+  "body": "SUV",
+  "brand_id": "citroen",
+  "id": "citroen-aircross",
+  "name": "Aircross",
+  "price_max": 134990,
+  "price_min": 124990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "citroen-aircross-feel-pack-7-turbo-200-at-7-lugares",
+   "citroen-aircross-feel-turbo-200-at-5-lugares",
+   "citroen-aircross-xtr-7-turbo-200-at-7-lugares"
+  ]
+ },
+ "citroen-basalt": {
+  "body": "SUV",
+  "brand_id": "citroen",
+  "id": "citroen-basalt",
+  "name": "Basalt",
+  "price_max": 120990,
+  "price_min": 95590,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "citroen-basalt-dark-edition-1-0-mt",
+   "citroen-basalt-dark-edition-turbo-200-at",
+   "citroen-basalt-feel-1-0-mt",
+   "citroen-basalt-feel-turbo-200-at",
+   "citroen-basalt-shine-turbo-200-at"
+  ]
+ },
+ "citroen-c3": {
+  "body": "Hatch",
+  "brand_id": "citroen",
+  "id": "citroen-c3",
+  "name": "C3",
+  "price_max": 113990,
+  "price_min": 77990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "c3",
+   "c3-feel-plus-1-0",
+   "c3-live-plus-1-0",
+   "c3-xtr-1-0",
+   "c3-you-1-0-turbo-200"
+  ]
+ },
+ "citroen-jumper": {
+  "body": "Van",
+  "brand_id": "citroen",
+  "id": "citroen-jumper",
+  "name": "Jumper",
+  "price_max": 282218,
+  "price_min": 244619,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "citroen-jumper-cargo-2-2-turbodiesel",
+   "citroen-jumper-furgao-2-2-turbodiesel",
+   "citroen-jumper-minibus-executive-17l-2-2-turbodiesel",
+   "citroen-jumper-vitre-2-2-turbodiesel"
+  ]
+ },
+ "citroen-jumpy": {
+  "body": "Van",
+  "brand_id": "citroen",
+  "id": "citroen-jumpy",
+  "name": "Jumpy",
+  "price_max": 235990,
+  "price_min": 233590,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "citroen-jumpy-cargo-2-2-turbodiesel",
+   "citroen-jumpy-vitre-2-2-turbodiesel"
+  ]
+ },
+ "denza-b5": {
+  "body": "SUV",
+  "brand_id": "denza",
+  "id": "denza-b5",
+  "name": "B5",
+  "price_max": 449000,
+  "price_min": 405000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "denza-b5-gl-4wd",
+   "denza-b5-gs-4wd"
+  ]
+ },
+ "denza-d9": {
+  "body": "Minivan",
+  "brand_id": "denza",
+  "id": "denza-d9",
+  "name": "D9",
+  "price_max": 800000,
+  "price_min": 800000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "denza-d9-ev-7-lugares"
+  ]
+ },
+ "denza-z9-gt": {
+  "body": "Perua",
+  "brand_id": "denza",
+  "id": "denza-z9-gt",
+  "name": "Z9 GT",
+  "price_max": 670000,
+  "price_min": 670000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "denza-z9-gt-ev-awd"
+  ]
+ },
+ "dfm-box": {
+  "body": "Hatch",
+  "brand_id": "dfm",
+  "id": "dfm-box",
+  "name": "Box",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "dfm-box-e3"
+  ]
+ },
+ "dfm-vigo": {
+  "body": "SUV",
+  "brand_id": "dfm",
+  "id": "dfm-vigo",
+  "name": "Vigo",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "dfm-vigo-e2",
+   "dfm-vigo-e3"
+  ]
+ },
+ "effa-v21": {
+  "body": "Picape",
+  "brand_id": "effa",
+  "id": "effa-v21",
+  "name": "V21",
+  "price_max": 111701,
+  "price_min": 111701,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "effa-v21-pick-up-bau-1-5-16v",
+   "effa-v21-pick-up-cabine-simples-1-5-16v"
+  ]
+ },
+ "effa-v22": {
+  "body": "Picape",
+  "brand_id": "effa",
+  "id": "effa-v22",
+  "name": "V22",
+  "price_max": 120475,
+  "price_min": 120475,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "effa-v22-pick-up-cabine-dupla-1-5-16v"
+  ]
+ },
+ "effa-v25": {
+  "body": "Van",
+  "brand_id": "effa",
+  "id": "effa-v25",
+  "name": "V25",
+  "price_max": 119484,
+  "price_min": 119484,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "effa-v25-furgao-1-5-16v"
+  ]
+ },
+ "ferrari-12cilindri": {
+  "body": "Esportivo",
+  "brand_id": "ferrari",
+  "id": "ferrari-12cilindri",
+  "name": "12Cilindri",
+  "price_max": 8249099,
+  "price_min": 7900000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ferrari-12cilindri-coupe-6-5-v12",
+   "ferrari-12cilindri-spider-6-5-v12"
+  ]
+ },
+ "ferrari-296": {
+  "body": "Esportivo",
+  "brand_id": "ferrari",
+  "id": "ferrari-296",
+  "name": "296",
+  "price_max": 7700000,
+  "price_min": 4225800,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ferrari-296-gtb",
+   "ferrari-296-gts",
+   "ferrari-296-speciale",
+   "ferrari-296-speciale-a"
+  ]
+ },
+ "ferrari-849-testarossa": {
+  "body": "Esportivo",
+  "brand_id": "ferrari",
+  "id": "ferrari-849-testarossa",
+  "name": "849 Testarossa",
+  "price_max": 8100000,
+  "price_min": 8100000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ferrari-849-testarossa-coupe-4-0-v8-biturbo-hibrido"
+  ]
+ },
+ "ferrari-amalfi": {
+  "body": "Esportivo",
+  "brand_id": "ferrari",
+  "id": "ferrari-amalfi",
+  "name": "Amalfi",
+  "price_max": 4050000,
+  "price_min": 4050000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ferrari-amalfi-3-9-v8-biturbo"
+  ]
+ },
+ "ferrari-purosangue": {
+  "body": "SUV",
+  "brand_id": "ferrari",
+  "id": "ferrari-purosangue",
+  "name": "Purosangue",
+  "price_max": 7800000,
+  "price_min": 7800000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ferrari-purosangue-6-5-v12"
+  ]
+ },
+ "ferrari-roma": {
+  "body": "Esportivo",
+  "brand_id": "ferrari",
+  "id": "ferrari-roma",
+  "name": "Roma",
+  "price_max": 4300000,
+  "price_min": 4300000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ferrari-roma-spider-3-9-v8"
+  ]
+ },
+ "fiat-500e": {
+  "body": "Hatch",
+  "brand_id": "fiat",
+  "id": "fiat-500e",
+  "name": "500e",
+  "price_max": 214990,
+  "price_min": 214990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fiat-500e-icon-eletrico"
+  ]
+ },
+ "fiat-argo": {
+  "body": "Hatch",
+  "brand_id": "fiat",
+  "id": "fiat-argo",
+  "name": "Argo",
+  "price_max": 111990,
+  "price_min": 98990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "argo",
+   "argo-drive-1-3-cvt",
+   "argo-trekking-1-3",
+   "argo-trekking-1-3-cvt"
+  ]
+ },
+ "fiat-argo-x": {
+  "body": "Hatch",
+  "brand_id": "fiat",
+  "id": "fiat-argo-x",
+  "name": "Argo X",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fiat-argo-x-versoes-a-confirmar"
+  ]
+ },
+ "fiat-cronos": {
+  "body": "Sedã",
+  "brand_id": "fiat",
+  "id": "fiat-cronos",
+  "name": "Cronos",
+  "price_max": 125990,
+  "price_min": 109990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fiat-cronos-drive-1-0-firefly-mt",
+   "fiat-cronos-drive-1-3-firefly-cvt",
+   "fiat-cronos-drive-1-3-firefly-mt",
+   "fiat-cronos-precision-1-3-firefly-cvt"
+  ]
+ },
+ "fiat-ducato": {
+  "body": "Van",
+  "brand_id": "fiat",
+  "id": "fiat-ducato",
+  "name": "Ducato",
+  "price_max": 398990,
+  "price_min": 307990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fiat-ducato-maxicargo-2-2-turbodiesel",
+   "fiat-ducato-minibus-comfort-2-2-turbodiesel",
+   "fiat-ducato-minibus-luxo-2-2-turbodiesel",
+   "fiat-ducato-multi-2-2-turbodiesel"
+  ]
+ },
+ "fiat-fastback": {
+  "body": "SUV",
+  "brand_id": "fiat",
+  "id": "fiat-fastback",
+  "name": "Fastback",
+  "price_max": 184490,
+  "price_min": 119990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fastback",
+   "fastback-abarth",
+   "fastback-audace-mhev",
+   "fastback-blackmotion",
+   "fastback-impetus-mhev",
+   "fastback-smart-drive"
+  ]
+ },
+ "fiat-fiorino": {
+  "body": "Van",
+  "brand_id": "fiat",
+  "id": "fiat-fiorino",
+  "name": "Fiorino",
+  "price_max": 132990,
+  "price_min": 132990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fiat-fiorino-endurance-1-3-flex"
+  ]
+ },
+ "fiat-mobi": {
+  "body": "Hatch",
+  "brand_id": "fiat",
+  "id": "fiat-mobi",
+  "name": "Mobi",
+  "price_max": 87990,
+  "price_min": 85490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mobi",
+   "mobi-trekking-1-0"
+  ]
+ },
+ "fiat-pulse": {
+  "body": "SUV",
+  "brand_id": "fiat",
+  "id": "fiat-pulse",
+  "name": "Pulse",
+  "price_max": 163490,
+  "price_min": 104990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "pulse",
+   "pulse-abarth-t270",
+   "pulse-audace-t200-mhev",
+   "pulse-blackmotion-1-3-cvt",
+   "pulse-drive-1-3-cvt"
+  ]
+ },
+ "fiat-scudo": {
+  "body": "Van",
+  "brand_id": "fiat",
+  "id": "fiat-scudo",
+  "name": "Scudo",
+  "price_max": 223684,
+  "price_min": 220120,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fiat-scudo-cargo-2-2-16v-turbodiesel",
+   "fiat-scudo-multi-2-2-16v-turbodiesel"
+  ]
+ },
+ "fiat-strada": {
+  "body": "Picape",
+  "brand_id": "fiat",
+  "id": "fiat-strada",
+  "name": "Strada",
+  "price_max": 153990,
+  "price_min": 116990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "strada",
+   "strada-freedom-cabine-dupla-1-3",
+   "strada-freedom-cabine-plus-1-3",
+   "strada-ranch-cabine-dupla-turbo-200-cvt",
+   "strada-ultra-cabine-dupla-turbo-200-cvt",
+   "strada-volcano-cabine-dupla-1-3",
+   "strada-volcano-cabine-dupla-1-3-cvt"
+  ]
+ },
+ "fiat-titano": {
+  "body": "Picape",
+  "brand_id": "fiat",
+  "id": "fiat-titano",
+  "name": "Titano",
+  "price_max": 290490,
+  "price_min": 238490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "fiat-titano-endurance-2-2-turbodiesel-4x4-mt",
+   "fiat-titano-ranch-2-2-turbodiesel-4x4-at8",
+   "fiat-titano-volcano-2-2-turbodiesel-4x4-at8"
+  ]
+ },
+ "fiat-toro": {
+  "body": "Picape",
+  "brand_id": "fiat",
+  "id": "fiat-toro",
+  "name": "Toro",
+  "price_max": 238490,
+  "price_min": 167490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "toro",
+   "toro-freedom-1-3-turbo-flex",
+   "toro-ranch-2-2-turbodiesel-4x4",
+   "toro-ultra-1-3-turbo-flex-mhev",
+   "toro-volcano-1-3-turbo-flex-mhev",
+   "toro-volcano-2-2-turbodiesel-4x4"
+  ]
+ },
+ "ford-bronco-sport": {
+  "body": "SUV",
+  "brand_id": "ford",
+  "id": "ford-bronco-sport",
+  "name": "Bronco Sport",
+  "price_max": 249900,
+  "price_min": 249900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-bronco-sport-badlands-2-0-ecoboost-4x4"
+  ]
+ },
+ "ford-e-transit": {
+  "body": "Van",
+  "brand_id": "ford",
+  "id": "ford-e-transit",
+  "name": "E-Transit",
+  "price_max": 544700,
+  "price_min": 544700,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-e-transit-furgao-longo-teto-alto"
+  ]
+ },
+ "ford-f-150": {
+  "body": "Picape",
+  "brand_id": "ford",
+  "id": "ford-f-150",
+  "name": "F-150",
+  "price_max": 580000,
+  "price_min": 540000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-f-150-lariat-black-5-0-v8-4x4",
+   "ford-f-150-raptor",
+   "ford-f-150-tremor-5-0-v8-4x4"
+  ]
+ },
+ "ford-maverick": {
+  "body": "Picape",
+  "brand_id": "ford",
+  "id": "ford-maverick",
+  "name": "Maverick",
+  "price_max": 229900,
+  "price_min": 209900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-maverick-hybrid-2-5-e-cvt",
+   "ford-maverick-lariat-2-0-ecoboost-awd",
+   "ford-maverick-lariat-black-2-0-ecoboost-awd",
+   "ford-maverick-tremor-2-0-ecoboost-awd"
+  ]
+ },
+ "ford-mustang": {
+  "body": "Esportivo",
+  "brand_id": "ford",
+  "id": "ford-mustang",
+  "name": "Mustang",
+  "price_max": 649000,
+  "price_min": 569000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mustang",
+   "mustang-dark-horse"
+  ]
+ },
+ "ford-mustang-mach-e": {
+  "body": "SUV",
+  "brand_id": "ford",
+  "id": "ford-mustang-mach-e",
+  "name": "Mustang Mach-E",
+  "price_max": 449000,
+  "price_min": 449000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-mustang-mach-e-gt-performance-eawd"
+  ]
+ },
+ "ford-ranger": {
+  "body": "Picape",
+  "brand_id": "ford",
+  "id": "ford-ranger",
+  "name": "Ranger",
+  "price_max": 499000,
+  "price_min": 242600,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-ranger-xl-2-0-4x4-cs-aut",
+   "ford-ranger-xl-2-0-4x4-cs-mec",
+   "ranger",
+   "ranger-limited-3-0-v6-4x4-cd-aut",
+   "ranger-raptor-3-0-v6-biturbo-4wd",
+   "ranger-xl-2-0-4x4-cd-aut",
+   "ranger-xl-2-0-4x4-cd-mec",
+   "ranger-xls-2-0-4x4-cd-aut",
+   "ranger-xls-3-0-v6-4x4-cd-aut",
+   "ranger-xlt-3-0-v6-4x4-cd-aut"
+  ]
+ },
+ "ford-territory": {
+  "body": "SUV",
+  "brand_id": "ford",
+  "id": "ford-territory",
+  "name": "Territory",
+  "price_max": 194900,
+  "price_min": 194900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-territory-titanium-1-5-ecoboost"
+  ]
+ },
+ "ford-transit": {
+  "body": "Van",
+  "brand_id": "ford",
+  "id": "ford-transit",
+  "name": "Transit",
+  "price_max": 375107,
+  "price_min": 285200,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-transit-furgao-longo-2-0-turbodiesel",
+   "ford-transit-furgao-longo-2-0-turbodiesel-aut",
+   "ford-transit-furgao-medio-2-0-turbodiesel",
+   "ford-transit-furgao-medio-2-0-turbodiesel-aut",
+   "ford-transit-minibus-15-lugares-2-0-turbodiesel",
+   "ford-transit-minibus-15-lugares-2-0-turbodiesel-aut",
+   "ford-transit-minibus-18-lugares-2-0-turbodiesel",
+   "ford-transit-minibus-18-lugares-2-0-turbodiesel-aut",
+   "ford-transit-minibus-vidrada-2-0-turbodiesel",
+   "ford-transit-minibus-vidrada-2-0-turbodiesel-aut"
+  ]
+ },
+ "ford-transit-city": {
+  "body": "Van",
+  "brand_id": "ford",
+  "id": "ford-transit-city",
+  "name": "Transit City",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ford-transit-city-furgao-teto-alto",
+   "ford-transit-city-furgao-teto-normal"
+  ]
+ },
+ "foton-etoano-pro": {
+  "body": "Van",
+  "brand_id": "foton",
+  "id": "foton-etoano-pro",
+  "name": "eToano Pro",
+  "price_max": 469900,
+  "price_min": 449900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "foton-etoano-pro-teto-alto",
+   "foton-etoano-pro-teto-medio"
+  ]
+ },
+ "foton-eview": {
+  "body": "Van",
+  "brand_id": "foton",
+  "id": "foton-eview",
+  "name": "eView",
+  "price_max": 319900,
+  "price_min": 259900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "foton-eview-connect",
+   "foton-eview-grand-teto-baixo",
+   "foton-eview-grand-teto-medio"
+  ]
+ },
+ "foton-tunland": {
+  "body": "Picape",
+  "brand_id": "foton",
+  "id": "foton-tunland",
+  "name": "Tunland",
+  "price_max": 309900,
+  "price_min": 289900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "foton-tunland-v7-2-0-turbo-diesel-4x4-at",
+   "foton-tunland-v9-2-0-turbo-diesel-4x4-at"
+  ]
+ },
+ "gac-aion-es": {
+  "body": "Sedã",
+  "brand_id": "gac",
+  "id": "gac-aion-es",
+  "name": "Aion ES",
+  "price_max": 169790,
+  "price_min": 169790,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-aion-es-plus"
+  ]
+ },
+ "gac-aion-ut": {
+  "body": "Hatch",
+  "brand_id": "gac",
+  "id": "gac-aion-ut",
+  "name": "Aion UT",
+  "price_max": 159990,
+  "price_min": 139990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-aion-ut-elite",
+   "gac-aion-ut-premium"
+  ]
+ },
+ "gac-aion-v": {
+  "body": "SUV",
+  "brand_id": "gac",
+  "id": "gac-aion-v",
+  "name": "Aion V",
+  "price_max": 219990,
+  "price_min": 219990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-aion-v-elite"
+  ]
+ },
+ "gac-aion-y": {
+  "body": "SUV",
+  "brand_id": "gac",
+  "id": "gac-aion-y",
+  "name": "Aion Y",
+  "price_max": 187990,
+  "price_min": 175990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-aion-y-elite",
+   "gac-aion-y-premium"
+  ]
+ },
+ "gac-gs3": {
+  "body": "SUV",
+  "brand_id": "gac",
+  "id": "gac-gs3",
+  "name": "GS3",
+  "price_max": 159990,
+  "price_min": 139990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-gs3-elite-1-5-turbo-7dct",
+   "gac-gs3-premium-1-5-turbo-7dct"
+  ]
+ },
+ "gac-gs4": {
+  "body": "SUV",
+  "brand_id": "gac",
+  "id": "gac-gs4",
+  "name": "GS4",
+  "price_max": 194990,
+  "price_min": 184656,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-gs4-hybrid-elite",
+   "gac-gs4-hybrid-premium"
+  ]
+ },
+ "gac-gs9": {
+  "body": "SUV",
+  "brand_id": "gac",
+  "id": "gac-gs9",
+  "name": "GS9",
+  "price_max": 399990,
+  "price_min": 399990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-gs9-ultra-awd"
+  ]
+ },
+ "gac-hyptec-ht": {
+  "body": "SUV",
+  "brand_id": "gac",
+  "id": "gac-hyptec-ht",
+  "name": "Hyptec HT",
+  "price_max": 369990,
+  "price_min": 314990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gac-hyptec-ht-elite",
+   "gac-hyptec-ht-ultra"
+  ]
+ },
+ "geely-ex2": {
+  "body": "Hatch",
+  "brand_id": "geely",
+  "id": "geely-ex2",
+  "name": "EX2",
+  "price_max": 137800,
+  "price_min": 124600,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "geely-ex2-max",
+   "geely-ex2-pro"
+  ]
+ },
+ "geely-ex5": {
+  "body": "SUV",
+  "brand_id": "geely",
+  "id": "geely-ex5",
+  "name": "EX5",
+  "price_max": 227800,
+  "price_min": 207800,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "geely-ex5-max",
+   "geely-ex5-pro"
+  ]
+ },
+ "geely-ex5-em-i": {
+  "body": "SUV",
+  "brand_id": "geely",
+  "id": "geely-ex5-em-i",
+  "name": "EX5 EM-i",
+  "price_max": 236490,
+  "price_min": 191490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "geely-ex5-em-i-max",
+   "geely-ex5-em-i-pro",
+   "geely-ex5-em-i-ultra"
+  ]
+ },
+ "gwm-haval-h6": {
+  "body": "SUV",
+  "brand_id": "gwm",
+  "id": "gwm-haval-h6",
+  "name": "Haval H6",
+  "price_max": 326000,
+  "price_min": 199900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "haval",
+   "haval-gt-phev-awd",
+   "haval-hev2",
+   "haval-phev19",
+   "haval-phev35-awd"
+  ]
+ },
+ "gwm-haval-h7": {
+  "body": "SUV",
+  "brand_id": "gwm",
+  "id": "gwm-haval-h7",
+  "name": "Haval H7",
+  "price_max": 261000,
+  "price_min": 261000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-haval-h7-1-5-turbo-phev-flex-awd"
+  ]
+ },
+ "gwm-haval-h9": {
+  "body": "SUV",
+  "brand_id": "gwm",
+  "id": "gwm-haval-h9",
+  "name": "Haval H9",
+  "price_max": 339000,
+  "price_min": 335000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-haval-h9-exclusive-2-4-turbo-diesel-4x4",
+   "gwm-haval-h9-selection-2-4-turbo-diesel-4x4"
+  ]
+ },
+ "gwm-ora-03": {
+  "body": "Hatch",
+  "brand_id": "gwm",
+  "id": "gwm-ora-03",
+  "name": "Ora 03",
+  "price_max": 169000,
+  "price_min": 169000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-ora-03-bev58"
+  ]
+ },
+ "gwm-ora-5": {
+  "body": "SUV",
+  "brand_id": "gwm",
+  "id": "gwm-ora-5",
+  "name": "Ora 5",
+  "price_max": 165990,
+  "price_min": 165990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-ora-5-58-3-kwh"
+  ]
+ },
+ "gwm-poer-p30": {
+  "body": "Picape",
+  "brand_id": "gwm",
+  "id": "gwm-poer-p30",
+  "name": "Poer P30",
+  "price_max": 247000,
+  "price_min": 205000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-poer-p30-exclusive-2-4-turbo-diesel-4x4",
+   "gwm-poer-p30-pro-2-4-turbo-diesel-4x4",
+   "gwm-poer-p30-trail-2-4-turbo-diesel-4x4"
+  ]
+ },
+ "gwm-tank-300": {
+  "body": "SUV",
+  "brand_id": "gwm",
+  "id": "gwm-tank-300",
+  "name": "Tank 300",
+  "price_max": 350000,
+  "price_min": 342000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-tank-300-2-0-hi4-t-phev-flex-4x4",
+   "gwm-tank-300-terraforce-2-0-hi4-t-phev-flex-4x4"
+  ]
+ },
+ "gwm-tank-400": {
+  "body": "SUV",
+  "brand_id": "gwm",
+  "id": "gwm-tank-400",
+  "name": "Tank 400",
+  "price_max": 399000,
+  "price_min": 399000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-tank-400-2-0-hi4-t-phev-flex-4x4"
+  ]
+ },
+ "gwm-wey-07": {
+  "body": "SUV",
+  "brand_id": "gwm",
+  "id": "gwm-wey-07",
+  "name": "Wey 07",
+  "price_max": 432000,
+  "price_min": 429000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "gwm-wey-07-1-5-turbo-phev-awd",
+   "gwm-wey-07-dark-edition-1-5-turbo-phev-awd"
+  ]
+ },
+ "hitech-electric-delivery": {
+  "body": "Picape",
+  "brand_id": "hitech-electric",
+  "id": "hitech-electric-delivery",
+  "name": "Delivery",
+  "price_max": 152890,
+  "price_min": 99890,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hitech-electric-delivery-bau-11-5-kwh",
+   "hitech-electric-delivery-bau-23-kwh",
+   "hitech-electric-delivery-bau-refrigerado-23-kwh",
+   "hitech-electric-delivery-cacamba-11-5-kwh",
+   "hitech-electric-delivery-cacamba-23-kwh"
+  ]
+ },
+ "hitech-electric-e-work-ec31": {
+  "body": "Picape",
+  "brand_id": "hitech-electric",
+  "id": "hitech-electric-e-work-ec31",
+  "name": "E-Work EC31",
+  "price_max": 229990,
+  "price_min": 202890,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hitech-electric-e-work-ec31-bau-38-7-kwh",
+   "hitech-electric-e-work-ec31-cacamba-38-7-kwh",
+   "hitech-electric-e-work-ec31-refrigerado-38-7-kwh"
+  ]
+ },
+ "hitech-electric-e-work-ec35": {
+  "body": "Van",
+  "brand_id": "hitech-electric",
+  "id": "hitech-electric-e-work-ec35",
+  "name": "E-Work EC35",
+  "price_max": 215990,
+  "price_min": 215990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hitech-electric-e-work-ec35-van-38-7-kwh"
+  ]
+ },
+ "honda-accord": {
+  "body": "Sedã",
+  "brand_id": "honda",
+  "id": "honda-accord",
+  "name": "Accord",
+  "price_max": 333000,
+  "price_min": 333000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "honda-accord-advanced-hybrid-2-0"
+  ]
+ },
+ "honda-city": {
+  "body": "Sedã",
+  "brand_id": "honda",
+  "id": "honda-city",
+  "name": "City",
+  "price_max": 154300,
+  "price_min": 117700,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "honda-city-ex-1-5-cvt",
+   "honda-city-exl-1-5-cvt",
+   "honda-city-lx-1-5-cvt",
+   "honda-city-touring-1-5-cvt"
+  ]
+ },
+ "honda-city-hatchback": {
+  "body": "Hatch",
+  "brand_id": "honda",
+  "id": "honda-city-hatchback",
+  "name": "City Hatchback",
+  "price_max": 156400,
+  "price_min": 117700,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "honda-city-hatchback-ex-1-5-cvt",
+   "honda-city-hatchback-exl-1-5-cvt",
+   "honda-city-hatchback-lx-1-5-cvt",
+   "honda-city-hatchback-rs-1-5-cvt",
+   "honda-city-hatchback-touring-1-5-cvt"
+  ]
+ },
+ "honda-civic": {
+  "body": "Sedã",
+  "brand_id": "honda",
+  "id": "honda-civic",
+  "name": "Civic",
+  "price_max": 430500,
+  "price_min": 266500,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "civic",
+   "civic-type-r"
+  ]
+ },
+ "honda-cr-v": {
+  "body": "SUV",
+  "brand_id": "honda",
+  "id": "honda-cr-v",
+  "name": "CR-V",
+  "price_max": 353500,
+  "price_min": 353500,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "honda-cr-v-advanced-hybrid-2-0-awd"
+  ]
+ },
+ "honda-hr-v": {
+  "body": "SUV",
+  "brand_id": "honda",
+  "id": "honda-hr-v",
+  "name": "HR-V",
+  "price_max": 214000,
+  "price_min": 166400,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hrv",
+   "hrv-advance-1-5-turbo",
+   "hrv-exl-1-5",
+   "hrv-touring-1-5-turbo"
+  ]
+ },
+ "honda-prelude": {
+  "body": "Esportivo",
+  "brand_id": "honda",
+  "id": "honda-prelude",
+  "name": "Prelude",
+  "price_max": 380000,
+  "price_min": 380000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "honda-prelude-touring-2-0-e-hev"
+  ]
+ },
+ "honda-wr-v": {
+  "body": "SUV",
+  "brand_id": "honda",
+  "id": "honda-wr-v",
+  "name": "WR-V",
+  "price_max": 154000,
+  "price_min": 149000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "honda-wr-v-ex-1-5-cvt",
+   "honda-wr-v-exl-1-5-cvt"
+  ]
+ },
+ "honda-zr-v": {
+  "body": "SUV",
+  "brand_id": "honda",
+  "id": "honda-zr-v",
+  "name": "ZR-V",
+  "price_max": 215100,
+  "price_min": 215100,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "honda-zr-v-touring-2-0-cvt"
+  ]
+ },
+ "hyundai-creta": {
+  "body": "SUV",
+  "brand_id": "hyundai",
+  "id": "hyundai-creta",
+  "name": "Creta",
+  "price_max": 206990,
+  "price_min": 119990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "creta",
+   "creta-comfort-1-0-tgdi",
+   "creta-limited-1-0-tgdi",
+   "creta-n-line-1-6-tgdi",
+   "creta-platinum-1-0-tgdi",
+   "creta-ultimate-1-6-tgdi"
+  ]
+ },
+ "hyundai-hb20": {
+  "body": "Hatch",
+  "brand_id": "hyundai",
+  "id": "hyundai-hb20",
+  "name": "HB20",
+  "price_max": 132490,
+  "price_min": 96140,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hb20",
+   "hb20-limited-1-0",
+   "hb20-limited-1-0-tgdi",
+   "hb20-platinum-1-0-tgdi"
+  ]
+ },
+ "hyundai-hb20s": {
+  "body": "Sedã",
+  "brand_id": "hyundai",
+  "id": "hyundai-hb20s",
+  "name": "HB20S",
+  "price_max": 138890,
+  "price_min": 105290,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hyundai-hb20s-comfort-1-0-mt",
+   "hyundai-hb20s-limited-1-0-mt",
+   "hyundai-hb20s-limited-1-0-tgdi-at",
+   "hyundai-hb20s-platinum-1-0-tgdi-at"
+  ]
+ },
+ "hyundai-i20": {
+  "body": "Hatch",
+  "brand_id": "hyundai",
+  "id": "hyundai-i20",
+  "name": "i20",
+  "price_max": 139990,
+  "price_min": 99990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hyundai-i20-comfort-1-0-mt",
+   "hyundai-i20-limited-1-0-mt",
+   "hyundai-i20-limited-1-0-tgdi-at",
+   "hyundai-i20-platinum-1-0-tgdi-at",
+   "hyundai-i20-ultimate-1-0-tgdi-at",
+   "hyundai-i20-x-line-1-0-tgdi-at"
+  ]
+ },
+ "hyundai-ioniq-5": {
+  "body": "SUV",
+  "brand_id": "hyundai",
+  "id": "hyundai-ioniq-5",
+  "name": "Ioniq 5",
+  "price_max": 409990,
+  "price_min": 409990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hyundai-ioniq-5-signature-awd-84-kwh"
+  ]
+ },
+ "hyundai-kona": {
+  "body": "SUV",
+  "brand_id": "hyundai",
+  "id": "hyundai-kona",
+  "name": "Kona",
+  "price_max": 239990,
+  "price_min": 219990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hyundai-kona-signature-1-6-gdi-hev-dct",
+   "hyundai-kona-ultimate-1-6-gdi-hev-dct"
+  ]
+ },
+ "hyundai-palisade": {
+  "body": "SUV",
+  "brand_id": "hyundai",
+  "id": "hyundai-palisade",
+  "name": "Palisade",
+  "price_max": 479990,
+  "price_min": 479990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hyundai-palisade-signature-3-8-v6-awd"
+  ]
+ },
+ "hyundai-tucson": {
+  "body": "SUV",
+  "brand_id": "hyundai",
+  "id": "hyundai-tucson",
+  "name": "Tucson",
+  "price_max": 199490,
+  "price_min": 199490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hyundai-tucson-limited-1-6-t-gdi"
+  ]
+ },
+ "iveco-daily-furgao": {
+  "body": "Van",
+  "brand_id": "iveco",
+  "id": "iveco-daily-furgao",
+  "name": "Daily Furgão",
+  "price_max": 440201,
+  "price_min": 306195,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "iveco-daily-furgao-30-160-3-0-12-m3",
+   "iveco-daily-furgao-45-160-3-0-12-m3",
+   "iveco-daily-furgao-55-180-3-0-12-m3",
+   "iveco-daily-furgao-55-180-3-0-16-m3"
+  ]
+ },
+ "jac-e-j7": {
+  "body": "Sedã",
+  "brand_id": "jac",
+  "id": "jac-e-j7",
+  "name": "E-J7",
+  "price_max": 259900,
+  "price_min": 259900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jac-e-j7-e-j7"
+  ]
+ },
+ "jac-e-js1": {
+  "body": "Hatch",
+  "brand_id": "jac",
+  "id": "jac-e-js1",
+  "name": "E-JS1",
+  "price_max": 132900,
+  "price_min": 132900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jac-e-js1-e-js1",
+   "jac-e-js1-e-js1-ext"
+  ]
+ },
+ "jac-e-js4": {
+  "body": "SUV",
+  "brand_id": "jac",
+  "id": "jac-e-js4",
+  "name": "E-JS4",
+  "price_max": 254900,
+  "price_min": 254900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jac-e-js4-e-js4"
+  ]
+ },
+ "jac-ev-hunter": {
+  "body": "Picape",
+  "brand_id": "jac",
+  "id": "jac-ev-hunter",
+  "name": "EV Hunter",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jac-ev-hunter-ev-hunter-4x4"
+  ]
+ },
+ "jac-hunter": {
+  "body": "Picape",
+  "brand_id": "jac",
+  "id": "jac-hunter",
+  "name": "Hunter",
+  "price_max": 264900,
+  "price_min": 219900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jac-hunter-4work-2-0-turbo-diesel-at",
+   "jac-hunter-4work-2-0-turbo-diesel-mt",
+   "jac-hunter-heavy-duty-hd-2-0-turbo-diesel-4x4-at",
+   "jac-hunter-heavy-duty-hdx-2-0-turbo-diesel-4x4-at"
+  ]
+ },
+ "jaecoo-jaecoo-5": {
+  "body": "SUV",
+  "brand_id": "jaecoo",
+  "id": "jaecoo-jaecoo-5",
+  "name": "Jaecoo 5",
+  "price_max": 184990,
+  "price_min": 159990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jaecoo-jaecoo-5-shs-h-comfort",
+   "jaecoo-jaecoo-5-shs-h-prestige"
+  ]
+ },
+ "jaecoo-jaecoo-7": {
+  "body": "SUV",
+  "brand_id": "jaecoo",
+  "id": "jaecoo-jaecoo-7",
+  "name": "Jaecoo 7",
+  "price_max": 256990,
+  "price_min": 189990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jaecoo-jaecoo-7-shs-p-elite",
+   "jaecoo-jaecoo-7-shs-p-luxury",
+   "jaecoo-jaecoo-7-shs-p-prestige"
+  ]
+ },
+ "jaecoo-jaecoo-8": {
+  "body": "SUV",
+  "brand_id": "jaecoo",
+  "id": "jaecoo-jaecoo-8",
+  "name": "Jaecoo 8",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jaecoo-jaecoo-8-shs-p-4wd-7-lugares"
+  ]
+ },
+ "jeep-avenger": {
+  "body": "SUV",
+  "brand_id": "jeep",
+  "id": "jeep-avenger",
+  "name": "Avenger",
+  "price_max": 145990,
+  "price_min": 121990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jeep-avenger-altitude-t200-mhev-cvt",
+   "jeep-avenger-limited-t200-mhev-cvt",
+   "jeep-avenger-longitude-85-anos-t200-mhev-cvt",
+   "jeep-avenger-longitude-t200-mhev-cvt"
+  ]
+ },
+ "jeep-commander": {
+  "body": "SUV",
+  "brand_id": "jeep",
+  "id": "jeep-commander",
+  "name": "Commander",
+  "price_max": 329990,
+  "price_min": 228790,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jeep-commander-blackhawk-hurricane-2-0-turbo-4x4",
+   "jeep-commander-limited-t270-mhev",
+   "jeep-commander-longitude-t270",
+   "jeep-commander-overland-2-2-turbodiesel-4x4",
+   "jeep-commander-overland-t270-mhev"
+  ]
+ },
+ "jeep-compass": {
+  "body": "SUV",
+  "brand_id": "jeep",
+  "id": "jeep-compass",
+  "name": "Compass",
+  "price_max": 278990,
+  "price_min": 174990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "compass",
+   "compass-blackhawk-2-0-turbo-4x4",
+   "compass-longitude-1-3-turbo",
+   "compass-longitude-night-eagle-1-3-turbo-mhev",
+   "compass-serie-s-1-3-turbo-mhev"
+  ]
+ },
+ "jeep-gladiator": {
+  "body": "Picape",
+  "brand_id": "jeep",
+  "id": "jeep-gladiator",
+  "name": "Gladiator",
+  "price_max": 529990,
+  "price_min": 529990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jeep-gladiator-rubicon-3-6-v6-4x4"
+  ]
+ },
+ "jeep-renegade": {
+  "body": "SUV",
+  "brand_id": "jeep",
+  "id": "jeep-renegade",
+  "name": "Renegade",
+  "price_max": 189490,
+  "price_min": 129990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jeep-renegade-altitude-t270-1-3-turbo-at6",
+   "jeep-renegade-longitude-85-anos-t270-mhev-at6",
+   "jeep-renegade-longitude-t270-mhev-at6",
+   "jeep-renegade-sahara-t270-mhev-at6",
+   "jeep-renegade-willys-t270-4x4-at9"
+  ]
+ },
+ "jeep-wrangler": {
+  "body": "SUV",
+  "brand_id": "jeep",
+  "id": "jeep-wrangler",
+  "name": "Wrangler",
+  "price_max": 529990,
+  "price_min": 529990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jeep-wrangler-rubicon-2-0-turbo-4x4"
+  ]
+ },
+ "jetour-g700": {
+  "body": "SUV",
+  "brand_id": "jetour",
+  "id": "jetour-g700",
+  "name": "G700",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jetour-g700-awd"
+  ]
+ },
+ "jetour-s06": {
+  "body": "SUV",
+  "brand_id": "jetour",
+  "id": "jetour-s06",
+  "name": "S06",
+  "price_max": 229900,
+  "price_min": 199900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jetour-s06-advance-1-5-tgdi-phev-dht",
+   "jetour-s06-premium-1-5-tgdi-phev-dht"
+  ]
+ },
+ "jetour-s08": {
+  "body": "SUV",
+  "brand_id": "jetour",
+  "id": "jetour-s08",
+  "name": "S08",
+  "price_max": 259900,
+  "price_min": 259900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jetour-s08-premium-1-5-tgdi-phev-dht"
+  ]
+ },
+ "jetour-t1": {
+  "body": "SUV",
+  "brand_id": "jetour",
+  "id": "jetour-t1",
+  "name": "T1",
+  "price_max": 264900,
+  "price_min": 249900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jetour-t1-advance-1-5-tgdi-phev-dht",
+   "jetour-t1-premium-1-5-tgdi-phev-dht"
+  ]
+ },
+ "jetour-t2": {
+  "body": "SUV",
+  "brand_id": "jetour",
+  "id": "jetour-t2",
+  "name": "T2",
+  "price_max": 349900,
+  "price_min": 289900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "jetour-t2-advance-1-5-tgdi-phev-dht",
+   "jetour-t2-premium-1-5-tgdi-phev-dht",
+   "jetour-t2-xwd-4x4-1-5-tgdi-phev-dht"
+  ]
+ },
+ "kia-carnival": {
+  "body": "Minivan",
+  "brand_id": "kia",
+  "id": "kia-carnival",
+  "name": "Carnival",
+  "price_max": 684990,
+  "price_min": 684990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-carnival-ex-1-6-t-gdi-hev"
+  ]
+ },
+ "kia-ev5": {
+  "body": "SUV",
+  "brand_id": "kia",
+  "id": "kia-ev5",
+  "name": "EV5",
+  "price_max": 389990,
+  "price_min": 389990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-ev5-land"
+  ]
+ },
+ "kia-ev9": {
+  "body": "SUV",
+  "brand_id": "kia",
+  "id": "kia-ev9",
+  "name": "EV9",
+  "price_max": 749990,
+  "price_min": 749990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-ev9-gt-line",
+   "kia-ev9-gt-line-fosco"
+  ]
+ },
+ "kia-niro": {
+  "body": "SUV",
+  "brand_id": "kia",
+  "id": "kia-niro",
+  "name": "Niro",
+  "price_max": 219990,
+  "price_min": 194990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-niro-ex-1-6-hev-dct",
+   "kia-niro-sx-prestige-1-6-hev-dct"
+  ]
+ },
+ "kia-sorento": {
+  "body": "SUV",
+  "brand_id": "kia",
+  "id": "kia-sorento",
+  "name": "Sorento",
+  "price_max": 344990,
+  "price_min": 344990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-sorento-ex-2-2-diesel-awd-dct"
+  ]
+ },
+ "kia-sportage": {
+  "body": "SUV",
+  "brand_id": "kia",
+  "id": "kia-sportage",
+  "name": "Sportage",
+  "price_max": 267190,
+  "price_min": 267190,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-sportage-ex-prestige-1-6-t-gdi-mhev-dct"
+  ]
+ },
+ "kia-stonic": {
+  "body": "SUV",
+  "brand_id": "kia",
+  "id": "kia-stonic",
+  "name": "Stonic",
+  "price_max": 154990,
+  "price_min": 154990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-stonic-sx-1-0-tgdi-mhev-dct"
+  ]
+ },
+ "kia-tasman": {
+  "body": "Picape",
+  "brand_id": "kia",
+  "id": "kia-tasman",
+  "name": "Tasman",
+  "price_max": 319990,
+  "price_min": 269990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kia-tasman-gl-2-2-turbodiesel-4x4-at",
+   "kia-tasman-pgl-2-2-turbodiesel-4x4-at"
+  ]
+ },
+ "lamborghini-revuelto": {
+  "body": "Esportivo",
+  "brand_id": "lamborghini",
+  "id": "lamborghini-revuelto",
+  "name": "Revuelto",
+  "price_max": 8330000,
+  "price_min": 8330000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lamborghini-revuelto-coupe-lp-1015-4"
+  ]
+ },
+ "lamborghini-temerario": {
+  "body": "Esportivo",
+  "brand_id": "lamborghini",
+  "id": "lamborghini-temerario",
+  "name": "Temerario",
+  "price_max": 5800000,
+  "price_min": 5800000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lamborghini-temerario-4-0-v8-biturbo-hibrido"
+  ]
+ },
+ "lamborghini-urus": {
+  "body": "SUV",
+  "brand_id": "lamborghini",
+  "id": "lamborghini-urus",
+  "name": "Urus",
+  "price_max": 4300000,
+  "price_min": 4300000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lamborghini-urus-se-4-0-v8-biturbo-hibrido"
+  ]
+ },
+ "land-rover-defender": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-defender",
+  "name": "Defender",
+  "price_max": 969990,
+  "price_min": 799490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-defender-110-trophy-edition-d350",
+   "land-rover-defender-110-x-d350",
+   "land-rover-defender-110-x-dynamic-hse-d350",
+   "land-rover-defender-130-x-d350",
+   "land-rover-defender-90-x-dynamic-hse-d350"
+  ]
+ },
+ "land-rover-discovery": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-discovery",
+  "name": "Discovery",
+  "price_max": 817990,
+  "price_min": 797990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-discovery-metropolitan-edition-3-0-d350-mhev",
+   "land-rover-discovery-tempest-3-0-d350-mhev"
+  ]
+ },
+ "land-rover-discovery-sport": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-discovery-sport",
+  "name": "Discovery Sport",
+  "price_max": 461455,
+  "price_min": 461455,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-discovery-sport-landmark-2-0-p250-flex"
+  ]
+ },
+ "land-rover-range-rover": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-range-rover",
+  "name": "Range Rover",
+  "price_max": 2084350,
+  "price_min": 1738950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-range-rover-autobiography-3-0-p550e-phev",
+   "land-rover-range-rover-sv-3-0-p550e-phev"
+  ]
+ },
+ "land-rover-range-rover-evoque": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-range-rover-evoque",
+  "name": "Range Rover Evoque",
+  "price_max": 521610,
+  "price_min": 521610,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-range-rover-evoque-autobiography-2-0-p250-flex-awd"
+  ]
+ },
+ "land-rover-range-rover-gt": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-range-rover-gt",
+  "name": "Range Rover GT",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-range-rover-gt-eletrico"
+  ]
+ },
+ "land-rover-range-rover-sport": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-range-rover-sport",
+  "name": "Range Rover Sport",
+  "price_max": 1063950,
+  "price_min": 1063950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-range-rover-sport-dynamic-3-0-p550e-phev"
+  ]
+ },
+ "land-rover-range-rover-velar": {
+  "body": "SUV",
+  "brand_id": "land-rover",
+  "id": "land-rover-range-rover-velar",
+  "name": "Range Rover Velar",
+  "price_max": 797920,
+  "price_min": 797920,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "land-rover-range-rover-velar-autobiography-2-0-p400e-phev"
+  ]
+ },
+ "leapmotor-b10": {
+  "body": "SUV",
+  "brand_id": "leapmotor",
+  "id": "leapmotor-b10",
+  "name": "B10",
+  "price_max": 182990,
+  "price_min": 179990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "leapmotor-b10-bev-100-eletrico",
+   "leapmotor-b10-ultra-hibrido-reev"
+  ]
+ },
+ "leapmotor-c10": {
+  "body": "SUV",
+  "brand_id": "leapmotor",
+  "id": "leapmotor-c10",
+  "name": "C10",
+  "price_max": 219990,
+  "price_min": 204990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "leapmotor-c10-bev-100-eletrico",
+   "leapmotor-c10-ultra-hibrido-reev"
+  ]
+ },
+ "lexus-es": {
+  "body": "Sedã",
+  "brand_id": "lexus",
+  "id": "lexus-es",
+  "name": "ES",
+  "price_max": 399990,
+  "price_min": 399990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lexus-es-350h"
+  ]
+ },
+ "lexus-nx": {
+  "body": "SUV",
+  "brand_id": "lexus",
+  "id": "lexus-nx",
+  "name": "NX",
+  "price_max": 499990,
+  "price_min": 409990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lexus-nx-350h-dynamic",
+   "lexus-nx-350h-f-sport",
+   "lexus-nx-350h-luxury",
+   "lexus-nx-450h"
+  ]
+ },
+ "lexus-rx": {
+  "body": "SUV",
+  "brand_id": "lexus",
+  "id": "lexus-rx",
+  "name": "RX",
+  "price_max": 619990,
+  "price_min": 614990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lexus-rx-450h",
+   "lexus-rx-500h-f-sport"
+  ]
+ },
+ "lexus-rz": {
+  "body": "SUV",
+  "brand_id": "lexus",
+  "id": "lexus-rz",
+  "name": "RZ",
+  "price_max": 499990,
+  "price_min": 499990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lexus-rz-500e"
+  ]
+ },
+ "lexus-ux": {
+  "body": "SUV",
+  "brand_id": "lexus",
+  "id": "lexus-ux",
+  "name": "UX",
+  "price_max": 314990,
+  "price_min": 314990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lexus-ux-300h"
+  ]
+ },
+ "lotus-eletre": {
+  "body": "SUV",
+  "brand_id": "lotus",
+  "id": "lotus-eletre",
+  "name": "Eletre",
+  "price_max": 995000,
+  "price_min": 795000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lotus-eletre-600-sport-se",
+   "lotus-eletre-900"
+  ]
+ },
+ "lotus-emeya": {
+  "body": "Esportivo",
+  "brand_id": "lotus",
+  "id": "lotus-emeya",
+  "name": "Emeya",
+  "price_max": 975000,
+  "price_min": 975000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lotus-emeya-900"
+  ]
+ },
+ "lotus-emira": {
+  "body": "Esportivo",
+  "brand_id": "lotus",
+  "id": "lotus-emira",
+  "name": "Emira",
+  "price_max": 1230000,
+  "price_min": 1030000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "lotus-emira-turbo-se",
+   "lotus-emira-v6-se"
+  ]
+ },
+ "mclaren-750s": {
+  "body": "Esportivo",
+  "brand_id": "mclaren",
+  "id": "mclaren-750s",
+  "name": "750S",
+  "price_max": 5100000,
+  "price_min": 4600000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mclaren-750s-coupe-4-0-v8-biturbo",
+   "mclaren-750s-spider-4-0-v8-biturbo"
+  ]
+ },
+ "mclaren-artura": {
+  "body": "Esportivo",
+  "brand_id": "mclaren",
+  "id": "mclaren-artura",
+  "name": "Artura",
+  "price_max": 3180000,
+  "price_min": 2850000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mclaren-artura-coupe-3-0-v6-hibrido",
+   "mclaren-artura-spider-3-0-v6-hibrido"
+  ]
+ },
+ "mclaren-gts": {
+  "body": "Esportivo",
+  "brand_id": "mclaren",
+  "id": "mclaren-gts",
+  "name": "GTS",
+  "price_max": 3300000,
+  "price_min": 3300000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mclaren-gts-coupe-4-0-v8-biturbo"
+  ]
+ },
+ "mercedes-benz-amg-gt": {
+  "body": "Esportivo",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-amg-gt",
+  "name": "AMG GT",
+  "price_max": 1735900,
+  "price_min": 1735900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-amg-gt-mercedes-amg-gt-63-e-performance-2-dr"
+  ]
+ },
+ "mercedes-benz-amg-gt-4-portas": {
+  "body": "Esportivo",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-amg-gt-4-portas",
+  "name": "AMG GT 4 portas",
+  "price_max": 1617900,
+  "price_min": 1617900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-amg-gt-4-portas-mercedes-amg-gt-63-s-e-performance-4-dr"
+  ]
+ },
+ "mercedes-benz-cla": {
+  "body": "Sedã",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-cla",
+  "name": "CLA",
+  "price_max": 648900,
+  "price_min": 329900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-cla-200-amg-line",
+   "mercedes-benz-cla-200-amg-line-nova-geracao",
+   "mercedes-benz-cla-mercedes-amg-cla-35-4matic",
+   "mercedes-benz-cla-mercedes-amg-cla-45-s-4matic"
+  ]
+ },
+ "mercedes-benz-classe-a": {
+  "body": "Hatch",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-classe-a",
+  "name": "Classe A",
+  "price_max": 619900,
+  "price_min": 619900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-classe-a-mercedes-amg-a-45-s-4matic"
+  ]
+ },
+ "mercedes-benz-classe-c": {
+  "body": "Sedã",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-classe-c",
+  "name": "Classe C",
+  "price_max": 928900,
+  "price_min": 396900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-classe-c-c-200-amg-line",
+   "mercedes-benz-classe-c-c-300-amg-line",
+   "mercedes-benz-classe-c-mercedes-amg-c-63-s-e-performance"
+  ]
+ },
+ "mercedes-benz-classe-e": {
+  "body": "Sedã",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-classe-e",
+  "name": "Classe E",
+  "price_max": 629900,
+  "price_min": 629900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-classe-e-e-300-exclusive"
+  ]
+ },
+ "mercedes-benz-classe-g": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-classe-g",
+  "name": "Classe G",
+  "price_max": 2337900,
+  "price_min": 2153900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-classe-g-mercedes-amg-g-63-4matic",
+   "mercedes-benz-classe-g-mercedes-amg-g-63-4matic-manufaktur"
+  ]
+ },
+ "mercedes-benz-classe-s": {
+  "body": "Sedã",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-classe-s",
+  "name": "Classe S",
+  "price_max": 1731900,
+  "price_min": 1731900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-classe-s-mercedes-amg-s-63-4matic-e-performance"
+  ]
+ },
+ "mercedes-benz-classe-v": {
+  "body": "Minivan",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-classe-v",
+  "name": "Classe V",
+  "price_max": 834900,
+  "price_min": 729900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-classe-v-v-300-avantgarde",
+   "mercedes-benz-classe-v-v-300-elegance"
+  ]
+ },
+ "mercedes-benz-esprinter": {
+  "body": "Van",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-esprinter",
+  "name": "eSprinter",
+  "price_max": 585652,
+  "price_min": 487900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-esprinter-320-furgao-extra-longo",
+   "mercedes-benz-esprinter-320-furgao-longo",
+   "mercedes-benz-esprinter-420-furgao-extra-longo",
+   "mercedes-benz-esprinter-420-furgao-longo",
+   "mercedes-benz-esprinter-420-furgao-vidrado-extra-longo"
+  ]
+ },
+ "mercedes-benz-gla": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-gla",
+  "name": "GLA",
+  "price_max": 552900,
+  "price_min": 362900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-gla-200-amg-line",
+   "mercedes-benz-gla-200-night-edition",
+   "mercedes-benz-gla-200-progressive",
+   "mercedes-benz-gla-mercedes-amg-gla-35-4matic"
+  ]
+ },
+ "mercedes-benz-glb": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-glb",
+  "name": "GLB",
+  "price_max": 562900,
+  "price_min": 381900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-glb-220-4matic-amg-line",
+   "mercedes-benz-glb-220-4matic-night-edition",
+   "mercedes-benz-glb-220-4matic-progressive",
+   "mercedes-benz-glb-mercedes-amg-glb-35-4matic"
+  ]
+ },
+ "mercedes-benz-glc": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-glc",
+  "name": "GLC",
+  "price_max": 729900,
+  "price_min": 532900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-glc-300-4matic-amg-line",
+   "mercedes-benz-glc-mercedes-amg-glc-43-4matic",
+   "mercedes-benz-glc-mercedes-amg-glc-53-4matic"
+  ]
+ },
+ "mercedes-benz-glc-coupe": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-glc-coupe",
+  "name": "GLC Coupé",
+  "price_max": 968900,
+  "price_min": 547900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-glc-coupe-glc-300-4matic-coupe-amg-line",
+   "mercedes-benz-glc-coupe-mercedes-amg-glc-43-4matic-coupe",
+   "mercedes-benz-glc-coupe-mercedes-amg-glc-53-4matic-coupe",
+   "mercedes-benz-glc-coupe-mercedes-amg-glc-63-s-4matic-e-performance-coupe"
+  ]
+ },
+ "mercedes-benz-gle": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-gle",
+  "name": "GLE",
+  "price_max": 921900,
+  "price_min": 784900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-gle-450-d-4matic-amg-line",
+   "mercedes-benz-gle-mercedes-amg-gle-53-4matic"
+  ]
+ },
+ "mercedes-benz-gle-coupe": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-gle-coupe",
+  "name": "GLE Coupé",
+  "price_max": 1332900,
+  "price_min": 859900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-gle-coupe-gle-450-d-4matic-coupe-amg-line",
+   "mercedes-benz-gle-coupe-mercedes-amg-gle-63-s-4matic-coupe"
+  ]
+ },
+ "mercedes-benz-gls": {
+  "body": "SUV",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-gls",
+  "name": "GLS",
+  "price_max": 1070900,
+  "price_min": 1070900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-gls-450-4matic-amg-line"
+  ]
+ },
+ "mercedes-benz-sl": {
+  "body": "Esportivo",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-sl",
+  "name": "SL",
+  "price_max": 1755900,
+  "price_min": 1755900,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-sl-mercedes-amg-sl-63-s-e-performance"
+  ]
+ },
+ "mercedes-benz-sprinter": {
+  "body": "Van",
+  "brand_id": "mercedes-benz",
+  "id": "mercedes-benz-sprinter",
+  "name": "Sprinter",
+  "price_max": 485534,
+  "price_min": 285100,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mercedes-benz-sprinter-315-furgao-extra-longo-teto-alto-2-0-diesel",
+   "mercedes-benz-sprinter-315-furgao-longo-teto-alto-2-0-diesel",
+   "mercedes-benz-sprinter-315-furgao-longo-teto-baixo-2-0-diesel",
+   "mercedes-benz-sprinter-317-furgao-extra-longo-teto-alto-2-0-diesel",
+   "mercedes-benz-sprinter-317-furgao-extra-longo-teto-alto-2-0-diesel-aut",
+   "mercedes-benz-sprinter-317-furgao-longo-teto-alto-2-0-diesel",
+   "mercedes-benz-sprinter-317-furgao-longo-teto-alto-2-0-diesel-aut",
+   "mercedes-benz-sprinter-317-furgao-longo-teto-baixo-2-0-diesel",
+   "mercedes-benz-sprinter-417-furgao-extra-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-417-furgao-extra-longo-teto-alto-diesel-aut",
+   "mercedes-benz-sprinter-417-furgao-longo-teto-alto-2-0-diesel-aut",
+   "mercedes-benz-sprinter-417-furgao-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-417-furgao-longo-teto-baixo-diesel",
+   "mercedes-benz-sprinter-417-furgao-vidrado-extra-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-417-furgao-vidrado-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-417-van-10-lugares-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-417-van-10-lugares-longo-teto-baixo-diesel",
+   "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-alto-2-0-diesel-au",
+   "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-baixo-2-0-diesel-a",
+   "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-baixo-diesel",
+   "mercedes-benz-sprinter-517-furgao-extra-longo-porta-teto-alto-2-0-diese",
+   "mercedes-benz-sprinter-517-furgao-extra-longo-porta-teto-alto-diesel",
+   "mercedes-benz-sprinter-517-furgao-extra-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-517-furgao-vidrado-extra-longo-porta-teto-alto-d",
+   "mercedes-benz-sprinter-517-van-18-lugares-extra-longo-teto-alto-diesel",
+   "mercedes-benz-sprinter-517-van-20-lugares-extra-longo-porta-teto-alto-d",
+   "mercedes-benz-sprinter-517-van-21-lugares-extra-longo-porta-teto-alto-d",
+   "mercedes-benz-sprinter-517-van-21-lugares-extra-longo-porta-teto-alto-d-diesel"
+  ]
+ },
+ "mg-cyberster": {
+  "body": "Esportivo",
+  "brand_id": "mg",
+  "id": "mg-cyberster",
+  "name": "Cyberster",
+  "price_max": 529800,
+  "price_min": 529800,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mg-cyberster-awd"
+  ]
+ },
+ "mg-mg4": {
+  "body": "Hatch",
+  "brand_id": "mg",
+  "id": "mg-mg4",
+  "name": "MG4",
+  "price_max": 229820,
+  "price_min": 172000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mg-mg4-comfort",
+   "mg-mg4-luxury",
+   "mg-mg4-xpower-awd"
+  ]
+ },
+ "mg-mg4-urban": {
+  "body": "Hatch",
+  "brand_id": "mg",
+  "id": "mg-mg4-urban",
+  "name": "MG4 Urban",
+  "price_max": 149990,
+  "price_min": 129990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mg-mg4-urban-comfort-43-kwh",
+   "mg-mg4-urban-luxury-43-kwh",
+   "mg-mg4-urban-luxury-54-kwh"
+  ]
+ },
+ "mg-s5": {
+  "body": "SUV",
+  "brand_id": "mg",
+  "id": "mg-s5",
+  "name": "S5",
+  "price_max": 223600,
+  "price_min": 196970,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mg-s5-comfort",
+   "mg-s5-luxury"
+  ]
+ },
+ "mini-aceman": {
+  "body": "SUV",
+  "brand_id": "mini",
+  "id": "mini-aceman",
+  "name": "Aceman",
+  "price_max": 359990,
+  "price_min": 275990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mini-aceman-e",
+   "mini-aceman-jcw-aceman-e",
+   "mini-aceman-se"
+  ]
+ },
+ "mini-cooper-3-portas": {
+  "body": "Hatch",
+  "brand_id": "mini",
+  "id": "mini-cooper-3-portas",
+  "name": "Cooper 3 portas",
+  "price_max": 394990,
+  "price_min": 274990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mini-cooper-3-portas-cooper-s-exclusive",
+   "mini-cooper-3-portas-cooper-s-sport",
+   "mini-cooper-3-portas-cooper-s-top",
+   "mini-cooper-3-portas-jcw",
+   "mini-cooper-3-portas-jcw-1965-victory-edition",
+   "mini-cooper-3-portas-jcw-gp-inspired-edition"
+  ]
+ },
+ "mini-cooper-5-portas": {
+  "body": "Hatch",
+  "brand_id": "mini",
+  "id": "mini-cooper-5-portas",
+  "name": "Cooper 5 portas",
+  "price_max": 329990,
+  "price_min": 289990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mini-cooper-5-portas-cooper-s-exclusive",
+   "mini-cooper-5-portas-cooper-s-top"
+  ]
+ },
+ "mini-cooper-cabrio": {
+  "body": "Esportivo",
+  "brand_id": "mini",
+  "id": "mini-cooper-cabrio",
+  "name": "Cooper Cabrio",
+  "price_max": 389990,
+  "price_min": 349990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mini-cooper-cabrio-cooper-s-cabrio",
+   "mini-cooper-cabrio-jcw-cabrio"
+  ]
+ },
+ "mini-cooper-eletrico": {
+  "body": "Hatch",
+  "brand_id": "mini",
+  "id": "mini-cooper-eletrico",
+  "name": "Cooper Elétrico",
+  "price_max": 349990,
+  "price_min": 264990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mini-cooper-eletrico-cooper-e",
+   "mini-cooper-eletrico-cooper-se",
+   "mini-cooper-eletrico-jcw-e"
+  ]
+ },
+ "mini-countryman": {
+  "body": "SUV",
+  "brand_id": "mini",
+  "id": "mini-countryman",
+  "name": "Countryman",
+  "price_max": 439990,
+  "price_min": 399990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mini-countryman-jcw-countryman-all4",
+   "mini-countryman-jcw-countryman-all4-exclusive",
+   "mini-countryman-s-all4"
+  ]
+ },
+ "mitsubishi-eclipse-cross": {
+  "body": "SUV",
+  "brand_id": "mitsubishi",
+  "id": "mitsubishi-eclipse-cross",
+  "name": "Eclipse Cross",
+  "price_max": 224990,
+  "price_min": 159990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mitsubishi-eclipse-cross-black-1-5-turbo-cvt-4x4",
+   "mitsubishi-eclipse-cross-hpe-1-5-turbo-cvt",
+   "mitsubishi-eclipse-cross-hpe-s-1-5-turbo-cvt",
+   "mitsubishi-eclipse-cross-hpe-s-1-5-turbo-cvt-4x4",
+   "mitsubishi-eclipse-cross-rush-1-5-turbo-cvt",
+   "mitsubishi-eclipse-cross-tarmac-1-5-turbo-cvt"
+  ]
+ },
+ "mitsubishi-outlander": {
+  "body": "SUV",
+  "brand_id": "mitsubishi",
+  "id": "mitsubishi-outlander",
+  "name": "Outlander",
+  "price_max": 364990,
+  "price_min": 324990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mitsubishi-outlander-hpe-s-2-4-phev-4x4",
+   "mitsubishi-outlander-signature-2-4-phev-4x4"
+  ]
+ },
+ "mitsubishi-triton": {
+  "body": "Picape",
+  "brand_id": "mitsubishi",
+  "id": "mitsubishi-triton",
+  "name": "Triton",
+  "price_max": 344990,
+  "price_min": 249990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "mitsubishi-triton-bf-ms-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-gl-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-gl-2-4-biturbo-diesel-4x4-mt",
+   "mitsubishi-triton-gls-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-gls-tarmac-2-4-biturbo-diesel-4x2-at",
+   "mitsubishi-triton-hpe-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-hpe-s-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-katana-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-savana-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-sertoes-2-4-biturbo-diesel-4x4-at",
+   "mitsubishi-triton-terra-2-4-biturbo-diesel-4x4-at"
+  ]
+ },
+ "nissan-kait": {
+  "body": "SUV",
+  "brand_id": "nissan",
+  "id": "nissan-kait",
+  "name": "Kait",
+  "price_max": 149990,
+  "price_min": 117990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "nissan-kait-active-1-6-cvt",
+   "nissan-kait-advance-1-6-cvt",
+   "nissan-kait-exclusive-1-6-cvt",
+   "nissan-kait-sense-1-6-cvt"
+  ]
+ },
+ "nissan-kicks": {
+  "body": "SUV",
+  "brand_id": "nissan",
+  "id": "nissan-kicks",
+  "name": "Kicks",
+  "price_max": 189990,
+  "price_min": 159990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "nissan-kicks-advance-1-0-turbo-dct",
+   "nissan-kicks-exclusive-1-0-turbo-dct",
+   "nissan-kicks-platinum-1-0-turbo-dct",
+   "nissan-kicks-sense-1-0-turbo-dct"
+  ]
+ },
+ "nissan-versa": {
+  "body": "Sedã",
+  "brand_id": "nissan",
+  "id": "nissan-versa",
+  "name": "Versa",
+  "price_max": 148290,
+  "price_min": 119990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "nissan-versa-advance-1-6-cvt",
+   "nissan-versa-exclusive-1-6-cvt",
+   "nissan-versa-sense-1-6-cvt"
+  ]
+ },
+ "omoda-e5": {
+  "body": "SUV",
+  "brand_id": "omoda",
+  "id": "omoda-e5",
+  "name": "E5",
+  "price_max": 184990,
+  "price_min": 159990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "omoda-e5-elite",
+   "omoda-e5-prestige"
+  ]
+ },
+ "omoda-omoda-4": {
+  "body": "SUV",
+  "brand_id": "omoda",
+  "id": "omoda-omoda-4",
+  "name": "Omoda 4",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "omoda-omoda-4-shs-h-1-5-turbo-hibrido"
+  ]
+ },
+ "omoda-omoda-5": {
+  "body": "SUV",
+  "brand_id": "omoda",
+  "id": "omoda-omoda-5",
+  "name": "Omoda 5",
+  "price_max": 184990,
+  "price_min": 164990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "omoda-omoda-5-shs-h-luxury",
+   "omoda-omoda-5-shs-h-prestige"
+  ]
+ },
+ "omoda-omoda-7": {
+  "body": "SUV",
+  "brand_id": "omoda",
+  "id": "omoda-omoda-7",
+  "name": "Omoda 7",
+  "price_max": 279990,
+  "price_min": 254990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "omoda-omoda-7-shs-p-luxury",
+   "omoda-omoda-7-shs-p-prestige"
+  ]
+ },
+ "peugeot-2008": {
+  "body": "SUV",
+  "brand_id": "peugeot",
+  "id": "peugeot-2008",
+  "name": "2008",
+  "price_max": 162990,
+  "price_min": 134990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "peugeot-2008-active-turbo-200-at",
+   "peugeot-2008-allure-turbo-200-at",
+   "peugeot-2008-gt-mhev-turbo-200-at"
+  ]
+ },
+ "peugeot-208": {
+  "body": "Hatch",
+  "brand_id": "peugeot",
+  "id": "peugeot-208",
+  "name": "208",
+  "price_max": 132990,
+  "price_min": 93990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "208",
+   "208-allure-1-0-turbo-200",
+   "208-gt-1-0-turbo-200-mhev"
+  ]
+ },
+ "peugeot-boxer": {
+  "body": "Van",
+  "brand_id": "peugeot",
+  "id": "peugeot-boxer",
+  "name": "Boxer",
+  "price_max": 384990,
+  "price_min": 280990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "peugeot-boxer-cargo-l3h2-2-2-turbodiesel",
+   "peugeot-boxer-comfort-17-1-2-2-turbodiesel",
+   "peugeot-boxer-furgao-l3h2-2-2-turbodiesel",
+   "peugeot-boxer-luxo-15-1-2-2-turbodiesel"
+  ]
+ },
+ "peugeot-expert": {
+  "body": "Van",
+  "brand_id": "peugeot",
+  "id": "peugeot-expert",
+  "name": "Expert",
+  "price_max": 235990,
+  "price_min": 233590,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "peugeot-expert-cargo-2-2-turbodiesel",
+   "peugeot-expert-vitre-2-2-turbodiesel"
+  ]
+ },
+ "peugeot-partner-rapid": {
+  "body": "Van",
+  "brand_id": "peugeot",
+  "id": "peugeot-partner-rapid",
+  "name": "Partner Rapid",
+  "price_max": 116138,
+  "price_min": 116138,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "peugeot-partner-rapid-business-pack-1-3-flex"
+  ]
+ },
+ "porsche-718": {
+  "body": "Esportivo",
+  "brand_id": "porsche",
+  "id": "porsche-718",
+  "name": "718",
+  "price_max": 775000,
+  "price_min": 755000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-718-boxster-gts-4-0",
+   "porsche-718-cayman-gts-4-0"
+  ]
+ },
+ "porsche-911": {
+  "body": "Esportivo",
+  "brand_id": "porsche",
+  "id": "porsche-911",
+  "name": "911",
+  "price_max": 2210000,
+  "price_min": 990000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-911-carrera",
+   "porsche-911-carrera-cabriolet",
+   "porsche-911-carrera-gts",
+   "porsche-911-carrera-gts-cabriolet",
+   "porsche-911-carrera-s",
+   "porsche-911-carrera-s-cabriolet",
+   "porsche-911-carrera-t",
+   "porsche-911-carrera-t-cabriolet",
+   "porsche-911-gt3",
+   "porsche-911-gt3-s-c",
+   "porsche-911-gt3-touring",
+   "porsche-911-targa-4-gts",
+   "porsche-911-turbo-s",
+   "porsche-911-turbo-s-cabriolet"
+  ]
+ },
+ "porsche-cayenne": {
+  "body": "SUV",
+  "brand_id": "porsche",
+  "id": "porsche-cayenne",
+  "name": "Cayenne",
+  "price_max": 1500000,
+  "price_min": 900000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-cayenne-e-hybrid",
+   "porsche-cayenne-electric",
+   "porsche-cayenne-gts",
+   "porsche-cayenne-s",
+   "porsche-cayenne-s-e-hybrid",
+   "porsche-cayenne-s-electric",
+   "porsche-cayenne-turbo-e-hybrid",
+   "porsche-cayenne-turbo-electric"
+  ]
+ },
+ "porsche-cayenne-coupe": {
+  "body": "SUV",
+  "brand_id": "porsche",
+  "id": "porsche-cayenne-coupe",
+  "name": "Cayenne Coupé",
+  "price_max": 1620000,
+  "price_min": 950000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-cayenne-coupe-cayenne-e-hybrid-coupe",
+   "porsche-cayenne-coupe-cayenne-gts-coupe",
+   "porsche-cayenne-coupe-cayenne-s-coupe",
+   "porsche-cayenne-coupe-cayenne-s-coupe-electric",
+   "porsche-cayenne-coupe-cayenne-s-e-hybrid-coupe",
+   "porsche-cayenne-coupe-cayenne-turbo-coupe-electric",
+   "porsche-cayenne-coupe-cayenne-turbo-e-hybrid-coupe",
+   "porsche-cayenne-coupe-cayenne-turbo-gt",
+   "porsche-cayenne-coupe-electric"
+  ]
+ },
+ "porsche-macan": {
+  "body": "SUV",
+  "brand_id": "porsche",
+  "id": "porsche-macan",
+  "name": "Macan",
+  "price_max": 970000,
+  "price_min": 530000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-macan-4-eletrico",
+   "porsche-macan-4s-eletrico",
+   "porsche-macan-gts",
+   "porsche-macan-gts-eletrico",
+   "porsche-macan-macan",
+   "porsche-macan-s",
+   "porsche-macan-t",
+   "porsche-macan-turbo-eletrico"
+  ]
+ },
+ "porsche-panamera": {
+  "body": "Sedã",
+  "brand_id": "porsche",
+  "id": "porsche-panamera",
+  "name": "Panamera",
+  "price_max": 1870000,
+  "price_min": 990000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-panamera-4-e-hybrid",
+   "porsche-panamera-4s-e-hybrid",
+   "porsche-panamera-turbo-e-hybrid",
+   "porsche-panamera-turbo-s-e-hybrid"
+  ]
+ },
+ "porsche-taycan": {
+  "body": "Sedã",
+  "brand_id": "porsche",
+  "id": "porsche-taycan",
+  "name": "Taycan",
+  "price_max": 1690000,
+  "price_min": 1110000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-taycan-gts",
+   "porsche-taycan-turbo-gt-pacote-weissach",
+   "porsche-taycan-turbo-s"
+  ]
+ },
+ "porsche-taycan-cross-turismo": {
+  "body": "Perua",
+  "brand_id": "porsche",
+  "id": "porsche-taycan-cross-turismo",
+  "name": "Taycan Cross Turismo",
+  "price_max": 1350000,
+  "price_min": 1080000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "porsche-taycan-cross-turismo-taycan-4s-cross-turismo",
+   "porsche-taycan-cross-turismo-taycan-turbo-cross-turismo"
+  ]
+ },
+ "ram-1500": {
+  "body": "Picape",
+  "brand_id": "ram",
+  "id": "ram-1500",
+  "name": "1500",
+  "price_max": 599990,
+  "price_min": 449990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ram-1500-big-horn-3-0-hurricane-6-biturbo-4x4",
+   "ram-1500-laramie-3-0-hurricane-6-biturbo-4x4",
+   "ram-1500-laramie-night-edition-3-0-hurricane-6-biturbo-4x"
+  ]
+ },
+ "ram-2500": {
+  "body": "Picape",
+  "brand_id": "ram",
+  "id": "ram-2500",
+  "name": "2500",
+  "price_max": 569990,
+  "price_min": 559990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ram-2500-laramie-6-7-cummins-turbodiesel-4x4",
+   "ram-2500-laramie-night-edition-6-7-cummins-turbodiesel-4x"
+  ]
+ },
+ "ram-3500": {
+  "body": "Picape",
+  "brand_id": "ram",
+  "id": "ram-3500",
+  "name": "3500",
+  "price_max": 679990,
+  "price_min": 619990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ram-3500-laramie-night-edition-6-7-cummins-turbodiesel-4x",
+   "ram-3500-limited-longhorn-6-7-cummins-turbodiesel-4x4"
+  ]
+ },
+ "ram-dakota": {
+  "body": "Picape",
+  "brand_id": "ram",
+  "id": "ram-dakota",
+  "name": "Dakota",
+  "price_max": 329990,
+  "price_min": 285990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ram-dakota-big-horn-2-2-turbodiesel-4x4",
+   "ram-dakota-laramie-2-2-turbodiesel-4x4",
+   "ram-dakota-laramie-night-edition-2-2-turbodiesel-4x4",
+   "ram-dakota-warlock-2-2-turbodiesel-4x4"
+  ]
+ },
+ "ram-rampage": {
+  "body": "Picape",
+  "brand_id": "ram",
+  "id": "ram-rampage",
+  "name": "Rampage",
+  "price_max": 275990,
+  "price_min": 230990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "ram-rampage-big-horn-2-2-turbodiesel-4x4",
+   "ram-rampage-laramie-2-0-hurricane-4-turbo-flex-4x4",
+   "ram-rampage-laramie-2-2-turbodiesel-4x4",
+   "ram-rampage-r-t-2-0-hurricane-4-turbo-flex-4x4",
+   "ram-rampage-rebel-2-2-turbodiesel-4x4",
+   "ram-rampage-rebel-ignition-2-0-hurricane-4-turbo-flex-4x4",
+   "ram-rampage-rebel-ignition-2-2-turbodiesel-4x4"
+  ]
+ },
+ "renault-boreal": {
+  "body": "SUV",
+  "brand_id": "renault",
+  "id": "renault-boreal",
+  "name": "Boreal",
+  "price_max": 219990,
+  "price_min": 182990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-boreal-evolution-1-3-tce-edc",
+   "renault-boreal-iconic-1-3-tce-edc",
+   "renault-boreal-techno-1-3-tce-edc"
+  ]
+ },
+ "renault-duster": {
+  "body": "SUV",
+  "brand_id": "renault",
+  "id": "renault-duster",
+  "name": "Duster",
+  "price_max": 171990,
+  "price_min": 107990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-duster-iconic-plus-1-3-tce-x-tronic",
+   "renault-duster-iconic-plus-1-6-sce-x-tronic",
+   "renault-duster-intense-plus-1-6-sce-mt",
+   "renault-duster-intense-plus-1-6-sce-x-tronic",
+   "renault-duster-zen-plus-1-6-sce-mt"
+  ]
+ },
+ "renault-kangoo": {
+  "body": "Van",
+  "brand_id": "renault",
+  "id": "renault-kangoo",
+  "name": "Kangoo",
+  "price_max": 139390,
+  "price_min": 139390,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-kangoo-advanced-1-6-sce-flex"
+  ]
+ },
+ "renault-kangoo-e-tech": {
+  "body": "Van",
+  "brand_id": "renault",
+  "id": "renault-kangoo-e-tech",
+  "name": "Kangoo E-Tech",
+  "price_max": 299390,
+  "price_min": 299390,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-kangoo-e-tech-furgao-eletrico"
+  ]
+ },
+ "renault-kardian": {
+  "body": "SUV",
+  "brand_id": "renault",
+  "id": "renault-kardian",
+  "name": "Kardian",
+  "price_max": 140990,
+  "price_min": 99990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kardian",
+   "kardian-evolution",
+   "kardian-iconic",
+   "kardian-techno"
+  ]
+ },
+ "renault-koleos": {
+  "body": "SUV",
+  "brand_id": "renault",
+  "id": "renault-koleos",
+  "name": "Koleos",
+  "price_max": 289990,
+  "price_min": 289990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-koleos-esprit-alpine-1-5-turbo-e-tech-hybrid"
+  ]
+ },
+ "renault-kwid": {
+  "body": "Hatch",
+  "brand_id": "renault",
+  "id": "renault-kwid",
+  "name": "Kwid",
+  "price_max": 91190,
+  "price_min": 82790,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "kwid",
+   "kwid-outsider-1-0",
+   "kwid-techno-1-0"
+  ]
+ },
+ "renault-kwid-e-tech": {
+  "body": "Hatch",
+  "brand_id": "renault",
+  "id": "renault-kwid-e-tech",
+  "name": "Kwid E-Tech",
+  "price_max": 99990,
+  "price_min": 99990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-kwid-e-tech-techno-26-8-kwh"
+  ]
+ },
+ "renault-master": {
+  "body": "Van",
+  "brand_id": "renault",
+  "id": "renault-master",
+  "name": "Master",
+  "price_max": 406290,
+  "price_min": 274616,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-master-extra-furgao-2-3-dci",
+   "renault-master-extra-pro-2-3-dci",
+   "renault-master-furgao-2-3-dci",
+   "renault-master-grand-furgao-2-3-dci",
+   "renault-master-grand-pro-2-3-dci",
+   "renault-master-minibus-2-3-dci",
+   "renault-master-pro-2-3-dci",
+   "renault-master-vitre-2-3-dci"
+  ]
+ },
+ "renault-megane-e-tech": {
+  "body": "SUV",
+  "brand_id": "renault",
+  "id": "renault-megane-e-tech",
+  "name": "Megane E-Tech",
+  "price_max": 279990,
+  "price_min": 279990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-megane-e-tech-e-tech-220-cv"
+  ]
+ },
+ "renault-niagara": {
+  "body": "Picape",
+  "brand_id": "renault",
+  "id": "renault-niagara",
+  "name": "Niagara",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-niagara-outsider-1-3-tce-4x4-edc"
+  ]
+ },
+ "renault-oroch": {
+  "body": "Picape",
+  "brand_id": "renault",
+  "id": "renault-oroch",
+  "name": "Oroch",
+  "price_max": 147690,
+  "price_min": 132890,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "renault-oroch-iconic-1-6-sce-mt",
+   "renault-oroch-intense-1-6-sce-mt",
+   "renault-oroch-pro-1-6-sce-mt"
+  ]
+ },
+ "shineray-dtruck": {
+  "body": "Picape",
+  "brand_id": "shineray",
+  "id": "shineray-dtruck",
+  "name": "DTRUCK",
+  "price_max": 115990,
+  "price_min": 115990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "shineray-dtruck-cabine-dupla-1-6-16v"
+  ]
+ },
+ "shineray-tlux": {
+  "body": "Picape",
+  "brand_id": "shineray",
+  "id": "shineray-tlux",
+  "name": "TLUX",
+  "price_max": 124990,
+  "price_min": 111990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "shineray-tlux-1-6-16v-cacamba",
+   "shineray-tlux-cargo-1-6-16v-bau"
+  ]
+ },
+ "suzuki-e-vitara": {
+  "body": "SUV",
+  "brand_id": "suzuki",
+  "id": "suzuki-e-vitara",
+  "name": "e Vitara",
+  "price_max": 269990,
+  "price_min": 269990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "suzuki-e-vitara-4style-4x4-allgrip-e"
+  ]
+ },
+ "toyota-bz4x": {
+  "body": "SUV",
+  "brand_id": "toyota",
+  "id": "toyota-bz4x",
+  "name": "bZ4X",
+  "price_max": 419990,
+  "price_min": 419990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "toyota-bz4x-awd-73-1-kwh"
+  ]
+ },
+ "toyota-corolla": {
+  "body": "Sedã",
+  "brand_id": "toyota",
+  "id": "toyota-corolla",
+  "name": "Corolla",
+  "price_max": 211990,
+  "price_min": 178990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "corolla",
+   "corolla-altis-premium-2-0",
+   "corolla-altis-premium-hybrid",
+   "corolla-gli-hybrid",
+   "corolla-gr-sport-2-0"
+  ]
+ },
+ "toyota-corolla-cross": {
+  "body": "SUV",
+  "brand_id": "toyota",
+  "id": "toyota-corolla-cross",
+  "name": "Corolla Cross",
+  "price_max": 223790,
+  "price_min": 194790,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "corollacross",
+   "corollacross-gr-sport-2-0",
+   "corollacross-xrx-2-0",
+   "corollacross-xrx-hybrid-premium",
+   "toyota-corolla-cross-xrv-hybrid"
+  ]
+ },
+ "toyota-gr-corolla": {
+  "body": "Esportivo",
+  "brand_id": "toyota",
+  "id": "toyota-gr-corolla",
+  "name": "GR Corolla",
+  "price_max": 399990,
+  "price_min": 399990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "toyota-gr-corolla-circuit-gr-four-1-6-turbo-mt"
+  ]
+ },
+ "toyota-gr-yaris": {
+  "body": "Esportivo",
+  "brand_id": "toyota",
+  "id": "toyota-gr-yaris",
+  "name": "GR Yaris",
+  "price_max": 354990,
+  "price_min": 354990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "toyota-gr-yaris-gr-four-1-6-turbo-gr-dat",
+   "toyota-gr-yaris-gr-four-1-6-turbo-manual"
+  ]
+ },
+ "toyota-hiace": {
+  "body": "Van",
+  "brand_id": "toyota",
+  "id": "toyota-hiace",
+  "name": "Hiace",
+  "price_max": 344990,
+  "price_min": 304990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "toyota-hiace-furgao-dx-2-8-turbo-diesel-at",
+   "toyota-hiace-minibus-dx-2-8-turbo-diesel-at"
+  ]
+ },
+ "toyota-hilux": {
+  "body": "Picape",
+  "brand_id": "toyota",
+  "id": "toyota-hilux",
+  "name": "Hilux",
+  "price_max": 357890,
+  "price_min": 265390,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "hilux",
+   "hilux-cd-sr-4x4-at",
+   "hilux-cd-srv-4x4-at",
+   "hilux-cd-srx-4x4-at",
+   "hilux-cd-srx-plus-4x4-at",
+   "hilux-cd-std-power-pack-4x4-at",
+   "toyota-hilux-cs-4x4-at",
+   "toyota-hilux-cs-4x4-mt"
+  ]
+ },
+ "toyota-hilux-sw4": {
+  "body": "SUV",
+  "brand_id": "toyota",
+  "id": "toyota-hilux-sw4",
+  "name": "Hilux SW4",
+  "price_max": 475990,
+  "price_min": 417590,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "toyota-hilux-sw4-diamond-7-lugares-2-8-turbo-diesel-4x4-at",
+   "toyota-hilux-sw4-srx-platinum-5-lugares-2-8-turbo-diesel-4x4-at",
+   "toyota-hilux-sw4-srx-platinum-7-lugares-2-8-turbo-diesel-4x4-at"
+  ]
+ },
+ "toyota-rav4": {
+  "body": "SUV",
+  "brand_id": "toyota",
+  "id": "toyota-rav4",
+  "name": "RAV4",
+  "price_max": 399990,
+  "price_min": 317190,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "toyota-rav4-s-2-5-hybrid-awd",
+   "toyota-rav4-sx-2-5-hybrid-awd",
+   "toyota-rav4-xse-2-5-phev-awd"
+  ]
+ },
+ "toyota-yaris-cross": {
+  "body": "SUV",
+  "brand_id": "toyota",
+  "id": "toyota-yaris-cross",
+  "name": "Yaris Cross",
+  "price_max": 189990,
+  "price_min": 149990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "yariscross",
+   "yariscross-xre-1-5-flex",
+   "yariscross-xre-hybrid",
+   "yariscross-xrx-1-5-flex",
+   "yariscross-xrx-hybrid"
+  ]
+ },
+ "volkswagen-amarok": {
+  "body": "Picape",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-amarok",
+  "name": "Amarok",
+  "price_max": 399890,
+  "price_min": 358890,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-amarok-barretos-70-anos-cd-3-0-v6-tdi-4motion",
+   "volkswagen-amarok-comfortline-cd-3-0-v6-tdi-4motion",
+   "volkswagen-amarok-extreme-cd-3-0-v6-tdi-4motion",
+   "volkswagen-amarok-highline-cd-3-0-v6-tdi-4motion",
+   "volkswagen-amarok-v6-unlimited-cd-3-0-v6-tdi-4motion"
+  ]
+ },
+ "volkswagen-golf": {
+  "body": "Hatch",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-golf",
+  "name": "Golf",
+  "price_max": 445000,
+  "price_min": 430000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-golf-gti-2-0-370-tsi-dsg-bancos-couro-vienna",
+   "volkswagen-golf-gti-2-0-370-tsi-dsg-bancos-xadrez"
+  ]
+ },
+ "volkswagen-id-4": {
+  "body": "SUV",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-id-4",
+  "name": "ID.4",
+  "price_max": 299990,
+  "price_min": 299990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-id-4-pro"
+  ]
+ },
+ "volkswagen-jetta": {
+  "body": "Sedã",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-jetta",
+  "name": "Jetta",
+  "price_max": 278490,
+  "price_min": 278490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-jetta-gli-2-0-350-tsi-dsg"
+  ]
+ },
+ "volkswagen-nivus": {
+  "body": "SUV",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-nivus",
+  "name": "Nivus",
+  "price_max": 193290,
+  "price_min": 119990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-nivus-comfortline-1-0-200-tsi",
+   "volkswagen-nivus-gts-1-4-250-tsi",
+   "volkswagen-nivus-highline-1-0-200-tsi",
+   "volkswagen-nivus-sense-1-0-200-tsi"
+  ]
+ },
+ "volkswagen-polo": {
+  "body": "Hatch",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-polo",
+  "name": "Polo",
+  "price_max": 138990,
+  "price_min": 97990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "polo",
+   "polo-highline-170-tsi",
+   "polo-robust-1-0-mpi",
+   "polo-sense-170-tsi"
+  ]
+ },
+ "volkswagen-saveiro": {
+  "body": "Picape",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-saveiro",
+  "name": "Saveiro",
+  "price_max": 137890,
+  "price_min": 111490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-saveiro-extreme-cd-1-6-msi",
+   "volkswagen-saveiro-robust-cd-1-6-msi",
+   "volkswagen-saveiro-robust-cs-1-6-msi",
+   "volkswagen-saveiro-trendline-cs-1-6-msi"
+  ]
+ },
+ "volkswagen-t-cross": {
+  "body": "SUV",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-t-cross",
+  "name": "T-Cross",
+  "price_max": 193490,
+  "price_min": 119990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "tcross",
+   "tcross-200-tsi",
+   "tcross-comfortline-200-tsi",
+   "tcross-extreme-250-tsi",
+   "tcross-highline-250-tsi"
+  ]
+ },
+ "volkswagen-taos": {
+  "body": "SUV",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-taos",
+  "name": "Taos",
+  "price_max": 214490,
+  "price_min": 199990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-taos-comfortline-1-4-250-tsi",
+   "volkswagen-taos-highline-1-4-250-tsi"
+  ]
+ },
+ "volkswagen-tera": {
+  "body": "SUV",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-tera",
+  "name": "Tera",
+  "price_max": 147190,
+  "price_min": 108490,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "tera",
+   "tera-170-tsi",
+   "tera-comfort-200-tsi",
+   "tera-high-200-tsi"
+  ]
+ },
+ "volkswagen-tiguan": {
+  "body": "SUV",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-tiguan",
+  "name": "Tiguan",
+  "price_max": 299990,
+  "price_min": 299990,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-tiguan-r-line-2-0-350-tsi-4motion"
+  ]
+ },
+ "volkswagen-tukan": {
+  "body": "Picape",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-tukan",
+  "name": "Tukan",
+  "price_max": null,
+  "price_min": null,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volkswagen-tukan-extreme-cd-1-0-tsi-hibrido-leve",
+   "volkswagen-tukan-robust-cs-1-6-msi"
+  ]
+ },
+ "volkswagen-virtus": {
+  "body": "Sedã",
+  "brand_id": "volkswagen",
+  "id": "volkswagen-virtus",
+  "name": "Virtus",
+  "price_max": 176690,
+  "price_min": 116690,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "virtus",
+   "virtus-170-tsi",
+   "virtus-comfortline-200-tsi",
+   "virtus-exclusive-250-tsi",
+   "virtus-highline-200-tsi"
+  ]
+ },
+ "volvo-ec40": {
+  "body": "SUV",
+  "brand_id": "volvo",
+  "id": "volvo-ec40",
+  "name": "EC40",
+  "price_max": 405950,
+  "price_min": 350950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volvo-ec40-black-edition",
+   "volvo-ec40-plus",
+   "volvo-ec40-ultra"
+  ]
+ },
+ "volvo-es90": {
+  "body": "Sedã",
+  "brand_id": "volvo",
+  "id": "volvo-es90",
+  "name": "ES90",
+  "price_max": 659950,
+  "price_min": 659950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volvo-es90-ultra-twin-motor-performance"
+  ]
+ },
+ "volvo-ex30": {
+  "body": "SUV",
+  "brand_id": "volvo",
+  "id": "volvo-ex30",
+  "name": "EX30",
+  "price_max": 324950,
+  "price_min": 249950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volvo-ex30-cross-country-twin-motor",
+   "volvo-ex30-plus-single-motor",
+   "volvo-ex30-ultra-twin-motor"
+  ]
+ },
+ "volvo-ex40": {
+  "body": "SUV",
+  "brand_id": "volvo",
+  "id": "volvo-ex40",
+  "name": "EX40",
+  "price_max": 405950,
+  "price_min": 345950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volvo-ex40-black-edition-twin-motor",
+   "volvo-ex40-plus",
+   "volvo-ex40-ultra"
+  ]
+ },
+ "volvo-ex90": {
+  "body": "SUV",
+  "brand_id": "volvo",
+  "id": "volvo-ex90",
+  "name": "EX90",
+  "price_max": 849950,
+  "price_min": 849950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volvo-ex90-ultra-twin-motor-performance"
+  ]
+ },
+ "volvo-xc60": {
+  "body": "SUV",
+  "brand_id": "volvo",
+  "id": "volvo-xc60",
+  "name": "XC60",
+  "price_max": 519950,
+  "price_min": 469950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volvo-xc60-plus-t8-awd",
+   "volvo-xc60-ultra-t8-awd"
+  ]
+ },
+ "volvo-xc90": {
+  "body": "SUV",
+  "brand_id": "volvo",
+  "id": "volvo-xc90",
+  "name": "XC90",
+  "price_max": 749950,
+  "price_min": 699950,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "volvo-xc90-plus-t8-awd",
+   "volvo-xc90-ultra-t8-awd"
+  ]
+ },
+ "zeekr-001": {
+  "body": "Perua",
+  "brand_id": "zeekr",
+  "id": "zeekr-001",
+  "name": "001",
+  "price_max": 539666,
+  "price_min": 495000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "zeekr-001-flagship-awd",
+   "zeekr-001-premium-awd"
+  ]
+ },
+ "zeekr-7x": {
+  "body": "SUV",
+  "brand_id": "zeekr",
+  "id": "zeekr-7x",
+  "name": "7X",
+  "price_max": 448000,
+  "price_min": 378000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "zeekr-7x-flagship-awd",
+   "zeekr-7x-premium-rwd"
+  ]
+ },
+ "zeekr-x": {
+  "body": "SUV",
+  "brand_id": "zeekr",
+  "id": "zeekr-x",
+  "name": "X",
+  "price_max": 338000,
+  "price_min": 298000,
+  "status": "on_sale",
+  "updated_at": "2026-11-03",
+  "versions": [
+   "zeekr-x-flagship-awd",
+   "zeekr-x-premium"
+  ]
+ }
+}

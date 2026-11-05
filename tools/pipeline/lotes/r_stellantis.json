@@ -1,0 +1,2678 @@
+[
+ {
+  "modelo": "Mobi",
+  "marca": "Fiat",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Like 1.0",
+    "preco_reais": 85490,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/mobi/2027"
+   },
+   {
+    "versao": "Trekking 1.0",
+    "preco_reais": 87990,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/mobi/2027"
+   }
+  ]
+ },
+ {
+  "modelo": "C3",
+  "marca": "Citroën",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Live Go 1.0",
+    "preco_reais": 77990,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData / Garagem360 / A Tarde (lançamento linha 2027, 18/08-09/09/2026)",
+    "fonte_url": "https://garagem360.com.br/?p=318884",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (faturamento direto PF). Webmotors (catálogo) ainda mostra R$ 88.990, provavelmente tabela da linha 2026."
+   },
+   {
+    "versao": "Live Plus 1.0",
+    "preco_reais": 87990,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "AutoData / Garagem360 / A Tarde (lançamento linha 2027, 18/08-09/09/2026)",
+    "fonte_url": "https://garagem360.com.br/?p=318884",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (faturamento direto PF). Webmotors (catálogo) ainda mostra R$ 94.990, provavelmente tabela da linha 2026."
+   },
+   {
+    "versao": "Feel Plus 1.0",
+    "preco_reais": 91490,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "AutoData / Garagem360 / A Tarde (lançamento linha 2027, 18/08-09/09/2026)",
+    "fonte_url": "https://garagem360.com.br/?p=318884",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (faturamento direto PF). Webmotors (catálogo) ainda mostra R$ 98.990, provavelmente tabela da linha 2026."
+   },
+   {
+    "versao": "XTR 1.0",
+    "preco_reais": 93990,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "AutoData / Garagem360 / A Tarde (lançamento linha 2027, 18/08-09/09/2026)",
+    "fonte_url": "https://garagem360.com.br/?p=318884",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (faturamento direto PF). Webmotors (catálogo) ainda mostra R$ 101.990, provavelmente tabela da linha 2026."
+   },
+   {
+    "versao": "YOU! 1.0 Turbo 200",
+    "preco_reais": 113990,
+    "tipo": "sugerido",
+    "motor": "1.0 Turbo 200 114 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData / Garagem360 / A Tarde (lançamento linha 2027, 18/08-09/09/2026)",
+    "fonte_url": "https://garagem360.com.br/?p=318884",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (faturamento direto PF). Webmotors (catálogo) ainda mostra R$ 116.990, provavelmente tabela da linha 2026."
+   }
+  ]
+ },
+ {
+  "modelo": "208",
+  "marca": "Peugeot",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Style 1.0",
+    "preco_reais": 93990,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "AutoData (14/09/2026) / AutoPapo (11/09/2026) — linha 2027",
+    "fonte_url": "https://www.autodata.com.br/mobility/2026/09/14/peugeot-atualiza-208-e-2008-para-linha-2027/135387/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço linha 2027 (PF, cor Preto Perla Nera). Webmotors mostrava R$ 103.990."
+   },
+   {
+    "versao": "Allure 1.0 Turbo 200",
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "motor": "1.0 Turbo 200 115 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "AutoData (14/09/2026) / AutoPapo (11/09/2026) — linha 2027",
+    "fonte_url": "https://www.autodata.com.br/mobility/2026/09/14/peugeot-atualiza-208-e-2008-para-linha-2027/135387/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço linha 2027 (PF, cor Preto Perla Nera)."
+   },
+   {
+    "versao": "GT 1.0 Turbo 200 MHEV",
+    "preco_reais": 132990,
+    "tipo": "sugerido",
+    "motor": "1.0 Turbo 200 115 cv + híbrido leve 12V",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "AutoData (14/09/2026) / AutoPapo (11/09/2026) — linha 2027",
+    "fonte_url": "https://www.autodata.com.br/mobility/2026/09/14/peugeot-atualiza-208-e-2008-para-linha-2027/135387/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço linha 2027 (PF, cor Preto Perla Nera). Webmotors mostrava R$ 134.990."
+   }
+  ]
+ },
+ {
+  "modelo": "Argo",
+  "marca": "Fiat",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Drive 1.0",
+    "ano_modelo": 2027,
+    "preco_reais": 98990,
+    "tipo": "sugerido",
+    "motor": "1.0 Firefly aspirado 75 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/automoveis/fiat-argo-2027-drive-1-0-precos-argo-x/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Única versão da linha 2027 no configurador (Vrum, out/2026)."
+   },
+   {
+    "versao": "Trekking 1.3",
+    "ano_modelo": 2026,
+    "preco_reais": 103990,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoMais (mar/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/mesmo-com-futuro-nebuloso-fiat-argo-sofre-aumento-e-passa-dos-r-111-mil/",
+    "observacao": "Só como estoque linha 2026: o configurador Fiat da linha 2027 traz apenas o Drive 1.0 (Vrum 10/2026); deve sair com a chegada do Argo X.",
+    "consultado_em": "2026-11-04"
+   },
+   {
+    "versao": "Drive 1.3 CVT",
+    "ano_modelo": 2026,
+    "preco_reais": 108990,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "AutoMais (mar/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/mesmo-com-futuro-nebuloso-fiat-argo-sofre-aumento-e-passa-dos-r-111-mil/",
+    "observacao": "Só como estoque linha 2026: o configurador Fiat da linha 2027 traz apenas o Drive 1.0 (Vrum 10/2026); deve sair com a chegada do Argo X.",
+    "consultado_em": "2026-11-04"
+   },
+   {
+    "versao": "Trekking 1.3 CVT",
+    "ano_modelo": 2026,
+    "preco_reais": 111990,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "AutoMais (mar/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/mesmo-com-futuro-nebuloso-fiat-argo-sofre-aumento-e-passa-dos-r-111-mil/",
+    "observacao": "Só como estoque linha 2026: o configurador Fiat da linha 2027 traz apenas o Drive 1.0 (Vrum 10/2026); deve sair com a chegada do Argo X.",
+    "consultado_em": "2026-11-04"
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Argo X",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Versões a confirmar",
+    "ano_modelo": 2027,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "DGABC (30/09/2026) / Vrum (out/2026) / Encontra Carros (26/10/2026)",
+    "fonte_url": "https://www.dgabc.com.br/Noticia/4349846/fiat-argo-x-comeca-a-ser-revelado-mas-marca-mantem-segredo",
+    "consultado_em": "2026-11-04",
+    "observacao": "Hatch derivado do Grande Panda, produzido em Betim (MG); nome e imagens oficiais divulgados pela Fiat, lançamento comercial previsto para nov-dez/2026. Preços e versões não oficiais (imprensa estima R$ 95-120 mil; topo com 1.0 turbo híbrido leve). Renomear a versão quando a lista oficial sair."
+   }
+  ]
+ },
+ {
+  "modelo": "Strada",
+  "marca": "Fiat",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Endurance Cabine Plus 1.3",
+    "ano_modelo": 2027,
+    "preco_reais": 116990,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/noticias/fiat-strada-2027-precos-versoes-equipamentos/"
+   },
+   {
+    "versao": "Freedom Cabine Plus 1.3",
+    "ano_modelo": 2027,
+    "preco_reais": 123990,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/noticias/fiat-strada-2027-precos-versoes-equipamentos/"
+   },
+   {
+    "versao": "Freedom Cabine Dupla 1.3",
+    "ano_modelo": 2027,
+    "preco_reais": 133490,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/noticias/fiat-strada-2027-precos-versoes-equipamentos/"
+   },
+   {
+    "versao": "Volcano Cabine Dupla 1.3",
+    "ano_modelo": 2027,
+    "preco_reais": 136490,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/noticias/fiat-strada-2027-precos-versoes-equipamentos/"
+   },
+   {
+    "versao": "Volcano Cabine Dupla 1.3 CVT",
+    "ano_modelo": 2027,
+    "preco_reais": 142490,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/noticias/fiat-strada-2027-precos-versoes-equipamentos/"
+   },
+   {
+    "versao": "Ultra Cabine Dupla Turbo 200 CVT",
+    "ano_modelo": 2027,
+    "preco_reais": 153990,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 200 até 130 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/noticias/fiat-strada-2027-precos-versoes-equipamentos/"
+   },
+   {
+    "versao": "Ranch Cabine Dupla Turbo 200 CVT",
+    "ano_modelo": 2027,
+    "preco_reais": 153990,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 200 até 130 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/noticias/fiat-strada-2027-precos-versoes-equipamentos/"
+   }
+  ]
+ },
+ {
+  "modelo": "Pulse",
+  "marca": "Fiat",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Drive 1.3",
+    "ano_modelo": 2027,
+    "preco_reais": 104990,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/automoveis/fiat-pulse-2027-blackmotion-versoes-turbo-precos/"
+   },
+   {
+    "versao": "Drive 1.3 CVT",
+    "ano_modelo": 2027,
+    "preco_reais": 116990,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/automoveis/fiat-pulse-2027-blackmotion-versoes-turbo-precos/"
+   },
+   {
+    "versao": "BlackMotion 1.3 CVT",
+    "ano_modelo": 2027,
+    "preco_reais": 120480,
+    "tipo": "sugerido",
+    "motor": "1.3 Firefly aspirado 107 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Vrum",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/08/7483131-fiat-pulse-blackmotion-2027-chega-por-rs-120-480-ao-mercado.html"
+   },
+   {
+    "versao": "Audace T200 MHEV",
+    "ano_modelo": 2027,
+    "preco_reais": 137990,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 116 cv + sistema híbrido leve 12V",
+    "cambio": "CVT",
+    "combustivel": "híbrido leve",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/automoveis/fiat-pulse-2027-blackmotion-versoes-turbo-precos/"
+   },
+   {
+    "versao": "Abarth T270",
+    "ano_modelo": 2027,
+    "preco_reais": 163490,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo T270 185 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "A Crítica (Campo Grande)",
+    "fonte_url": "https://acritica.net/automoveis/fiat-pulse-2027-blackmotion-versoes-turbo-precos/"
+   }
+  ]
+ },
+ {
+  "modelo": "Fastback",
+  "marca": "Fiat",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Turbo 200",
+    "ano_modelo": 2027,
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Vrum",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7528021-fiat-fastback-2027-chega-por-rs-117-990-mas-perde-potencia.html"
+   },
+   {
+    "versao": "Smart Drive",
+    "ano_modelo": 2027,
+    "preco_reais": 127990,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Vrum",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7528021-fiat-fastback-2027-chega-por-rs-117-990-mas-perde-potencia.html"
+   },
+   {
+    "versao": "BlackMotion",
+    "ano_modelo": 2027,
+    "preco_reais": 129980,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 116 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Vrum",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7528021-fiat-fastback-2027-chega-por-rs-117-990-mas-perde-potencia.html"
+   },
+   {
+    "versao": "Audace MHEV",
+    "ano_modelo": 2027,
+    "preco_reais": 168490,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 116 cv + sistema híbrido leve 12V",
+    "cambio": "CVT",
+    "combustivel": "híbrido leve",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Vrum",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7528021-fiat-fastback-2027-chega-por-rs-117-990-mas-perde-potencia.html"
+   },
+   {
+    "versao": "Impetus MHEV",
+    "ano_modelo": 2027,
+    "preco_reais": 174490,
+    "tipo": "sugerido",
+    "motor": "1.0 turbo 116 cv + sistema híbrido leve 12V",
+    "cambio": "CVT",
+    "combustivel": "híbrido leve",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Vrum",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7528021-fiat-fastback-2027-chega-por-rs-117-990-mas-perde-potencia.html"
+   },
+   {
+    "versao": "Abarth",
+    "ano_modelo": 2027,
+    "preco_reais": 184490,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo T270 185 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Vrum",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7528021-fiat-fastback-2027-chega-por-rs-117-990-mas-perde-potencia.html"
+   }
+  ]
+ },
+ {
+  "modelo": "Toro",
+  "marca": "Fiat",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Endurance 1.3 Turbo Flex",
+    "ano_modelo": 2027,
+    "preco_reais": 167490,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Car.Blog.Br",
+    "fonte_url": "https://www.car.blog.br/2026/05/nova-fiat-toro-2027-flex-hibridas-e.html"
+   },
+   {
+    "versao": "Freedom 1.3 Turbo Flex",
+    "ano_modelo": 2027,
+    "preco_reais": 177490,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Car.Blog.Br",
+    "fonte_url": "https://www.car.blog.br/2026/05/nova-fiat-toro-2027-flex-hibridas-e.html"
+   },
+   {
+    "versao": "Volcano 1.3 Turbo Flex MHEV",
+    "ano_modelo": 2027,
+    "preco_reais": 197490,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv + híbrido leve 48V",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido leve",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Car.Blog.Br",
+    "fonte_url": "https://www.car.blog.br/2026/05/nova-fiat-toro-2027-flex-hibridas-e.html"
+   },
+   {
+    "versao": "Ultra 1.3 Turbo Flex MHEV",
+    "ano_modelo": 2027,
+    "preco_reais": 206490,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv + híbrido leve 48V",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido leve",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Car.Blog.Br",
+    "fonte_url": "https://www.car.blog.br/2026/05/nova-fiat-toro-2027-flex-hibridas-e.html"
+   },
+   {
+    "versao": "Volcano 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2027,
+    "preco_reais": 220490,
+    "tipo": "sugerido",
+    "motor": "2.2 turbodiesel 200 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Car.Blog.Br",
+    "fonte_url": "https://www.car.blog.br/2026/05/nova-fiat-toro-2027-flex-hibridas-e.html"
+   },
+   {
+    "versao": "Ranch 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2027,
+    "preco_reais": 238490,
+    "tipo": "sugerido",
+    "motor": "2.2 turbodiesel 200 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Car.Blog.Br",
+    "fonte_url": "https://www.car.blog.br/2026/05/nova-fiat-toro-2027-flex-hibridas-e.html"
+   }
+  ]
+ },
+ {
+  "modelo": "Compass",
+  "marca": "Jeep",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Sport 1.3 Turbo",
+    "ano_modelo": 2027,
+    "preco_reais": 174990,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors",
+    "fonte_url": "https://www.webmotors.com.br/wm1/noticias/jeep-compass-2027-versoes-precos"
+   },
+   {
+    "versao": "Longitude 1.3 Turbo",
+    "ano_modelo": 2027,
+    "preco_reais": 199990,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors",
+    "fonte_url": "https://www.webmotors.com.br/wm1/noticias/jeep-compass-2027-versoes-precos"
+   },
+   {
+    "versao": "Longitude Night Eagle 1.3 Turbo MHEV",
+    "ano_modelo": 2027,
+    "preco_reais": 206990,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv + híbrido leve 48V",
+    "cambio": "automático",
+    "combustivel": "híbrido leve",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors",
+    "fonte_url": "https://www.webmotors.com.br/wm1/noticias/jeep-compass-2027-versoes-precos"
+   },
+   {
+    "versao": "Série S 1.3 Turbo MHEV",
+    "ano_modelo": 2027,
+    "preco_reais": 233990,
+    "tipo": "sugerido",
+    "motor": "1.3 turbo 176 cv + híbrido leve 48V",
+    "cambio": "automático",
+    "combustivel": "híbrido leve",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors",
+    "fonte_url": "https://www.webmotors.com.br/wm1/noticias/jeep-compass-2027-versoes-precos"
+   },
+   {
+    "versao": "Blackhawk 2.0 Turbo 4x4",
+    "ano_modelo": 2027,
+    "preco_reais": 278990,
+    "tipo": "sugerido",
+    "motor": "2.0 turbo Hurricane 272 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "flex",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors",
+    "fonte_url": "https://www.webmotors.com.br/wm1/noticias/jeep-compass-2027-versoes-precos"
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Cronos",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Drive 1.0 Firefly MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 109990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 Firefly 75 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (ficha Cronos 2027)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/cronos/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors cita no texto 75/71 cv (1.0) e 107/98 cv (1.3, etanol/gasolina), tabela diz 77 e 109 cv; FIPE nov/2026 0 km: R$ 106.995 / 110.026 / 116.390 / 121.543"
+   },
+   {
+    "versao": "Drive 1.3 Firefly MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 114990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 Firefly 107 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (ficha Cronos 2027)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/cronos/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors cita no texto 75/71 cv (1.0) e 107/98 cv (1.3, etanol/gasolina), tabela diz 77 e 109 cv; FIPE nov/2026 0 km: R$ 106.995 / 110.026 / 116.390 / 121.543"
+   },
+   {
+    "versao": "Drive 1.3 Firefly CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 Firefly 107 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (ficha Cronos 2027)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/cronos/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors cita no texto 75/71 cv (1.0) e 107/98 cv (1.3, etanol/gasolina), tabela diz 77 e 109 cv; FIPE nov/2026 0 km: R$ 106.995 / 110.026 / 116.390 / 121.543"
+   },
+   {
+    "versao": "Precision 1.3 Firefly CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 125990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 Firefly 107 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (ficha Cronos 2027)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/cronos/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors cita no texto 75/71 cv (1.0) e 107/98 cv (1.3, etanol/gasolina), tabela diz 77 e 109 cv; FIPE nov/2026 0 km: R$ 106.995 / 110.026 / 116.390 / 121.543"
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Titano",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Endurance 2.2 Turbodiesel 4x4 MT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 238490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (ficha Titano 2026)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/titano/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Sem linha 2027 confirmada; sofre grandes descontos de concessionária (não considerados). Motor Show (mai/2025) dava R$ 233.990."
+   },
+   {
+    "versao": "Volcano 2.2 Turbodiesel 4x4 AT8",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 268490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (ficha Titano 2026)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/titano/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Sem linha 2027 confirmada; sofre grandes descontos de concessionária (não considerados). Motor Show (mai/2025) dava R$ 263.990."
+   },
+   {
+    "versao": "Ranch 2.2 Turbodiesel 4x4 AT8",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 290490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (ficha Titano 2026)",
+    "fonte_url": "https://www.webmotors.com.br/fiat/titano/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Sem linha 2027 confirmada; sofre grandes descontos de concessionária (não considerados). Garagem360 (jul/2026) cita R$ 290.990; a lista FIPE 0 km de nov/2026 (tabelacarros) não traz mais a Ranch — confirmar se segue em linha."
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "500e",
+  "carroceria": "Hatch",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Icon (elétrico)",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 214990,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "tabelacarros (FIPE 0 km nov/2026)",
+    "fonte_url": "https://tabelacarros.com/0km_marca/fiat",
+    "consultado_em": "2026-11-03",
+    "observacao": "Só confirmado via FIPE 0 km nov/2026; nenhum comunicado recente da Fiat sobre o 500e — confirmar se ainda há venda oficial. Fabricação na Itália (Mirafiori) não confirmada nas fontes desta pesquisa."
+   }
+  ]
+ },
+ {
+  "marca": "Jeep",
+  "modelo": "Renegade",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Altitude T270 1.3 Turbo AT6",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 129990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente"
+    ],
+    "fonte_nome": "Vrum (10/08/2026)",
+    "fonte_url": "https://www.vrum.com.br/bom-negocio/2026/08/7477155-jeep-renegade-2027-fica-ainda-mais-barato-meses-apos-seu-lancamento.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançamento a ~R$ 130 mil (primeiras 3.000 un.); oferta à vista de R$ 124.990 até 03/09/2026 (Itatiaia). 4x2."
+   },
+   {
+    "versao": "Longitude T270 MHEV AT6",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 158690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv + híbrido leve 48V",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Vrum (10/08/2026)",
+    "fonte_url": "https://www.vrum.com.br/bom-negocio/2026/08/7477155-jeep-renegade-2027-fica-ainda-mais-barato-meses-apos-seu-lancamento.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "4x2. Motor Show (mar/2026) arredonda para R$ 158,7 mil."
+   },
+   {
+    "versao": "Longitude 85 Anos T270 MHEV AT6",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 167690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv + híbrido leve 48V",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "AutoPapo (23/09/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/jeep-avenger-e-renegade-85-anos-chegam-as-lojas-a-partir-de-r-142-990/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série especial 85 Anos sobre a Longitude."
+   },
+   {
+    "versao": "Sahara T270 MHEV AT6",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 175990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv + híbrido leve 48V",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (10/08/2026)",
+    "fonte_url": "https://www.vrum.com.br/bom-negocio/2026/08/7477155-jeep-renegade-2027-fica-ainda-mais-barato-meses-apos-seu-lancamento.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "4x2."
+   },
+   {
+    "versao": "Willys T270 4x4 AT9",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 189490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "x4",
+     "turbo",
+     "potente"
+    ],
+    "fonte_nome": "Vrum (10/08/2026)",
+    "fonte_url": "https://www.vrum.com.br/bom-negocio/2026/08/7477155-jeep-renegade-2027-fica-ainda-mais-barato-meses-apos-seu-lancamento.html",
+    "consultado_em": "2026-11-03",
+    "observacao": "4x4 com reduzida (Active Drive Low). Câmbio de 9 marchas segundo Auto+ (jan/2026) e Motor Show."
+   }
+  ]
+ },
+ {
+  "marca": "Jeep",
+  "modelo": "Avenger",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Altitude T200 MHEV CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 121990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 116 cv + híbrido leve 12V",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Itatiaia (14/10/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/jeep-avenger-sofre-novo-aumento-de-precos-dois-meses-depois-do-lancamento/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Preço do configurador Jeep. Lançado a R$ 114.990 (1.000 primeiras un.); Webmotors (08/09) dava R$ 119.990 e a própria matéria cita R$ 119.990 em outro trecho. Produzido em Porto Real (RJ)."
+   },
+   {
+    "versao": "Longitude T200 MHEV CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 137990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 116 cv + híbrido leve 12V",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Itatiaia (14/10/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/jeep-avenger-sofre-novo-aumento-de-precos-dois-meses-depois-do-lancamento/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançado a R$ 135.990."
+   },
+   {
+    "versao": "Longitude 85 Anos T200 MHEV CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 142990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 116 cv + híbrido leve 12V",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "AutoPapo (23/09/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/jeep-avenger-e-renegade-85-anos-chegam-as-lojas-a-partir-de-r-142-990/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série especial; preço de set/2026, antes do reajuste da Longitude — pode ter subido."
+   },
+   {
+    "versao": "Limited T200 MHEV CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 145990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 116 cv + híbrido leve 12V",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Itatiaia (14/10/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/jeep-avenger-sofre-novo-aumento-de-precos-dois-meses-depois-do-lancamento/",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Jeep",
+  "modelo": "Commander",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Longitude T270",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 228790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Stellantis Media Jeep (30/03/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/jeep/press/com-novas-opcoes-de-motores-jeep-commander-2027-chega-com-muita-tecnologia-performance-e-capacidade-off-road",
+    "consultado_em": "2026-11-03",
+    "observacao": "7 lugares. Comunicado não detalha câmbio/potência desta versão (176 cv segundo car.blog.br; câmbio presumido igual ao das MHEV — confirmar)."
+   },
+   {
+    "versao": "Limited T270 MHEV",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 255690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv + híbrido leve 48V",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Stellantis Media Jeep (30/03/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/jeep/press/com-novas-opcoes-de-motores-jeep-commander-2027-chega-com-muita-tecnologia-performance-e-capacidade-off-road",
+    "consultado_em": "2026-11-03",
+    "observacao": "7 lugares, 4x2."
+   },
+   {
+    "versao": "Overland T270 MHEV",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 283790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo T270 176 cv + híbrido leve 48V",
+    "cambio": "automático 6 marchas",
+    "combustivel": "híbrido leve",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Stellantis Media Jeep (30/03/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/jeep/press/com-novas-opcoes-de-motores-jeep-commander-2027-chega-com-muita-tecnologia-performance-e-capacidade-off-road",
+    "consultado_em": "2026-11-03",
+    "observacao": "7 lugares, 4x2."
+   },
+   {
+    "versao": "Overland 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 319990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Stellantis Media Jeep (30/03/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/jeep/press/com-novas-opcoes-de-motores-jeep-commander-2027-chega-com-muita-tecnologia-performance-e-capacidade-off-road",
+    "consultado_em": "2026-11-03",
+    "observacao": "7 lugares."
+   },
+   {
+    "versao": "Blackhawk Hurricane 2.0 Turbo 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 329990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo Hurricane 272 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Stellantis Media Jeep (30/03/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/jeep/press/com-novas-opcoes-de-motores-jeep-commander-2027-chega-com-muita-tecnologia-performance-e-capacidade-off-road",
+    "consultado_em": "2026-11-03",
+    "observacao": "7 lugares. FIPE também lista versões Black Hurricane e Overland TD380 2.0 diesel (linhas anteriores)."
+   }
+  ]
+ },
+ {
+  "marca": "Jeep",
+  "modelo": "Wrangler",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Rubicon 2.0 Turbo 4x4",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 529990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo Hurricane 272 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "x4",
+     "turbo",
+     "potente"
+    ],
+    "fonte_nome": "Auto+ TV (09/02/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/jeep-promove-aumento-e-gladiator-e-wrangler-superam-os-r-500-mil/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Ano-modelo não informado. FIPE 0 km nov/2026: R$ 533.358. Importado (origem não informada na fonte)."
+   }
+  ]
+ },
+ {
+  "marca": "Jeep",
+  "modelo": "Gladiator",
+  "carroceria": "Picape",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Rubicon 3.6 V6 4x4",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 529990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.6 V6 Pentastar 284 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Auto+ TV (09/02/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/jeep-promove-aumento-e-gladiator-e-wrangler-superam-os-r-500-mil/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Ano-modelo não informado. FIPE 0 km nov/2026: R$ 535.038. Importado (origem não informada na fonte)."
+   }
+  ]
+ },
+ {
+  "marca": "Peugeot",
+  "modelo": "2008",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Active Turbo 200 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 134990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 115 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "economico"
+    ],
+    "fonte_nome": "Vrum (set/2026)",
+    "fonte_url": "https://www.vrum.com.br/noticias/2026/09/7498011-peugeot-208-e-2008-ganham-motor-1-0-turbo-mais-fraco-e-nova-cor.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (set/2026), confirmado por Vrum, AutoData, Autoentusiastas e car.blog.br. CONFLITO: carro.blog.br (23/09/2026) diz que o 2008 2027 caiu R$ 5 mil para 148.990/163.990/179.990 (de 153.990/168.990/184.990), números incompatíveis com o lançamento; FIPE out/2026 (133.187/146.050/160.400) é coerente com os preços de lançamento. Confirmado por AutoData (14/09/2026) e AutoPapo (11/09/2026). Conflito: Webmotors e Vrum (22/09/2026, 'R$ 5 mil mais barato') citam R$ 148.990/163.990/179.990 — parece ser a tabela da linha 2026."
+   },
+   {
+    "versao": "Allure Turbo 200 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 149990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 115 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (set/2026)",
+    "fonte_url": "https://www.vrum.com.br/noticias/2026/09/7498011-peugeot-208-e-2008-ganham-motor-1-0-turbo-mais-fraco-e-nova-cor.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (set/2026), confirmado por Vrum, AutoData, Autoentusiastas e car.blog.br. CONFLITO: carro.blog.br (23/09/2026) diz que o 2008 2027 caiu R$ 5 mil para 148.990/163.990/179.990 (de 153.990/168.990/184.990), números incompatíveis com o lançamento; FIPE out/2026 (133.187/146.050/160.400) é coerente com os preços de lançamento. Confirmado por AutoData (14/09/2026) e AutoPapo (11/09/2026). Conflito: Webmotors e Vrum (22/09/2026, 'R$ 5 mil mais barato') citam R$ 148.990/163.990/179.990 — parece ser a tabela da linha 2026."
+   },
+   {
+    "versao": "GT MHEV Turbo 200 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 162990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 115 cv + híbrido leve 12V",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "híbrido leve",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (set/2026)",
+    "fonte_url": "https://www.vrum.com.br/noticias/2026/09/7498011-peugeot-208-e-2008-ganham-motor-1-0-turbo-mais-fraco-e-nova-cor.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (set/2026), confirmado por Vrum, AutoData, Autoentusiastas e car.blog.br. CONFLITO: carro.blog.br (23/09/2026) diz que o 2008 2027 caiu R$ 5 mil para 148.990/163.990/179.990 (de 153.990/168.990/184.990), números incompatíveis com o lançamento; FIPE out/2026 (133.187/146.050/160.400) é coerente com os preços de lançamento. Confirmado por AutoData (14/09/2026) e AutoPapo (11/09/2026). Conflito: Webmotors e Vrum (22/09/2026, 'R$ 5 mil mais barato') citam R$ 148.990/163.990/179.990 — parece ser a tabela da linha 2026."
+   }
+  ]
+ },
+ {
+  "marca": "Citroën",
+  "modelo": "Basalt",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Feel 1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 95590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 Firefly aspirado",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Stellantis Media Citroën (18/08/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/citroen/press/citroen-basalt-2027-traz-a-bem-sucedida-topo-de-gama-dark-edition-para-a-versao-manual-alem-de-novos-conteudos",
+    "consultado_em": "2026-11-03",
+    "observacao": "Preço com redução do programa Carro Sustentável (IPI verde). Comunicado cita também R$ 95.690 em um trecho. Potência não informada."
+   },
+   {
+    "versao": "Dark Edition 1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 98990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 Firefly aspirado",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Stellantis Media Citroën (18/08/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/citroen/press/citroen-basalt-2027-traz-a-bem-sucedida-topo-de-gama-dark-edition-para-a-versao-manual-alem-de-novos-conteudos",
+    "consultado_em": "2026-11-03",
+    "observacao": "Preço com redução do programa Carro Sustentável."
+   },
+   {
+    "versao": "Feel Turbo 200 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 113990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 115 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Stellantis Media Citroën (18/08/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/citroen/press/citroen-basalt-2027-traz-a-bem-sucedida-topo-de-gama-dark-edition-para-a-versao-manual-alem-de-novos-conteudos",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Shine Turbo 200 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 115 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Stellantis Media Citroën (18/08/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/citroen/press/citroen-basalt-2027-traz-a-bem-sucedida-topo-de-gama-dark-edition-para-a-versao-manual-alem-de-novos-conteudos",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Dark Edition Turbo 200 AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 120990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 115 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Stellantis Media Citroën (18/08/2026)",
+    "fonte_url": "https://www.media.stellantis.com/br-pt/citroen/press/citroen-basalt-2027-traz-a-bem-sucedida-topo-de-gama-dark-edition-para-a-versao-manual-alem-de-novos-conteudos",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Citroën",
+  "modelo": "Aircross",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Feel Turbo 200 AT (5 lugares)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 124990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 125/130 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "AutoPapo (ago/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/citroen-aircross-2027-fica-ate-r-7-000-mais-caro-e-encolhe-para-tres-versoes-veja-o-que-muda/",
+    "consultado_em": "2026-11-03",
+    "observacao": "AutoPapo informa 125/130 cv (gasolina/etanol); Basalt e 2008 2027 passaram a 115 cv com o mesmo T200 — confirmar potência do Aircross 2027. 5 lugares inferido."
+   },
+   {
+    "versao": "Feel Pack 7 Turbo 200 AT (7 lugares)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 128990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 125/130 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "AutoPapo (ago/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/citroen-aircross-2027-fica-ate-r-7-000-mais-caro-e-encolhe-para-tres-versoes-veja-o-que-muda/",
+    "consultado_em": "2026-11-03",
+    "observacao": "AutoPapo informa 125/130 cv (gasolina/etanol); Basalt e 2008 2027 passaram a 115 cv com o mesmo T200 — confirmar potência do Aircross 2027."
+   },
+   {
+    "versao": "XTR 7 Turbo 200 AT (7 lugares)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 134990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo T200 125/130 cv",
+    "cambio": "CVT (7 marchas simuladas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "AutoPapo (ago/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/citroen-aircross-2027-fica-ate-r-7-000-mais-caro-e-encolhe-para-tres-versoes-veja-o-que-muda/",
+    "consultado_em": "2026-11-03",
+    "observacao": "AutoPapo informa 125/130 cv (gasolina/etanol); Basalt e 2008 2027 passaram a 115 cv com o mesmo T200 — confirmar potência do Aircross 2027."
+   }
+  ]
+ },
+ {
+  "marca": "RAM",
+  "modelo": "Rampage",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Big Horn 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 230990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "Itatiaia (01/04/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-rampage-2027-tambem-ganha-motor-2-0-turbo-flex-veja-os-precos/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Motor Show cita R$ 228.990 (preço anterior)."
+   },
+   {
+    "versao": "Rebel Ignition 2.0 Hurricane 4 Turbo Flex 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 250990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo Hurricane 4 272 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "AutoPapo (26/08/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/ram-rampage-rebel-ignition-serie-limitada-tem-400-unidades-e-preco-de-ate-r-270-990/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série limitada a 400 unidades numeradas (motores flex e diesel somados)."
+   },
+   {
+    "versao": "Rebel 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 259990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "Itatiaia (01/04/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-rampage-2027-tambem-ganha-motor-2-0-turbo-flex-veja-os-precos/",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Laramie 2.0 Hurricane 4 Turbo Flex 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 259990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo Hurricane 4 272 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Itatiaia (01/04/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-rampage-2027-tambem-ganha-motor-2-0-turbo-flex-veja-os-precos/",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Laramie 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 269990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Itatiaia (01/04/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-rampage-2027-tambem-ganha-motor-2-0-turbo-flex-veja-os-precos/",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Rebel Ignition 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 270990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "AutoPapo (26/08/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/ram-rampage-rebel-ignition-serie-limitada-tem-400-unidades-e-preco-de-ate-r-270-990/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série limitada a 400 unidades numeradas."
+   },
+   {
+    "versao": "R/T 2.0 Hurricane 4 Turbo Flex 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 275990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo Hurricane 4 272 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Itatiaia (01/04/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-rampage-2027-tambem-ganha-motor-2-0-turbo-flex-veja-os-precos/",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "RAM",
+  "modelo": "Dakota",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Big Horn 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 285990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 8 marchas (ZF)",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "RAM Brasil (site oficial, card \"De R$ 285.990\") / Auto+ TV (04/08/2026)",
+    "fonte_url": "https://www.ram.com.br/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento R$ 249.990 (jun/2026) passou a valer só para venda direta CNPJ/produtor rural; preço sugerido R$ 285.990 (Auto+ TV ago/2026, site RAM, FIPE 0 km out/2026)."
+   },
+   {
+    "versao": "Warlock 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 299990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 8 marchas (ZF)",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "Itatiaia (24/06/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-dakota-ganha-nova-versao-de-entrada-veja-o-preco-e-detalhes/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lista de preços tabela 2026 (jun/2026). Produção da Dakota 2027 já começou na Argentina (Mopar Insiders), mas sem preços 2027 no Brasil."
+   },
+   {
+    "versao": "Laramie 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 322990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 8 marchas (ZF)",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Itatiaia (24/06/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-dakota-ganha-nova-versao-de-entrada-veja-o-preco-e-detalhes/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lista de preços tabela 2026 (jun/2026). Produção da Dakota 2027 já começou na Argentina (Mopar Insiders), mas sem preços 2027 no Brasil."
+   },
+   {
+    "versao": "Laramie Night Edition 2.2 Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 329990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 Multijet turbodiesel 200 cv",
+    "cambio": "automático 8 marchas (ZF)",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Itatiaia (24/06/2026)",
+    "fonte_url": "https://www.itatiaia.com.br/auto/ram-dakota-ganha-nova-versao-de-entrada-veja-o-preco-e-detalhes/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lista de preços tabela 2026 (jun/2026). Produção da Dakota 2027 já começou na Argentina (Mopar Insiders), mas sem preços 2027 no Brasil."
+   }
+  ]
+ },
+ {
+  "marca": "RAM",
+  "modelo": "1500",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Big Horn 3.0 Hurricane 6 Biturbo 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 449990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 biturbo Hurricane 6 426 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (Ram 1500 2026)",
+    "fonte_url": "https://www.webmotors.com.br/ram/1500/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançada em 04/08/2026 (Stellantis Media). Importada; país não confirmado nas fontes."
+   },
+   {
+    "versao": "Laramie 3.0 Hurricane 6 Biturbo 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 584990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 biturbo Hurricane 6 426 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (Ram 1500 2026)",
+    "fonte_url": "https://www.webmotors.com.br/ram/1500/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors cita 425 cv; Stellantis informa 426 cv."
+   },
+   {
+    "versao": "Laramie Night Edition 3.0 Hurricane 6 Biturbo 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 599990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.0 biturbo Hurricane 6 426 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (Ram 1500 2026)",
+    "fonte_url": "https://www.webmotors.com.br/ram/1500/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "RAM",
+  "modelo": "2500",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Laramie 6.7 Cummins Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 559990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6.7 Cummins turbodiesel 436 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "AutoPapo (20/10/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/ram-2500-laramie-night-edition-reboca-quase-9-toneladas-e-custa-r-569-990/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Ano-modelo 2026 presumido pelas fontes de 2025/2026 — confirmar. FIPE também lista uma 'Laramie Ed. ABQM' (série especial, sem preço oficial encontrado)."
+   },
+   {
+    "versao": "Laramie Night Edition 6.7 Cummins Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 569990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6.7 Cummins turbodiesel 436 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "AutoPapo (20/10/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/ram-2500-laramie-night-edition-reboca-quase-9-toneladas-e-custa-r-569-990/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançada em 20/10/2026."
+   }
+  ]
+ },
+ {
+  "marca": "RAM",
+  "modelo": "3500",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Laramie Night Edition 6.7 Cummins Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 619990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6.7 Cummins turbodiesel 436 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (Ram 3500 2026)",
+    "fonte_url": "https://www.webmotors.com.br/ram/3500/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Limited Longhorn 6.7 Cummins Turbodiesel 4x4",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 679990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "6.7 Cummins turbodiesel 436 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (Ram 3500 2026)",
+    "fonte_url": "https://www.webmotors.com.br/ram/3500/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Webmotors indica 6 marchas na ficha desta versão e 8 no texto; Revista Carro informa 8 marchas."
+   }
+  ]
+ },
+ {
+  "marca": "Leapmotor",
+  "modelo": "B10",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Ultra-Híbrido REEV",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 179990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 218 cv + 1.5 a gasolina (gerador)",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "Leapmotor Brasil (site oficial) / Vrum (set/2026)",
+    "fonte_url": "https://www.leapmotor.com.br/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Range extender: motor 1.5 só gera energia; bateria 18,8 kWh, 68 km elétrico (Inmetro). Ano 2027 segundo Canal VE. Importado (produção em Goiana-PE prevista só para 2027)."
+   },
+   {
+    "versao": "BEV 100% elétrico",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 182990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 218 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (06/04/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/04/7391308-leapmotor-b10-chega-com-218-cv-e-preco-a-partir-de-rs-182-mil-no-brasil.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Bateria 56,2 kWh, até 288 km (Inmetro). FIPE 0 km nov/2026: R$ 182.990. Houve promoções de até R$ 30 mil (iCarros, mai/2026)."
+   }
+  ]
+ },
+ {
+  "marca": "Leapmotor",
+  "modelo": "C10",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "BEV 100% elétrico",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 204990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 218 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (ficha C10 2026) / Portal Tela (22/06/2026)",
+    "fonte_url": "https://www.webmotors.com.br/leapmotor/c10/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço sugerido R$ 204.990 (Webmotors, Portal Tela jun/2026); FIPE 0 km nov/2026: R$ 212.490. Site oficial não exibe preço do BEV. Bateria 69,9 kWh."
+   },
+   {
+    "versao": "Ultra-Híbrido REEV",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 219990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 215 cv + 1.5 a gasolina (gerador)",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "eletrico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Leapmotor Brasil (site oficial)",
+    "fonte_url": "https://www.leapmotor.com.br/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site apresenta R$ 219.990 como 'preço promocional a partir de' (06/10 a 06/11/2026); Auto+ (dez/2025) dava R$ 209.990. FIPE nov/2026: R$ 219.990. Bateria 28,6 kWh."
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Fiorino",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Endurance 1.3 Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 132990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 8V flex",
+    "cambio": null,
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "JK Carros (título da matéria 'Fiat Fiorino 2027 custa R$ 132.990')",
+    "fonte_url": "https://jkcarros.com.br/?p=37372",
+    "consultado_em": "2026-11-04",
+    "observacao": "Fonte secundária (corpo da matéria não acessível; site Fiat inacessível); FIPE 0 km out/2026 (cód. 001589-0): R$ 123.047. Versão única."
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Ducato",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Maxicargo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 307990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Furgão 13 m³. A FIPE 0 km ainda lista 'Ducato Cargo 2.2' (R$ 271.722), não citada na linha 2027."
+   },
+   {
+    "versao": "Multi 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 315990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Carga útil até 1.560 kg."
+   },
+   {
+    "versao": "Minibus Comfort 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 389990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Lotação não informada na notícia (FIPE: 'Comfort 18L')."
+   },
+   {
+    "versao": "Minibus Luxo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 398990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Lotação não informada na notícia (FIPE: 'Luxo 16L')."
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Scudo",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Cargo 2.2 16V Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 220120,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/fiat/scudo/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 001590-3). Preço oficial atual não localizado (site Fiat inacessível); Auto+ TV (2025) citava 'a partir de R$ 223.990' na troca para o motor 2.2."
+   },
+   {
+    "versao": "Multi 2.2 16V Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 223684,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/fiat/scudo/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 001591-1)."
+   }
+  ]
+ },
+ {
+  "marca": "Peugeot",
+  "modelo": "Partner Rapid",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Business Pack 1.3 Flex",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 116138,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "1.3 flex 107 cv (E) / 98 cv (G)",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/peugeot/partner/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 024279-9). Site oficial (peugeot.com.br) mostra 'valor indisponível'; motor, câmbio, ano-modelo (MY26) e capacidade (650 kg, 3,3 m³) pelo site oficial."
+   }
+  ]
+ },
+ {
+  "marca": "Peugeot",
+  "modelo": "Expert",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cargo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 233590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-expert/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 26/27. Carga 6,1 m³ / 1.450 kg. FIPE 0 km (cód. 024282-9): R$ 196.797."
+   },
+   {
+    "versao": "Vitré 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 235990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-expert/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 26/26. FIPE 0 km (cód. 024283-7): R$ 199.991."
+   }
+  ]
+ },
+ {
+  "marca": "Peugeot",
+  "modelo": "Boxer",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão L3H2 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 280990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26."
+   },
+   {
+    "versao": "Cargo L3H2 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 295990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26. 13 m³ / 1.240 kg; dirigível com CNH B."
+   },
+   {
+    "versao": "Comfort 17+1 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 375990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26. Minibus. FIPE também lista 'Minibus Exec. 17L' (R$ 293.993), ausente no configurador."
+   },
+   {
+    "versao": "Luxo 15+1 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 384990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26. Minibus."
+   }
+  ]
+ },
+ {
+  "marca": "Citroën",
+  "modelo": "Jumpy",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cargo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 233590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 150 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Citroën Brasil (site oficial)",
+    "fonte_url": "https://www.citroen.com.br/veiculos-utilitarios/citroen-jumpy.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano-modelo inferido dos parâmetros do link oficial. 6,1 m³ / 1.450 kg. FIPE 0 km (cód. 011244-5): R$ 191.386."
+   },
+   {
+    "versao": "Vitré 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 235990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 150 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Citroën Brasil (site oficial)",
+    "fonte_url": "https://www.citroen.com.br/veiculos-utilitarios/citroen-jumpy.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano-modelo inferido dos parâmetros do link oficial. FIPE 0 km (cód. 011245-3): R$ 194.266."
+   }
+  ]
+ },
+ {
+  "marca": "Citroën",
+  "modelo": "Jumper",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 244619,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011219-4). Site oficial não exibiu preços (anuncia 'nova Linha Jumper')."
+   },
+   {
+    "versao": "Cargo 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 259240,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011220-8). Site oficial não exibiu preços (anuncia 'nova Linha Jumper')."
+   },
+   {
+    "versao": "Vitré 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 273199,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011243-7). Site oficial não exibiu preços (anuncia 'nova Linha Jumper'). Valor FIPE de set/2026 (sem preço em out/2026)."
+   },
+   {
+    "versao": "Minibus Executive 17L 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 282218,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011242-9). Site oficial não exibiu preços (anuncia 'nova Linha Jumper')."
+   }
+  ]
+ }
+]

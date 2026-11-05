@@ -1,0 +1,32 @@
+{
+ "2026-11-04T22-20": {
+  "at": "2026-11-04T22:20:00-03:00",
+  "counts": {
+   "essential": 5,
+   "total": 9
+  },
+  "highlights": [
+   "Nova marca: BAIC estreia com o Arcfox T1 (R$ 129.900)",
+   "Novo carro: Omoda E5 nas lojas a partir de 5/11 (R$ 149.990)",
+   "Novo carro: GWM Tank 400 em pré-venda; vendas em 12/11",
+   "Novo carro: Jetour G700 de 905 cv (R$ 469.900)",
+   "Novo carro: DFM Box à venda (R$ 135.900)"
+  ],
+  "summary": "Primeira varredura do Radar: 9 novidades dos últimos 30 dias, 5 essenciais. Destaques: estreia da BAIC (Arcfox T1 a R$ 129,9 mil), Omoda E5 nas lojas, pré-venda do GWM Tank 400, Jetour G700 a R$ 469,9 mil e DFM Box à venda (inclusive no Mercado Livre). 4 itens pedem ajuste no banco (preços ou status)."
+ },
+ "2026-11-05T08-20": {
+  "at": "2026-11-05T08:20:00-03:00",
+  "counts": {
+   "essential": 2,
+   "total": 5
+  },
+  "highlights": [
+   "Novo carro: Lexus ES 500e (R$ 549.990)",
+   "Preço: Corolla XEi cai para R$ 159.990",
+   "Preço: MG S5 Comfort por R$ 179.800 até 30/11",
+   "Fim de linha: Renault Oroch em despedida",
+   "Evento: BYD Ti7 confirmado para 2027"
+  ],
+  "summary": "Novo carro da Lexus: ES 500e elétrico à venda por R$ 549.990. Toyota baixa preços de Corolla (XEi R$ 159.990), Corolla Cross e SW4; MG corta até R$ 39 mil do S5 até 30/11. 3 itens prontos para adicionar ao banco."
+ }
+}

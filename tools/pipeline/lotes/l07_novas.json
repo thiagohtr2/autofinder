@@ -1,0 +1,621 @@
+[
+ {
+  "marca": "Cadillac",
+  "modelo": "Lyriq",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Signature Luxury",
+    "ano_modelo": null,
+    "status": "pre_order",
+    "preco_reais": 820000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos (AWD) 500 cv, bateria 95,7 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "Estados Unidos",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "AutoPapo — Cadillac estreia no Brasil com dois SUVs elétricos (set/2026)",
+    "fonte_url": "https://autopapo.com.br/noticia/cadillac-estreia-no-brasil-com-dois-suvs-eletricos-de-ate-604-cv/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Pré-venda/encomenda aberta em 16/09/2026; primeiras entregas previstas para nov/2026. Configuração única. 0-100 km/h 5,3 s; autonomia até 405 km (PBEV/Inmetro). Preço de pré-venda pode mudar. Ano-modelo não divulgado. Rede inicial: Eurobike (SP), Metrosul (Curitiba), Tecar (Brasília). Origem: as fontes brasileiras dizem só 'importado'; Lyriq e Vistiq são produzidos globalmente em Spring Hill (Tennessee, EUA) — fabricado_em por conhecimento geral, confirmar."
+   }
+  ]
+ },
+ {
+  "marca": "Cadillac",
+  "modelo": "Vistiq",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Versão única (6 lugares 2+2+2)",
+    "ano_modelo": null,
+    "status": "pre_order",
+    "preco_reais": 990000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos (AWD) 604 cv, bateria 95,7 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "Estados Unidos",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "A Crítica — Cadillac: preços no Brasil (Lyriq R$ 820 mil, Vistiq R$ 990 mil)",
+    "fonte_url": "https://acritica.net/automoveis/cadillac-precos-brasil-lyriq-820-mil-vistiq-990-mil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Pré-venda/encomenda desde 16/09/2026; entregas a partir de nov/2026. Nome da versão não divulgado (fontes dizem 'configuração única'/'versão mais luxuosa'). 0-100 km/h 4,1 s; autonomia até 395 km (PBEV); suspensão a ar, eixo traseiro esterçante, visão noturna. Ano-modelo não divulgado. Origem: as fontes brasileiras dizem só 'importado'; Lyriq e Vistiq são produzidos globalmente em Spring Hill (Tennessee, EUA) — fabricado_em por conhecimento geral, confirmar."
+   }
+  ]
+ },
+ {
+  "marca": "Cadillac",
+  "modelo": "Optiq",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "A definir",
+    "ano_modelo": null,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": null,
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "Times Brasil — Cadillac inicia operações no Brasil (16/09/2026)",
+    "fonte_url": "https://timesbrasil.com.br/brasil/cadillac-inicia-operacoes-no-brasil-com-lancamento-dos-suvs-eletricos-lyriq-e-vistiq-precos-chegam-a-r-990-mil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Anunciado como modelo de entrada da marca no Brasil, chegada prevista no 1º semestre de 2027; em homologação final (AutoPapo). Sem preço, versões ou ficha técnica divulgados."
+   }
+  ]
+ },
+ {
+  "marca": "Agrale",
+  "modelo": "Marruá AM250",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cabine Simples 3.8 TDI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 590000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.8 turbodiesel Cummins F3.8 170 cv",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/agrale/marrua/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 060015-6). Fabricante não publica preço. Motor Cummins F3.8 turbodiesel 170 cv / 600 Nm, 4x4, PBT 5.700 kg (site Agrale). Ano-modelo 2027 já existe na FIPE. Cabine simples; site Agrale cita carga útil 2.605 kg com caçamba e diz que o chassi aceita outros implementos — confirmar se é vendido também como chassi-cabine (fora de escopo)."
+   },
+   {
+    "versao": "Cabine Dupla 3.8 TDI",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 648550,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.8 turbodiesel Cummins F3.8 170 cv",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/agrale/marrua/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 060012-1). Fabricante não publica preço. Motor Cummins F3.8 turbodiesel 170 cv / 600 Nm, 4x4, PBT 5.700 kg (site Agrale). Ano-modelo 2027 já existe na FIPE. Cabine dupla com caçamba; carga útil 2.985 kg sem caçamba / valor com caçamba pelo site Agrale."
+   },
+   {
+    "versao": "Cabine Simples 3.8 TDI Automático",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 658333,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.8 turbodiesel Cummins F3.8 170 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/agrale/marrua/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 060016-4). Fabricante não publica preço. Motor Cummins F3.8 turbodiesel 170 cv / 600 Nm, 4x4, PBT 5.700 kg (site Agrale). Ano-modelo 2027 já existe na FIPE. Cabine simples; site Agrale cita carga útil 2.605 kg com caçamba e diz que o chassi aceita outros implementos — confirmar se é vendido também como chassi-cabine (fora de escopo)."
+   },
+   {
+    "versao": "Cabine Dupla 3.8 TDI Automático",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 717666,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.8 turbodiesel Cummins F3.8 170 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/agrale/marrua/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 060013-0). Fabricante não publica preço. Motor Cummins F3.8 turbodiesel 170 cv / 600 Nm, 4x4, PBT 5.700 kg (site Agrale). Ano-modelo 2027 já existe na FIPE. Cabine dupla com caçamba; carga útil 2.985 kg sem caçamba / valor com caçamba pelo site Agrale."
+   }
+  ]
+ },
+ {
+  "marca": "Agrale",
+  "modelo": "Marruá AM200 MO",
+  "carroceria": "Van",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "AM200 MO 3.8 TDI 4x4 (11 lugares)",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": "3.8 turbodiesel Cummins F3.8 170 cv",
+    "cambio": "manual ou automático",
+    "combustivel": "diesel",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Agrale — site oficial, Utilitários Civil AM200 MO",
+    "fonte_url": "https://www.agrale.com.br/pt/detalhes/utilitarios/civil/am200-mo",
+    "consultado_em": "2026-11-04",
+    "observacao": "Utilitário 4x4 de transporte de pessoas (motorista + 10). Listado como civil no site da Agrale, sem preço; não há versão 'AM200 MO' não escolar na FIPE 0 km. A variante AM200 MO Escolar (ORE Zero 4x4, micro-ônibus de 15 lugares; FIPE 0 km R$ 790.333 manual / R$ 834.333 aut.) foi deixada de fora por ser micro-ônibus escolar. Duvida: incluir ou não no site."
+   }
+  ]
+ },
+ {
+  "marca": "EFFA",
+  "modelo": "V21",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Pick-up Cabine Simples 1.5 16V",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 111701,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "1.5 16V 112 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "gasolina",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/effa/v21/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 066017-5). Site oficial não publica preço. Ficha técnica oficial: 1.512 cm³, 112 cv a 5.300 rpm, 140 Nm, manual 5 marchas, tração traseira. Montado em Manaus (ZFM) a partir de projeto chinês (Shanxi Victory). Encontracarros (05/2025) citava preço de lançamento 2026 de R$ 99.970. Carga útil 1.500 kg; VUC (habilitação B). A FIPE ainda lista também versão 1.3 16V 0 km (066014-0: R$ 104.969), motor antigo de 78 cv substituído pelo 1.5 na linha 2026 (Encontracarros, 27/05/2025; ficha técnica oficial do V21 já traz 1.5) — excluída por provável resíduo de tabela."
+   },
+   {
+    "versao": "Pick-up Baú 1.5 16V",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": "1.5 16V 112 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "gasolina",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "EFFA Motors — site oficial",
+    "fonte_url": "https://www.effamotors.com.br/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Variante 'Picape V21 Baú' listada no site oficial, sem preço e sem código FIPE próprio."
+   }
+  ]
+ },
+ {
+  "marca": "EFFA",
+  "modelo": "V22",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Pick-up Cabine Dupla 1.5 16V",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 120475,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "1.5 16V 112 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "gasolina",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/effa/v22/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 066018-3). Site oficial não publica preço. Ficha técnica oficial: 1.512 cm³, 112 cv a 5.300 rpm, 140 Nm, manual 5 marchas, tração traseira. Montado em Manaus (ZFM) a partir de projeto chinês (Shanxi Victory). Encontracarros (05/2025) citava preço de lançamento 2026 de R$ 109.970. 5 lugares, caçamba ~2,10 m. A FIPE ainda lista também versão 1.3 16V 0 km (066015-9: R$ 110.921), motor antigo de 78 cv substituído pelo 1.5 na linha 2026 (Encontracarros, 27/05/2025; ficha técnica oficial do V21 já traz 1.5) — excluída por provável resíduo de tabela."
+   }
+  ]
+ },
+ {
+  "marca": "EFFA",
+  "modelo": "V25",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Furgão 1.5 16V",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119484,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "1.5 16V 112 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "gasolina",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/effa/v25/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 066019-1). Site oficial não publica preço. Ficha técnica oficial: 1.512 cm³, 112 cv a 5.300 rpm, 140 Nm, manual 5 marchas, tração traseira. Montado em Manaus (ZFM) a partir de projeto chinês (Shanxi Victory). Encontracarros (05/2025) citava preço de lançamento 2026 de R$ 110.970. Carga útil 1.240 kg, 2 portas laterais corrediças. A FIPE ainda lista também versão 1.3 16V 0 km (066016-7: R$ 111.529), motor antigo de 78 cv substituído pelo 1.5 na linha 2026 (Encontracarros, 27/05/2025; ficha técnica oficial do V21 já traz 1.5) — excluída por provável resíduo de tabela."
+   }
+  ]
+ },
+ {
+  "marca": "Hitech Electric",
+  "modelo": "Delivery",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Caçamba 11,5 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 99890,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico, bateria 11,5 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "economico"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/delivery/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091021-0). Site oficial bloqueia leitura automática. Linha NewDelivery (pré-venda set/2024, AutoData): baterias 11,5 kWh (~130 km) ou 23 kWh (~260 km); carga útil 500 kg. Potência do motor não divulgada nas fontes. Fabricante brasileira (Campo Largo/PR, grupo Positivo). Versões Chassi (R$ 94.890 / R$ 117.890) excluídas (chassi-cabine)."
+   },
+   {
+    "versao": "Baú 11,5 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 105890,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico, bateria 11,5 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/delivery/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091013-9). Site oficial bloqueia leitura automática. Linha NewDelivery (pré-venda set/2024, AutoData): baterias 11,5 kWh (~130 km) ou 23 kWh (~260 km); carga útil até 500 kg. Potência do motor não divulgada nas fontes. Fabricante brasileira (Campo Largo/PR, grupo Positivo). Versões Chassi (R$ 94.890 / R$ 117.890) excluídas (chassi-cabine)."
+   },
+   {
+    "versao": "Caçamba 23 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 120890,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico, bateria 23 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "economico"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/delivery/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091022-8). Site oficial bloqueia leitura automática. Linha NewDelivery (pré-venda set/2024, AutoData): baterias 11,5 kWh (~130 km) ou 23 kWh (~260 km); carga útil 500 kg. Potência do motor não divulgada nas fontes. Fabricante brasileira (Campo Largo/PR, grupo Positivo). Versões Chassi (R$ 94.890 / R$ 117.890) excluídas (chassi-cabine)."
+   },
+   {
+    "versao": "Baú 23 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 125890,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico, bateria 23 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/delivery/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091015-5). Site oficial bloqueia leitura automática. Linha NewDelivery (pré-venda set/2024, AutoData): baterias 11,5 kWh (~130 km) ou 23 kWh (~260 km); carga útil até 500 kg. Potência do motor não divulgada nas fontes. Fabricante brasileira (Campo Largo/PR, grupo Positivo). Versões Chassi (R$ 94.890 / R$ 117.890) excluídas (chassi-cabine)."
+   },
+   {
+    "versao": "Baú Refrigerado 23 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 152890,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico, bateria 23 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/delivery/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091014-7). Site oficial bloqueia leitura automática. Linha NewDelivery (pré-venda set/2024, AutoData): baterias 11,5 kWh (~130 km) ou 23 kWh (~260 km); carga útil até 400 kg. Potência do motor não divulgada nas fontes. Fabricante brasileira (Campo Largo/PR, grupo Positivo). Versões Chassi (R$ 94.890 / R$ 117.890) excluídas (chassi-cabine)."
+   }
+  ]
+ },
+ {
+  "marca": "Hitech Electric",
+  "modelo": "E-Work EC31",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Caçamba 38,7 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 202890,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico 81 cv, bateria 38,7 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/e-work/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091017-1). Motor síncrono WEG 81 cv / 20,3 kgfm, tração traseira, bateria LFP 38,7 kWh (ABCdoABC, 01/2025). Montagem CKD em Campo Largo/PR, desenvolvido com a DFSK. Carga útil 1.280 kg, autonomia até 215 km. Preço citado em 01/2025: R$ 199.420. Versão Cabine Chassi (R$ 199.990) excluída."
+   },
+   {
+    "versao": "Baú 38,7 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 208990,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico 81 cv, bateria 38,7 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/e-work/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091018-0). Motor síncrono WEG 81 cv / 20,3 kgfm, tração traseira, bateria LFP 38,7 kWh (ABCdoABC, 01/2025). Montagem CKD em Campo Largo/PR, desenvolvido com a DFSK. Autonomia até 215 km. Preço citado em 01/2025: R$ 206.420."
+   },
+   {
+    "versao": "Refrigerado 38,7 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 229990,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico 81 cv, bateria 38,7 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/e-work/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091019-8). Motor síncrono WEG 81 cv / 20,3 kgfm, tração traseira, bateria LFP 38,7 kWh (ABCdoABC, 01/2025). Montagem CKD em Campo Largo/PR, desenvolvido com a DFSK. Autonomia até 215 km (sem dado específico para refrigerado)."
+   }
+  ]
+ },
+ {
+  "marca": "Hitech Electric",
+  "modelo": "E-Work EC35",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Van 38,7 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 215990,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico 81 cv, bateria 38,7 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/hitech-electric/e-work/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 091020-1). Motor síncrono WEG 81 cv / 20,3 kgfm, tração traseira, bateria LFP 38,7 kWh (ABCdoABC, 01/2025). Montagem CKD em Campo Largo/PR, desenvolvido com a DFSK. Carga útil 1.080 kg, 5,3 m³, autonomia até 268 km. Preço citado em 01/2025: R$ 239.420 (acima da FIPE atual)."
+   }
+  ]
+ },
+ {
+  "marca": "Shineray",
+  "modelo": "TLUX",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "1.6 16V (caçamba)",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 111990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 16V 122 cv",
+    "cambio": "manual",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Shineray — site oficial, Automóveis TLUX",
+    "fonte_url": "https://www.shineray.com.br/automoveis/tlux",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço público sugerido do site oficial, sem frete. FIPE out/2026 0 km: R$ 123.107 (cód. 082008-3). Motor SWJ16 1.597 cm³ 122 cv; câmbio manual (FIPE 'Mec.'). País de fabricação não informado (marca chinesa). Minitruck cabine simples; PBT 2.685 kg. Lançado em dez/2024 a R$ 111.900 (Motonline)."
+   },
+   {
+    "versao": "Cargo 1.6 16V (baú)",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 124990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 16V 122 cv",
+    "cambio": "manual",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Shineray — site oficial, Automóveis TLUX Cargo",
+    "fonte_url": "https://www.shineray.com.br/automoveis/tlux-cargo",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço público sugerido do site oficial, sem frete. FIPE out/2026 0 km: R$ 133.296 (cód. 082009-1). Motor SWJ16 1.597 cm³ 122 cv; câmbio manual (FIPE 'Mec.'). País de fabricação não informado (marca chinesa). Baú interno 3,04 x 1,65 x 1,70 m; PBT 2.900 kg."
+   }
+  ]
+ },
+ {
+  "marca": "Shineray",
+  "modelo": "DTRUCK",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Cabine Dupla 1.6 16V",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 115990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 16V 122 cv",
+    "cambio": "manual",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Shineray — site oficial, Automóveis DTRUCK",
+    "fonte_url": "https://www.shineray.com.br/automoveis/dtruck",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço público sugerido do site oficial, sem frete. FIPE out/2026 0 km: R$ 132.666 (cód. 082010-5). Motor SWJ16 1.597 cm³ 122 cv; câmbio manual (FIPE 'Mec.'). País de fabricação não informado (marca chinesa). Minitruck cabine dupla; ar-condicionado, vidros elétricos, direção elétrica; PBT 2.685 kg."
+   }
+  ]
+ }
+]

@@ -1,0 +1,2776 @@
+[
+ {
+  "marca": "Renault",
+  "modelo": "Kwid",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Evolution 1.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 82790,
+    "tipo": "sugerido",
+    "preco_promocional": 71190,
+    "motor": "1.0 SCe 71 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/kwid.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial: oferta de lançamento R$ 71.190 (à vista, condição temporária); preço de tabela R$ 82.790."
+   },
+   {
+    "versao": "Techno 1.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 85890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 SCe 71 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/kwid.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site não informa câmbio por versão (linha 1.0 SCe manual)."
+   },
+   {
+    "versao": "Outsider 1.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 91190,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 SCe 71 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/kwid.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site não informa câmbio por versão (linha 1.0 SCe manual)."
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "HB20",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Comfort 1.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 96140,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 80 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km); preço inicial confirmado por AutoPapo (21/10/2026)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/hb20/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Limited 1.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 100290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 80 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/hb20/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Limited 1.0 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 122690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 TGDi turbo 120 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/hb20/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Platinum 1.0 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 132490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 TGDi turbo 120 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/hb20/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Kardian",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Vibe",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 99990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo TCe 125 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "economico",
+     "potente"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/kardian.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Evolution",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 126590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo TCe 125 cv",
+    "cambio": "automático (dupla embreagem EDC)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "economico"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/kardian.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial chama a versão de \"Evolution AT\"."
+   },
+   {
+    "versao": "Techno",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 128990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo TCe 125 cv",
+    "cambio": "automático (dupla embreagem EDC)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/kardian.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Iconic",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 140990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo TCe 125 cv",
+    "cambio": "automático (dupla embreagem EDC)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/kardian.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "Creta",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Action 1.0 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "BNews SP (16/09/2026)",
+    "fonte_url": "https://www.bnewssaopaulo.com.br/noticias/negocios/hyundai-creta-2027-veja-as-seis-versoes-precos-e-diferencas-entre-os-motores.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão de entrada voltada a PCD (sem ADAS nem multimídia), mas com preço público de tabela."
+   },
+   {
+    "versao": "Comfort 1.0 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 156590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "BNews SP (16/09/2026)",
+    "fonte_url": "https://www.bnewssaopaulo.com.br/noticias/negocios/hyundai-creta-2027-veja-as-seis-versoes-precos-e-diferencas-entre-os-motores.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Limited 1.0 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 173390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "BNews SP (16/09/2026)",
+    "fonte_url": "https://www.bnewssaopaulo.com.br/noticias/negocios/hyundai-creta-2027-veja-as-seis-versoes-precos-e-diferencas-entre-os-motores.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Platinum 1.0 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 188990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "BNews SP (16/09/2026)",
+    "fonte_url": "https://www.bnewssaopaulo.com.br/noticias/negocios/hyundai-creta-2027-veja-as-seis-versoes-precos-e-diferencas-entre-os-motores.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Ultimate 1.6 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 201590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 turbo 176 cv",
+    "cambio": "automático (dupla embreagem 7 marchas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "BNews SP (16/09/2026)",
+    "fonte_url": "https://www.bnewssaopaulo.com.br/noticias/negocios/hyundai-creta-2027-veja-as-seis-versoes-precos-e-diferencas-entre-os-motores.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "N Line 1.6 TGDi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 206990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 turbo 176 cv",
+    "cambio": "automático (dupla embreagem 7 marchas)",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "BNews SP (16/09/2026)",
+    "fonte_url": "https://www.bnewssaopaulo.com.br/noticias/negocios/hyundai-creta-2027-veja-as-seis-versoes-precos-e-diferencas-entre-os-motores.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Encontracarros (12/02/2026) traz R$ 206.590 na tabela e R$ 206.990 no texto; Webmotors indica teto de R$ 206.990."
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "HR-V",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "EX 1.5",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 166400,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 aspirado 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Carzin",
+    "fonte_url": "https://carzin.com.br/lancamentos/honda-comeca-vender-novo-hr-v-2027-brasil.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "EXL 1.5",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 174300,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 aspirado 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Carzin",
+    "fonte_url": "https://carzin.com.br/lancamentos/honda-comeca-vender-novo-hr-v-2027-brasil.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Advance 1.5 Turbo",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 203300,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo 177 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Carzin",
+    "fonte_url": "https://carzin.com.br/lancamentos/honda-comeca-vender-novo-hr-v-2027-brasil.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Touring 1.5 Turbo",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 214000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo 177 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Carzin",
+    "fonte_url": "https://carzin.com.br/lancamentos/honda-comeca-vender-novo-hr-v-2027-brasil.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "Yaris Cross",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "XR 1.5 Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 149990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 aspirado 122 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026) / Correio (20/10/2026)",
+    "fonte_url": "https://www.correio24horas.com.br/economia/autos/em-meio-ao-avanco-das-chinesas-toyota-corta-precos-de-suvs-e-corolla-e-oferece-descontos-de-ate-r-546-mil-no-brasil-1026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de tabela mantidos (Vrum fev/2026; Correio 20/10/2026 cita os mesmos valores como base de campanha de descontos de out/2026). Tabelacarros (05/04/2026) noticiou alta do XR para R$ 151.990, depois revertida segundo BNews."
+   },
+   {
+    "versao": "XRE 1.5 Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 161390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 aspirado 122 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026) / Correio (20/10/2026)",
+    "fonte_url": "https://www.correio24horas.com.br/economia/autos/em-meio-ao-avanco-das-chinesas-toyota-corta-precos-de-suvs-e-corolla-e-oferece-descontos-de-ate-r-546-mil-no-brasil-1026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de tabela mantidos (Vrum fev/2026; Correio 20/10/2026 cita os mesmos valores como base de campanha de descontos de out/2026). Tabelacarros (05/04/2026) noticiou alta do XR para R$ 151.990, depois revertida segundo BNews."
+   },
+   {
+    "versao": "XRE Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 172390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 + elétrico, 111 cv combinados",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026) / Correio (20/10/2026)",
+    "fonte_url": "https://www.correio24horas.com.br/economia/autos/em-meio-ao-avanco-das-chinesas-toyota-corta-precos-de-suvs-e-corolla-e-oferece-descontos-de-ate-r-546-mil-no-brasil-1026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de tabela mantidos (Vrum fev/2026; Correio 20/10/2026 cita os mesmos valores como base de campanha de descontos de out/2026). Tabelacarros (05/04/2026) noticiou alta do XR para R$ 151.990, depois revertida segundo BNews."
+   },
+   {
+    "versao": "XRX 1.5 Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 178990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 aspirado 122 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026) / Correio (20/10/2026)",
+    "fonte_url": "https://www.correio24horas.com.br/economia/autos/em-meio-ao-avanco-das-chinesas-toyota-corta-precos-de-suvs-e-corolla-e-oferece-descontos-de-ate-r-546-mil-no-brasil-1026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de tabela mantidos (Vrum fev/2026; Correio 20/10/2026 cita os mesmos valores como base de campanha de descontos de out/2026). Tabelacarros (05/04/2026) noticiou alta do XR para R$ 151.990, depois revertida segundo BNews."
+   },
+   {
+    "versao": "XRX Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 189990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 + elétrico, 111 cv combinados",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026) / Correio (20/10/2026)",
+    "fonte_url": "https://www.correio24horas.com.br/economia/autos/em-meio-ao-avanco-das-chinesas-toyota-corta-precos-de-suvs-e-corolla-e-oferece-descontos-de-ate-r-546-mil-no-brasil-1026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de tabela mantidos (Vrum fev/2026; Correio 20/10/2026 cita os mesmos valores como base de campanha de descontos de out/2026). Tabelacarros (05/04/2026) noticiou alta do XR para R$ 151.990, depois revertida segundo BNews. Correio infere R$ 191.900 para o XRX Hybrid (preço de concessionária); mantido R$ 189.990 da tabela oficial."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "Corolla",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "XEi 2.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 178990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 flex 175 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Vrum (21/10/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7524881-toyota-corolla-2027-precos-e-diferencas-entre-as-cinco-versoes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "GLi Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 196990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 híbrido flex 122 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Vrum (21/10/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7524881-toyota-corolla-2027-precos-e-diferencas-entre-as-cinco-versoes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Altis Premium 2.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 208990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 flex 175 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "tech",
+     "potente"
+    ],
+    "fonte_nome": "Vrum (21/10/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7524881-toyota-corolla-2027-precos-e-diferencas-entre-as-cinco-versoes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "GR-Sport 2.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 208990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 flex 175 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (21/10/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7524881-toyota-corolla-2027-precos-e-diferencas-entre-as-cinco-versoes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Altis Premium Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 211990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 híbrido flex 122 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Vrum (21/10/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/10/7524881-toyota-corolla-2027-precos-e-diferencas-entre-as-cinco-versoes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "Corolla Cross",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "XRE 2.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 194790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 flex 175 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "potente"
+    ],
+    "fonte_nome": "Toyota Comunica (press release)",
+    "fonte_url": "https://www.toyotacomunica.com.br/wp-content/uploads/2026/06/Corolla-Cross_2027.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão XR saiu da linha 2027 para o público geral (segue citada em campanhas PCD/taxista)."
+   },
+   {
+    "versao": "XRX 2.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 211790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 flex 175 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "tech",
+     "potente"
+    ],
+    "fonte_nome": "Toyota Comunica (press release)",
+    "fonte_url": "https://www.toyotacomunica.com.br/wp-content/uploads/2026/06/Corolla-Cross_2027.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão XR saiu da linha 2027 para o público geral (segue citada em campanhas PCD/taxista)."
+   },
+   {
+    "versao": "XRV Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 213990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 híbrido flex 122 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData (02/10/2026) / Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.autodata.com.br/noticias/2026/10/02/toyota-amplia-portfolio-do-corolla-cross-com-versao-xrv-hybrid/136886/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Nova versão híbrida de entrada (volta à linha 2027), lojas a partir da 2ª quinzena de out/2026."
+   },
+   {
+    "versao": "GR-Sport 2.0",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 218490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 flex 175 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "potente",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Toyota Comunica (press release)",
+    "fonte_url": "https://www.toyotacomunica.com.br/wp-content/uploads/2026/06/Corolla-Cross_2027.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão XR saiu da linha 2027 para o público geral (segue citada em campanhas PCD/taxista)."
+   },
+   {
+    "versao": "XRX Hybrid Premium",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 223790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.8 híbrido flex 122 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "Toyota Comunica (press release)",
+    "fonte_url": "https://www.toyotacomunica.com.br/wp-content/uploads/2026/06/Corolla-Cross_2027.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors e AutoPapo (06/10/2026) confirmam R$ 223.790; matéria Webmotors (02/10/2026) cita R$ 226.120 (divergente)."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "Hilux",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "CS 4x4 MT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 265390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026)",
+    "fonte_url": "https://media.toyota.com.br//e1b39db7-7372-4e28-b283-31af4d1a5ed7.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Cabine simples com caçamba (as versões Chassi Cabine Simples ficam fora). Tabela oficial de fev/2026; preços das CD na mesma tabela seguem iguais aos citados em out/2026."
+   },
+   {
+    "versao": "CS 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 275290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026)",
+    "fonte_url": "https://media.toyota.com.br//e1b39db7-7372-4e28-b283-31af4d1a5ed7.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "Cabine simples com caçamba (as versões Chassi Cabine Simples ficam fora). Tabela oficial de fev/2026; preços das CD na mesma tabela seguem iguais aos citados em out/2026."
+   },
+   {
+    "versao": "CD STD Power Pack 4x4 MT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 282390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "AutoMais (reajuste dez/2025)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/toyota-promove-aumento-e-hilux-cabine-dupla-fica-ate-r-5-100-mais-cara/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com a tabela oficial Toyota fev/2026 e com Correio (20/10/2026). Nova geração da Hilux prevista para o início de 2027 (sem preços no Brasil)."
+   },
+   {
+    "versao": "CD STD Power Pack 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 292790,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "turbo"
+    ],
+    "fonte_nome": "AutoMais (reajuste dez/2025)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/toyota-promove-aumento-e-hilux-cabine-dupla-fica-ate-r-5-100-mais-cara/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com a tabela oficial Toyota fev/2026 e com Correio (20/10/2026). Nova geração da Hilux prevista para o início de 2027 (sem preços no Brasil)."
+   },
+   {
+    "versao": "CD SR 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 310090,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "AutoMais (reajuste dez/2025)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/toyota-promove-aumento-e-hilux-cabine-dupla-fica-ate-r-5-100-mais-cara/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com a tabela oficial Toyota fev/2026 e com Correio (20/10/2026). Nova geração da Hilux prevista para o início de 2027 (sem preços no Brasil)."
+   },
+   {
+    "versao": "CD SRV 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 314690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "AutoMais (reajuste dez/2025)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/toyota-promove-aumento-e-hilux-cabine-dupla-fica-ate-r-5-100-mais-cara/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com a tabela oficial Toyota fev/2026 e com Correio (20/10/2026). Nova geração da Hilux prevista para o início de 2027 (sem preços no Brasil)."
+   },
+   {
+    "versao": "CD SRX 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 346890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "AutoMais (reajuste dez/2025)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/toyota-promove-aumento-e-hilux-cabine-dupla-fica-ate-r-5-100-mais-cara/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com a tabela oficial Toyota fev/2026 e com Correio (20/10/2026). Nova geração da Hilux prevista para o início de 2027 (sem preços no Brasil)."
+   },
+   {
+    "versao": "CD SRX Plus 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 357890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 204 cv",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "AutoMais (reajuste dez/2025); confirmado por Garagem360",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/toyota-promove-aumento-e-hilux-cabine-dupla-fica-ate-r-5-100-mais-cara/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com a tabela oficial Toyota fev/2026 e com Correio (20/10/2026). Nova geração da Hilux prevista para o início de 2027 (sem preços no Brasil)."
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "Civic",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Advanced Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 266500,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 híbrido e:HEV (motor elétrico 184 cv)",
+    "cambio": "e-CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Tribuna PR (out/2026)",
+    "fonte_url": "https://www.tribunapr.com.br/noticias/automoveis/honda-civic-hybrid-2027-precos-e-especificacoes/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Importado (país não informado pelas fontes). Tribuna PR cita R$ 266.500 em out/2026; preço de lançamento era R$ 265.900."
+   },
+   {
+    "versao": "Type R",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 430500,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo gasolina 315 cv",
+    "cambio": "manual",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": "Japão",
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Autoo (out/2026)",
+    "fonte_url": "https://www.autoo.com.br/honda-civic-type-r-recebe-novos-detalhes-na-linha-2027-saiba-o-que-muda/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão hatch esportiva agrupada no modelo Civic (carroceria do modelo = Sedã por causa do Advanced Hybrid)."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "Hilux SW4",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "SRX Platinum 5 lugares 2.8 Turbo Diesel 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 417590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbo diesel 204 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/toyota/hilux-sw4/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Nova geração prevista para 1º sem/2027; ano-modelo 2027 não encontrado. Webmotors cita câmbio 6 marchas na ficha e 8 no texto. Conflito: despachantedok (15/10/2026) cita tabela de R$ 420.020 para a Platinum 5 lugares."
+   },
+   {
+    "versao": "SRX Platinum 7 lugares 2.8 Turbo Diesel 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 424590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbo diesel 204 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/toyota/hilux-sw4/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Nova geração prevista para 1º sem/2027; ano-modelo 2027 não encontrado. Webmotors cita câmbio 6 marchas na ficha e 8 no texto."
+   },
+   {
+    "versao": "Diamond 7 lugares 2.8 Turbo Diesel 4x4 AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 475990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbo diesel 204 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/toyota/hilux-sw4/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Nova geração prevista para 1º sem/2027; ano-modelo 2027 não encontrado. Webmotors cita câmbio 6 marchas na ficha e 8 no texto."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "RAV4",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "S 2.5 Hybrid AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 317190,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido 239 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Toyota (press release de lançamento) / Webmotors",
+    "fonte_url": "https://www.toyotacomunica.com.br/wp-content/uploads/2026/04/Press-Release-RAV4-Lancamento.pdf",
+    "consultado_em": "2026-11-03",
+    "observacao": "Nova geração (6ª), lançada em abr-mai/2026. País de fabricação não informado na fonte."
+   },
+   {
+    "versao": "SX 2.5 Hybrid AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 349290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido 239 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Toyota (press release de lançamento) / Webmotors",
+    "fonte_url": "https://www.toyotacomunica.com.br/wp-content/uploads/2026/04/Press-Release-RAV4-Lancamento.pdf",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "XSE 2.5 PHEV AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 399990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.5 híbrido plug-in 329 cv",
+    "cambio": "CVT",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/toyota/rav4/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Tabela Toyota de fev/2026 lista o RAV4 PHEV XSE como ano/modelo 2024/2024 (geração anterior); provável venda de estoque. Confirmar disponibilidade."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "bZ4X",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "AWD 73,1 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 419990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 343 cv (bateria 73,1 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "Japão",
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/toyota/bz4x/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lote limitado de 99 unidades (AutoPapo, 23/06/2026). Conflito: AutoPapo cita R$ 419.900; Webmotors R$ 419.990."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "GR Yaris",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "GR-Four 1.6 Turbo Manual",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 354990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 turbo 304 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Toyota (press release) / Webmotors",
+    "fonte_url": "https://www.webmotors.com.br/toyota/gr-yaris/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série inicial limitada a 198 unidades (99 por câmbio) em pré-venda fev/2026; disponibilidade em nov/2026 não confirmada."
+   },
+   {
+    "versao": "GR-Four 1.6 Turbo GR-DAT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 354990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 turbo 304 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Toyota (press release) / Webmotors",
+    "fonte_url": "https://www.webmotors.com.br/toyota/gr-yaris/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Série inicial limitada a 198 unidades (99 por câmbio) em pré-venda fev/2026; disponibilidade em nov/2026 não confirmada."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "GR Corolla",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Circuit GR-Four 1.6 Turbo MT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 399990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 turbo 304 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/toyota/gr-corolla/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Linha 2026 estreou no Festival Interlagos (ago/2026) sem preço oficial divulgado (Vrum). Tabela Toyota fev/2026 listava Circuit R$ 461.990 e Core R$ 416.990 (ano 2024). Confirmar."
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "City",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "LX 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 117700,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "EX 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 138400,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "EXL 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 145800,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Touring 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 154300,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "City Hatchback",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "LX 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 117700,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "EX 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 137400,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "EXL 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 144800,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Touring 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 153300,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "RS 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 156400,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/city/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "WR-V",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "EX 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 149000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/wr-v/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "EXL 1.5 CVT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 154000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 i-VTEC 126 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/wr-v/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "ZR-V",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Touring 2.0 CVT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 215100,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 i-VTEC 161 cv",
+    "cambio": "CVT",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/zr-v/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site Honda indica ano/modelo 2025/2026; preço não exibido no site oficial."
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "CR-V",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Advanced Hybrid 2.0 AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 353500,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 híbrido 207 cv",
+    "cambio": "e-CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (reajuste híbridos Honda, 16/01/2026); Garagem360 (13/04/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/linha-de-hibridos-da-honda-sofre-aumento-de-r-600/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site Honda indica ano/modelo 2026/2026 sem preço. Câmbio e-CVT não confirmado explicitamente pela fonte."
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "Accord",
+  "carroceria": "Sedã",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Advanced Hybrid 2.0",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 333000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 híbrido",
+    "cambio": "e-CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (reajuste híbridos Honda, 16/01/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/linha-de-hibridos-da-honda-sofre-aumento-de-r-600/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Site Honda indica ano/modelo 2025/2026 sem preço; potência e câmbio não confirmados pela fonte."
+   }
+  ]
+ },
+ {
+  "marca": "Honda",
+  "modelo": "Prelude",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Touring 2.0 e:HEV",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 380000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 híbrido 203 cv",
+    "cambio": "e-CVT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": "Japão",
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/honda/prelude/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Lançado no Festival Interlagos (27/08/2026), versão única; Canaltech informa importação do Japão."
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "HB20S",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Comfort 1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 105290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 12V 80 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Auto+ TV (reajuste HB20S 2026/2027, 12/02/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/hyundai-hb20s-sofre-aumento-de-ate-r-1-380-e-beira-os-r-140-mil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de fev/2026 (último reajuste encontrado). Webmotors (ano 2026) lista R$ 104.290 / 106.490 / 127.690 / 137.510."
+   },
+   {
+    "versao": "Limited 1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 107590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 12V 80 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Auto+ TV (reajuste HB20S 2026/2027, 12/02/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/hyundai-hb20s-sofre-aumento-de-ate-r-1-380-e-beira-os-r-140-mil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de fev/2026 (último reajuste encontrado). Webmotors (ano 2026) lista R$ 104.290 / 106.490 / 127.690 / 137.510."
+   },
+   {
+    "versao": "Limited 1.0 TGDi AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 128990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 120 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (reajuste HB20S 2026/2027, 12/02/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/hyundai-hb20s-sofre-aumento-de-ate-r-1-380-e-beira-os-r-140-mil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de fev/2026 (último reajuste encontrado). Webmotors (ano 2026) lista R$ 104.290 / 106.490 / 127.690 / 137.510."
+   },
+   {
+    "versao": "Platinum 1.0 TGDi AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 138890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 120 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (reajuste HB20S 2026/2027, 12/02/2026)",
+    "fonte_url": "https://www.automaistv.com.br/vendas-e-precos/hyundai-hb20s-sofre-aumento-de-ate-r-1-380-e-beira-os-r-140-mil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de fev/2026 (último reajuste encontrado). Webmotors (ano 2026) lista R$ 104.290 / 106.490 / 127.690 / 137.510."
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "i20",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Comfort 1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 99990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 12V 80 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (lançamento i20 2027, 23/07/2026)",
+    "fonte_url": "https://www.automaistv.com.br/novidades/hyundai-i20-lancamento-precos-versoes-brasil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de lançamento ('condição especial de lançamento' segundo Vrum). Combustível flex não explicitado pela fonte."
+   },
+   {
+    "versao": "Limited 1.0 MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 104990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 12V 80 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (lançamento i20 2027, 23/07/2026)",
+    "fonte_url": "https://www.automaistv.com.br/novidades/hyundai-i20-lancamento-precos-versoes-brasil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de lançamento ('condição especial de lançamento' segundo Vrum)."
+   },
+   {
+    "versao": "Limited 1.0 TGDi AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 125990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (lançamento i20 2027, 23/07/2026)",
+    "fonte_url": "https://www.automaistv.com.br/novidades/hyundai-i20-lancamento-precos-versoes-brasil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de lançamento ('condição especial de lançamento' segundo Vrum)."
+   },
+   {
+    "versao": "X-Line 1.0 TGDi AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 128990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (lançamento i20 2027, 23/07/2026)",
+    "fonte_url": "https://www.automaistv.com.br/novidades/hyundai-i20-lancamento-precos-versoes-brasil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de lançamento ('condição especial de lançamento' segundo Vrum)."
+   },
+   {
+    "versao": "Platinum 1.0 TGDi AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 134990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (lançamento i20 2027, 23/07/2026)",
+    "fonte_url": "https://www.automaistv.com.br/novidades/hyundai-i20-lancamento-precos-versoes-brasil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de lançamento ('condição especial de lançamento' segundo Vrum)."
+   },
+   {
+    "versao": "Ultimate 1.0 TGDi AT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 139990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.0 turbo 115 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "tech"
+    ],
+    "fonte_nome": "Auto+ TV (lançamento i20 2027, 23/07/2026)",
+    "fonte_url": "https://www.automaistv.com.br/novidades/hyundai-i20-lancamento-precos-versoes-brasil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preços de lançamento ('condição especial de lançamento' segundo Vrum)."
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "Tucson",
+  "carroceria": "SUV",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "Limited 1.6 T-GDI",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 199490,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 turbo 177 cv",
+    "cambio": "automatizado dupla embreagem 7 marchas",
+    "combustivel": "gasolina",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "turbo",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/tucson/2025",
+    "consultado_em": "2026-11-03",
+    "observacao": "Geração antiga; Garagem360 (20/08/2026) confirma venda a R$ 199.490. Conflito: AutoSDR lista 4 versões flex (GLS a Ultimate) — não confirmado. Ano-modelo mais recente encontrado: 2025."
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "Kona",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Ultimate 1.6 GDI HEV DCT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 219990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 híbrido 141 cv",
+    "cambio": "automatizado dupla embreagem 6 marchas",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/kona/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Signature 1.6 GDI HEV DCT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 239990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 híbrido 141 cv",
+    "cambio": "automatizado dupla embreagem 6 marchas",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/kona/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "Palisade",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Signature 3.8 V6 AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 479990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.8 V6 295 cv",
+    "cambio": "automático 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/palisade/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Geração antiga; nova geração (com híbrido) ainda sem data no Brasil."
+   }
+  ]
+ },
+ {
+  "marca": "Hyundai",
+  "modelo": "Ioniq 5",
+  "carroceria": "SUV",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "Signature AWD 84 kWh",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 409990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 325 cv (bateria 84 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/hyundai/ioniq-5/2025",
+    "consultado_em": "2026-11-03",
+    "observacao": "Só foram encontrados 0 km de estoque 2024/2025; sem linha 2026/2027 confirmada."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Duster",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Zen Plus 1.6 SCe MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 107990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe 112 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/duster/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com 'a partir de' do site Renault."
+   },
+   {
+    "versao": "Intense Plus 1.6 SCe MT",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 131990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe 120 cv",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/duster/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors é inconsistente na potência (texto: 1.6 112/109 cv; 1.3 163/156 cv)."
+   },
+   {
+    "versao": "Intense Plus 1.6 SCe X-Tronic",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 144990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe 120 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/duster/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors é inconsistente na potência (texto: 1.6 112/109 cv; 1.3 163/156 cv)."
+   },
+   {
+    "versao": "Iconic Plus 1.6 SCe X-Tronic",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 154990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe 120 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/duster/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors é inconsistente na potência (texto: 1.6 112/109 cv; 1.3 163/156 cv)."
+   },
+   {
+    "versao": "Iconic Plus 1.3 TCe X-Tronic",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 171990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo 170 cv",
+    "cambio": "CVT",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/duster/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors é inconsistente na potência (texto: 1.6 112/109 cv; 1.3 163/156 cv)."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Boreal",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Evolution 1.3 TCe EDC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 182990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo 170 cv",
+    "cambio": "automatizado dupla embreagem 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/boreal/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com 'a partir de' do site Renault. Fabricação no Brasil não confirmada pela fonte."
+   },
+   {
+    "versao": "Techno 1.3 TCe EDC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 204990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo 170 cv",
+    "cambio": "automatizado dupla embreagem 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/boreal/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "Iconic 1.3 TCe EDC",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 219990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 turbo 170 cv",
+    "cambio": "automatizado dupla embreagem 6 marchas",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "turbo",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/boreal/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Oroch",
+  "carroceria": "Picape",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Pro 1.6 SCe MT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 132890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe 112 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/oroch.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano-modelo inferido de imagens 'MY26' no site oficial; anúncios Webmotors já mostram 2026/2027. Será substituída pela Niagara. Site cita câmbio de 6 marchas."
+   },
+   {
+    "versao": "Intense 1.6 SCe MT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 140990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe 112 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/oroch.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano-modelo inferido de imagens 'MY26' no site oficial; anúncios Webmotors já mostram 2026/2027. Será substituída pela Niagara."
+   },
+   {
+    "versao": "Iconic 1.6 SCe MT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 147690,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe 112 cv",
+    "cambio": "manual",
+    "combustivel": "flex",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-de-passeio/oroch.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano-modelo inferido de imagens 'MY26' no site oficial; anúncios Webmotors já mostram 2026/2027. Será substituída pela Niagara."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Koleos",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Esprit Alpine 1.5 Turbo E-Tech Hybrid",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 289990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo híbrido 245 cv",
+    "cambio": "automático DHT 3 marchas",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/koleos/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço confere com 'a partir de' do site Renault. Conflito: Vrum (ago/2026) cita tabela de R$ 293.490."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Megane E-Tech",
+  "carroceria": "SUV",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "E-Tech 220 cv",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 279990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 220 cv",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (descontos Renault, ago/2026) / site Renault",
+    "fonte_url": "https://www.vrum.com.br/noticias/2026/08/7482461-renault-oferece-descontos-superiores-a-rs-25-mil-para-megane-e-koleos.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Unidades ano-modelo 2025 em liquidação (oferta R$ 212.790); nome comercial da versão não informado pelas fontes."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Kwid E-Tech",
+  "carroceria": "Hatch",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Techno 26,8 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 99990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 65 cv (bateria 26,8 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/renault/kwid-e-tech/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": "Versão única."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Niagara",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Outsider 1.3 TCe 4x4 EDC",
+    "ano_modelo": 2027,
+    "status": "announced",
+    "preco_reais": null,
+    "tipo": null,
+    "preco_promocional": null,
+    "motor": "1.3 turbo 160 cv",
+    "cambio": "automatizado dupla embreagem 6 marchas",
+    "combustivel": "flex",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "turbo",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Encontracarros (apresentação Niagara)",
+    "fonte_url": "https://www.encontracarros.com.br/renault-niagara-e-apresentada/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial lista a Niagara sem preço (1.3 turbo 158 cv no site; 160/163 cv nas notícias). Vrum (22/10/2026): chegada prevista nov/2026, pré-venda só na Argentina, preços BR não divulgados; versões BR não confirmadas além da Outsider 4x4 (entrada 4x2 manual e intermediária 4x2 DCT relatadas)."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Kangoo",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Advanced 1.6 SCe Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 139390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe flex 112 cv",
+    "cambio": null,
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios/kangoo.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço 'a partir de' do site oficial. FIPE 0 km (cód. 025331-6): R$ 123.357. Ano-modelo da versão não informado (FIPE lista Kangoo até 2027)."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Kangoo E-Tech",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão elétrico",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 299390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 120 cv, bateria 45 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial) / Motor Show 05/10/2023 (ficha)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço do site oficial (igual à FIPE 0 km cód. 025326-0). Potência/bateria da notícia de lançamento (2023). Ano-modelo não informado."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Master",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Grand Pro 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 274616,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025315-4). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Extra Pro 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 282720,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025316-2). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Grand Furgão 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 284071,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025197-6). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Pro 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 288890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. FIPE 0 km (cód. 025314-6): R$ 254.075."
+   },
+   {
+    "versao": "Extra Furgão 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 294745,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025198-4). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Furgão 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 306390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. FIPE 0 km (cód. 025196-8): R$ 268.810."
+   },
+   {
+    "versao": "Vitré 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 332090,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. Na FIPE corresponde a 'Extra F.Vitre' (cód. 025201-8): R$ 294.845."
+   },
+   {
+    "versao": "Minibus 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 406290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. Na FIPE corresponde a 'Executive Longo 16L' (cód. 025205-0): R$ 346.852."
+   }
+  ]
+ },
+ {
+  "marca": "Toyota",
+  "modelo": "Hiace",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão DX 2.8 Turbo Diesel AT",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 304990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 174 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Toyota (tabela fev/2026) / AutoPapo (16/01/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/toyota-lanca-furgao-hiace-2026-por-r-305-mil-modelo-exige-apenas-cnh-b/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Van de carga; importada da Argentina. Ano/modelo 2025/2026 na tabela oficial."
+   },
+   {
+    "versao": "Minibus DX 2.8 Turbo Diesel AT",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 344990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.8 turbodiesel 174 cv",
+    "cambio": "automático 6 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "Argentina",
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Toyota (tabela de preços públicos fev/2026)",
+    "fonte_url": "https://media.toyota.com.br//e1b39db7-7372-4e28-b283-31af4d1a5ed7.pdf",
+    "consultado_em": "2026-11-04",
+    "observacao": "16 lugares; ano/modelo 2025/2025 na tabela. Lançada em set/2025 a R$ 364.990 (Bem Paraná); motor e origem assumidos iguais aos do Furgão."
+   }
+  ]
+ }
+]

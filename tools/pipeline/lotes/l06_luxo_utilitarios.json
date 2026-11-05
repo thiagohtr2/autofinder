@@ -1,0 +1,2782 @@
+[
+ {
+  "marca": "Ferrari",
+  "modelo": "Amalfi",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "3.9 V8 biturbo",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 4050000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.9 V8 biturbo 640 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/amalfi/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031060-3). Lançado no Brasil em 08/05/2026 pela Via Italia; notícia (Paraíba Business, 10/05/2026) cita 'a partir de R$ 3,7 milhões' (valor arredondado), abaixo da FIPE. Motor/câmbio pela mesma notícia."
+   }
+  ]
+ },
+ {
+  "marca": "Ferrari",
+  "modelo": "Roma",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "Spider 3.9 V8",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 4300000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.9 V8 620 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/roma/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031057-3). Roma cupê foi substituída pela Amalfi; a FIPE ainda lista a Roma Spider como 0 km (último ano-modelo 2025). Confirmar se segue em oferta."
+   }
+  ]
+ },
+ {
+  "marca": "Ferrari",
+  "modelo": "296",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "GTB",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 4225800,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 V6 biturbo híbrido plug-in",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/296/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031054-9). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE."
+   },
+   {
+    "versao": "GTS",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 4620000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 V6 biturbo híbrido plug-in",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/296/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031055-7). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE."
+   },
+   {
+    "versao": "Speciale",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 6900000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 V6 biturbo híbrido plug-in",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/296/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031061-1). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE."
+   },
+   {
+    "versao": "Speciale A",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 7700000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 V6 biturbo híbrido plug-in",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/296/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031062-0). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE. 'A' = Aperta (conversível)."
+   }
+  ]
+ },
+ {
+  "marca": "Ferrari",
+  "modelo": "Purosangue",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "6.5 V12",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 7800000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "6.5 V12 725 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "x4"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/purosangue/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031056-5). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE."
+   }
+  ]
+ },
+ {
+  "marca": "Ferrari",
+  "modelo": "12Cilindri",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Coupé 6.5 V12",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 7900000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "6.5 V12 830 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/12cilinrdri/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031058-1). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE. A FIPE grafa '12Cilinrdri'. Salão de SP 2025 (O Povo) citou primeira unidade ofertada por R$ 7,9 milhões."
+   },
+   {
+    "versao": "Spider 6.5 V12",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 8249099,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "6.5 V12 830 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/12cilinrdri/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031059-0). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE."
+   }
+  ]
+ },
+ {
+  "marca": "Ferrari",
+  "modelo": "849 Testarossa",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Coupé 4.0 V8 biturbo híbrido",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 8100000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo híbrido plug-in (830 cv do V8, conforme nome FIPE)",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ferrari/849/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 031063-8). Importadora oficial: Via Italia. Preço de supercarro não divulgado em tabela oficial; usado FIPE. Só a versão Coupé aparece na FIPE; Spider não listada."
+   }
+  ]
+ },
+ {
+  "marca": "Lamborghini",
+  "modelo": "Urus",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "SE 4.0 V8 biturbo híbrido",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 4300000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo híbrido plug-in 800 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/lamborghini/urus/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 078026-0). Importadora oficial: Via Italia (Xataka, 07/12/2025). Preço FIPE (marca não divulga tabela)."
+   }
+  ]
+ },
+ {
+  "marca": "Lamborghini",
+  "modelo": "Temerario",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "4.0 V8 biturbo híbrido",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 5800000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo híbrido plug-in 920 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/lamborghini/temerario/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 078028-6). Importadora oficial: Via Italia (Xataka, 07/12/2025). Preço FIPE (marca não divulga tabela). Notícia de lançamento (Xataka, 07/12/2025) também cita R$ 5,8 milhões; motor/câmbio pela notícia."
+   }
+  ]
+ },
+ {
+  "marca": "Lamborghini",
+  "modelo": "Revuelto",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "Coupé LP 1015-4",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 8330000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "6.5 V12 híbrido plug-in 1.015 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "x4"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/lamborghini/revuelto/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 078025-1). Importadora oficial: Via Italia (Xataka, 07/12/2025). Preço FIPE (marca não divulga tabela). Último ano-modelo na FIPE: 2025."
+   }
+  ]
+ },
+ {
+  "marca": "McLaren",
+  "modelo": "Artura",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Coupé 3.0 V6 híbrido",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 2850000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 V6 biturbo híbrido plug-in 680 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mclaren/artura/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 090011-7). Importador oficial: UK Motors (Motor Show, 30/10/2025). Motor Show (out/2025) citava 'a partir de R$ 2,8 milhões'."
+   },
+   {
+    "versao": "Spider 3.0 V6 híbrido",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 3180000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 V6 biturbo híbrido plug-in 680 cv",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "hibrido",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mclaren/artura/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 090015-0). Importador oficial: UK Motors (Motor Show, 30/10/2025). Motor Show (out/2025) citava R$ 3,2 milhões."
+   }
+  ]
+ },
+ {
+  "marca": "McLaren",
+  "modelo": "GTS",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Coupé 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 3300000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 635 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mclaren/gts/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 090016-8). Importador oficial: UK Motors (Motor Show, 30/10/2025). Mesmo valor citado pela Motor Show (out/2025)."
+   }
+  ]
+ },
+ {
+  "marca": "McLaren",
+  "modelo": "750S",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Coupé 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 4600000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 750 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mclaren/750s/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 090014-1). Importador oficial: UK Motors (Motor Show, 30/10/2025). Motor Show (out/2025) citava R$ 4,7 milhões."
+   },
+   {
+    "versao": "Spider 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 5100000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 750 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mclaren/750s/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 090013-3). Importador oficial: UK Motors (Motor Show, 30/10/2025). Mesmo valor citado pela Motor Show (out/2025)."
+   }
+  ]
+ },
+ {
+  "marca": "Aston Martin",
+  "modelo": "Vantage",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "S Coupé 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 2700000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 680 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/aston-martin/vantage/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 085021-7). Representante oficial: UK Motors / Aston Martin São Paulo (Seu Dinheiro, 21/04/2026). Seu Dinheiro cita 'a partir de R$ 2,7 milhões' (igual à FIPE)."
+   },
+   {
+    "versao": "S Roadster 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 2800000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/aston-martin/vantage/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 085022-5). Representante oficial: UK Motors / Aston Martin São Paulo (Seu Dinheiro, 21/04/2026). Nome FIPE indica 510 cv, o que conflita com os 680 cv do Vantage S; potência deixada em aberto."
+   }
+  ]
+ },
+ {
+  "marca": "Aston Martin",
+  "modelo": "DB12",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Coupé 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 3500000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 680 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/aston-martin/db12/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 085018-7). Representante oficial: UK Motors / Aston Martin São Paulo (Seu Dinheiro, 21/04/2026)."
+   },
+   {
+    "versao": "Volante 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 3800000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 680 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/aston-martin/db12/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 085019-5). Representante oficial: UK Motors / Aston Martin São Paulo (Seu Dinheiro, 21/04/2026). Volante = conversível."
+   }
+  ]
+ },
+ {
+  "marca": "Aston Martin",
+  "modelo": "DBX",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "707 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 3700000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 707 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/aston-martin/dbx707/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 085016-0). Representante oficial: UK Motors / Aston Martin São Paulo (Seu Dinheiro, 21/04/2026). Na FIPE é modelo separado (DBX707). Pode estar sendo substituído pelo DBX S."
+   },
+   {
+    "versao": "S 4.0 V8 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 3800000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "4.0 V8 biturbo 727 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo",
+     "x4"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/aston-martin/dbx/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 085023-3). Representante oficial: UK Motors / Aston Martin São Paulo (Seu Dinheiro, 21/04/2026). Motor Show (18/03/2026) cita 'parte de R$ 3,6 milhões', abaixo da FIPE; câmbio pela mesma notícia."
+   }
+  ]
+ },
+ {
+  "marca": "Aston Martin",
+  "modelo": "Vanquish",
+  "carroceria": "Esportivo",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "5.2 V12 biturbo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 6000000,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "5.2 V12 biturbo 835 cv",
+    "cambio": null,
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/aston-martin/vanquish/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 085020-9). Representante oficial: UK Motors / Aston Martin São Paulo (Seu Dinheiro, 21/04/2026)."
+   }
+  ]
+ },
+ {
+  "marca": "Lotus",
+  "modelo": "Eletre",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "600 Sport SE",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 795000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 612 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Vrum 10/08/2026 / A Crítica 10/08/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/08/7476997-lotus-chega-ao-brasil-veja-os-precos-de-eletre-emeya-e-emira.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Operação oficial conduzida pelo Grupo Bamaq (lojas próprias em SP). Preço arredondado pela fonte ('R$ X mil'). Ano-modelo e país de fabricação não informados."
+   },
+   {
+    "versao": "900",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 995000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 918 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Vrum 10/08/2026 / A Crítica 10/08/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/08/7476997-lotus-chega-ao-brasil-veja-os-precos-de-eletre-emeya-e-emira.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Operação oficial conduzida pelo Grupo Bamaq (lojas próprias em SP). Preço arredondado pela fonte ('R$ X mil'). Ano-modelo e país de fabricação não informados. A Crítica chama a versão de 'Eletre 900 Carbon'; Vrum, de 'Eletre 900'."
+   }
+  ]
+ },
+ {
+  "marca": "Lotus",
+  "modelo": "Emeya",
+  "carroceria": "Esportivo",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "900",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 975000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 918 cv",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Vrum 10/08/2026 / A Crítica 10/08/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/08/7476997-lotus-chega-ao-brasil-veja-os-precos-de-eletre-emeya-e-emira.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Operação oficial conduzida pelo Grupo Bamaq (lojas próprias em SP). Preço arredondado pela fonte ('R$ X mil'). Ano-modelo e país de fabricação não informados. Cupê-sedã elétrico de 4 portas; 12 unidades previstas no primeiro ano."
+   }
+  ]
+ },
+ {
+  "marca": "Lotus",
+  "modelo": "Emira",
+  "carroceria": "Esportivo",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "Turbo SE",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 1030000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo 4 cilindros 406 cv",
+    "cambio": "automatizado dupla embreagem 8 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 10/08/2026 / A Crítica 10/08/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/08/7476997-lotus-chega-ao-brasil-veja-os-precos-de-eletre-emeya-e-emira.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Operação oficial conduzida pelo Grupo Bamaq (lojas próprias em SP). Preço arredondado pela fonte ('R$ X mil'). Ano-modelo e país de fabricação não informados. Motor de origem AMG. Combustível não informado (gasolina presumida por ser motor a combustão sem eletrificação)."
+   },
+   {
+    "versao": "V6 SE",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 1230000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "3.5 V6 com compressor 406 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "gasolina",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Vrum 10/08/2026 / A Crítica 10/08/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/08/7476997-lotus-chega-ao-brasil-veja-os-precos-de-eletre-emeya-e-emira.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Operação oficial conduzida pelo Grupo Bamaq (lojas próprias em SP). Preço arredondado pela fonte ('R$ X mil'). Ano-modelo e país de fabricação não informados. Combustível não informado (gasolina presumida). Emira GT4 anunciado para out/2026 sem preço; não incluído."
+   }
+  ]
+ },
+ {
+  "marca": "Foton",
+  "modelo": "eView",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Connect",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 259900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 170 cv, bateria 50,23 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData 16/03/2026",
+    "fonte_url": "https://www.autodata.com.br/noticias/2026/03/16/linha-de-comerciais-leves-da-foton-e-composta-por-sete-modelos-100-eletricos/100823/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Van de carga 7,2 m³, autonomia 245 km (WLTP). FIPE (tabelacarros, nov/2026): R$ 272.225."
+   },
+   {
+    "versao": "Grand Teto Baixo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 299900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 184 cv, bateria 77,28 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData 16/03/2026",
+    "fonte_url": "https://www.autodata.com.br/noticias/2026/03/16/linha-de-comerciais-leves-da-foton-e-composta-por-sete-modelos-100-eletricos/100823/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 303 km (WLTP). Associação preço/teto inferida da faixa R$ 299,9–319,9 mil. FIPE: R$ 319.000."
+   },
+   {
+    "versao": "Grand Teto Médio",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 319900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 184 cv, bateria 77,28 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData 16/03/2026",
+    "fonte_url": "https://www.autodata.com.br/noticias/2026/03/16/linha-de-comerciais-leves-da-foton-e-composta-por-sete-modelos-100-eletricos/100823/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 303 km (WLTP). FIPE (tabelacarros, nov/2026): R$ 339.000."
+   }
+  ]
+ },
+ {
+  "marca": "Foton",
+  "modelo": "eToano Pro",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Teto Médio",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 449900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 176 cv, bateria 77,28 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData 16/03/2026",
+    "fonte_url": "https://www.autodata.com.br/noticias/2026/03/16/linha-de-comerciais-leves-da-foton-e-composta-por-sete-modelos-100-eletricos/100823/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Autonomia 252 km; 10,4 a 12,2 m³. Associação preço/teto inferida da faixa R$ 449,9–469,9 mil. FIPE: R$ 460.000."
+   },
+   {
+    "versao": "Teto Alto",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 469900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 176 cv, bateria 77,28 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "AutoData 16/03/2026",
+    "fonte_url": "https://www.autodata.com.br/noticias/2026/03/16/linha-de-comerciais-leves-da-foton-e-composta-por-sete-modelos-100-eletricos/100823/",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE (tabelacarros, nov/2026): R$ 470.010."
+   }
+  ]
+ },
+ {
+  "marca": "Iveco",
+  "modelo": "Daily Furgão",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "30-160 3.0 12 m³",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 306195,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 turbodiesel 160 cv",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/iveco/daily/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 089053-7). Iveco não publica preços; FIPE. País de fabricação não informado na fonte. Potência deduzida da nomenclatura Iveco (sufixo 160)."
+   },
+   {
+    "versao": "45-160 3.0 12 m³",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 349562,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 turbodiesel 160 cv",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/iveco/daily/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 089037-5). Iveco não publica preços; FIPE. País de fabricação não informado na fonte. PBT maior (linha 45) pode exigir CNH categoria C."
+   },
+   {
+    "versao": "55-180 3.0 12 m³",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 439222,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 turbodiesel 180 cv",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/iveco/daily/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 089041-3). Iveco não publica preços; FIPE. País de fabricação não informado na fonte. PBT maior (linha 55) pode exigir CNH categoria C."
+   },
+   {
+    "versao": "55-180 3.0 16 m³",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 440201,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "3.0 turbodiesel 180 cv",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/iveco/daily/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 089042-1). Iveco não publica preços; FIPE. País de fabricação não informado na fonte. PBT maior (linha 55) pode exigir CNH categoria C."
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Fiorino",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Endurance 1.3 Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 132990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.3 8V flex",
+    "cambio": null,
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "JK Carros (título da matéria 'Fiat Fiorino 2027 custa R$ 132.990')",
+    "fonte_url": "https://jkcarros.com.br/?p=37372",
+    "consultado_em": "2026-11-04",
+    "observacao": "Fonte secundária (corpo da matéria não acessível; site Fiat inacessível); FIPE 0 km out/2026 (cód. 001589-0): R$ 123.047. Versão única."
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Ducato",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Maxicargo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 307990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Furgão 13 m³. A FIPE 0 km ainda lista 'Ducato Cargo 2.2' (R$ 271.722), não citada na linha 2027."
+   },
+   {
+    "versao": "Multi 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 315990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Carga útil até 1.560 kg."
+   },
+   {
+    "versao": "Minibus Comfort 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 389990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Lotação não informada na notícia (FIPE: 'Comfort 18L')."
+   },
+   {
+    "versao": "Minibus Luxo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 398990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 140 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Vrum 17/09/2026 / AutoData 17/09/2026",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/09/7502903-fiat-ducato-2027-ganha-nova-versao-veja-precos-e-mais-detalhes.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Linha 2027 lançada em 17/09/2026. Local de fabricação não informado. Lotação não informada na notícia (FIPE: 'Luxo 16L')."
+   }
+  ]
+ },
+ {
+  "marca": "Fiat",
+  "modelo": "Scudo",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Cargo 2.2 16V Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 220120,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/fiat/scudo/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 001590-3). Preço oficial atual não localizado (site Fiat inacessível); Auto+ TV (2025) citava 'a partir de R$ 223.990' na troca para o motor 2.2."
+   },
+   {
+    "versao": "Multi 2.2 16V Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 223684,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/fiat/scudo/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 001591-1)."
+   }
+  ]
+ },
+ {
+  "marca": "Peugeot",
+  "modelo": "Partner Rapid",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Business Pack 1.3 Flex",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 116138,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "1.3 flex 107 cv (E) / 98 cv (G)",
+    "cambio": "manual 5 marchas",
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/peugeot/partner/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 024279-9). Site oficial (peugeot.com.br) mostra 'valor indisponível'; motor, câmbio, ano-modelo (MY26) e capacidade (650 kg, 3,3 m³) pelo site oficial."
+   }
+  ]
+ },
+ {
+  "marca": "Peugeot",
+  "modelo": "Expert",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cargo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 233590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-expert/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 26/27. Carga 6,1 m³ / 1.450 kg. FIPE 0 km (cód. 024282-9): R$ 196.797."
+   },
+   {
+    "versao": "Vitré 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 235990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-expert/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 26/26. FIPE 0 km (cód. 024283-7): R$ 199.991."
+   }
+  ]
+ },
+ {
+  "marca": "Peugeot",
+  "modelo": "Boxer",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão L3H2 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 280990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26."
+   },
+   {
+    "versao": "Cargo L3H2 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 295990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26. 13 m³ / 1.240 kg; dirigível com CNH B."
+   },
+   {
+    "versao": "Comfort 17+1 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 375990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26. Minibus. FIPE também lista 'Minibus Exec. 17L' (R$ 293.993), ausente no configurador."
+   },
+   {
+    "versao": "Luxo 15+1 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 384990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Peugeot Brasil (configurador oficial)",
+    "fonte_url": "https://www.peugeot.com.br/gama/peugeot-boxer/monte.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano/modelo 25/26. Minibus."
+   }
+  ]
+ },
+ {
+  "marca": "Citroën",
+  "modelo": "Jumpy",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Cargo 2.2 Turbodiesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 233590,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 150 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Citroën Brasil (site oficial)",
+    "fonte_url": "https://www.citroen.com.br/veiculos-utilitarios/citroen-jumpy.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano-modelo inferido dos parâmetros do link oficial. 6,1 m³ / 1.450 kg. FIPE 0 km (cód. 011244-5): R$ 191.386."
+   },
+   {
+    "versao": "Vitré 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 235990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel 150 cv",
+    "cambio": "manual 6 marchas",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Citroën Brasil (site oficial)",
+    "fonte_url": "https://www.citroen.com.br/veiculos-utilitarios/citroen-jumpy.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Ano-modelo inferido dos parâmetros do link oficial. FIPE 0 km (cód. 011245-3): R$ 194.266."
+   }
+  ]
+ },
+ {
+  "marca": "Citroën",
+  "modelo": "Jumper",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 244619,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011219-4). Site oficial não exibiu preços (anuncia 'nova Linha Jumper')."
+   },
+   {
+    "versao": "Cargo 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 259240,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011220-8). Site oficial não exibiu preços (anuncia 'nova Linha Jumper')."
+   },
+   {
+    "versao": "Vitré 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 273199,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011243-7). Site oficial não exibiu preços (anuncia 'nova Linha Jumper'). Valor FIPE de set/2026 (sem preço em out/2026)."
+   },
+   {
+    "versao": "Minibus Executive 17L 2.2 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 282218,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.2 turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/citroen/jumper/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 011242-9). Site oficial não exibiu preços (anuncia 'nova Linha Jumper')."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Kangoo",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Advanced 1.6 SCe Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 139390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.6 SCe flex 112 cv",
+    "cambio": null,
+    "combustivel": "flex",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "espaco",
+     "economico"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios/kangoo.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço 'a partir de' do site oficial. FIPE 0 km (cód. 025331-6): R$ 123.357. Ano-modelo da versão não informado (FIPE lista Kangoo até 2027)."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Kangoo E-Tech",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão elétrico",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 299390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 120 cv, bateria 45 kWh",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial) / Motor Show 05/10/2023 (ficha)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço do site oficial (igual à FIPE 0 km cód. 025326-0). Potência/bateria da notícia de lançamento (2023). Ano-modelo não informado."
+   }
+  ]
+ },
+ {
+  "marca": "Renault",
+  "modelo": "Master",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Grand Pro 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 274616,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025315-4). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Extra Pro 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 282720,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025316-2). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Grand Furgão 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 284071,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025197-6). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Pro 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 288890,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. FIPE 0 km (cód. 025314-6): R$ 254.075."
+   },
+   {
+    "versao": "Extra Furgão 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 294745,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/renault/master/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 025198-4). Site oficial só traz 'a partir de' por família; versões Grand/Extra sem preço oficial, usado FIPE 0 km (que fica abaixo do 'a partir de' oficial — conflito de fontes)."
+   },
+   {
+    "versao": "Furgão 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 306390,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. FIPE 0 km (cód. 025196-8): R$ 268.810."
+   },
+   {
+    "versao": "Vitré 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 332090,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. Na FIPE corresponde a 'Extra F.Vitre' (cód. 025201-8): R$ 294.845."
+   },
+   {
+    "versao": "Minibus 2.3 dCi",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 406290,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.3 dCi 16V turbodiesel",
+    "cambio": null,
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Renault Brasil (site oficial)",
+    "fonte_url": "https://www.renault.com.br/veiculos-utilitarios.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "'A partir de' oficial. Na FIPE corresponde a 'Executive Longo 16L' (cód. 025205-0): R$ 346.852."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "Transit",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão Médio 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 285200,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003487-8). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Furgão Longo 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 290410,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003488-6). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Furgão Médio 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 291867,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003517-3). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Furgão Longo 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 301556,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003494-0). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus Vidrada 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 304695,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003482-7). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus Vidrada 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 314995,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003493-2). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 15 lugares 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 347324,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003483-5). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 15 lugares 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 352859,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003491-6). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 18 lugares 2.0 Turbodiesel",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 371174,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003484-3). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   },
+   {
+    "versao": "Minibus 18 lugares 2.0 Turbodiesel Aut.",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 375107,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 EcoBlue turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003492-4). Ford não exibiu preços acessíveis; FIPE. País de fabricação não informado."
+   }
+  ]
+ },
+ {
+  "marca": "Ford",
+  "modelo": "E-Transit",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "Furgão Longo Teto Alto",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 544700,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/ford/e-transit/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 003514-9). Potência/bateria não levantadas."
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "Sprinter",
+  "carroceria": "Van",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "315 Furgão Longo Teto Baixo 2.0 Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 285100,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021476-0). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "315 Furgão Longo Teto Alto 2.0 Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 288945,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021477-9). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "315 Furgão Extra Longo Teto Alto 2.0 Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 294121,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021474-4). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Furgão Longo Teto Baixo Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 316046,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021493-0). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "317 Furgão Longo Teto Baixo 2.0 Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 316996,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021550-3). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Furgão Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 322015,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021496-5). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "317 Furgão Longo Teto Alto 2.0 Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 327003,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021552-0). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "317 Furgão Extra Longo Teto Alto 2.0 Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 330662,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021551-1). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "317 Furgão Longo Teto Alto 2.0 Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 339614,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021571-6). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Furgão Longo Teto Alto 2.0 Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 343576,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021568-6). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "317 Furgão Extra Longo Teto Alto 2.0 Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 348925,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021572-4). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Furgão Extra Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 349650,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021494-9). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Furgão Extra Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 366669,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021503-1). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Furgão Extra Longo Teto Alto Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 367282,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021563-5). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Furgão Vidrado Extra Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 368430,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021495-7). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Furgão Vidrado Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 369907,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021492-2). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Furgão Extra Longo Porta Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 377701,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021504-0). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Van 16 lugares Longo Teto Baixo Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 381323,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021499-0). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Furgão Extra Longo Porta Teto Alto 2.0 Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 385684,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021564-3). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Van 16 lugares Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 391655,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021497-3). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Van 16 lugares Longo Teto Baixo 2.0 Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 391929,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021569-4). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Van 10 lugares Longo Teto Baixo Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 395633,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021500-7). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Van 16 lugares Longo Teto Alto 2.0 Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 402851,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021570-8). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Furgão Vidrado Extra Longo Porta Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 405895,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021505-8). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "417 Van 10 lugares Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 406840,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021498-1). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Van 18 lugares Extra Longo Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 442955,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021506-6). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Van 20 lugares Extra Longo Porta Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 454361,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021508-2). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Van 21 lugares Extra Longo Porta Teto Alto Diesel",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 456568,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "manual",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021507-4). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   },
+   {
+    "versao": "517 Van 21 lugares Extra Longo Porta Teto Alto Diesel Aut.",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 485534,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "2.0 turbodiesel",
+    "cambio": "automático",
+    "combustivel": "diesel",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "espaco",
+     "turbo"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/sprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021562-7). Site oficial inacessível; FIPE. Siglas: L=longo, EL=extra longo, TA/TB=teto alto/baixo, P=porta, F. Vidr.=furgão vidrado, VAN=passageiros (nº de lugares)."
+   }
+  ]
+ },
+ {
+  "marca": "Mercedes-Benz",
+  "modelo": "eSprinter",
+  "carroceria": "Van",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "320 Furgão Longo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 487900,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/esprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021547-3). Site oficial inacessível; FIPE. Potência/bateria não levantadas."
+   },
+   {
+    "versao": "320 Furgão Extra Longo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 494900,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/esprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021546-5). Site oficial inacessível; FIPE. Potência/bateria não levantadas."
+   },
+   {
+    "versao": "420 Furgão Longo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 533100,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/esprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021545-7). Site oficial inacessível; FIPE. Potência/bateria não levantadas."
+   },
+   {
+    "versao": "420 Furgão Vidrado Extra Longo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 585350,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/esprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021548-1). Site oficial inacessível; FIPE. Potência/bateria não levantadas."
+   },
+   {
+    "versao": "420 Furgão Extra Longo",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 585652,
+    "tipo": "FIPE",
+    "preco_promocional": null,
+    "motor": "elétrico",
+    "cambio": null,
+    "combustivel": "elétrico",
+    "nacional": null,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "eletrico",
+     "espaco"
+    ],
+    "fonte_nome": "Tabela FIPE out/2026 (0 km), via consultadeplaca.net",
+    "fonte_url": "https://consultadeplaca.net/tabela-fipe/carros/mercedes-benz/esprinter/0km",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço FIPE 0 km (cód. 021554-6). Site oficial inacessível; FIPE. Potência/bateria não levantadas."
+   }
+  ]
+ }
+]

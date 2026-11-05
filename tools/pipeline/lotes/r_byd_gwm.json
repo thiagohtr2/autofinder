@@ -1,0 +1,1088 @@
+[
+ {
+  "marca": "BYD",
+  "modelo": "Dolphin Mini",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GL (30 kWh)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 118990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 75 cv, bateria 30,08 kWh, 224 km (Inmetro)",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "economico"
+    ],
+    "fonte_nome": "Carzin",
+    "fonte_url": "https://carzin.com.br/lancamentos/byd-dolphin-mini-2027-parte-r-118990-versoes-gl-gs.amp",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors (2027) mostra GL e GS ambas com bateria 38 kWh e GL a R$ 118.990; Carzin (23/09/2026) dá 30,08 kWh para a GL. Montado em Camaçari (BA)."
+   },
+   {
+    "versao": "GS (38 kWh)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 119990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 75 cv, bateria 38 kWh, 280 km (Inmetro)",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "eletrico",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.webmotors.com.br/byd/dolphin-mini/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Dolphin",
+  "carroceria": "Hatch",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GS",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 149990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 95 cv",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Tabela Carros",
+    "fonte_url": "https://tabelacarros.com/post/byd-atualiza-linha-2027-com-dolphin-e-yuan-plus-potentes",
+    "consultado_em": "2026-11-04",
+    "observacao": "Preço de lançamento da linha 2027 (abr/2026), não reconfirmado em nov/2026. FIPE nov/2026 (Dolphin EV 2027): R$ 134.547."
+   },
+   {
+    "versao": "Special Edition (SE)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 159990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 177 cv, bateria 45,1 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (lançamento, abr/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/04/7391465-byd-lanca-dolphin-se-e-traz-yuan-plus-2027-com-449-cv-e-tracao-integral.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "FIPE nov/2026 (Dolphin SE 2027): R$ 155.560."
+   },
+   {
+    "versao": "Plus",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 184800,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 204 cv, bateria 60,5 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Carro.blog.br",
+    "fonte_url": "https://carro.blog.br/noticias/mercado-automotivo/byd-dolphin-2027-special-edition-cresce-ganha-ate-177-cv-e-muda-interior-para-enfrentar-novos-rivais-preco-fica-em-r-159-990.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Conflito: Tabela Carros (15/04/2026) R$ 184.800; VerificarAuto (atual. 28/05/2026) cita 'a partir de R$ 179.800'. Site BYD lista Dolphin Plus como modelo separado."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Song Pro",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GL 1.5 DM-i Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 176990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 híbrido plug-in flex, até 219 cv combinados",
+    "cambio": "automático (DHT)",
+    "combustivel": "híbrido plug-in",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Canaltech",
+    "fonte_url": "https://canaltech.com.br/carros/byd-song-pro-flex-chega-com-precos-no-chao-confira-as-versoes",
+    "consultado_em": "2026-11-04",
+    "observacao": "Song Pro reestilizado/flex lançado em ago/2026 (Canaltech 06/08/2026; BPMoney 27/10/2026 reconfirma R$ 176.990). Conflito: Webmotors 2027 lista GL Flex a R$ 196.990. Estoque do Song Pro GL antigo (gasolina) segue com tabela R$ 189.990 e promoção a R$ 161.490 até 31/10/2026."
+   },
+   {
+    "versao": "GS 1.5 DM-i Flex",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 199990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 híbrido plug-in flex, 219 cv combinados",
+    "cambio": "automático (DHT)",
+    "combustivel": "híbrido plug-in",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.webmotors.com.br/byd/song-pro/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Mesmo preço em Garagem360 e Canaltech (ago/2026)."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Haval H6",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "HEV One",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 199900,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo flex híbrido 248 cv",
+    "cambio": "DHT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "potente",
+     "economico"
+    ],
+    "fonte_nome": "GWM Brasil (oficial)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/modelos/haval-h6-hev-one",
+    "consultado_em": "2026-11-04",
+    "observacao": "Site oficial: preço único R$ 199.900; A Crítica (jun/2026) citava R$ 199.990."
+   },
+   {
+    "versao": "HEV2",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 225000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo flex híbrido 248 cv",
+    "cambio": "DHT",
+    "combustivel": "híbrido",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "turbo",
+     "tech",
+     "espaco"
+    ],
+    "fonte_nome": "GWM Brasil (oficial)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/modelos/haval-h6-hev",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "PHEV19",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 250000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo flex híbrido plug-in 326 cv (autonomia elétrica ~73-77 km)",
+    "cambio": "DHT",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "GWM Brasil (oficial)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/modelos/haval-h6-phev-19",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "PHEV35 AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 290000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo flex híbrido plug-in 393 cv (autonomia elétrica 126 km)",
+    "cambio": "DHT",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "economico"
+    ],
+    "fonte_nome": "GWM Brasil (oficial)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/modelos/haval-h6-phev-35",
+    "consultado_em": "2026-11-04",
+    "observacao": null
+   },
+   {
+    "versao": "GT PHEV AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 326000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo flex híbrido plug-in 393 cv (autonomia elétrica 126 km)",
+    "cambio": "DHT",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "GWM Brasil (oficial)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/modelos/haval-h6-gt",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors trata o Haval H6 GT como modelo separado."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Seal",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "AWD 82,5 kWh",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 299990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos, 530 cv combinados, bateria 82,5 kWh",
+    "cambio": "automático (redução única)",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.webmotors.com.br/byd/seal/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão única na linha 2027. VerificarAuto (mai/2026) cita R$ 269.990 (provavelmente linha anterior)."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Yuan Pro",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "45,1 kWh",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 182990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 177 cv (bateria 45,1 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "economico"
+    ],
+    "fonte_nome": "Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.webmotors.com.br/byd/yuan-pro/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Conflito: VerificarAuto (mai/2026) cita R$ 182.800 e o classifica erroneamente como PHEV."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Yuan Plus",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "60,8 kWh",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 235990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 204 cv (bateria 60,8 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/byd/yuan-plus/2026",
+    "consultado_em": "2026-11-04",
+    "observacao": "Conflito: Vrum (03/09/2026) cita R$ 235.800."
+   },
+   {
+    "versao": "AWD 74,8 kWh",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 269990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos, 449 cv combinados, bateria 74,8 kWh, até 530 km (NEDC)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 2027)",
+    "fonte_url": "https://www.webmotors.com.br/byd/yuan-plus/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Lançado em abr/2026 (Vrum, Tabela Carros) a R$ 269.990. Webmotors 2027 só lista esta versão; a 60,8 kWh segue listada na linha 2026."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Atto 2 DM-i",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GL 1.5 DM-i Flex (7,85 kWh)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 166660,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 + elétrico, 177 cv combinados",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Diário da Mídia (03/11/2026)",
+    "fonte_url": "https://diariodamidia.com.br/byd-atto-2-gl-sobe-r-16670-e-fica-a-r-3330-da-gs",
+    "consultado_em": "2026-11-04",
+    "observacao": "Lançado a R$ 149.990 (09/06/2026); tabela pública passou a R$ 166.660 (Tribuna PR 05/09/2026, GameOverDrive 22/09/2026 — R$ 149.990 virou preço de campanha até 30/09). Conflito: Webmotors 2027 lista GL a R$ 159.990. Fabricado em Camaçari (BA). Ano-modelo 2027 conforme Webmotors."
+   },
+   {
+    "versao": "GS 1.5 DM-i Flex (18,03 kWh)",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 169990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 + elétrico, 197 cv combinados",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": true,
+    "fabricado_em": "Brasil",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "tech"
+    ],
+    "fonte_nome": "Vrum (lançamento, 09/06/2026)",
+    "fonte_url": "https://www.vrum.com.br/mercado/2026/06/7438379-byd-atto-2-dm-i-flex-e-lancado-a-partir-de-rs-149-990-e-mira-t-cross.html",
+    "consultado_em": "2026-11-04",
+    "observacao": "Mesmo preço em Webmotors 2027 e Diário da Mídia (03/11/2026). Ano-modelo 2027 conforme Webmotors."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "King",
+  "carroceria": "Sedã",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GL 1.5 DM-i",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 172990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 híbrido plug-in",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "espaco"
+    ],
+    "fonte_nome": "Canaltech (29/09/2026)",
+    "fonte_url": "https://canaltech.com.br/carros/byd-derrete-precos-e-vende-king-pelo-valor-do-geely-ex2-em-setembro/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Conflitos: R$ 169.990 (MotorAgora, ago/2025), R$ 169.800 (Vrum, set/2026), R$ 224.800 (AceleraTudo, mai/2026, improvável). FIPE nov/2026 (2027): R$ 153.517. Ano-modelo 2027 consta na FIPE; potência/câmbio por versão não confirmados."
+   },
+   {
+    "versao": "GS 1.5 DM-i",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 175990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 híbrido plug-in",
+    "cambio": null,
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "hibrido",
+     "economico",
+     "espaco",
+     "tech"
+    ],
+    "fonte_nome": "MotorAgora (lista de preços BYD, ago/2025)",
+    "fonte_url": "https://www.motoragora.com.br/?p=190058",
+    "consultado_em": "2026-11-03",
+    "observacao": "Preço de ago/2025, não reconfirmado em nov/2026. FIPE nov/2026 (2027): R$ 166.358."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Song Plus",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.5 DM-i Turbo",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 249990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo + elétrico, 239 cv combinados",
+    "cambio": "automático 1 marcha",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "hibrido",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/byd/song-plus/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Versão única. Webmotors 2026 citava 235 cv e CVT."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Song Plus Premium",
+  "carroceria": "SUV",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "1.5 DM-i Turbo AWD",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 299800,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo + 2 elétricos, 324 cv combinados",
+    "cambio": "automático 1 marcha",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/byd/song-plus-premium/2026",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Sealion 7",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "82,5 kWh AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 339990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 531 cv (bateria 82,5 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/byd/sealion-7/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Atto 8",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.5 Turbo PHEV AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 399990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo + 2 elétricos, 488 cv combinados",
+    "cambio": "automático 1 marcha",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/byd/atto-8/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Shark",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "GS 1.5 Turbo PHEV AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 344990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo + 2 elétricos, 437 cv combinados",
+    "cambio": "automático",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "iCarros (catálogo 0 km)",
+    "fonte_url": "https://www.icarros.com.br/catalogo/marcas/byd/shark",
+    "consultado_em": "2026-11-04",
+    "observacao": "R$ 344.990 também em Canal VE (mai/2026, preço de referência) e VerificarAuto (mai/2026). Antes: tabela R$ 379.800 com preço promocional permanente R$ 339.800 (Tabela Carros, jan/2026). FIPE nov/2026: R$ 285.411."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Han",
+  "carroceria": "Sedã",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "AWD 76,9 kWh",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 559800,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 517 cv (bateria 76,9 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/byd/han/2025",
+    "consultado_em": "2026-11-03",
+    "observacao": "Ano-modelo 2026 não encontrado. Promoções a R$ 519.800 já registradas."
+   }
+  ]
+ },
+ {
+  "marca": "BYD",
+  "modelo": "Tan",
+  "carroceria": "SUV",
+  "ano_modelo": 2025,
+  "versoes": [
+   {
+    "versao": "AWD 108,8 kWh",
+    "ano_modelo": 2025,
+    "status": "on_sale",
+    "preco_reais": 426800,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2 motores elétricos 517 cv (bateria 108,8 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/byd/tan/2025",
+    "consultado_em": "2026-11-03",
+    "observacao": "Conflito: Vrum (fev/2026) R$ 426.800; VerificarAuto (mai/2026) e MotorAgora citam R$ 536.800. Ano-modelo 2026 não encontrado."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Haval H9",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Exclusive 2.4 Turbo Diesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 335000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.4 turbo diesel 184 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/gwm/haval-h9/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Selection 2.4 Turbo Diesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 339000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.4 turbo diesel 184 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/gwm/haval-h9/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão lançada em jun/2026, 7 lugares. Preço confirmado no site oficial GWM (https://www.gwmmotors.com.br/pt/modelos/haval-h9-selection) em 04/11/2026."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Haval H7",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.5 Turbo PHEV Flex AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 261000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo + elétricos, 370 cv combinados",
+    "cambio": "automático DHT 4 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/gwm/haval-h7/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Lançado em 07/10/2026; DGABC descreve R$ 261.000 como preço promocional de lançamento. Híbrido plug-in flex. Preço confirmado no site oficial GWM (https://www.gwmmotors.com.br/pt/modelos/haval-h7) em 04/11/2026."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Tank 300",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "2.0 Hi4-T PHEV Flex 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 342000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo + elétrico, 394 cv combinados",
+    "cambio": "automático 9 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/gwm/tank-300/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Híbrido plug-in flex. Preço confirmado no site oficial GWM (https://www.gwmmotors.com.br/pt/modelos/tank-300) em 04/11/2026."
+   },
+   {
+    "versao": "TerraForce 2.0 Hi4-T PHEV Flex 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 350000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo + elétrico, 394 cv combinados",
+    "cambio": "automático 9 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/gwm/tank-300/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Tank 400",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "2.0 Hi4-T PHEV Flex 4x4",
+    "ano_modelo": null,
+    "status": "pre_order",
+    "preco_reais": 399000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.0 turbo + elétrico, 421 cv combinados",
+    "cambio": "automático 9 marchas",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "AutoPapo (03/11/2026)",
+    "fonte_url": "https://autopapo.com.br/curta/gwm-tank-400-e-maior-que-o-sw4-anda-com-etanol-e-custa-r-399-000/",
+    "consultado_em": "2026-11-03",
+    "observacao": "Pré-venda aberta em 03/11/2026 (sinal R$ 9 mil); apresentação oficial 9-10/11/2026. Potência (421 cv) do anúncio no Festival Interlagos; ficha brasileira ainda não confirmada. Versões não detalhadas."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Poer P30",
+  "carroceria": "Picape",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "Pro 2.4 Turbo Diesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 205000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.4 turbo diesel 184 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "GWM Brasil (media center, 05/08/2026)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/media-center/news/2026/gwm-amplia-a-familia-poer-p30-com-nova-versao-pro-e-mais-equipamentos-na-linha-2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Trail 2.4 Turbo Diesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 227000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.4 turbo diesel 184 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4"
+    ],
+    "fonte_nome": "GWM Brasil (media center, 05/08/2026)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/media-center/news/2026/gwm-amplia-a-familia-poer-p30-com-nova-versao-pro-e-mais-equipamentos-na-linha-2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   },
+   {
+    "versao": "Exclusive 2.4 Turbo Diesel 4x4",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 247000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "2.4 turbo diesel 184 cv",
+    "cambio": "automático 9 marchas",
+    "combustivel": "diesel",
+    "nacional": false,
+    "fabricado_em": null,
+    "pontos_fortes": [
+     "diesel",
+     "x4",
+     "tech"
+    ],
+    "fonte_nome": "GWM Brasil (media center, 05/08/2026)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/media-center/news/2026/gwm-amplia-a-familia-poer-p30-com-nova-versao-pro-e-mais-equipamentos-na-linha-2027",
+    "consultado_em": "2026-11-03",
+    "observacao": "Opcional teto solar: R$ 250.000."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Ora 03",
+  "carroceria": "Hatch",
+  "ano_modelo": 2026,
+  "versoes": [
+   {
+    "versao": "BEV58",
+    "ano_modelo": 2026,
+    "status": "on_sale",
+    "preco_reais": 169000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 171 cv (bateria 58 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "tech"
+    ],
+    "fonte_nome": "AutoEntusiastas (linha 2026)",
+    "fonte_url": "https://autoentusiastas.com.br/2026/04/gmw-ora-03-bev58-2026-e-lancado-no-brasil-por-r-169-mil/",
+    "consultado_em": "2026-11-04",
+    "observacao": "Versão única desde mar/2026 (A Crítica). Conflito: AutoSDR lista Skin R$ 179.990 e GT R$ 209.990 (desatualizado). Preço confirmado no site oficial GWM (https://www.gwmmotors.com.br/pt/modelos/ora-03-bev58) em 04/11/2026."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Ora 5",
+  "carroceria": "SUV",
+  "ano_modelo": null,
+  "versoes": [
+   {
+    "versao": "58,3 kWh",
+    "ano_modelo": null,
+    "status": "on_sale",
+    "preco_reais": 165990,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "elétrico 204 cv (bateria 58,3 kWh)",
+    "cambio": "automático 1 marcha",
+    "combustivel": "elétrico",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "eletrico",
+     "potente",
+     "tech"
+    ],
+    "fonte_nome": "GWM Brasil (oficial)",
+    "fonte_url": "https://www.gwmmotors.com.br/pt/modelos/ora5",
+    "consultado_em": "2026-11-04",
+    "observacao": "Lançado a R$ 159.000 (jun/2026), reajustado para R$ 159.900 e R$ 163.990 (Vrum 14/08/2026; Webmotors 2027 ainda mostra R$ 163.990). Site oficial: preço único R$ 165.990. Ano-modelo não informado."
+   }
+  ]
+ },
+ {
+  "marca": "GWM",
+  "modelo": "Wey 07",
+  "carroceria": "SUV",
+  "ano_modelo": 2027,
+  "versoes": [
+   {
+    "versao": "1.5 Turbo PHEV AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 429000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo + 2 elétricos, 517 cv combinados",
+    "cambio": "automático DHT",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/gwm/wey-07/2027",
+    "consultado_em": "2026-11-04",
+    "observacao": "Webmotors diz que a linha 2027 não tem mais a versão base, mas a lista com preço — confirmar. Preço confirmado no site oficial GWM (https://www.gwmmotors.com.br/pt/modelos/wey-07) em 04/11/2026."
+   },
+   {
+    "versao": "Dark Edition 1.5 Turbo PHEV AWD",
+    "ano_modelo": 2027,
+    "status": "on_sale",
+    "preco_reais": 432000,
+    "tipo": "sugerido",
+    "preco_promocional": null,
+    "motor": "1.5 turbo + 2 elétricos, 517 cv combinados",
+    "cambio": "automático DHT",
+    "combustivel": "híbrido plug-in",
+    "nacional": false,
+    "fabricado_em": "China",
+    "pontos_fortes": [
+     "hibrido",
+     "x4",
+     "potente",
+     "espaco"
+    ],
+    "fonte_nome": "Webmotors (catálogo 0 km)",
+    "fonte_url": "https://www.webmotors.com.br/gwm/wey-07/2027",
+    "consultado_em": "2026-11-03",
+    "observacao": null
+   }
+  ]
+ }
+]

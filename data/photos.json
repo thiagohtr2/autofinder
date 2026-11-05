@@ -1,0 +1,907 @@
+{
+ "agrale-marrua-am200-mo": {
+  "ai": true,
+  "asset": "9f39352779e180e50f5ede11222ee323",
+  "at": 1793840400645
+ },
+ "agrale-marrua-am250": {
+  "ai": true,
+  "asset": "4339731a801fbe24acf05737d959a309",
+  "at": 1793840402416
+ },
+ "aston-martin-db12": {
+  "ai": true,
+  "asset": "91a95ae2c43d71525a09fad3942bf787",
+  "at": 1793840404789
+ },
+ "aston-martin-dbx": {
+  "ai": true,
+  "asset": "8d2c213f1d7b065418a1ec560e06d861",
+  "at": 1793840406376
+ },
+ "aston-martin-vanquish": {
+  "ai": true,
+  "asset": "ed1748aeeee78f8a8752dcf97e0e50cf",
+  "at": 1793840408195
+ },
+ "aston-martin-vantage": {
+  "ai": true,
+  "asset": "f4284a898fd9707f3aa4f176225c6567",
+  "at": 1793840409774
+ },
+ "audi-a3-sedan": {
+  "ai": true,
+  "asset": "d167362ead843aed8f5edbf3f40706cd",
+  "at": 1793840411637
+ },
+ "audi-a3-sportback": {
+  "ai": true,
+  "asset": "7b02401b8d75e7ef4afe26abde676560",
+  "at": 1793840413322
+ },
+ "audi-a5": {
+  "ai": true,
+  "asset": "1bd3fd5ef89512641373da5e610b8865",
+  "at": 1793840415032
+ },
+ "audi-a5-avant": {
+  "ai": true,
+  "asset": "6626a33dc0ce2741411ad2bdf5b783e6",
+  "at": 1793840416497
+ },
+ "audi-a6-avant-e-tron": {
+  "ai": true,
+  "asset": "975a41036d3947eaf59eed2a550d9927",
+  "at": 1793844603283
+ },
+ "audi-a6-sportback-e-tron": {
+  "ai": true,
+  "asset": "0f51176113cf7faa939d38488555fd6a",
+  "at": 1793844595376
+ },
+ "audi-q3": {
+  "ai": true,
+  "asset": "76f69f2281709b15abeea6b02a367a4e",
+  "at": 1793844590493
+ },
+ "audi-q3-sportback": {
+  "ai": true,
+  "asset": "78271de2beb81823e0dc321f0ec95e96",
+  "at": 1793844581240
+ },
+ "audi-q5": {
+  "ai": true,
+  "asset": "b246831f06bfde192a430f2131df20f6",
+  "at": 1793844570019
+ },
+ "audi-q5-sportback": {
+  "ai": true,
+  "asset": "768ccad3cbbf61ccfcaa52426f9b6e66",
+  "at": 1793844562535
+ },
+ "audi-q6-e-tron": {
+  "ai": true,
+  "asset": "af1d549978d7cea02ccd5d77c1193b1f",
+  "at": 1793844514231
+ },
+ "audi-q6-sportback-e-tron": {
+  "ai": true,
+  "asset": "6d5298a7353f49e2c17168a8e955db4f",
+  "at": 1793844496407
+ },
+ "audi-q7": {
+  "ai": true,
+  "asset": "c8701451ed00aed2d98fe5123bc5c61b",
+  "at": 1793844490345
+ },
+ "audi-q8": {
+  "ai": true,
+  "asset": "263e1e061a7c7394d64ddffe0eef2154",
+  "at": 1793844481593
+ },
+ "audi-rs-3-sedan": {
+  "ai": true,
+  "asset": "cb445fd84abebaf6df9715cddaab3080",
+  "at": 1793844733610
+ },
+ "audi-rs-6-avant": {
+  "ai": true,
+  "asset": "0960ce83ee6886e95f38e5c3941ae617",
+  "at": 1793844705457
+ },
+ "audi-rs-e-tron-gt": {
+  "ai": true,
+  "asset": "5864d83e3574507e7e3d9026ed236cb9",
+  "at": 1793844684873
+ },
+ "audi-rs-q8": {
+  "ai": true,
+  "asset": "3d8485e114885ec1bca07e6181d36815",
+  "at": 1793844670604
+ },
+ "avatr-11": {
+  "ai": true,
+  "asset": "9b6ddd4b69a3cc8afc1ec819cba0058d",
+  "at": 1793844662411
+ },
+ "bmw-i4": {
+  "ai": true,
+  "asset": "67316c59c6676f4df1507ae9df5ebf22",
+  "at": 1793844655514
+ },
+ "bmw-i7": {
+  "ai": true,
+  "asset": "32284e56765e1e34a350782f74a1d7b7",
+  "at": 1793844648087
+ },
+ "bmw-ix1": {
+  "ai": true,
+  "asset": "fbc7579c759f526fd927cf68f5ec1fa1",
+  "at": 1793844642173
+ },
+ "bmw-ix2": {
+  "ai": true,
+  "asset": "ea8f4c457923b2e80a9c53661c4ee1ca",
+  "at": 1793844634673
+ },
+ "bmw-ix3": {
+  "ai": true,
+  "asset": "bef169fa7842317aac119f9764eb41ac",
+  "at": 1793844626019
+ },
+ "bmw-m2": {
+  "ai": true,
+  "asset": "6d03a1a85b2d3fabdfd09f15a2f02695",
+  "at": 1793844850283
+ },
+ "bmw-m3": {
+  "ai": true,
+  "asset": "ba8ba2a6e388f43394c79bca185dd7b4",
+  "at": 1793844842462
+ },
+ "bmw-m4": {
+  "ai": true,
+  "asset": "e5308567ba4f76867a7d0e2177710f39",
+  "at": 1793844834489
+ },
+ "bmw-serie-1": {
+  "ai": true,
+  "asset": "407160bf915521a5c997de6be59bcf6f",
+  "at": 1793844826231
+ },
+ "bmw-serie-2-gran-coupe": {
+  "ai": true,
+  "asset": "5bf9d82eed22ff853769dd7ea32c5943",
+  "at": 1793844819313
+ },
+ "bmw-serie-3": {
+  "ai": true,
+  "asset": "e6f859b84931abfe516468815869c12e",
+  "at": 1793844813281
+ },
+ "bmw-serie-4-cabrio": {
+  "ai": true,
+  "asset": "351debdfee73cfc998e0bf4512878fee",
+  "at": 1793844807136
+ },
+ "bmw-serie-5": {
+  "ai": true,
+  "asset": "f04b6f4eb5c4bd779c1e48b3afab5918",
+  "at": 1793844792392
+ },
+ "bmw-x1": {
+  "ai": true,
+  "asset": "0513214d4574e6504099c281686ce1b8",
+  "at": 1793844773655
+ },
+ "bmw-x2": {
+  "ai": true,
+  "asset": "76dc5bc00c2febb5dd34231670a72508",
+  "at": 1793844753854
+ },
+ "bmw-x3": {
+  "ai": true,
+  "asset": "d4b313ffa653ff1c29156482cecde854",
+  "at": 1793844980596
+ },
+ "bmw-x5": {
+  "ai": true,
+  "asset": "3f20c0580fac7f241079ad96be57efea",
+  "at": 1793844972296
+ },
+ "bmw-x6": {
+  "ai": true,
+  "asset": "05352d15cd97a661e66135e60c099299",
+  "at": 1793844965647
+ },
+ "bmw-x7": {
+  "ai": true,
+  "asset": "e41bf552c86416fcbc2d785af89ea65b",
+  "at": 1793844959197
+ },
+ "byd-atto-2-dm-i": {
+  "ai": true,
+  "asset": "4276528d3bc5812ae9bbdbd2eb9986c1",
+  "at": 1793793990341
+ },
+ "byd-atto-8": {
+  "ai": true,
+  "asset": "856c0b67ab0ce781d8f5fd719894a6f1",
+  "at": 1793793992467
+ },
+ "byd-dolphin": {
+  "ai": true,
+  "asset": "8e38b3853f9e7250b85c9109ac58ede6",
+  "at": 1793793996745
+ },
+ "byd-dolphin-mini": {
+  "ai": true,
+  "asset": "84248302403c2279ade7325592e050c7",
+  "at": 1793793994533
+ },
+ "byd-han": {
+  "ai": true,
+  "asset": "552f03d58e6a670c45b8e4fd7d9149d0",
+  "at": 1793793998970
+ },
+ "byd-king": {
+  "ai": true,
+  "asset": "a57a1c6c5bb89bf2b7b14dc709383961",
+  "at": 1793794001306
+ },
+ "byd-seal": {
+  "ai": true,
+  "asset": "8eb4887487b395d764c300754dbcb8f9",
+  "at": 1793794003359
+ },
+ "byd-sealion-7": {
+  "ai": true,
+  "asset": "bb8b758ad5a87234c108e11c74c6597f",
+  "at": 1793794005515
+ },
+ "byd-shark": {
+  "ai": true,
+  "asset": "2f3226ec1865356ac2cb6780a1e56244",
+  "at": 1793794007752
+ },
+ "byd-song-plus": {
+  "ai": true,
+  "asset": "867577e758bec7c655d265003d94be89",
+  "at": 1793794010223
+ },
+ "byd-song-plus-premium": {
+  "ai": true,
+  "asset": "365bdc36c6c06f69527d05e6139265db",
+  "at": 1793812326088
+ },
+ "byd-song-pro": {
+  "ai": true,
+  "asset": "ee34429ff391256569ac7b19af25caf8",
+  "at": 1793812324664
+ },
+ "byd-tan": {
+  "ai": true,
+  "asset": "4a0953a2a3b47897d14ea972c23b7b0b",
+  "at": 1793812322875
+ },
+ "byd-yuan-plus": {
+  "ai": true,
+  "asset": "3445c939700274f81f11ff6e3f672a33",
+  "at": 1793812321287
+ },
+ "byd-yuan-pro": {
+  "ai": true,
+  "asset": "3162cf198eb67e82001974aa8f0385d9",
+  "at": 1793812319521
+ },
+ "caoa-changan-cs55": {
+  "ai": true,
+  "asset": "b80c2ec268d95d653343c3a386c5f277",
+  "at": 1793844952132
+ },
+ "caoa-changan-cs75": {
+  "ai": true,
+  "asset": "86180a35ddbd5a6fa0cf9789e265875d",
+  "at": 1793844944387
+ },
+ "caoa-changan-uni-t": {
+  "ai": true,
+  "asset": "c0d6e7a4dbb430c0fb33ffa997dd46ac",
+  "at": 1793844937669
+ },
+ "chery-tiggo-5x": {
+  "ai": true,
+  "asset": "b97902da226ee138e53521fee35a887a",
+  "at": 1793844930067
+ },
+ "chery-tiggo-7": {
+  "ai": true,
+  "asset": "3ddb1865aac602be0088366bd54ddd37",
+  "at": 1793844922948
+ },
+ "chery-tiggo-8": {
+  "ai": true,
+  "asset": "87f1b6e24dfbceb63f27a29f20190e20",
+  "at": 1793844914711
+ },
+ "chevrolet-blazer-ev": {
+  "ai": true,
+  "asset": "d3d2db48b6fa67a9c44f69cbd637b03a",
+  "at": 1793812317892
+ },
+ "chevrolet-captiva-ev": {
+  "ai": true,
+  "asset": "41c00757a4d33cffaddcc97cec879f92",
+  "at": 1793812316196
+ },
+ "chevrolet-equinox": {
+  "ai": true,
+  "asset": "a78961870120fdf213d2c28380773f4e",
+  "at": 1793812314594
+ },
+ "chevrolet-montana": {
+  "ai": true,
+  "asset": "189c0fdc57d4c6d51bd05a40b55b56f2",
+  "at": 1793812312767
+ },
+ "chevrolet-onix": {
+  "ai": true,
+  "asset": "b7aa01d34f4076aaaf4ab3a0d8ede505",
+  "at": 1793812311313
+ },
+ "chevrolet-onix-plus": {
+  "ai": true,
+  "asset": "eecff64b8c72302808418c18d3d9c1ce",
+  "at": 1793795057984
+ },
+ "chevrolet-s10": {
+  "ai": true,
+  "asset": "0f5511528c66b8e727b4f7e1e913e4c2",
+  "at": 1793795059938
+ },
+ "chevrolet-silverado": {
+  "ai": true,
+  "asset": "2f72abece4fd1eaa3ac29a6916a290e2",
+  "at": 1793795061665
+ },
+ "chevrolet-sonic": {
+  "ai": true,
+  "asset": "5e11c102ed16e33251780ad97b95525e",
+  "at": 1793795063078
+ },
+ "chevrolet-spark-euv": {
+  "ai": true,
+  "asset": "154573171c0d6196a92b51319c516395",
+  "at": 1793795064483
+ },
+ "chevrolet-spin": {
+  "ai": true,
+  "asset": "8c2a206e52c3884b38795e6308564670",
+  "at": 1793795066327
+ },
+ "chevrolet-tracker": {
+  "ai": true,
+  "asset": "2a0bc316422fb313d223ffc98d60eb4b",
+  "at": 1793795068215
+ },
+ "chevrolet-trailblazer": {
+  "ai": true,
+  "asset": "b5113604dcc47e99c53c53d02e9e8277",
+  "at": 1793795069880
+ },
+ "citroen-aircross": {
+  "ai": true,
+  "asset": "2e0a425e3b11fc7262fde7d1a5678079",
+  "at": 1793795072109
+ },
+ "citroen-basalt": {
+  "ai": true,
+  "asset": "3d635fa98e8d4573f27225b3e676e6e8",
+  "at": 1793795073691
+ },
+ "citroen-c3": {
+  "ai": true,
+  "asset": "15275448e690b0954f339f4578543a62",
+  "at": 1793812122848
+ },
+ "fiat-500e": {
+  "ai": true,
+  "asset": "4929428c7fa98c81c0380706f0d64856",
+  "at": 1793812121166
+ },
+ "fiat-argo": {
+  "ai": true,
+  "asset": "d7da15fea24aa266450c25329a5d1f52",
+  "at": 1793812119602
+ },
+ "fiat-cronos": {
+  "ai": true,
+  "asset": "96dd808681a10df65fa72edb4ef641bf",
+  "at": 1793812117733
+ },
+ "fiat-fastback": {
+  "ai": true,
+  "asset": "907fcb5bdcf3dade2076173262ffcfe7",
+  "at": 1793812115970
+ },
+ "fiat-mobi": {
+  "ai": true,
+  "asset": "46d4a3fe09e6281212d88a5466efaf75",
+  "at": 1793812114585
+ },
+ "fiat-pulse": {
+  "ai": true,
+  "asset": "27f4b22f9686d1c0fab521369ab1aa8a",
+  "at": 1793812112691
+ },
+ "fiat-strada": {
+  "ai": true,
+  "asset": "9cd03506b9b47839efba07c249525157",
+  "at": 1793812110767
+ },
+ "fiat-titano": {
+  "ai": true,
+  "asset": "d792e8b62e4d8069acffe00151a6c9ca",
+  "at": 1793812109030
+ },
+ "fiat-toro": {
+  "ai": true,
+  "asset": "4925392dda16c088416a5676d156c86a",
+  "at": 1793812106864
+ },
+ "ford-bronco-sport": {
+  "ai": true,
+  "asset": "5f0aedba971e858172b2fe1b2995f707",
+  "at": 1793797627157
+ },
+ "ford-f-150": {
+  "ai": true,
+  "asset": "bafc7de0dcfbf757ea270c5be10e9b5e",
+  "at": 1793797629257
+ },
+ "ford-maverick": {
+  "ai": true,
+  "asset": "3c77098eb8aadc49316ed8792a466e58",
+  "at": 1793797631214
+ },
+ "ford-mustang": {
+  "ai": true,
+  "asset": "1875908e9b4c41469ba5fd98b781ed3d",
+  "at": 1793797632722
+ },
+ "ford-mustang-mach-e": {
+  "ai": true,
+  "asset": "51de64d97e2c228c1f73575d413c88b4",
+  "at": 1793797634406
+ },
+ "ford-ranger": {
+  "ai": true,
+  "asset": "817817f65c51ec81e49f23da0a042539",
+  "at": 1793797636315
+ },
+ "ford-territory": {
+  "ai": true,
+  "asset": "6ef1e6650e9e4cf2c9123e60cd1749af",
+  "at": 1793797637936
+ },
+ "gwm-haval-h6": {
+  "ai": true,
+  "asset": "86000dbf43c0bf6315a3f19fa556d410",
+  "at": 1793797640183
+ },
+ "gwm-haval-h7": {
+  "ai": true,
+  "asset": "698cbb372b723a31c0677dd59b582ab2",
+  "at": 1793797642024
+ },
+ "gwm-haval-h9": {
+  "ai": true,
+  "asset": "a936eeabc9c4b568100d28a6b97e65f0",
+  "at": 1793797644151
+ },
+ "gwm-ora-03": {
+  "ai": true,
+  "asset": "44c4e3f2bb99b2ed471148db971015b9",
+  "at": 1793805447859
+ },
+ "gwm-ora-5": {
+  "ai": true,
+  "asset": "040930e3a0628da4a847ecbfcf8c9001",
+  "at": 1793805444961
+ },
+ "gwm-poer-p30": {
+  "ai": true,
+  "asset": "5cff01b34a811c6441bcc5160b850a4f",
+  "at": 1793805443083
+ },
+ "gwm-tank-300": {
+  "ai": true,
+  "asset": "3b8edc3f56ebcd1cb9c3112efaf5f5f0",
+  "at": 1793805440425
+ },
+ "gwm-wey-07": {
+  "ai": true,
+  "asset": "eef0edf222a8ddbc96c06be5b20baaf8",
+  "at": 1793805438579
+ },
+ "honda-accord": {
+  "ai": true,
+  "asset": "4aaaa4c3ba6593ec26dffe8f4d304cbd",
+  "at": 1793805436527
+ },
+ "honda-city": {
+  "ai": true,
+  "asset": "e97762af4d45f8564397f828daa5c2f2",
+  "at": 1793805434075
+ },
+ "honda-city-hatchback": {
+  "ai": true,
+  "asset": "2beaa7616ed08250fd270cb8146a6371",
+  "at": 1793805432216
+ },
+ "honda-civic": {
+  "ai": true,
+  "asset": "9b3ecc4e9b13dd012fa8b96429621481",
+  "at": 1793805430488
+ },
+ "honda-cr-v": {
+  "ai": true,
+  "asset": "0264133c5d80e1d7ae97f7a5104489d7",
+  "at": 1793805428512
+ },
+ "honda-hr-v": {
+  "ai": true,
+  "asset": "6f1a9ece405311aab2bbbeb2bc9ab21c",
+  "at": 1793805416725
+ },
+ "honda-prelude": {
+  "ai": true,
+  "asset": "81b1e0671911a08588b176925e0f532b",
+  "at": 1793805414518
+ },
+ "honda-wr-v": {
+  "ai": true,
+  "asset": "fdebf3ce31eb2f2e3aac8ae5e1a255f8",
+  "at": 1793805412803
+ },
+ "honda-zr-v": {
+  "ai": true,
+  "asset": "6ff17af82dfce952899fca7400e8a87f",
+  "at": 1793805410827
+ },
+ "hyundai-creta": {
+  "ai": true,
+  "asset": "191b0050878b660123bfb4a38f3c1aa5",
+  "at": 1793805408333
+ },
+ "hyundai-hb20": {
+  "ai": true,
+  "asset": "8d6a37c4dbfb0994caca4f0147574171",
+  "at": 1793805406030
+ },
+ "hyundai-hb20s": {
+  "ai": true,
+  "asset": "5eb8dfc882e5ee184cfb847697ad4a44",
+  "at": 1793805404070
+ },
+ "hyundai-i20": {
+  "ai": true,
+  "asset": "2ae88321fa229a0ec68cf5d6e09a44f5",
+  "at": 1793805401869
+ },
+ "hyundai-ioniq-5": {
+  "ai": true,
+  "asset": "11cc28e3fd70c8dca69d9b299d276ed2",
+  "at": 1793805400243
+ },
+ "hyundai-kona": {
+  "ai": true,
+  "asset": "71c83661c7a66cc02dfc07ff99593969",
+  "at": 1793805397748
+ },
+ "hyundai-palisade": {
+  "ai": true,
+  "asset": "679c20265010d6f74b6f6f95a20eb033",
+  "at": 1793805367985
+ },
+ "hyundai-tucson": {
+  "ai": true,
+  "asset": "5b0536947236d0f89ef24f8e16eae226",
+  "at": 1793805365363
+ },
+ "jeep-avenger": {
+  "ai": true,
+  "asset": "caabb6593a2175d35d0c3b33a7500791",
+  "at": 1793805363598
+ },
+ "jeep-commander": {
+  "ai": true,
+  "asset": "371b669798ddbe21685b83c00b977528",
+  "at": 1793805361651
+ },
+ "jeep-compass": {
+  "ai": true,
+  "asset": "1fe5d100fb7ebe621c844631bde173c7",
+  "at": 1793805359824
+ },
+ "jeep-gladiator": {
+  "ai": true,
+  "asset": "79b993dba6b60b4d9dd70d00e45896d0",
+  "at": 1793805357082
+ },
+ "jeep-renegade": {
+  "ai": true,
+  "asset": "04d3c91b3d638d742db5915303c56f7b",
+  "at": 1793805355226
+ },
+ "jeep-wrangler": {
+  "ai": true,
+  "asset": "17a012a59ff6d931e9c3f1677eb98fed",
+  "at": 1793805353362
+ },
+ "kia-carnival": {
+  "ai": true,
+  "asset": "c51c119d76381a4886bc262275bc905e",
+  "at": 1793805351657
+ },
+ "kia-ev5": {
+  "ai": true,
+  "asset": "203f25fb2ec6e0f63ea90cc73f23606a",
+  "at": 1793805349274
+ },
+ "kia-ev9": {
+  "ai": true,
+  "asset": "e3816e5b10cdefb13aeb39b9187d0bda",
+  "at": 1793812513393
+ },
+ "kia-niro": {
+  "ai": true,
+  "asset": "ae97a2a5981aad4d2817d5fd6c9c804a",
+  "at": 1793812511498
+ },
+ "kia-sorento": {
+  "ai": true,
+  "asset": "177e65d618fb6bef57eec17d06c60600",
+  "at": 1793812509856
+ },
+ "kia-sportage": {
+  "ai": true,
+  "asset": "b236edffc46732fb66673e1a567a2a6b",
+  "at": 1793812507804
+ },
+ "kia-stonic": {
+  "ai": true,
+  "asset": "aed4a9d7034f472361fd56a495510377",
+  "at": 1793812506039
+ },
+ "kia-tasman": {
+  "ai": true,
+  "asset": "04b9e98cb0b28a8c74eacce132ba966d",
+  "at": 1793812503618
+ },
+ "leapmotor-b10": {
+  "ai": true,
+  "asset": "e579911ce98e93502252d01bcefac80a",
+  "at": 1793812502206
+ },
+ "leapmotor-c10": {
+  "ai": true,
+  "asset": "1795865ea137745adf940f2b50451c72",
+  "at": 1793812500442
+ },
+ "mitsubishi-eclipse-cross": {
+  "ai": true,
+  "asset": "18ac5b1489545d3fd571f97842c97b65",
+  "at": 1793812498046
+ },
+ "mitsubishi-outlander": {
+  "ai": true,
+  "asset": "2c82f16680668fcfbaa38e1a8e44c728",
+  "at": 1793812532380
+ },
+ "mitsubishi-triton": {
+  "ai": true,
+  "asset": "f397775cd6d169f659e04b7c78aebe6f",
+  "at": 1793805337516
+ },
+ "nissan-kait": {
+  "ai": true,
+  "asset": "3dd81717432f02b973c7ea7444936a0f",
+  "at": 1793805335260
+ },
+ "nissan-kicks": {
+  "ai": true,
+  "asset": "68762187098862055c0242af89fd2cc1",
+  "at": 1793805333415
+ },
+ "nissan-versa": {
+  "ai": true,
+  "asset": "dbd8cbc59035e9864f769e832be38fc1",
+  "at": 1793805331571
+ },
+ "peugeot-2008": {
+  "ai": true,
+  "asset": "0ae210c3830bae5b02167d816a7f35ea",
+  "at": 1793805329862
+ },
+ "peugeot-208": {
+  "ai": true,
+  "asset": "c686441dcf84a84f5391c1bd4a9f2df7",
+  "at": 1793805328064
+ },
+ "ram-1500": {
+  "ai": true,
+  "asset": "8844e7b3dc7fd0cd912f1ad37c90fc43",
+  "at": 1793805326615
+ },
+ "ram-2500": {
+  "ai": true,
+  "asset": "3a0c41e822a3d8cf0ec85160c408585d",
+  "at": 1793805324744
+ },
+ "ram-3500": {
+  "ai": true,
+  "asset": "5f2b339e3788dc4485f19f66721ca066",
+  "at": 1793805322800
+ },
+ "ram-dakota": {
+  "ai": true,
+  "asset": "d380086c19b64ec745a8b7a9c60aae14",
+  "at": 1793805320093
+ },
+ "ram-rampage": {
+  "ai": true,
+  "asset": "c225113886563188cf7dce490802bd32",
+  "at": 1793805302693
+ },
+ "renault-boreal": {
+  "ai": true,
+  "asset": "654079381ddcd2fe71f347a82d98312d",
+  "at": 1793805300238
+ },
+ "renault-duster": {
+  "ai": true,
+  "asset": "adf2ab69a6c71047326cc20d6fef9369",
+  "at": 1793805298279
+ },
+ "renault-kardian": {
+  "ai": true,
+  "asset": "2fd38af02034808c03df6ca0a1146a5a",
+  "at": 1793805295923
+ },
+ "renault-koleos": {
+  "ai": true,
+  "asset": "c7741f3ed338a2b31cf6510f06c00999",
+  "at": 1793805293676
+ },
+ "renault-kwid": {
+  "ai": true,
+  "asset": "c69a18913ab0a82885307b24635d7ac7",
+  "at": 1793805291293
+ },
+ "renault-kwid-e-tech": {
+  "ai": true,
+  "asset": "40219b3f9c6ac310e0eabb60b4c69025",
+  "at": 1793805289068
+ },
+ "renault-megane-e-tech": {
+  "ai": true,
+  "asset": "114df1741bb5d6b9f14fda7f8d7458f2",
+  "at": 1793805287314
+ },
+ "renault-oroch": {
+  "ai": true,
+  "asset": "4eb2001a6899771b5ebf5f440a92f4cf",
+  "at": 1793805285312
+ },
+ "suzuki-e-vitara": {
+  "ai": true,
+  "asset": "6e81a16ef585c6ee5a3086d4740dd118",
+  "at": 1793805283601
+ },
+ "toyota-bz4x": {
+  "ai": true,
+  "asset": "cab3505b06cbb0b2bcec992fbf90d836",
+  "at": 1793805270644
+ },
+ "toyota-corolla": {
+  "ai": true,
+  "asset": "0fa9fd7030be29e1285ec5fc16da37c0",
+  "at": 1793805269165
+ },
+ "toyota-corolla-cross": {
+  "ai": true,
+  "asset": "0e256df32cbcb34d1ef62b427d3a5d80",
+  "at": 1793805267069
+ },
+ "toyota-gr-corolla": {
+  "ai": true,
+  "asset": "f5fd4427bf5d6534c95dc817a5dbaca9",
+  "at": 1793805265261
+ },
+ "toyota-gr-yaris": {
+  "ai": true,
+  "asset": "750761088fc477391370e56f21453479",
+  "at": 1793805263690
+ },
+ "toyota-hilux": {
+  "ai": true,
+  "asset": "a11cf6d62ca57f074d2a042381f0c5ae",
+  "at": 1793805261871
+ },
+ "toyota-hilux-sw4": {
+  "ai": true,
+  "asset": "2685702e8c062b28bb7a1497b6f4203b",
+  "at": 1793805259937
+ },
+ "toyota-rav4": {
+  "ai": true,
+  "asset": "0d2b75c325a9a79c0625a97079351574",
+  "at": 1793805257662
+ },
+ "toyota-yaris-cross": {
+  "ai": true,
+  "asset": "e6e6546f54b3edc98a0a04d689b656cc",
+  "at": 1793805255370
+ },
+ "volkswagen-amarok": {
+  "ai": true,
+  "asset": "aeda87fb766fbc27a513a4d9f0b2afb3",
+  "at": 1793805253471
+ },
+ "volkswagen-golf": {
+  "ai": true,
+  "asset": "a11dab62d771a709f0dfffe541dc1e81",
+  "at": 1793811120793
+ },
+ "volkswagen-id-4": {
+  "ai": true,
+  "asset": "abc4b6e36b494debb51f0eb88c4c3a45",
+  "at": 1793811119303
+ },
+ "volkswagen-jetta": {
+  "ai": true,
+  "asset": "5eb41c7bd630dc2b1e49353e2f3057a0",
+  "at": 1793811117320
+ },
+ "volkswagen-nivus": {
+  "ai": true,
+  "asset": "effe37daaf46ec8ab74ce9077a4b2d25",
+  "at": 1793811115450
+ },
+ "volkswagen-polo": {
+  "ai": true,
+  "asset": "f152d911fb5d69a9e6312789e988a79d",
+  "at": 1793811113440
+ },
+ "volkswagen-saveiro": {
+  "ai": true,
+  "asset": "69ba643082eb3f3f806e26f17bc7bf78",
+  "at": 1793811111711
+ },
+ "volkswagen-t-cross": {
+  "ai": true,
+  "asset": "ee0cfeac9718bd50a4d2b1227065c96d",
+  "at": 1793811109850
+ },
+ "volkswagen-taos": {
+  "ai": true,
+  "asset": "8dbdefbfa0ba31d3a7f4658a13a235ad",
+  "at": 1793811108104
+ },
+ "volkswagen-tera": {
+  "ai": true,
+  "asset": "5566e24f94126abeb5f841ae29bff07f",
+  "at": 1793811105923
+ },
+ "volkswagen-tiguan": {
+  "ai": true,
+  "asset": "bde6e0db383ee8420d0ec9499c50f190",
+  "at": 1793811103929
+ },
+ "volkswagen-virtus": {
+  "ai": true,
+  "asset": "72f2abec7a409db555e90333f053154c",
+  "at": 1793812529927
+ }
+}
