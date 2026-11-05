@@ -1083,7 +1083,7 @@ function makeDial(el,start,onChange){
   d.geom();d.label();d.draw();
   return d;
 }
-const WINDOW=20;
+const WINDOW=15; /* faixa de 10 mil: 140 a 150 tem 3 marcas da roleta, de 5 em 5 mil */
 let swapTimer=0;
 const roBand=document.getElementById("roBand");
 function bandChanged(d){
