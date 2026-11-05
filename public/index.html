@@ -782,7 +782,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .mode.sort button{font-size:11.5px}
 }
 .dial.short .ro-btns .jump{display:none}
-@media (prefers-reduced-motion: reduce){.row:not(.ghost) .c-dn,.card.enter,.card.leave,.sweep.go::before,.like.pop svg{animation:none}.card,.stage img,.stage svg.car{transition:none}}
+@media (prefers-reduced-motion: reduce){.row:not(.ghost) .c-dn,.card.enter,.card.leave,.sweep.go::before,.like.pop svg,.sh-hero img{animation:none}.card,.stage img,.stage svg.car{transition:none}}
 </style>
 
 <div class="app">
@@ -1592,8 +1592,7 @@ async function openInfo(id){
    el.innerHTML=lg?`<img src="${blobUrl(lg)}" alt="${esc(c.mk)}">`:esc(c.mk.slice(0,2).toUpperCase());el.title=c.mk;}
   const sib=CARS.filter(x=>x.mid===c.mid).sort((a,b)=>(a.p||0)-(b.p||0));
   const ph=photos[c.mid||c.id],hero=ph?`<figure class="sh-hero"><img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
-  const base=(v,src)=>`${hero}
-    <section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
+  const base=(v,src)=>`<section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
       <div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
       <div class="sh-meta">${c.pc?(c.pc.change_type==="promocional"?"Preço de oferta":"Novo preço de tabela"):c.kind==="FIPE"?"Valor FIPE 0 km":"Preço de tabela sugerido"}${v&&v.price&&v.price.ref_month?` · ref. ${esc(v.price.ref_month)}`:""}${src&&src.url?` · <a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.name||"fonte")} ↗</a>`:""}</div></section>
     ${(()=>{const u=siteOf(c.mk);return u?`<a class="sh-site" href="${esc(u)}" target="_blank" rel="noopener"><span><small>Site oficial da ${esc(c.mk)} no Brasil</small><b>${esc(siteHost(u))}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`:""})()}
@@ -1616,13 +1615,16 @@ async function openInfo(id){
     ${v&&v.quality?`<section class="dr-group"><h3>Completude da ficha · ${+v.quality.completeness_pct||0}%</h3><div class="qbar"><i style="width:${Math.max(0,Math.min(100,+v.quality.completeness_pct||0))}%"></i></div><div class="sh-meta" style="margin-top:6px">Atualizado em ${esc(v.updated_at||"")}. Campos sem fonte ficam como "não informado".</div></section>`:""}
     <section class="dr-group"><h3>Versões do ${esc(c.nm)}</h3><div class="sh-vers">${sib.map(x=>`<button type="button" data-sib="${x.id}" ${x.id===c.id?'aria-current="true"':""}><span>${esc(x.ver)}${x.ano?` · ${x.ano}`:""}</span><b>${x.p?fmt(x.p):"—"}</b></button>`).join("")}</div></section>
     <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} curtida${(counts[c.id]||0)===1?"":"s"} nesta versão</div></section>`;
-  shBody.innerHTML=base(null,null);document.getElementById("shClose").focus();
+  shBody.innerHTML=hero+base(null,null);document.getElementById("shClose").focus();
   if(!db)return;
   try{const vs=await db.collection("versions").doc(id).get();if(tok!==shTok)return;const v=vs.exists?vs.data():null;let src=null;
     const sid=v&&v.price&&v.price.source_id;if(sid){const ss=await db.collection("sources").doc(sid).get();if(tok!==shTok)return;src=ss.exists?ss.data():null;if(src&&!/^https?:\/\//.test(src.url||""))src=null;}
     if(v&&!v.powertrain)v.powertrain={};
-    shBody.innerHTML=base(v,src);}catch(e){}
+    sheetDetails(base(v,src));}catch(e){}
 }
+/* a ficha completa chega depois; a foto fica onde está, senão a animação de entrada toca de novo */
+function sheetDetails(html){const fig=shBody.querySelector(".sh-hero");if(!fig){shBody.innerHTML=html;return}
+  while(fig.nextSibling)fig.nextSibling.remove();fig.insertAdjacentHTML("afterend",html)}
 /* ---------- news feed per model (db: news/<model_id> = {items:[{title,source,url,date,summary}], updated_at}) ---------- */
 const newsPanel=document.getElementById("newsPanel"),nfBody=document.getElementById("nfBody");
 const MES=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
