@@ -230,6 +230,10 @@ button,input{font:inherit;color:inherit}
 .scroller{position:absolute;right:0;top:50%;transform:translateY(-50%);z-index:3;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--bg);box-shadow:0 8px 24px -8px rgba(12,17,28,.3);display:grid;place-items:center;cursor:pointer}
 .scroller svg{width:16px;height:16px}
 .scroller:hover{border-color:var(--accent);color:var(--accent)}
+.scroller.back{right:auto;left:calc(var(--dw) + 3px)}
+/* arrastar a fileira com o mouse */
+@media (hover:hover) and (pointer:fine){.row:not(.ghost){cursor:grab}}
+.row.dragging,.row.dragging *{cursor:grabbing!important;user-select:none}
 .note{position:absolute;left:0;right:0;bottom:12px;margin:0;font-size:11.5px;color:var(--faint)}
 
 /* car slot: car stands on the beam line, info hangs below it */
@@ -828,6 +832,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <div class="stagewrap">
         <div class="track" aria-hidden="true"></div>
         <div class="rows" id="rows"></div>
+        <button type="button" class="scroller back" id="scrollL" aria-label="Voltar aos carros anteriores" hidden><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button type="button" class="scroller" id="scrollR" aria-label="Ver mais carros" hidden><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
       <p class="note">Todas as versões 0 km à venda, linha 2027 (ou 2026 quando ainda não há 2027). Preço de tabela sugerido pela montadora em nov/2026, ou FIPE 0 km quando a montadora não divulga. Cada carro tem link para a fonte.</p>
@@ -1353,9 +1358,30 @@ rowsEl.addEventListener("scroll",e=>{if(e.target.classList&&e.target.classList.c
 let wacc2=0;
 rowsEl.addEventListener("wheel",e=>{if(Math.abs(e.deltaX)>Math.abs(e.deltaY))return;e.preventDefault();wacc2+=e.deltaY;
   while(Math.abs(wacc2)>=91){const sg=Math.sign(wacc2);wacc2-=sg*91;dial.goTo(dial.target+sg)}},{passive:false});
-const scR=document.getElementById("scrollR");
-function updScroller(){requestAnimationFrame(()=>{const r=curRow();scR.hidden=!(r&&r.scrollWidth-r.clientWidth-r.scrollLeft>8)})}
-scR.onclick=()=>{const r=curRow();if(r)r.scrollBy({left:r.clientWidth*.8,behavior:reduce?"auto":"smooth"})};
+const scR=document.getElementById("scrollR"),scL=document.getElementById("scrollL");
+function updScroller(){requestAnimationFrame(()=>{const r=curRow();scR.hidden=!(r&&r.scrollWidth-r.clientWidth-r.scrollLeft>8);scL.hidden=!(r&&r.scrollLeft>8)})}
+const pageRow=d=>{const r=curRow();if(r)r.scrollBy({left:d*r.clientWidth*.8,behavior:reduce?"auto":"smooth"})};
+scR.onclick=()=>pageRow(1);scL.onclick=()=>pageRow(-1);
+/* no computador, arrastar a fileira com o mouse rola os carros; um clique sem arrastar continua sendo clique */
+{let drag=null,swallow=false,coast=0;
+  const stop=row=>{cancelAnimationFrame(coast);coast=0;if(row)row.style.scrollBehavior=""};
+  rowsEl.addEventListener("pointerdown",e=>{if(e.pointerType!=="mouse"||e.button!==0)return;
+    const row=e.target.closest(".row");if(!row||row.classList.contains("ghost")||e.target.closest("input,textarea,select,label"))return;
+    stop(drag&&drag.row);swallow=false;drag={row,id:e.pointerId,x:e.clientX,left:row.scrollLeft,moved:false,lx:e.clientX,lt:e.timeStamp,v:0}});
+  rowsEl.addEventListener("pointermove",e=>{if(!drag||e.pointerId!==drag.id)return;const dx=e.clientX-drag.x;
+    if(!drag.moved){if(Math.abs(dx)<6)return;drag.moved=true;stop(drag.row);drag.row.style.scrollBehavior="auto";
+      drag.row.setPointerCapture(e.pointerId);drag.row.classList.add("dragging");getSelection().removeAllRanges();}
+    drag.row.scrollLeft=drag.left-dx;const dt=e.timeStamp-drag.lt;
+    if(dt>0){drag.v=.8*((drag.lx-e.clientX)/dt)+.2*drag.v;drag.lx=e.clientX;drag.lt=e.timeStamp}});
+  const end=e=>{if(!drag||e.pointerId!==drag.id)return;const d=drag;drag=null;if(!d.moved)return;
+    d.row.classList.remove("dragging");swallow=true;setTimeout(()=>swallow=false,0);
+    // embalo ao soltar, a menos que o mouse já estivesse parado
+    let v=e.timeStamp-d.lt>80||reduce?0:d.v*16;
+    const step=()=>{if(Math.abs(v)<.5||d.row!==curRow())return stop(d.row);d.row.scrollLeft+=v;v*=.94;coast=requestAnimationFrame(step)};
+    step()};
+  rowsEl.addEventListener("pointerup",end);rowsEl.addEventListener("pointercancel",end);
+  rowsEl.addEventListener("click",e=>{if(swallow){e.stopPropagation();e.preventDefault();swallow=false}},true);
+  rowsEl.addEventListener("dragstart",e=>{if(e.target.closest(".row"))e.preventDefault()});}
 /* filters */
 const BODY={hatch:"Hatch",sedan:"Sedã",suv:"SUV",pickup:"Picape",coupe:"Esportivo"};
 const BODYKEY=Object.fromEntries(Object.entries(BODY).map(([k,v])=>[v,k]));
