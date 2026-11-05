@@ -284,6 +284,30 @@ button,input{font:inherit;color:inherit}
 .nw.al.on.recall:hover{background:#dc2626;color:#fff}
 .cm-form{display:flex;flex-direction:column;gap:8px;padding:14px;border:1px solid var(--line);border-radius:16px;background:var(--panel)}
 .cm-form textarea{width:100%;min-height:92px;max-height:260px;resize:vertical;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font:500 14px/1.5 var(--body);color:var(--ink);background:var(--bg);box-sizing:border-box}
+.price.is-down{color:#0f8a4b}
+.pc-line{display:inline-flex;align-items:center;justify-content:center;gap:3px;max-width:100%;margin:0 0 -2px;padding:1px 5px;border:0;border-radius:6px;background:none;font:600 10.5px var(--body);color:var(--muted);cursor:pointer;white-space:nowrap}
+.pc-line s{font-family:var(--mono)}
+.pc-line svg{width:12px;height:12px;flex:none;color:#0f8a4b}
+.pc-line.up svg{color:#b45309}
+.pc-line:hover{background:var(--panel)}
+.pc-line:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+.card.has-pc .spec{margin-top:3px;padding-top:4px}
+.card.has-pc .icons{margin-top:4px}
+.card.has-pc .c-act{margin-top:5px}
+.card.has-pc .c-more{margin-top:4px}
+.sh-price+.pc-line{font-size:12.5px;margin:2px 0 4px -5px}
+.sh-price+.pc-line svg{width:14px;height:14px}
+#pcPanel{z-index:32}
+.pc-box{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px;border-radius:16px;background:var(--panel)}
+.pc-box>div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.pc-box small{font-size:11px;font-weight:700;color:var(--muted)}
+.pc-box s{font:600 15px var(--mono);color:var(--muted)}
+.pc-box b{font:600 19px var(--mono);color:var(--ink)}
+.pc-box.down b{color:#0f8a4b}
+.pc-diff{margin:-14px 0 0;font-size:13px;font-weight:700;color:#0f8a4b}
+.pc-diff.up{color:#b45309}
+.pc-text{margin:0;font-size:14px;line-height:1.5;color:#3b4352}
+.pc-source{display:flex;align-items:center;justify-content:center;height:42px;border-radius:12px;background:var(--accent);color:#fff;font:700 13.5px var(--body);text-decoration:none;text-align:center}
 .auth-form label{display:flex;flex-direction:column;gap:5px;font-size:12.5px;font-weight:600;color:var(--muted)}
 .auth-form input{height:42px;border:1px solid var(--line);border-radius:12px;padding:0 12px;font:500 16px var(--body);color:var(--ink);background:var(--bg)}
 .auth-form input:focus{outline:2px solid var(--accent);outline-offset:1px}
@@ -836,6 +860,10 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="dr-head"><div><h2 id="nfTitle">Notícias</h2><div class="nf-sub" id="nfSub"></div></div><button type="button" class="dr-x" id="nfClose" aria-label="Fechar notícias">✕</button></div>
   <div class="dr-body" id="nfBody"></div>
 </aside>
+<aside class="drawer sheet" id="pcPanel" role="dialog" aria-modal="true" aria-labelledby="pcTitle" hidden>
+  <div class="dr-head"><div><h2 id="pcTitle">O preço mudou</h2><div class="nf-sub" id="pcSub"></div></div><button type="button" class="dr-x" id="pcClose" aria-label="Fechar">✕</button></div>
+  <div class="dr-body" id="pcBody"></div>
+</aside>
 <aside class="drawer sheet" id="authPanel" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
   <div class="dr-head"><h2 id="authTitle">Sua conta</h2><button type="button" class="dr-x" id="authClose" aria-label="Fechar">✕</button></div>
   <div class="dr-body" id="authBody"></div>
@@ -1169,7 +1197,7 @@ function cardHTML(c,i,anim){
   const n=counts[c.id]||0,on=mine.has(c.id),mid=c.mid||c.id,ph=photos[mid],bs=brandSlug(c.mk),lg=logos[bs];
   const img=carImg(c),sc=scoreOf(c),cv=c.cv?Math.round(c.cv)+" cv":null,mo=motorOf(c),gr=c.cb?(GEAR[c.cb]||c.cb):null;
   const na='<b class="na">—</b>';
-  return `<article class="card${i===0&&sc>0?" first":""}" data-id="${c.id}">
+  return `<article class="card${i===0&&sc>0?" first":""}${c.pc?" has-pc":""}" data-id="${c.id}">
     <div class="c-up">
       <div class="c-top c-brandtop"><span class="cb-mk" title="${esc(c.mk)}"><span class="cb-badge${lg?"":" ini"}">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(c.mk.slice(0,2).toUpperCase())}</span><span class="cb-name">${esc(c.mk)}</span></span><span class="rank">${String(i+1).padStart(2,"0")}</span></div>
       <div class="stage">${img}<i class="floor"></i>${ph?'<span class="ctag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}
@@ -1179,7 +1207,7 @@ function cardHTML(c,i,anim){
       <span class="vr-row"><span class="vr" title="${esc(c.ver)}${c.mo?` · ${esc(c.mo)}`:""}">${esc(c.ver)}${c.ano?` · ${c.ano}`:""}</span>${c._more?`<button type="button" class="more" data-info="${c.id}" title="Mais ${c._more} ${c._more>1?"versões":"versão"} deste modelo na faixa">+${c._more}</button>`:""}</span>
     </div>
     <div class="c-dn">
-      <div class="price">${fmt(c.p)}</div>
+      <div class="price${isReduced(c)?" is-down":""}">${fmt(c.p)}</div>${priceLine(c)}
       <div class="spec">
         <div><small>Potência</small>${cv?`<b class="mono">${cv}</b>`:na}</div>
         <div><small>Motor</small>${mo?`<b>${esc(mo)}</b>`:na}</div>
@@ -1338,8 +1366,36 @@ const GROUPS=[
 ];
 const F={};GROUPS.forEach(g=>F[g.key]=new Set());
 const vals=(g,c)=>(g.multi?g.multi(c):[g.val(c)]).filter(v=>v!=null);
-const matches=(c,skip)=>GROUPS.every(g=>g.key===skip||!F[g.key].size||vals(g,c).some(v=>F[g.key].has(v)));
-const activeCount=()=>GROUPS.reduce((n,g)=>n+F[g.key].size,0);
+let DEAL=false,PRICE_CHANGES=[];
+const isReduced=c=>!!(c.pc&&c.pc.new_price<c.pc.old_price);
+const todayBR=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo"}).format(new Date());
+/* preço em vigor: a mudança mais recente que já começou e ainda não acabou; oferta vencida volta ao valor antigo */
+function applyPrices(){const today=todayBR(),byVersion=new Map();
+  [...PRICE_CHANGES].sort((a,b)=>String(b.reported_on||"").localeCompare(String(a.reported_on||""))||b.id-a.id).forEach(x=>{if(!byVersion.has(x.version_id))byVersion.set(x.version_id,[]);byVersion.get(x.version_id).push(x)});
+  CARS.forEach(c=>{if(!("p0" in c))c.p0=c.p;const list=byVersion.get(c.id)||[];
+    const active=list.find(x=>(!x.starts_on||x.starts_on<=today)&&(!x.ends_on||x.ends_on>=today)),ended=!active&&list.find(x=>x.ends_on&&x.ends_on<today&&x.new_price===c.p0);
+    c.pc=active||null;c.p=active?active.new_price:ended?ended.old_price:c.p0})}
+const PC_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v5M12 7.5v.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+const shortDate=d=>{const m=/^\d{4}-(\d{2})-(\d{2})/.exec(d||"");return m?`${m[2]}/${m[1]}`:""};
+function priceLine(c){const x=c.pc;if(!x)return"";const promo=x.change_type==="promocional",note=promo?(x.ends_on?` · até ${shortDate(x.ends_on)}`:" · oferta"):"";
+  return `<button type="button" class="pc-line${x.new_price>x.old_price?" up":""}" data-pc="${esc(c.id)}" aria-label="Antes ${fmt(x.old_price)}. Ver por que o preço mudou e a fonte" title="Ver por que o preço mudou e a fonte">${promo?"":"antes "}<s>${fmt(x.old_price)}</s>${note}${PC_ICON}</button>`}
+function openPrice(id){const c=CARS.find(v=>v.id===id),x=c&&c.pc;if(!x)return;closeTip&&closeTip();lastFocus=document.activeElement;
+  const down=x.new_price<x.old_price,diff=Math.abs(x.new_price-x.old_price),pct=Math.round(diff/x.old_price*100),promo=x.change_type==="promocional";
+  const validity=promo?(x.ends_on?`Oferta válida até ${esc(fdate(x.ends_on))}.`:"Oferta sem data de término informada."):"Novo preço de tabela, sem data para acabar.";
+  const body=document.getElementById("pcBody");document.getElementById("pcSub").textContent=`${c.mk} ${c.nm} ${c.ver}`;
+  body.innerHTML=`<div class="pc-box${down?" down":""}"><div><small>Antes</small><s>${fmt(x.old_price)}</s></div><span aria-hidden="true">→</span><div><small>Agora</small><b>${fmt(x.new_price)}</b></div></div>
+    <p class="pc-diff${down?"":" up"}">${down?"Redução":"Aumento"} de ${fmt(diff)} (${pct}%)</p>
+    <section class="dr-group"><h3>Validade</h3><p class="pc-text">${validity}</p></section>
+    <section class="dr-group"><h3>Por que mudou</h3><p class="pc-text">${esc(x.reason)}</p></section>
+    <a class="pc-source" href="${esc(x.source_url)}" target="_blank" rel="noopener">Ver na fonte: ${esc(x.source_name||"notícia")} ↗</a>
+    <p class="nf-note">${x.reported_on?`Informado em ${esc(fdate(x.reported_on))}. `:""}Condições podem variar por região e estoque; confirme com a concessionária.</p>`;
+  document.getElementById("pcPanel").hidden=false;scrim.hidden=false;body.scrollTop=0;document.getElementById("pcClose").focus()}
+function closePrice(){document.getElementById("pcPanel").hidden=true;if(sheet.hidden)scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-pc]");if(b)openPrice(b.dataset.pc)});
+document.getElementById("pcClose").onclick=closePrice;
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("pcPanel").hidden){e.stopImmediatePropagation();closePrice()}},true);
+const matches=(c,skip)=>(!DEAL||isReduced(c))&&GROUPS.every(g=>g.key===skip||!F[g.key].size||vals(g,c).some(v=>F[g.key].has(v)));
+const activeCount=()=>GROUPS.reduce((n,g)=>n+F[g.key].size,DEAL?1:0);
 const TAGICON=Object.fromEntries(Object.entries(TAGS).map(([k,v])=>[v,k]));
 const drawer=document.getElementById("drawer"),scrim=document.getElementById("scrim"),drBody=document.getElementById("drBody");
 let DRCAT="mk",BRANDCO={};
@@ -1378,7 +1434,8 @@ function renderDrawer(){
   document.getElementById("drGo").textContent=`Ver ${n} ${n===1?"versão":"versões"}`;
 }
 function renderPills(){
-  document.getElementById("quick").innerHTML=GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
+  const reduced=CARS.filter(isReduced).length;
+  document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
   const fc=document.getElementById("fcount"),n=activeCount();fc.hidden=!n;fc.textContent=n;
@@ -1388,14 +1445,20 @@ let lastFocus=null;
 function openDrawer(){lastFocus=document.activeElement;DRCAT="mk";renderDrawer();drawer.hidden=false;scrim.hidden=false;document.getElementById("drClose").focus()}
 function closeDrawer(){drawer.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("fbtn").onclick=openDrawer;
-document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
+document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!document.getElementById("pcPanel").hidden)return closePrice();if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
 document.getElementById("drGo").onclick=closeDrawer;
-document.getElementById("drClear").onclick=()=>{GROUPS.forEach(g=>F[g.key].clear());filtersChanged()};
+document.getElementById("drClear").onclick=()=>{DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged()};
 addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)return closeImg();if(!sheet.hidden)closeSheet();else if(!drawer.hidden)closeDrawer()});
 drBody.addEventListener("click",e=>{const ob=e.target.closest(".og-btn");if(ob&&!ob.disabled){const o=ob.dataset.origin,ks=[...new Set(CARS.map(c=>c.mk))].filter(k=>(BRANDCO[k]||"Outras origens")===o);
     const on=ob.getAttribute("aria-pressed")==="true";ks.forEach(k=>on?F.mk.delete(k):F.mk.add(k));filtersChanged();const f=[...drBody.querySelectorAll(".og-btn")].find(x=>x.dataset.origin===o);f&&f.focus();return}
   const tb=e.target.closest(".dr-tab");if(tb){DRCAT=tb.dataset.cat;renderDrawer();const f=drBody.querySelector(`.dr-tab[data-cat="${DRCAT}"]`);f&&f.focus();return}const o=e.target.closest(".opt");if(!o||o.disabled)return;const set=F[o.dataset.g],v=o.dataset.v;set.has(v)?set.delete(v):set.add(v);filtersChanged();const fo=[...drBody.querySelectorAll(".opt2")].find(x=>x.dataset.v===v);fo&&fo.focus()});
-document.getElementById("quick").addEventListener("click",e=>{const q=e.target.closest("[data-q]");if(!q)return;const v=q.dataset.q;F.t.has(v)?F.t.delete(v):F.t.add(v);filtersChanged()});
+document.getElementById("quick").addEventListener("click",e=>{
+  if(e.target.closest("[data-deal]")){DEAL=!DEAL;filtersChanged();
+    /* com o filtro ligado, leva a roleta até o carro com preço reduzido mais próximo */
+    if(DEAL&&!listAt(dial.sel).length){const [lo,hi]=band(),mid=(lo+hi)/2,near=CARS.filter(c=>c.p&&matches(c)).sort((a,b)=>Math.abs(K(a)-mid)-Math.abs(K(b)-mid))[0];
+      if(near)dial.goTo(clamp(VALUES.findIndex(v=>v>=K(near))))}
+    return}
+  const q=e.target.closest("[data-q]");if(!q)return;const v=q.dataset.q;F.t.has(v)?F.t.delete(v):F.t.add(v);filtersChanged()});
 document.getElementById("pills").addEventListener("click",e=>{const p=e.target.closest(".pill");if(!p)return;F[p.dataset.g].delete(p.dataset.v);filtersChanged()});
 
 /* ---------- shared data ---------- */
@@ -1447,7 +1510,7 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
 function pickResult(i){const g=qRes[i];if(!g)return;closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}`;qIn.blur();goToCar(g.pick)}
 function goToCar(c){
-  if(!matches(c)){GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
+  if(!matches(c)){DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
   const idx=clamp(VALUES.findIndex(x=>x>=K(c)));dial.goTo(idx);
   const t0=performance.now();
   (function wait(){
@@ -1495,7 +1558,7 @@ function setCatalog(snap){
     if(!r||typeof r.i!=="string"||r.st&&r.st!=="on_sale")return;
     rows.push({id:r.i,mid:r.m,pr:r.pr||null,mk:String(x.brand||""),nm:String(r.mn||""),ver:String(r.v||""),ano:r.y||null,p:typeof r.p==="number"?r.p:null,
       t:BODYKEY[r.b]||null,body:r.b||null,...(({k,why})=>({k,why}))(deriveTags(r)),fu:r.f||null,cb:r.t||null,mo:r.e||"",kind:r.pk==="fipe"?"FIPE":"Tabela",cv:r.cv||null})})});
-  CARS=rows;loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();
+  CARS=rows;applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();
 }
 document.querySelector(".mode.sort").addEventListener("click",e=>{const b=e.target.closest("[data-sort]");if(!b||b.dataset.sort===SORT)return;SORT=b.dataset.sort;
   document.querySelectorAll("[data-sort]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.sort===SORT));swap()});
@@ -1529,8 +1592,8 @@ async function openInfo(id){
   const ph=photos[c.mid||c.id],hero=ph?`<figure class="sh-hero"><img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
   const base=(v,src)=>`${hero}
     <section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
-      <div class="sh-price">${c.p?fmt(c.p):NA}</div>
-      <div class="sh-meta">${c.kind==="FIPE"?"Valor FIPE 0 km":"Preço de tabela sugerido"}${v&&v.price&&v.price.ref_month?` · ref. ${esc(v.price.ref_month)}`:""}${src&&src.url?` · <a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.name||"fonte")} ↗</a>`:""}</div></section>
+      <div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
+      <div class="sh-meta">${c.pc?(c.pc.change_type==="promocional"?"Preço de oferta":"Novo preço de tabela"):c.kind==="FIPE"?"Valor FIPE 0 km":"Preço de tabela sugerido"}${v&&v.price&&v.price.ref_month?` · ref. ${esc(v.price.ref_month)}`:""}${src&&src.url?` · <a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.name||"fonte")} ↗</a>`:""}</div></section>
     ${(()=>{const u=siteOf(c.mk);return u?`<a class="sh-site" href="${esc(u)}" target="_blank" rel="noopener"><span><small>Site oficial da ${esc(c.mk)} no Brasil</small><b>${esc(siteHost(u))}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`:""})()}
     <section class="dr-group"><h3>Características</h3>
       <div class="feat">${[["Tipo",c.body],["Combustível",c.fu],["Câmbio",c.cb],["Tração",v&&v.powertrain&&v.powertrain.drive==="Integral"?"Integral (4x4 / AWD)":null],["Potência",c.cv?Math.round(c.cv)+" cv":null],["Ano-modelo",c.ano]].map(([k,x])=>`<div class="ft"><small>${k}</small>${x?`<b>${esc(x)}</b>`:NA}</div>`).join("")}</div>
@@ -1748,6 +1811,13 @@ function rdModel(i){const a=i.add&&typeof i.add==="object"?i.add:null;
   if(!c&&!mid)c=CARS.find(x=>rdNorm(x.mk)===rdNorm(i.brand)&&rdNorm(x.nm)===rdNorm(i.model));
   const id=mid||(c&&c.mid);if(!id)return null;
   return {id,mk:(c&&c.mk)||(a&&a.brand_name)||i.brand||"",nm:(c&&c.nm)||(a&&a.model&&a.model.name)||i.model||"",body:(c&&c.body)||(a&&a.model&&a.model.body)||"",ano:(a&&Array.isArray(a.versions)&&(a.versions.find(v=>v&&v.model_year)||{}).model_year)||(c&&c.ano)||null}}
+function priceChangeOf(item,version,before){const np=version.price||{},next=np.value,op=before||{};
+  if(typeof next!=="number"||!/^https?:\/\//.test(item.url||""))return null;
+  const note=typeof np.promo==="string"?np.promo:"",previous=/antes R\$ ?([\d.]+)/i.exec(note),cut=/redução de R\$ ?(\d+) mil/i.exec(note);
+  const old=previous?+previous[1].replace(/\D/g,""):cut?next+ +cut[1]*1000:op.kind===np.kind&&typeof op.value==="number"?op.value:null;
+  if(!old||old===next)return null;
+  const end=/até (\d{2})\/(\d{2})\/(\d{4})/.exec(note);
+  return {version_id:version.id,old_price:old,new_price:next,change_type:note?"promocional":"definitivo",ends_on:end?`${end[3]}-${end[2]}-${end[1]}`:null,reason:item.summary||item.title,source_name:item.source||null,source_url:item.url,reported_on:item.date||null,radar_item_id:item.id}}
 function rdAddList(i){const a=i.add;if(!a||!Array.isArray(a.versions))return null;
   return {vs:a.versions.filter(v=>v&&RD_ID.test(v.id||"")),rm:[]}} /* nada sai do site: versões antigas ficam e só vão ficando para trás */
 const IC_IMG='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="1.6" fill="currentColor"/><path d="M4 17l5-5 4 4 3-3 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>',
@@ -1774,8 +1844,9 @@ async function rdApply(i){if(rdBusy||!db)return;const L=rdAddList(i),a=i.add;if(
   try{const mref=db.collection("models").doc(mid),ms=await mref.get(),mold=ms.exists?ms.data():null;
     const bref=db.collection("brands").doc(bid),bs=await bref.get(),bold=bs.exists?bs.data():null;
     const brandName=(bold&&bold.name)||a.brand_name||i.brand,modelName=(a.model&&a.model.name)||(mold&&mold.name)||i.model,body=(a.model&&a.model.body)||(mold&&mold.body)||null;
-    const docs=[],created=new Set(),log=[];
+    const docs=[],created=new Set(),log=[],priceChanges=[];
     for(const v of L.vs){const r=db.collection("versions").doc(v.id),s0=await r.get();let d;
+      priceChanges.push(priceChangeOf(i,v,s0.exists?s0.data().price:null));
       if(s0.exists){const old=s0.data(),op=old.price||{},np=v.price||{};d=deepMerge(old,v);
         const ch=[];if(typeof np.value==="number"&&np.value!==op.value)ch.push(`preço ${typeof op.value==="number"?fmt(op.value):"sem preço"} → ${fmt(np.value)}`);if(v.status&&v.status!==old.status)ch.push(`situação ${STLBL2[old.status]||old.status||"—"} → ${STLBL2[v.status]||v.status}`);
         log.push(`${old.version||v.id}: ${ch.length?ch.join("; "):"dados atualizados"}`);
@@ -1790,6 +1861,7 @@ async function rdApply(i){if(rdBusy||!db)return;const L=rdAddList(i),a=i.add;if(
     await mref.set({...(mold||{}),id:mid,brand_id:bid,name:modelName,body,status:"on_sale",versions:mine.map(r=>r.i).sort(),price_min:ps.length?Math.min(...ps):null,price_max:ps.length?Math.max(...ps):null,updated_at:today});
     const mids=[...new Set(all.map(r=>r.m))];
     await bref.set({...(bold||{name:brandName,group:a.brand_group||null,country:a.brand_country||null}),id:bid,status:"on_sale",models:mids,versions_count:all.length,updated_at:today});
+    for(const x of priceChanges.filter(Boolean))await db.collection("price_changes").doc(x.version_id).set(x);
     await db.collection("radar").doc(i.id).update({status:"feito",applied_at:new Date().toISOString(),applied_log:log,applied_brand:brandName,applied_model:modelName});
     db.collection("change_log").doc(`${Date.now()}-radar`).set({at:new Date().toISOString(),by:"radar",item:i.id,model:mid,set:docs.map(d=>d.id),removed:L.rm}).catch(()=>{});
     rdOpenPrev=null;rdAfter();toast(`${brandName} ${modelName} ${i.in_db==="nao"?"adicionado":"atualizado"} no site ✓`)}
@@ -2008,6 +2080,7 @@ document.getElementById("ipClose").onclick=closeImg;
     const timer=setTimeout(()=>{if(!live)status("Sem conexão com as curtidas",false)},10000);
     const ct=setTimeout(()=>{if(!loaded){loadErr="Não deu para conectar ao banco. Verifique a internet; a página tenta de novo sozinha.";swap()}},10000);
     db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;setCatalog(snap)},()=>{clearTimeout(ct);loadErr="A biblioteca não pôde ser carregada agora.";swap()});
+    db.collection("price_changes").onSnapshot(snap=>{PRICE_CHANGES=snap.docs.map(d=>d.data());if(loaded){applyPrices();filtersChanged()}},()=>{});
     db.collection("news").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data();if(d&&Array.isArray(d.items)&&d.items.length)p[x.id]=d});NEWS=p;
       document.querySelectorAll(".nw[data-news]").forEach(b=>{const d=NEWS[b.dataset.news];b.classList.toggle("has",!!d);const t=b.querySelector("span");if(t)t.textContent=d?d.items.length:""});if(newsFor&&!newsPanel.hidden)renderNews(newsFor);},()=>{});
     db.collection("comments").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data()||{};if(Array.isArray(d.items))p[x.id]=d.items.filter(i=>i&&typeof i.text==="string"&&typeof i.mid==="string").map(i=>({...i,text:i.text.slice(0,CM_MAX)}))});COMM=p;paintMore();if(cmFor&&!cmPanel.hidden)renderCM(cmFor,true)},()=>{});

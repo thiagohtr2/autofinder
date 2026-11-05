@@ -21,6 +21,14 @@ O botão **Cadastrar** cria a conta e envia um link de confirmação por e-mail.
 
 Não desligue **Confirm email**: sem a confirmação, qualquer pessoa poderia se cadastrar com o e-mail do administrador e receber esse acesso na hora.
 
+## Mudanças de preço
+
+A tabela `price_changes` guarda cada mudança noticiada: valor antigo, valor novo, tipo (`definitivo` ou `promocional`), validade, motivo e fonte. O site mostra a mudança mais recente em vigor. Quando uma oferta vence, o card sai sozinho do filtro de preços reduzidos.
+
+Registre só casos com fonte, válidos para o consumidor comum e ligados a uma versão específica. Ofertas só para PCD, CNPJ ou taxistas, com usado na troca ou anúncios de concessionárias ficam de fora. A carga inicial está em `seeds/20261105_price_changes.sql`.
+
+Ao aplicar um item do radar, o site registra a mudança sozinho quando há valor antigo: o preço anterior do mesmo tipo, ou o que vem em `price.promo` como "antes R$ 218.800" ou "redução de R$ 19 mil". Uma data no formato "até 30/11/2026" em `price.promo` vira a validade.
+
 ## Imagens
 
 Os originais ficam nos buckets `car-photos` e `brand-logos`. No ar, o site os pede pelo CDN de imagens do Netlify, em tamanho reduzido (`[images]` em `netlify.toml`). Fora do Netlify, o endereço `/.netlify/images` não existe; por isso, em `localhost` o site usa os arquivos originais.
