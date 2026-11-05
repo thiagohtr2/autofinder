@@ -442,6 +442,7 @@ button,input{font:inherit;color:inherit}
 .ip-row{display:flex;justify-content:space-between;gap:10px;font-size:12px;border-bottom:1px solid var(--line);padding:6px 0}
 .ip-row span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ip-row b{font-weight:600;white-space:nowrap}
+#ipQueue .ip-row span{flex:0 1 40%}#ipQueue .ip-row b{white-space:normal;text-align:right;min-width:0}
 .sh-hero{position:relative;margin:0;background:radial-gradient(ellipse at 50% 85%,var(--panel),var(--bg) 70%);border:1px solid var(--line);border-radius:16px;padding:14px 10px 22px;aspect-ratio:16/9;max-width:100%;display:flex;align-items:center;justify-content:center}
 .sh-hero img{width:100%;height:100%;object-fit:contain;animation:heroin .5s var(--ease)}
 @keyframes heroin{from{opacity:0;transform:translateX(-16px) scale(.97)}}
@@ -982,9 +983,27 @@ const ico=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg>`;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt=n=>"R$ "+n.toLocaleString("pt-BR");
 
+/* ---------- fotos por carro: carro = modelo num ano-modelo (ex.: jeep-compass_2028), para a foto de um ano nunca cair em outro ano ---------- */
+const carKey=(mid,ano)=>ano?`${mid}_${ano}`:mid;
+let pyOf=null,pyIdx=new Map();
+function photoYears(){if(pyOf!==photos){pyOf=photos;pyIdx=new Map();for(const k in photos){const m=/^(.+)_((?:19|20)\d{2})$/.exec(k);if(m)(pyIdx.get(m[1])||pyIdx.set(m[1],[]).get(m[1])).push(+m[2])}}return pyIdx}
+/* a foto do próprio ano; sem ela, a do ano mais próximo; por último, a antiga, guardada só pelo modelo */
+function photoOf(mid,ano){let k=carKey(mid,ano);if(photos[k])return {key:k,asset:photos[k]};
+  const ys=photoYears().get(mid);
+  if(ys){const y=ys.reduce((b,y)=>{const d=ano?Math.abs(y-ano)-Math.abs(b-ano):b-y;return d<0||d===0&&y>b?y:b});k=`${mid}_${y}`;return {key:k,asset:photos[k]}}
+  return photos[mid]?{key:mid,asset:photos[mid]}:null}
+const newestYear=mid=>ALLCARS.reduce((y,c)=>c.mid===mid&&c.ano>(y||0)?c.ano:y,null);
+/* a foto que é deste carro (e não de outro ano). A antiga, guardada só pelo modelo, foi feita para o ano mais novo dele */
+const ownPhotoKey=(mid,ano)=>photos[carKey(mid,ano)]?carKey(mid,ano):ano&&photos[mid]&&newestYear(mid)===ano?mid:null;
+const hasAnyPhoto=mid=>!!photos[mid]||photoYears().has(mid);
+/* código de cada carro, pedido no nome do arquivo da imagem: sempre o mesmo para o mesmo modelo e ano */
+const CODE_ABC="0123456789ABCDEFGHJKMNPQRSTVWXYZ",CODE_RX=/(?:^|[^0-9a-z])(ga[0-9a-hjkmnp-tv-z]{6})(?![0-9a-z])/gi;
+function carCode(key){let h=0x811c9dc5;for(const ch of key){h^=ch.codePointAt(0);h=Math.imul(h,0x01000193)>>>0}let s="GA";for(let i=0;i<6;i++){s+=CODE_ABC[h&31];h>>>=5}return s}
+/* apaga o arquivo antigo só se nenhum outro carro ainda usa a mesma imagem */
+const dropAsset=(old,keep)=>{if(old&&assets&&!Object.entries(photos).some(([k,a])=>k!==keep&&a===old))assets.delete(old).catch(()=>{})};
 /* ---------- image slot: uploaded photo, otherwise the model name ---------- */
-function carImg(c){const k=c.mid||c.id,ph=photos[k];
-  return ph?`<img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}" draggable="false" loading="lazy" decoding="async">${photoAI[k]?'<span class="aitag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}`
+function carImg(c){const p=photoOf(c.mid||c.id,c.ano),ph=p&&p.asset;
+  return ph?`<img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}" draggable="false" loading="lazy" decoding="async">${photoAI[p.key]?'<span class="aitag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}`
            :`<div class="ph" aria-hidden="true"><span class="ph-nm">${esc(c.nm)}</span></div>`}
 /* ---------- state ---------- */
 /* roleta em mil reais, com passo que cresce com o preço: 5 mil até 500 mil, 10 mil até 1 mi, 50 mil até 3 mi, 250 mil acima */
@@ -1207,14 +1226,14 @@ function SORTFN(a,b,sa,sb){
 const GEAR={"Automático (elétrico/DHT)":"DHT","Dupla embreagem":"DCT","Automático":"Aut.","Manual":"Manual","CVT":"CVT"};
 const motorOf=c=>c.pr==="híbrido leve"?"Híb. leve":c.fu==="Híbrido plug-in"?"Plug-in":(c.fu||null);
 function cardHTML(c,i,anim){
-  const n=counts[c.id]||0,on=mine.has(c.id),mid=c.mid||c.id,ph=photos[mid],bs=brandSlug(c.mk),lg=logos[bs];
+  const n=counts[c.id]||0,on=mine.has(c.id),mid=c.mid||c.id,ph=(photoOf(mid,c.ano)||{}).asset,own=ownPhotoKey(mid,c.ano),bs=brandSlug(c.mk),lg=logos[bs];
   const img=carImg(c),sc=scoreOf(c),cv=c.cv?Math.round(c.cv)+" cv":null,mo=motorOf(c),gr=c.cb?(GEAR[c.cb]||c.cb):null;
   const na='<b class="na">—</b>';
   return `<article class="card${i===0&&sc>0?" first":""}${c.pc?" has-pc":""}" data-id="${c.id}">
     <div class="c-up">
       <div class="c-top c-brandtop"><span class="cb-mk" title="${esc(c.mk)}"><span class="cb-badge${lg?"":" ini"}">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(c.mk.slice(0,2).toUpperCase())}</span><span class="cb-name">${esc(c.mk)}</span></span><span class="rank">${String(i+1).padStart(2,"0")}</span></div>
       <div class="stage">${img}<i class="floor"></i>${ph?'<span class="ctag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}
-        <div class="edit"><label>Enviar PNG<input type="file" accept="image/png,image/webp,image/jpeg" data-up="${mid}"></label><label class="lg">Logo ${esc(c.mk)}<input type="file" accept="image/png,image/webp,image/svg+xml" data-logo="${bs}"></label>${ph?`<button type="button" data-rm="${mid}">Remover foto</button>`:""}</div>
+        <div class="edit"><label>Enviar PNG<input type="file" accept="image/png,image/webp,image/jpeg" data-up="${carKey(mid,c.ano)}"></label><label class="lg">Logo ${esc(c.mk)}<input type="file" accept="image/png,image/webp,image/svg+xml" data-logo="${bs}"></label>${own?`<button type="button" data-rm="${own}">Remover foto</button>`:""}</div>
       </div>
       <h2 class="nm" title="${esc(c.nm)} ${esc(c.ver)}">${esc(c.nm)}</h2>
       <span class="vr-row"><span class="vr" title="${esc(c.ver)}${c.mo?` · ${esc(c.mo)}`:""}">${esc(c.ver)}${c.ano?` · ${c.ano}`:""}</span>${c._more?`<button type="button" class="more" data-info="${c.id}" title="Mais ${c._more} ${c._more>1?"versões":"versão"} deste modelo na faixa">+${c._more}</button>`:""}</span>
@@ -1522,7 +1541,7 @@ function hl(text,q){let out=esc(text);norm(q).split(/\s+/).filter(Boolean).forEa
 function renderSearch(){
   const q=qIn.value.trim();if(!q){qList.hidden=true;qIn.setAttribute("aria-expanded","false");return}
   qRes=searchCars(q);qSel=qRes.length?0:-1;
-  qList.innerHTML=qRes.length?qRes.map((g,i)=>{const ph=photos[g.mid],lg=logos[brandSlug(g.mk)],c=g.pick;
+  qList.innerHTML=qRes.length?qRes.map((g,i)=>{const c=g.pick,ph=(photoOf(g.mid,c&&c.ano)||{}).asset,lg=logos[brandSlug(g.mk)];
     return `<li class="q-item" role="option" id="qo${i}" data-i="${i}" aria-selected="${i===qSel}">
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
       <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
@@ -1579,13 +1598,13 @@ async function upload(id,file,col="photos"){
   toast("Enviando foto…");
   try{const old=(col==="logos"?logos:photos)[id];const r=await assets.upload(file);
     await db.collection(col).doc(id).set({asset:r.id,at:Date.now()});
-    if(old)assets.delete(old).catch(()=>{});
+    if(col==="logos"){if(old)assets.delete(old).catch(()=>{})}else dropAsset(old,id);
     toast(col==="logos"?"Logo salvo em todos os carros da marca.":"Foto salva. Todos já veem a nova imagem.");}
   catch(e){toast("Não deu para enviar a foto"+(e&&e.code?` (${e.code})`:"")+".")}
 }
 async function removePhoto(id){
   const old=photos[id];if(!old||!db)return;
-  try{await db.collection("photos").doc(id).delete();if(assets)assets.delete(old).catch(()=>{});toast("Foto removida.")}
+  try{await db.collection("photos").doc(id).delete();dropAsset(old,id);toast("Foto removida.")}
   catch(e){toast("Não deu para remover a foto.")}
 }
 
@@ -1633,7 +1652,7 @@ async function openInfo(id){
   {const lg=logos[brandSlug(c.mk)],el=document.getElementById("shLogo");el.hidden=false;el.classList.toggle("ini",!lg);
    el.innerHTML=lg?`<img src="${blobUrl(lg)}" alt="${esc(c.mk)}">`:esc(c.mk.slice(0,2).toUpperCase());el.title=c.mk;}
   const sib=ALLCARS.filter(x=>x.mid===c.mid).sort((a,b)=>(a.p||0)-(b.p||0));
-  const ph=photos[c.mid||c.id],hero=ph?`<figure class="sh-hero"><img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
+  const ph=(photoOf(c.mid||c.id,c.ano)||{}).asset,hero=ph?`<figure class="sh-hero"><img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
   const full=`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`,gimg="https://www.google.com/search?tbm=isch&q="+encodeURIComponent(full);
   const base=(v,src)=>`<section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
       <div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
@@ -1791,10 +1810,10 @@ function renderDB(){
   const sel=document.getElementById("dbOrigin"),origins=[...new Set(brands.map(b=>BRANDCO[b]||"Sem origem"))].sort();
   if(sel.options.length-1!==origins.length){const cur=sel.value;sel.innerHTML='<option value="">Todas as origens</option>'+origins.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join("");sel.value=cur}
   const mids=new Set(rows.map(r=>r.m));
-  const noPrice=rows.filter(r=>typeof r.p!=="number").length,noPhoto=[...mids].filter(m=>!photos[m]).length,noLogo=brands.filter(b=>!logos[brandSlug(b)]).length;
+  const noPrice=rows.filter(r=>typeof r.p!=="number").length,noPhoto=[...mids].filter(m=>!hasAnyPhoto(m)).length,noLogo=brands.filter(b=>!logos[brandSlug(b)]).length;
   document.getElementById("dbStats").innerHTML=[["Marcas",brands.length],["Modelos",mids.size],["Versões",rows.length],["À venda",rows.filter(r=>!r.st||r.st==="on_sale").length],["Sem preço",noPrice,noPrice?"warn":""],["Modelos sem foto",noPhoto,noPhoto?"warn":""],["Marcas sem logo",noLogo,noLogo?"warn":""],["Com notícias",Object.keys(NEWS).length]].map(([l,n,c])=>`<div class="dbs ${c||""}"><b>${n}</b><small>${l}</small></div>`).join("")+'<div class="dbs warn" id="dbsOff" hidden><b></b><small>Modelos fora do site</small></div>';
   const match=r=>{if(stf&&(r.st||"on_sale")!==stf)return false;if(og&&(BRANDCO[r.mk]||"Sem origem")!==og)return false;
-    if(pend&&!(typeof r.p!=="number"||!photos[r.m]))return false;if(q&&!norm(`${r.mk} ${r.mn} ${r.v}`).includes(q))return false;return true};
+    if(pend&&!(typeof r.p!=="number"||!photoOf(r.m,r.y)))return false;if(q&&!norm(`${r.mk} ${r.mn} ${r.v}`).includes(q))return false;return true};
   const f=rows.filter(match);
   const pendI=rdPendingAdds().filter(i=>!q||norm(`${i.brand} ${i.model}`).includes(q)),openB=new Map();rdOpen().forEach(i=>{const k=rdBrandKey(i);if(k)openB.set(k,(openB.get(k)||0)+1)});
   const pendBy=new Map();pendI.forEach(i=>{const bn=(i.add&&i.add.brand_name)||i.brand||"";const key=[...new Set(rows.map(r=>r.mk))].find(x=>norm(x)===norm(bn))||bn;(pendBy.get(key)||pendBy.set(key,[]).get(key)).push(i)});
@@ -1810,7 +1829,7 @@ function renderDB(){
     const bid=bidOf.get(b);
     return `<details class="dbb"${bid?` data-bid="${esc(bid)}"`:""}${open||(hasNew(b)?" open":"")}><summary>${bid?`<label class="db-show" title="Mostrar a ${esc(b)} no site"><input type="checkbox" data-show-b="${esc(bid)}" aria-label="Mostrar a ${esc(b)} no site"></label>`:""}<span class="dbb-badge">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(b.slice(0,2).toUpperCase())}</span><span><span class="dbb-nm">${esc(b)}</span><br><span class="dbb-co">${esc(BRANDCO[b]||"Origem não informada")}</span></span>
       <span class="dbb-meta"><span class="tagx off-tag" hidden></span>${al?`<span class="tagx alert">${al} ${al>1?"novidades":"novidade"}</span>`:""}${rc?`<span class="tagx new">${rc} ${rc>1?"novidades adicionadas":"novidade adicionada"}</span>`:""}${newBrand?'<span class="tagx new">marca nova</span>':""}<span class="tagx">${mm.size} ${mm.size>1?"modelos":"modelo"}</span><span class="tagx">${nv} ${nv>1?"versões":"versão"}</span>${bNoP?`<span class="tagx warn">${bNoP} sem preço</span>`:""}${lg?'<span class="tagx ok">logo ✓</span>':'<span class="tagx warn">sem logo</span>'}</span></summary>
-      ${pb.map(nvPendBlock).join("")}${[...mm.entries()].sort((a,b2)=>a[1][0].mn.localeCompare(b2[1][0].mn,"pt-BR")).map(([m,vs])=>{vs.sort((a,b2)=>(a.p||0)-(b2.p||0));const ph=photos[m],ps=vs.map(r=>r.p).filter(x=>typeof x==="number"),nn=NEWS[m];
+      ${pb.map(nvPendBlock).join("")}${[...mm.entries()].sort((a,b2)=>a[1][0].mn.localeCompare(b2[1][0].mn,"pt-BR")).map(([m,vs])=>{vs.sort((a,b2)=>(a.p||0)-(b2.p||0));const ph=(photoOf(m,Math.max(0,...vs.map(r=>r.y||0)))||{}).asset,ps=vs.map(r=>r.p).filter(x=>typeof x==="number"),nn=NEWS[m];
         const fr=vs.some(isFresh);
         return `<details class="dbm${fr?" pend":""}" data-mid="${esc(m)}"${open||(fr?" open":"")}><summary><label class="db-show" title="Mostrar o ${esc(vs[0].mn)} no site"><input type="checkbox" data-show-m="${esc(m)}" aria-label="Mostrar o ${esc(b)} ${esc(vs[0].mn)} no site"></label><span class="dbm-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:"sem foto"}</span><span><span class="dbm-nm">${vs.some(r=>isRecent(r.nv))?'<span class="tagx new">NOVO</span> ':fr?'<span class="tagx new">NOVO · ATUALIZADO</span> ':""}${esc(vs[0].mn)}</span><br><span class="dbm-sub">${esc(vs[0].b||"—")} · ${vs.length} ${vs.length>1?"versões":"versão"}${ps.length?` · ${fmt(Math.min(...ps))}${ps.length>1&&Math.max(...ps)!==Math.min(...ps)?` a ${fmt(Math.max(...ps))}`:""}`:""}</span></span>
           <span class="dbb-meta"><span class="tagx warn off-tag" hidden>fora do site</span>${ph?'<span class="tagx ok">foto ✓</span>':'<span class="tagx warn">sem foto</span>'}${nn?`<span class="tagx">${nn.items.length} notícias</span>`:""}</span></summary>
@@ -1881,7 +1900,8 @@ function rdModel(i){const a=i.add&&typeof i.add==="object"?i.add:null;
   let c=mid?ALLCARS.find(x=>x.mid===mid):null;
   if(!c&&!mid)c=ALLCARS.find(x=>rdNorm(x.mk)===rdNorm(i.brand)&&rdNorm(x.nm)===rdNorm(i.model));
   const id=mid||(c&&c.mid);if(!id)return null;
-  return {id,mk:(c&&c.mk)||(a&&a.brand_name)||i.brand||"",nm:(c&&c.nm)||(a&&a.model&&a.model.name)||i.model||"",body:(c&&c.body)||(a&&a.model&&a.model.body)||"",ano:(a&&Array.isArray(a.versions)&&(a.versions.find(v=>v&&v.model_year)||{}).model_year)||(c&&c.ano)||null}}
+  const ano=(a&&Array.isArray(a.versions)&&(a.versions.find(v=>v&&v.model_year)||{}).model_year)||(c&&c.ano)||null,key=carKey(id,ano);
+  return {id:key,mid:id,code:carCode(key),mk:(c&&c.mk)||(a&&a.brand_name)||i.brand||"",nm:(c&&c.nm)||(a&&a.model&&a.model.name)||i.model||"",body:(c&&c.body)||(a&&a.model&&a.model.body)||"",ano}}
 function priceChangeOf(item,version,before){const np=version.price||{},next=np.value,op=before||{};
   if(typeof next!=="number"||!/^https?:\/\//.test(item.url||""))return null;
   const note=typeof np.promo==="string"?np.promo:"",previous=/antes R\$ ?([\d.]+)/i.exec(note),cut=/redução de R\$ ?(\d+) mil/i.exec(note);
@@ -1895,10 +1915,10 @@ const IC_IMG='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" widt
       IC_UP='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5M5 20h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>',
       IC_ADD='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg>';
 function rdQuick(i){const m=rdModel(i),L=rdAddList(i);if(!m&&!L)return "";
-  const applied=!!i.applied_at,newCar=i.in_db==="nao",has=m&&photos[m.id];
+  const applied=!!i.applied_at,newCar=i.in_db==="nao",has=m&&ownPhotoKey(m.mid,m.ano);
   let h=`<div class="rd-quick">`;
   if(m)h+=`<button type="button" data-rq="img" data-id="${esc(i.id)}">${IC_IMG}Copiar prompt da imagem</button>
-    <label${has?' title="Este modelo já tem imagem; enviar outra substitui a atual"':""}>${IC_UP}${has?"Trocar imagem":"Enviar imagem"}<input type="file" accept="image/png,image/webp,image/jpeg" data-rq="up" data-id="${esc(i.id)}"></label>`;
+    <label title="${has?"Este carro (modelo e ano) já tem imagem; enviar outra substitui a atual":"A imagem fica só neste carro (modelo e ano)"}">${IC_UP}${has?"Trocar imagem":"Enviar imagem"}<input type="file" accept="image/png,image/webp,image/jpeg" data-rq="up" data-id="${esc(i.id)}"></label>`;
   if(L&&(L.vs.length||L.rm.length))h+=applied?`<button type="button" class="ok" disabled>✓ Adicionado ao banco</button>`:`<button type="button" class="pri" data-rq="add" data-id="${esc(i.id)}">${IC_ADD}Adicionar ao banco</button>`;
   h+=`</div>`;
   if(L&&!applied&&rdOpenPrev===i.id){const cur=new Map(ALLCARS.map(c=>[c.id,c]));
@@ -1949,7 +1969,7 @@ async function rqChange(e){const f=e.target.closest("input[data-rq=up]");if(!f||
   const i=RADAR.find(x=>x.id===f.dataset.id),m=i&&rdModel(i),file=f.files[0];f.value="";if(!m)return;
   if(file.size>20*1024*1024){toast("Imagem maior que 20 MB.");return}
   toast("Enviando imagem…");
-  try{const old=photos[m.id],r=await assets.upload(file);await db.collection("photos").doc(m.id).set({asset:r.id,at:Date.now(),ai:true});if(old)assets.delete(old).catch(()=>{});toast(`Imagem do ${m.mk} ${m.nm} enviada ✓`)}
+  try{const old=photos[m.id],r=await assets.upload(file);await db.collection("photos").doc(m.id).set({asset:r.id,at:Date.now(),ai:true});dropAsset(old,m.id);toast(`Imagem do ${m.mk} ${m.nm}${m.ano?` ${m.ano}`:""} enviada ✓`)}
   catch(err){toast("Falhou o envio da imagem.")}}
 rdBody.addEventListener("click",rqClick);rdBody.addEventListener("change",rqChange);
 dbBody.addEventListener("click",rqClick);dbBody.addEventListener("change",rqChange);
@@ -2024,12 +2044,18 @@ shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]
 /* ---------- image manager (editors only): prompts for AI images + bulk upload ---------- */
 const imgPanel=document.getElementById("imgPanel"),ipBody=document.getElementById("ipBody");
 const slugify=s=>String(s).normalize("NFKD").replace(/[̀-ͯ]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
-function modelList(){const m=new Map();ALLCARS.forEach(c=>{const x=m.get(c.mid);if(!x)m.set(c.mid,{id:c.mid,mk:c.mk,nm:c.nm,body:c.body,ano:c.ano||null});else if(c.ano>x.ano)x.ano=c.ano});
-  return [...m.values()].sort((a,b)=>(a.mk+a.nm).localeCompare(b.mk+b.nm,"pt-BR"))}
+/* cada carro que precisa de imagem: um modelo num ano-modelo; id = chave da foto (ex.: jeep-compass_2028) */
+function carList(){const m=new Map();ALLCARS.forEach(c=>{const k=carKey(c.mid,c.ano);if(!m.has(k))m.set(k,{id:k,mid:c.mid,code:carCode(k),mk:c.mk,nm:c.nm,body:c.body,ano:c.ano||null})});
+  return [...m.values()].sort((a,b)=>(a.mk+a.nm).localeCompare(b.mk+b.nm,"pt-BR")||(a.ano||0)-(b.ano||0))}
+const carHas=m=>!!ownPhotoKey(m.mid,m.ano);
+const carFile=m=>`${m.code}_${m.mid}${m.ano?`-${m.ano}`:""}.png`;
+/* grupos antigos guardam o id do modelo: ele vale pelo carro do ano mais novo, o mesmo da foto antiga */
+function carsById(cars){const by=new Map(cars.map(c=>[c.id,c]));
+  cars.forEach(c=>{if(!c.ano)return;const cur=by.get(c.mid);if(!cur||cur.ano&&cur.ano<c.ano)by.set(c.mid,c)});return by}
 const BODYPT={"Hatch":"hatch compacto","Sedã":"sedã","SUV":"SUV","Picape":"picape","Esportivo":"esportivo","Minivan":"minivan","Perua":"perua","Van":"van"};
-function promptFor(m){return `Imagem fotorrealista do ${m.mk} ${m.nm}${m.ano?` ${m.ano}`:""} (${BODYPT[m.body]||"carro"}), geração atual vendida no Brasil, na cor de catálogo mais característica do modelo. Vista 3/4 dianteira com o carro virado para a esquerda, carro inteiro centralizado, câmera na altura dos faróis, enquadramento horizontal 16:9 com margem livre de 8% da largura da imagem em todos os lados (o carro não pode encostar nem ser cortado em nenhuma borda). Fundo totalmente transparente (PNG), iluminação de estúdio suave, sombra mínima sob as rodas. Sem texto, sem marca d'água, sem emblemas ou logotipos visíveis, sem placas, sem pessoas. Nome do arquivo: ${m.id}${m.ano?`-${m.ano}`:""}.png`}
-function blockFor(ms){return `Gere ${ms.length} imagens separadas, uma por vez, seguindo exatamente o mesmo padrão visual em todas (mesmo ângulo, escala, luz e fundo transparente). Entregue cada uma como PNG com o nome de arquivo indicado.\n\n`+ms.map((m,i)=>`${i+1}. ${promptFor(m)}`).join("\n\n")}
-function allBlock(ms){return `Vou te passar uma lista com ${ms.length} carros. Gere UMA imagem por resposta, na ordem da lista, seguindo exatamente o mesmo padrão visual em todas (mesmo ângulo, escala, luz e fundo transparente). Entregue cada uma como PNG com o nome de arquivo indicado. Depois de cada imagem, espere eu escrever "próximo" para fazer a seguinte. Se perder a conta, me diga qual foi o último número feito.\n\n`+ms.map((m,i)=>`${i+1}. ${promptFor(m)}`).join("\n\n")}
+function promptFor(m){return `Imagem fotorrealista do ${m.mk} ${m.nm}${m.ano?` ${m.ano}`:""} (${BODYPT[m.body]||"carro"}), geração atual vendida no Brasil, na cor de catálogo mais característica do modelo. Vista 3/4 dianteira com o carro virado para a esquerda, carro inteiro centralizado, câmera na altura dos faróis, enquadramento horizontal 16:9 com margem livre de 8% da largura da imagem em todos os lados (o carro não pode encostar nem ser cortado em nenhuma borda). Fundo totalmente transparente (PNG), iluminação de estúdio suave, sombra mínima sob as rodas. Sem texto, sem marca d'água, sem emblemas ou logotipos visíveis, sem placas, sem pessoas. Código do carro: ${m.code}. Nome do arquivo: ${carFile(m)} (o nome começa com o código ${m.code}, exatamente assim).`}
+function blockFor(ms){return `Gere ${ms.length} imagens separadas, uma por vez, seguindo exatamente o mesmo padrão visual em todas (mesmo ângulo, escala, luz e fundo transparente). Entregue cada uma como PNG com o nome de arquivo indicado. Cada nome de arquivo começa com o código do carro (GA seguido de 6 letras e números): não mude nem tire o código, é por ele que o site sabe de qual carro e de qual ano é a imagem.\n\n`+ms.map((m,i)=>`${i+1}. ${promptFor(m)}`).join("\n\n")}
+function allBlock(ms){return `Vou te passar uma lista com ${ms.length} carros. Gere UMA imagem por resposta, na ordem da lista, seguindo exatamente o mesmo padrão visual em todas (mesmo ângulo, escala, luz e fundo transparente). Entregue cada uma como PNG com o nome de arquivo indicado. Cada nome de arquivo começa com o código do carro (GA seguido de 6 letras e números): não mude nem tire o código, é por ele que o site sabe de qual carro e de qual ano é a imagem. Depois de cada imagem, espere eu escrever "próximo" para fazer a seguinte. Se perder a conta, me diga qual foi o último número feito.\n\n`+ms.map((m,i)=>`${i+1}. ${promptFor(m)}`).join("\n\n")}
 async function copyText(t,btn){try{await navigator.clipboard.writeText(t);const o=btn.innerHTML;btn.textContent="Copiado ✓";setTimeout(()=>btn.innerHTML=o,1600)}
   catch(e){const ta=!imgPanel.hidden&&ipBody.querySelector("#ipFallback");
     if(ta){ta.hidden=false;ta.value=t;ta.focus();ta.select();toast("Selecionei o texto: use Copiar do seu aparelho.");return}
@@ -2055,40 +2081,40 @@ async function loadGroups(){
   if(imgGroups||igLoading||!db)return;igLoading=true;
   try{const d=await db.collection("meta").doc("imggroups").get();imgGroups=(d.exists&&d.data().groups)||[]}catch(e){imgGroups=[]}
   igLoading=false;
-  const ms=modelList(),known=new Set(ms.map(m=>m.id)),inG=new Set(imgGroups.flatMap(g=>g.ids));
-  const fresh=ms.filter(m=>!photos[m.id]&&!inG.has(m.id)).map(m=>m.id);
+  const ms=carList(),byId=carsById(ms),inG=new Set(imgGroups.flatMap(g=>g.ids).map(id=>(byId.get(id)||{}).id).filter(Boolean));
+  const fresh=ms.filter(m=>!carHas(m)&&!inG.has(m.id)).map(m=>m.id);
   if(fresh.length&&ALLCARS.length){let n=imgGroups.reduce((a,g)=>Math.max(a,g.n),0);
     for(let i=0;i<fresh.length;i+=10)imgGroups.push({n:++n,ids:fresh.slice(i,i+10),at:new Date().toISOString().slice(0,10)});
     db.collection("meta").doc("imggroups").set({groups:imgGroups,updated_at:new Date().toISOString()}).catch(()=>{});}
   if(!imgPanel.hidden)renderImgPanel();
 }
 function renderImgPanel(){
-  const ms=modelList(),done=ms.filter(m=>photos[m.id]),miss=ms.filter(m=>!photos[m.id]);
+  const ms=carList(),done=ms.filter(carHas),miss=ms.filter(m=>!carHas(m));
   if(!imgGroups){loadGroups();}
-  const byId=new Map(ms.map(m=>[m.id,m])),G=(imgGroups||[]).map(g=>({...g,cars:g.ids.map(id=>byId.get(id)).filter(Boolean)})).filter(g=>g.cars.length);
-  const inG=new Set(G.flatMap(g=>g.ids)),open=G.filter(g=>g.cars.some(m=>!photos[m.id])),full=G.filter(g=>g.cars.every(m=>photos[m.id]));
-  const before=ms.filter(m=>photos[m.id]&&!inG.has(m.id));
-  const fname=m=>`${m.id}${m.ano?`-${m.ano}`:""}.png`;
-  const groupHTML=g=>{const miss=g.cars.filter(m=>!photos[m.id]),ok=g.cars.length-miss.length;
+  const byId=carsById(ms),G=(imgGroups||[]).map(g=>({...g,cars:[...new Set(g.ids.map(id=>byId.get(id)).filter(Boolean))]})).filter(g=>g.cars.length);
+  const inG=new Set(G.flatMap(g=>g.cars.map(m=>m.id))),open=G.filter(g=>g.cars.some(m=>!carHas(m))),full=G.filter(g=>g.cars.every(carHas));
+  const before=ms.filter(m=>carHas(m)&&!inG.has(m.id));
+  const groupHTML=g=>{const miss=g.cars.filter(m=>!carHas(m)),ok=g.cars.length-miss.length;
     return `<div class="ig${miss.length?"":" full"}"><div class="ig-h"><b>Grupo ${g.n}</b><span>${ok} de ${g.cars.length} com foto</span></div>
-      <ul class="ig-cars">${g.cars.map(m=>`<li class="${photos[m.id]?"ok":""}"><i>${photos[m.id]?"✓":""}</i><span>${esc(m.mk+" "+m.nm)}${m.ano?` ${m.ano}`:""}</span><small>${photos[m.id]?"com foto":esc(fname(m))}</small></li>`).join("")}</ul>
+      <ul class="ig-cars">${g.cars.map(m=>`<li class="${carHas(m)?"ok":""}"><i>${carHas(m)?"✓":""}</i><span>${esc(m.mk+" "+m.nm)}${m.ano?` ${m.ano}`:""}</span><small>${carHas(m)?"com foto":esc(carFile(m))}</small></li>`).join("")}</ul>
       ${miss.length?`<button type="button" class="dr-go ip-copy" data-g="${g.n}">Copiar comandos (${miss.length} ${miss.length>1?"carros":"carro"})</button>
       <details><summary>Ver comandos</summary><pre>${esc(blockFor(miss))}</pre></details>`:""}</div>`};
   const brs=[...new Set(ALLCARS.map(c=>c.mk))].sort((a,b)=>a.localeCompare(b,"pt-BR")).map(mk=>({mk,slug:brandSlug(mk)}));
   const brMiss=brs.filter(b=>!logos[b.slug]);
   ipBody.innerHTML=`
-   <section class="dr-group"><h3>Progresso</h3><div class="sh-price" style="font-size:22px">${done.length} de ${ms.length} modelos com imagem</div>
+   <section class="dr-group"><h3>Progresso</h3><div class="sh-price" style="font-size:22px">${done.length} de ${ms.length} carros com imagem</div>
+     <p class="sh-meta">Cada carro é um modelo num ano-modelo: quando chegar a linha nova de um modelo, ela entra aqui e ganha a sua própria imagem, sem mexer na do ano anterior.</p>
      <div class="qbar" style="margin-top:8px"><i style="width:${ms.length?Math.round(100*done.length/ms.length):0}%"></i></div></section>
    <section class="dr-group"><h3>1 · Gere no ChatGPT</h3>
-     <p class="sh-meta">Cada grupo tem até 10 carros. Copie os comandos de um grupo, cole no ChatGPT e baixe os PNGs com os nomes indicados. O comando copiado inclui só os carros que ainda faltam. Carros novos sem imagem entram em grupos novos.</p>
+     <p class="sh-meta">Cada grupo tem até 10 carros. Copie os comandos de um grupo, cole no ChatGPT e baixe os PNGs com os nomes indicados. Cada nome começa com o código do carro (GA…), que liga a imagem ao modelo e ao ano certos. O comando copiado inclui só os carros que ainda faltam. Carros novos sem imagem entram em grupos novos.</p>
      ${miss.length?`<button type="button" class="dr-clear" id="ipAll" style="width:100%">Copiar todos os que faltam (${miss.length} carros)</button>
      <p class="sh-meta" style="margin-top:6px">Com todos de uma vez o ChatGPT costuma travar no meio, misturar modelos ou mudar o padrão da imagem. O comando "todos" pede uma imagem por resposta e para você digitar "próximo"; para menos erros, prefira um grupo por conversa.</p>`:""}
      <textarea id="ipFallback" class="ip-ta" hidden readonly></textarea>
      <div class="ip-blocks">${!imgGroups?'<p class="sh-meta">Carregando grupos…</p>':open.map(groupHTML).join("")||'<p class="sh-meta">Todos os grupos estão completos.</p>'}
        ${full.length?`<details class="ig-done"><summary>Grupos completos (${full.length})</summary>${full.map(groupHTML).join("")}</details>`:""}
-       ${before.length?`<details class="ig-done"><summary>Já tinham foto antes dos grupos (${before.length})</summary><ul class="ig-cars">${before.map(m=>`<li class="ok"><i>✓</i><span>${esc(m.mk+" "+m.nm)}</span><small>com foto</small></li>`).join("")}</ul></details>`:""}</div></section>
+       ${before.length?`<details class="ig-done"><summary>Já tinham foto antes dos grupos (${before.length})</summary><ul class="ig-cars">${before.map(m=>`<li class="ok"><i>✓</i><span>${esc(m.mk+" "+m.nm)}${m.ano?` ${m.ano}`:""}</span><small>com foto</small></li>`).join("")}</ul></details>`:""}</div></section>
    <section class="dr-group"><h3>2 · Envie em lote</h3>
-     <p class="sh-meta">Selecione vários arquivos de uma vez. O site reconhece o modelo pelo nome do arquivo (ex.: fiat-cronos-2027.png).</p>
+     <p class="sh-meta">Selecione vários arquivos de uma vez. O site reconhece o carro, com o ano, pelo código no nome do arquivo (ex.: ${esc(carFile(miss[0]||ms[0]||{code:"GA0000000",mid:"modelo",ano:2027}))}). Arquivo sem código não é enviado: para esse, use o botão Enviar PNG no card do carro.</p>
      <label class="dr-go ip-pick">Escolher imagens<input type="file" id="ipFiles" accept="image/png,image/webp,image/jpeg" multiple></label>
      <div id="ipQueue"></div></section>
    <section class="dr-group"><h3>3 · Logos das marcas</h3>
@@ -2102,7 +2128,7 @@ function renderImgPanel(){
    <section class="dr-group"><h3>Ajustes</h3>
      <button type="button" class="dr-clear" id="ipCards">${document.body.classList.contains("editing")?"Parar de editar nos cards":"Editar fotos e logos nos cards"}</button></section>`;
   {const ab=ipBody.querySelector("#ipAll");if(ab)ab.onclick=()=>copyText(allBlock(miss),ab);}
-  ipBody.querySelectorAll(".ip-copy").forEach(b=>b.onclick=()=>{const g=G.find(x=>x.n===+b.dataset.g);copyText(blockFor(g.cars.filter(m=>!photos[m.id])),b)});
+  ipBody.querySelectorAll(".ip-copy").forEach(b=>b.onclick=()=>{const g=G.find(x=>x.n===+b.dataset.g);copyText(blockFor(g.cars.filter(m=>!carHas(m))),b)});
   ipBody.querySelector("#ipFiles").onchange=e=>matchFiles([...e.target.files]);
   const lc=ipBody.querySelector("#lgCopy");if(lc)lc.onclick=()=>copyText(logoBlock(brMiss),lc);
   ipBody.querySelector("#lgFiles").onchange=e=>sendLogos([...e.target.files],brs);
@@ -2111,15 +2137,18 @@ function renderImgPanel(){
   drawQueue();
 }
 function matchFiles(files){
-  const ms=modelList(),by=new Map();ms.forEach(m=>{by.set(m.id,m);by.set(slugify(m.mk+" "+m.nm),m);by.set(slugify(m.nm),by.get(slugify(m.nm))?null:m)});
-  pending=files.map(f=>{const k=slugify(f.name.replace(/\.[a-z0-9]+$/i,"").replace(/\s*\(\d+\)$/,"")).replace(/-(19|20)\d{2}$/,"");return {f,m:by.get(k)||null,st:"pronto"}});
+  // só o código liga o arquivo a um carro: nome parecido não basta, para a imagem de um ano não cair em outro
+  const by=new Map();carList().forEach(m=>by.set(m.code,by.has(m.code)?null:m));
+  const seen=new Set();
+  pending=files.map(f=>{let m=null;for(const x of f.name.matchAll(CODE_RX)){m=by.get(x[1].toUpperCase())||null;if(m)break}
+    const st=m&&seen.has(m.id)?"repetido nesta seleção · não será enviado":"pronto";if(m)seen.add(m.id);return {f,m,st}});
   drawQueue();
 }
 function drawQueue(){
   const q=ipBody.querySelector("#ipQueue");if(!q)return;
   if(!pending.length){q.innerHTML="";return}
   const ok=pending.filter(p=>p.m&&p.st==="pronto").length;
-  q.innerHTML=`<div class="sh-vers" style="margin-top:10px">${pending.map(p=>`<div class="ip-row"><span>${esc(p.f.name)}</span><b class="${p.m?"":"na"}">${p.m?esc(p.m.mk+" "+p.m.nm):"modelo não reconhecido"} · ${p.st}</b></div>`).join("")}</div>
+  q.innerHTML=`<div class="sh-vers" style="margin-top:10px">${pending.map(p=>`<div class="ip-row"><span>${esc(p.f.name)}</span><b class="${p.m?"":"na"}">${p.m?`${esc(p.m.mk+" "+p.m.nm)}${p.m.ano?` ${p.m.ano}`:""} (${p.m.code})${p.st==="pronto"&&carHas(p.m)?" · troca a imagem atual":""} · ${p.st}`:"sem código no nome · não será enviado"}</b></div>`).join("")}</div>
     ${ok?`<button type="button" class="dr-go" id="ipSend" style="margin-top:10px;width:100%">Enviar ${ok} ${ok>1?"imagens":"imagem"}</button>`:""}`;
   const s=q.querySelector("#ipSend");if(s)s.onclick=sendQueue;
 }
@@ -2131,7 +2160,7 @@ async function sendQueue(){
     p.st="enviando…";drawQueue();
     try{const old=photos[p.m.id];const r=await assets.upload(p.f);
       await db.collection("photos").doc(p.m.id).set({asset:r.id,at:Date.now(),ai:true});
-      if(old)assets.delete(old).catch(()=>{});p.st="enviado ✓";}
+      dropAsset(old,p.m.id);p.st="enviado ✓";}
     catch(e){p.st="falhou"+(e&&e.code?` (${e.code})`:"")}
     drawQueue();}
   sending=false;toast("Envio concluído.");
