@@ -16,7 +16,7 @@
 :root{
   color-scheme:light;
   --bg:#ffffff; --panel:#f5f7fa; --ink:#0c111c; --muted:#6a7284; --faint:#a9b0be; --line:#e7eaf0;
-  --accent:#1d6bff; --accent-soft:rgba(29,107,255,.10); --glow:rgba(29,107,255,.35); --like:#ff3358;
+  --accent:#1d6bff; --accent-soft:rgba(29,107,255,.10); --glow:rgba(29,107,255,.35); --like:#f2a100;
   --display:"Sora","Segoe UI",system-ui,sans-serif;
   --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
@@ -165,7 +165,7 @@ button,input{font:inherit;color:inherit}
 .pbtn svg{width:18px;height:18px}
 .pwrap{position:relative;z-index:40}
 .pbtn{position:relative}
-.p-dot{position:absolute;top:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:var(--like);box-shadow:0 0 0 2px var(--bg)}
+.p-dot{position:absolute;top:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:#ff3358;box-shadow:0 0 0 2px var(--bg)}
 .pmenu{position:absolute;right:0;top:calc(100% + 8px);width:300px;max-width:calc(100vw - 32px);background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -24px rgba(12,17,28,.45);padding:6px;display:flex;flex-direction:column;gap:2px;white-space:normal;animation:fade .15s}
 .pm-head{display:flex;align-items:center;gap:10px;padding:10px 10px 12px;border-bottom:1px solid var(--line);margin-bottom:4px;min-width:0}
 .pm-av{width:36px;height:36px;flex:none;border-radius:50%;background:#eaf1ff;color:var(--accent);display:grid;place-items:center;font:700 14px var(--display);overflow:hidden}
@@ -717,7 +717,8 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .like{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:6px 12px 6px 10px;cursor:pointer;font-weight:700;font-size:12.5px;font-variant-numeric:tabular-nums;transition:all .2s var(--ease)}
 .like svg{width:15px;height:15px;transition:transform .3s var(--ease)}
 .like:hover:not(:disabled){border-color:var(--like);color:var(--like)}
-.like.on{background:var(--like);border-color:var(--like);color:#fff;box-shadow:0 6px 18px -6px rgba(255,51,88,.6)}
+.like.on{background:var(--like);border-color:var(--like);color:#fff;box-shadow:0 6px 18px -6px rgba(242,161,0,.6)}
+.like:not(.on) svg path{fill:none}
 .like.pop svg{animation:pop .45s var(--ease)}
 .like:disabled{opacity:.45;cursor:default}
 @keyframes pop{40%{transform:scale(1.45)}}
@@ -1179,7 +1180,8 @@ function deriveTags(r){
   if(research.includes("tech"))k.tech=TAGRULE.tech;
   return {k:TAGORDER.filter(x=>k[x]),why:k,cv};
 }
-const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-8-5.2-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 5.8-8 11-8 11z" fill="currentColor"/></svg>';
+/* favorito: estrela (contorno quando desligado, cheia quando ligado) */
+const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.66 5.4 5.96.86-4.31 4.2 1.02 5.93L12 16.79l-5.33 2.8 1.02-5.93-4.31-4.2 5.96-.86z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>';
 const ico=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg>`;
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const fmt=n=>"R$ "+n.toLocaleString("pt-BR");
@@ -1243,7 +1245,9 @@ function makeDial(el,start,onChange){
     const mobile=matchMedia("(max-width:760px)").matches;
     const R=Math.max(d.H*.72,300);d.G=mobile?{R,cx:68-R,cy:d.H/2,base:0,dir:1,mobile,px:30,lab:30,ptrX:d.W-9}:{R,cx:150-R,cy:d.H/2,base:0,dir:1,mobile,px:32,lab:38,ptrX:d.W-9};
     d.G.step=d.G.px/d.G.R;d.G.Rd=d.G.R+(mobile?55:86); // fundo branco cobre traços e números com ~8 px de folga, sem alcançar o primeiro card
-    cv.style.clipPath=cv.style.webkitClipPath="none";};
+    /* a tela de desenho passa um pouco da roleta para os números caberem; o recorte no círculo branco impede que ela pegue
+       o toque do primeiro card (o botão de favorito dele ficava embaixo dessa sobra) */
+    {const G=d.G,ccx=G.cx+d.off;cv.style.clipPath=cv.style.webkitClipPath=`circle(${Math.round(G.Rd+1)}px at ${Math.round(ccx)}px ${Math.round(G.cy)}px)`;}};
   d.draw=()=>{const G=d.G;if(!G)return;const {R,cx,cy,base,dir,step}=G,pos=d.pos;
     ctx.clearRect(-(d.off||0),0,d.CW||d.W,d.H);
     // round backdrop that follows the end of the ticks: cars slide behind a disc, never a rectangle
@@ -1409,14 +1413,14 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
 function focusAuth(){const field=authBody.querySelector("input");(field||document.getElementById("authClose")).focus()}
 function openAuth(mode){lastFocus=document.activeElement;if(mode)authMode=mode;renderAuth();authPanel.hidden=false;scrim.hidden=false;focusAuth()}
 function closeAuth(){authPanel.hidden=true;scrim.hidden=true;if(!giroAuth.current())clearPending();authReason="";lastFocus&&lastFocus.focus&&lastFocus.focus()}
-/* ações que pedem conta (curtir, salvar): ficam guardadas e acontecem sozinhas depois do login, inclusive vindo do Google */
+/* ações que pedem conta (favoritar, salvar): ficam guardadas e acontecem sozinhas depois do login, inclusive vindo do Google */
 let authReason="";
 const PEND_KEY="autokan_pendente";
 function setPending(o){try{localStorage.setItem(PEND_KEY,JSON.stringify(Object.assign({},o,{at:Date.now()})))}catch(e){}}
 function clearPending(){try{localStorage.removeItem(PEND_KEY)}catch(e){}}
 function takePending(){try{const r=JSON.parse(localStorage.getItem(PEND_KEY)||"null");clearPending();if(r&&r.id&&Date.now()-r.at<3600000)return r}catch(e){}return null}
 function askAccount(kind,id){const c=ALLCARS.find(x=>x.id===id),nm=c?`o ${esc(c.mk)} ${esc(c.nm)}`:"este carro";setPending({kind,id});
-  authReason=kind==="like"?`Para curtir ${nm}, entre ou crie sua conta. A curtida fica guardada e entra assim que você entrar.`:`Para salvar ${nm} na Minha garagem, entre ou crie sua conta. Ele aparece salvo assim que você entrar.`;
+  authReason=kind==="like"?`Para favoritar ${nm}, entre ou crie sua conta. O favorito fica guardado e entra assim que você entrar.`:`Para salvar ${nm} na Minha garagem, entre ou crie sua conta. Ele aparece salvo assim que você entrar.`;
   openAuth("signup")}
 function trackThenReload(kind,meta){if(window.giroTrack)giroTrack(kind,{meta:meta||{}});setTimeout(()=>location.reload(),350)}
 const G_ICON='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
@@ -1497,7 +1501,7 @@ function cardHTML(c,i,anim){
       </div>
       ${c.k.length?`<div class="icons">${c.k.map(k=>`<button type="button" class="ic" data-k="${k}" data-tip="${k}" aria-label="${TAGS[k]}: o que significa">${ico(k)}</button>`).join("")}</div>`:""}
       <div class="c-act">
-        <button type="button" class="like${on?" on":""}" data-like="${c.id}" aria-pressed="${on}" ${db?"":"disabled"} aria-label="${on?"Remover curtida de":"Curtir"} ${esc(c.mk)} ${esc(c.nm)}">${HEART}<span>${live?n:"–"}</span></button>
+        <button type="button" class="like${on?" on":""}" data-like="${c.id}" aria-pressed="${on}" ${db?"":"disabled"} aria-label="${on?"Tirar dos favoritos:":"Favoritar"} ${esc(c.mk)} ${esc(c.nm)}">${HEART}<span>${live?n:"–"}</span></button>
         <button type="button" class="go" data-info="${c.id}">Ver ficha</button>
         <button type="button" class="info" data-info="${c.id}" aria-label="Ficha completa do ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)}">i</button>
       </div>
@@ -1864,7 +1868,7 @@ function toggle(id){
   const body={cars:[...mine],at:Date.now()};
   writing=writing.then(()=>db.collection("votes").doc(myId).set(body)).catch(err=>{
     had?mine.add(id):mine.delete(id);counts[id]=(counts[id]||0)+(had?1:-1);refreshCounts();
-    toast(err&&err.code==="permission_denied"?"Seu acesso é só de visualização, então não dá para curtir.":"Não deu para salvar a curtida. Tente de novo.");});
+    toast(err&&err.code==="permission_denied"?"Seu acesso é só de visualização, então não dá para favoritar.":"Não deu para salvar o favorito. Tente de novo.");});
 }
 /* ---------- tamanho padrão do carro nas fotos ----------
    Medido nas fotos do site: na maioria, o carro (a parte não transparente) cabe numa caixa de 68% x 61,3% da imagem,
@@ -1988,7 +1992,7 @@ async function openInfo(id){
     </table></section>
     ${v&&v.quality?`<section class="dr-group"><h3>Completude da ficha · ${+v.quality.completeness_pct||0}%</h3><div class="qbar"><i style="width:${Math.max(0,Math.min(100,+v.quality.completeness_pct||0))}%"></i></div><div class="sh-meta" style="margin-top:6px">Atualizado em ${esc(v.updated_at||"")}. Campos sem fonte ficam como "não informado".</div></section>`:""}
     <section class="dr-group"><h3>Versões do ${esc(c.nm)}</h3><div class="sh-vers">${sib.map(x=>`<button type="button" data-sib="${x.id}" ${x.id===c.id?'aria-current="true"':""}><span>${esc(x.ver)}${x.ano?` · ${x.ano}`:""}</span><b>${x.p?fmt(x.p):"—"}</b></button>`).join("")}</div></section>
-    <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} curtida${(counts[c.id]||0)===1?"":"s"} nesta versão</div></section>`;
+    <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} ${(counts[c.id]||0)===1?"pessoa favoritou":"pessoas favoritaram"} esta versão</div></section>`;
   /* toda ficha abre do topo, com a foto do carro, mesmo que a anterior tenha sido lida até o fim */
   shBody.innerHTML=hero+base(null,null);shBody.scrollTop=0;document.getElementById("shClose").focus();
   if(!db)return;
@@ -2687,9 +2691,9 @@ document.getElementById("ipClose").onclick=closeImg;
   bandChanged();
   try{
     const [d,u]=await Promise.all([claude.use("db"),claude.use("user")]);
-    if(!d){status("Curtidas indisponíveis aqui",false);loadErr="Abra o AutoKan pelo link com sua conta conectada para ver a biblioteca.";swap();return}
+    if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Abra o AutoKan pelo link com sua conta conectada para ver a biblioteca.";swap();return}
     db=d;userNS=u;myId=u?await u.id():null;
-    const timer=setTimeout(()=>{if(!live)status("Sem conexão com as curtidas",false)},10000);
+    const timer=setTimeout(()=>{if(!live)status("Sem conexão com os favoritos",false)},10000);
     const ct=setTimeout(()=>{if(!loaded){loadErr="Não deu para conectar ao banco. Verifique a internet; a página tenta de novo sozinha.";swap()}},10000);
     visReady=loadVis().catch(()=>{});
     db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;visReady.then(()=>setCatalog(snap))},()=>{clearTimeout(ct);loadErr="A biblioteca não pôde ser carregada agora.";swap()});
@@ -2704,10 +2708,10 @@ document.getElementById("ipClose").onclick=closeImg;
     db.collection("photos").onSnapshot(snap=>{const p={},ai={};snap.docs.forEach(x=>{const d=x.data()||{},a=d.asset;if(typeof a==="string"&&/^[0-9a-f]{32}$/.test(a)){p[x.id]=a;if(d.ai===true)ai[x.id]=1}});photos=p;photoAI=ai;refresh();if(!imgPanel.hidden)renderImgPanel();if(FX)fxPaint();if(!rdPanel.hidden)renderRadar();},()=>{});
     db.collection("votes").onSnapshot(snap=>{
       counts=snap.counts;mine=new Set(snap.mine);live=true;clearTimeout(timer);
-      if(myId&&!pendDone){pendDone=true;const pd=takePending();if(pd&&pd.kind==="like"){const c=ALLCARS.find(x=>x.id===pd.id);if(!mine.has(pd.id))setTimeout(()=>toggle(pd.id),0);toast(`Pronto: você curtiu ${c?`o ${c.mk} ${c.nm}`:"o carro que escolheu"}.`)}}
-      status(myId?`${snap.people} ${snap.people===1?"pessoa votou":"pessoas votaram"}`:"Entre para curtir",!!myId);
+      if(myId&&!pendDone){pendDone=true;const pd=takePending();if(pd&&pd.kind==="like"){const c=ALLCARS.find(x=>x.id===pd.id);if(!mine.has(pd.id))setTimeout(()=>toggle(pd.id),0);toast(`Pronto: ${c?`o ${c.mk} ${c.nm}`:"o carro que escolheu"} está nos seus favoritos.`)}}
+      status(myId?`${snap.people} ${snap.people===1?"pessoa favoritou":"pessoas favoritaram"}`:"Entre para favoritar",!!myId);
       refreshCounts();
-    },()=>{clearTimeout(timer);status("Curtidas fora do ar",false)});
+    },()=>{clearTimeout(timer);status("Favoritos fora do ar",false)});
     if(u&&await u.canEdit()){
       assets=await claude.use("assets");
       if(assets){const eb=document.getElementById("editbtn");eb.hidden=false;
@@ -2715,6 +2719,6 @@ document.getElementById("ipClose").onclick=closeImg;
       const dbb=document.getElementById("dbbtn");dbb.hidden=false;dbb.onclick=openDB;
       startRadar();
     }
-  }catch(e){status("Curtidas indisponíveis aqui",false);loadErr="A biblioteca não pôde ser carregada agora.";swap()}
+  }catch(e){status("Favoritos indisponíveis aqui",false);loadErr="A biblioteca não pôde ser carregada agora.";swap()}
 })();
 </script>
