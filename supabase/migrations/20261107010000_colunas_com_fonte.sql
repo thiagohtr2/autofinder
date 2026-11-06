@@ -1,4 +1,4 @@
--- Preenche ou corrige colunas principais das versões (potência, torque, cilindrada, câmbio, tração) a partir de uma fonte
+-- Preenche ou corrige colunas principais das versões (potência, torque, cilindrada, câmbio, tração e o texto do motor) a partir de uma fonte
 -- cadastrada, mantendo iguais as três cópias que o site usa (coluna, raw.powertrain e catalog_row) e registrando cada troca
 -- em spec_change_log (valor antigo, novo, fonte e lote), para conferência e reversão.
 create or replace function public.apply_version_columns(p_token text, p_rows jsonb)
@@ -10,7 +10,7 @@ begin
     raise exception 'token inválido ou vencido';
   end if;
   for r in select * from jsonb_to_recordset(p_rows) as x(version_id text, column_name text, new_value text, source_id text, batch text) loop
-    if r.column_name not in ('power_cv', 'torque_kgfm', 'displacement_l', 'transmission', 'drive') then
+    if r.column_name not in ('power_cv', 'torque_kgfm', 'displacement_l', 'transmission', 'drive', 'engine_desc') then
       raise exception 'coluna não permitida: %', r.column_name;
     end if;
     if not exists (select 1 from public.sources s where s.id = r.source_id) then raise exception 'fonte inexistente: %', r.source_id; end if;
@@ -31,6 +31,11 @@ begin
       update public.versions v set transmission = r.new_value,
         raw = jsonb_set(v.raw, '{powertrain,transmission}', to_jsonb(r.new_value), true),
         catalog_row = case when v.catalog_row is null then null else jsonb_set(v.catalog_row, '{t}', to_jsonb(r.new_value), true) end
+      where v.id = r.version_id;
+    elsif r.column_name = 'engine_desc' then
+      update public.versions v set engine_desc = r.new_value,
+        raw = jsonb_set(v.raw, '{powertrain,engine_desc}', to_jsonb(r.new_value), true),
+        catalog_row = case when v.catalog_row is null then null else jsonb_set(v.catalog_row, '{e}', to_jsonb(r.new_value), true) end
       where v.id = r.version_id;
     else
       update public.versions v set drive = r.new_value,
