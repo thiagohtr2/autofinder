@@ -1253,10 +1253,14 @@ function makeDial(el,start,onChange){
       const sv=stepOf(v),lab=v%(2*sv)===0,maj=v%(10*sv)===0,len=maj?16:lab?11:6;
       if(!near){ctx.strokeStyle=C.ink;ctx.globalAlpha=al*(lab?.7:.35);ctx.lineWidth=1.5;ctx.lineCap="round";
         ctx.beginPath();ctx.moveTo(cx+Math.cos(a)*(R+6),cy+Math.sin(a)*(R+6));ctx.lineTo(cx+Math.cos(a)*(R+6+len),cy+Math.sin(a)*(R+6+len));ctx.stroke();}
-      if(lab&&!near){const lr=R+G.lab;
-        ctx.globalAlpha=al*.9;ctx.fillStyle=maj?C.ink:C.muted;
+      /* o número começa logo depois do fim do traço mais longo (16 px), seja qual for a largura dele ("90", "200" ou "1,05mi")
+         e a inclinação do arco: a distância soma a metade do texto medida na direção do raio */
+      /* no celular a faixa até os cards é estreita: acima de 1 milhão, só os valores redondos levam "mi" (1mi, 1,1, 1,2… 2mi) */
+      if(lab&&!near){const txt=v<1000?String(v):G.mobile&&v%1000?kv(v):kv(v)+"mi";
         ctx.font=`500 12px "JetBrains Mono",ui-monospace,monospace`;
-        ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(v<1000?v:kv(v)+"mi",cx+Math.cos(a)*lr,cy+Math.sin(a)*lr);}
+        const ext=ctx.measureText(txt).width/2*Math.abs(Math.cos(a))+4.5*Math.abs(Math.sin(a)),lr=R+6+16+(G.mobile?4:6)+ext;
+        ctx.globalAlpha=al*.9;ctx.fillStyle=maj?C.ink:C.muted;
+        ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText(txt,cx+Math.cos(a)*lr,cy+Math.sin(a)*lr);}
     }
     // dots on values that have cars
     ctx.fillStyle=C.accent;
