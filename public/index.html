@@ -421,6 +421,7 @@ button,input{font:inherit;color:inherit}
 .mode{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--bg)}
 .mode button{border:0;background:none;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer}
 .mode button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.ajbtn{display:none}
 .mode-l{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:0 6px 0 9px;align-self:center}
 .sr-right{flex-wrap:wrap;justify-content:flex-end}
 .sr-right{display:flex;align-items:center;gap:12px}
@@ -813,6 +814,18 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .mode.sort{grid-area:o;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;border:0;padding:0;margin-top:8px;background:none;width:auto}
   .mode.sort button{height:28px;padding:0 4px;font-size:12px!important;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;color:#3b4352;font-size:12.5px}
   .mode.sort button[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:none}
+  /* ordem, Modelos/Versões e filtros ficam atrás de um ícone; abrem e fecham no mesmo botão */
+  .sr-head{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"l t a" "o o o" "m m m"}
+  .mode:not(.sort){display:grid;grid-template-columns:1fr 1fr;margin-top:8px;border-radius:10px;padding:2px}
+  .mode:not(.sort) button{height:26px;border-radius:8px}
+  .ajbtn{grid-area:a;position:relative;display:grid;place-items:center;width:36px;height:30px;padding:0;border:0;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;color:var(--accent);cursor:pointer;transition:background .15s,color .15s}
+  .ajbtn svg{width:18px;height:18px}
+  .ajbtn .aj-x,.app.aj .ajbtn .aj-s{display:none}
+  .app.aj .ajbtn .aj-x{display:block}
+  .app.aj .ajbtn{background:var(--ink);color:#fff;box-shadow:none}
+  .ajbtn b{position:absolute;top:-6px;right:-6px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--accent);color:#fff;font:800 10px/17px var(--body);text-align:center;box-shadow:0 0 0 2px #f7faff}
+  .app.aj .ajbtn b{display:none}
+  .app:not(.aj) .sr-head .mode,.app:not(.aj) .chiprow{display:none}
 }
 @media (max-width:380px){
   .top{gap:8px}
@@ -824,7 +837,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .mode button{padding:4px 7px;font-size:11px}
   .sr-title{font-size:14px;letter-spacing:-.05em}
   .sr-head::before{display:none}
-  .sr-head{grid-template-areas:"t t m" "o o o"}
+  .sr-head{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"t a" "o o" "m m"}
   .mode.sort button{font-size:11px!important;padding:0 1px}
   .sr-head{gap:0 6px}
   .mode:not(.sort) button{padding:3px 8px;font-size:11px}
@@ -948,7 +961,8 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <section class="showroom" aria-live="polite">
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
-        <span class="sr-right"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar</span><button type="button" data-sort="likes" aria-pressed="false">Curtidas</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
+        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar</span><button type="button" data-sort="likes" aria-pressed="false">Curtidas</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
+        <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><b id="ajN" hidden></b></button>
       </div>
       <div class="stagewrap">
         <div class="track" aria-hidden="true"></div>
@@ -1685,7 +1699,21 @@ function renderPills(){
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
   const fc=document.getElementById("fcount"),n=activeCount();fc.hidden=!n;fc.textContent=n;
+  const an=document.getElementById("ajN");an.hidden=!n;an.textContent=n;
+  document.getElementById("ajBtn").setAttribute("aria-label",ajLabel());
 }
+/* celular e tablet: ordem, Modelos/Versões e filtros ficam recolhidos atrás do ícone; a escolha fica guardada neste navegador */
+const APP=document.querySelector(".app"),ajBtn=document.getElementById("ajBtn");
+function ajLabel(){const n=activeCount();return document.querySelector(".app").classList.contains("aj")?"Esconder ordem e filtros":`Mostrar ordem e filtros${n?` (${n} ${n>1?"filtros ativos":"filtro ativo"})`:""}`}
+function setAj(on,save){
+  APP.classList.toggle("aj",on);
+  ajBtn.setAttribute("aria-expanded",String(on));ajBtn.setAttribute("aria-label",ajLabel());
+  ajBtn.title=on?"Esconder ordem e filtros":"Mostrar ordem e filtros";
+  ajBtn.dataset.ev=on?"ajustes-fechar":"ajustes-abrir";
+  if(save)try{localStorage.setItem("autokan_ajustes",on?"1":"0")}catch(e){}
+}
+{let on=false;try{on=localStorage.getItem("autokan_ajustes")==="1"}catch(e){}setAj(on,false)}
+ajBtn.addEventListener("click",()=>setAj(!APP.classList.contains("aj"),true));
 function filtersChanged(){renderPills();if(!drawer.hidden)renderDrawer();swap()}
 let lastFocus=null;
 function openDrawer(){lastFocus=document.activeElement;DRCAT="mk";renderDrawer();drawer.hidden=false;scrim.hidden=false;document.getElementById("drClose").focus()}
