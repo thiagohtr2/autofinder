@@ -419,7 +419,7 @@
       manufactured_in: origin.manufactured_in,
       national: origin.national,
       highlights: version.highlights || [],
-      specs: version.specs || {},
+      // specs não vai aqui: é montado no banco a partir de version_specs (fonte por dado) e o radar não pode sobrescrever
       quality: version.quality || {},
       notes: version.notes,
       source_ids: version.sources || [],
