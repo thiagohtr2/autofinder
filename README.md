@@ -21,7 +21,7 @@ A roleta (`public/index.html`) monta tudo no navegador, então o Google quase n�
 
 - `/carros`: todas as marcas, com atalhos por preço, tipo e combustível.
 - `/carros/<marca>` e `/carros/<marca>/<modelo>`: por exemplo, `/carros/chevrolet/tracker`.
-- `/carros-ate-<N>-mil`, `/carros-acima-de-500-mil`, `/suvs`, `/picapes` (e outros tipos), `/carros-eletricos`, `/carros-hibridos`, `/carros-diesel`.
+- `/carros-ate-<N>-mil`, `/carros-de-<A>-a-<B>-mil`, `/carros-acima-de-<N>-mil` (qualquer faixa; a caixa "De R$ … até R$ …" leva a elas, e `?ver=versoes` lista as versões em vez dos modelos), `/suvs`, `/picapes` (e outros tipos), `/carros-eletricos`, `/carros-hibridos`, `/carros-diesel`.
 - `/comparar`: escolher o primeiro carro para comparar; `/comparar/<modelo>-vs-<modelo>` (até 4 carros, com `?versoes=` para escolher a versão de cada um) e `/comparar/<modelo>` para escolher o outro carro (busca no topo e cards dos carros sugeridos, 10 de cada vez, aparecendo mais ao descer; `/comparar` faz o mesmo para escolher o primeiro carro). A comparação é neutra: mostra os dados lado a lado e aponta só fatos (menor preço, maior potência).
 - `/noticias`: feed com o resumo das notícias (por carro, de mercado do radar e recalls), com link para a fonte e filtros por assunto, marca, tipo, período e busca. O público lê do radar só as colunas de notícia (migração `20261106200000_feed_noticias.sql`); as marcadas como "Ignorar" no painel não aparecem.
 - `/sitemap.xml`: a lista de todas essas páginas para o Google (inclui as comparações de cada carro com os 3 mais parecidos).

@@ -1,12 +1,12 @@
 /* Autokan: páginas próprias de cada carro, marca e lista, montadas no servidor a partir do banco,
    e o sitemap.xml. A Netlify guarda cada página pronta por 1 hora (e serve a guardada enquanto
    prepara a nova), então o banco é lido poucas vezes e as páginas acompanham o que muda nele. */
-import { SITE, carregar, FAIXAS, TIPOS, COMBUSTIVEIS, filtrar, imagem } from "../lib/base.mjs";
+import { SITE, carregar, FAIXAS, FAIXAS_ENTRE, TIPOS, COMBUSTIVEIS, filtrar, imagem, faixaPorSlug, lerMil, slugFaixa } from "../lib/base.mjs";
 import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc } from "../lib/paginas.mjs";
 import { lerFiltros, paginaNoticias } from "../lib/noticias.mjs";
 import { lerComparacao, paginaComparacao, paginaEscolher, paginaComparacoes, paresPopulares } from "../lib/comparar.mjs";
 
-const LISTAS = new Map([...FAIXAS, ...TIPOS, ...COMBUSTIVEIS].map((l) => [l.slug, l]));
+const LISTAS = new Map([...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].map((l) => [l.slug, l]));
 
 const CACHE_OK = { "Cache-Control": "public, max-age=0, must-revalidate", "Netlify-CDN-Cache-Control": "s-maxage=3600,stale-while-revalidate=86400,durable" };
 const CACHE_404 = { "Cache-Control": "public, max-age=0, must-revalidate", "Netlify-CDN-Cache-Control": "s-maxage=600,durable" };
@@ -59,9 +59,20 @@ export default async (req) => {
     const pares = lerComparacao(base, p[1], url.searchParams);
     return pares ? html(paginaComparacao(base, pares), 200, porVersao) : naoAchou();
   }
-  if (p.length === 1 && LISTAS.has(p[0])) {
-    const l = LISTAS.get(p[0]);
-    return filtrar(base, l).length ? html(paginaLista(base, l)) : naoAchou();
+  // caixa "De R$ … até R$ …": leva ao endereço da faixa (ex.: /carros-de-150-a-200-mil)
+  if (caminho === "/carros-faixa") {
+    const alvo = slugFaixa(lerMil(url.searchParams.get("de")), lerMil(url.searchParams.get("ate")));
+    const ver = url.searchParams.get("ver") === "versoes" ? "?ver=versoes" : "";
+    return new Response(null, { status: 302, headers: { Location: alvo ? `/${alvo}${ver}` : "/carros#precos", "Cache-Control": "no-store" } });
+  }
+  if (p.length === 1) {
+    const l = LISTAS.get(p[0]) || faixaPorSlug(p[0]);
+    if (l) {
+      const q = url.searchParams, de = lerMil(q.get("de")), ate = lerMil(q.get("ate"));
+      const opts = { de: de ? de * 1000 : 0, ate: ate ? ate * 1000 : 0, versoes: q.get("ver") === "versoes" };
+      if (opts.de && opts.ate && opts.de > opts.ate) [opts.de, opts.ate] = [opts.ate, opts.de];
+      return html(paginaLista(base, l, opts), 200, { "Netlify-Vary": "query=de|ate|ver" });
+    }
   }
   return naoAchou();
 };
@@ -71,7 +82,7 @@ function sitemap(base) {
   const url = (loc, mod, imgs = []) => `<url><loc>${SITE}${loc}</loc><lastmod>${dia(mod)}</lastmod>${imgs.map(([src, titulo]) => `<image:image><image:loc>${esc(SITE + src)}</image:loc><image:title>${esc(titulo)}</image:title></image:image>`).join("")}</url>`;
   const linhas = [
     url("/", base.atualizado), url("/carros", base.atualizado), url("/comparar", base.atualizado), url("/noticias", (base.feed[0] || {}).date || base.atualizado),
-    ...[...FAIXAS, ...TIPOS, ...COMBUSTIVEIS].filter((l) => filtrar(base, l).length).map((l) => url(`/${l.slug}`, base.atualizado)),
+    ...[...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].filter((l) => filtrar(base, l).length).map((l) => url(`/${l.slug}`, base.atualizado)),
     ...[...base.marcas.values()].map((b) => url(b.url, b.atualizado)),
     ...[...base.modelos.values()].filter((m) => m.marcaInfo).map((m) => url(m.url, m.atualizado, m.foto ? [[imagem(m.foto, 1200), `${m.titulo}${m.ano ? ` ${m.ano}` : ""} (imagem ilustrativa)`]] : [])),
     ...[...paresPopulares(base)].map(([u, [a, b]]) => url(u, a.atualizado > b.atualizado ? a.atualizado : b.atualizado)),

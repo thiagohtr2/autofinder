@@ -169,6 +169,50 @@ export const FAIXAS = [100, 120, 150, 200, 250, 300, 500].map((n) => ({
   titulo: `Carros 0 km até R$ ${n} mil`,
 })).concat([{ slug: "carros-acima-de-500-mil", curto: "Acima de 500 mil", min: mil(500) + 1, max: Infinity, titulo: "Carros 0 km acima de R$ 500 mil" }]);
 
+/* faixas sem sobreposição (atalhos e rodapé) e faixas livres digitadas na caixa "De R$ … até R$ …" */
+export const FAIXAS_ENTRE = [[100, 150], [150, 200], [200, 300], [300, 500]].map(([a, b]) => ({
+  slug: `carros-de-${a}-a-${b}-mil`, curto: `${a} a ${b} mil`, min: mil(a), max: mil(b), titulo: `Carros 0 km de R$ ${a} mil a R$ ${b} mil`,
+}));
+export const ATALHOS_PRECO = [FAIXAS[0], ...FAIXAS_ENTRE, FAIXAS[FAIXAS.length - 1]];
+const fmtMil = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+export function faixaPorSlug(slug) {
+  let m;
+  if ((m = /^carros-ate-(\d{1,5})-mil$/.exec(slug))) {
+    const n = +m[1]; if (n < 10) return null;
+    return FAIXAS.find((f) => f.slug === slug) || { slug, curto: `Até ${fmtMil(n)} mil`, min: 0, max: mil(n), titulo: `Carros 0 km até R$ ${fmtMil(n)} mil`, livre: true };
+  }
+  if ((m = /^carros-de-(\d{1,5})-a-(\d{1,5})-mil$/.exec(slug))) {
+    const a = +m[1], b = +m[2]; if (b <= a) return null;
+    return FAIXAS_ENTRE.find((f) => f.slug === slug) || { slug, curto: `${fmtMil(a)} a ${fmtMil(b)} mil`, min: mil(a), max: mil(b), titulo: `Carros 0 km de R$ ${fmtMil(a)} mil a R$ ${fmtMil(b)} mil`, livre: true };
+  }
+  if ((m = /^carros-acima-de-(\d{1,5})-mil$/.exec(slug))) {
+    const n = +m[1];
+    return FAIXAS.find((f) => f.slug === slug) || { slug, curto: `Acima de ${fmtMil(n)} mil`, min: mil(n) + 1, max: Infinity, titulo: `Carros 0 km acima de R$ ${fmtMil(n)} mil`, livre: true };
+  }
+  return null;
+}
+/* lê o que a pessoa digitou na caixa de preço e devolve em mil reais: "150", "150 mil", "150.000", "1,2 mi" */
+export function lerMil(v) {
+  let t = String(v || "").trim().toLowerCase();
+  if (!t) return null;
+  const milhao = /\bmi\b|milh/.test(t);
+  t = t.replace(/[^\d,.]/g, "");
+  if (/^\d{1,3}(\.\d{3})+$/.test(t)) t = t.replace(/\./g, ""); else t = t.replace(",", ".");
+  let n = parseFloat(t);
+  if (!Number.isFinite(n) || n <= 0) return null;
+  if (milhao) n *= 1000; else if (n >= 10000) n /= 1000;
+  return Math.max(1, Math.min(20000, Math.round(n)));
+}
+/* endereço da faixa digitada (em mil reais) */
+export function slugFaixa(de, ate) {
+  if (de && ate && de > ate) [de, ate] = [ate, de];
+  if (de && ate && de === ate) ate = de + 1;
+  if (de && ate) return `carros-de-${de}-a-${ate}-mil`;
+  if (ate) return `carros-ate-${ate}-mil`;
+  if (de) return `carros-acima-de-${de}-mil`;
+  return null;
+}
+
 export const TIPOS = [
   ["suvs", "SUV", "SUVs", "SUV"], ["picapes", "Picape", "Picapes", "picape"], ["sedas", "Sedã", "Sedãs", "sedã"], ["hatches", "Hatch", "Hatches", "hatch"],
   ["esportivos", "Esportivo", "Esportivos", "esportivo"], ["vans", "Van", "Vans", "van"], ["peruas", "Perua", "Peruas", "perua"], ["minivans", "Minivan", "Minivans", "minivan"],

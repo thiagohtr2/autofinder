@@ -1,6 +1,6 @@
 /* Autokan: HTML das páginas próprias (carro, marca, todas as marcas e listas).
    Tudo sai pronto do servidor, para o Google ler sem depender de JavaScript. */
-import { SITE, FAIXAS, TIPOS, COMBUSTIVEIS, filtrar, parecidos, imagem } from "./base.mjs";
+import { SITE, FAIXAS, FAIXAS_ENTRE, ATALHOS_PRECO, TIPOS, COMBUSTIVEIS, filtrar, parecidos, imagem } from "./base.mjs";
 import { ICONS, TAGDESC } from "./pontos-fortes.mjs";
 
 /* ---------- formatação */
@@ -33,6 +33,7 @@ html{background:var(--navy);-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 var(--body);-webkit-font-smoothing:antialiased}
 a{color:var(--accent-ink)}
 img{max-width:100%;height:auto;display:block}
+button{font-family:inherit}
 .wrap{width:min(1120px,100%);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .pular{position:absolute;left:12px;top:-60px;z-index:9;background:#fff;color:var(--ink);padding:8px 12px;border-radius:10px;font-weight:700}
@@ -164,6 +165,18 @@ ${["eletrico:#fbf3db:#e0a800", "hibrido:#deeee6:#11864c", "potente:#fae3e0:#d83a
 .chips a[aria-current] small{color:#c9d3e6}
 .lista-top{display:flex;flex-direction:column;gap:14px;padding:6px 0 0}
 .lista-top .chips{margin-top:6px}
+.fp{display:flex;flex-wrap:wrap;align-items:flex-end;gap:10px 12px;margin:4px 0 2px;padding:14px 16px;border:1px solid var(--line);border-radius:18px;background:var(--panel)}
+.fp-c{display:flex;flex-direction:column;gap:5px;flex:1 1 150px;min-width:0}
+.fp-c>span{font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.fp-in{display:flex;align-items:center;gap:6px;height:46px;padding:0 12px;border:1px solid var(--line);border-radius:12px;background:#fff}
+.fp-in:focus-within{border-color:var(--accent);box-shadow:0 0 0 3px rgba(29,107,255,.12)}
+.fp-in small{font:700 13px var(--body);color:var(--muted)}
+.fp-in input{flex:1;min-width:0;width:100%;height:100%;border:0;background:none;font:600 17px var(--mono);letter-spacing:-.02em;color:var(--ink);outline:none}
+.fp-in input::placeholder{font:500 14px var(--body);letter-spacing:0;color:#8a92a3}
+.fp-v{display:flex;align-items:center;gap:8px;height:46px;font-weight:700;font-size:14px;cursor:pointer;flex:0 0 auto}
+.fp-v input{width:19px;height:19px;margin:0;accent-color:var(--accent)}
+.fp .btn{height:46px;flex:0 0 auto}
+@media (max-width:640px){.fp{padding:12px}.fp-c{flex:1 1 calc(50% - 6px)}.fp-v{flex:1 1 auto;height:40px}.fp .btn{flex:1 1 auto;justify-content:center}}
 @media (max-width:640px){.lead{font-size:15.5px}.lista-top .chips{flex-wrap:nowrap;overflow-x:auto;margin-left:-16px;margin-right:-16px;padding:2px 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.lista-top .chips::-webkit-scrollbar{display:none}.lista-top .chips li{flex:none}}
 .marca-top{display:flex;align-items:center;gap:16px;padding:6px 0 0}
 .marca-top .bc-lg{width:64px;height:64px;padding:9px}
@@ -196,7 +209,7 @@ function rodape() {
   const col = (titulo, itens) => `<div><b>${titulo}</b><ul>${itens.map(([u, t]) => `<li><a href="${u}">${esc(t)}</a></li>`).join("")}</ul></div>`;
   return `<footer class="foot"><div class="wrap">
 <div class="foot-cols">
-${col("Por preço", FAIXAS.map((f) => [`/${f.slug}`, f.titulo.replace("Carros 0 km ", "")]))}
+${col("Por preço", ATALHOS_PRECO.map((f) => [`/${f.slug}`, f.titulo.replace("Carros 0 km ", "").replace(/^./, (c) => c.toUpperCase())]))}
 ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
 ${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"]])}
@@ -282,10 +295,36 @@ function cartaoMarca(b) {
 function chipsListas(base, atual) {
   const chip = (l, rot) => { const n = filtrar(base, l).length; return n ? `<li><a href="/${l.slug}"${l.slug === atual ? ' aria-current="page"' : ""}>${esc(rot || l.curto)} <small>${n}</small></a></li>` : ""; };
   return {
-    faixas: `<ul class="chips">${FAIXAS.map((f) => chip(f)).join("")}</ul>`,
+    faixas: `<ul class="chips">${ATALHOS_PRECO.map((f) => chip(f)).join("")}</ul>`,
     tipos: `<ul class="chips">${TIPOS.map((t) => chip(t)).join("")}</ul>`,
     combs: `<ul class="chips">${COMBUSTIVEIS.map((c) => chip(c)).join("")}</ul>`,
   };
+}
+
+/* caixa "De R$ … até R$ … mil" com "Ver todas as versões" */
+function filtroPreco({ acao, de, ate, versoes, titulo = "Buscar por preço" }) {
+  const mil = (n) => (n && Number.isFinite(n) ? String(Math.round(n / 1000)) : "");
+  return `<form class="fp" method="get" action="${acao}" aria-label="${esc(titulo)}" onsubmit="this.querySelectorAll('input[name=de],input[name=ate]').forEach(x=>{if(!x.value.trim())x.disabled=true})">
+<label class="fp-c"><span>De</span><span class="fp-in"><small>R$</small><input type="text" name="de" inputmode="numeric" autocomplete="off" placeholder="0" value="${mil(de)}" aria-label="Preço mínimo, em mil reais"><small>mil</small></span></label>
+<label class="fp-c"><span>Até</span><span class="fp-in"><small>R$</small><input type="text" name="ate" inputmode="numeric" autocomplete="off" placeholder="sem limite" value="${mil(ate)}" aria-label="Preço máximo, em mil reais"><small>mil</small></span></label>
+<label class="fp-v"><input type="checkbox" name="ver" value="versoes"${versoes ? " checked" : ""}> Ver todas as versões</label>
+<button class="btn pri" type="submit">Buscar</button>
+</form>`;
+}
+
+/* card de uma versão (na lista com "Ver todas as versões"): leva à tabela de versões do carro */
+function cartaoVersao(m, v) {
+  const sub = [v.motor || null, v.cambio || null].filter(Boolean).join(" · ");
+  return `<li><a class="mc" href="${m.url}#versoes"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 46vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(v.nome || m.nome)}${v.ano ? ` · ${v.ano}` : ""}</span>${sub ? `<span class="mc-sub">${esc(sub)}</span>` : ""}<span class="mc-pr">${v.preco ? reais(v.preco) : "<small>preço não divulgado</small>"}</span></span></a></li>`;
+}
+
+/* lista longa: os primeiros cards já vêm na página e os outros aparecem conforme a pessoa desce */
+function gradeAosPoucos(cards, n = 24) {
+  if (cards.length <= n) return `<ul class="grade">${cards.join("")}</ul>`;
+  const blocos = [];
+  for (let i = n; i < cards.length; i += n) blocos.push(cards.slice(i, i + n).join(""));
+  return `<ul class="grade" id="pl-l">${cards.slice(0, n).join("")}</ul>${blocos.map((b) => `<template class="pl-mais">${b}</template>`).join("")}<div id="pl-fim" style="height:1px"></div>
+<script>(()=>{const ul=document.getElementById("pl-l"),fim=document.getElementById("pl-fim"),ts=[...document.querySelectorAll("template.pl-mais")];const io=new IntersectionObserver(es=>{if(!es.some(x=>x.isIntersecting))return;const t=ts.shift();if(!t){io.disconnect();return}ul.appendChild(t.content);t.remove();io.unobserve(fim);io.observe(fim)},{rootMargin:"700px 0px"});io.observe(fim)})()</script>`;
 }
 
 /* ---------- página do modelo */
@@ -379,7 +418,7 @@ ${selos}
 <figure class="foto">${fotoTag(m, 640, "(max-width:860px) 92vw, 540px", true) || `<span class="sem">${esc(m.titulo)}</span>`}${m.foto ? "<figcaption>Imagem ilustrativa</figcaption>" : ""}</figure>
 </section>
 
-<section class="sec" aria-labelledby="s-vs"><h2 id="s-vs">Versões e preços do ${esc(nomeAno)}</h2>
+<section class="sec" id="versoes" aria-labelledby="s-vs"><h2 id="s-vs">Versões e preços do ${esc(nomeAno)}</h2>
 ${tabela}
 <p class="nota">${esc(rotuloPreco(m.versoes))}. Cada versão tem link para a fonte do preço.</p>${breve}
 </section>
@@ -431,7 +470,7 @@ export function paginaCarros(base) {
   const corpo = `${trilha(itens)}
 <div class="lista-top"><h1>Carros 0 km à venda no Brasil</h1>
 <p class="lead">${pl(base.aVenda.length, "modelo", "modelos")} e ${pl(base.totalVersoes, "versão", "versões")} de ${pl(comVenda.length, "marca", "marcas")}, com o preço de cada versão, motor, potência e pontos fortes. Escolha por marca, faixa de preço, tipo ou combustível.</p></div>
-<section class="sec" id="precos" aria-labelledby="s-fx"><h2 id="s-fx">Por faixa de preço</h2>${ch.faixas}</section>
+<section class="sec" id="precos" aria-labelledby="s-fx"><h2 id="s-fx">Por faixa de preço</h2>${filtroPreco({ acao: "/carros-faixa" })}<div style="height:12px"></div>${ch.faixas}</section>
 <section class="sec" id="tipos" aria-labelledby="s-tp"><h2 id="s-tp">Por tipo</h2>${ch.tipos}</section>
 <section class="sec" aria-labelledby="s-cb"><h2 id="s-cb">Por combustível</h2>${ch.combs}</section>
 <section class="sec" id="marcas" aria-labelledby="s-mc"><h2 id="s-mc">Marcas</h2><ul class="marcas">${marcas.map(cartaoMarca).join("")}</ul></section>`;
@@ -442,38 +481,49 @@ export function paginaCarros(base) {
 
 /* ---------- listas: faixa de preço, tipo e combustível */
 
-export function paginaLista(base, l) {
-  const achados = filtrar(base, l);
+export function paginaLista(base, l, opts = {}) {
+  const ehFaixa = l.max !== undefined;
+  // em tipo e combustível, a caixa de preço filtra junto (em reais)
+  const pmin = ehFaixa ? l.min : opts.de || 0, pmax = ehFaixa ? l.max : opts.ate || Infinity;
+  const comPreco = !ehFaixa && (opts.de || opts.ate);
+  const dentro = (v) => !comPreco || (v.preco && v.preco >= pmin && v.preco <= pmax);
+  const achados = filtrar(base, l).map((x) => ({ ...x, vs: x.vs.filter(dentro) })).filter((x) => x.vs.length)
+    .map((x) => ({ ...x, de: Math.min(...x.vs.map((v) => v.preco ?? Infinity)) })).sort((a, b) => a.de - b.de || a.m.titulo.localeCompare(b.m.titulo, "pt-BR"));
+  const versoes = achados.flatMap(({ m, vs }) => vs.map((v) => ({ m, v }))).sort((a, b) => (a.v.preco ?? Infinity) - (b.v.preco ?? Infinity));
   const caminho = `/${l.slug}`;
   const itens = [INICIO, CARROS, { nome: l.titulo.replace(" 0 km", ""), url: caminho }];
-  const n = achados.length, primeiro = achados[0], ano = base.anoLinha;
-  const ehFaixa = l.max !== undefined;
+  const n = achados.length, nv = versoes.length, primeiro = achados[0], ano = base.anoLinha;
   const porTipo = (() => { const c = new Map(); achados.forEach(({ m }) => m.carroc && c.set(m.carroc, (c.get(m.carroc) || 0) + 1)); return [...c].sort((a, b) => b[1] - a[1]); })();
   const nomeTipo = (t, q) => { const x = TIPOS.find((y) => y.carroc === t); return x ? (q === 1 ? x.sing : x.curto.toLowerCase()).replace(/^suv(s?)$/i, "SUV$1") : t; };
   const comp = primeiro ? ` O mais barato é o ${primeiro.m.titulo}, por ${reais(primeiro.de)}.` : "";
+  const faixaTxt = pmax === Infinity ? (pmin > 1 ? `acima de ${reais(pmin - (ehFaixa ? 1 : 0))}` : "") : pmin > 0 ? `de ${reais(pmin)} a ${reais(pmax)}` : `até ${reais(pmax)}`;
   let h1, titulo, desc, lead;
   if (ehFaixa) {
-    const faixaTxt = l.max === Infinity ? `acima de ${reais(l.min - 1)}` : `até ${reais(l.max)}`;
     h1 = `${l.titulo} em ${ano}`;
     titulo = `${l.titulo} em ${ano}: ${pl(n, "modelo", "modelos")} | Autokan`;
-    lead = `${n === 1 ? "Há 1 modelo" : `Há ${num(n)} modelos`} 0 km com versões ${faixaTxt} à venda no Brasil, do mais barato ao mais caro.${comp}${porTipo.length > 1 ? ` Entre eles: ${lista(porTipo.slice(0, 5).map(([t, q]) => `${q} ${nomeTipo(t, q)}`))}.` : ""}`;
+    lead = n ? `${n === 1 ? "Há 1 modelo" : `Há ${num(n)} modelos`} 0 km com versões ${faixaTxt} à venda no Brasil, do mais barato ao mais caro.${comp}${porTipo.length > 1 ? ` Entre eles: ${lista(porTipo.slice(0, 5).map(([t, q]) => `${q} ${nomeTipo(t, q)}`))}.` : ""}` : `Nenhum carro 0 km à venda com versões ${faixaTxt}. Tente uma faixa maior.`;
     desc = `${n === 1 ? "O carro" : `Os ${num(n)} carros`} 0 km com versões ${faixaTxt} no Brasil, do mais barato ao mais caro.${comp}`;
   } else {
-    const de = achados.length ? Math.min(...achados.map((x) => x.de)) : null, ate = achados.length ? Math.max(...achados.map(({ vs }) => Math.max(...vs.map((v) => v.preco || 0)))) : null;
+    const de = n ? Math.min(...achados.map((x) => x.de)) : null, ate = n ? Math.max(...achados.map(({ vs }) => Math.max(...vs.map((v) => v.preco || 0)))) : null;
     h1 = `${l.titulo} ${ano}: preços e versões`;
     titulo = `${l.titulo} ${ano}: preços de ${pl(n, "modelo", "modelos")} | Autokan`;
-    const faixaTxt = de && ate && Number.isFinite(de) ? `, de ${reais(de)} a ${reais(ate)}` : "";
-    lead = `${n === 1 ? "Há 1 modelo" : `Há ${num(n)} modelos`} à venda no Brasil${faixaTxt}, do mais barato ao mais caro.${comp}`;
-    desc = `Todos os ${pl(n, "modelo", "modelos")} ${l.titulo.replace(" 0 km", "").toLowerCase().replace("suvs", "SUVs")} 0 km à venda no Brasil${faixaTxt}. Compare preço de cada versão, motor e potência.`;
+    const ft = de && ate && Number.isFinite(de) ? `, de ${reais(de)} a ${reais(ate)}` : "";
+    lead = n ? `${n === 1 ? "Há 1 modelo" : `Há ${num(n)} modelos`} à venda no Brasil${comPreco ? ` com versões ${faixaTxt}` : ft}, do mais barato ao mais caro.${comp}` : `Nenhum modelo com versões ${faixaTxt}. Tente uma faixa maior.`;
+    desc = `Todos os ${pl(n, "modelo", "modelos")} ${l.titulo.replace(" 0 km", "").toLowerCase().replace("suvs", "SUVs")} 0 km à venda no Brasil${ft}. Compare preço de cada versão, motor e potência.`;
   }
+  if (opts.versoes && nv) lead = `${nv === 1 ? "1 versão" : `${num(nv)} versões`} de ${pl(n, "modelo", "modelos")}${faixaTxt ? `, ${faixaTxt}` : ""}, da mais barata à mais cara.`;
   const ch = chipsListas(base, l.slug);
-  const extra = (vs, m) => (ehFaixa && vs.length !== m.versoes.length ? `${pl(vs.length, "versão", "versões")} nesta faixa` : null);
+  const extra = (vs, m) => (ehFaixa || comPreco ? (vs.length !== m.versoes.length ? `${pl(vs.length, "versão", "versões")} nesta faixa` : null) : null);
+  const caixa = filtroPreco({ acao: ehFaixa ? "/carros-faixa" : caminho, de: pmin > 1 ? pmin - (ehFaixa && pmax === Infinity ? 1 : 0) : null, ate: pmax === Infinity ? null : pmax, versoes: opts.versoes });
+  const atalhos = ehFaixa ? ch.faixas : TIPOS.includes(l) ? ch.tipos : ch.combs;
+  const grade = opts.versoes ? gradeAosPoucos(versoes.map(({ m, v }) => cartaoVersao(m, v))) : `<ul class="grade">${achados.map(({ m, vs, de }) => cartao(m, { de, extra: extra(vs, m) })).join("")}</ul>`;
   const corpo = `${trilha(itens)}
-<div class="lista-top"><h1>${esc(h1)}</h1><p class="lead">${esc(lead)}</p>${ehFaixa ? ch.faixas : TIPOS.includes(l) ? ch.tipos : ch.combs}</div>
-<section class="sec" aria-label="Modelos"><ul class="grade">${achados.map(({ m, vs, de }) => cartao(m, { de, extra: extra(vs, m) })).join("")}</ul>
+<div class="lista-top"><h1>${esc(h1)}</h1><p class="lead">${esc(lead)}</p>${caixa}${atalhos}</div>
+<section class="sec" aria-label="${opts.versoes ? "Versões" : "Modelos"}">${n ? grade : ""}
 <p class="nota">Preço de tabela sugerido pela montadora ou FIPE 0 km${base.mesPrecos ? ` em ${mesAno(base.mesPrecos)}` : ""}. Toque no carro para ver o preço de cada versão e a fonte.</p></section>
 <section class="sec" aria-labelledby="s-mais"><h2 id="s-mais">Veja também</h2>${ehFaixa ? `${ch.tipos}<div style="height:10px"></div>${ch.combs}` : `${ch.faixas}<div style="height:10px"></div>${TIPOS.includes(l) ? ch.combs : ch.tipos}`}</section>`;
-  return pagina({ titulo, descricao: desc, caminho, ld: [ldTrilha(itens), ldLista(h1, achados.map((x) => x.m))], corpo,
+  const indexar = !l.livre && !comPreco && !opts.versoes && n > 0;
+  return pagina({ titulo, descricao: desc, caminho, indexar, ld: [ldTrilha(itens), ldLista(h1, achados.map((x) => x.m))], corpo,
     imagemOg: primeiro && primeiro.m.foto ? SITE + imagem(primeiro.m.foto, 800, "&fm=png") : null, imagemAlt: h1 });
 }
 
