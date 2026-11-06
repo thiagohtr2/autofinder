@@ -12,7 +12,7 @@ Você gira a roleta de preço e vê os carros daquela faixa, rankeados pelas cur
 | `public/` | O site, sem build: `index.html` e `supabase-adapter.js`, que liga o site ao Supabase. É o que a Netlify publica. |
 | `data/` | Cópia completa do banco de dados original, exportada em 05/11/2026: 53 marcas, 327 modelos, 831 versões, alertas, notícias, fontes, radar de lançamentos e o mapa das fotos e logos. Serviu para carregar o Supabase. |
 | `tools/pipeline/` | Scripts e lotes de pesquisa usados para montar o banco original no Claude (`build.py` monta, `sync.py` compara e envia). |
-| `supabase/` | Esquema do banco no Supabase e função de importação. |
+| `supabase/` | Esquema do banco no Supabase, funções (importação e contato) e modelos dos e-mails de login. Veja `supabase/README.md`. |
 | `netlify/` | Páginas próprias de cada carro, marca e lista, para o Google (veja abaixo). |
 
 ### Páginas para o Google (`netlify/`)
@@ -24,9 +24,13 @@ A roleta (`public/index.html`) monta tudo no navegador, então o Google quase n�
 - `/carros-ate-<N>-mil`, `/carros-de-<A>-a-<B>-mil`, `/carros-acima-de-<N>-mil` (qualquer faixa; a caixa "De R$ … até R$ …" leva a elas, e `?ver=versoes` lista as versões em vez dos modelos), `/suvs`, `/picapes` (e outros tipos), `/carros-eletricos`, `/carros-hibridos`, `/carros-diesel`.
 - `/comparar`: escolher o primeiro carro para comparar; `/comparar/<modelo>-vs-<modelo>` (até 4 carros, com `?versoes=` para escolher a versão de cada um) e `/comparar/<modelo>` para escolher o outro carro (busca no topo e cards dos carros sugeridos, 10 de cada vez, aparecendo mais ao descer; `/comparar` faz o mesmo para escolher o primeiro carro). A comparação é neutra: mostra os dados lado a lado e aponta só fatos (menor preço, maior potência).
 - `/noticias`: feed com o resumo das notícias (por carro, de mercado do radar e recalls), com link para a fonte e filtros por assunto, marca, tipo, período e busca. O público lê do radar só as colunas de notícia (migração `20261106200000_feed_noticias.sql`); as marcadas como "Ignorar" no painel não aparecem.
+- `/contato`: formulário de contato. A mensagem vai para a função `contato` do Supabase, fica em `contact_messages` e chega por e-mail; o admin lê e responde no painel (`/admin.html#mensagens`). As páginas dos carros têm o link "Avise a gente" para preço errado, que já abre o formulário com o assunto e o carro.
+- `/busca.json`: lista de carros e marcas para a busca do topo das páginas.
 - `/sitemap.xml`: a lista de todas essas páginas para o Google (inclui as comparações de cada carro com os 3 mais parecidos).
 
-**Salvos:** na ficha do carro, "Salvar" (ícone de etiqueta de marcador) guarda a versão na tabela `garage` do Supabase (privada: cada pessoa vê só os seus; migração `20261106180000_minha_garagem.sql`). Os salvos têm página própria, `/salvos` (a mesma página da roleta, que abre os salvos por cima; a Netlify serve `index.html` nesse endereço, e o antigo `/garagem` leva para ele): os cards da roleta, todos como selecionados, organizados por tipo, preço ou ponto forte, com uma linha entre os grupos. Dali dá para marcar de 2 a 4 carros e abrir a comparação.
+**Topo:** todas as páginas têm o mesmo topo da roleta: Marcas, Preços, Notícias e Comparar, a busca de carros e a conta da pessoa (Entrar e Cadastrar levam à roleta com `/?entrar=1` e `/?cadastrar=1`; logado, aparece o perfil com Salvos, Fale com a gente e Sair). A sessão é a mesma da roleta, guardada no navegador.
+
+**Salvos:* na ficha do carro, "Salvar" (ícone de etiqueta de marcador) guarda a versão na tabela `garage` do Supabase (privada: cada pessoa vê só os seus; migração `20261106180000_minha_garagem.sql`). Os salvos têm página própria, `/salvos` (a mesma página da roleta, que abre os salvos por cima; a Netlify serve `index.html` nesse endereço, e o antigo `/garagem` leva para ele): os cards da roleta, todos como selecionados, organizados por tipo, preço ou ponto forte, com uma linha entre os grupos. Dali dá para marcar de 2 a 4 carros e abrir a comparação.
 
 As páginas seguem as regras do site: só versões à venda entram nas listas, e marcas e modelos tirados do site no painel Banco de dados somem das páginas. Os pontos fortes usam as mesmas regras, copiadas em `netlify/lib/pontos-fortes.mjs`; se mudar uma regra em `index.html`, copie de novo. A Netlify guarda cada página pronta por 1 hora, então mudanças no banco aparecem em até 1 hora. Na roleta, `/?carro=<modelo>` leva até o carro e abre a ficha.
 

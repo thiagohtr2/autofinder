@@ -118,6 +118,29 @@ tr:last-child td{border-bottom:0}
 .lk span{flex:1;min-width:0;font:600 12px var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .lk b{font-size:12.5px;white-space:nowrap}
 
+/* mensagens do contato */
+#mensagens{scroll-margin-top:72px}
+#mensagens:focus{outline:none}
+.msg-h{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;margin-bottom:12px}
+.msg-h h2{margin:0}
+.msg-h .sub{margin:2px 0 0}
+.msgs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.msg{border:1px solid var(--line);border-radius:14px;padding:12px 14px;background:var(--bg);min-width:0}
+.msg.nova{border-color:rgba(29,107,255,.45);box-shadow:inset 3px 0 0 var(--accent)}
+.msg-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.msg-t b{font-size:14px}
+.msg-t a{font-weight:600;font-size:13px;color:var(--accent);text-decoration:none;overflow-wrap:anywhere}
+.msg-t time{margin-left:auto;font:600 11.5px var(--mono);color:var(--muted);white-space:nowrap}
+.msg-s{margin:6px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:12.5px;color:var(--muted);font-weight:600}
+.msg-s a{color:var(--muted);overflow-wrap:anywhere}
+.msg p.tx{margin:8px 0 0;white-space:pre-wrap;overflow-wrap:anywhere;font-size:14px;line-height:1.5}
+.msg-a{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.msg-a .btn{padding:6px 11px;font-size:12.5px;text-decoration:none;color:var(--ink)}
+.msg-a .btn.primary{color:#fff}
+.msg-a .btn.del{color:var(--danger)}
+.pill.nova{background:var(--accent);color:#fff}
+.hbtn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink)}
+.hbtn i{font-style:normal;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--accent);color:#fff;font:700 11.5px var(--mono);display:inline-grid;place-items:center}
 /* entrar */
 .gate{max-width:380px;margin:8vh auto 0;display:flex;flex-direction:column;gap:14px}
 .gate img{height:38px;width:auto;align-self:center}
@@ -158,6 +181,7 @@ tr:last-child td{border-bottom:0}
         <button type="button" data-days="90" id="p90">90 dias</button>
       </div>
       <label class="tog" title="As suas visitas ao site, neste navegador, deixam de entrar nos números"><input type="checkbox" id="notrack"> Não contar minhas visitas neste navegador</label>
+      <a class="btn hbtn" href="#mensagens" id="msgJump">Mensagens <i id="msgBadge" hidden>0</i></a>
       <span class="upd" id="upd">Carregando…</span>
       <button type="button" class="btn" id="out">Sair</button>
     </div>
@@ -170,6 +194,20 @@ tr:last-child td{border-bottom:0}
     <div class="kpi"><small>Voltaram</small><b class="num" id="kBack">–</b><span id="kBackSub">&nbsp;</span></div>
     <div class="kpi"><small>Cadastros</small><b class="num" id="kUsers">–</b><span id="kUsersSub">&nbsp;</span></div>
     <div class="kpi"><small>Favoritos</small><b class="num" id="kVotes">–</b><span id="kVotesSub">&nbsp;</span></div>
+  </section>
+
+  <section class="card" id="mensagens" tabindex="-1">
+    <div class="msg-h">
+      <div><h2>Mensagens</h2><p class="sub" id="msgSub">O que chegou pelo formulário de contato (autokan.com.br/contato).</p></div>
+      <div class="seg" role="group" aria-label="Quais mensagens">
+        <button type="button" data-mf="abertas" aria-pressed="true">Abertas</button>
+        <button type="button" data-mf="respondida">Respondidas</button>
+        <button type="button" data-mf="arquivada">Arquivadas</button>
+        <button type="button" data-mf="todas">Todas</button>
+      </div>
+    </div>
+    <ul class="msgs" id="msgs"><li class="empty">Carregando…</li></ul>
+    <div class="pager"><span id="mInfo"></span><button class="btn" type="button" id="mMore" hidden>Ver mais antigas</button></div>
   </section>
 
   <section class="card">
@@ -405,6 +443,65 @@ async function loadUsers(){
   $("uInfo").textContent = total ? `${uOffset + 1}–${Math.min(total, uOffset + U_LIMIT)} de ${nf(total)}` : "";
   $("uPrev").disabled = uOffset === 0; $("uNext").disabled = uOffset + U_LIMIT >= total;
 }
+// ---------- mensagens do contato
+const M_LIMIT = 30, M_ST = {nova: "Nova", lida: "Lida", respondida: "Respondida", arquivada: "Arquivada"};
+let mFiltro = "abertas", mMax = M_LIMIT, mRows = [];
+async function loadMsgCount(){
+  const { count, error } = await sb.from("contact_messages").select("id", { count: "exact", head: true }).eq("status", "nova");
+  if (error) throw error;
+  const b = $("msgBadge"); b.textContent = nf(count); b.hidden = !count;
+  $("msgSub").textContent = count ? `${nf(count)} nova${count === 1 ? "" : "s"}, ainda não lida${count === 1 ? "" : "s"}. Elas também chegam no seu e-mail.` : "O que chegou pelo formulário de contato (autokan.com.br/contato).";
+}
+async function loadMsgs(){
+  let q = sb.from("contact_messages").select("id,created_at,name,email,subject,message,page,user_id,status,emailed_at", { count: "exact" }).order("created_at", { ascending: false }).limit(mMax);
+  if (mFiltro === "abertas") q = q.in("status", ["nova", "lida"]); else if (mFiltro !== "todas") q = q.eq("status", mFiltro);
+  const { data, count, error } = await q;
+  if (error) throw error;
+  mRows = data || [];
+  const VAZIO = {abertas: "Nenhuma mensagem esperando resposta.", respondida: "Nenhuma mensagem marcada como respondida.", arquivada: "Nenhuma mensagem arquivada.", todas: "Nenhuma mensagem ainda."};
+  $("msgs").innerHTML = mRows.length ? mRows.map(m => {
+    const primeiro = String(m.name || "").trim().split(/\s+/)[0];
+    const citado = String(m.message || "").slice(0, 1200).split("\n").map(l => "> " + l).join("\n");
+    const mail = "mailto:" + encodeURIComponent(m.email).replace(/%40/g, "@") + "?subject=" + encodeURIComponent("Re: " + (m.subject || "sua mensagem ao Autokan")) + "&body=" + encodeURIComponent(`Olá, ${primeiro}!\n\n\n\nAbraço,\nThiago, do Autokan\nhttps://autokan.com.br\n\n---\nSua mensagem de ${fdate(m.created_at)}:\n${citado}`);
+    const pg = m.page && m.page.startsWith("/") ? `<a href="${esc(m.page)}" target="_blank" rel="noopener">${esc(m.page)}</a>` : "";
+    const acoes = [
+      `<a class="btn primary" href="${esc(mail)}" data-resp="${m.id}">Responder</a>`,
+      m.status === "nova" ? `<button class="btn" type="button" data-st="lida" data-id="${m.id}">Marcar como lida</button>` : "",
+      m.status === "lida" ? `<button class="btn" type="button" data-st="nova" data-id="${m.id}">Marcar como nova</button>` : "",
+      m.status !== "respondida" ? `<button class="btn" type="button" data-st="respondida" data-id="${m.id}">Já respondi</button>` : "",
+      m.status !== "arquivada" ? `<button class="btn" type="button" data-st="arquivada" data-id="${m.id}">Arquivar</button>` : `<button class="btn" type="button" data-st="lida" data-id="${m.id}">Desarquivar</button>`,
+      `<button class="btn del" type="button" data-del="${m.id}">Apagar</button>`,
+    ].join("");
+    return `<li class="msg${m.status === "nova" ? " nova" : ""}"><div class="msg-t"><b>${esc(m.name)}</b><a href="${esc(mail)}" data-resp="${m.id}">${esc(m.email)}</a><time datetime="${esc(m.created_at)}" title="${esc(new Date(m.created_at).toLocaleString("pt-BR"))}">${fdate(m.created_at)} · ${ago(m.created_at)}</time></div>
+      <div class="msg-s"><span class="pill ${m.status === "nova" ? "nova" : m.status === "respondida" ? "ok" : ""}">${M_ST[m.status] || esc(m.status)}</span>${m.subject ? `<span>${esc(m.subject)}</span>` : ""}${pg ? `<span>· sobre ${pg}</span>` : ""}${m.user_id ? '<span class="pill acc">tem conta</span>' : ""}</div>
+      <p class="tx">${esc(m.message)}</p><div class="msg-a">${acoes}</div></li>`;
+  }).join("") : `<li class="empty">${VAZIO[mFiltro]}</li>`;
+  const total = count || 0;
+  $("mInfo").textContent = total > mRows.length ? `${nf(mRows.length)} de ${nf(total)}` : total ? `${nf(total)} mensage${total === 1 ? "m" : "ns"}` : "";
+  $("mMore").hidden = total <= mRows.length;
+}
+async function setMsg(id, patch){
+  const { error } = await sb.from("contact_messages").update(patch).eq("id", id);
+  if (error) throw error;
+}
+$("msgs").addEventListener("click", async e => {
+  const st = e.target.closest("[data-st]"), del = e.target.closest("[data-del]"), resp = e.target.closest("[data-resp]");
+  try {
+    if (st){ st.disabled = true; await setMsg(+st.dataset.id, {status: st.dataset.st}); toast({lida: "Marcada como lida.", nova: "Marcada como nova.", respondida: "Marcada como respondida.", arquivada: "Arquivada."}[st.dataset.st]); }
+    else if (del){ if (!confirm("Apagar esta mensagem de vez? Não dá para desfazer.")) return; del.disabled = true; const { error } = await sb.from("contact_messages").delete().eq("id", +del.dataset.del); if (error) throw error; toast("Mensagem apagada."); }
+    else if (resp){ const m = mRows.find(x => x.id === +resp.dataset.resp); if (m && m.status === "nova") await setMsg(m.id, {status: "lida"}); else return; }
+    else return;
+    await Promise.all([loadMsgs(), loadMsgCount()]);
+  } catch(err){ toast("Não deu para salvar agora. Tente de novo."); loadMsgs().catch(() => {}); }
+});
+document.querySelectorAll("[data-mf]").forEach(b => b.onclick = () => {
+  mFiltro = b.dataset.mf; mMax = M_LIMIT;
+  document.querySelectorAll("[data-mf]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  loadMsgs().catch(() => toast("Não deu para carregar as mensagens."));
+});
+$("mMore").onclick = () => { mMax += M_LIMIT; loadMsgs().catch(() => {}); };
+$("msgJump").onclick = e => { e.preventDefault(); history.replaceState(null, "", "#mensagens"); $("mensagens").scrollIntoView({behavior: "smooth", block: "start"}); $("mensagens").focus({preventScroll: true}); };
+
 function renderLinks(){
   const base = location.origin + "/";
   const ch = [["Instagram (bio e stories)", "instagram"], ["WhatsApp", "whatsapp"], ["Facebook", "facebook"], ["TikTok", "tiktok"], ["YouTube", "youtube"], ["Anúncio pago", "anuncio"]];
@@ -435,9 +532,11 @@ async function doBoot(){
   if (LS.get("autokan_sem_rastreio") == null) LS.set("autokan_sem_rastreio", "1");
   $("notrack").checked = LS.get("autokan_sem_rastreio") === "1";
   renderLinks();
-  await Promise.all([refreshAll(), loadUsers().catch(() => {})]);
+  const msgs = Promise.all([loadMsgs(), loadMsgCount()]).catch(() => { $("msgs").innerHTML = '<li class="empty">Não deu para carregar as mensagens agora.</li>'; });
+  if (location.hash === "#mensagens") msgs.then(() => { $("mensagens").scrollIntoView({block: "start"}); $("mensagens").focus({preventScroll: true}); });
+  await Promise.all([refreshAll(), loadUsers().catch(() => {}), msgs]);
   timers.forEach(clearInterval);
-  timers = [setInterval(() => loadOnline().catch(() => {}), 20000), setInterval(() => { loadOverview().catch(() => {}); loadRecent().catch(() => {}); }, 60000)];
+  timers = [setInterval(() => loadOnline().catch(() => {}), 20000), setInterval(() => { loadOverview().catch(() => {}); loadRecent().catch(() => {}); loadMsgCount().catch(() => {}); }, 60000)];
 }
 $("notrack").onchange = e => { LS.set("autokan_sem_rastreio", e.target.checked ? "1" : "0"); toast(e.target.checked ? "Suas visitas neste navegador não entram mais nos números." : "Suas visitas neste navegador voltam a contar."); };
 document.querySelectorAll("[data-days]").forEach(b => b.onclick = () => {

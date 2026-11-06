@@ -60,8 +60,19 @@
   let currentUser = null;
   let settingsPromise = null;
   let isAdmin = false;
+  let linkResult = null;
 
   const ready = (async () => {
+    // links dos e-mails do Autokan (supabase/templates): chegam como /?token_hash=...&type=email e são confirmados
+    // aqui mesmo, no endereço do site, em qualquer navegador (não precisa ser o mesmo do cadastro)
+    const q = new URLSearchParams(location.search), tokenHash = q.get("token_hash"), type = q.get("type");
+    if (tokenHash && /^(email|signup|magiclink|invite|email_change)$/.test(type || "")) {
+      const { error } = await sb.auth.verifyOtp({ token_hash: tokenHash, type });
+      linkResult = error ? "erro" : type;
+      q.delete("token_hash"); q.delete("type");
+      const rest = q.toString();
+      history.replaceState(null, "", location.pathname + (rest ? "?" + rest : "") + location.hash);
+    }
     const { data } = await sb.auth.getSession();
     currentUser = (data.session && data.session.user) || null;
     if (!currentUser) return;
@@ -82,6 +93,8 @@
 
   window.giroAuth = {
     ready,
+    // resultado do link do e-mail, se a pessoa chegou por um: "email", "invite", "email_change"... ou "erro"
+    linkResult: () => linkResult,
     current: () => {
       if (!currentUser) return null;
       const meta = currentUser.user_metadata || {};

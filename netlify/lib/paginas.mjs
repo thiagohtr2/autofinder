@@ -1,6 +1,6 @@
 /* Autokan: HTML das páginas próprias (carro, marca, todas as marcas e listas).
    Tudo sai pronto do servidor, para o Google ler sem depender de JavaScript. */
-import { SITE, FAIXAS, FAIXAS_ENTRE, ATALHOS_PRECO, TIPOS, COMBUSTIVEIS, filtrar, parecidos, imagem } from "./base.mjs";
+import { SITE, SB_URL, SB_CHAVE, FAIXAS, FAIXAS_ENTRE, ATALHOS_PRECO, TIPOS, COMBUSTIVEIS, filtrar, parecidos, imagem } from "./base.mjs";
 import { ICONS, TAGDESC } from "./pontos-fortes.mjs";
 
 /* ---------- formatação */
@@ -44,13 +44,47 @@ button{font-family:inherit}
 .top-in{display:flex;align-items:center;gap:18px;height:60px}
 .logo{display:flex;align-items:center;flex:none}
 .logo .ico{display:none}
-.top-nav{display:flex;gap:4px;margin-left:auto}
+.top-nav{display:flex;gap:2px;margin-left:auto}
 .top-nav a{color:#c9d3e6;text-decoration:none;font-weight:700;font-size:13.5px;padding:8px 10px;border-radius:10px}
 .top-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
 .top-cta{flex:none;display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:13.5px}
 .top-cta svg{width:16px;height:16px}
 .so-cel{display:none}
-@media (max-width:640px){.logo .full{display:none}.logo .ico{display:block}.top-in{gap:8px}.top-nav a{padding:8px 7px;font-size:13px}.top-nav .so-pc,.top-cta .so-pc{display:none}.top-cta .so-cel{display:inline}.top-cta{height:32px;padding:0 11px;font-size:13px}}
+.top-acts{display:flex;align-items:center;gap:8px;flex:none}
+.t-ic{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;padding:0;text-decoration:none}
+.t-ic svg{width:16px;height:16px}
+.t-ic:hover,.t-ic.on{background:#fff;color:var(--navy);border-color:#fff}
+.so-cel{display:none}
+.t-conta{display:flex;align-items:center;gap:8px;position:relative}
+.t-btn{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;white-space:nowrap}
+.t-btn:hover{background:rgba(255,255,255,.1)}
+.t-btn.pri{background:var(--accent);border-color:var(--accent)}
+.t-pf{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:#eaf1ff;color:var(--accent);font:700 14px var(--display);display:grid;place-items:center;overflow:hidden;cursor:pointer;padding:0}
+.t-pf img{width:100%;height:100%;object-fit:cover}
+.t-pm{position:absolute;right:0;top:calc(100% + 10px);z-index:9;width:250px;background:#fff;color:var(--ink);border-radius:16px;box-shadow:0 24px 60px -20px rgba(6,11,28,.45),0 0 0 1px var(--line);padding:6px;display:flex;flex-direction:column}
+.t-pm[hidden]{display:none}
+.t-pm-h{display:flex;flex-direction:column;gap:2px;padding:10px 10px 8px;border-bottom:1px solid var(--line);margin-bottom:4px;min-width:0}
+.t-pm-h b{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.t-pm-h small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.t-pm a,.t-pm button{display:block;width:100%;text-align:left;padding:10px;border:0;background:none;border-radius:10px;color:var(--ink);text-decoration:none;font:600 14px var(--body);cursor:pointer}
+.t-pm a:hover,.t-pm button:hover{background:var(--panel)}
+.t-pm a[hidden]{display:none}
+.t-busca{background:var(--navy);padding:0 0 12px}
+.t-busca[hidden]{display:none}
+.t-bq{display:flex;align-items:center;gap:10px;height:46px;padding:0 14px;border-radius:12px;background:#fff;color:var(--muted)}
+.t-bq svg{width:17px;height:17px;flex:none}
+.t-bq input{flex:1;min-width:0;height:100%;border:0;background:none;font:600 16px var(--body);color:var(--ink);outline:none}
+.t-br{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
+.t-br:empty{display:none}
+.t-br a{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:10px 12px;border-radius:10px;color:#fff;text-decoration:none}
+.t-br a:hover,.t-br a.on{background:rgba(255,255,255,.1)}
+.t-br b{font-weight:700;font-size:15px}
+.t-br small{font-size:12.5px;color:#9fb1d1;white-space:nowrap}
+.t-nada{padding:10px 12px;color:#9fb1d1;font-size:14px}
+@media (max-width:1040px){.top-nav .so-larga{display:none}}
+@media (max-width:900px){.top-nav{display:none}.so-cel{display:grid}.top-acts{margin-left:auto}}
+@media (max-width:640px){.logo .full{display:none}.logo .ico{display:block}.top-in{gap:8px}.top-cta.so-pc{display:none}.t-ic{width:30px;height:30px}.t-ic svg{width:14px;height:14px}.t-btn{height:30px;padding:0 12px;font-size:12.5px}.t-pf{width:32px;height:32px}.top-acts{gap:6px}}
+@media (max-width:370px){.so-cel-larga{display:none}.t-btn{padding:0 10px}}
 /* trilha */
 .trilha ol{list-style:none;display:flex;flex-wrap:wrap;gap:2px 0;margin:0;padding:18px 0 6px;font-size:13px;color:var(--muted)}
 .trilha li+li::before{content:"/";margin:0 8px;color:var(--faint)}
@@ -197,13 +231,58 @@ export const COMPARAR_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d
 export const urlPar = (a, b) => `/comparar/${[a.id, b.id].sort().join("-vs-")}`;
 export const ROLETA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 16l4-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
 
+const LUPA_T = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+const NOTICIAS_ICO = '<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="12" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14.5 7h2a1 1 0 0 1 1 1v7a1.5 1.5 0 0 1-3 0M5.5 7h6M5.5 10h6M5.5 13h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
+const COMPARA_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>';
+
 function topo() {
-  return `<header class="top"><div class="wrap top-in">
+  return `<header class="top" id="topo"><div class="wrap top-in">
 <a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="Autokan" width="42" height="18"></a>
-<nav class="top-nav" aria-label="Principal"><a class="so-pc" href="/carros">Marcas</a><a class="so-pc" href="/carros#precos">Preços</a><a class="so-pc" href="/carros#tipos">Tipos</a><a href="/noticias">Notícias</a><a href="/comparar">Comparar</a></nav>
-<a class="top-cta" href="/">${ROLETA}<span class="so-pc">Roleta de preços</span><span class="so-cel">Roleta</span></a>
-</div></header>`;
+<nav class="top-nav" aria-label="Principal"><a href="/carros">Marcas</a><a href="/carros#precos">Preços</a><a class="so-larga" href="/carros#tipos">Tipos</a><a href="/noticias">Notícias</a><a href="/comparar">Comparar</a></nav>
+<div class="top-acts">
+<a class="t-ic so-cel" href="/noticias" aria-label="Notícias" title="Notícias">${NOTICIAS_ICO}</a>
+<a class="t-ic so-cel so-cel-larga" href="/comparar" aria-label="Comparar carros" title="Comparar carros">${COMPARA_ICO}</a>
+<button type="button" class="t-ic" id="tBuscaBtn" aria-label="Buscar carro" title="Buscar carro" aria-expanded="false" aria-controls="tBusca">${LUPA_T}</button>
+<a class="top-cta so-pc" href="/">${ROLETA}Roleta de preços</a>
+<span class="t-conta" id="tConta"><a class="t-btn" href="/?entrar=1">Entrar</a><a class="t-btn pri" href="/?cadastrar=1">Cadastrar</a></span>
+</div></div>
+<div class="t-busca" id="tBusca" hidden><div class="wrap"><label class="t-bq">${LUPA_T}<span class="sr">Buscar carro ou marca</span><input type="search" id="tBq" placeholder="Buscar carro ou marca" autocomplete="off" enterkeyhint="go"></label><ul class="t-br" id="tBr"></ul></div></div>
+</header>`;
 }
+
+/* topo: busca de carros e conta da pessoa (a sessão é a mesma da roleta, guardada no navegador) */
+const SCRIPT_TOPO = `<script>(()=>{const SB=${JSON.stringify(SB_URL)},K=${JSON.stringify(SB_CHAVE)},CH="sb-"+SB.split("//")[1].split(".")[0]+"-auth-token";
+const e=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const sa=t=>String(t||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase();
+/* conta */
+let s=null;try{s=JSON.parse(localStorage.getItem(CH)||"null")}catch(x){}
+const u=s&&s.user,box=document.getElementById("tConta");
+if(u&&box){const m=u.user_metadata||{},nome=m.full_name||m.name||(u.email||"").split("@")[0]||"Você",av=typeof m.avatar_url==="string"&&/^https:\\/\\//.test(m.avatar_url)?m.avatar_url:"";
+  box.innerHTML='<button type="button" class="t-pf" id="tPf" aria-haspopup="menu" aria-expanded="false" aria-controls="tPm" aria-label="Sua conta" title="Sua conta">'+(av?'<img src="'+e(av)+'" alt="" referrerpolicy="no-referrer">':e(nome.trim().charAt(0).toUpperCase()))+'</button>'+
+   '<div class="t-pm" id="tPm" role="menu" aria-label="Sua conta" hidden><div class="t-pm-h"><b>'+e(nome)+'</b><small>'+e(u.email||"")+'</small></div>'+
+   '<a role="menuitem" href="/salvos">Salvos</a><a role="menuitem" href="/">Roleta de preços</a><a role="menuitem" href="/admin.html" class="t-adm" hidden>Painel de uso</a><a role="menuitem" href="/admin.html#mensagens" class="t-adm" hidden>Mensagens</a><a role="menuitem" href="/contato">Fale com a gente</a><button type="button" role="menuitem" id="tSair">Sair</button></div>';
+  const pf=document.getElementById("tPf"),pm=document.getElementById("tPm");
+  const abre=v=>{pm.hidden=!v;pf.setAttribute("aria-expanded",String(v))};
+  pf.onclick=x=>{x.stopPropagation();abre(pm.hidden)};document.addEventListener("click",x=>{if(!pm.hidden&&!x.target.closest("#tPm"))abre(false)});
+  document.addEventListener("keydown",x=>{if(x.key==="Escape"&&!pm.hidden){abre(false);pf.focus()}});
+  const tok=s.access_token,valido=tok&&(!s.expires_at||s.expires_at*1000>Date.now());
+  if(valido)fetch(SB+"/rest/v1/profiles?select=role&id=eq."+encodeURIComponent(u.id),{headers:{apikey:K,Authorization:"Bearer "+tok}}).then(r=>r.ok?r.json():[]).then(r=>{if(r[0]&&r[0].role==="admin")document.querySelectorAll(".t-adm").forEach(a=>a.hidden=false)}).catch(()=>{});
+  document.getElementById("tSair").onclick=()=>{(valido?fetch(SB+"/auth/v1/logout",{method:"POST",headers:{apikey:K,Authorization:"Bearer "+tok}}):Promise.resolve()).catch(()=>{}).finally(()=>{try{localStorage.removeItem(CH)}catch(x){}location.reload()})};
+}
+/* busca */
+const bb=document.getElementById("tBuscaBtn"),bx=document.getElementById("tBusca"),q=document.getElementById("tBq"),ul=document.getElementById("tBr");let dados=null,sel=-1,itens=[];
+const carrega=()=>dados||(dados=fetch("/busca.json").then(r=>r.json()).catch(()=>({m:[],b:[]})));
+const abreB=v=>{bx.hidden=!v;bb.setAttribute("aria-expanded",String(v));bb.classList.toggle("on",v);if(v){carrega();q.focus()}else{q.value="";ul.innerHTML=""}};
+bb.onclick=()=>abreB(bx.hidden);document.addEventListener("keydown",x=>{if(x.key==="Escape"&&!bx.hidden)abreB(false)});
+const rs=n=>"R$\\u00a0"+String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g,".");
+q.addEventListener("input",async()=>{const d=await carrega(),ts=sa(q.value.trim()).split(/\\s+/).filter(Boolean);sel=-1;
+  if(!ts.length){ul.innerHTML="";itens=[];return}
+  const ok=x=>ts.every(t=>x.q.includes(t)),bs=d.b.filter(ok).slice(0,3),ms=d.m.filter(ok).slice(0,8);itens=[...bs,...ms];
+  ul.innerHTML=itens.length?itens.map(x=>'<li><a href="'+e(x.u)+'"><b>'+e(x.n)+'</b><small>'+(x.p?"a partir de "+rs(x.p):x.s?e(x.s):"marca")+'</small></a></li>').join(""):'<li class="t-nada">Nenhum carro com esse nome</li>'});
+q.addEventListener("keydown",x=>{const as=ul.querySelectorAll("a");if(!as.length)return;
+  if(x.key==="ArrowDown"||x.key==="ArrowUp"){x.preventDefault();sel=(sel+(x.key==="ArrowDown"?1:-1)+as.length)%as.length;as.forEach((a,i)=>a.classList.toggle("on",i===sel));as[sel].scrollIntoView({block:"nearest"})}
+  if(x.key==="Enter"){x.preventDefault();location.href=as[Math.max(0,sel)].getAttribute("href")}});
+})()</script>`;
 
 function rodape() {
   const col = (titulo, itens) => `<div><b>${titulo}</b><ul>${itens.map(([u, t]) => `<li><a href="${u}">${esc(t)}</a></li>`).join("")}</ul></div>`;
@@ -212,7 +291,7 @@ function rodape() {
 ${col("Por preço", ATALHOS_PRECO.map((f) => [`/${f.slug}`, f.titulo.replace("Carros 0 km ", "").replace(/^./, (c) => c.toUpperCase())]))}
 ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
-${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"]])}
+${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"], ["/contato", "Contato"]])}
 </div>
 <p class="foot-nota">Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
 <p class="foot-copy">© ${new Date().getFullYear()} Autokan · Conheça. Compare. Escolha.</p>
@@ -261,6 +340,7 @@ ${topo()}
 ${corpo}
 </main>
 ${rodape()}
+${SCRIPT_TOPO}
 </body>
 </html>`;
 }
@@ -420,7 +500,7 @@ ${selos}
 
 <section class="sec" id="versoes" aria-labelledby="s-vs"><h2 id="s-vs">Versões e preços do ${esc(nomeAno)}</h2>
 ${tabela}
-<p class="nota">${esc(rotuloPreco(m.versoes))}. Cada versão tem link para a fonte do preço.</p>${breve}
+<p class="nota">${esc(rotuloPreco(m.versoes))}. Cada versão tem link para a fonte do preço. Viu algo errado? <a href="/contato?assunto=erro&amp;pagina=${encodeURIComponent(m.url)}&amp;titulo=${encodeURIComponent(m.titulo)}" rel="nofollow">Avise a gente</a>.</p>${breve}
 </section>
 ${pontos}
 ${ficha.length ? `<section class="sec" aria-labelledby="s-fc"><h2 id="s-fc">Ficha do ${esc(m.titulo)}</h2><dl class="ficha">${ficha.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl></section>` : ""}

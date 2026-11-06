@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="supported-color-schemes" content="light">
+<title>Confirme seu novo e-mail</title>
+</head>
+<body style="margin:0;padding:0;background:#eef1f6;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:#eef1f6;">Confirme o novo e-mail da sua conta.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#eef1f6;">
+<tr><td align="center" style="padding:24px 12px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:520px;background:#ffffff;border-radius:18px;overflow:hidden;">
+<tr><td style="background:#060b1c;padding:22px 28px;">
+<a href="https://autokan.com.br" style="text-decoration:none;"><img src="https://autokan.com.br/marca/autokan-logo-topo-escuro.png?v=5" width="168" height="18" alt="Autokan" style="display:block;border:0;height:18px;width:168px;color:#ffffff;font:700 18px Arial,sans-serif;"></a>
+</td></tr>
+<tr><td style="padding:32px 28px 8px;font-family:Arial,Helvetica,sans-serif;color:#0c111c;">
+<h1 style="margin:0 0 12px;font-size:23px;line-height:1.25;font-weight:700;color:#0c111c;">Confirme seu novo e-mail</h1>
+<p style="margin:0 0 24px;font-size:16px;line-height:1.55;color:#3b4352;">Você pediu para trocar o e-mail da sua conta no Autokan de <b>{{ .Email }}</b> para <b>{{ .NewEmail }}</b>. Toque no botão para confirmar a troca.</p>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td style="border-radius:12px;background:#1d6bff;">
+<a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:14px 26px;font:700 16px Arial,Helvetica,sans-serif;color:#ffffff;text-decoration:none;border-radius:12px;">Confirmar a troca</a>
+</td></tr></table>
+<p style="margin:24px 0 0;font-size:14px;line-height:1.55;color:#5d6577;">Não pediu essa troca? Não toque no botão e responda pelo <a href="https://autokan.com.br/contato" style="color:#1857d6;">contato do site</a>.</p>
+<p style="margin:16px 0 0;font-size:12.5px;line-height:1.5;color:#8a92a3;">Se o botão não abrir, copie este endereço no navegador:<br><a href="{{ .ConfirmationURL }}" style="color:#1857d6;word-break:break-all;">{{ .ConfirmationURL }}</a></p>
+</td></tr>
+<tr><td style="padding:24px 28px 28px;font-family:Arial,Helvetica,sans-serif;">
+<p style="margin:0;padding-top:18px;border-top:1px solid #e7eaf0;font-size:12.5px;line-height:1.55;color:#8a92a3;">Autokan: todos os carros 0 km do Brasil por faixa de preço.<br><a href="https://autokan.com.br" style="color:#5d6577;">autokan.com.br</a> · <a href="https://autokan.com.br/contato" style="color:#5d6577;">Fale com a gente</a></p>
+</td></tr>
+</table>
+</td></tr>
+</table>
+</body>
+</html>

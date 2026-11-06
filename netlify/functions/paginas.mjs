@@ -1,9 +1,10 @@
 /* Autokan: páginas próprias de cada carro, marca e lista, montadas no servidor a partir do banco,
    e o sitemap.xml. A Netlify guarda cada página pronta por 1 hora (e serve a guardada enquanto
    prepara a nova), então o banco é lido poucas vezes e as páginas acompanham o que muda nele. */
-import { SITE, carregar, FAIXAS, FAIXAS_ENTRE, TIPOS, COMBUSTIVEIS, filtrar, imagem, faixaPorSlug, lerMil, slugFaixa } from "../lib/base.mjs";
+import { SITE, carregar, semAcento, FAIXAS, FAIXAS_ENTRE, TIPOS, COMBUSTIVEIS, filtrar, imagem, faixaPorSlug, lerMil, slugFaixa } from "../lib/base.mjs";
 import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc } from "../lib/paginas.mjs";
 import { lerFiltros, paginaNoticias } from "../lib/noticias.mjs";
+import { paginaContato } from "../lib/contato.mjs";
 import { lerComparacao, paginaComparacao, paginaEscolher, paginaComparacoes, paresPopulares } from "../lib/comparar.mjs";
 
 const LISTAS = new Map([...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].map((l) => [l.slug, l]));
@@ -22,6 +23,9 @@ export default async (req) => {
   const certo = caminho.length > 1 ? caminho.replace(/\/+$/, "").toLowerCase() : caminho;
   if (certo !== caminho) return new Response(null, { status: 301, headers: { Location: `${encodeURI(certo)}${url.search}`, ...CACHE_OK } });
 
+  // contato: não depende do banco
+  if (caminho === "/contato") return html(paginaContato());
+
   let base;
   try { base = await carregar(); }
   catch (e) {
@@ -30,6 +34,7 @@ export default async (req) => {
   }
 
   if (caminho === "/sitemap.xml") return sitemap(base);
+  if (caminho === "/busca.json") return busca(base);
   if (caminho === "/carros") return html(paginaCarros(base));
   if (caminho === "/comparar") return html(paginaComparacoes(base));
   if (caminho === "/noticias") {
@@ -77,11 +82,19 @@ export default async (req) => {
   return naoAchou();
 };
 
+/* lista para a busca do topo das páginas: modelos à venda e marcas */
+function busca(base) {
+  const m = base.aVenda.map((x) => ({ n: x.titulo, u: x.url, p: x.precoMin || 0, q: semAcento(`${x.marca} ${x.nome} ${x.carroc}`) }))
+    .sort((a, b) => a.n.localeCompare(b.n, "pt-BR"));
+  const b = [...base.marcas.values()].filter((x) => x.aVenda.length).map((x) => ({ n: x.nome, u: x.url, s: `${x.aVenda.length} ${x.aVenda.length > 1 ? "modelos" : "modelo"}`, q: semAcento(x.nome) }));
+  return new Response(JSON.stringify({ m, b }), { headers: { "Content-Type": "application/json; charset=utf-8", ...CACHE_OK } });
+}
+
 function sitemap(base) {
   const dia = (d) => (d ? String(d).slice(0, 10) : base.lerEm.slice(0, 10));
   const url = (loc, mod, imgs = []) => `<url><loc>${SITE}${loc}</loc><lastmod>${dia(mod)}</lastmod>${imgs.map(([src, titulo]) => `<image:image><image:loc>${esc(SITE + src)}</image:loc><image:title>${esc(titulo)}</image:title></image:image>`).join("")}</url>`;
   const linhas = [
-    url("/", base.atualizado), url("/carros", base.atualizado), url("/comparar", base.atualizado), url("/noticias", (base.feed[0] || {}).date || base.atualizado),
+    url("/", base.atualizado), url("/carros", base.atualizado), url("/comparar", base.atualizado), url("/noticias", (base.feed[0] || {}).date || base.atualizado), url("/contato", "2026-11-06"),
     ...[...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].filter((l) => filtrar(base, l).length).map((l) => url(`/${l.slug}`, base.atualizado)),
     ...[...base.marcas.values()].map((b) => url(b.url, b.atualizado)),
     ...[...base.modelos.values()].filter((m) => m.marcaInfo).map((m) => url(m.url, m.atualizado, m.foto ? [[imagem(m.foto, 1200), `${m.titulo}${m.ano ? ` ${m.ano}` : ""} (imagem ilustrativa)`]] : [])),
@@ -93,6 +106,6 @@ function sitemap(base) {
 
 // escrito por extenso: a Netlify lê esta configuração sem rodar o código. Os tipos são os de TIPOS em netlify/lib/base.mjs.
 export const config = {
-  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/sitemap.xml", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
+  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/contato", "/sitemap.xml", "/busca.json", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
   method: ["GET", "HEAD"],
 };
