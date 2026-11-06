@@ -6,7 +6,7 @@
 (function () {
   "use strict";
   var PONTO = 64, MAX = 112, SEGURA = 56;
-  var css = ".ptr{position:fixed;left:0;right:0;top:0;height:0;overflow:hidden;z-index:-1;pointer-events:none;" +
+  var css = ".ptr{position:fixed;left:0;right:0;top:0;height:0;overflow:hidden;z-index:0;pointer-events:none;" +
     "background:var(--ptr-bg,#eef1f5);box-shadow:inset 0 -10px 12px -12px rgba(12,17,28,.35)}" +
     ".ptr-ic{position:absolute;left:50%;top:" + (SEGURA - 24) / 2 + "px;width:24px;height:24px;margin-left:-12px;color:#7a8396;opacity:0;transition:color .15s}" +
     ".ptr-ic svg{display:block;width:24px;height:24px}" +
