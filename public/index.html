@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png?v=5">
 <script src="/puxar.js" defer></script>
 <script src="/tracker.js"></script>
-<meta name="theme-color" content="#0d1631">
+<meta name="theme-color" content="#060b1c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
@@ -949,8 +949,8 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .fx-tools .fx-ok{margin-left:0;flex:1 1 100%}
   .fx-keys{display:none}
 }
-/* cabeçalho escuro, com o fundo da placa do logo (vale em todas as telas; fica no fim para vencer as regras do celular) */
-.top{background:#0d1631 linear-gradient(180deg,#0d1631 0%,#0b1330 55%,#080f26 100%);border-bottom-color:rgba(111,151,255,.22)}
+/* cabeçalho escuro numa cor só (o tom mais escuro da placa do logo, #060b1c) (vale em todas as telas; fica no fim para vencer as regras do celular) */
+.top{background:#060b1c;border-bottom-color:rgba(111,151,255,.22)}
 .top .fbtn{background:#fff;border-color:#fff;color:#0c111c}
 .top .fchip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#c3cde3}
 .top .fchip:hover{border-color:rgba(255,255,255,.4);color:#fff}
@@ -973,7 +973,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .top .q-list,.top #pmenu{color:var(--ink)}
 /* entrar e cadastrar: tela inteira com o fundo da placa e a logomarca geral (com a frase) no alto */
 #authPanel{top:0;left:0;right:0;bottom:0;width:auto;max-height:none;border-radius:0;box-shadow:none;overflow-y:auto;color:#e8eefc;
-  background:#0d1631 linear-gradient(180deg,#0d1631 0%,#0a1230 50%,#060b1c 100%);animation:authin .3s var(--ease)}
+  background:#060b1c;animation:authin .3s var(--ease)}
 @keyframes authin{from{opacity:0;transform:scale(.985)}}
 #authPanel .as-in{position:relative;width:min(420px,100%);margin:0 auto;padding:max(64px,9vh) 20px 36px;display:flex;flex-direction:column;gap:4px}
 #authPanel .dr-x{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));z-index:2;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.24);color:#fff}
@@ -1000,7 +1000,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (max-width:760px){.logo .logo-img{display:none}.logo .logo-ico{display:block;height:18px;width:auto;flex:none}}
 /* barra do relógio do iPhone na cor do topo: o fundo atrás da página é o marinho e o topo fica preso no alto
    (o Safari novo pinta a barra com essa cor; os mais antigos usam o theme-color). O conteúdo continua branco. */
-html{background:#0d1631}
+html{background:#060b1c}
 .top{position:sticky;top:0;z-index:20}
 /* sem conta, o espaço do ícone de perfil (vazio) não ocupa lugar: o Cadastrar fica a 16 px da borda, como a logo do outro lado */
 .meta .pwrap:not(:has(> .pbtn:not([hidden]))){display:none}
