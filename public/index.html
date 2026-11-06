@@ -201,7 +201,7 @@ button,input{font:inherit;color:inherit}
 .pm-item span{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
 .pm-item small{font-size:11.5px;font-weight:500;color:var(--muted)}
 .pm-n{flex:none;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:var(--accent);color:#fff;font:800 11.5px/22px var(--body);text-align:center;box-sizing:border-box}
-/* Minha garagem: página própria (/garagem) com os cards da roleta, todos como selecionados */
+/* Salvos: página própria (/salvos) com os cards da roleta, todos como selecionados */
 .gp{position:fixed;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column}
 .gp[hidden]{display:none}
 .gp-bar{display:flex;align-items:center;gap:8px;flex:none;background:#060b1c;color:#fff;padding:calc(10px + env(safe-area-inset-top,0px)) var(--gr) 10px max(8px,env(safe-area-inset-left,0px))}
@@ -515,6 +515,7 @@ button,input{font:inherit;color:inherit}
 .sh-act svg{width:21px;height:21px;color:var(--accent);flex:none}
 .sh-act:hover{border-color:var(--accent)}
 .sh-act.on{background:var(--accent-soft);border-color:var(--accent);color:#1450c8}
+.sh-act.on svg path{fill:currentColor}
 .sh-links{display:flex;flex-direction:column;gap:8px;margin-top:14px}.sh-links .sh-site{margin-top:0}
 .sh-site:hover{border-color:var(--accent)}.sh-site span{display:flex;flex-direction:column;gap:2px;min-width:0}.sh-site small{font-size:11px;color:var(--muted)}.sh-site b{font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sh-site svg{width:18px;height:18px;flex:none;color:var(--accent)}
 .sh-tbl{width:100%;border-collapse:collapse;font-size:13px}
@@ -1167,7 +1168,7 @@ html{background:#060b1c}
       <button type="button" class="pbtn" id="pbtn" aria-label="Sua conta" title="Sua conta" aria-haspopup="menu" aria-expanded="false" aria-controls="pmenu" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c1-3.2 3.6-4.8 6.5-4.8s5.5 1.6 6.5 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b class="p-dot" id="pDot" hidden></b></button>
       <div class="pmenu" id="pmenu" role="menu" aria-label="Sua conta" hidden>
         <div class="pm-head"><span class="pm-av" id="pmAv" aria-hidden="true"></span><span class="pm-who"><b id="pmName"></b><small id="pmEmail"></small></span></div>
-        <div class="pm-sec"><button type="button" class="pm-item" role="menuitem" id="gbtn"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 9 10 3.5 17.5 9v8h-15z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M6 17v-5.5h8V17M6 14.2h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Minha garagem<small>Carros que você salvou, para comparar</small></span><b class="pm-n" id="gCount" hidden></b></button></div>
+        <div class="pm-sec"><button type="button" class="pm-item" role="menuitem" id="gbtn"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.8h9a.9.9 0 0 1 .9.9v13.6L10 13.5l-5.4 3.8V3.7a.9.9 0 0 1 .9-.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Salvos<small>Carros que você salvou, para comparar</small></span><b class="pm-n" id="gCount" hidden></b></button></div>
         <div class="pm-sec" id="pmAdmin" hidden>
           <div class="pm-h">Administração</div>
           <a class="pm-item" role="menuitem" href="/admin.html" id="pmPainel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16V9m5 7V4m5 12v-5m4 5H2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Painel de uso<small>Visitas, cadastros e o que as pessoas fazem</small></span></a>
@@ -1246,13 +1247,13 @@ html{background:#060b1c}
 <section class="gp" id="garPage" role="dialog" aria-modal="true" aria-labelledby="gpTitle" hidden>
   <header class="gp-bar">
     <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para a roleta"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <div class="gp-ttl"><h1 id="gpTitle">Minha garagem</h1><p id="gpSub"></p></div>
+    <div class="gp-ttl"><h1 id="gpTitle">Salvos</h1><p id="gpSub"></p></div>
   </header>
   <div class="gp-scroll" id="gpScroll"><div class="gp-in">
     <div class="gp-tools" id="gpTools" hidden><span class="gp-tl" id="gpOrgL">Organizar por</span><div class="gp-seg" role="group" aria-labelledby="gpOrgL"><button type="button" data-gorg="tipo" aria-pressed="true">Tipo</button><button type="button" data-gorg="preco" aria-pressed="false">Preço</button><button type="button" data-gorg="forte" aria-pressed="false">Ponto forte</button></div></div>
     <div id="gpBody"></div>
   </div></div>
-  <div class="g-foot" id="gpFoot" hidden><span id="gpSel"></span><a class="g-cmp off" id="gpCmp" aria-disabled="true" data-ev="comparar-garagem">Comparar lado a lado</a></div>
+  <div class="g-foot" id="gpFoot" hidden><span id="gpSel"></span><a class="g-cmp off" id="gpCmp" aria-disabled="true" data-ev="comparar-salvos">Comparar lado a lado</a></div>
 </section>
 <aside class="drawer sheet" id="newsPanel" role="dialog" aria-modal="true" aria-labelledby="nfTitle" hidden>
   <div class="dr-head"><div><h2 id="nfTitle">Notícias</h2><div class="nf-sub" id="nfSub"></div></div><button type="button" class="dr-x" id="nfClose" aria-label="Fechar notícias">✕</button></div>
@@ -1402,14 +1403,14 @@ function deriveTags(r){
   if(research.includes("tech"))k.tech=TAGRULE.tech;
   return {k:TAGORDER.filter(x=>k[x]),why:k,cv};
 }
-/* Minha garagem e comparação: ícones dos botões da ficha */
-const GAR_ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5V20H3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M7 20v-6.5h10V20M7 16.5h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>';
+/* Salvos e comparação: ícones dos botões da ficha (salvar = etiqueta de marcador) */
+const GAR_ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.5h11a1 1 0 0 1 1 1v16.2l-6.5-4.6-6.5 4.6V4.5a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>';
 const CMP_ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>';
 const PG_ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 /* página própria do carro (montada no servidor): /carros/<marca>/<modelo> */
 const pageOf=c=>c&&c.bid&&c.mid&&c.mid.startsWith(c.bid+"-")?`/carros/${c.bid}/${c.mid.slice(c.bid.length+1)}`:null;
 function shActs(c){const on=GARAGE.has(c.id),pg=pageOf(c);
-  return `<div class="sh-acts"><button type="button" class="sh-act${on?" on":""}" data-garage="${esc(c.id)}" aria-pressed="${on}">${GAR_ICO}<span>${on?"Na garagem":"Salvar na garagem"}</span></button>`+
+  return `<div class="sh-acts"><button type="button" class="sh-act${on?" on":""}" data-garage="${esc(c.id)}" aria-pressed="${on}">${GAR_ICO}<span>${on?"Salvo":"Salvar"}</span></button>`+
     `<a class="sh-act" href="/comparar/${encodeURIComponent(c.mid)}?versao=${encodeURIComponent(c.id)}" data-ev="comparar" data-vid="${esc(c.id)}">${CMP_ICO}<span>Comparar</span></a>`+
     (pg?`<a class="sh-act" href="${pg}" data-ev="pagina-carro" data-vid="${esc(c.id)}">${PG_ICO}<span>Página completa</span></a>`:"")+`</div>`}
 /* favorito: estrela (contorno quando desligado, cheia quando ligado) */
@@ -1652,7 +1653,7 @@ function setPending(o){try{localStorage.setItem(PEND_KEY,JSON.stringify(Object.a
 function clearPending(){try{localStorage.removeItem(PEND_KEY)}catch(e){}}
 function takePending(){try{const r=JSON.parse(localStorage.getItem(PEND_KEY)||"null");clearPending();if(r&&r.id&&Date.now()-r.at<3600000)return r}catch(e){}return null}
 function askAccount(kind,id){const c=ALLCARS.find(x=>x.id===id),nm=c?`o ${esc(c.mk)} ${esc(c.nm)}`:"este carro";setPending({kind,id});
-  authReason=kind==="like"?`Para favoritar ${nm}, entre ou crie sua conta. O favorito fica guardado e entra assim que você entrar.`:`Para salvar ${nm} na Minha garagem, entre ou crie sua conta. Ele aparece salvo assim que você entrar.`;
+  authReason=kind==="like"?`Para favoritar ${nm}, entre ou crie sua conta. O favorito fica guardado e entra assim que você entrar.`:`Para salvar ${nm}, entre ou crie sua conta. Ele aparece em Salvos assim que você entrar.`;
   openAuth("signup")}
 function trackThenReload(kind,meta){if(window.giroTrack)giroTrack(kind,{meta:meta||{}});setTimeout(()=>location.reload(),350)}
 const G_ICON='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
@@ -2612,20 +2613,20 @@ let dbT;document.getElementById("dbQ").addEventListener("input",()=>{clearTimeou
 ["dbOrigin","dbStatus","dbPend"].forEach(id=>document.getElementById(id).addEventListener("change",renderDB));
 document.getElementById("dbOpenAll").onclick=e=>{dbOpenAll=!dbOpenAll;e.target.textContent=dbOpenAll?"Fechar tudo":"Abrir tudo";renderDB()};
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!dbPanel.hidden&&sheet.hidden){if(dbMenuOn())dbMenuSet(false);else closeDB()}});
-/* ---------- Minha garagem: carros salvos para acompanhar e comparar (privada, guardada na conta) ---------- */
+/* ---------- Salvos: carros salvos para acompanhar e comparar (privado, guardado na conta; tabela "garage") ---------- */
 let GARAGE=new Map(),garageLoad=Promise.resolve(),authKnown=false;const GAR_MAX=40,gSel=new Set();
 async function loadGarage(){if(!myId||!window.giroGarage)return;try{const l=await giroGarage.list();GARAGE=new Map(l.map(x=>[x.id,x.at]));paintGarage()}catch(e){}}
 function paintGarage(){const n=GARAGE.size,b=document.getElementById("gCount");b.hidden=!n;b.textContent=n;
-  document.querySelectorAll("[data-garage]").forEach(x=>{const on=GARAGE.has(x.dataset.garage);x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);const t=x.querySelector("span");if(t)t.textContent=on?"Na garagem":"Salvar na garagem"});
+  document.querySelectorAll("[data-garage]").forEach(x=>{const on=GARAGE.has(x.dataset.garage);x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);const t=x.querySelector("span");if(t)t.textContent=on?"Salvo":"Salvar"});
   renderGarPage()}
 async function toggleGarage(id){const had=GARAGE.has(id),c=ALLCARS.find(x=>x.id===id);
-  if(!had&&GARAGE.size>=GAR_MAX)return toast(`A garagem guarda até ${GAR_MAX} carros. Tire algum para salvar este.`);
+  if(!had&&GARAGE.size>=GAR_MAX)return toast(`Dá para salvar até ${GAR_MAX} carros. Tire algum para salvar este.`);
   had?GARAGE.delete(id):GARAGE.set(id,new Date().toISOString());if(had)gSel.delete(id);paintGarage();
   if(window.giroTrack)giroTrack("save",{version_id:id,model_id:c&&c.mid,meta:{on:!had}});
-  try{had?await giroGarage.remove(id):await giroGarage.add(id);if(!had)toast(`${c?`${c.mk} ${c.nm}`:"Carro"} salvo na Minha garagem, no menu da sua conta.`)}
-  catch(err){had?GARAGE.set(id,new Date().toISOString()):GARAGE.delete(id);paintGarage();toast("Não deu para salvar na garagem. Tente de novo.")}}
+  try{had?await giroGarage.remove(id):await giroGarage.add(id);if(!had)toast(`${c?`${c.mk} ${c.nm}`:"Carro"} salvo. Veja em Salvos, no menu da sua conta.`)}
+  catch(err){had?GARAGE.set(id,new Date().toISOString()):GARAGE.delete(id);paintGarage();toast("Não deu para salvar. Tente de novo.")}}
 
-/* página da garagem (/garagem): os cards da roleta, todos como selecionados, organizados por tipo, preço ou ponto forte,
+/* página dos salvos (/salvos): os cards da roleta, todos como selecionados, organizados por tipo, preço ou ponto forte,
    com uma linha separando cada grupo. Marca de 2 a 4 para comparar lado a lado. */
 const garPage=document.getElementById("garPage"),gpBody=document.getElementById("gpBody"),gpFoot=document.getElementById("gpFoot"),TITULO0=document.title;
 let GORG=(()=>{try{const v=localStorage.getItem("autokan_garagem_org");return ["tipo","preco","forte"].includes(v)?v:"tipo"}catch(e){return "tipo"}})();
@@ -2640,17 +2641,17 @@ function renderGarPage(){
   if(garPage.hidden)return;
   document.querySelectorAll("[data-gorg]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.gorg===GORG)));
   const sub=document.getElementById("gpSub"),tools=document.getElementById("gpTools"),vazio=(t,p,acts)=>`<div class="gp-empty"><b>${t}</b><p>${p}</p><div class="acts">${acts}</div></div>`;
-  if(!authKnown||(myId&&!loaded)){tools.hidden=true;gpFoot.hidden=true;sub.textContent="";gpBody.innerHTML=`<div class="gp-empty"><p>Carregando sua garagem…</p></div>`;return}
+  if(!authKnown||(myId&&!loaded)){tools.hidden=true;gpFoot.hidden=true;sub.textContent="";gpBody.innerHTML=`<div class="gp-empty"><p>Carregando seus carros salvos…</p></div>`;return}
   if(!myId){sub.textContent="Só você vê";tools.hidden=true;gpFoot.hidden=true;
-    gpBody.innerHTML=vazio("Entre para ver sua garagem","Salve os carros de que você está de olho, organize por tipo, preço ou ponto forte e compare lado a lado.",`<button type="button" class="gp-btn pri" data-gauth="signup">Criar conta</button><button type="button" class="gp-btn" data-gauth="login">Entrar</button>`);return}
+    gpBody.innerHTML=vazio("Entre para ver seus carros salvos","Salve os carros de que você está de olho, organize por tipo, preço ou ponto forte e compare lado a lado.",`<button type="button" class="gp-btn pri" data-gauth="signup">Criar conta</button><button type="button" class="gp-btn" data-gauth="login">Entrar</button>`);return}
   const ids=[...GARAGE.keys()],cars=ids.map(id=>CARS.find(x=>x.id===id)).filter(Boolean),fora=ids.filter(id=>!CARS.some(x=>x.id===id));
   for(const id of [...gSel])if(!cars.some(c=>c.id===id))gSel.delete(id);
   sub.textContent=cars.length?`${cars.length} ${cars.length>1?"carros salvos":"carro salvo"} · só você vê`:"Só você vê";
   tools.hidden=!cars.length;
-  const avisoFora=fora.length?`<p class="gp-note">${fora.length>1?`${fora.length} carros que você salvou saíram`:"1 carro que você salvou saiu"} de linha ou do site. <button type="button" class="gp-lnk" data-gclean>Tirar da garagem</button></p>`:"";
-  if(!cars.length){gpFoot.hidden=true;gpBody.innerHTML=vazio("Sua garagem está vazia","Na roleta, abra a ficha de um carro e toque em “Salvar na garagem”. Ele aparece aqui, junto com os outros que você salvar.",`<button type="button" class="gp-btn pri" data-gclose>Ir para a roleta</button>`)+avisoFora;return}
+  const avisoFora=fora.length?`<p class="gp-note">${fora.length>1?`${fora.length} carros que você salvou saíram`:"1 carro que você salvou saiu"} de linha ou do site. <button type="button" class="gp-lnk" data-gclean>Tirar dos salvos</button></p>`:"";
+  if(!cars.length){gpFoot.hidden=true;gpBody.innerHTML=vazio("Você ainda não salvou nenhum carro","Na roleta, abra a ficha de um carro e toque em “Salvar”. Ele aparece aqui, junto com os outros que você salvar.",`<button type="button" class="gp-btn pri" data-gclose>Ir para a roleta</button>`)+avisoFora;return}
   const gs=garGroups(cars);
-  gpBody.innerHTML=(GORG==="forte"?`<p class="gp-note">Um carro aparece em cada ponto forte que ele tem.</p>`:"")+gs.map(g=>`<section class="gp-g"><h2>${g.k?`<span class="ic" data-k="${g.k}">${ico(g.k)}</span>`:""}<span>${esc(g.label)}</span><small>${g.cars.length} ${g.cars.length>1?"carros":"carro"}</small></h2><div class="gp-grid">${g.cars.map((c,i)=>`<div class="gp-it"><div class="gp-ctl"><label class="gp-ck"><input type="checkbox" data-gsel="${esc(c.id)}"${gSel.has(c.id)?" checked":""}> Comparar</label><button type="button" class="gp-x" data-gdel="${esc(c.id)}" aria-label="Tirar ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)} da garagem" title="Tirar da garagem">✕ Tirar</button></div>${cardHTML(c,i).replace('class="card','class="card sel')}</div>`).join("")}</div></section>`).join("")+avisoFora;
+  gpBody.innerHTML=(GORG==="forte"?`<p class="gp-note">Um carro aparece em cada ponto forte que ele tem.</p>`:"")+gs.map(g=>`<section class="gp-g"><h2>${g.k?`<span class="ic" data-k="${g.k}">${ico(g.k)}</span>`:""}<span>${esc(g.label)}</span><small>${g.cars.length} ${g.cars.length>1?"carros":"carro"}</small></h2><div class="gp-grid">${g.cars.map((c,i)=>`<div class="gp-it"><div class="gp-ctl"><label class="gp-ck"><input type="checkbox" data-gsel="${esc(c.id)}"${gSel.has(c.id)?" checked":""}> Comparar</label><button type="button" class="gp-x" data-gdel="${esc(c.id)}" aria-label="Tirar ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)} dos salvos" title="Tirar dos salvos">✕ Tirar</button></div>${cardHTML(c,i).replace('class="card','class="card sel')}</div>`).join("")}</div></section>`).join("")+avisoFora;
   paintGpSel()}
 function paintGpSel(){const n=gSel.size,ok=n>=2&&n<=4,a=document.getElementById("gpCmp");gpFoot.hidden=false;
   document.getElementById("gpSel").textContent=n<2?(n?"Marque mais 1 para comparar":"Marque 2 a 4 carros para comparar"):`${n} carros marcados`;
@@ -2672,20 +2673,20 @@ gpBody.addEventListener("click",e=>{
   const inf=e.target.closest("[data-info]");if(inf)return openInfo(inf.dataset.info)});
 document.getElementById("gpTools").addEventListener("click",e=>{const b=e.target.closest("[data-gorg]");if(!b)return;GORG=b.dataset.gorg;
   try{localStorage.setItem("autokan_garagem_org",GORG)}catch(e){}renderGarPage();document.getElementById("gpScroll").scrollTop=0});
-function openGarPage(push=true){if(push&&location.pathname!=="/garagem")history.pushState({gar:1},"","/garagem");
-  garPage.hidden=false;document.querySelector(".app").inert=true;document.title="Minha garagem | Autokan";renderGarPage();
-  document.getElementById("gpBack").focus({preventScroll:true});if(window.giroTrack)giroTrack("page_view",{path:"/garagem"})}
+function openGarPage(push=true){if(push&&location.pathname!=="/salvos")history.pushState({gar:1},"","/salvos");
+  garPage.hidden=false;document.querySelector(".app").inert=true;document.title="Salvos | Autokan";renderGarPage();
+  document.getElementById("gpBack").focus({preventScroll:true});if(window.giroTrack)giroTrack("page_view",{path:"/salvos"})}
 function hideGarPage(){if(garPage.hidden)return;garPage.hidden=true;document.querySelector(".app").inert=false;document.title=TITULO0}
-function closeGarPage(){if(history.state&&history.state.gar)return history.back();if(location.pathname==="/garagem")history.replaceState(null,"","/");hideGarPage()}
-addEventListener("popstate",()=>{location.pathname==="/garagem"?openGarPage(false):hideGarPage()});
+function closeGarPage(){if(history.state&&history.state.gar)return history.back();if(location.pathname==="/salvos")history.replaceState(null,"","/");hideGarPage()}
+addEventListener("popstate",()=>{location.pathname==="/salvos"?openGarPage(false):hideGarPage()});
 document.getElementById("gpBack").onclick=closeGarPage;
 document.getElementById("gbtn").onclick=()=>openGarPage();
 /* Esc fecha a página só quando não há ficha nem painel aberto por cima (roda antes dos outros, que fecham esses) */
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!garPage.hidden&&sheet.hidden&&newsPanel.hidden&&!panelOpen()&&authPanel.hidden)closeGarPage()},true);
-if(location.pathname==="/garagem")openGarPage(false);
+if(location.pathname==="/salvos")openGarPage(false);
 function closeSheet(){sheet.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("shClose").onclick=closeSheet;
-/* ficha: salvar na Minha garagem (sem conta, pede para entrar e salva logo depois) */
+/* ficha: salvar o carro (sem conta, pede para entrar e salva logo depois) */
 shBody.addEventListener("click",e=>{const gb=e.target.closest("[data-garage]");if(gb)myId?toggleGarage(gb.dataset.garage):askAccount("save",gb.dataset.garage)});
 shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]");
   if(cp){const t=cp.dataset.copy,lb=cp.parentElement.querySelector(".copied");
