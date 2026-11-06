@@ -1,6 +1,14 @@
 [build]
   publish = "public"
 
+# o endereço antigo leva ao domínio próprio (um só endereço para o Google e para as visitas).
+# Só vale para autokan.netlify.app: as prévias (deploy-preview-N--autokan.netlify.app) continuam abrindo normalmente.
+[[redirects]]
+  from = "https://autokan.netlify.app/*"
+  to = "https://autokan.com.br/:splat"
+  status = 301
+  force = true
+
 [[headers]]
   for = "/*"
   [headers.values]
