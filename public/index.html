@@ -201,27 +201,54 @@ button,input{font:inherit;color:inherit}
 .pm-item span{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
 .pm-item small{font-size:11.5px;font-weight:500;color:var(--muted)}
 .pm-n{flex:none;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:var(--accent);color:#fff;font:800 11.5px/22px var(--body);text-align:center;box-sizing:border-box}
-/* Minha garagem */
-.g-tip{margin:0 0 10px;font-size:13px;color:var(--muted)}
-.g-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
-.g-it{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:14px;padding:6px 6px 6px 4px}
-.g-it.sel{border-color:var(--accent);background:#f7faff}
-.g-ck{display:grid;place-items:center;width:34px;height:44px;flex:none;cursor:pointer}
-.g-ck input{width:19px;height:19px;margin:0;accent-color:var(--accent);cursor:pointer}
-.g-open{display:flex;align-items:center;gap:10px;flex:1;min-width:0;border:0;background:none;padding:2px;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
-.g-ph{width:76px;height:43px;flex:none;border-radius:9px;background:var(--panel);display:grid;place-items:center;overflow:hidden}
-.g-ph img{width:100%;height:100%;object-fit:contain}
-.g-tx{display:flex;flex-direction:column;min-width:0}
-.g-tx small{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.g-tx b{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em}
-.g-tx span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.g-tx em{font-style:normal;font:600 13px var(--mono);letter-spacing:-.02em;margin-top:2px}
-.g-x{width:34px;height:34px;flex:none;border:0;border-radius:50%;background:none;color:var(--muted);font-size:14px;cursor:pointer}
-.g-x:hover{background:var(--panel);color:var(--ink)}
-.g-it.fora .g-tx b{color:var(--muted)}
+/* Minha garagem: página própria (/garagem) com os cards da roleta, todos como selecionados */
+.gp{position:fixed;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column}
+.gp[hidden]{display:none}
+.gp-bar{display:flex;align-items:center;gap:8px;flex:none;background:#060b1c;color:#fff;padding:calc(10px + env(safe-area-inset-top,0px)) var(--gr) 10px max(8px,env(safe-area-inset-left,0px))}
+.gp-back{width:40px;height:40px;flex:none;border:0;border-radius:12px;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;padding:0}
+.gp-back:hover{background:rgba(255,255,255,.08)}
+.gp-back svg{width:22px;height:22px}
+.gp-ttl{flex:1;min-width:0}
+.gp-ttl h1{margin:0;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;line-height:1.2}
+.gp-ttl p{margin:1px 0 0;font-size:12px;font-weight:600;color:#9fb1d1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gp-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+.gp-in{max-width:1280px;margin:0 auto;padding:0 var(--gr) 28px var(--gl)}
+.gp-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:16px 0 4px}
+.gp-tools[hidden]{display:none}
+.gp-tl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.gp-seg{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--panel)}
+.gp-seg button{height:34px;padding:0 15px;border:0;border-radius:999px;background:transparent;font:700 13px var(--body);color:#3b4352;cursor:pointer}
+.gp-seg button[aria-pressed=true]{background:var(--ink);color:#fff}
+.gp-g{padding:18px 0 22px}
+.gp-g+.gp-g{border-top:1px solid var(--line)}
+.gp-g>h2{display:flex;align-items:center;gap:9px;margin:0 0 6px;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em}
+.gp-g>h2 small{font:600 12.5px var(--body);color:var(--muted);letter-spacing:0}
+.gp-g>h2 .ic{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none}
+.gp-g>h2 .ic svg{width:14px;height:14px}
+.gp-note{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
+.gp-lnk{border:0;background:none;padding:0;font:inherit;font-weight:700;color:#1450c8;text-decoration:underline;cursor:pointer}
+.gp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:16px 14px}
+.gp-it{display:flex;flex-direction:column;min-width:0}
+.gp-it .card{flex:none;width:auto;margin-top:4px;cursor:default}
+.gp .rank{visibility:hidden}
+.gp .card .floor{left:-4%;right:-4%;height:18px;bottom:-8px;background:radial-gradient(ellipse at center,rgba(29,107,255,.45),rgba(29,107,255,.08) 55%,transparent 72%)}
+.gp-ctl{display:flex;align-items:center;justify-content:space-between;gap:6px;min-height:30px;padding:0 2px}
+.gp-ck{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer;padding:4px 0}
+.gp-ck input{width:17px;height:17px;margin:0;accent-color:var(--accent);cursor:pointer}
+.gp-it.on .gp-ck{color:#1450c8}
+.gp-x{display:inline-flex;align-items:center;height:28px;padding:0 8px;border:0;border-radius:8px;background:none;color:var(--muted);font:700 12px var(--body);cursor:pointer}
+.gp-x:hover{background:var(--panel);color:var(--ink)}
+.gp-empty{max-width:520px;margin:56px auto 24px;text-align:center}
+.gp-empty b{display:block;font-family:var(--display);font-weight:600;font-size:21px;letter-spacing:-.01em;margin-bottom:8px}
+.gp-empty p{margin:0 0 18px;color:var(--muted);font-size:14.5px;line-height:1.5}
+.gp-empty .acts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.gp-btn{height:44px;padding:0 20px;border-radius:12px;border:1px solid var(--line);background:#fff;font:700 14px var(--body);color:var(--ink);cursor:pointer}
+.gp-btn.pri{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 10px 24px -12px rgba(29,107,255,.6)}
+.gp .g-foot{flex:none}
+@media (max-width:520px){.gp-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px}.gp-g>h2{font-size:17px}.gp-seg button{padding:0 12px}}
 .g-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--bg)}
 .g-foot span{font-size:12.5px;font-weight:700;color:var(--muted)}
-.g-cmp{height:42px;padding:0 16px;border-radius:12px;background:var(--accent);color:#fff;font:700 14px var(--body);display:inline-flex;align-items:center;text-decoration:none;box-shadow:0 10px 24px -12px rgba(29,107,255,.6)}
+.g-cmp{flex:none;white-space:nowrap;height:42px;padding:0 16px;border-radius:12px;background:var(--accent);color:#fff;font:700 14px var(--body);display:inline-flex;align-items:center;text-decoration:none;box-shadow:0 10px 24px -12px rgba(29,107,255,.6)}
 .g-cmp.off{background:var(--line);color:var(--muted);box-shadow:none;pointer-events:none}
 .pm-item .rd-dot{position:static;flex:none}
 .pbtn:hover{background:var(--accent);color:#fff;box-shadow:none}
@@ -1216,11 +1243,17 @@ html{background:#060b1c}
     </nav>
   </div>
 </section>
-<aside class="drawer sheet" id="garPanel" role="dialog" aria-modal="true" aria-labelledby="gTitle" hidden>
-  <div class="dr-head"><div><h2 id="gTitle">Minha garagem</h2><div class="nf-sub" id="gSub"></div></div><button type="button" class="dr-x" id="gClose" aria-label="Fechar Minha garagem">✕</button></div>
-  <div class="dr-body" id="gBody"></div>
-  <div class="g-foot" id="gFoot" hidden><span id="gSel"></span><a class="g-cmp off" id="gCmp" aria-disabled="true" data-ev="comparar-garagem">Comparar lado a lado</a></div>
-</aside>
+<section class="gp" id="garPage" role="dialog" aria-modal="true" aria-labelledby="gpTitle" hidden>
+  <header class="gp-bar">
+    <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para a roleta"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="gp-ttl"><h1 id="gpTitle">Minha garagem</h1><p id="gpSub"></p></div>
+  </header>
+  <div class="gp-scroll" id="gpScroll"><div class="gp-in">
+    <div class="gp-tools" id="gpTools" hidden><span class="gp-tl" id="gpOrgL">Organizar por</span><div class="gp-seg" role="group" aria-labelledby="gpOrgL"><button type="button" data-gorg="tipo" aria-pressed="true">Tipo</button><button type="button" data-gorg="preco" aria-pressed="false">Preço</button><button type="button" data-gorg="forte" aria-pressed="false">Ponto forte</button></div></div>
+    <div id="gpBody"></div>
+  </div></div>
+  <div class="g-foot" id="gpFoot" hidden><span id="gpSel"></span><a class="g-cmp off" id="gpCmp" aria-disabled="true" data-ev="comparar-garagem">Comparar lado a lado</a></div>
+</section>
 <aside class="drawer sheet" id="newsPanel" role="dialog" aria-modal="true" aria-labelledby="nfTitle" hidden>
   <div class="dr-head"><div><h2 id="nfTitle">Notícias</h2><div class="nf-sub" id="nfSub"></div></div><button type="button" class="dr-x" id="nfClose" aria-label="Fechar notícias">✕</button></div>
   <div class="dr-body" id="nfBody"></div>
@@ -1978,10 +2011,10 @@ let lastFocus=null;
 function openDrawer(){lastFocus=document.activeElement;DRCAT="mk";renderDrawer();drawer.hidden=false;scrim.hidden=false;document.getElementById("drClose").focus()}
 function closeDrawer(){drawer.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("fbtn").onclick=openDrawer;
-document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!document.getElementById("pcPanel").hidden)return closePrice();if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!garPanel.hidden)return closeGarage();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
+document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!document.getElementById("pcPanel").hidden)return closePrice();if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
 document.getElementById("drGo").onclick=closeDrawer;
 document.getElementById("drClear").onclick=()=>{DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged()};
-addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!garPanel.hidden)return closeGarage();if(!imgPanel.hidden)return closeImg();if(!sheet.hidden)closeSheet();else if(!drawer.hidden)closeDrawer()});
+addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)return closeImg();if(!sheet.hidden)closeSheet();else if(!drawer.hidden)closeDrawer()});
 drBody.addEventListener("click",e=>{const ob=e.target.closest(".og-btn");if(ob&&!ob.disabled){const o=ob.dataset.origin,ks=[...new Set(CARS.map(c=>c.mk))].filter(k=>(BRANDCO[k]||"Outras origens")===o);
     const on=ob.getAttribute("aria-pressed")==="true";ks.forEach(k=>on?F.mk.delete(k):F.mk.add(k));filtersChanged();const f=[...drBody.querySelectorAll(".og-btn")].find(x=>x.dataset.origin===o);f&&f.focus();return}
   const tb=e.target.closest(".dr-tab");if(tb){DRCAT=tb.dataset.cat;renderDrawer();const f=drBody.querySelector(`.dr-tab[data-cat="${DRCAT}"]`);f&&f.focus();return}const o=e.target.closest(".opt");if(!o||o.disabled)return;const set=F[o.dataset.g],v=o.dataset.v;set.has(v)?set.delete(v):set.add(v);filtersChanged();const fo=[...drBody.querySelectorAll(".opt2")].find(x=>x.dataset.v===v);fo&&fo.focus()});
@@ -2126,7 +2159,7 @@ function setCatalog(snap){lastCat=snap;
     rows.push({id:r.i,mid:r.m,bid:d.id,pr:r.pr||null,mk:String(x.brand||""),nm:String(r.mn||""),ver:String(r.v||""),ano:r.y||null,p:typeof r.p==="number"?r.p:null,
       t:BODYKEY[r.b]||null,body:r.b||null,...(({k,why})=>({k,why}))(deriveTags(r)),fu:r.f||null,cb:r.t||null,mo:r.e||"",kind:r.pk==="fipe"?"FIPE":"Tabela",cv:r.cv||null})})});
   ALLCARS=rows;CARS=rows.filter(c=>shown(c.bid,c.mid));applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();
-  abrirDoLink();
+  abrirDoLink();renderGarPage();
 }
 /* links das páginas próprias de cada carro: /?carro=<modelo> (e &versao=<versão>) leva a roleta até o carro e abre a ficha */
 let linkAberto=false;
@@ -2580,40 +2613,76 @@ let dbT;document.getElementById("dbQ").addEventListener("input",()=>{clearTimeou
 document.getElementById("dbOpenAll").onclick=e=>{dbOpenAll=!dbOpenAll;e.target.textContent=dbOpenAll?"Fechar tudo":"Abrir tudo";renderDB()};
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!dbPanel.hidden&&sheet.hidden){if(dbMenuOn())dbMenuSet(false);else closeDB()}});
 /* ---------- Minha garagem: carros salvos para acompanhar e comparar (privada, guardada na conta) ---------- */
-let GARAGE=new Map(),garageLoad=Promise.resolve();const GAR_MAX=40,gSel=new Set();
-const garPanel=document.getElementById("garPanel"),gBody=document.getElementById("gBody"),gFoot=document.getElementById("gFoot");
+let GARAGE=new Map(),garageLoad=Promise.resolve(),authKnown=false;const GAR_MAX=40,gSel=new Set();
 async function loadGarage(){if(!myId||!window.giroGarage)return;try{const l=await giroGarage.list();GARAGE=new Map(l.map(x=>[x.id,x.at]));paintGarage()}catch(e){}}
 function paintGarage(){const n=GARAGE.size,b=document.getElementById("gCount");b.hidden=!n;b.textContent=n;
   document.querySelectorAll("[data-garage]").forEach(x=>{const on=GARAGE.has(x.dataset.garage);x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);const t=x.querySelector("span");if(t)t.textContent=on?"Na garagem":"Salvar na garagem"});
-  if(!garPanel.hidden)renderGarage()}
+  renderGarPage()}
 async function toggleGarage(id){const had=GARAGE.has(id),c=ALLCARS.find(x=>x.id===id);
   if(!had&&GARAGE.size>=GAR_MAX)return toast(`A garagem guarda até ${GAR_MAX} carros. Tire algum para salvar este.`);
   had?GARAGE.delete(id):GARAGE.set(id,new Date().toISOString());if(had)gSel.delete(id);paintGarage();
   if(window.giroTrack)giroTrack("save",{version_id:id,model_id:c&&c.mid,meta:{on:!had}});
   try{had?await giroGarage.remove(id):await giroGarage.add(id);if(!had)toast(`${c?`${c.mk} ${c.nm}`:"Carro"} salvo na Minha garagem, no menu da sua conta.`)}
   catch(err){had?GARAGE.set(id,new Date().toISOString()):GARAGE.delete(id);paintGarage();toast("Não deu para salvar na garagem. Tente de novo.")}}
-function renderGarage(){
-  const its=[...GARAGE.entries()].sort((a,b)=>String(b[1]).localeCompare(String(a[1]))).map(([id])=>({id,c:CARS.find(x=>x.id===id)}));
-  for(const id of [...gSel])if(!GARAGE.has(id)||!CARS.some(x=>x.id===id))gSel.delete(id);
-  document.getElementById("gSub").textContent=its.length?`${its.length} ${its.length>1?"carros salvos":"carro salvo"} · só você vê`:"Só você vê";
-  if(!its.length){gBody.innerHTML=`<div class="empty"><b>Sua garagem está vazia</b>Abra a ficha de um carro e toque em “Salvar na garagem”. Depois, marque de 2 a 4 carros aqui para comparar lado a lado.</div>`;gFoot.hidden=true;return}
-  gBody.innerHTML=`<p class="g-tip">Marque de 2 a 4 carros para comparar lado a lado. Toque no carro para abrir a ficha.</p><ul class="g-list">${its.map(({id,c})=>{
-    if(!c)return `<li class="g-it fora"><span class="g-ck"></span><span class="g-open"><span class="g-ph"></span><span class="g-tx"><b>Versão fora do site</b><span>Saiu de linha ou deixou de ser vendida</span></span></span><button type="button" class="g-x" data-gdel="${esc(id)}" aria-label="Tirar da garagem" title="Tirar da garagem">✕</button></li>`;
-    const ph=(photoOf(c.mid,c.ano)||{}).asset,nm=`${c.mk} ${c.nm} ${c.ver}`;
-    return `<li class="g-it${gSel.has(id)?" sel":""}"><label class="g-ck"><input type="checkbox" data-gsel="${esc(id)}"${gSel.has(id)?" checked":""} aria-label="Marcar ${esc(nm)} para comparar"></label><button type="button" class="g-open" data-gopen="${esc(id)}"><span class="g-ph">${ph?`<img src="${blobUrl(ph)}" alt="" loading="lazy">`:""}</span><span class="g-tx"><small>${esc(c.mk)}</small><b>${esc(c.nm)}</b><span>${esc(c.ver)}${c.ano?` · ${c.ano}`:""}</span><em>${c.p?fmt(c.p):"preço não divulgado"}</em></span></button><button type="button" class="g-x" data-gdel="${esc(id)}" aria-label="Tirar ${esc(nm)} da garagem" title="Tirar da garagem">✕</button></li>`}).join("")}</ul>`;
-  paintGSel()}
-function paintGSel(){const n=gSel.size,ok=n>=2&&n<=4,a=document.getElementById("gCmp");gFoot.hidden=false;
-  document.getElementById("gSel").textContent=n<2?(n?"Marque mais 1 para comparar":"Marque 2 a 4 carros"):`${n} carros marcados`;
+
+/* página da garagem (/garagem): os cards da roleta, todos como selecionados, organizados por tipo, preço ou ponto forte,
+   com uma linha separando cada grupo. Marca de 2 a 4 para comparar lado a lado. */
+const garPage=document.getElementById("garPage"),gpBody=document.getElementById("gpBody"),gpFoot=document.getElementById("gpFoot"),TITULO0=document.title;
+let GORG=(()=>{try{const v=localStorage.getItem("autokan_garagem_org");return ["tipo","preco","forte"].includes(v)?v:"tipo"}catch(e){return "tipo"}})();
+const FAIXAS_G=[[100000,"Até R$ 100 mil"],[150000,"De R$ 100 mil a R$ 150 mil"],[200000,"De R$ 150 mil a R$ 200 mil"],[300000,"De R$ 200 mil a R$ 300 mil"],[500000,"De R$ 300 mil a R$ 500 mil"],[Infinity,"Acima de R$ 500 mil"]];
+function garGroups(cars){
+  const by=new Map(),add=(key,label,c,o,k)=>{(by.get(key)||by.set(key,{label,o,k,cars:[]}).get(key)).cars.push(c)};
+  if(GORG==="preco")cars.forEach(c=>{if(!c.p)return add("z","Preço não divulgado",c,99);const i=FAIXAS_G.findIndex(([max])=>c.p<=max);add("f"+i,FAIXAS_G[i][1],c,i)});
+  else if(GORG==="forte")cars.forEach(c=>{if(!c.k.length)add("zz","Sem ponto forte",c,99);c.k.forEach(k=>add(k,TAGS[k],c,TAGORDER.indexOf(k),k))});
+  else{const order=GROUPS.find(g=>g.key==="t").order;cars.forEach(c=>{const b=c.body||"Outros";add(b,b,c,(order.indexOf(b)+1)||98)})}
+  return [...by.values()].sort((a,b)=>a.o-b.o).map(g=>({...g,cars:g.cars.sort((x,y)=>(x.p??Infinity)-(y.p??Infinity))}))}
+function renderGarPage(){
+  if(garPage.hidden)return;
+  document.querySelectorAll("[data-gorg]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.gorg===GORG)));
+  const sub=document.getElementById("gpSub"),tools=document.getElementById("gpTools"),vazio=(t,p,acts)=>`<div class="gp-empty"><b>${t}</b><p>${p}</p><div class="acts">${acts}</div></div>`;
+  if(!authKnown||(myId&&!loaded)){tools.hidden=true;gpFoot.hidden=true;sub.textContent="";gpBody.innerHTML=`<div class="gp-empty"><p>Carregando sua garagem…</p></div>`;return}
+  if(!myId){sub.textContent="Só você vê";tools.hidden=true;gpFoot.hidden=true;
+    gpBody.innerHTML=vazio("Entre para ver sua garagem","Salve os carros de que você está de olho, organize por tipo, preço ou ponto forte e compare lado a lado.",`<button type="button" class="gp-btn pri" data-gauth="signup">Criar conta</button><button type="button" class="gp-btn" data-gauth="login">Entrar</button>`);return}
+  const ids=[...GARAGE.keys()],cars=ids.map(id=>CARS.find(x=>x.id===id)).filter(Boolean),fora=ids.filter(id=>!CARS.some(x=>x.id===id));
+  for(const id of [...gSel])if(!cars.some(c=>c.id===id))gSel.delete(id);
+  sub.textContent=cars.length?`${cars.length} ${cars.length>1?"carros salvos":"carro salvo"} · só você vê`:"Só você vê";
+  tools.hidden=!cars.length;
+  const avisoFora=fora.length?`<p class="gp-note">${fora.length>1?`${fora.length} carros que você salvou saíram`:"1 carro que você salvou saiu"} de linha ou do site. <button type="button" class="gp-lnk" data-gclean>Tirar da garagem</button></p>`:"";
+  if(!cars.length){gpFoot.hidden=true;gpBody.innerHTML=vazio("Sua garagem está vazia","Na roleta, abra a ficha de um carro e toque em “Salvar na garagem”. Ele aparece aqui, junto com os outros que você salvar.",`<button type="button" class="gp-btn pri" data-gclose>Ir para a roleta</button>`)+avisoFora;return}
+  const gs=garGroups(cars);
+  gpBody.innerHTML=(GORG==="forte"?`<p class="gp-note">Um carro aparece em cada ponto forte que ele tem.</p>`:"")+gs.map(g=>`<section class="gp-g"><h2>${g.k?`<span class="ic" data-k="${g.k}">${ico(g.k)}</span>`:""}<span>${esc(g.label)}</span><small>${g.cars.length} ${g.cars.length>1?"carros":"carro"}</small></h2><div class="gp-grid">${g.cars.map((c,i)=>`<div class="gp-it"><div class="gp-ctl"><label class="gp-ck"><input type="checkbox" data-gsel="${esc(c.id)}"${gSel.has(c.id)?" checked":""}> Comparar</label><button type="button" class="gp-x" data-gdel="${esc(c.id)}" aria-label="Tirar ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)} da garagem" title="Tirar da garagem">✕ Tirar</button></div>${cardHTML(c,i).replace('class="card','class="card sel')}</div>`).join("")}</div></section>`).join("")+avisoFora;
+  paintGpSel()}
+function paintGpSel(){const n=gSel.size,ok=n>=2&&n<=4,a=document.getElementById("gpCmp");gpFoot.hidden=false;
+  document.getElementById("gpSel").textContent=n<2?(n?"Marque mais 1 para comparar":"Marque 2 a 4 carros para comparar"):`${n} carros marcados`;
   a.classList.toggle("off",!ok);a.setAttribute("aria-disabled",String(!ok));
-  if(ok){const cs=[...gSel].map(id=>CARS.find(x=>x.id===id)).filter(Boolean);a.href=`/comparar/${cs.map(c=>encodeURIComponent(c.mid)).join("-vs-")}?versoes=${cs.map(c=>encodeURIComponent(c.id)).join(",")}`}else a.removeAttribute("href")}
-gBody.addEventListener("change",e=>{const x=e.target.closest("[data-gsel]");if(!x)return;const id=x.dataset.gsel;
-  if(x.checked&&gSel.size>=4){x.checked=false;return toast("Dá para comparar até 4 carros por vez.")}
-  x.checked?gSel.add(id):gSel.delete(id);x.closest(".g-it").classList.toggle("sel",x.checked);paintGSel()});
-gBody.addEventListener("click",e=>{const o=e.target.closest("[data-gopen]");if(o){const id=o.dataset.gopen;closeGarage(true);return openInfo(id)}
-  const d=e.target.closest("[data-gdel]");if(d)toggleGarage(d.dataset.gdel)});
-function openGarage(){if(!myId)return openAuth();lastFocus=document.activeElement;renderGarage();garPanel.hidden=false;scrim.hidden=false;gBody.scrollTop=0;document.getElementById("gClose").focus()}
-function closeGarage(keepScrim){garPanel.hidden=true;if(!keepScrim)scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
-document.getElementById("gbtn").onclick=openGarage;document.getElementById("gClose").onclick=()=>closeGarage();
+  if(ok){const cs=[...gSel].map(id=>CARS.find(x=>x.id===id)).filter(Boolean);a.href=`/comparar/${cs.map(c=>encodeURIComponent(c.mid)).join("-vs-")}?versoes=${cs.map(c=>encodeURIComponent(c.id)).join(",")}`}else a.removeAttribute("href");
+  gpBody.querySelectorAll("[data-gsel]").forEach(x=>{x.checked=gSel.has(x.dataset.gsel);x.closest(".gp-it").classList.toggle("on",x.checked)})}
+gpBody.addEventListener("change",e=>{const x=e.target.closest("[data-gsel]");if(!x)return;const id=x.dataset.gsel;
+  if(x.checked&&!gSel.has(id)&&gSel.size>=4){x.checked=false;return toast("Dá para comparar até 4 carros por vez.")}
+  x.checked?gSel.add(id):gSel.delete(id);paintGpSel()});
+gpBody.addEventListener("click",e=>{
+  const au=e.target.closest("[data-gauth]");if(au)return openAuth(au.dataset.gauth);
+  if(e.target.closest("[data-gclose]"))return closeGarPage();
+  if(e.target.closest("[data-gclean]")){[...GARAGE.keys()].filter(id=>!CARS.some(x=>x.id===id)).forEach(id=>toggleGarage(id));return}
+  const d=e.target.closest("[data-gdel]");if(d)return toggleGarage(d.dataset.gdel);
+  const nb=e.target.closest("[data-news]");if(nb)return openNews(nb.dataset.news);
+  const cb=e.target.closest("[data-cm]");if(cb)return openPanel("cm",cb.dataset.cm,cb.dataset.cv||"");
+  const ab=e.target.closest("[data-al]");if(ab)return openPanel("al",ab.dataset.al);
+  const l=e.target.closest("[data-like]");if(l&&!l.disabled){if(!myId)return askAccount("like",l.dataset.like);toggle(l.dataset.like);return renderGarPage()}
+  const inf=e.target.closest("[data-info]");if(inf)return openInfo(inf.dataset.info)});
+document.getElementById("gpTools").addEventListener("click",e=>{const b=e.target.closest("[data-gorg]");if(!b)return;GORG=b.dataset.gorg;
+  try{localStorage.setItem("autokan_garagem_org",GORG)}catch(e){}renderGarPage();document.getElementById("gpScroll").scrollTop=0});
+function openGarPage(push=true){if(push&&location.pathname!=="/garagem")history.pushState({gar:1},"","/garagem");
+  garPage.hidden=false;document.querySelector(".app").inert=true;document.title="Minha garagem | Autokan";renderGarPage();
+  document.getElementById("gpBack").focus({preventScroll:true});if(window.giroTrack)giroTrack("page_view",{path:"/garagem"})}
+function hideGarPage(){if(garPage.hidden)return;garPage.hidden=true;document.querySelector(".app").inert=false;document.title=TITULO0}
+function closeGarPage(){if(history.state&&history.state.gar)return history.back();if(location.pathname==="/garagem")history.replaceState(null,"","/");hideGarPage()}
+addEventListener("popstate",()=>{location.pathname==="/garagem"?openGarPage(false):hideGarPage()});
+document.getElementById("gpBack").onclick=closeGarPage;
+document.getElementById("gbtn").onclick=()=>openGarPage();
+/* Esc fecha a página só quando não há ficha nem painel aberto por cima (roda antes dos outros, que fecham esses) */
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!garPage.hidden&&sheet.hidden&&newsPanel.hidden&&!panelOpen()&&authPanel.hidden)closeGarPage()},true);
+if(location.pathname==="/garagem")openGarPage(false);
 function closeSheet(){sheet.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("shClose").onclick=closeSheet;
 /* ficha: salvar na Minha garagem (sem conta, pede para entrar e salva logo depois) */
@@ -2951,7 +3020,7 @@ document.getElementById("ipClose").onclick=closeImg;
     const [d,u]=await Promise.all([claude.use("db"),claude.use("user")]);
     if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Abra o Autokan pelo link com sua conta conectada para ver a biblioteca.";swap();return}
     db=d;userNS=u;myId=u?await u.id():null;
-    garageLoad=loadGarage();
+    authKnown=true;garageLoad=loadGarage().then(renderGarPage);
     const timer=setTimeout(()=>{if(!live)status("Sem conexão com os favoritos",false)},10000);
     const ct=setTimeout(()=>{if(!loaded){loadErr="Não deu para conectar ao banco. Verifique a internet; a página tenta de novo sozinha.";swap()}},10000);
     visReady=loadVis().catch(()=>{});

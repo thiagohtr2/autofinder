@@ -21,6 +21,12 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Minha garagem tem endereço próprio, mas é a mesma página da roleta (a garagem é de cada pessoa, montada no navegador)
+[[redirects]]
+  from = "/garagem"
+  to = "/index.html"
+  status = 200
+
 # CDN de imagens do Netlify: entrega as fotos do Supabase em tamanho reduzido
 [images]
   remote_images = ["https://ljgcvxadsekaicffztbi\\.supabase\\.co/storage/v1/object/public/.*"]
