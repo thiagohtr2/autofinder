@@ -202,18 +202,19 @@ button,input{font:inherit;color:inherit}
 .pm-item small{font-size:11.5px;font-weight:500;color:var(--muted)}
 .pm-n{flex:none;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:var(--accent);color:#fff;font:800 11.5px/22px var(--body);text-align:center;box-sizing:border-box}
 /* Salvos: página própria (/salvos) com os cards da roleta, todos como selecionados */
-.gp{position:fixed;inset:0;z-index:25;background:var(--bg);display:flex;flex-direction:column}
+.gp{display:flex;flex-direction:column;min-height:0;background:var(--bg)}
+.app.gp-on .main{display:none}
 .gp[hidden]{display:none}
-.gp-bar{display:flex;align-items:center;gap:8px;flex:none;background:#060b1c;color:#fff;padding:calc(10px + env(safe-area-inset-top,0px)) var(--gr) 10px max(8px,env(safe-area-inset-left,0px))}
-.gp-back{width:40px;height:40px;flex:none;border:0;border-radius:12px;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;padding:0}
-.gp-back:hover{background:rgba(255,255,255,.08)}
+.gp-bar{display:flex;align-items:center;gap:6px;flex:none;background:var(--bg);color:var(--ink);padding:12px 0 6px;max-width:1280px;width:100%;margin:0 auto;box-sizing:border-box}
+.gp-back{width:40px;height:40px;flex:none;border:0;border-radius:12px;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;margin-left:-8px}
+.gp-back:hover{background:var(--panel)}
 .gp-back svg{width:22px;height:22px}
 .gp-ttl{flex:1;min-width:0}
-.gp-ttl h1{margin:0;font-family:var(--display);font-weight:600;font-size:19px;letter-spacing:-.01em;line-height:1.2}
-.gp-ttl p{margin:1px 0 0;font-size:12px;font-weight:600;color:#9fb1d1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gp-ttl h1{margin:0;font-family:var(--display);font-weight:600;font-size:24px;letter-spacing:-.02em;line-height:1.2}
+.gp-ttl p{margin:2px 0 0;font-size:12.5px;font-weight:600;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .gp-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 .gp-in{max-width:1280px;margin:0 auto;padding:0 var(--gr) 28px var(--gl)}
-.gp-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:16px 0 4px}
+.gp-tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;padding:8px 0 4px}
 .gp-tools[hidden]{display:none}
 .gp-tl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .gp-seg{display:inline-flex;gap:2px;padding:3px;border-radius:999px;background:var(--panel)}
@@ -1172,11 +1173,12 @@ html{background:#060b1c}
         <div class="pm-sec" id="pmAdmin" hidden>
           <div class="pm-h">Administração</div>
           <a class="pm-item" role="menuitem" href="/admin.html" id="pmPainel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16V9m5 7V4m5 12v-5m4 5H2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Painel de uso<small>Visitas, cadastros e o que as pessoas fazem</small></span></a>
+          <a class="pm-item" role="menuitem" href="/admin.html#mensagens" id="pmMsgs"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3 5.5 7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Mensagens<small>O que chegou pelo formulário de contato</small></span></a>
           <button type="button" class="pm-item" role="menuitem" id="dbbtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="6" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 4.5v11c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-11M4 10c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Banco de dados<small>Marcas, modelos, versões e o que aparece no site</small></span><b class="rd-dot" id="dbDot" hidden style="background:var(--accent)"></b></button>
           <button type="button" class="pm-item" role="menuitem" id="rdbtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10 15 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Radar de lançamentos<small>Novidades do mercado para revisar</small></span><b class="rd-dot" id="rdDot" hidden></b></button>
           <button type="button" class="pm-item" role="menuitem" id="editbtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="15" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3 14 4.5-4.5 3.5 3.5 2.5-2.5 3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="13.5" cy="7.5" r="1.4" fill="currentColor"/></svg><span>Imagens<small>Fotos dos carros e logos das marcas</small></span></button>
         </div>
-        <div class="pm-sec"><button type="button" class="pm-item" role="menuitem" id="pmOut"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 16h3m4-9.5L15.5 10 12 13.5M15.5 10H8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sair</span></button></div>
+        <div class="pm-sec"><a class="pm-item" role="menuitem" href="/contato"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4.5h12a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5H9l-4 3v-3H4A1.5 1.5 0 0 1 2.5 13V6A1.5 1.5 0 0 1 4 4.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Fale com a gente</span></a><button type="button" class="pm-item" role="menuitem" id="pmOut"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 16h3m4-9.5L15.5 10 12 13.5M15.5 10H8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sair</span></button></div>
       </div>
       </div>
     </div>
@@ -1202,9 +1204,20 @@ html{background:#060b1c}
         <button type="button" class="scroller back" id="scrollL" aria-label="Voltar aos carros anteriores" hidden><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button type="button" class="scroller" id="scrollR" aria-label="Ver mais carros" hidden><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
-      <p class="note">Todas as versões 0 km à venda, linha 2027 (ou 2026 quando ainda não há 2027). Preço de tabela sugerido pela montadora em nov/2026, ou FIPE 0 km quando a montadora não divulga. Cada carro tem link para a fonte. <a class="note-a" href="/carros">Ver todas as marcas e listas de preços</a></p>
+      <p class="note">Todas as versões 0 km à venda, linha 2027 (ou 2026 quando ainda não há 2027). Preço de tabela sugerido pela montadora em nov/2026, ou FIPE 0 km quando a montadora não divulga. Cada carro tem link para a fonte. <a class="note-a" href="/carros">Ver todas as marcas e listas de preços</a> · <a class="note-a" href="/contato">Fale com a gente</a></p>
     </section>
   </main>
+<section class="gp" id="garPage" aria-labelledby="gpTitle" hidden>
+  <div class="gp-scroll" id="gpScroll"><div class="gp-in">
+  <header class="gp-bar">
+    <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para a roleta"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="gp-ttl"><h1 id="gpTitle">Salvos</h1><p id="gpSub"></p></div>
+  </header>
+    <div class="gp-tools" id="gpTools" hidden><span class="gp-tl" id="gpOrgL">Organizar por</span><div class="gp-seg" role="group" aria-labelledby="gpOrgL"><button type="button" data-gorg="tipo" aria-pressed="true">Tipo</button><button type="button" data-gorg="preco" aria-pressed="false">Preço</button><button type="button" data-gorg="forte" aria-pressed="false">Ponto forte</button></div></div>
+    <div id="gpBody"></div>
+  </div></div>
+  <div class="g-foot" id="gpFoot" hidden><span id="gpSel"></span><a class="g-cmp off" id="gpCmp" aria-disabled="true" data-ev="comparar-salvos">Comparar lado a lado</a></div>
+</section>
 </div>
 <div class="scrim" id="scrim" hidden></div>
 <section class="dbp" id="rdPanel" role="dialog" aria-modal="true" aria-labelledby="rdTitle" hidden>
@@ -1243,17 +1256,6 @@ html{background:#060b1c}
       </div>
     </nav>
   </div>
-</section>
-<section class="gp" id="garPage" role="dialog" aria-modal="true" aria-labelledby="gpTitle" hidden>
-  <header class="gp-bar">
-    <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para a roleta"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-    <div class="gp-ttl"><h1 id="gpTitle">Salvos</h1><p id="gpSub"></p></div>
-  </header>
-  <div class="gp-scroll" id="gpScroll"><div class="gp-in">
-    <div class="gp-tools" id="gpTools" hidden><span class="gp-tl" id="gpOrgL">Organizar por</span><div class="gp-seg" role="group" aria-labelledby="gpOrgL"><button type="button" data-gorg="tipo" aria-pressed="true">Tipo</button><button type="button" data-gorg="preco" aria-pressed="false">Preço</button><button type="button" data-gorg="forte" aria-pressed="false">Ponto forte</button></div></div>
-    <div id="gpBody"></div>
-  </div></div>
-  <div class="g-foot" id="gpFoot" hidden><span id="gpSel"></span><a class="g-cmp off" id="gpCmp" aria-disabled="true" data-ev="comparar-salvos">Comparar lado a lado</a></div>
 </section>
 <aside class="drawer sheet" id="newsPanel" role="dialog" aria-modal="true" aria-labelledby="nfTitle" hidden>
   <div class="dr-head"><div><h2 id="nfTitle">Notícias</h2><div class="nf-sub" id="nfSub"></div></div><button type="button" class="dr-x" id="nfClose" aria-label="Fechar notícias">✕</button></div>
@@ -1685,7 +1687,15 @@ const authLinkError=new URLSearchParams(location.hash.slice(1)).get("error_code"
 giroAuth.ready.then(()=>{const on=!!giroAuth.current();
   try{if(localStorage.getItem("autokan_oauth")){localStorage.removeItem("autokan_oauth");if(on&&window.giroTrack)giroTrack(giroAuth.createdRecently(600000)?"signup":"login",{meta:{via:"google"}})}}catch(e){}
   document.getElementById("pbtn").hidden=!on;document.getElementById("loginbtn").hidden=on;document.getElementById("signupbtn").hidden=on;
-  if(authLinkError){toast("Esse link venceu ou já foi usado. Tente entrar ou cadastre-se de novo.");history.replaceState(null,"",location.pathname+location.search)}});
+  if(authLinkError){toast("Esse link venceu ou já foi usado. Tente entrar ou cadastre-se de novo.");history.replaceState(null,"",location.pathname+location.search)}
+  /* link do e-mail de confirmação (já confirmado pelo supabase-adapter.js) */
+  {const lr=giroAuth.linkResult&&giroAuth.linkResult();
+   if(lr==="erro")toast(on?"Esse link já foi usado. Sua conta está ativa.":"Esse link venceu ou já foi usado. Tente entrar ou cadastre-se de novo.");
+   else if(lr==="email_change")toast("Pronto: seu novo e-mail está confirmado.");
+   else if(lr&&on){toast(lr==="invite"?"Convite aceito. Bem-vindo ao Autokan!":lr==="magiclink"?"Você entrou no Autokan.":"E-mail confirmado. Bem-vindo ao Autokan!");if(lr!=="magiclink"&&window.giroTrack)giroTrack("signup",{meta:{via:"email"}})}}
+  /* "Entrar" e "Cadastrar" das páginas de carros, notícias e comparação chegam aqui como /?entrar=1 e /?cadastrar=1 */
+  {const q=new URLSearchParams(location.search),k=q.has("entrar")?"login":q.has("cadastrar")?"signup":null;
+   if(k){q.delete("entrar");q.delete("cadastrar");const r=q.toString();history.replaceState(null,"",location.pathname+(r?"?"+r:"")+location.hash);if(!on)openAuth(k)}}});
 document.getElementById("authClose").onclick=closeAuth;
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!authPanel.hidden)closeAuth()});
 if(window.ResizeObserver){new ResizeObserver(()=>fitStage()).observe(rowsEl.parentElement);new ResizeObserver(()=>{dial.geom();dial.draw()}).observe(document.getElementById("dial"))}
@@ -2077,6 +2087,7 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
 function pickResult(i){const g=qRes[i];if(!g)return;if(window.giroTrack)giroTrack("search",{version_id:g.pick&&g.pick.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60)}});closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}`;qIn.blur();goToCar(g.pick)}
 function goToCar(c){
+  if(!garPage.hidden){history.replaceState(null,"","/");hideGarPage()}
   if(!matches(c)){DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
   const idx=clamp(VALUES.findIndex(x=>x>=K(c)));dial.goTo(idx);
   const t0=performance.now();
@@ -2674,9 +2685,9 @@ gpBody.addEventListener("click",e=>{
 document.getElementById("gpTools").addEventListener("click",e=>{const b=e.target.closest("[data-gorg]");if(!b)return;GORG=b.dataset.gorg;
   try{localStorage.setItem("autokan_garagem_org",GORG)}catch(e){}renderGarPage();document.getElementById("gpScroll").scrollTop=0});
 function openGarPage(push=true){if(push&&location.pathname!=="/salvos")history.pushState({gar:1},"","/salvos");
-  garPage.hidden=false;document.querySelector(".app").inert=true;document.title="Salvos | Autokan";renderGarPage();
+  garPage.hidden=false;document.querySelector(".app").classList.add("gp-on");document.title="Salvos | Autokan";renderGarPage();
   document.getElementById("gpBack").focus({preventScroll:true});if(window.giroTrack)giroTrack("page_view",{path:"/salvos"})}
-function hideGarPage(){if(garPage.hidden)return;garPage.hidden=true;document.querySelector(".app").inert=false;document.title=TITULO0}
+function hideGarPage(){if(garPage.hidden)return;garPage.hidden=true;document.querySelector(".app").classList.remove("gp-on");document.title=TITULO0}
 function closeGarPage(){if(history.state&&history.state.gar)return history.back();if(location.pathname==="/salvos")history.replaceState(null,"","/");hideGarPage()}
 addEventListener("popstate",()=>{location.pathname==="/salvos"?openGarPage(false):hideGarPage()});
 document.getElementById("gpBack").onclick=closeGarPage;

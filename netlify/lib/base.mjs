@@ -6,7 +6,9 @@ import { TAGS, TAGORDER, deriveTags, cvOf } from "./pontos-fortes.mjs";
 
 export const SITE = "https://autokan.com.br";
 const SB = "https://ljgcvxadsekaicffztbi.supabase.co";
+export const SB_URL = SB;
 const KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqZ2N2eGFkc2VrYWljZmZ6dGJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3OTYyNjMsImV4cCI6MjEwOTM3MjI2M30._lZd1-cALOXrnR3nI0rwwWkfIAXYZ_qmVHJ7s3Ka2BM";
+export const SB_CHAVE = KEY; // chave pública (a mesma do site); quem protege os dados são as regras do banco
 const PAGINA = 1000;
 const VALIDADE_MS = 5 * 60 * 1000; // a mesma função atende várias páginas seguidas sem ler o banco de novo
 
