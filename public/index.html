@@ -207,6 +207,8 @@ button,input{font:inherit;color:inherit}
 /* Salvos: página própria (/salvos) com os cards da roleta, todos como selecionados */
 .gp{display:flex;flex-direction:column;min-height:0;background:var(--bg)}
 .app.gp-on .main{display:none}
+.dial,.sr-title,.sr-sub{transition:opacity .25s var(--ease)}
+.app.pre .dial,.app.pre .sr-title,.app.pre .sr-sub{opacity:0}
 .gp[hidden]{display:none}
 .gp-bar{display:flex;align-items:center;gap:6px;flex:none;background:var(--bg);color:var(--ink);padding:12px 0 6px;max-width:1280px;width:100%;margin:0 auto;box-sizing:border-box}
 .gp-back{width:40px;height:40px;flex:none;border:0;border-radius:12px;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;margin-left:-8px}
@@ -1166,7 +1168,7 @@ html{background:#060b1c}
 @media (max-width:760px){.status{display:none}}
 </style>
 
-<div class="app">
+<div class="app pre">
   <header class="top">
     <div class="logo">
       <img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18">
@@ -1562,6 +1564,8 @@ function makeDial(el,start,onChange){
     if(d.dragging||d.pos!==d.target||Math.abs(d.vel)>.0005)d.anim=requestAnimationFrame(loop);else{d.anim=0;d.vel=0;d.draw();}};
   d.kick=()=>{if(!d.anim)d.anim=requestAnimationFrame(loop)};
   d.goTo=i=>{d.target=clamp(i);d.kick()};
+  /* vai direto para a posição, sem girar (abertura do site e links de carro) */
+  d.jumpTo=i=>{const t=clamp(i);d.target=d.pos=d.last=t;d.vel=0;d.kick()};
   d.label=()=>{const v=VALUES[d.sel];ro.innerHTML=`${kv(v)}<small>${ku(v)}</small>`;thumb.setAttribute("aria-valuenow",v);thumb.setAttribute("aria-valuetext",`até ${kmoney(v)}`)};
   thumb.setAttribute("aria-valuemin",MIN);thumb.setAttribute("aria-valuemax",MAX);
   let last=0,samples=[];
@@ -1870,7 +1874,18 @@ function stepTarget(from,dir){if(!loaded)return from+dir;
   for(let i=clamp(from)+dir;i>=0&&i<VALUES.length;i+=dir)if(hasCars(i))return i;
   toast(`Nenhum carro ${dir>0?"acima":"abaixo"} desta faixa${activeCount()?" com esses filtros":""}.`);return null}
 function computeHas(){HAS=new Uint8Array(VALUES.length);CARS.forEach(c=>{if(!c.p||!matches(c))return;const i=VALUES.findIndex(x=>x>=K(c));if(i>=0)HAS[i]=1});dial.draw()}
-const swap=()=>{computeHas();headerFor();syncRows(true);rewindRows()};
+/* leva a fileira até o card do carro (carregando mais cards se ele estiver adiante) e o marca como o escolhido */
+function levaAoCard(row,c,suave){
+  const k=row._list.findIndex(x=>VIEW==="versions"?x.id===c.id:x.mid===c.mid);if(k<0)return null;
+  while(row._n<=k&&row._n<row._list.length){const add=row._list.slice(row._n,row._n+CHUNK);row.insertAdjacentHTML("beforeend",add.map((x,j)=>cardHTML(x,row._n+j)).join(""));row._n+=add.length;row._order=row._list.slice(0,row._n).map(x=>x.id).join()}
+  const card=row.querySelectorAll(".card")[k];if(!card)return null;
+  const padl=parseFloat(getComputedStyle(row).paddingLeft)||0;row.scrollTo({left:Math.max(0,card.offsetLeft-padl),behavior:suave&&!reduce?"smooth":"auto"});
+  SELBY[row._i]=card.dataset.id;applySel(row);return card;
+}
+/* carro da abertura: se a fileira for redesenhada logo depois (preços e filtros chegando), ele continua escolhido e à vista */
+let fixa=null;
+function fixaEscolhido(){if(!fixa||performance.now()>fixa.ate||dial.sel!==fixa.idx)return;const row=curRow();if(row&&row._mode==="full"&&row._list)levaAoCard(row,fixa.c,false)}
+const swap=()=>{computeHas();headerFor();syncRows(true);rewindRows();fixaEscolhido()};
 const refresh=swap;
 const curRow=()=>rowMap.get(dial.sel);
 /* strength icon → small popover explaining it */
@@ -2130,23 +2145,20 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
  document.getElementById("sclose").onclick=closeS;
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
 function pickResult(i){const g=qRes[i];if(!g)return;if(window.giroTrack)giroTrack("search",{version_id:g.pick&&g.pick.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60)}});closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}`;qIn.blur();goToCar(g.pick)}
-function goToCar(c){
-  if(!garPage.hidden){history.replaceState(null,"","/");hideGarPage()}
+function goToCar(c,instante){
+  if(!garPage.hidden&&!instante){history.replaceState(null,"","/");hideGarPage()}
   if(!matches(c)){DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
-  const idx=clamp(VALUES.findIndex(x=>x>=K(c)));dial.goTo(idx);
+  const idx=clamp(VALUES.findIndex(x=>x>=K(c)));if(instante){dial.jumpTo(idx);rowPos=idx}else dial.goTo(idx);
   const t0=performance.now();
   (function wait(){
-    if((dial.sel!==idx||dial.anim)&&performance.now()-t0<4000)return setTimeout(wait,90);
-    setTimeout(()=>{const row=curRow();if(!row||!row._list)return;
-      const k=row._list.findIndex(x=>VIEW==="versions"?x.id===c.id:x.mid===c.mid);if(k<0)return;
-      while(row._n<=k&&row._n<row._list.length){const add=row._list.slice(row._n,row._n+CHUNK);row.insertAdjacentHTML("beforeend",add.map((x,j)=>cardHTML(x,row._n+j)).join(""));row._n+=add.length;row._order=row._list.slice(0,row._n).map(x=>x.id).join()}
-      const card=row.querySelectorAll(".card")[k];if(!card)return;
-      const padl=parseFloat(getComputedStyle(row).paddingLeft)||0;row.scrollTo({left:Math.max(0,card.offsetLeft-padl),behavior:reduce?"auto":"smooth"});
-      card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900);
+    if((dial.sel!==idx||dial.anim)&&performance.now()-t0<4000)return setTimeout(wait,instante?16:90);
+    setTimeout(()=>{try{const row=curRow();if(!row||!row._list)return;
       /* o carro buscado passa a ser o escolhido da faixa (com o "Ver ficha"), e o foco vai para ele */
-      SELBY[row._i]=card.dataset.id;applySel(row);
-      const go=card.querySelector("button.go");if(go&&(document.activeElement===document.body||document.activeElement===qIn||!document.activeElement))go.focus({preventScroll:true});
-    },260)})();
+      const card=levaAoCard(row,c,!instante);if(!card)return;
+      if(instante)fixa={idx,c,ate:performance.now()+6000};
+      else{card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900)}
+      const go=card.querySelector("button.go");if(!instante&&go&&(document.activeElement===document.body||document.activeElement===qIn||!document.activeElement))go.focus({preventScroll:true});
+    }finally{if(instante)revelaRoleta()}},instante?0:260)})();
 }
 document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("[data-ev]");if(a&&window.giroTrack)giroTrack("click",{version_id:a.dataset.vid||null,meta:{el:a.dataset.ev}})},true);
 const toastEl=document.getElementById("toast");let tt;
@@ -2232,15 +2244,27 @@ function setCatalog(snap){lastCat=snap;
     rows.push({id:r.i,mid:r.m,bid:d.id,pr:r.pr||null,mk:String(x.brand||""),nm:String(r.mn||""),ver:String(r.v||""),ano:r.y||null,p:typeof r.p==="number"?r.p:null,
       t:BODYKEY[r.b]||null,body:r.b||null,...(({k,why})=>({k,why}))(deriveTags(r)),fu:r.f||null,cb:r.t||null,mo:r.e||"",kind:r.pk==="fipe"?"FIPE":"Tabela",cv:r.cv||null})})});
   ALLCARS=rows;CARS=rows.filter(c=>shown(c.bid,c.mid));applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();dicaPrimeiraVez();
-  abrirDoLink();renderGarPage();
+  posicaoInicial();renderGarPage();
 }
 /* links das páginas próprias de cada carro: /?carro=<modelo> (e &versao=<versão>) leva a roleta até o carro e abre a ficha */
-let linkAberto=false;
-function abrirDoLink(){if(linkAberto)return;linkAberto=true;
-  const q=new URLSearchParams(location.search),mid=q.get("carro"),vid=q.get("versao");if(!mid&&!vid)return;
+let inicioFeito=false;
+function posicaoInicial(){if(inicioFeito)return;inicioFeito=true;if(!abrirDoLink())abrirAleatorio()}
+function abrirDoLink(){
+  const q=new URLSearchParams(location.search),mid=q.get("carro"),vid=q.get("versao");if(!mid&&!vid)return false;
   history.replaceState(null,"",location.pathname+location.hash);
   const c=(vid&&CARS.find(x=>x.id===vid&&(!mid||x.mid===mid)))||CARS.filter(x=>x.mid===mid).sort((a,b)=>(a.p??Infinity)-(b.p??Infinity))[0];
-  if(!c)return;setTimeout(()=>{goToCar(c);setTimeout(()=>openInfo(c.id),450)},60)}
+  if(!c)return false;goToCar(c,true);setTimeout(()=>openInfo(c.id),250);return true}
+/* a cada visita, a roleta já abre parada num carro sorteado de até R$ 250 mil (todo modelo com a mesma chance),
+   para não mostrar sempre os mesmos carros de R$ 150 mil */
+const SORTEIO_ATE=250000;
+function abrirAleatorio(){
+  const ok=CARS.filter(c=>c.p&&matches(c)),ate=ok.filter(c=>c.p<=SORTEIO_ATE),base=ate.length?ate:ok;
+  if(!base.length){revelaRoleta();return}
+  const mids=[...new Set(base.map(c=>c.mid))],mid=mids[Math.floor(Math.random()*mids.length)],vs=base.filter(c=>c.mid===mid);
+  goToCar(vs[Math.floor(Math.random()*vs.length)],true);
+}
+/* a roleta fica escondida até chegar à posição de abertura (assim ela não aparece em R$ 150 mil e depois pula) */
+function revelaRoleta(){document.querySelector(".app").classList.remove("pre")}
 document.querySelector(".mode.sort").addEventListener("click",e=>{const b=e.target.closest("[data-sort]");if(!b||b.dataset.sort===SORT)return;SORT=b.dataset.sort;
   document.querySelectorAll("[data-sort]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.sort===SORT));swap()});
 document.querySelector(".mode:not(.sort)").addEventListener("click",e=>{const b=e.target.closest("[data-mode]");if(!b||b.dataset.mode===VIEW)return;VIEW=b.dataset.mode;
@@ -3087,18 +3111,19 @@ function closeImg(){imgPanel.hidden=true;scrim.hidden=true;devolveFoco()}
 document.getElementById("ipClose").onclick=closeImg;
 
 (async()=>{
+  setTimeout(revelaRoleta,8000);
   renderPills();swap();
   if(document.fonts)document.fonts.ready.then(()=>dial.draw());
   bandChanged();
   try{
     const [d,u]=await Promise.all([claude.use("db"),claude.use("user")]);
-    if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Confira sua conexão com a internet e tente de novo.";swap();return}
+    if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Confira sua conexão com a internet e tente de novo.";revelaRoleta();swap();return}
     db=d;userNS=u;myId=u?await u.id():null;
     authKnown=true;garageLoad=loadGarage().then(renderGarPage);
     const timer=setTimeout(()=>{if(!live)status("Sem conexão com os favoritos",false)},10000);
-    const ct=setTimeout(()=>{if(!loaded){loadErr="Está demorando mais que o normal. Confira sua internet; a página continua tentando sozinha.";swap()}},10000);
+    const ct=setTimeout(()=>{if(!loaded){loadErr="Está demorando mais que o normal. Confira sua internet; a página continua tentando sozinha.";revelaRoleta();swap()}},10000);
     visReady=loadVis().catch(()=>{});
-    db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;visReady.then(()=>{setCatalog(snap);setTimeout(extras,50)})},()=>{clearTimeout(ct);loadErr="Confira sua conexão com a internet e tente de novo.";swap()});
+    db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;visReady.then(()=>{setCatalog(snap);setTimeout(extras,50)})},()=>{clearTimeout(ct);loadErr="Confira sua conexão com a internet e tente de novo.";revelaRoleta();swap()});
     db.collection("price_changes").onSnapshot(snap=>{PRICE_CHANGES=snap.docs.map(d=>d.data());if(loaded){applyPrices();filtersChanged()}},()=>{});
     /* notícias, comentários e avisos chegam logo depois dos carros (em internet lenta, antes disputavam a conexão com eles) */
     let extrasOn=false;const extras=()=>{if(extrasOn)return;extrasOn=true;
@@ -3125,6 +3150,6 @@ document.getElementById("ipClose").onclick=closeImg;
       const dbb=document.getElementById("dbbtn");dbb.hidden=false;dbb.onclick=openDB;
       startRadar();
     }
-  }catch(e){status("Favoritos indisponíveis aqui",false);loadErr="Confira sua conexão com a internet e tente de novo.";swap()}
+  }catch(e){status("Favoritos indisponíveis aqui",false);loadErr="Confira sua conexão com a internet e tente de novo.";revelaRoleta();swap()}
 })();
 </script>
