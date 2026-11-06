@@ -971,6 +971,30 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .top.searching .sbtn{background:#fff;border-color:#fff;color:#0c111c}
 .top .authbtn:not(.primary){background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
 .top .q-list,.top #pmenu{color:var(--ink)}
+/* entrar e cadastrar: tela inteira com o fundo da placa e a logomarca geral (com a frase) no alto */
+#authPanel{top:0;left:0;right:0;bottom:0;width:auto;max-height:none;border-radius:0;box-shadow:none;overflow-y:auto;color:#e8eefc;
+  background:linear-gradient(160deg,#121d40 0%,#0a1230 50%,#060b1c 100%);animation:authin .3s var(--ease)}
+@keyframes authin{from{opacity:0;transform:scale(.985)}}
+#authPanel .as-in{position:relative;width:min(420px,100%);margin:0 auto;padding:max(64px,9vh) 20px 36px;display:flex;flex-direction:column;gap:4px}
+#authPanel .dr-x{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));z-index:2;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.24);color:#fff}
+#authPanel .as-logo{display:block;width:min(310px,84%);height:auto;margin:0 auto 30px}
+#authPanel .dr-head{padding:0 0 10px;justify-content:center}
+#authPanel .dr-head h2{color:#fff;text-align:center}
+#authPanel .dr-body{flex:none;overflow:visible;padding:0}
+#authPanel .cm-form{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
+#authPanel .auth-form label{color:rgba(232,238,252,.74)}
+#authPanel .auth-form input{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.2);color:#fff}
+#authPanel .auth-form input:focus{outline-color:#5b8cff}
+#authPanel .auth-tabs{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16)}
+#authPanel .auth-tabs button{color:rgba(232,238,252,.72)}
+#authPanel .auth-tabs button[aria-pressed="true"]{background:#fff;color:#0c111c}
+#authPanel .gbtn{background:#fff;border-color:#fff;color:#0c111c}
+#authPanel .auth-or{color:rgba(232,238,252,.6)}
+#authPanel .auth-or::before,#authPanel .auth-or::after{background:rgba(255,255,255,.16)}
+#authPanel .auth-why{background:rgba(79,134,255,.16);color:#e8eefc}
+#authPanel .auth-note,#authPanel .nf-sub{color:rgba(232,238,252,.66)}
+#authPanel .auth-err{color:#ff9b8f}
+#authPanel .cm-send{height:44px;font-size:14px}
 </style>
 
 <div class="app">
@@ -1067,8 +1091,12 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   <div class="dr-body" id="pcBody"></div>
 </aside>
 <aside class="drawer sheet" id="authPanel" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
-  <div class="dr-head"><h2 id="authTitle">Sua conta</h2><button type="button" class="dr-x" id="authClose" aria-label="Fechar">✕</button></div>
-  <div class="dr-body" id="authBody"></div>
+  <div class="as-in">
+    <button type="button" class="dr-x" id="authClose" aria-label="Fechar">✕</button>
+    <img class="as-logo" src="/marca/autokan-logo-geral-escuro.png?v=4" alt="AutoKan · Knowledge · Analysis · Navigation" width="300" height="41">
+    <div class="dr-head"><h2 id="authTitle">Sua conta</h2></div>
+    <div class="dr-body" id="authBody"></div>
+  </div>
 </aside>
 <aside class="drawer sheet" id="cmPanel" role="dialog" aria-modal="true" aria-labelledby="cmTitle" hidden>
   <div class="dr-head"><div><h2 id="cmTitle">Comentários</h2><div class="nf-sub" id="cmSub"></div></div><button type="button" class="dr-x" id="cmClose" aria-label="Fechar comentários">✕</button></div>
