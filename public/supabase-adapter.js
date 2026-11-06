@@ -523,8 +523,13 @@
 
   async function getDocument(name, id) {
     if (RAW_TABLES.has(name)) {
-      const row = await run(sb.from(name).select("raw").eq("id", id).maybeSingle());
-      return docOf(id, row ? row.raw : null);
+      // a ficha técnica (versions.specs) e o nome/endereço das fontes valem pelas colunas, que o banco mantém atualizadas
+      const extra = name === "versions" ? ",specs" : name === "sources" ? ",name,url,consulted_at" : "";
+      const row = await run(sb.from(name).select(`raw${extra}`).eq("id", id).maybeSingle());
+      if (!row) return docOf(id, null);
+      if (name === "versions") return docOf(id, { ...row.raw, specs: row.specs || {} });
+      if (name === "sources") return docOf(id, { ...row.raw, name: row.name ?? row.raw?.name, url: row.url ?? row.raw?.url, consulted_at: row.consulted_at ?? row.raw?.consulted_at });
+      return docOf(id, row.raw);
     }
     if (name === "meta") return getMeta(id);
     if (name === "catalog") {

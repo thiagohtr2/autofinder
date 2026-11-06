@@ -55,3 +55,9 @@
   for = "/favicon.ico"
   [headers.values]
     Content-Type = "image/x-icon"
+
+# campos da ficha técnica, lidos pela roleta como módulo (o navegador exige o tipo JavaScript, com nosniff)
+[[headers]]
+  for = "/ficha-tecnica.mjs"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"
