@@ -1987,7 +1987,8 @@ async function openInfo(id){
     ${v&&v.quality?`<section class="dr-group"><h3>Completude da ficha · ${+v.quality.completeness_pct||0}%</h3><div class="qbar"><i style="width:${Math.max(0,Math.min(100,+v.quality.completeness_pct||0))}%"></i></div><div class="sh-meta" style="margin-top:6px">Atualizado em ${esc(v.updated_at||"")}. Campos sem fonte ficam como "não informado".</div></section>`:""}
     <section class="dr-group"><h3>Versões do ${esc(c.nm)}</h3><div class="sh-vers">${sib.map(x=>`<button type="button" data-sib="${x.id}" ${x.id===c.id?'aria-current="true"':""}><span>${esc(x.ver)}${x.ano?` · ${x.ano}`:""}</span><b>${x.p?fmt(x.p):"—"}</b></button>`).join("")}</div></section>
     <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} curtida${(counts[c.id]||0)===1?"":"s"} nesta versão</div></section>`;
-  shBody.innerHTML=hero+base(null,null);document.getElementById("shClose").focus();
+  /* toda ficha abre do topo, com a foto do carro, mesmo que a anterior tenha sido lida até o fim */
+  shBody.innerHTML=hero+base(null,null);shBody.scrollTop=0;document.getElementById("shClose").focus();
   if(!db)return;
   try{const vs=await db.collection("versions").doc(id).get();if(tok!==shTok)return;const v=vs.exists?vs.data():null;let src=null;
     const sid=v&&v.price&&v.price.source_id;if(sid){const ss=await db.collection("sources").doc(sid).get();if(tok!==shTok)return;src=ss.exists?ss.data():null;if(src&&!/^https?:\/\//.test(src.url||""))src=null;}
