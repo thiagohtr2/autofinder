@@ -23,14 +23,15 @@
 }
 *{box-sizing:border-box}
 html,body{height:100%;overflow-x:hidden;overscroll-behavior-x:none}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.4;-webkit-font-smoothing:antialiased;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+/* margem lateral da página = 8px (margem padrão do navegador) + --gl/--gr; o topo usa as duas para a linha ir de borda a borda */
+body{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.4;-webkit-font-smoothing:antialiased;
+  padding-left:var(--gl);padding-right:var(--gr)}
 button,input{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .app{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr)}
 
 /* top bar */
-.top{display:flex;align-items:center;gap:20px;padding-block:14px;border-bottom:1px solid var(--line);min-width:0}
+.top{display:flex;align-items:center;gap:20px;padding-block:14px;border-bottom:1px solid var(--line);min-width:0;margin-inline:calc(-8px - var(--gl)) calc(-8px - var(--gr));padding-inline:calc(8px + var(--gl)) calc(8px + var(--gr))}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.02em;white-space:nowrap}
 .logo-img{display:block;height:36px;width:auto;flex:none}
 .filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1;padding-block:2px}
@@ -1232,13 +1233,15 @@ function makeDial(el,start,onChange){
   const cv=el.querySelector("canvas"),ctx=cv.getContext("2d"),ro=el.querySelector(".ro-val");
   const d={pos:start,target:start,sel:start,vel:0,last:start,dragging:false,anim:0,G:null,W:0,H:0};
   d.geom=()=>{const r=el.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1);
-    d.W=r.width;d.H=r.height;d.CW=d.W+56;cv.width=d.CW*dpr;cv.height=d.H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    /* a tela de desenho estica para a esquerda até a borda da tela (a margem da página), e o desenho se desloca junto */
+    d.off=Math.max(0,Math.round(r.left));
+    d.W=r.width;d.H=r.height;d.CW=d.W+56+d.off;cv.width=d.CW*dpr;cv.height=d.H*dpr;cv.style.left=-d.off+"px";cv.style.width=d.CW+"px";ctx.setTransform(dpr,0,0,dpr,d.off*dpr,0);
     const mobile=matchMedia("(max-width:760px)").matches;
     const R=Math.max(d.H*.72,300);d.G=mobile?{R,cx:74-R,cy:d.H/2,base:0,dir:1,mobile,px:30,lab:30,ptrX:d.W-9}:{R,cx:150-R,cy:d.H/2,base:0,dir:1,mobile,px:32,lab:38,ptrX:d.W-9};
     d.G.step=d.G.px/d.G.R;d.G.Rd=d.G.R+d.G.lab+(mobile?18:22);
     cv.style.clipPath=cv.style.webkitClipPath="none";};
   d.draw=()=>{const G=d.G;if(!G)return;const {R,cx,cy,base,dir,step}=G,pos=d.pos;
-    ctx.clearRect(0,0,d.CW||d.W,d.H);
+    ctx.clearRect(-(d.off||0),0,d.CW||d.W,d.H);
     // round backdrop that follows the end of the ticks: cars slide behind a disc, never a rectangle
     if(DIAL_DISC==='white'){ctx.fillStyle='#ffffff';ctx.beginPath();ctx.arc(cx,cy,G.Rd,0,Math.PI*2);ctx.fill();}
     else if(DIAL_DISC){const Rd=G.Rd,g=ctx.createRadialGradient(cx,cy,R-60,cx,cy,Rd);g.addColorStop(0,"#ffffff");g.addColorStop(.75,"#fdfdff");g.addColorStop(1,"#f8fafd");
