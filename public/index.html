@@ -822,8 +822,12 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .sr-head{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"l t a" "f f f" "o o o" "m m m"}
   .mode:not(.sort){display:grid;grid-template-columns:1fr 1fr;margin-top:8px;border-radius:10px;padding:2px}
   .mode:not(.sort) button{height:26px;border-radius:8px}
-  .ajbtn{grid-area:a;position:relative;display:grid;place-items:center;width:36px;height:30px;padding:0;border:0;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;color:var(--accent);cursor:pointer;transition:background .15s,color .15s}
-  .ajbtn svg{width:18px;height:18px}
+  .ajbtn{grid-area:a;position:relative;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 11px 0 9px;border:0;border-radius:10px;font:700 12.5px var(--body);white-space:nowrap;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;color:var(--accent);cursor:pointer;transition:background .15s,color .15s}
+  .ajbtn svg{flex:none;width:17px;height:17px}
+  .ajbtn .aj-t{color:var(--ink)}
+  .app.aj .ajbtn .aj-t{color:#fff}
+  .app.aj .ajbtn{padding:0 9px 0 12px}
+  .app.aj .ajbtn .aj-x{order:2;width:15px;height:15px}
   .ajbtn .aj-x,.app.aj .ajbtn .aj-s{display:none}
   .app.aj .ajbtn .aj-x{display:block}
   .app.aj .ajbtn{background:var(--ink);color:#fff;box-shadow:none}
@@ -991,7 +995,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
         <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
         <span class="fuq" id="fuq" role="group" aria-label="Filtrar por combustível"></span>
-        <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><b id="ajN" hidden></b></button>
+        <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><span class="aj-t">Filtros</span><b id="ajN" hidden></b></button>
       </div>
       <div class="stagewrap">
         <div class="track" aria-hidden="true"></div>
