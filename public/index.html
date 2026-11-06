@@ -1214,7 +1214,7 @@ const kmoney=v=>`R$ ${kv(v)} ${ku(v)}`;
 const krange=(lo,hi)=>hi<1000?`${lo} – ${hi} mil`:`${(lo/1000).toLocaleString("pt-BR",{maximumFractionDigits:2})}–${kv(hi)} mi`;
 const K=c=>c.p/1000;
 let HAS=new Uint8Array(0),NEWS={};
-const DIAL_DISC=true; // round backdrop behind the dial: 'white' = plain page white, true = shaded disc, false = transparent
+const DIAL_DISC=false; // round backdrop behind the dial: 'white' = plain page white, true = shaded disc, false = transparent
 const clamp=i=>Math.max(0,Math.min(VALUES.length-1,Math.round(i)));
 let counts={},mine=new Set(),photos={},photoAI={},logos={},live=false;
 const brandSlug=m=>m.normalize('NFKD').replace(/[^\w]/g,'').toLowerCase();
