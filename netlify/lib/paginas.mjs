@@ -321,7 +321,8 @@ ${caminho ? `<meta property="og:url" content="${SITE}${caminho}">\n` : ""}<meta 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#060b1c">
 <meta name="apple-mobile-web-app-title" content="Autokan">
-<link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png?v=5">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="96x96" href="/marca/favicon-96.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/marca/favicon-192.png?v=5">
 <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png?v=5">
 <link rel="manifest" href="/site.webmanifest">

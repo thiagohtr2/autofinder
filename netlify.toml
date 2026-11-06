@@ -49,3 +49,9 @@
   for = "/vendor/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# ícone do site (o Google e os navegadores procuram em /favicon.ico)
+[[headers]]
+  for = "/favicon.ico"
+  [headers.values]
+    Content-Type = "image/x-icon"
