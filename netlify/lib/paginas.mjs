@@ -187,7 +187,7 @@ export const ROLETA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 1
 function topo() {
   return `<header class="top"><div class="wrap top-in">
 <a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="Autokan" width="42" height="18"></a>
-<nav class="top-nav" aria-label="Principal"><a href="/carros">Marcas</a><a class="so-pc" href="/carros#precos">Preços</a><a class="so-pc" href="/carros#tipos">Tipos</a><a href="/comparar">Comparar</a></nav>
+<nav class="top-nav" aria-label="Principal"><a class="so-pc" href="/carros">Marcas</a><a class="so-pc" href="/carros#precos">Preços</a><a class="so-pc" href="/carros#tipos">Tipos</a><a href="/noticias">Notícias</a><a href="/comparar">Comparar</a></nav>
 <a class="top-cta" href="/">${ROLETA}<span class="so-pc">Roleta de preços</span><span class="so-cel">Roleta</span></a>
 </div></header>`;
 }
@@ -199,7 +199,7 @@ function rodape() {
 ${col("Por preço", FAIXAS.map((f) => [`/${f.slug}`, f.titulo.replace("Carros 0 km ", "")]))}
 ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
-${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"]])}
+${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"]])}
 </div>
 <p class="foot-nota">Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
 <p class="foot-copy">© ${new Date().getFullYear()} Autokan · Conheça. Compare. Escolha.</p>
@@ -343,7 +343,7 @@ ${temTracao ? `<td data-l="Tração">${v.tracao ? esc(v.tracao) : '<span class="
   if (m.fabricado.length) faq.push([`Onde o ${m.titulo} é fabricado?`, `O ${m.titulo} vendido no Brasil é fabricado ${lista(m.fabricado.map(paisEm))}.`]);
 
   const noticias = m.noticias.slice(0, 6);
-  const secNoticias = noticias.length ? `<section class="sec" aria-labelledby="s-nt"><h2 id="s-nt">Notícias do ${esc(m.titulo)}</h2><ul class="nt">${noticias.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener nofollow">${esc(n.title)}${SETA}</a>${n.summary ? `<p>${esc(n.summary)}</p>` : ""}<small>${esc([n.source, dataBr(n.date)].filter(Boolean).join(" · "))}</small></li>`).join("")}</ul><p class="nota">Resumos escritos pelo Autokan a partir das matérias. O texto completo está no site de cada fonte.</p></section>` : "";
+  const secNoticias = noticias.length ? `<section class="sec" aria-labelledby="s-nt"><h2 id="s-nt">Notícias do ${esc(m.titulo)}</h2><ul class="nt">${noticias.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener nofollow">${esc(n.title)}${SETA}</a>${n.summary ? `<p>${esc(n.summary)}</p>` : ""}<small>${esc([n.source, dataBr(n.date)].filter(Boolean).join(" · "))}</small></li>`).join("")}</ul><p class="nota">Resumos escritos pelo Autokan a partir das matérias. O texto completo está no site de cada fonte. <a href="/noticias?marca=${encodeURIComponent(marca.id)}">Todas as notícias da ${esc(marca.nome)}</a></p></section>` : "";
   const avisos = m.avisos.slice(0, 4);
   const secAvisos = avisos.length ? `<section class="sec" aria-labelledby="s-av"><h2 id="s-av">Recalls e avisos</h2><ul class="nt">${avisos.map((a) => `<li class="av"><b>${esc(a.title)}</b>${a.summary ? `<p>${esc(a.summary)}</p>` : ""}${a.affects ? `<p><strong>Afeta:</strong> ${esc(a.affects)}</p>` : ""}<small>${esc([a.source, dataBr(a.date)].filter(Boolean).join(" · "))}${a.url ? ` · <a href="${esc(a.url)}" target="_blank" rel="noopener nofollow" style="font:inherit">ver fonte${SETA}</a>` : ""}</small></li>`).join("")}</ul><p class="nota">Nem todo aviso atinge todas as unidades. Confira os detalhes na fonte e com a montadora.</p></section>` : "";
 
@@ -414,7 +414,7 @@ export function paginaMarca(base, b) {
   const corpo = `${trilha(itens)}
 <div class="marca-top">${logoMarca(b, 46)}<div><h1>Carros ${esc(b.nome)} 0 km</h1></div></div>
 <p class="lead">${esc(lead)}</p>
-${b.pais || b.site ? `<p class="nota">${b.pais ? `Origem da marca: ${esc(b.pais)}.` : ""}${b.site ? ` <a href="${esc(b.site)}" target="_blank" rel="noopener">Site oficial da ${esc(b.nome)}${SETA}</a>` : ""}</p>` : ""}
+<p class="nota">${b.pais ? `Origem da marca: ${esc(b.pais)}.` : ""}${b.site ? ` <a href="${esc(b.site)}" target="_blank" rel="noopener">Site oficial da ${esc(b.nome)}${SETA}</a> ·` : ""} <a href="/noticias?marca=${encodeURIComponent(b.id)}">Notícias da ${esc(b.nome)}</a></p>
 ${av.length ? `<section class="sec" aria-labelledby="s-md"><h2 id="s-md">Modelos ${esc(b.nome)} à venda</h2><ul class="grade">${av.map((m) => cartao(m)).join("")}</ul></section>` : ""}
 ${breve.length ? `<section class="sec" aria-labelledby="s-br"><h2 id="s-br">Em breve</h2><ul class="grade">${breve.map((m) => cartao(m)).join("")}</ul></section>` : ""}
 <section class="sec" aria-labelledby="s-om"><h2 id="s-om">Outras marcas</h2><ul class="chips">${outras.map((x) => `<li><a href="${x.url}">${esc(x.nome)}</a></li>`).join("")}</ul></section>`;

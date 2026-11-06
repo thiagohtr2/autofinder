@@ -45,7 +45,7 @@ const urlSegura = (u) => (typeof u === "string" && /^https?:\/\/[^\s"<>]+$/.test
 /* ---------- montagem */
 
 async function montar() {
-  const [versoes, marcasDb, modelosDb, midias, meta, fontesDb, noticiasDb, avisosDb] = await Promise.all([
+  const [versoes, marcasDb, modelosDb, midias, meta, fontesDb, noticiasDb, avisosDb, radarDb] = await Promise.all([
     ler("versions", "select=id,brand_id,brand,model_id,catalog_row,price_source_id,price_ref_month,drive,manufactured_in,updated_at&catalog_row=not.is.null&order=id"),
     ler("brands", "select=id,name,country&order=id"),
     ler("models", "select=id,brand_id,name,body&order=id"),
@@ -54,6 +54,8 @@ async function montar() {
     ler("sources", "select=id,name,url&order=id"),
     ler("news", "select=model_id,title,summary,source,url,date&order=id"),
     ler("alerts", "select=model_id,kind,title,summary,affects,source,url,date&order=id"),
+    // notícias de mercado do radar (o público lê só estas colunas; sem elas o resto do site funciona igual)
+    ler("radar_items", "select=id,title,summary,kind,brand,model,model_id,date,source,url&order=id").catch(() => []),
   ]);
 
   const metaDe = (k) => (meta.find((x) => x.key === k) || {}).value || {};
@@ -149,7 +151,7 @@ async function montar() {
   const anos = contar(aVenda.flatMap((m) => m.versoes.map((v) => v.ano)));
   const meses = contar(aVenda.flatMap((m) => m.versoes.map((v) => v.mes)));
   return {
-    modelos, marcas, aVenda,
+    modelos, marcas, aVenda, feed: montarFeed({ noticiasDb, avisosDb, radarDb, modelos, marcas }),
     anoLinha: anos[0] || new Date().getFullYear(), mesPrecos: meses.sort().pop() || null,
     totalVersoes: aVenda.reduce((t, m) => t + m.versoes.length, 0),
     atualizado: [...modelos.values()].reduce((d, m) => (m.atualizado > d ? m.atualizado : d), ""),
@@ -198,3 +200,68 @@ export function parecidos(base, m, n = 8) {
 
 /* imagens pelo CDN de imagens da Netlify (tamanho certo e formato leve); o endereço do Supabase já é aceito no netlify.toml */
 export const imagem = (url, w, extra = "") => (url ? `/.netlify/images?url=${encodeURIComponent(url)}&w=${w}${extra}` : null);
+
+/* ---------- feed de notícias (/noticias): notícias por carro, notícias de mercado do radar e recalls.
+   Uma matéria que fala de vários carros vira um item só, com os carros dela. Sem nada de "adicionar ao site". */
+
+export const ASSUNTOS = [
+  { slug: "precos", nome: "Preços e ofertas" },
+  { slug: "lancamentos", nome: "Lançamentos e novidades" },
+  { slug: "vendas", nome: "Vendas e mercado" },
+  { slug: "avaliacoes", nome: "Avaliações e testes" },
+  { slug: "recalls", nome: "Recalls e avisos" },
+  { slug: "outras", nome: "Outras notícias" },
+];
+const ASSUNTO_RADAR = { preco: "precos", novo_carro: "lancamentos", nova_versao: "lancamentos", marca: "lancamentos", fim_de_linha: "lancamentos" };
+// palpite pelo texto, na ordem: recall, vendas, preço (palavras fortes), lançamento, preço (qualquer valor), outras
+const RX_ASSUNTO = [
+  ["recalls", /\brecall|convoca/i],
+  ["avaliacoes", /^teste\b|\bteste:|avaliação|avaliamos|primeiras impressões|impressões ao dirigir|andamos|dirigimos|ao volante|\breview\b|comparativo|vale a pena\?/i],
+  ["vendas", /mais vendid|emplacament|\bvendas?\b|ranking|market share|participação de mercado|vendeu|\blidera|licenciament/i],
+  ["precos", /desconto|\bcorte\b|\breduz|redução de preço|oferta|bônus|taxa (zero|0)|\bjuros?\b|financiament|mais barat|fica mais car|reajust|aumenta (o )?preço/i],
+  ["lancamentos", /lança|lançament|estreia|\bchega|nova geração|flagra|revela|apresenta|reestiliza|facelift|pré-venda|teaser|\bganham?\b|\brecebe|\bmelhora|\batualiza|sai de linha|fim de linha|\bversões?\b|série especial|edição limitada/i],
+  ["precos", /\bpreços?\b|\bR\$\s?\d|tabela/i],
+];
+const assuntoDe = (texto) => (RX_ASSUNTO.find(([, rx]) => rx.test(texto)) || ["outras"])[0];
+const semAcento = (t) => String(t || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+
+function montarFeed({ noticiasDb, avisosDb, radarDb, modelos, marcas }) {
+  const porUrl = new Map();
+  const marcaPorNome = new Map([...marcas.values()].map((b) => [semAcento(b.nome), b.id]));
+  const bidDe = (mid) => (modelos.get(mid) || {}).bid || [...marcas.keys()].find((b) => mid && mid.startsWith(b + "-")) || null;
+  const juntar = (chave, base, mids, bids) => {
+    let it = porUrl.get(chave);
+    if (!it) { it = { ...base, mids: new Set(), bids: new Set() }; porUrl.set(chave, it); }
+    else {
+      if ((base.summary || "").length > (it.summary || "").length) it.summary = base.summary;
+      if (String(base.date || "") > String(it.date || "")) it.date = base.date;
+    }
+    mids.forEach((m) => m && it.mids.add(m));
+    bids.forEach((b) => b && it.bids.add(b));
+    return it;
+  };
+  for (const n of noticiasDb) {
+    const url = urlSegura(n.url); if (!url || !n.title) continue;
+    juntar(url, { tipo: "noticia", assunto: assuntoDe(`${n.title} ${n.summary || ""}`), title: n.title, summary: n.summary || "", source: n.source || "", url, date: n.date || "" }, [n.model_id], [bidDe(n.model_id)]);
+  }
+  for (const r of radarDb) {
+    const url = urlSegura(r.url); if (!url || !r.title) continue;
+    const bid = r.model_id ? bidDe(r.model_id) : marcaPorNome.get(semAcento(r.brand)) || null;
+    const assunto = ASSUNTO_RADAR[r.kind] || assuntoDe(`${r.title} ${r.summary || ""}`); // evento e "outro": pelo texto
+    const it = juntar(url, { tipo: "mercado", assunto, title: r.title, summary: r.summary || "", source: r.source || "", url, date: r.date || "" }, [r.model_id], [bid]);
+    if (it.tipo === "noticia" && ASSUNTO_RADAR[r.kind]) it.assunto = ASSUNTO_RADAR[r.kind]; // o tipo dado pelo radar é mais preciso que o palpite pelo título
+  }
+  for (const a of avisosDb) {
+    const url = urlSegura(a.url); if (!a.title) continue;
+    const chave = url || `aviso:${a.title}|${a.date}`;
+    const it = juntar(chave, { tipo: "aviso", assunto: "recalls", aviso: a.kind || "recall", title: a.title, summary: a.summary || "", affects: a.affects || "", source: a.source || "", url, date: a.date || "" }, [a.model_id], [bidDe(a.model_id)]);
+    if (!it.affects && a.affects) it.affects = a.affects;
+  }
+  return [...porUrl.values()].map((it, i) => {
+    const mids = [...it.mids].filter((m) => modelos.has(m));
+    const tipos = new Set(mids.map((m) => modelos.get(m).carroc).filter(Boolean));
+    return { ...it, mids, bids: [...it.bids], tipos: [...tipos], busca: semAcento(`${it.title} ${it.summary} ${it.source} ${mids.map((m) => modelos.get(m).titulo).join(" ")}`), ordem: i };
+  }).sort((a, b) => String(b.date).localeCompare(String(a.date)) || a.ordem - b.ordem);
+}
+export { semAcento };
+
