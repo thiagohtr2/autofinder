@@ -6,6 +6,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/marca/favicon-192.png">
 <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png">
+<script src="/puxar.js" defer></script>
 <script src="/tracker.js"></script>
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,7 +23,7 @@
   --ease:cubic-bezier(.2,.8,.2,1);
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;overflow-x:hidden;overscroll-behavior-x:none}
+html,body{height:100%;margin:0;overflow-x:hidden;overscroll-behavior:none}
 /* margem lateral da página = --gl/--gr (16 px, ou a área segura do aparelho); o que vai de borda a borda desconta essa margem */
 body{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.4;-webkit-font-smoothing:antialiased;
   padding-left:var(--gl);padding-right:var(--gr)}
