@@ -626,7 +626,53 @@ button,input{font:inherit;color:inherit}
 .rd-toast button{height:32px;padding:0 12px;border-radius:9px;border:0;font:700 12.5px var(--body);cursor:pointer}
 .rd-toast .go2{background:var(--accent);color:#fff}
 .rd-toast .x2{background:rgba(255,255,255,.12);color:#fff}
-@media (max-width:760px){.dbp{padding:0}.dbp-in{border-radius:0}.dbp-head,.dbp-stats,.dbp-tools,.dbp-body{padding-left:14px;padding-right:14px}}
+/* Banco de dados: topo fino (☰ · título · ✕), busca logo abaixo e o resto num menu lateral */
+.dbx-in{position:relative}
+.dbp-bar{display:flex;align-items:center;gap:8px;padding:10px 12px 10px 8px;background:#060b1c;color:#fff;flex:none}
+.dbp-burger{position:relative;width:40px;height:40px;border-radius:12px;border:0;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;padding:0}
+.dbp-burger:hover{background:rgba(255,255,255,.08)}
+.dbp-burger svg{width:24px;height:24px}
+.dbp-burger b{position:absolute;top:2px;right:0;min-width:18px;height:18px;padding:0 5px;box-sizing:border-box;border-radius:999px;background:var(--accent);color:#fff;font:800 10.5px/18px var(--body);text-align:center;box-shadow:0 0 0 2px #060b1c}
+.dbp-burger b[hidden],.dbx-nav b[hidden],.dbs[hidden]{display:none}
+.dbp-ttl{flex:1;min-width:0}
+.dbp-ttl h2{margin:0;font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.01em;line-height:1.25}
+.dbp-ttl p{margin:1px 0 0;font-size:12px;font-weight:600;color:#9fb1d1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dbp-bar .dr-x,.dbx-top .dr-x{flex:none;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:#fff}
+.dbp-qbar{display:flex;padding:10px 22px;border-bottom:1px solid var(--line);flex:none}
+.dbx-in .dbp-body{padding-bottom:calc(22px + env(safe-area-inset-bottom,0px))}
+.dbx-scrim{position:absolute;inset:0;z-index:4;background:rgba(6,11,28,.45);opacity:0;visibility:hidden;transition:opacity .25s var(--ease),visibility 0s .25s}
+.dbx-scrim.on{opacity:1;visibility:visible;transition:opacity .25s var(--ease)}
+.dbx{position:absolute;top:0;left:0;bottom:0;z-index:5;width:min(340px,86%);background:var(--bg);box-shadow:24px 0 60px -30px rgba(6,11,28,.6);display:flex;flex-direction:column;transform:translateX(-102%);visibility:hidden;transition:transform .28s var(--ease),visibility 0s .28s}
+.dbx.on{transform:none;visibility:visible;transition:transform .28s var(--ease)}
+.dbx-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 12px 12px 18px;background:#060b1c;color:#fff;flex:none}
+.dbx-top b{font-family:var(--display);font-weight:600;font-size:17px}
+.dbx-scroll{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;padding-bottom:calc(18px + env(safe-area-inset-bottom,0px))}
+.dbx-sec{display:flex;flex-direction:column;gap:8px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.dbx-h{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.dbx-nav{display:flex;flex-direction:column;gap:2px;margin:0 -6px}
+.dbx-nav button{display:flex;align-items:center;gap:10px;height:44px;padding:0 10px;border:0;border-radius:12px;background:transparent;font:700 14px var(--body);color:var(--ink);cursor:pointer;text-align:left}
+.dbx-nav button:hover{background:var(--panel)}
+.dbx-nav button[aria-pressed=true]{background:var(--accent-soft);color:var(--accent)}
+.dbx-nav svg{width:20px;height:20px;flex:none}
+.dbx-nav b{margin-left:auto;min-width:22px;height:22px;padding:0 7px;box-sizing:border-box;border-radius:999px;background:var(--accent);color:#fff;font-size:11.5px;display:inline-grid;place-items:center}
+.dbx .dbp-tools{align-items:stretch;flex-wrap:nowrap}
+.dbx .dbp-tools select,.dbx .dbp-tg{width:100%}
+.dbx .dbp-chk{padding:4px 0}
+.dbx .dbp-stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0}
+.dbx .dbs{min-width:0;padding:8px 12px;border-radius:12px}
+.dbx .dbs b{font-size:18px}
+.dbx .dbs small{font-size:10px;letter-spacing:.06em}
+.dbx .dbs-bod{padding:0;background:none;gap:6px}
+.dbx .dbs-bod-n{margin-top:2px;line-height:1.45}
+.dbx-note{margin:0;padding:14px 16px;font-size:12px;line-height:1.5;color:var(--muted)}
+.dbx-in .nv-list{padding:0}
+.nv-card .tagx{white-space:normal;line-height:1.35}
+@media (max-width:760px){.dbp{padding:0}.dbp-in{border-radius:0}.dbp-head,.dbp-stats,.dbp-tools,.dbp-body{padding-left:14px;padding-right:14px}
+  .dbx .dbp-tools{padding-left:16px;padding-right:16px}
+  .dbp-bar{padding-top:calc(10px + env(safe-area-inset-top,0px));padding-left:calc(8px + env(safe-area-inset-left,0px));padding-right:calc(12px + env(safe-area-inset-right,0px))}
+  .dbx-top{padding-top:calc(12px + env(safe-area-inset-top,0px))}
+  .dbp-qbar{padding-left:14px;padding-right:14px}
+  .dbp-qbar input,.dbx select{font-size:16px}}
 .sh-nav{display:flex;align-items:center;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--bg)}
 .sn-btn{flex:1;min-width:0;display:flex;align-items:center;gap:8px;height:52px;padding:0 12px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);cursor:pointer;text-align:left;transition:all .2s var(--ease)}
 .sn-btn.nx{justify-content:flex-end;text-align:right}
@@ -1089,18 +1135,32 @@ html{background:#060b1c}
 </section>
 <div class="rd-toast" id="rdToast" role="status" hidden></div>
 <section class="dbp" id="dbPanel" role="dialog" aria-modal="true" aria-labelledby="dbTitle" hidden>
-  <div class="dbp-in">
-    <header class="dbp-head"><div><h2 id="dbTitle">Banco de dados</h2><p class="dbp-sub">Só editores veem este painel. Marcas, modelos e versões como estão gravados na base do Autokan.</p></div><button type="button" class="dr-x" id="dbClose" aria-label="Fechar banco de dados">✕</button></header>
-    <div class="dbp-tabs" id="dbTabs"><button type="button" data-dbtab="all" aria-pressed="true">Banco completo</button><button type="button" data-dbtab="new" aria-pressed="false">Novidades da internet<b id="dbNewN" hidden>0</b></button></div>
-    <div class="dbp-stats" id="dbStats"></div>
-    <div class="dbp-tools">
-      <label class="dbp-search"><span class="sr">Buscar na base</span><input id="dbQ" type="search" placeholder="Buscar marca, modelo ou versão" autocomplete="off"></label>
-      <select id="dbOrigin" aria-label="Origem"><option value="">Todas as origens</option></select>
-      <select id="dbStatus" aria-label="Situação"><option value="">Todas as situações</option><option value="on_sale">À venda</option><option value="announced">Anunciados</option><option value="pre_order">Pré-venda</option></select>
-      <label class="dbp-chk"><input type="checkbox" id="dbPend"> Só pendências</label>
-      <button type="button" class="dbp-tg" id="dbOpenAll">Abrir tudo</button>
-    </div>
+  <div class="dbp-in dbx-in">
+    <header class="dbp-bar">
+      <button type="button" class="dbp-burger" id="dbMenuBtn" aria-label="Abrir o menu do banco" aria-expanded="false" aria-controls="dbMenu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><b id="dbMenuN" hidden>0</b></button>
+      <div class="dbp-ttl"><h2 id="dbTitle">Banco de dados</h2><p id="dbSub"></p></div>
+      <button type="button" class="dr-x" id="dbClose" aria-label="Fechar banco de dados">✕</button>
+    </header>
+    <div class="dbp-qbar" id="dbQBar"><label class="dbp-search"><span class="sr">Buscar na base</span><input id="dbQ" type="search" placeholder="Buscar marca, modelo ou versão" autocomplete="off"></label></div>
     <div class="dbp-body" id="dbBody"></div>
+    <div class="dbx-scrim" id="dbScrim"></div>
+    <nav class="dbx" id="dbMenu" aria-label="Menu do banco de dados" inert>
+      <div class="dbx-top"><b>Banco de dados</b><button type="button" class="dr-x" id="dbMenuX" aria-label="Fechar o menu">✕</button></div>
+      <div class="dbx-scroll">
+        <div class="dbx-sec"><div class="dbx-h">Ver</div>
+          <div class="dbx-nav" id="dbTabs"><button type="button" data-dbtab="all" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Banco completo</button><button type="button" data-dbtab="new" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 12h17M12 3.5c2.5 2.3 3.6 5.2 3.6 8.5s-1.1 6.2-3.6 8.5c-2.5-2.3-3.6-5.2-3.6-8.5S9.5 5.8 12 3.5z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Novidades da internet<b id="dbNewN" hidden>0</b></button></div>
+        </div>
+        <div class="dbx-sec"><div class="dbx-h">Números da base</div><div class="dbp-stats" id="dbStats"></div></div>
+        <div class="dbx-sec dbp-tools"><div class="dbx-h">Filtrar a lista</div>
+          <select id="dbOrigin" aria-label="Origem"><option value="">Todas as origens</option></select>
+          <select id="dbStatus" aria-label="Situação"><option value="">Todas as situações</option><option value="on_sale">À venda</option><option value="announced">Anunciados</option><option value="pre_order">Pré-venda</option></select>
+          <label class="dbp-chk"><input type="checkbox" id="dbPend"> Só pendências (sem preço ou sem foto)</label>
+          <button type="button" class="dbp-tg" id="dbOpenAll">Abrir tudo</button>
+        </div>
+        <div class="dbx-sec"><div class="dbx-h" id="dbsBodL">Tipos que aparecem de início</div><div id="dbTypes"></div></div>
+        <p class="dbx-note">Só editores veem este painel. Marcas, modelos e versões como estão gravados na base do Autokan.</p>
+      </div>
+    </nav>
   </div>
 </section>
 <aside class="drawer sheet" id="newsPanel" role="dialog" aria-modal="true" aria-labelledby="nfTitle" hidden>
@@ -2186,12 +2246,22 @@ const dbPanel=document.getElementById("dbPanel"),dbBody=document.getElementById(
 const STLBL={on_sale:"À venda",announced:"Anunciado",pre_order:"Pré-venda"};
 let dbOpenAll=false;
 let dbTab="all";
-document.getElementById("dbTabs").addEventListener("click",e=>{const b=e.target.closest("[data-dbtab]");if(!b)return;dbTab=b.dataset.dbtab;document.querySelectorAll("#dbTabs [data-dbtab]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderDB()});
+document.getElementById("dbTabs").addEventListener("click",e=>{const b=e.target.closest("[data-dbtab]");if(!b)return;dbTab=b.dataset.dbtab;document.querySelectorAll("#dbTabs [data-dbtab]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderDB();dbBody.scrollTop=0;dbMenuSet(false)});
+/* menu lateral do banco (☰): abas, números, filtros e tipos ficam aqui para a lista de carros ocupar a tela */
+const dbMenu=document.getElementById("dbMenu"),dbMenuBtn=document.getElementById("dbMenuBtn"),dbScrim=document.getElementById("dbScrim");
+function dbMenuOn(){return dbMenu.classList.contains("on")}
+function dbMenuSet(on){if(on===dbMenuOn())return;dbMenu.classList.toggle("on",on);dbScrim.classList.toggle("on",on);dbMenu.inert=!on;dbMenuBtn.setAttribute("aria-expanded",on);dbMenuBtn.setAttribute("aria-label",on?"Fechar o menu do banco":"Abrir o menu do banco");
+  if(on)document.getElementById("dbMenuX").focus({preventScroll:true});else if(dbMenu.contains(document.activeElement))dbMenuBtn.focus({preventScroll:true})}
+dbMenuBtn.onclick=()=>dbMenuSet(!dbMenuOn());
+dbScrim.onclick=()=>dbMenuSet(false);
+document.getElementById("dbMenuX").onclick=()=>dbMenuSet(false);
 function renderDB(){
-  {const n=rdOpen().length,el=document.getElementById("dbNewN");el.hidden=!n;el.textContent=n;}
-  document.querySelector("#dbPanel .dbp-tools").style.display=dbTab==="new"?"none":"";
-  if(dbTab==="new"){document.getElementById("dbStats").innerHTML="";renderNovidades();return}
-  const q=norm(document.getElementById("dbQ").value.trim()),og=document.getElementById("dbOrigin").value,stf=document.getElementById("dbStatus").value,pend=document.getElementById("dbPend").checked;
+  const nNew=rdOpen().length;
+  for(const id of ["dbNewN","dbMenuN"]){const el=document.getElementById(id);el.hidden=!nNew;el.textContent=nNew}
+  dbMenuBtn.title=nNew?`${nNew} ${nNew>1?"novidades":"novidade"} da internet no menu`:"";
+  const isNew=dbTab==="new",dbSub=document.getElementById("dbSub");
+  document.querySelector("#dbPanel .dbp-tools").style.display=isNew?"none":"";
+  document.getElementById("dbQBar").style.display=isNew?"none":"";
   const rows=RAWCAT;
   const brands=[...new Set(rows.map(r=>r.mk))],bidOf=new Map(rows.map(r=>[r.mk,r.bid]));
   const sel=document.getElementById("dbOrigin"),origins=[...new Set(brands.map(b=>BRANDCO[b]||"Sem origem"))].sort();
@@ -2201,10 +2271,13 @@ function renderDB(){
   document.getElementById("dbStats").innerHTML=[["Marcas",brands.length],["Modelos",mids.size],["Versões",rows.length],["À venda",rows.filter(r=>!r.st||r.st==="on_sale").length],["Sem preço",noPrice,noPrice?"warn":""],["Modelos sem foto",noPhoto,noPhoto?"warn":""],["Marcas sem logo",noLogo,noLogo?"warn":""],["Com notícias",Object.keys(NEWS).length]].map(([l,n,c])=>`<div class="dbs ${c||""}"><b>${n}</b><small>${l}</small></div>`).join("")+'<div class="dbs warn" id="dbsOff" hidden><b></b><small>Modelos fora do site</small></div>';
   {const order=GROUPS.find(g=>g.key==="t").order,bodies=[...new Set(rows.map(r=>r.b).filter(Boolean))].sort((a,b)=>((order.indexOf(a)+1)||99)-((order.indexOf(b)+1)||99)||a.localeCompare(b,"pt-BR"));
     const nM=b=>new Set(rows.filter(r=>r.b===b).map(r=>r.m)).size;
-    document.getElementById("dbStats").insertAdjacentHTML("beforeend",`<div class="dbs-bod" role="group" aria-labelledby="dbsBodL"><span class="dbs-bod-l" id="dbsBodL">Tipos que aparecem de início</span>${bodies.map(b=>`<label class="dbs-chip${START_OUT.has(b)?" off":""}"><input type="checkbox" data-show-t="${esc(b)}" ${START_OUT.has(b)?"":"checked"}>${esc(b)}<small>${nM(b)}</small></label>`).join("")}<span class="dbs-bod-n">Desmarcado, o tipo sai da roleta para quem chega ao site. Quem escolher esse tipo em Filtros ainda vê os carros.</span></div>`);}
+    document.getElementById("dbTypes").innerHTML=`<div class="dbs-bod" role="group" aria-labelledby="dbsBodL">${bodies.map(b=>`<label class="dbs-chip${START_OUT.has(b)?" off":""}"><input type="checkbox" data-show-t="${esc(b)}" ${START_OUT.has(b)?"":"checked"}>${esc(b)}<small>${nM(b)}</small></label>`).join("")}<span class="dbs-bod-n">Desmarcado, o tipo sai da roleta para quem chega ao site. Quem escolher esse tipo em Filtros ainda vê os carros.</span></div>`;}
+  if(isNew){dbSub.textContent=nNew?`Novidades da internet · ${nNew} em aberto`:"Novidades da internet";renderNovidades();return}
+  const q=norm(document.getElementById("dbQ").value.trim()),og=document.getElementById("dbOrigin").value,stf=document.getElementById("dbStatus").value,pend=document.getElementById("dbPend").checked;
   const match=r=>{if(stf&&(r.st||"on_sale")!==stf)return false;if(og&&(BRANDCO[r.mk]||"Sem origem")!==og)return false;
     if(pend&&!(typeof r.p!=="number"||!photoOf(r.m,r.y)))return false;if(q&&!norm(`${r.mk} ${r.mn} ${r.v}`).includes(q))return false;return true};
   const f=rows.filter(match);
+  dbSub.textContent=!rows.length?"Carregando a base…":(q||og||stf||pend)?`${f.length} de ${rows.length} versões · com filtros`:`${brands.length} marcas · ${mids.size} modelos · ${rows.length} versões`;
   const pendI=rdPendingAdds().filter(i=>!q||norm(`${i.brand} ${i.model}`).includes(q)),openB=new Map();rdOpen().forEach(i=>{const k=rdBrandKey(i);if(k)openB.set(k,(openB.get(k)||0)+1)});
   const pendBy=new Map();pendI.forEach(i=>{const bn=(i.add&&i.add.brand_name)||i.brand||"";const key=[...new Set(rows.map(r=>r.mk))].find(x=>norm(x)===norm(bn))||bn;(pendBy.get(key)||pendBy.set(key,[]).get(key)).push(i)});
   const isFresh=r=>isRecent(r.nv)||(r.rn&&isRecent(r.up));
@@ -2241,7 +2314,7 @@ function paintShow(){
       m.querySelector(":scope>summary .off-tag").hidden=vis})});
 }
 let visQ=Promise.resolve();
-document.getElementById("dbStats").addEventListener("change",e=>{const x=e.target.closest("[data-show-t]");if(!x||!db)return;
+document.getElementById("dbTypes").addEventListener("change",e=>{const x=e.target.closest("[data-show-t]");if(!x||!db)return;
   const t=x.dataset.showT;if(x.checked)START_OUT.delete(t);else START_OUT.add(t);x.parentElement.classList.toggle("off",!x.checked);
   if(lastCat)setCatalog(lastCat);
   visQ=visQ.then(()=>db.collection("meta").doc("visibility").set(visDoc()))
@@ -2421,14 +2494,14 @@ function startRadar(){if(!db)return;rdOn=true;const b=document.getElementById("r
   db.collection("radar").onSnapshot(snap=>{RADAR=snap.docs.map(d=>({...(d.data()||{}),id:d.id})).filter(i=>i.title);rdAfter()},()=>{});
   db.collection("radar_runs").onSnapshot(snap=>{RUNS=snap.docs.map(d=>({...(d.data()||{}),id:d.id})).sort((a,b)=>String(b.id).localeCompare(String(a.id)));if(!rdPanel.hidden)renderRadar();else rdToast()},()=>{});
 }
-function openDB(){lastFocus=document.activeElement;dbPanel.hidden=false;renderDB();document.getElementById("dbClose").focus()}
+function openDB(){lastFocus=document.activeElement;dbMenuSet(false);dbPanel.hidden=false;renderDB();document.getElementById("dbClose").focus()}
 function closeDB(){dbPanel.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("dbClose").onclick=closeDB;
 dbPanel.addEventListener("click",e=>{if(e.target===dbPanel)return closeDB();const b=e.target.closest("[data-dbinfo]");if(b){closeDB();openInfo(b.dataset.dbinfo)}});
 let dbT;document.getElementById("dbQ").addEventListener("input",()=>{clearTimeout(dbT);dbT=setTimeout(renderDB,150)});
 ["dbOrigin","dbStatus","dbPend"].forEach(id=>document.getElementById(id).addEventListener("change",renderDB));
 document.getElementById("dbOpenAll").onclick=e=>{dbOpenAll=!dbOpenAll;e.target.textContent=dbOpenAll?"Fechar tudo":"Abrir tudo";renderDB()};
-addEventListener("keydown",e=>{if(e.key==="Escape"&&!dbPanel.hidden&&sheet.hidden)closeDB()});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!dbPanel.hidden&&sheet.hidden){if(dbMenuOn())dbMenuSet(false);else closeDB()}});
 function closeSheet(){sheet.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("shClose").onclick=closeSheet;
 shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]");
