@@ -129,6 +129,10 @@ button,input{font:inherit;color:inherit}
 .opt2[data-k="espaco"][aria-pressed="true"]{background:rgba(65,80,216,.11);box-shadow:inset 0 0 0 1px rgba(65,80,216,.55),0 0 0 3px rgba(65,80,216,.08);color:var(--ink)}
 .opt2[data-k="espaco"][aria-pressed="true"] .bdg{background:#4150d8;color:#fff}
 .opt2[data-k="espaco"][aria-pressed="true"] small{color:var(--muted)}
+.opt2[data-k="plugin"] .bdg{background:rgba(8,145,178,.12);color:#0891b2}
+.opt2[data-k="plugin"][aria-pressed="true"]{background:rgba(8,145,178,.11);box-shadow:inset 0 0 0 1px rgba(8,145,178,.55),0 0 0 3px rgba(8,145,178,.08);color:var(--ink)}
+.opt2[data-k="plugin"][aria-pressed="true"] .bdg{background:#0891b2;color:#fff}
+.opt2[data-k="plugin"][aria-pressed="true"] small{color:var(--muted)}
 .opt2[data-k="tech"] .bdg{background:rgba(8,145,178,.12);color:#0891b2}
 .opt2[data-k="tech"][aria-pressed="true"]{background:rgba(8,145,178,.11);box-shadow:inset 0 0 0 1px rgba(8,145,178,.55),0 0 0 3px rgba(8,145,178,.08);color:var(--ink)}
 .opt2[data-k="tech"][aria-pressed="true"] .bdg{background:#0891b2;color:#fff}
@@ -836,8 +840,15 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .fq[data-k="hibrido"] svg{background:#deeee6;color:#11864c}
   .fq[data-k="plugin"] svg{background:#dcf0f4;color:#0891b2}
   .fq[data-k="diesel"] svg{background:#fceadd;color:#ea6a0c}
-  .fq[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:none}
-  .fq[aria-pressed="true"] svg{background:rgba(255,255,255,.16);color:#fff}
+  .fq[aria-pressed="true"]{color:var(--ink)}
+  .fq[data-k="eletrico"][aria-pressed="true"]{background:#fcf4dc;box-shadow:inset 0 0 0 1px rgba(224,168,0,.55),0 0 0 3px rgba(224,168,0,.08)}
+  .fq[data-k="eletrico"][aria-pressed="true"] svg{background:#e0a800;color:#0c111c}
+  .fq[data-k="hibrido"][aria-pressed="true"]{background:#e4f1ea;box-shadow:inset 0 0 0 1px rgba(17,134,76,.55),0 0 0 3px rgba(17,134,76,.08)}
+  .fq[data-k="hibrido"][aria-pressed="true"] svg{background:#11864c;color:#fff}
+  .fq[data-k="plugin"][aria-pressed="true"]{background:#e2f0f5;box-shadow:inset 0 0 0 1px rgba(8,145,178,.55),0 0 0 3px rgba(8,145,178,.08)}
+  .fq[data-k="plugin"][aria-pressed="true"] svg{background:#0891b2;color:#fff}
+  .fq[data-k="diesel"][aria-pressed="true"]{background:#fcede2;box-shadow:inset 0 0 0 1px rgba(234,106,12,.55),0 0 0 3px rgba(234,106,12,.08)}
+  .fq[data-k="diesel"][aria-pressed="true"] svg{background:#ea6a0c;color:#fff}
   .chiprow .pill.fqp{display:none}
   .mode.sort .mode-l{display:block;grid-column:1/-1;margin:2px 0 -1px 2px;padding:0;font:800 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
 }
@@ -1099,6 +1110,7 @@ const ICONS={
   turbo:'<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 12c0-4 2-6 5-6M12 12c-4 0-6-2-6-5M12 12c0 4-2 6-5 6M12 12c4 0 6 2 6 5" stroke="currentColor" stroke-width="2" fill="none"/>',
   x4:'<path d="M2 20 9 8l4 6 3-4 6 10z" fill="currentColor"/>',
   diesel:'<path fill-rule="evenodd" d="M12 2.2C9.6 5.3 4.8 11 4.8 15a7.2 7.2 0 0 0 14.4 0c0-4-4.8-9.7-7.2-12.8zM8.6 10.2h3.1a4.2 4.2 0 0 1 0 8.4H8.6zm2 2h1.1a2.2 2.2 0 0 1 0 4.4h-1.1z" fill="currentColor"/>',
+  plugin:'<path d="M7 3v4.5M12 3v4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4.5 7.5h10v2.8a5 5 0 0 1-10 0z" fill="currentColor"/><path d="M9.5 15.3V18a3 3 0 0 0 3 3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M13.5 21c.1-4.3 2.6-6.8 7.5-7-.2 4.6-2.7 7-7.5 7z" fill="currentColor"/>',
   espaco:'<path d="M3 8l9-5 9 5v8l-9 5-9-5z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 8l9 5 9-5M12 13v8" stroke="currentColor" stroke-width="2" fill="none"/>',
   tech:'<rect x="3" y="5" width="18" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="2"/>',
 };
@@ -1644,7 +1656,6 @@ const GROUPS=[
 ];
 const F={};GROUPS.forEach(g=>F[g.key]=new Set());
 const FUQ=[["Elétrico","eletrico","Elétrico"],["Híbrido","hibrido","Híbrido"],["Híbrido plug-in","plugin","Plug-in"],["Diesel","diesel","Diesel"]];
-const PLUG_ICO='<path d="M7 3v4.5M12 3v4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M4.5 7.5h10v2.8a5 5 0 0 1-10 0z" fill="currentColor"/><path d="M9.5 15.3V18a3 3 0 0 0 3 3" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M13.5 21c.1-4.3 2.6-6.8 7.5-7-.2 4.6-2.7 7-7.5 7z" fill="currentColor"/>';
 const vals=(g,c)=>(g.multi?g.multi(c):[g.val(c)]).filter(v=>v!=null);
 let DEAL=false,PRICE_CHANGES=[];
 const isReduced=c=>!!(c.pc&&c.pc.new_price<c.pc.old_price);
@@ -1680,7 +1691,7 @@ const TAGICON=Object.fromEntries(Object.entries(TAGS).map(([k,v])=>[v,k]));
 const drawer=document.getElementById("drawer"),scrim=document.getElementById("scrim"),drBody=document.getElementById("drBody");
 let DRCAT="mk",BRANDCO={};
 const ORIGIN_ORDER=["China","Japão","Coreia do Sul","Alemanha","EUA","França","Itália","Reino Unido","Suécia","Brasil"];
-const FUELK={"Elétrico":"eletrico","Híbrido":"hibrido","Híbrido plug-in":"hibrido","Diesel":"diesel"};
+const FUELK={"Elétrico":"eletrico","Híbrido":"hibrido","Híbrido plug-in":"plugin","Diesel":"diesel"};
 function optBadge(g,k){
   if(g.key==="k")return `<span class="bdg">${ico(TAGICON[k])}</span>`;
   if(g.key==="fu"&&FUELK[k])return `<span class="bdg">${ico(FUELK[k])}</span>`;
@@ -1718,7 +1729,7 @@ function renderPills(){
   document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill${g.key==="fu"&&FUQ.some(f=>f[0]===v)?" fqp":""}" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
-  document.getElementById("fuq").innerHTML=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)).map(([v,k,l])=>`<button type="button" class="fq" data-fu="${v}" data-k="${k}" data-ev="comb-${k}" aria-pressed="${F.fu.has(v)}" aria-label="${v}" title="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${k==="plugin"?PLUG_ICO:ICONS[k]}</svg><span>${l}</span></button>`).join("");
+  document.getElementById("fuq").innerHTML=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)).map(([v,k,l])=>`<button type="button" class="fq" data-fu="${v}" data-k="${k}" data-ev="comb-${k}" aria-pressed="${F.fu.has(v)}" aria-label="${v}" title="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg><span>${l}</span></button>`).join("");
   const fc=document.getElementById("fcount"),n=activeCount();fc.hidden=!n;fc.textContent=n;
   const an=document.getElementById("ajN");an.hidden=!n;an.textContent=n;
   document.getElementById("ajBtn").setAttribute("aria-label",ajLabel());
