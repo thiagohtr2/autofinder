@@ -2,6 +2,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin.html
+Disallow: /garagem
 # links que só abrem a ficha de um carro na roleta (o endereço oficial é a página do carro)
 Disallow: /*?carro=
 
