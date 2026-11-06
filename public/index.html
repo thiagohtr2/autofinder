@@ -148,6 +148,10 @@ button,input{font:inherit;color:inherit}
 .fchip svg{width:15px;height:15px}
 .fchip:hover{border-color:var(--faint);color:var(--ink)}
 .fchip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+/* "Preço reduzido": leve destaque no verde da oferta dos cards; aceso fica verde cheio */
+.fchip[data-deal]{border-color:rgba(15,138,75,.55);background:#f4fbf7;color:#0f8a4b;box-shadow:0 0 0 2px rgba(15,138,75,.12)}
+.fchip[data-deal]:hover{border-color:#0f8a4b;color:#0b6e3c}
+.fchip[data-deal][aria-pressed="true"]{background:#0f8a4b;border-color:#0f8a4b;color:#fff;box-shadow:0 0 0 2px rgba(15,138,75,.2)}
 .meta{display:flex;align-items:center;gap:12px;white-space:nowrap}
 .chiprow{display:contents}
 .sbtn,.sclose{display:none}
