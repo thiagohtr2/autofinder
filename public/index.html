@@ -207,8 +207,27 @@ button,input{font:inherit;color:inherit}
 /* Salvos: página própria (/salvos) com os cards da roleta, todos como selecionados */
 .gp{display:flex;flex-direction:column;min-height:0;background:var(--bg)}
 .app.gp-on .main{display:none}
-.dial,.sr-title,.sr-sub{transition:opacity .25s var(--ease)}
-.app.pre .dial,.app.pre .sr-title,.app.pre .sr-sub{opacity:0}
+/* carregando: cards-esqueleto com um carro em degradê cinza que brilha, e um brilho no lugar do "até X mil" e da faixa.
+   A roleta (números e botões) só aparece quando já está na posição do carro da abertura */
+@keyframes brilho{from{background-position:100% 0}to{background-position:0 0}}
+.sk,.app.pre .ro-pill,.app.pre .sr-title,.app.pre .sr-sub{background:linear-gradient(100deg,#eceff4 30%,#f8fafc 50%,#eceff4 70%) 0 0/300% 100%;animation:brilho 1.4s ease-in-out infinite}
+.dial canvas,.ro-btns,.ro-band,.track{transition:opacity .25s var(--ease)}
+.app.pre .dial canvas,.app.pre .ro-btns,.app.pre .ro-band,.app.pre .track,.app.pre .scroller{opacity:0;visibility:hidden}
+.app.pre .ro-pill{box-shadow:none!important}
+.app.pre .ro-pill,.app.pre .ro-pill *,.app.pre .sr-title,.app.pre .sr-title *,.app.pre .sr-sub,.app.pre .sr-sub *{color:transparent!important;-webkit-text-fill-color:transparent}
+.app.pre .sr-title,.app.pre .sr-sub{border-radius:8px;max-width:min(60%,420px);overflow:hidden;white-space:nowrap}
+.skc{flex:0 0 max(150px,calc((100% - 16px - 6*14px)/7));height:370px;margin-top:12px;padding:12px 10px 10px;border-radius:18px;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;gap:8px;background:#fff;box-shadow:inset 0 0 0 1px #edf0f5}
+.sk{display:block;border-radius:6px}
+.sk-top{width:100%;display:flex;align-items:center;gap:6px;height:22px}
+.sk-logo{flex:none;width:22px;height:22px;border-radius:50%}
+.sk-mk{width:44%;height:8px}
+.sk-car{width:92%;aspect-ratio:200/92;margin-top:26px;border-radius:0;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 92'%3E%3Cpath fill-rule='evenodd' d='M8 62C8 52 12 47 22 45L40 42C48 30 58 20 74 18L122 18C134 18 144 26 154 38L176 42C188 44 194 50 194 58L194 64C194 67 192 68 190 68L170 68A18 18 0 0 0 134 68L66 68A18 18 0 0 0 30 68L12 68C9 68 8 66 8 62ZM52 40C57 31 64 25 76 25L99 25L99 40Z M105 25L120 25C129 25 137 30 145 40L105 40ZM48 56A14 14 0 1 1 47.99 56Z M48 64A6 6 0 1 0 48.01 64ZM152 56A14 14 0 1 1 151.99 56Z M152 64A6 6 0 1 0 152.01 64Z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 92'%3E%3Cpath fill-rule='evenodd' d='M8 62C8 52 12 47 22 45L40 42C48 30 58 20 74 18L122 18C134 18 144 26 154 38L176 42C188 44 194 50 194 58L194 64C194 67 192 68 190 68L170 68A18 18 0 0 0 134 68L66 68A18 18 0 0 0 30 68L12 68C9 68 8 66 8 62ZM52 40C57 31 64 25 76 25L99 25L99 40Z M105 25L120 25C129 25 137 30 145 40L105 40ZM48 56A14 14 0 1 1 47.99 56Z M48 64A6 6 0 1 0 48.01 64ZM152 56A14 14 0 1 1 151.99 56Z M152 64A6 6 0 1 0 152.01 64Z'/%3E%3C/svg%3E") center/contain no-repeat}
+.sk-nm{width:58%;height:15px;margin-top:20px}
+.sk-sub{width:76%;height:9px}
+.sk-pr{width:62%;height:15px;margin-top:14px}
+.sk-spec{display:flex;gap:8px;width:100%;margin-top:12px}.sk-spec .sk{flex:1;height:20px}
+.sk-act{display:flex;gap:8px;width:100%;margin-top:auto}.sk-act .sk{height:34px;border-radius:10px}.sk-act .sk:first-child{flex:0 0 36%}.sk-act .sk:last-child{flex:1}
+@media (prefers-reduced-motion: reduce){.sk,.app.pre .ro-pill,.app.pre .sr-title,.app.pre .sr-sub{animation:none}}
 .gp[hidden]{display:none}
 .gp-bar{display:flex;align-items:center;gap:6px;flex:none;background:var(--bg);color:var(--ink);padding:12px 0 6px;max-width:1280px;width:100%;margin:0 auto;box-sizing:border-box}
 .gp-back{width:40px;height:40px;flex:none;border:0;border-radius:12px;background:transparent;color:var(--ink);display:grid;place-items:center;cursor:pointer;padding:0;margin-left:-8px}
@@ -1568,7 +1587,7 @@ function makeDial(el,start,onChange){
   d.kick=()=>{if(!d.anim)d.anim=requestAnimationFrame(loop)};
   d.goTo=i=>{d.target=clamp(i);d.kick()};
   /* vai direto para a posição, sem girar (abertura do site e links de carro) */
-  d.jumpTo=i=>{const t=clamp(i);d.target=d.pos=d.last=t;d.vel=0;d.kick()};
+  d.jumpTo=i=>{const t=clamp(i);d.target=d.pos=d.last=t;d.vel=0;if(d.sel!==t){d.sel=t;d.label();onChange(d)}d.draw()};
   d.label=()=>{const v=VALUES[d.sel];ro.innerHTML=`${kv(v)}<small>${ku(v)}</small>`;thumb.setAttribute("aria-valuenow",v);thumb.setAttribute("aria-valuetext",`até ${kmoney(v)}`)};
   thumb.setAttribute("aria-valuemin",MIN);thumb.setAttribute("aria-valuemax",MAX);
   let last=0,samples=[];
@@ -1793,8 +1812,10 @@ function headerFor(){
   document.getElementById("srTitle").innerHTML=`<i class="t-rs">R$ </i>${krange(lo,hi)} <span>· de ${fmt(lo*1000)} a ${fmt(hi*1000)}</span>`;
   document.getElementById("srSub").textContent=list.length?`${list.length} ${VIEW==="models"?(list.length>1?"modelos":"modelo"):(list.length>1?"versões":"versão")} · ${SORTLBL[SORT]}${activeCount()?` · ${activeCount()} filtro${activeCount()>1?"s":""}`:""}`:"";
 }
+const SK_CARD='<div class="skc" aria-hidden="true"><div class="sk-top"><i class="sk sk-logo"></i><i class="sk sk-mk"></i></div><i class="sk sk-car"></i><i class="sk sk-nm"></i><i class="sk sk-sub"></i><i class="sk sk-pr"></i><div class="sk-spec"><i class="sk"></i><i class="sk"></i><i class="sk"></i></div><div class="sk-act"><i class="sk"></i><i class="sk"></i></div></div>';
 function emptyHTML(i){
   const [lo,hi]=bandAt(i);
+  if(!loaded&&!loadErr)return `<span class="sr" role="status">Carregando os carros…</span>${SK_CARD.repeat(8)}`;
   if(!loaded)return `<div class="row-empty"><div class="empty"${loadErr?' role="alert"':""}><b>${loadErr?"Não deu para carregar os carros":"Carregando os carros"}</b>${loadErr||"Buscando as versões 0 km no banco do Autokan…"}${loadErr?`<span class="empty-acts"><button type="button" class="gp-btn pri" onclick="location.reload()">Tentar de novo</button><a class="gp-btn" href="/carros">Ver a lista de carros</a></span>`:""}</div></div>`;
   const pool=CARS.filter(c=>c.p&&matches(c));
   if(!pool.length)return `<div class="row-empty"><div class="empty"><b>Nenhum carro com esses filtros</b>Tire um dos filtros lá em cima para ver mais modelos.</div></div>`;
@@ -2153,17 +2174,20 @@ function pickResult(i){const g=qRes[i];if(!g)return;if(window.giroTrack)giroTrac
 function goToCar(c,instante){
   if(!garPage.hidden&&!instante){history.replaceState(null,"","/");hideGarPage()}
   if(!matches(c)){DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
-  const idx=clamp(VALUES.findIndex(x=>x>=K(c)));if(instante){dial.jumpTo(idx);rowPos=idx}else dial.goTo(idx);
+  const idx=clamp(VALUES.findIndex(x=>x>=K(c)));
+  if(instante){rowPos=idx;dial.jumpTo(idx);syncRows(false);
+    try{const row=curRow();const card=row&&row._list?levaAoCard(row,c,false):null;if(card)fixa={idx,c,ate:performance.now()+8000}}finally{revelaRoleta()}
+    return}
+  dial.goTo(idx);
   const t0=performance.now();
   (function wait(){
-    if((dial.sel!==idx||dial.anim)&&performance.now()-t0<4000)return setTimeout(wait,instante?16:90);
-    setTimeout(()=>{try{const row=curRow();if(!row||!row._list)return;
+    if((dial.sel!==idx||dial.anim)&&performance.now()-t0<4000)return setTimeout(wait,90);
+    setTimeout(()=>{const row=curRow();if(!row||!row._list)return;
       /* o carro buscado passa a ser o escolhido da faixa (com o "Ver ficha"), e o foco vai para ele */
-      const card=levaAoCard(row,c,!instante);if(!card)return;
-      if(instante)fixa={idx,c,ate:performance.now()+8000};
-      else{card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900)}
-      const go=card.querySelector("button.go");if(!instante&&go&&(document.activeElement===document.body||document.activeElement===qIn||!document.activeElement))go.focus({preventScroll:true});
-    }finally{if(instante)revelaRoleta()}},instante?0:260)})();
+      const card=levaAoCard(row,c,true);if(!card)return;
+      card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900);
+      const go=card.querySelector("button.go");if(go&&(document.activeElement===document.body||document.activeElement===qIn||!document.activeElement))go.focus({preventScroll:true});
+    },260)})();
 }
 document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("[data-ev]");if(a&&window.giroTrack)giroTrack("click",{version_id:a.dataset.vid||null,meta:{el:a.dataset.ev}})},true);
 const toastEl=document.getElementById("toast");let tt;
