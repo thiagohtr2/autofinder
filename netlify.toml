@@ -1,6 +1,12 @@
 [build]
   publish = "public"
 
+# páginas próprias de cada carro, marca e lista (para o Google) e o sitemap.xml: netlify/functions/paginas.mjs
+# o esbuild junta numa peça só a função e os arquivos de netlify/lib que ela usa
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
 # o endereço antigo leva ao domínio próprio (um só endereço para o Google e para as visitas).
 # Só vale para autokan.netlify.app: as prévias (deploy-preview-N--autokan.netlify.app) continuam abrindo normalmente.
 [[redirects]]

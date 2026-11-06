@@ -2,7 +2,23 @@
 <html lang="pt-BR">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Autokan · Conheça. Compare. Escolha.</title>
+<title>Autokan: todos os carros 0 km do Brasil por faixa de preço</title>
+<meta name="description" content="Gire a roleta de preço e veja todos os carros 0 km à venda no Brasil que cabem no seu bolso. Compare versões, preços, potência e ficha técnica de mais de 300 modelos.">
+<link rel="canonical" href="https://autokan.com.br/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Autokan">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Autokan: todos os carros 0 km do Brasil por faixa de preço">
+<meta property="og:description" content="Gire a roleta de preço e veja os carros 0 km que cabem no seu bolso. Compare versões, preços e ficha técnica. Conheça. Compare. Escolha.">
+<meta property="og:url" content="https://autokan.com.br/">
+<meta property="og:image" content="https://autokan.com.br/marca/autokan-compartilhar.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Autokan: todos os carros 0 km do Brasil por faixa de preço">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="/site.webmanifest">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://autokan.com.br/#site","name":"Autokan","url":"https://autokan.com.br/","inLanguage":"pt-BR","description":"Todos os carros 0 km à venda no Brasil por faixa de preço, com versões, preços e ficha técnica.","publisher":{"@id":"https://autokan.com.br/#org"}},{"@type":"Organization","@id":"https://autokan.com.br/#org","name":"Autokan","url":"https://autokan.com.br/","logo":"https://autokan.com.br/marca/favicon-192.png","slogan":"Conheça. Compare. Escolha."}]}</script>
 <link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png?v=5">
 <link rel="icon" type="image/png" sizes="192x192" href="/marca/favicon-192.png?v=5">
 <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png?v=5">
@@ -686,6 +702,7 @@ button,input{font:inherit;color:inherit}
 .sn-pos{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
 .sh-head{display:flex;align-items:center;gap:12px;min-width:0}
 .sh-head h2{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sh-pg{flex:none}
 .sh-logo{width:44px;height:44px;flex:0 0 auto;border-radius:12px;background:var(--bg);box-shadow:0 0 0 1px var(--line);display:grid;place-items:center;padding:6px;box-sizing:border-box}
 .sh-logo img{width:100%;height:100%;object-fit:contain}
 .sh-logo.ini{background:var(--panel);box-shadow:none;font:800 13px var(--body);color:var(--muted);letter-spacing:.04em}
@@ -785,6 +802,8 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eg-tip{display:block;margin-top:12px;font-size:11.5px;color:var(--faint)}
 .empty .eg:hover{border-color:var(--accent)}
 .note{font-size:11.5px;color:var(--faint);padding-block:8px 12px}
+.note-a{color:var(--muted);font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
+.note-a:hover{color:var(--accent)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:12px;font-size:13px;max-width:calc(100% - 32px);z-index:20;box-shadow:0 12px 32px rgba(12,17,28,.25)}
 
 @media (max-width:760px){
@@ -1121,7 +1140,7 @@ html{background:#060b1c}
         <button type="button" class="scroller back" id="scrollL" aria-label="Voltar aos carros anteriores" hidden><svg viewBox="0 0 16 16"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
         <button type="button" class="scroller" id="scrollR" aria-label="Ver mais carros" hidden><svg viewBox="0 0 16 16"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       </div>
-      <p class="note">Todas as versões 0 km à venda, linha 2027 (ou 2026 quando ainda não há 2027). Preço de tabela sugerido pela montadora em nov/2026, ou FIPE 0 km quando a montadora não divulga. Cada carro tem link para a fonte.</p>
+      <p class="note">Todas as versões 0 km à venda, linha 2027 (ou 2026 quando ainda não há 2027). Preço de tabela sugerido pela montadora em nov/2026, ou FIPE 0 km quando a montadora não divulga. Cada carro tem link para a fonte. <a class="note-a" href="/carros">Ver todas as marcas e listas de preços</a></p>
     </section>
   </main>
 </div>
@@ -1232,7 +1251,7 @@ html{background:#060b1c}
   </div>
 </section>
 <aside class="drawer sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" hidden>
-  <div class="dr-head"><div class="sh-head"><span class="sh-logo" id="shLogo" hidden></span><h2 id="shTitle">Versão</h2></div><button type="button" class="dr-x" id="shClose" aria-label="Fechar ficha">✕</button></div>
+  <div class="dr-head"><div class="sh-head"><span class="sh-logo" id="shLogo" hidden></span><h2 id="shTitle">Versão</h2><a class="src sh-pg" id="shPage" href="/carros" title="Abrir a página deste carro (para compartilhar ou salvar)" aria-label="Abrir a página deste carro" data-ev="pagina-carro"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6.5 9.5 13 3M8.5 3H13v4.5M11 9v3.5a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><button type="button" class="dr-x" id="shClose" aria-label="Fechar ficha">✕</button></div>
   <div class="dr-body" id="shBody"></div>
   <div class="sh-nav" id="shNav" hidden><button type="button" class="sn-btn" id="shPrev"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small><b id="shPrevN"></b></span></button><span class="sn-pos" id="shPos"></span><button type="button" class="sn-btn nx" id="shNext"><span><small>Próximo</small><b id="shNextN"></b></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 </aside>
@@ -2058,7 +2077,15 @@ function setCatalog(snap){lastCat=snap;
     rows.push({id:r.i,mid:r.m,bid:d.id,pr:r.pr||null,mk:String(x.brand||""),nm:String(r.mn||""),ver:String(r.v||""),ano:r.y||null,p:typeof r.p==="number"?r.p:null,
       t:BODYKEY[r.b]||null,body:r.b||null,...(({k,why})=>({k,why}))(deriveTags(r)),fu:r.f||null,cb:r.t||null,mo:r.e||"",kind:r.pk==="fipe"?"FIPE":"Tabela",cv:r.cv||null})})});
   ALLCARS=rows;CARS=rows.filter(c=>shown(c.bid,c.mid));applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();
+  abrirDoLink();
 }
+/* links das páginas próprias de cada carro: /?carro=<modelo> (e &versao=<versão>) leva a roleta até o carro e abre a ficha */
+let linkAberto=false;
+function abrirDoLink(){if(linkAberto)return;linkAberto=true;
+  const q=new URLSearchParams(location.search),mid=q.get("carro"),vid=q.get("versao");if(!mid&&!vid)return;
+  history.replaceState(null,"",location.pathname+location.hash);
+  const c=(vid&&CARS.find(x=>x.id===vid&&(!mid||x.mid===mid)))||CARS.filter(x=>x.mid===mid).sort((a,b)=>(a.p??Infinity)-(b.p??Infinity))[0];
+  if(!c)return;setTimeout(()=>{goToCar(c);setTimeout(()=>openInfo(c.id),450)},60)}
 document.querySelector(".mode.sort").addEventListener("click",e=>{const b=e.target.closest("[data-sort]");if(!b||b.dataset.sort===SORT)return;SORT=b.dataset.sort;
   document.querySelectorAll("[data-sort]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.sort===SORT));swap()});
 document.querySelector(".mode:not(.sort)").addEventListener("click",e=>{const b=e.target.closest("[data-mode]");if(!b||b.dataset.mode===VIEW)return;VIEW=b.dataset.mode;
@@ -2095,6 +2122,7 @@ async function openInfo(id){
   if(sheet.hidden)lastFocus=document.activeElement;scrim.hidden=false;sheet.hidden=false;
   setSheetNav(c);if(window.giroTrack)giroTrack("view_car",{version_id:c.id,model_id:c.mid});
   document.getElementById("shTitle").textContent=`${c.mk} ${c.nm}`;
+  {const pg=document.getElementById("shPage"),ok=c.bid&&c.mid&&c.mid.startsWith(c.bid+"-");pg.hidden=!ok;if(ok)pg.href=`/carros/${c.bid}/${c.mid.slice(c.bid.length+1)}`;}
   {const lg=logos[brandSlug(c.mk)],el=document.getElementById("shLogo");el.hidden=false;el.classList.toggle("ini",!lg);
    el.innerHTML=lg?`<img src="${blobUrl(lg)}" alt="${esc(c.mk)}">`:esc(c.mk.slice(0,2).toUpperCase());el.title=c.mk;}
   const sib=ALLCARS.filter(x=>x.mid===c.mid).sort((a,b)=>(a.p||0)-(b.p||0));
