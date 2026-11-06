@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Painel · AutoKan</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+<style>
+/* Painel do dono: números do dia no alto, depois a série diária, origem, carros e roleta, quem está online e quem se cadastrou. Tema claro, como o site. */
+:root{
+  --bg:#f3f5f9; --panel:#ffffff; --ink:#0c111c; --muted:#5b6578; --faint:#a9b0be; --line:#e3e8ef; --soft:#f5f7fa;
+  --accent:#1d6bff; --accent-soft:rgba(29,107,255,.10); --bar:#1d6bff; --bar-hover:#0b4fd6;
+  --ok:#11864c; --ok-soft:#e8f6ee; --danger:#b02a15;
+  --display:"Sora","Segoe UI",system-ui,sans-serif; --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif; --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:16px 48px}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+[hidden]{display:none!important}
+.wrap{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:30px;width:auto;display:block}
+.brand b{font-family:var(--display);font-size:18px;font-weight:600;letter-spacing:-.01em;padding-left:12px;border-left:1px solid var(--line)}
+.tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--panel)}
+.seg button{border:0;background:transparent;border-radius:999px;padding:5px 12px;font-weight:700;font-size:12.5px;color:var(--muted);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.upd{font:600 11.5px var(--mono);color:var(--muted)}
+.tog{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:12.5px;color:var(--muted);cursor:pointer}
+.tog input{width:16px;height:16px;accent-color:var(--accent)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;min-width:0}
+.card h2{font-family:var(--display);font-size:14px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}
+.card .sub{color:var(--muted);font-size:12.5px;margin:0 0 12px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:900px){.g2,.g3{grid-template-columns:minmax(0,1fr)}}
+
+/* números do alto */
+.kpis{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px}
+@media (max-width:1100px){.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.kpi small{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.kpi b{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.03em;line-height:1.1;font-variant-numeric:tabular-nums}
+.kpi span{font-size:12px;color:var(--muted)}
+.kpi.live b{display:flex;align-items:center;gap:8px}
+.kpi b span{font-size:inherit;color:inherit}
+.kpi.live b i{width:9px;height:9px;border-radius:50%;background:var(--ok);box-shadow:0 0 0 4px var(--ok-soft)}
+
+/* gráficos */
+.chart{position:relative}
+.chart svg{display:block;width:100%;height:auto;overflow:visible}
+.chart .axis{font:500 10.5px var(--mono);fill:var(--muted)}
+.chart .grid-l{stroke:var(--line);stroke-width:1}
+.chart .bar{fill:var(--bar);pointer-events:none}
+.chart .hit{fill:transparent;cursor:default}
+.chart .hit:hover+.bar,.chart .bar.on{fill:var(--bar-hover)}
+.tip{position:absolute;pointer-events:none;background:var(--ink);color:#fff;border-radius:9px;padding:7px 10px;font-size:12px;line-height:1.35;white-space:nowrap;transform:translate(-50%,calc(-100% - 10px));z-index:5}
+.tip b{font-family:var(--mono);font-weight:600}
+.tip small{display:block;color:#b9c2d3;font-weight:600}
+.empty{color:var(--muted);font-size:13px;padding:18px 0;text-align:center}
+
+/* listas com barra */
+.blist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.blist li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:3px 10px;align-items:baseline}
+.blist .lb{font-weight:600;font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.blist .vl{font:600 12.5px var(--mono);font-variant-numeric:tabular-nums}
+.blist .tr{grid-column:1/-1;height:6px;border-radius:3px;background:var(--soft);overflow:hidden}
+.blist .tr i{display:block;height:100%;border-radius:3px;background:var(--bar)}
+.note{font-size:12px;color:var(--muted);margin:10px 0 0}
+
+/* tabelas */
+.tbl-wrap{overflow-x:auto;margin:0 -4px}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-size:11px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);padding:6px 4px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:7px 4px;border-bottom:1px solid var(--line);vertical-align:top}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+td .muted{color:var(--muted)}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.pill.acc{background:var(--accent-soft);color:#0b4fd6}
+.pill.ok{background:var(--ok-soft);color:var(--ok)}
+.search{display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap}
+.search input{flex:1 1 200px;min-width:0;border:1px solid var(--line);background:var(--soft);border-radius:10px;padding:8px 11px}
+.btn{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:8px 13px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+.btn:hover{border-color:var(--accent)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn:disabled{opacity:.5;cursor:default}
+.pager{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:8px}
+.lk{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:10px;padding:7px 8px 7px 11px;min-width:0}
+.lk span{flex:1;min-width:0;font:600 12px var(--mono);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lk b{font-size:12.5px;white-space:nowrap}
+
+/* entrar */
+.gate{max-width:380px;margin:8vh auto 0;display:flex;flex-direction:column;gap:14px}
+.gate img{height:38px;width:auto;align-self:center}
+.gate form{display:flex;flex-direction:column;gap:10px}
+.gate label{display:flex;flex-direction:column;gap:4px;font-weight:600;font-size:13px}
+.gate input{border:1px solid var(--line);background:var(--soft);border-radius:10px;padding:10px 12px}
+.gate .err{color:var(--danger);font-weight:600;font-size:13px;margin:0}
+.gate p{margin:0;color:var(--muted);font-size:13px;text-align:center}
+.gbtn{display:flex;align-items:center;justify-content:center;gap:10px}
+.gbtn svg{width:18px;height:18px}
+.toast{position:fixed;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;font-weight:700;font-size:13px;padding:9px 14px;border-radius:10px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:20}
+.toast.on{opacity:1}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="gate card" id="gate" hidden>
+  <img src="/marca/autokan-logo-topo.png" alt="AutoKan">
+  <h2 style="text-align:center;font-size:17px">Painel do AutoKan</h2>
+  <div id="gateBody"></div>
+</div>
+
+<div class="wrap" id="app" hidden>
+  <header class="top">
+    <div class="brand"><a href="/" title="Abrir o site"><img src="/marca/autokan-logo-topo.png" alt="AutoKan"></a><b>Painel</b></div>
+    <div class="tools">
+      <div class="seg" role="group" aria-label="Período">
+        <button type="button" data-days="1" id="p1">Hoje</button>
+        <button type="button" data-days="7" id="p7" aria-pressed="true">7 dias</button>
+        <button type="button" data-days="30" id="p30">30 dias</button>
+        <button type="button" data-days="90" id="p90">90 dias</button>
+      </div>
+      <label class="tog" title="As suas visitas ao site, neste navegador, deixam de entrar nos números"><input type="checkbox" id="notrack"> Não contar minhas visitas neste navegador</label>
+      <span class="upd" id="upd">Carregando…</span>
+      <button type="button" class="btn" id="out">Sair</button>
+    </div>
+  </header>
+
+  <section class="kpis" aria-label="Resumo">
+    <div class="kpi live"><small>Online agora</small><b class="num"><i></i><span id="kOnline">–</span></b><span id="kOnlineSub">&nbsp;</span></div>
+    <div class="kpi"><small>Visitantes hoje</small><b class="num" id="kToday">–</b><span id="kTodaySub">&nbsp;</span></div>
+    <div class="kpi"><small id="kPerLbl">Visitantes · 7 dias</small><b class="num" id="kPer">–</b><span id="kPerSub">&nbsp;</span></div>
+    <div class="kpi"><small>Voltaram</small><b class="num" id="kBack">–</b><span id="kBackSub">&nbsp;</span></div>
+    <div class="kpi"><small>Cadastros</small><b class="num" id="kUsers">–</b><span id="kUsersSub">&nbsp;</span></div>
+    <div class="kpi"><small>Curtidas</small><b class="num" id="kVotes">–</b><span id="kVotesSub">&nbsp;</span></div>
+  </section>
+
+  <section class="card">
+    <h2 id="dailyTitle">Visitantes por dia</h2>
+    <p class="sub" id="dailySub">Pessoas diferentes (navegadores) que entraram em cada dia.</p>
+    <div class="chart" id="daily"></div>
+  </section>
+
+  <div class="grid g3">
+    <section class="card"><h2>De onde vieram</h2><p class="sub">Visitas por origem no período.</p><ul class="blist" id="refs"></ul>
+      <p class="note">Quem abre um link pelo WhatsApp quase sempre aparece como “Direto”. Para separar, divulgue os links com origem do fim da página.</p></section>
+    <section class="card"><h2>Aparelhos</h2><p class="sub">Visitas por tipo de aparelho.</p><ul class="blist" id="devices"></ul>
+      <h2 style="margin-top:16px">Navegadores</h2><ul class="blist" id="browsers" style="margin-top:8px"></ul></section>
+    <section class="card"><h2>O que as pessoas fazem</h2><p class="sub">Ações registradas no período.</p><ul class="blist" id="events"></ul></section>
+  </div>
+
+  <div class="grid g2">
+    <section class="card"><h2>Onde a roleta para</h2><p class="sub">Quantas vezes a roleta parou em cada faixa de preço.</p><div class="chart" id="bands"></div></section>
+    <section class="card"><h2>Carros mais vistos</h2><p class="sub">Fichas abertas no período.</p><div class="tbl-wrap"><table id="cars"></table></div></section>
+  </div>
+
+  <div class="grid g2">
+    <section class="card"><h2>Mais curtidos</h2><p class="sub">Desde o início.</p><div class="tbl-wrap"><table id="voted"></table></div></section>
+    <section class="card"><h2>Páginas mais vistas</h2><p class="sub">No período.</p><ul class="blist" id="pages"></ul></section>
+  </div>
+
+  <section class="card"><h2>Online agora</h2><p class="sub">Quem deu sinal nos últimos 90 segundos. Atualiza sozinho a cada 20 s.</p><div class="tbl-wrap"><table id="online"></table></div></section>
+
+  <section class="card"><h2>Últimas ações</h2><p class="sub">As 60 mais recentes.</p><div class="tbl-wrap"><table id="recent"></table></div></section>
+
+  <section class="card">
+    <h2>Pessoas cadastradas</h2><p class="sub" id="usersSub">Contas criadas no site.</p>
+    <form class="search" id="uForm"><input type="search" id="uQ" placeholder="Buscar por nome ou e-mail" aria-label="Buscar pessoas"><button class="btn" type="submit">Buscar</button></form>
+    <div class="tbl-wrap"><table id="users"></table></div>
+    <div class="pager"><span id="uInfo"></span><span><button class="btn" type="button" id="uPrev">Anteriores</button> <button class="btn" type="button" id="uNext">Próximas</button></span></div>
+  </section>
+
+  <section class="card">
+    <h2>Links para divulgar</h2>
+    <p class="sub">Use estes links em cada canal para o painel saber de onde a pessoa veio.</p>
+    <div class="links" id="links"></div>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.js" integrity="sha384-rwykjmWNwVxboyFmvK9OXN0wj9hnMHA2aAHtits54DuACyCq0M2PrSNxhRb+hvXT" crossorigin="anonymous"></script>
+<script>
+(function(){
+"use strict";
+const sb = window.supabase.createClient("https://ljgcvxadsekaicffztbi.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqZ2N2eGFkc2VrYWljZmZ6dGJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3OTYyNjMsImV4cCI6MjEwOTM3MjI2M30._lZd1-cALOXrnR3nI0rwwWkfIAXYZ_qmVHJ7s3Ka2BM");
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const nf = n => (Number(n) || 0).toLocaleString("pt-BR");
+const brl = n => n ? "R$ " + Math.round(n).toLocaleString("pt-BR") : "—";
+const pct = (a, b) => b ? Math.round(a / b * 100) + "%" : "—";
+const toastEl = $("toast"); let tt;
+function toast(m){ toastEl.textContent = m; toastEl.classList.add("on"); clearTimeout(tt); tt = setTimeout(() => toastEl.classList.remove("on"), 2600); }
+const LS = {get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k, v){ try { v == null ? localStorage.removeItem(k) : localStorage.setItem(k, v); } catch(e){} }};
+
+// ---------- entrar
+const G_ICON = '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
+function showGate(kind, msg){
+  $("app").hidden = true; $("gate").hidden = false;
+  const body = $("gateBody");
+  if (kind === "noadmin"){
+    body.innerHTML = `<p>Esta conta (<b>${esc(msg)}</b>) não é a conta admin do site.</p><button class="btn" type="button" id="gOut">Entrar com outra conta</button>`;
+    $("gOut").onclick = async () => { await sb.auth.signOut(); showGate("login"); };
+    return;
+  }
+  body.innerHTML = `<form id="gForm">
+      <label>E-mail<input type="email" id="gEmail" autocomplete="username" required></label>
+      <label>Senha<input type="password" id="gPass" autocomplete="current-password" required></label>
+      <p class="err" id="gErr" role="alert" hidden></p>
+      <button class="btn primary" type="submit" id="gGo">Entrar</button>
+    </form>
+    <button class="btn gbtn" type="button" id="gGoogle">${G_ICON}Entrar com Google</button>
+    <p>Só a conta admin vê os números.</p>`;
+  $("gForm").onsubmit = async e => {
+    e.preventDefault(); const err = $("gErr"); err.hidden = true; $("gGo").disabled = true;
+    const { error } = await sb.auth.signInWithPassword({ email: $("gEmail").value.trim(), password: $("gPass").value });
+    $("gGo").disabled = false;
+    if (error){ err.textContent = /invalid/i.test(error.message) ? "E-mail ou senha incorretos." : "Não deu para entrar agora. Tente de novo."; err.hidden = false; return; }
+    boot();
+  };
+  $("gGoogle").onclick = async () => {
+    const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + "/admin.html" } });
+    if (error) toast("O login com Google ainda não está ligado no Supabase.");
+  };
+  if (msg) toast(msg);
+}
+
+// ---------- rótulos
+const EV = {page_view: "Páginas vistas", spin: "Roleta parou numa faixa", view_car: "Fichas de carro abertas", compare: "Comparações abertas", save: "Carros salvos", vote: "Curtidas", share: "Compartilhamentos", search: "Buscas", signup: "Cadastros", login: "Entradas na conta", click: "Cliques acompanhados"};
+const EV_SHORT = {page_view: "Página", spin: "Roleta", view_car: "Abriu carro", compare: "Comparou", save: "Salvou", vote: "Curtiu", share: "Compartilhou", search: "Buscou", signup: "Cadastrou", login: "Entrou", click: "Clique"};
+function srcLabel(s){
+  const v = String(s || "").toLowerCase();
+  if (!v || v === "direto") return "Direto";
+  if (/instagram/.test(v)) return "Instagram";
+  if (/whatsapp|wa\.me/.test(v)) return "WhatsApp";
+  if (/(^|\.)google\./.test(v) || v === "google") return "Google";
+  if (/facebook|fb\.|^fb$/.test(v)) return "Facebook";
+  if (/^t\.co$|twitter|(^|\.)x\.com/.test(v)) return "X (Twitter)";
+  if (/tiktok/.test(v)) return "TikTok";
+  if (/bing\./.test(v)) return "Bing";
+  if (/youtube|youtu\.be/.test(v)) return "YouTube";
+  return s;
+}
+const bandLabel = b => b < 1000 ? "até R$ " + b + " mil" : "até R$ " + (b / 1000).toLocaleString("pt-BR", {maximumFractionDigits: 2}) + " mi";
+function ago(ts){
+  const s = Math.max(0, (Date.now() - new Date(ts).getTime()) / 1000);
+  if (s < 60) return "agora"; if (s < 3600) return Math.round(s / 60) + " min";
+  if (s < 86400) return Math.round(s / 3600) + " h"; return Math.round(s / 86400) + " d";
+}
+const fdate = ts => ts ? new Date(ts).toLocaleString("pt-BR", {day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit"}) : "—";
+
+// ---------- listas e gráficos
+function blist(el, rows){
+  if (!rows.length){ el.innerHTML = '<li class="empty" style="display:block">Sem dados no período.</li>'; return; }
+  const max = Math.max(...rows.map(r => r.n)) || 1;
+  el.innerHTML = rows.map(r => `<li><span class="lb" title="${esc(r.label)}">${esc(r.label)}</span><span class="vl">${nf(r.n)}${r.extra ? ` <span class="muted" style="color:var(--muted)">${esc(r.extra)}</span>` : ""}</span><span class="tr"><i style="width:${Math.max(2, r.n / max * 100).toFixed(1)}%"></i></span></li>`).join("");
+}
+// barras verticais de uma série só: cantos de 4px no topo, vão de 2px, grade discreta e dica ao passar o mouse
+function bars(el, items, opt){
+  if (!items.length || items.every(i => !i.v)){ el.innerHTML = '<div class="empty">Sem dados no período.</div>'; return; }
+  const W = Math.max(300, Math.round(el.clientWidth || 760)), H = opt.h || 200, L = 34, R = 6, T = 10, B = 26;   // desenha na largura real: texto sempre no tamanho certo
+  const max = Math.max(...items.map(i => i.v)), step = niceStep(max), top = Math.ceil(max / step) * step || 1;
+  const n = items.length, slot = (W - L - R) / n, bw = Math.max(2, Math.min(slot - 2, 46));
+  const y = v => T + (H - T - B) * (1 - v / top);
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(opt.label)}">`;
+  for (let g = 0; g <= top; g += step){ const yy = y(g).toFixed(1); s += `<line class="grid-l" x1="${L}" x2="${W - R}" y1="${yy}" y2="${yy}"/><text class="axis" x="${L - 6}" y="${(+yy + 3.5).toFixed(1)}" text-anchor="end">${nf(g)}</text>`; }
+  const every = Math.ceil(n / Math.min(opt.maxLabels || 12, Math.max(4, Math.floor(W / 56))));
+  items.forEach((it, i) => {
+    const x = L + slot * i + (slot - bw) / 2, yy = y(it.v), h = Math.max(0, H - B - yy), r = Math.min(4, bw / 2, h);
+    const d = h > 0 ? `M${x.toFixed(1)} ${(H - B).toFixed(1)}V${(yy + r).toFixed(1)}Q${x.toFixed(1)} ${yy.toFixed(1)} ${(x + r).toFixed(1)} ${yy.toFixed(1)}H${(x + bw - r).toFixed(1)}Q${(x + bw).toFixed(1)} ${yy.toFixed(1)} ${(x + bw).toFixed(1)} ${(yy + r).toFixed(1)}V${(H - B).toFixed(1)}Z` : "";
+    s += `<rect class="hit" data-i="${i}" x="${(L + slot * i).toFixed(1)}" y="${T}" width="${slot.toFixed(1)}" height="${H - T - B}"/>`;
+    s += d ? `<path class="bar" d="${d}"/>` : `<path class="bar" d="M0 0"/>`;
+    if (i % every === 0 || i === n - 1 && n <= 14) s += `<text class="axis" x="${(L + slot * i + slot / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(it.x)}</text>`;
+  });
+  s += "</svg>";
+  el.innerHTML = s + '<div class="tip" hidden></div>';
+  const tip = el.querySelector(".tip"), svg = el.querySelector("svg");
+  svg.addEventListener("mousemove", e => {
+    const hit = e.target.closest(".hit"); if (!hit){ tip.hidden = true; return; }
+    const it = items[+hit.dataset.i], box = el.getBoundingClientRect(), sx = box.width / W;
+    tip.innerHTML = opt.tip(it); tip.hidden = false;
+    const cx = (L + slot * (+hit.dataset.i) + slot / 2) * sx;
+    tip.style.left = Math.min(box.width - 70, Math.max(70, cx)) + "px"; tip.style.top = (y(it.v) * sx) + "px";
+  });
+  svg.addEventListener("mouseleave", () => tip.hidden = true);
+}
+function niceStep(max){ if (max <= 4) return 1; const raw = max / 4, p = Math.pow(10, Math.floor(Math.log10(raw))), m = raw / p; return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 5 ? 5 : 10) * p; }
+
+// ---------- dados
+let days = 7, uOffset = 0, lastW = 0, rT = 0; const U_LIMIT = 25;
+addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => { if (Math.abs(innerWidth - lastW) > 40 && !$("app").hidden){ lastW = innerWidth; loadOverview().catch(() => {}); } }, 300); });
+async function rpc(fn, args){ const { data, error } = await sb.rpc(fn, args || {}); if (error) throw error; return data; }
+async function loadOverview(){
+  const o = await rpc("admin_overview", {p_days: days});
+  $("kOnline").textContent = nf(o.online_now);
+  $("kOnlineSub").textContent = o.online_logged ? `${nf(o.online_logged)} com conta` : "nenhum com conta";
+  $("kToday").textContent = nf(o.visitors_today);
+  $("kTodaySub").textContent = `${nf(o.sessions_today)} visita${o.sessions_today === 1 ? "" : "s"}`;
+  $("kPerLbl").textContent = days === 1 ? "Visitantes · hoje" : `Visitantes · ${days} dias`;
+  $("kPer").textContent = nf(o.visitors);
+  $("kPerSub").textContent = `${nf(o.page_views)} páginas · ${Math.round((o.avg_session_sec || 0) / 60)} min por visita`;
+  const back = Math.max(0, (o.visitors || 0) - (o.new_visitors || 0));
+  $("kBack").textContent = nf(back);
+  $("kBackSub").textContent = `${pct(back, o.visitors)} dos visitantes do período`;
+  $("kUsers").textContent = nf(o.users_total);
+  $("kUsersSub").textContent = `${nf(o.users_today)} hoje · ${nf(o.users_period)} no período`;
+  $("kVotes").textContent = nf(o.votes_total);
+  $("kVotesSub").textContent = `${nf(o.voters_total)} pessoa${o.voters_total === 1 ? "" : "s"} curtiram`;
+
+  if (days === 1){
+    $("dailyTitle").textContent = "Visitantes por hora, hoje"; $("dailySub").textContent = "Pessoas diferentes ativas em cada hora (horário de Brasília).";
+    const byH = Object.fromEntries((o.hourly_today || []).map(r => [r.h, r.n])), now = new Date().getHours();
+    const items = []; for (let h = 0; h <= now; h++) items.push({x: h + "h", v: byH[h] || 0, h});
+    bars($("daily"), items, {label: "Visitantes por hora", maxLabels: 12, tip: it => `<small>${it.h}h às ${it.h + 1}h</small><b>${nf(it.v)}</b> visitante${it.v === 1 ? "" : "s"}`});
+  } else {
+    $("dailyTitle").textContent = "Visitantes por dia"; $("dailySub").textContent = "Pessoas diferentes (navegadores) que entraram em cada dia.";
+    const items = (o.daily || []).map(d => { const dt = new Date(d.date + "T12:00:00"); return {x: dt.toLocaleDateString("pt-BR", {day: "2-digit", month: "2-digit"}), v: d.visitors, d, dt}; });
+    bars($("daily"), items, {label: "Visitantes por dia", maxLabels: days > 30 ? 10 : 12, tip: it => `<small>${it.dt.toLocaleDateString("pt-BR", {weekday: "short", day: "2-digit", month: "2-digit"})}</small><b>${nf(it.v)}</b> visitante${it.v === 1 ? "" : "s"} · ${nf(it.d.sessions)} visitas<br>${nf(it.d.page_views)} páginas · ${nf(it.d.signups)} cadastro${it.d.signups === 1 ? "" : "s"}`});
+  }
+
+  const refAgg = {};
+  (o.referrers || []).forEach(r => { const k = srcLabel(r.src); refAgg[k] = (refAgg[k] || 0) + r.n; });
+  blist($("refs"), Object.entries(refAgg).map(([label, n]) => ({label, n})).sort((a, b) => b.n - a.n));
+  const DEV = {celular: "Celular", computador: "Computador", tablet: "Tablet", mobile: "Celular", desktop: "Computador", "?": "Não identificado"};
+  blist($("devices"), Object.entries(o.devices || {}).map(([k, n]) => ({label: DEV[k] || k, n})).sort((a, b) => b.n - a.n));
+  blist($("browsers"), (o.browsers || []).map(r => ({label: r.b === "?" ? "Não identificado" : r.b, n: r.n})));
+  blist($("events"), Object.entries(o.events_by_type || {}).map(([k, n]) => ({label: EV[k] || k, n})).sort((a, b) => b.n - a.n));
+  blist($("pages"), (o.top_pages || []).map(r => ({label: r.path, n: r.n})));
+
+  const bands = (o.price_bands || []).slice().sort((a, b) => a.band - b.band);
+  bars($("bands"), bands.map(b => ({x: b.band < 1000 ? String(b.band) : (b.band / 1000).toLocaleString("pt-BR", {maximumFractionDigits: 2}) + " mi", v: b.n, b})), {label: "Paradas da roleta por faixa", h: 190, maxLabels: 14,
+    tip: it => `<small>${esc(bandLabel(it.b.band))}</small><b>${nf(it.v)}</b> parada${it.v === 1 ? "" : "s"} · ${nf(it.b.people)} pessoa${it.b.people === 1 ? "" : "s"}`});
+
+  const cars = o.top_cars || [];
+  $("cars").innerHTML = cars.length ? `<thead><tr><th>Carro</th><th class="n">Preço</th><th class="n">Vezes</th><th class="n">Pessoas</th></tr></thead><tbody>${cars.map(c => `<tr><td>${esc(c.name || c.version_id)}</td><td class="n">${brl(c.price)}</td><td class="n">${nf(c.views)}</td><td class="n">${nf(c.people)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma ficha aberta no período.</td></tr></tbody>';
+  const voted = o.top_voted || [];
+  $("voted").innerHTML = voted.length ? `<thead><tr><th>Carro</th><th class="n">Curtidas</th></tr></thead><tbody>${voted.map(c => `<tr><td>${esc(c.name || c.version_id)}</td><td class="n">${nf(c.votes)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma curtida ainda.</td></tr></tbody>';
+  $("upd").textContent = "Atualizado às " + new Date().toLocaleTimeString("pt-BR", {hour: "2-digit", minute: "2-digit"});
+}
+async function loadOnline(){
+  const rows = await rpc("admin_online");
+  $("kOnline").textContent = nf(rows.length);
+  $("online").innerHTML = rows.length ? `<thead><tr><th>Página</th><th>Último carro</th><th>Aparelho</th><th>Origem</th><th>Conta</th><th class="n">Páginas</th><th class="n">Na visita há</th></tr></thead><tbody>${rows.map(r => `<tr>
+    <td>${esc(r.current_path || "/")}</td><td>${r.last_car ? esc(r.last_car) : '<span class="muted">—</span>'}</td>
+    <td>${esc(r.device || "?")} <span class="muted">${esc([r.browser, r.os].filter(Boolean).join(" · "))}</span></td>
+    <td>${esc(srcLabel(r.ref_domain || ""))}</td>
+    <td>${r.user_email ? `<span class="pill acc">${esc(r.user_name || r.user_email)}</span>` : (r.is_new_visitor ? '<span class="pill">novo</span>' : '<span class="pill ok">voltou</span>')}</td>
+    <td class="n">${nf(r.page_views)}</td><td class="n">${ago(r.started_at)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Ninguém no site agora.</td></tr></tbody>';
+}
+async function loadRecent(){
+  const rows = await rpc("admin_recent_events", {p_limit: 60});
+  $("recent").innerHTML = rows.length ? `<thead><tr><th class="n">Quando</th><th>Ação</th><th>Detalhe</th><th>Quem</th><th>Aparelho</th></tr></thead><tbody>${rows.map(r => `<tr>
+    <td class="n">${ago(r.created_at)}</td><td>${esc(EV_SHORT[r.type] || r.type)}</td>
+    <td>${r.car ? esc(r.car) : r.price_band ? esc(bandLabel(r.price_band)) : `<span class="muted">${esc(r.path || "")}</span>`}</td>
+    <td>${r.user_email ? esc(r.user_email) : `<span class="muted">visitante ${esc(String(r.visitor_id || "").slice(0, 6))}</span>`}</td>
+    <td>${esc(r.device || "")}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma ação registrada ainda.</td></tr></tbody>';
+}
+async function loadUsers(){
+  const q = $("uQ").value.trim();
+  const rows = await rpc("admin_users", {p_search: q || null, p_limit: U_LIMIT, p_offset: uOffset});
+  const total = rows.length ? Number(rows[0].total) : 0;
+  $("usersSub").textContent = `${nf(total)} conta${total === 1 ? "" : "s"}${q ? " encontradas" : " no site"}.`;
+  $("users").innerHTML = rows.length ? `<thead><tr><th>Nome</th><th>E-mail</th><th>Entrou com</th><th class="n">Cadastro</th><th class="n">Última visita</th><th class="n">Visitas</th><th class="n">Curtidas</th></tr></thead><tbody>${rows.map(u => `<tr>
+    <td>${esc(u.display_name || "—")}${u.role === "admin" ? ' <span class="pill acc">admin</span>' : ""}</td><td>${esc(u.email)}</td>
+    <td>${u.provider === "google" ? "Google" : "E-mail"}</td><td class="n">${fdate(u.created_at)}</td><td class="n">${u.last_seen ? ago(u.last_seen) : "—"}</td>
+    <td class="n">${nf(u.sessions)}</td><td class="n">${nf(u.votes)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma conta encontrada.</td></tr></tbody>';
+  $("uInfo").textContent = total ? `${uOffset + 1}–${Math.min(total, uOffset + U_LIMIT)} de ${nf(total)}` : "";
+  $("uPrev").disabled = uOffset === 0; $("uNext").disabled = uOffset + U_LIMIT >= total;
+}
+function renderLinks(){
+  const base = location.origin + "/";
+  const ch = [["Instagram (bio e stories)", "instagram"], ["WhatsApp", "whatsapp"], ["Facebook", "facebook"], ["TikTok", "tiktok"], ["YouTube", "youtube"], ["Anúncio pago", "anuncio"]];
+  $("links").innerHTML = ch.map(([n, s], i) => `<div class="lk"><b>${esc(n)}</b><span>${esc(base + "?utm_source=" + s)}</span><button class="btn" type="button" data-link="${i}">Copiar</button></div>`).join("");
+  $("links").querySelectorAll("[data-link]").forEach(b => b.onclick = async () => {
+    const url = base + "?utm_source=" + ch[+b.dataset.link][1];
+    try { await navigator.clipboard.writeText(url); toast("Link copiado."); } catch(e){ toast(url); }
+  });
+}
+
+// ---------- montagem
+let timers = [];
+async function refreshAll(){
+  try { await Promise.all([loadOverview(), loadOnline(), loadRecent()]); }
+  catch(e){ $("upd").textContent = "Não deu para atualizar agora"; }
+}
+let bootP = null;
+function boot(){ if (!bootP) bootP = doBoot().finally(() => { bootP = null; }); return bootP; }
+async function doBoot(){
+  const { data } = await sb.auth.getSession();
+  const user = data.session && data.session.user;
+  if (!user){ showGate("login"); return; }
+  let admin = false;
+  try { admin = await rpc("is_admin"); } catch(e){ admin = false; }
+  if (!admin){ showGate("noadmin", user.email); return; }
+  $("gate").hidden = true; $("app").hidden = false;
+  // as visitas do dono não entram nos números (pode desligar aqui)
+  if (LS.get("autokan_sem_rastreio") == null) LS.set("autokan_sem_rastreio", "1");
+  $("notrack").checked = LS.get("autokan_sem_rastreio") === "1";
+  renderLinks();
+  await Promise.all([refreshAll(), loadUsers().catch(() => {})]);
+  timers.forEach(clearInterval);
+  timers = [setInterval(() => loadOnline().catch(() => {}), 20000), setInterval(() => { loadOverview().catch(() => {}); loadRecent().catch(() => {}); }, 60000)];
+}
+$("notrack").onchange = e => { LS.set("autokan_sem_rastreio", e.target.checked ? "1" : "0"); toast(e.target.checked ? "Suas visitas neste navegador não entram mais nos números." : "Suas visitas neste navegador voltam a contar."); };
+document.querySelectorAll("[data-days]").forEach(b => b.onclick = () => {
+  days = +b.dataset.days;
+  document.querySelectorAll("[data-days]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  loadOverview().catch(() => { $("upd").textContent = "Não deu para atualizar agora"; });
+});
+$("uForm").onsubmit = e => { e.preventDefault(); uOffset = 0; loadUsers().catch(() => toast("Não deu para buscar agora.")); };
+$("uPrev").onclick = () => { uOffset = Math.max(0, uOffset - U_LIMIT); loadUsers().catch(() => {}); };
+$("uNext").onclick = () => { uOffset += U_LIMIT; loadUsers().catch(() => {}); };
+$("out").onclick = async () => { await sb.auth.signOut(); timers.forEach(clearInterval); showGate("login"); };
+sb.auth.onAuthStateChange((ev) => { if (ev === "SIGNED_IN" && $("app").hidden) boot(); });
+boot();
+})();
+</script>
+</body>
+</html>
