@@ -83,7 +83,7 @@ button{font-family:inherit}
 .t-nada{padding:10px 12px;color:#9fb1d1;font-size:14px}
 @media (max-width:1040px){.top-nav .so-larga{display:none}}
 @media (max-width:900px){.top-nav{display:none}.so-cel{display:grid}.top-acts{margin-left:auto}}
-@media (max-width:640px){.logo .full{display:none}.logo .ico{display:block}.top-in{gap:8px}.top-cta.so-pc{display:none}.t-ic{width:30px;height:30px}.t-ic svg{width:14px;height:14px}.t-btn{height:30px;padding:0 12px;font-size:12.5px}.t-pf{width:32px;height:32px}.top-acts{gap:6px}}
+@media (max-width:640px){.logo .full{display:none}.logo .ico{display:block;transform:translateY(2px)}.top-in{gap:8px}.top-cta.so-pc{display:none}.t-ic{width:30px;height:30px}.t-ic svg{width:14px;height:14px}.t-btn{height:30px;padding:0 12px;font-size:12.5px}.t-pf{width:32px;height:32px}.top-acts{gap:6px}}
 @media (max-width:370px){.so-cel-larga{display:none}.t-btn{padding:0 10px}}
 /* trilha */
 .trilha ol{list-style:none;display:flex;flex-wrap:wrap;gap:2px 0;margin:0;padding:18px 0 6px;font-size:13px;color:var(--muted)}

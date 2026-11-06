@@ -1133,7 +1133,9 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 #authPanel .cm-send{height:44px;font-size:14px}
 /* topo no celular: só o símbolo (aba "Topo no celular" da bancada, Versão 6: 18 px) */
 .logo-ico{display:none}
-@media (max-width:760px){.logo .logo-img{display:none}.logo .logo-ico{display:block;height:18px;width:auto;flex:none}}
+@media (max-width:760px){.logo .logo-img{display:none}.logo .logo-ico{display:block;height:18px;width:auto;flex:none;transform:translateY(2px)}}
+/* o símbolo tem a barra larga em cima: descido 2 px, fica alinhado ao olho com os botões da direita */
+@media (max-width:370px){.cpbtn{display:none}}
 /* barra do relógio do iPhone na cor do topo: o fundo atrás da página é o marinho e o topo fica preso no alto
    (o Safari novo pinta a barra com essa cor; os mais antigos usam o theme-color). O conteúdo continua branco. */
 html{background:#060b1c}
@@ -1148,9 +1150,9 @@ html{background:#060b1c}
   .top .authbtn{display:inline-flex;align-items:center;height:30px;padding:0 13px;font-size:12.5px;line-height:1}
 }
 @media (max-width:380px){.top .authbtn{padding:0 10px}}
-/* tablets e telas médias (761 a 1799 px): Filtros e os atalhos de tipo descem para uma segunda linha do topo,
+/* tablets e telas médias (761 a 1919 px): Filtros e os atalhos de tipo descem para uma segunda linha do topo,
    para Entrar e Cadastrar não saírem da tela e os atalhos não ficarem escondidos (antes sumiam, mas o Tab ainda passava por eles) */
-@media (min-width:761px) and (max-width:1799px){
+@media (min-width:761px) and (max-width:1919px){
   .top{flex-wrap:wrap;row-gap:10px}
   .top::after{content:"";order:2;flex:0 0 100%;height:0}
   .top .fbtn{order:3}
@@ -1187,6 +1189,7 @@ html{background:#060b1c}
     <div class="meta">
       <div class="status" id="status"><i></i><span>Conectando</span></div>
       <a class="nwbtn" href="/noticias" aria-label="Notícias" title="Notícias de carros: preços, lançamentos e recalls" data-ev="feed-noticias"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="12" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14.5 7h2a1 1 0 0 1 1 1v7a1.5 1.5 0 0 1-3 0M5.5 7h6M5.5 10h6M5.5 13h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Notícias</span></a>
+      <a class="nwbtn cpbtn" href="/comparar" aria-label="Comparar carros" title="Comparar carros lado a lado" data-ev="comparar-topo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg><span>Comparar</span></a>
       <button type="button" class="sbtn" id="sbtn" aria-label="Buscar carro" aria-expanded="false" aria-controls="q"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <button type="button" class="editbtn authbtn" id="loginbtn" hidden>Entrar</button>
       <button type="button" class="editbtn authbtn primary" id="signupbtn" hidden>Cadastrar</button>
