@@ -865,7 +865,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .note{font-size:11.5px;color:var(--muted);padding-block:8px 12px}
 .note-a{color:var(--muted);font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .note-a:hover{color:var(--accent)}
-.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:12px;font-size:13px;max-width:calc(100% - 32px);z-index:20;box-shadow:0 12px 32px rgba(12,17,28,.25)}
+.toast{pointer-events:none;width:max-content;position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:12px;font-size:13px;max-width:calc(100% - 32px);z-index:20;box-shadow:0 12px 32px rgba(12,17,28,.25)}
 
 @media (max-width:760px){
   .top{flex-wrap:wrap;gap:10px 14px;padding-block:10px}
@@ -1146,9 +1146,9 @@ html{background:#060b1c}
   .top .authbtn{display:inline-flex;align-items:center;height:30px;padding:0 13px;font-size:12.5px;line-height:1}
 }
 @media (max-width:380px){.top .authbtn{padding:0 10px}}
-/* tablets e telas médias (761 a 1699 px): Filtros e os atalhos de tipo descem para uma segunda linha do topo,
+/* tablets e telas médias (761 a 1799 px): Filtros e os atalhos de tipo descem para uma segunda linha do topo,
    para Entrar e Cadastrar não saírem da tela e os atalhos não ficarem escondidos (antes sumiam, mas o Tab ainda passava por eles) */
-@media (min-width:761px) and (max-width:1699px){
+@media (min-width:761px) and (max-width:1799px){
   .top{flex-wrap:wrap;row-gap:10px}
   .top::after{content:"";order:2;flex:0 0 100%;height:0}
   .top .fbtn{order:3}
@@ -1156,10 +1156,14 @@ html{background:#060b1c}
   .top .filters:empty{display:none}
   .search{flex:1 1 220px;min-width:120px;max-width:560px}
   .meta{margin-left:auto}
-  .status span{display:none}
+}
+/* telas estreitas: o indicador de conexão sumia para um ponto cinza sem explicação; some de vez, e Notícias vira só o ícone */
+@media (min-width:761px) and (max-width:1099px){
+  .status{display:none}
   .nwbtn{width:32px;padding:0;justify-content:center}
   .nwbtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 }
+@media (max-width:760px){.status{display:none}}
 </style>
 
 <div class="app">
@@ -1350,7 +1354,7 @@ html{background:#060b1c}
   <div class="sh-nav" id="shNav" hidden><button type="button" class="sn-btn" id="shPrev"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small> <b id="shPrevN"></b></span></button><span class="sn-pos" id="shPos"></span><button type="button" class="sn-btn nx" id="shNext"><span><small>Próximo</small> <b id="shNextN"></b></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 </div>
 <noscript><p style="position:fixed;inset:auto 16px 16px;z-index:50;margin:0;padding:14px 16px;border-radius:14px;background:#060b1c;color:#fff;font:600 14px/1.5 system-ui,sans-serif">A roleta de preços precisa do JavaScript ligado no navegador. Sem ele, veja <a href="/carros" style="color:#8fb3ff">todas as marcas e os preços</a>.</p></noscript>
-<div class="toast" id="toast" hidden></div>
+<div class="toast" id="toast" hidden aria-hidden="true"></div>
 <div class="sr" id="anuncio" role="status" aria-live="polite"></div>
 
 <script src="/vendor/supabase-js-2.49.4.js"></script>
@@ -1595,11 +1599,12 @@ function bandChanged(d){trackSpin();
   headerFor();syncRows(false);rewindRows();
 }
 const dial=makeDial(document.getElementById("dial"),VALUES.indexOf(150),bandChanged);
-/* phones: scale the whole card stage so a full card always fits the available height (cards keep their desktop proportions) */
+/* phones: scale the whole card stage so a full card always fits the available height (cards keep their desktop proportions).
+   Cerca de 1,6 card por tela (antes 2,35): o card escolhido fica quase no tamanho real, com letras e botões legíveis e tocáveis */
 function fitStage(){
   const r=document.getElementById("rows");if(!r)return;
   const mob=matchMedia("(max-width:760px)").matches,H=r.parentElement.clientHeight,W=r.parentElement.clientWidth;
-  const k=mob&&H&&W?Math.max(.55,Math.min(1,(H-12)/400,(W-(document.getElementById("dial").offsetWidth||0))/(2.35*164))):1;
+  const k=mob&&H&&W?Math.max(.55,Math.min(1,(H-12)/400,(W-(document.getElementById("dial").offsetWidth||0))/(1.6*164))):1;
   const dEl=document.getElementById("dial"),dw=dEl.offsetWidth||0;dEl.classList.toggle("short",mob&&dEl.offsetHeight<300);r.style.setProperty("--padl",(dw/k+8)+"px");
   if(k>=1){r.style.top=r.style.height=r.style.width=r.style.bottom=r.style.transform=r.style.transformOrigin="";return}
   Object.assign(r.style,{top:"50%",bottom:"auto",height:(100/k)+"%",width:(100/k)+"%",transformOrigin:"0 50%",transform:`translateY(-50%) scale(${k})`});
@@ -2150,6 +2155,15 @@ function anuncia(t){const a=document.getElementById("anuncio");if(!a)return;a.te
 {let ta=0;const resumo=()=>{clearTimeout(ta);ta=setTimeout(()=>{if(!loaded||!document.getElementById("garPage").hidden)return;
   anuncia(`${document.getElementById("srTitle").textContent}. ${document.getElementById("srSub").textContent}`)},900)};
  const mo=new MutationObserver(resumo);["srTitle","srSub"].forEach(id=>{const el=document.getElementById(id);el&&mo.observe(el,{childList:true,characterData:true,subtree:true})})}
+/* primeira visita: uma dica curta de como usar a roleta (uma vez por navegador; não aparece para quem chega por um link de carro) */
+let dicaVista=false;
+function dicaPrimeiraVez(){
+  if(dicaVista)return;dicaVista=true;let v=null;try{v=localStorage.getItem("autokan_dica_roleta")}catch(e){}
+  if(v||location.search||!garPage.hidden)return;try{localStorage.setItem("autokan_dica_roleta","1")}catch(e){}
+  setTimeout(()=>{if(!sheet.hidden||!authPanel.hidden||!drawer.hidden)return;
+    toast(matchMedia("(max-width:760px)").matches?"Dica: arraste a roleta ou toque em − e + para escolher quanto quer gastar. Os carros dessa faixa aparecem ao lado.":"Dica: gire a roleta com o mouse ou use − e + para escolher quanto quer gastar. Os carros dessa faixa aparecem ao lado.");
+    clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,8000)},1500);
+}
 function toast(m){anuncia(m);toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,3800)}
 function status(t,ok){document.getElementById("status").innerHTML=`<i class="${ok?"on":""}"></i><span>${t}</span>`}
 function toggle(id){
@@ -2217,7 +2231,7 @@ function setCatalog(snap){lastCat=snap;
     if(!r||typeof r.i!=="string"||r.st&&r.st!=="on_sale")return;
     rows.push({id:r.i,mid:r.m,bid:d.id,pr:r.pr||null,mk:String(x.brand||""),nm:String(r.mn||""),ver:String(r.v||""),ano:r.y||null,p:typeof r.p==="number"?r.p:null,
       t:BODYKEY[r.b]||null,body:r.b||null,...(({k,why})=>({k,why}))(deriveTags(r)),fu:r.f||null,cb:r.t||null,mo:r.e||"",kind:r.pk==="fipe"?"FIPE":"Tabela",cv:r.cv||null})})});
-  ALLCARS=rows;CARS=rows.filter(c=>shown(c.bid,c.mid));applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();
+  ALLCARS=rows;CARS=rows.filter(c=>shown(c.bid,c.mid));applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();dicaPrimeiraVez();
   abrirDoLink();renderGarPage();
 }
 /* links das páginas próprias de cada carro: /?carro=<modelo> (e &versao=<versão>) leva a roleta até o carro e abre a ficha */
@@ -3084,12 +3098,15 @@ document.getElementById("ipClose").onclick=closeImg;
     const timer=setTimeout(()=>{if(!live)status("Sem conexão com os favoritos",false)},10000);
     const ct=setTimeout(()=>{if(!loaded){loadErr="Está demorando mais que o normal. Confira sua internet; a página continua tentando sozinha.";swap()}},10000);
     visReady=loadVis().catch(()=>{});
-    db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;visReady.then(()=>setCatalog(snap))},()=>{clearTimeout(ct);loadErr="Confira sua conexão com a internet e tente de novo.";swap()});
+    db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;visReady.then(()=>{setCatalog(snap);setTimeout(extras,50)})},()=>{clearTimeout(ct);loadErr="Confira sua conexão com a internet e tente de novo.";swap()});
     db.collection("price_changes").onSnapshot(snap=>{PRICE_CHANGES=snap.docs.map(d=>d.data());if(loaded){applyPrices();filtersChanged()}},()=>{});
+    /* notícias, comentários e avisos chegam logo depois dos carros (em internet lenta, antes disputavam a conexão com eles) */
+    let extrasOn=false;const extras=()=>{if(extrasOn)return;extrasOn=true;
     db.collection("news").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data();if(d&&Array.isArray(d.items)&&d.items.length)p[x.id]=d});NEWS=p;
       document.querySelectorAll(".nw[data-news]").forEach(b=>{const d=NEWS[b.dataset.news];b.classList.toggle("has",!!d);const t=b.querySelector("span:not(.sr)");if(t)t.textContent=d?d.items.length:""});if(newsFor&&!newsPanel.hidden)renderNews(newsFor);},()=>{});
     db.collection("comments").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data()||{};if(Array.isArray(d.items))p[x.id]=d.items.filter(i=>i&&typeof i.text==="string"&&typeof i.mid==="string").map(i=>({...i,text:i.text.slice(0,CM_MAX)}))});COMM=p;paintMore();if(cmFor&&!cmPanel.hidden)renderCM(cmFor,true)},()=>{});
     db.collection("alerts").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data();if(d&&Array.isArray(d.items)&&d.items.length)p[x.id]=d});ALERTS=p;paintMore();if(alFor&&!alPanel.hidden)renderAL(alFor)},()=>{});
+    };setTimeout(extras,6000);
     db.collection("brands").onSnapshot(snap=>{const m={};snap.docs.forEach(x=>{const d=x.data()||{};if(d.name&&d.country)m[d.name]=String(d.country)});BRANDCO=m;if(!drawer.hidden)renderDrawer();},()=>{});
     db.collection("meta").doc("brand_sites").get().then(d=>{const o=d.exists&&d.data()&&d.data().sites;if(o&&typeof o==="object")for(const[k,v]of Object.entries(o))if(typeof v==="string"&&/^https:\/\//.test(v))SITES[k]=v;}).catch(()=>{});
     db.collection("logos").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const a=(x.data()||{}).asset;if(typeof a==="string"&&/^[0-9a-f]{32}$/.test(a))p[x.id]=a});logos=p;refresh();if(!imgPanel.hidden)renderImgPanel();if(!drawer.hidden)renderDrawer();},()=>{});
