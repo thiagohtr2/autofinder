@@ -7,7 +7,7 @@
 <title>Painel · AutoKan</title>
 <meta name="theme-color" content="#0d1631">
 <script src="/puxar.js" defer></script>
-<link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png?v=4">
+<link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png?v=5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Manrope:wght@500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
@@ -37,7 +37,8 @@ header.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;justify-
 .sb-back{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px 0 11px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap}
 .sb-back:hover{border-color:rgba(255,255,255,.6)}
 .sb-back svg{width:15px;height:15px}
-@media (max-width:760px){.sitebar{padding-block:10px}.sb-logo img{height:15px}}
+.sb-logo .sb-ico{display:none}
+@media (max-width:760px){.sb-logo .sb-full{display:none}.sb-logo .sb-ico{display:block;height:25px}.sitebar{padding-block:10px}.sb-logo img{height:15px}}
 @media (max-width:380px){.sb-logo img{height:15px}.sb-back{padding:0 11px 0 9px;font-size:12.5px}}
 .brand{display:flex;align-items:center;gap:12px}
 .brand b{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.01em}
@@ -132,7 +133,7 @@ tr:last-child td{border-bottom:0}
 
 <header class="sitebar">
   <div class="sb-in">
-    <a class="sb-logo" href="/" title="Voltar para o site" aria-label="AutoKan: voltar para o site"><img src="/marca/autokan-logo-topo-escuro.png?v=4" alt="AutoKan" width="168" height="18"></a>
+    <a class="sb-logo" href="/" title="Voltar para o site" aria-label="AutoKan: voltar para o site"><img class="sb-full" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="AutoKan" width="168" height="18"><img class="sb-ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="AutoKan" width="59" height="25"></a>
     <a class="sb-back" href="/"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Voltar ao site</a>
   </div>
 </header>
