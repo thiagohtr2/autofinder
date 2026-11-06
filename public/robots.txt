@@ -1,0 +1,8 @@
+# Autokan
+User-agent: *
+Allow: /
+Disallow: /admin.html
+# links que só abrem a ficha de um carro na roleta (o endereço oficial é a página do carro)
+Disallow: /*?carro=
+
+Sitemap: https://autokan.com.br/sitemap.xml

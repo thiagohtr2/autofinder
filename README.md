@@ -1,9 +1,9 @@
-# giroauto (repositório: autofinder)
+# Autokan (repositório: autofinder)
 
 Site para descobrir **todos os carros 0 km vendidos no Brasil que cabem no seu bolso**.
 Você gira a roleta de preço e vê os carros daquela faixa, rankeados pelas curtidas das pessoas.
 
-> O nome "giroauto" é provisório. A marca definitiva ainda está em escolha.
+> Antes se chamava "giroauto". O nome definitivo é Autokan (https://autokan.com.br).
 
 ## O que tem aqui
 
@@ -13,6 +13,18 @@ Você gira a roleta de preço e vê os carros daquela faixa, rankeados pelas cur
 | `data/` | Cópia completa do banco de dados original, exportada em 05/11/2026: 53 marcas, 327 modelos, 831 versões, alertas, notícias, fontes, radar de lançamentos e o mapa das fotos e logos. Serviu para carregar o Supabase. |
 | `tools/pipeline/` | Scripts e lotes de pesquisa usados para montar o banco original no Claude (`build.py` monta, `sync.py` compara e envia). |
 | `supabase/` | Esquema do banco no Supabase e função de importação. |
+| `netlify/` | Páginas próprias de cada carro, marca e lista, para o Google (veja abaixo). |
+
+### Páginas para o Google (`netlify/`)
+
+A roleta (`public/index.html`) monta tudo no navegador, então o Google quase não a enxerga. Por isso cada carro, marca e lista tem uma página própria, montada no servidor pela função `netlify/functions/paginas.mjs` a partir do Supabase:
+
+- `/carros`: todas as marcas, com atalhos por preço, tipo e combustível.
+- `/carros/<marca>` e `/carros/<marca>/<modelo>`: por exemplo, `/carros/chevrolet/tracker`.
+- `/carros-ate-<N>-mil`, `/carros-acima-de-500-mil`, `/suvs`, `/picapes` (e outros tipos), `/carros-eletricos`, `/carros-hibridos`, `/carros-diesel`.
+- `/sitemap.xml`: a lista de todas essas páginas para o Google.
+
+As páginas seguem as regras do site: só versões à venda entram nas listas, e marcas e modelos tirados do site no painel Banco de dados somem das páginas. Os pontos fortes usam as mesmas regras, copiadas em `netlify/lib/pontos-fortes.mjs`; se mudar uma regra em `index.html`, copie de novo. A Netlify guarda cada página pronta por 1 hora, então mudanças no banco aparecem em até 1 hora. Na roleta, `/?carro=<modelo>` leva até o carro e abre a ficha.
 
 ### Arquivos de `data/`
 
