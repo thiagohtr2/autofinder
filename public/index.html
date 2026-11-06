@@ -1187,7 +1187,7 @@ html{background:#060b1c}
   .nwbtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 }
 @media (max-width:760px){.status{display:none}}
-.sh-tbl sup.ftr{font-size:10px;font-weight:700;color:#5d6577;margin-left:2px}.ftl{margin:0;padding-left:18px;font-size:12.5px;line-height:1.45;color:#5d6577}.ftl li{margin:3px 0}.ftl a{font-weight:700}
+.sh-tbl .fta{font-size:10.5px;font-weight:700;color:#5d6577;background:#f1f3f7;border-radius:6px;padding:0 5px}.sh-tbl sup.ftr{font-size:10px;font-weight:700;color:#5d6577;margin-left:2px}.ftl{margin:0;padding-left:18px;font-size:12.5px;line-height:1.45;color:#5d6577}.ftl li{margin:3px 0}.ftl a{font-weight:700}
 </style>
 
 <div class="app pre">
@@ -2333,7 +2333,7 @@ function fichaSheet(v,fts){
   const f=FTM&&v.specs?FTM.fichaDe(v.specs):[];
   if(!f.length)return `<section class="dr-group"><h3>Ficha técnica</h3><div class="sh-meta">Esta versão ainda não tem ficha técnica confirmada. Os dados só entram com fonte.</div></section>`;
   const ordem=[];f.forEach(g=>g.itens.forEach(i=>i.s.forEach(x=>{if(!ordem.includes(x))ordem.push(x)})));
-  return f.map(g=>`<section class="dr-group"><h3>${esc(g.grupo)}</h3><table class="sh-tbl">${g.itens.map(i=>`<tr><th>${esc(i.rot)}</th><td>${esc(i.t)}<sup class="ftr" title="Fonte ${i.s.map(x=>ordem.indexOf(x)+1).join(", ")}">${i.s.map(x=>ordem.indexOf(x)+1).join(",")}</sup></td></tr>`).join("")}</table></section>`).join("")
+  return f.map(g=>`<section class="dr-group"><h3>${esc(g.grupo)}</h3><table class="sh-tbl">${g.itens.map(i=>`<tr><th>${esc(i.rot)}</th><td>${esc(i.t)}${FTM.anoOutro(i,v.model_year)?` <small class="fta" title="Dado da ficha do ano-modelo ${FTM.anoOutro(i,v.model_year)}">ficha ${FTM.anoOutro(i,v.model_year)}</small>`:""}<sup class="ftr" title="Fonte ${i.s.map(x=>ordem.indexOf(x)+1).join(", ")}">${i.s.map(x=>ordem.indexOf(x)+1).join(",")}</sup></td></tr>`).join("")}</table></section>`).join("")
     +`<section class="dr-group"><h3>Fontes da ficha técnica</h3><ol class="ftl">${ordem.map(x=>{const o=fts.get(x)||{};return `<li>${o.url&&/^https?:\/\//.test(o.url)?`<a href="${esc(o.url)}" target="_blank" rel="noopener nofollow">${esc(o.name||"Fonte")}</a>`:esc(o.name||"Fonte")}${o.consulted_at?` <small>consultada em ${esc(fdate(o.consulted_at)||o.consulted_at)}</small>`:""}</li>`}).join("")}</ol></section>`;
 }
 async function openInfo(id){
