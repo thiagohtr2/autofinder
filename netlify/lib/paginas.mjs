@@ -6,18 +6,18 @@ import { ICONS, TAGDESC } from "./pontos-fortes.mjs";
 /* ---------- formatação */
 
 export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-const num = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const reais = (n) => `R$\u00a0${num(n)}`; // sem quebra de linha entre "R$" e o valor
-const pl = (n, um, varios) => `${num(n)} ${n === 1 ? um : varios}`;
+export const num = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+export const reais = (n) => `R$\u00a0${num(n)}`; // sem quebra de linha entre "R$" e o valor
+export const pl = (n, um, varios) => `${num(n)} ${n === 1 ? um : varios}`;
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
-const mesAno = (s) => { const m = /^(\d{4})-(\d{2})/.exec(s || ""); return m ? `${MESES[+m[2] - 1]}/${m[1]}` : ""; };
+export const mesAno = (s) => { const m = /^(\d{4})-(\d{2})/.exec(s || ""); return m ? `${MESES[+m[2] - 1]}/${m[1]}` : ""; };
 const dataBr = (s) => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? `${m[3]}/${m[2]}/${m[1]}` : ""; };
 const json = (o) => JSON.stringify(o).replace(/</g, "\\u003c");
-const lista = (itens) => (itens.length <= 1 ? itens.join("") : `${itens.slice(0, -1).join(", ")} e ${itens[itens.length - 1]}`);
-const ico = (k) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k] || ""}</svg>`;
-const SETA = '<svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-const STATUS = { on_sale: "À venda", announced: "Anunciado", pre_order: "Pré-venda" };
-const COMB_FRASE = { Flex: "flex", Gasolina: "a gasolina", Etanol: "a etanol", Diesel: "a diesel", "Elétrico": "100% elétrico", "Híbrido": "híbrido", "Híbrido plug-in": "híbrido plug-in" };
+export const lista = (itens) => (itens.length <= 1 ? itens.join("") : `${itens.slice(0, -1).join(", ")} e ${itens[itens.length - 1]}`);
+export const ico = (k) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k] || ""}</svg>`;
+export const SETA = '<svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+export const STATUS = { on_sale: "À venda", announced: "Anunciado", pre_order: "Pré-venda" };
+export const COMB_FRASE = { Flex: "flex", Gasolina: "a gasolina", Etanol: "a etanol", Diesel: "a diesel", "Elétrico": "100% elétrico", "Híbrido": "híbrido", "Híbrido plug-in": "híbrido plug-in" };
 const PAIS_EM = { Brasil: "no Brasil", China: "na China", "México": "no México", Argentina: "na Argentina", Alemanha: "na Alemanha", EUA: "nos EUA", "Estados Unidos": "nos Estados Unidos", "Japão": "no Japão", "Coreia do Sul": "na Coreia do Sul", "Índia": "na Índia", "França": "na França", Espanha: "na Espanha", "Itália": "na Itália", "Reino Unido": "no Reino Unido", "Tailândia": "na Tailândia", Hungria: "na Hungria", "Eslováquia": "na Eslováquia", "Suécia": "na Suécia", "Bélgica": "na Bélgica", Turquia: "na Turquia", Uruguai: "no Uruguai", "Áustria": "na Áustria", Portugal: "em Portugal", "Indonésia": "na Indonésia", "África do Sul": "na África do Sul", "Polônia": "na Polônia", "República Tcheca": "na República Tcheca", "Canadá": "no Canadá", "Malásia": "na Malásia", Inglaterra: "na Inglaterra", Holanda: "na Holanda", "Países Baixos": "nos Países Baixos" };
 const paisEm = (p) => PAIS_EM[p] || `em ${p}`;
 const IMG_OG = `${SITE}/marca/autokan-compartilhar.jpg`;
@@ -34,6 +34,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 var(--bod
 a{color:var(--accent-ink)}
 img{max-width:100%;height:auto;display:block}
 .wrap{width:min(1120px,100%);margin:0 auto;padding-left:max(16px,env(safe-area-inset-left));padding-right:max(16px,env(safe-area-inset-right))}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .pular{position:absolute;left:12px;top:-60px;z-index:9;background:#fff;color:var(--ink);padding:8px 12px;border-radius:10px;font-weight:700}
 .pular:focus{top:12px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
@@ -47,7 +48,8 @@ img{max-width:100%;height:auto;display:block}
 .top-nav a:hover{color:#fff;background:rgba(255,255,255,.08)}
 .top-cta{flex:none;display:inline-flex;align-items:center;gap:7px;height:36px;padding:0 14px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:13.5px}
 .top-cta svg{width:16px;height:16px}
-@media (max-width:640px){.logo .full{display:none}.logo .ico{display:block}.top-in{gap:8px}.top-nav a{padding:8px 7px;font-size:13px}.top-nav .so-pc{display:none}.top-cta{height:32px;padding:0 11px;font-size:13px}}
+.so-cel{display:none}
+@media (max-width:640px){.logo .full{display:none}.logo .ico{display:block}.top-in{gap:8px}.top-nav a{padding:8px 7px;font-size:13px}.top-nav .so-pc,.top-cta .so-pc{display:none}.top-cta .so-cel{display:inline}.top-cta{height:32px;padding:0 11px;font-size:13px}}
 /* trilha */
 .trilha ol{list-style:none;display:flex;flex-wrap:wrap;gap:2px 0;margin:0;padding:18px 0 6px;font-size:13px;color:var(--muted)}
 .trilha li+li::before{content:"/";margin:0 8px;color:var(--faint)}
@@ -177,13 +179,16 @@ ${["eletrico:#fbf3db:#e0a800", "hibrido:#deeee6:#11864c", "potente:#fae3e0:#d83a
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 `.replace(/\n\s*/g, "");
 
-const ROLETA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 16l4-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
+export const COMPARAR_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 4v16M16 4v16M4 8h8M12 16h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+/* endereço oficial da comparação de dois carros: os dois em ordem alfabética, para "A x B" e "B x A" serem a mesma página */
+export const urlPar = (a, b) => `/comparar/${[a.id, b.id].sort().join("-vs-")}`;
+export const ROLETA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 16l4-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
 
 function topo() {
   return `<header class="top"><div class="wrap top-in">
 <a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="Autokan" width="42" height="18"></a>
-<nav class="top-nav" aria-label="Principal"><a href="/carros">Marcas</a><a href="/carros#precos">Preços</a><a class="so-pc" href="/carros#tipos">Tipos</a></nav>
-<a class="top-cta" href="/">${ROLETA}Roleta de preços</a>
+<nav class="top-nav" aria-label="Principal"><a href="/carros">Marcas</a><a class="so-pc" href="/carros#precos">Preços</a><a class="so-pc" href="/carros#tipos">Tipos</a><a href="/comparar">Comparar</a></nav>
+<a class="top-cta" href="/">${ROLETA}<span class="so-pc">Roleta de preços</span><span class="so-cel">Roleta</span></a>
 </div></header>`;
 }
 
@@ -194,14 +199,14 @@ function rodape() {
 ${col("Por preço", FAIXAS.map((f) => [`/${f.slug}`, f.titulo.replace("Carros 0 km ", "")]))}
 ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
-${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"]])}
+${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"]])}
 </div>
 <p class="foot-nota">Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
 <p class="foot-copy">© ${new Date().getFullYear()} Autokan · Conheça. Compare. Escolha.</p>
 </div></footer>`;
 }
 
-export function pagina({ titulo, descricao, caminho, imagemOg, imagemOgW = 800, imagemOgH = 450, imagemAlt, tipoOg = "website", ld = [], corpo, indexar = true }) {
+export function pagina({ titulo, descricao, caminho, imagemOg, imagemOgW = 800, imagemOgH = 450, imagemAlt, tipoOg = "website", ld = [], corpo, indexar = true, css = "" }) {
   const og = imagemOg || IMG_OG;
   const [ow, oh] = imagemOg ? [imagemOgW, imagemOgH] : [1200, 630];
   return `<!doctype html>
@@ -232,7 +237,7 @@ ${caminho ? `<meta property="og:url" content="${SITE}${caminho}">\n` : ""}<meta 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="${FONTES}" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="${FONTES}"></noscript>
-<style>${CSS}</style>
+<style>${CSS}${css}</style>
 ${ld.map((x) => `<script type="application/ld+json">${json(x)}</script>`).join("\n")}
 <script src="/tracker.js" defer></script>
 </head>
@@ -249,23 +254,23 @@ ${rodape()}
 
 /* ---------- peças */
 
-const INICIO = { nome: "Início", url: "/" }, CARROS = { nome: "Carros", url: "/carros" };
-function trilha(itens) {
+export const INICIO = { nome: "Início", url: "/" }, CARROS = { nome: "Carros", url: "/carros" };
+export function trilha(itens) {
   return `<nav class="trilha" aria-label="Você está em"><ol>${itens.map((it, i) => (i < itens.length - 1 ? `<li><a href="${it.url}">${esc(it.nome)}</a></li>` : `<li aria-current="page">${esc(it.nome)}</li>`)).join("")}</ol></nav>`;
 }
-const ldTrilha = (itens) => ({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: itens.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.nome, item: SITE + it.url })) });
+export const ldTrilha = (itens) => ({ "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: itens.map((it, i) => ({ "@type": "ListItem", position: i + 1, name: it.nome, item: SITE + it.url })) });
 const ldLista = (nome, modelos) => ({ "@context": "https://schema.org", "@type": "ItemList", name: nome, numberOfItems: modelos.length, itemListElement: modelos.map((m, i) => ({ "@type": "ListItem", position: i + 1, url: SITE + m.url, name: m.titulo })) });
 
-function fotoTag(m, w, sizes, prioridade = false) {
+export function fotoTag(m, w, sizes, prioridade = false) {
   if (!m.foto) return "";
   const ws = [w, Math.round(w * 1.6)];
   return `<img src="${imagem(m.foto, w)}" srcset="${ws.map((x) => `${imagem(m.foto, x)} ${x}w`).join(", ")}" sizes="${sizes}" alt="${esc(`${m.titulo}${m.ano ? ` ${m.ano}` : ""}`)}" width="${w}" height="${Math.round((w * 9) / 16)}" ${prioridade ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
 
-function cartao(m, { de, extra } = {}) {
+export function cartao(m, { de, extra, href } = {}) {
   const preco = de ?? m.precoMin;
   const sub = [m.carroc, m.combs.slice(0, 2).join(" ou "), m.aVenda ? pl(m.versoes.length, "versão", "versões") : STATUS[m.breve[0]?.status] || ""].filter(Boolean).join(" · ");
-  return `<li><a class="mc" href="${m.url}"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 92vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(sub)}</span>${extra ? `<span class="mc-x">${esc(extra)}</span>` : ""}<span class="mc-pr">${preco && Number.isFinite(preco) ? `<small>a partir de</small>${reais(preco)}` : "<small>preço ainda não divulgado</small>"}</span></span></a></li>`;
+  return `<li><a class="mc" href="${href || m.url}"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 92vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(sub)}</span>${extra ? `<span class="mc-x">${esc(extra)}</span>` : ""}<span class="mc-pr">${preco && Number.isFinite(preco) ? `<small>a partir de</small>${reais(preco)}` : "<small>preço ainda não divulgado</small>"}</span></span></a></li>`;
 }
 
 const logoMarca = (b, w = 64) => `<span class="bc-lg">${b.logo ? `<img src="${imagem(b.logo, w * 2)}" alt="" width="${w}" height="${w}" loading="lazy">` : esc(b.nome.slice(0, 2).toUpperCase())}</span>`;
@@ -285,7 +290,7 @@ function chipsListas(base, atual) {
 
 /* ---------- página do modelo */
 
-function rotuloPreco(vs) {
+export function rotuloPreco(vs) {
   const comPreco = vs.filter((v) => v.preco);
   if (!comPreco.length) return "Preço ainda não divulgado pela montadora";
   const fipe = comPreco.filter((v) => v.fipe).length, mes = mesAno(comPreco.map((v) => v.mes).filter(Boolean).sort().pop());
@@ -369,7 +374,7 @@ ${temTracao ? `<td data-l="Tração">${v.tracao ? esc(v.tracao) : '<span class="
 <p class="hero-sub">${esc([m.carroc, lista(m.combs), m.aVenda ? pl(m.versoes.length, "versão à venda", "versões à venda") : statusTxt].filter(Boolean).join(" · "))}</p>
 <div class="preco"><b>${faixa}</b><small>${esc(rotuloPreco(m.versoes))}</small></div>
 ${selos}
-<div class="acoes"><a class="btn pri" href="/?carro=${encodeURIComponent(m.id)}">${ROLETA}Ver na roleta de preços</a>${marca.site ? `<a class="btn" href="${esc(marca.site)}" target="_blank" rel="noopener">Site da ${esc(marca.nome)}${SETA}</a>` : ""}</div>
+<div class="acoes"><a class="btn pri" href="/?carro=${encodeURIComponent(m.id)}">${ROLETA}Ver na roleta de preços</a><a class="btn" href="/comparar/${m.id}">${COMPARAR_ICO}Comparar com outro carro</a>${marca.site ? `<a class="btn" href="${esc(marca.site)}" target="_blank" rel="noopener">Site da ${esc(marca.nome)}${SETA}</a>` : ""}</div>
 </div>
 <figure class="foto">${fotoTag(m, 640, "(max-width:860px) 92vw, 540px", true) || `<span class="sem">${esc(m.titulo)}</span>`}${m.foto ? "<figcaption>Imagem ilustrativa</figcaption>" : ""}</figure>
 </section>
@@ -383,7 +388,8 @@ ${ficha.length ? `<section class="sec" aria-labelledby="s-fc"><h2 id="s-fc">Fich
 ${faq.length ? `<section class="sec" aria-labelledby="s-fq"><h2 id="s-fq">Perguntas frequentes</h2><div class="faq">${faq.map(([q, r]) => `<div><h3>${esc(q)}</h3><p>${esc(r)}</p></div>`).join("")}</div></section>` : ""}
 ${secNoticias}
 ${secAvisos}
-${comp.length ? `<section class="sec" aria-labelledby="s-cp"><h2 id="s-cp">Compare com carros na mesma faixa de preço</h2><ul class="grade">${comp.map((x) => cartao(x)).join("")}</ul></section>` : ""}
+${comp.length ? `<section class="sec" aria-labelledby="s-cp"><h2 id="s-cp">Compare com carros na mesma faixa de preço</h2><ul class="grade">${comp.map((x) => cartao(x)).join("")}</ul>
+<h3 style="margin-top:22px">Lado a lado com o ${esc(m.nome)}</h3><ul class="chips" style="margin-top:10px">${comp.map((x) => `<li><a href="${urlPar(m, x)}">${esc(m.nome)} x ${esc(x.nome)}</a></li>`).join("")}<li><a href="/comparar/${m.id}">Outro carro…</a></li></ul></section>` : ""}
 ${outros.length ? `<section class="sec" aria-labelledby="s-om"><h2 id="s-om">Outros carros da ${esc(marca.nome)}</h2><ul class="chips">${outros.map((x) => `<li><a href="${x.url}">${esc(x.nome)}${x.precoMin ? ` <small>${reais(x.precoMin)}</small>` : ""}</a></li>`).join("")}</ul></section>` : ""}
 </article>`;
 

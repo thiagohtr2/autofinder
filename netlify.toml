@@ -24,3 +24,9 @@
 # CDN de imagens do Netlify: entrega as fotos do Supabase em tamanho reduzido
 [images]
   remote_images = ["https://ljgcvxadsekaicffztbi\\.supabase\\.co/storage/v1/object/public/.*"]
+
+# manifesto do app (nome e ícones do atalho na tela inicial) com o tipo certo
+[[headers]]
+  for = "/site.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json; charset=utf-8"
