@@ -1884,8 +1884,10 @@ function levaAoCard(row,c,suave){
 }
 /* carro da abertura: se a fileira for redesenhada logo depois (preços e filtros chegando), ele continua escolhido e à vista */
 let fixa=null;
-function fixaEscolhido(){if(!fixa||performance.now()>fixa.ate||dial.sel!==fixa.idx)return;const row=curRow();if(row&&row._mode==="full"&&row._list)levaAoCard(row,fixa.c,false)}
-const swap=()=>{computeHas();headerFor();syncRows(true);rewindRows();fixaEscolhido()};
+const fixaAtiva=()=>!!fixa&&performance.now()<=fixa.ate&&dial.sel===fixa.idx;
+function fixaEscolhido(){if(!fixaAtiva())return;const row=curRow();if(row&&row._mode==="full"&&row._list)levaAoCard(row,fixa.c,false)}
+/* redesenho logo depois da abertura (fotos, preços): a fileira não volta deslizando para o começo, fica no carro sorteado */
+const swap=()=>{computeHas();headerFor();syncRows(true);if(fixaAtiva())fixaEscolhido();else rewindRows()};
 const refresh=swap;
 const curRow=()=>rowMap.get(dial.sel);
 /* strength icon → small popover explaining it */
@@ -2155,7 +2157,7 @@ function goToCar(c,instante){
     setTimeout(()=>{try{const row=curRow();if(!row||!row._list)return;
       /* o carro buscado passa a ser o escolhido da faixa (com o "Ver ficha"), e o foco vai para ele */
       const card=levaAoCard(row,c,!instante);if(!card)return;
-      if(instante)fixa={idx,c,ate:performance.now()+6000};
+      if(instante)fixa={idx,c,ate:performance.now()+8000};
       else{card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900)}
       const go=card.querySelector("button.go");if(!instante&&go&&(document.activeElement===document.body||document.activeElement===qIn||!document.activeElement))go.focus({preventScroll:true});
     }finally{if(instante)revelaRoleta()}},instante?0:260)})();
