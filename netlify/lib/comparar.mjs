@@ -36,7 +36,7 @@ const CSS = `
 
 /* ---------- endereços */
 
-export const urlComparacao = (pares) => `/comparar/${pares.map(({ m }) => m.id).join("-vs-")}${pares.some(({ v }) => v) ? `?versoes=${pares.map(({ v }) => (v ? encodeURIComponent(v.id) : "")).join(",")}` : ""}`;
+export const urlComparacao = (pares) => `/comparar/${pares.map(({ m }) => m.id).join("-vs-")}${pares.some(({ v }) => v) ? `?versoes=${pares.map(({ v }) => (v ? encodeURIComponent(v.id) : "")).join(",").replace(/,+$/, "")}` : ""}`;
 
 /* lê "/comparar/a-vs-b" e "?versoes=x,y" (ou v0, v1... do formulário sem JavaScript) */
 export function lerComparacao(base, trecho, params) {
