@@ -265,6 +265,28 @@
     myVotes = next;
   }
 
+  // ---------- Minha garagem (privada: cada pessoa vê, salva e tira só os próprios carros)
+
+  const notSignedIn = () => Object.assign(new Error("Entre na sua conta."), { code: "not_signed_in" });
+  window.giroGarage = {
+    async list() {
+      await ready;
+      if (!currentUser) return [];
+      const rows = await run(sb.from("garage").select("version_id,created_at").eq("user_id", currentUser.id).order("created_at", { ascending: false }));
+      return rows.map((row) => ({ id: row.version_id, at: row.created_at }));
+    },
+    async add(versionId) {
+      await ready;
+      if (!currentUser) throw notSignedIn();
+      await run(sb.from("garage").upsert({ user_id: currentUser.id, version_id: versionId }, { onConflict: "user_id,version_id", ignoreDuplicates: true }));
+    },
+    async remove(versionId) {
+      await ready;
+      if (!currentUser) throw notSignedIn();
+      await run(sb.from("garage").delete().eq("user_id", currentUser.id).eq("version_id", versionId));
+    },
+  };
+
   // ---------- comentários
 
   // o site guarda os comentários por pessoa e regrava a lista inteira a cada mudança

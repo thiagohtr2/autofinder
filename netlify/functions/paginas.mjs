@@ -3,6 +3,7 @@
    prepara a nova), então o banco é lido poucas vezes e as páginas acompanham o que muda nele. */
 import { SITE, carregar, FAIXAS, TIPOS, COMBUSTIVEIS, filtrar, imagem } from "../lib/base.mjs";
 import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc } from "../lib/paginas.mjs";
+import { lerComparacao, paginaComparacao, paginaEscolher, paginaComparacoes, paresPopulares } from "../lib/comparar.mjs";
 
 const LISTAS = new Map([...FAIXAS, ...TIPOS, ...COMBUSTIVEIS].map((l) => [l.slug, l]));
 
@@ -29,6 +30,7 @@ export default async (req) => {
 
   if (caminho === "/sitemap.xml") return sitemap(base);
   if (caminho === "/carros") return html(paginaCarros(base));
+  if (caminho === "/comparar") return html(paginaComparacoes(base));
 
   const p = caminho.split("/").filter(Boolean);
   if (p[0] === "carros" && p.length === 2) {
@@ -38,6 +40,16 @@ export default async (req) => {
   if (p[0] === "carros" && p.length === 3) {
     const m = base.modelos.get(`${p[1]}-${p[2]}`);
     return m && m.bid === p[1] && m.marcaInfo ? html(paginaModelo(base, m)) : naoAchou();
+  }
+  if (p[0] === "comparar" && p.length === 2) {
+    // a página muda conforme as versões escolhidas: a Netlify guarda uma cópia para cada escolha
+    const porVersao = { "Netlify-Vary": "query=versoes|versao|v0|v1|v2|v3" };
+    if (!p[1].includes("-vs-")) {
+      const m = base.modelos.get(p[1]);
+      return m && m.aVenda && m.marcaInfo ? html(paginaEscolher(base, m, url.searchParams.get("versao") || (url.searchParams.get("versoes") || "").split(",")[0]), 200, porVersao) : naoAchou();
+    }
+    const pares = lerComparacao(base, p[1], url.searchParams);
+    return pares ? html(paginaComparacao(base, pares), 200, porVersao) : naoAchou();
   }
   if (p.length === 1 && LISTAS.has(p[0])) {
     const l = LISTAS.get(p[0]);
@@ -50,10 +62,11 @@ function sitemap(base) {
   const dia = (d) => (d ? String(d).slice(0, 10) : base.lerEm.slice(0, 10));
   const url = (loc, mod, imgs = []) => `<url><loc>${SITE}${loc}</loc><lastmod>${dia(mod)}</lastmod>${imgs.map(([src, titulo]) => `<image:image><image:loc>${esc(SITE + src)}</image:loc><image:title>${esc(titulo)}</image:title></image:image>`).join("")}</url>`;
   const linhas = [
-    url("/", base.atualizado), url("/carros", base.atualizado),
+    url("/", base.atualizado), url("/carros", base.atualizado), url("/comparar", base.atualizado),
     ...[...FAIXAS, ...TIPOS, ...COMBUSTIVEIS].filter((l) => filtrar(base, l).length).map((l) => url(`/${l.slug}`, base.atualizado)),
     ...[...base.marcas.values()].map((b) => url(b.url, b.atualizado)),
     ...[...base.modelos.values()].filter((m) => m.marcaInfo).map((m) => url(m.url, m.atualizado, m.foto ? [[imagem(m.foto, 1200), `${m.titulo}${m.ano ? ` ${m.ano}` : ""} (imagem ilustrativa)`]] : [])),
+    ...[...paresPopulares(base)].map(([u, [a, b]]) => url(u, a.atualizado > b.atualizado ? a.atualizado : b.atualizado)),
   ];
   const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${linhas.join("\n")}\n</urlset>\n`;
   return new Response(xml, { headers: { "Content-Type": "application/xml; charset=utf-8", ...CACHE_OK } });
@@ -61,6 +74,6 @@ function sitemap(base) {
 
 // escrito por extenso: a Netlify lê esta configuração sem rodar o código. Os tipos são os de TIPOS em netlify/lib/base.mjs.
 export const config = {
-  path: ["/carros", "/carros/*", "/carros-*", "/sitemap.xml", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
+  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/sitemap.xml", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
   method: ["GET", "HEAD"],
 };

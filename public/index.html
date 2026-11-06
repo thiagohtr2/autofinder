@@ -200,6 +200,29 @@ button,input{font:inherit;color:inherit}
 .pm-item svg{width:18px;height:18px;flex:none;color:var(--muted)}
 .pm-item span{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
 .pm-item small{font-size:11.5px;font-weight:500;color:var(--muted)}
+.pm-n{flex:none;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:var(--accent);color:#fff;font:800 11.5px/22px var(--body);text-align:center;box-sizing:border-box}
+/* Minha garagem */
+.g-tip{margin:0 0 10px;font-size:13px;color:var(--muted)}
+.g-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.g-it{display:flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:14px;padding:6px 6px 6px 4px}
+.g-it.sel{border-color:var(--accent);background:#f7faff}
+.g-ck{display:grid;place-items:center;width:34px;height:44px;flex:none;cursor:pointer}
+.g-ck input{width:19px;height:19px;margin:0;accent-color:var(--accent);cursor:pointer}
+.g-open{display:flex;align-items:center;gap:10px;flex:1;min-width:0;border:0;background:none;padding:2px;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
+.g-ph{width:76px;height:43px;flex:none;border-radius:9px;background:var(--panel);display:grid;place-items:center;overflow:hidden}
+.g-ph img{width:100%;height:100%;object-fit:contain}
+.g-tx{display:flex;flex-direction:column;min-width:0}
+.g-tx small{font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.g-tx b{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em}
+.g-tx span{font-size:12px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.g-tx em{font-style:normal;font:600 13px var(--mono);letter-spacing:-.02em;margin-top:2px}
+.g-x{width:34px;height:34px;flex:none;border:0;border-radius:50%;background:none;color:var(--muted);font-size:14px;cursor:pointer}
+.g-x:hover{background:var(--panel);color:var(--ink)}
+.g-it.fora .g-tx b{color:var(--muted)}
+.g-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);background:var(--bg)}
+.g-foot span{font-size:12.5px;font-weight:700;color:var(--muted)}
+.g-cmp{height:42px;padding:0 16px;border-radius:12px;background:var(--accent);color:#fff;font:700 14px var(--body);display:inline-flex;align-items:center;text-decoration:none;box-shadow:0 10px 24px -12px rgba(29,107,255,.6)}
+.g-cmp.off{background:var(--line);color:var(--muted);box-shadow:none;pointer-events:none}
 .pm-item .rd-dot{position:static;flex:none}
 .pbtn:hover{background:var(--accent);color:#fff;box-shadow:none}
 .pbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
@@ -248,7 +271,7 @@ button,input{font:inherit;color:inherit}
 .ro-btns.up{bottom:calc(50% + 22px);flex-direction:column-reverse}
 .ro-btns.dn{top:calc(50% + 22px)}
 .ro-btns button:not(.jump){margin-left:22px}
-.ro-btns .jump{width:auto;min-width:50px;height:30px;padding:0 8px;border-radius:9px;border:0;background:var(--accent-soft);color:var(--accent);font:700 11.5px var(--mono);letter-spacing:-.03em;display:inline-flex;align-items:baseline;justify-content:center;gap:2px;padding-top:8px;box-sizing:border-box}
+.ro-btns .jump{width:auto;min-width:50px;height:30px;padding:0 8px;border-radius:9px;border:0;background:var(--accent-soft);color:#1450c8;font:700 11.5px var(--mono);letter-spacing:-.03em;display:inline-flex;align-items:baseline;justify-content:center;gap:2px;padding-top:8px;box-sizing:border-box}
 .ro-btns .jump small{font:700 8.5px var(--body);letter-spacing:0;opacity:.8}
 .ro-btns .jump:hover{background:var(--accent);color:#fff;box-shadow:0 8px 18px -10px rgba(29,107,255,.8)}
 .ro-btns button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer;display:grid;place-items:center;transition:all .2s var(--ease)}
@@ -286,7 +309,7 @@ button,input{font:inherit;color:inherit}
 /* arrastar a fileira com o mouse */
 @media (hover:hover) and (pointer:fine){.row:not(.ghost){cursor:grab}}
 .row.dragging,.row.dragging *{cursor:grabbing!important;user-select:none}
-.note{position:absolute;left:0;right:0;bottom:12px;margin:0;font-size:11.5px;color:var(--faint)}
+.note{position:absolute;left:0;right:0;bottom:12px;margin:0;font-size:11.5px;color:var(--muted)}
 
 /* car slot: car stands on the beam line, info hangs below it */
 .card{position:relative;box-sizing:border-box;flex:0 0 max(150px,calc((100% - 16px - 6*14px)/7));height:370px;margin-top:12px;padding:10px 8px 8px;border-radius:18px;scroll-snap-align:start;display:grid;grid-template-rows:175px minmax(0,1fr);min-width:0;cursor:default;transition:background .3s var(--ease),box-shadow .3s var(--ease)}
@@ -460,6 +483,11 @@ button,input{font:inherit;color:inherit}
 .sh-price{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.02em}
 .sh-meta{font-size:12px;color:var(--muted)}
 .sh-site{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;color:var(--ink);text-decoration:none;transition:border-color .15s}
+.sh-acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
+.sh-act{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:64px;padding:9px 6px;border:1px solid var(--line);border-radius:14px;background:var(--bg);color:var(--ink);font:700 12.5px/1.2 var(--body);text-decoration:none;text-align:center;cursor:pointer;transition:border-color .15s,background .15s}
+.sh-act svg{width:21px;height:21px;color:var(--accent);flex:none}
+.sh-act:hover{border-color:var(--accent)}
+.sh-act.on{background:var(--accent-soft);border-color:var(--accent);color:#1450c8}
 .sh-links{display:flex;flex-direction:column;gap:8px;margin-top:14px}.sh-links .sh-site{margin-top:0}
 .sh-site:hover{border-color:var(--accent)}.sh-site span{display:flex;flex-direction:column;gap:2px;min-width:0}.sh-site small{font-size:11px;color:var(--muted)}.sh-site b{font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.sh-site svg{width:18px;height:18px;flex:none;color:var(--accent)}
 .sh-tbl{width:100%;border-collapse:collapse;font-size:13px}
@@ -702,7 +730,6 @@ button,input{font:inherit;color:inherit}
 .sn-pos{font-family:var(--mono);font-size:11.5px;color:var(--muted);white-space:nowrap}
 .sh-head{display:flex;align-items:center;gap:12px;min-width:0}
 .sh-head h2{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.sh-pg{flex:none}
 .sh-logo{width:44px;height:44px;flex:0 0 auto;border-radius:12px;background:var(--bg);box-shadow:0 0 0 1px var(--line);display:grid;place-items:center;padding:6px;box-sizing:border-box}
 .sh-logo img{width:100%;height:100%;object-fit:contain}
 .sh-logo.ini{background:var(--panel);box-shadow:none;font:800 13px var(--body);color:var(--muted);letter-spacing:.04em}
@@ -801,7 +828,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eg-c{font-size:11.5px;color:var(--muted)}
 .eg-tip{display:block;margin-top:12px;font-size:11.5px;color:var(--faint)}
 .empty .eg:hover{border-color:var(--accent)}
-.note{font-size:11.5px;color:var(--faint);padding-block:8px 12px}
+.note{font-size:11.5px;color:var(--muted);padding-block:8px 12px}
 .note-a{color:var(--muted);font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
 .note-a:hover{color:var(--accent)}
 .toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:12px;font-size:13px;max-width:calc(100% - 32px);z-index:20;box-shadow:0 12px 32px rgba(12,17,28,.25)}
@@ -850,7 +877,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .mode{flex:0 0 auto}
   .mode button{padding:5px 10px;white-space:nowrap}
   .stagewrap{grid-area:stage;position:relative;inset:auto;left:auto;min-height:0;margin-left:calc(-1 * var(--dw));margin-right:calc(-1 * var(--gr))}
-  .note{grid-area:note;position:static;padding:2px 0 6px;font-size:9.5px;line-height:1.3}
+  .note{grid-area:note;position:static;padding:2px 0 6px;font-size:10.5px;line-height:1.35}
   .card{flex-basis:150px}
   .scroller{display:none!important}
   .sr-head{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px}
@@ -1107,6 +1134,7 @@ html{background:#060b1c}
       <button type="button" class="pbtn" id="pbtn" aria-label="Sua conta" title="Sua conta" aria-haspopup="menu" aria-expanded="false" aria-controls="pmenu" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c1-3.2 3.6-4.8 6.5-4.8s5.5 1.6 6.5 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b class="p-dot" id="pDot" hidden></b></button>
       <div class="pmenu" id="pmenu" role="menu" aria-label="Sua conta" hidden>
         <div class="pm-head"><span class="pm-av" id="pmAv" aria-hidden="true"></span><span class="pm-who"><b id="pmName"></b><small id="pmEmail"></small></span></div>
+        <div class="pm-sec"><button type="button" class="pm-item" role="menuitem" id="gbtn"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2.5 9 10 3.5 17.5 9v8h-15z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M6 17v-5.5h8V17M6 14.2h8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Minha garagem<small>Carros que você salvou, para comparar</small></span><b class="pm-n" id="gCount" hidden></b></button></div>
         <div class="pm-sec" id="pmAdmin" hidden>
           <div class="pm-h">Administração</div>
           <a class="pm-item" role="menuitem" href="/admin.html" id="pmPainel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16V9m5 7V4m5 12v-5m4 5H2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Painel de uso<small>Visitas, cadastros e o que as pessoas fazem</small></span></a>
@@ -1182,6 +1210,11 @@ html{background:#060b1c}
     </nav>
   </div>
 </section>
+<aside class="drawer sheet" id="garPanel" role="dialog" aria-modal="true" aria-labelledby="gTitle" hidden>
+  <div class="dr-head"><div><h2 id="gTitle">Minha garagem</h2><div class="nf-sub" id="gSub"></div></div><button type="button" class="dr-x" id="gClose" aria-label="Fechar Minha garagem">✕</button></div>
+  <div class="dr-body" id="gBody"></div>
+  <div class="g-foot" id="gFoot" hidden><span id="gSel"></span><a class="g-cmp off" id="gCmp" aria-disabled="true" data-ev="comparar-garagem">Comparar lado a lado</a></div>
+</aside>
 <aside class="drawer sheet" id="newsPanel" role="dialog" aria-modal="true" aria-labelledby="nfTitle" hidden>
   <div class="dr-head"><div><h2 id="nfTitle">Notícias</h2><div class="nf-sub" id="nfSub"></div></div><button type="button" class="dr-x" id="nfClose" aria-label="Fechar notícias">✕</button></div>
   <div class="dr-body" id="nfBody"></div>
@@ -1251,7 +1284,7 @@ html{background:#060b1c}
   </div>
 </section>
 <aside class="drawer sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" hidden>
-  <div class="dr-head"><div class="sh-head"><span class="sh-logo" id="shLogo" hidden></span><h2 id="shTitle">Versão</h2><a class="src sh-pg" id="shPage" href="/carros" title="Abrir a página deste carro (para compartilhar ou salvar)" aria-label="Abrir a página deste carro" data-ev="pagina-carro"><svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true"><path d="M6.5 9.5 13 3M8.5 3H13v4.5M11 9v3.5a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-7a.5.5 0 0 1 .5-.5H7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div><button type="button" class="dr-x" id="shClose" aria-label="Fechar ficha">✕</button></div>
+  <div class="dr-head"><div class="sh-head"><span class="sh-logo" id="shLogo" hidden></span><h2 id="shTitle">Versão</h2></div><button type="button" class="dr-x" id="shClose" aria-label="Fechar ficha">✕</button></div>
   <div class="dr-body" id="shBody"></div>
   <div class="sh-nav" id="shNav" hidden><button type="button" class="sn-btn" id="shPrev"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small><b id="shPrevN"></b></span></button><span class="sn-pos" id="shPos"></span><button type="button" class="sn-btn nx" id="shNext"><span><small>Próximo</small><b id="shNextN"></b></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 </aside>
@@ -1330,6 +1363,16 @@ function deriveTags(r){
   if(research.includes("tech"))k.tech=TAGRULE.tech;
   return {k:TAGORDER.filter(x=>k[x]),why:k,cv};
 }
+/* Minha garagem e comparação: ícones dos botões da ficha */
+const GAR_ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10.5 12 4l9 6.5V20H3z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/><path d="M7 20v-6.5h10V20M7 16.5h10" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/></svg>';
+const CMP_ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>';
+const PG_ICO='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+/* página própria do carro (montada no servidor): /carros/<marca>/<modelo> */
+const pageOf=c=>c&&c.bid&&c.mid&&c.mid.startsWith(c.bid+"-")?`/carros/${c.bid}/${c.mid.slice(c.bid.length+1)}`:null;
+function shActs(c){const on=GARAGE.has(c.id),pg=pageOf(c);
+  return `<div class="sh-acts"><button type="button" class="sh-act${on?" on":""}" data-garage="${esc(c.id)}" aria-pressed="${on}">${GAR_ICO}<span>${on?"Na garagem":"Salvar na garagem"}</span></button>`+
+    `<a class="sh-act" href="/comparar/${encodeURIComponent(c.mid)}?versao=${encodeURIComponent(c.id)}" data-ev="comparar" data-vid="${esc(c.id)}">${CMP_ICO}<span>Comparar</span></a>`+
+    (pg?`<a class="sh-act" href="${pg}" data-ev="pagina-carro" data-vid="${esc(c.id)}">${PG_ICO}<span>Página completa</span></a>`:"")+`</div>`}
 /* favorito: estrela (contorno quando desligado, cheia quando ligado) */
 const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2l2.66 5.4 5.96.86-4.31 4.2 1.02 5.93L12 16.79l-5.33 2.8 1.02-5.93-4.31-4.2 5.96-.86z" fill="currentColor" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>';
 const ico=k=>`<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg>`;
@@ -1929,10 +1972,10 @@ let lastFocus=null;
 function openDrawer(){lastFocus=document.activeElement;DRCAT="mk";renderDrawer();drawer.hidden=false;scrim.hidden=false;document.getElementById("drClose").focus()}
 function closeDrawer(){drawer.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("fbtn").onclick=openDrawer;
-document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!document.getElementById("pcPanel").hidden)return closePrice();if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
+document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!document.getElementById("pcPanel").hidden)return closePrice();if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!garPanel.hidden)return closeGarage();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
 document.getElementById("drGo").onclick=closeDrawer;
 document.getElementById("drClear").onclick=()=>{DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged()};
-addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)return closeImg();if(!sheet.hidden)closeSheet();else if(!drawer.hidden)closeDrawer()});
+addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!garPanel.hidden)return closeGarage();if(!imgPanel.hidden)return closeImg();if(!sheet.hidden)closeSheet();else if(!drawer.hidden)closeDrawer()});
 drBody.addEventListener("click",e=>{const ob=e.target.closest(".og-btn");if(ob&&!ob.disabled){const o=ob.dataset.origin,ks=[...new Set(CARS.map(c=>c.mk))].filter(k=>(BRANDCO[k]||"Outras origens")===o);
     const on=ob.getAttribute("aria-pressed")==="true";ks.forEach(k=>on?F.mk.delete(k):F.mk.add(k));filtersChanged();const f=[...drBody.querySelectorAll(".og-btn")].find(x=>x.dataset.origin===o);f&&f.focus();return}
   const tb=e.target.closest(".dr-tab");if(tb){DRCAT=tb.dataset.cat;renderDrawer();const f=drBody.querySelector(`.dr-tab[data-cat="${DRCAT}"]`);f&&f.focus();return}const o=e.target.closest(".opt");if(!o||o.disabled)return;const set=F[o.dataset.g],v=o.dataset.v;set.has(v)?set.delete(v):set.add(v);filtersChanged();const fo=[...drBody.querySelectorAll(".opt2")].find(x=>x.dataset.v===v);fo&&fo.focus()});
@@ -2122,7 +2165,6 @@ async function openInfo(id){
   if(sheet.hidden)lastFocus=document.activeElement;scrim.hidden=false;sheet.hidden=false;
   setSheetNav(c);if(window.giroTrack)giroTrack("view_car",{version_id:c.id,model_id:c.mid});
   document.getElementById("shTitle").textContent=`${c.mk} ${c.nm}`;
-  {const pg=document.getElementById("shPage"),ok=c.bid&&c.mid&&c.mid.startsWith(c.bid+"-");pg.hidden=!ok;if(ok)pg.href=`/carros/${c.bid}/${c.mid.slice(c.bid.length+1)}`;}
   {const lg=logos[brandSlug(c.mk)],el=document.getElementById("shLogo");el.hidden=false;el.classList.toggle("ini",!lg);
    el.innerHTML=lg?`<img src="${blobUrl(lg)}" alt="${esc(c.mk)}">`:esc(c.mk.slice(0,2).toUpperCase());el.title=c.mk;}
   const sib=ALLCARS.filter(x=>x.mid===c.mid).sort((a,b)=>(a.p||0)-(b.p||0));
@@ -2131,6 +2173,7 @@ async function openInfo(id){
   const base=(v,src)=>`<section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
       <div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
       <div class="sh-meta sh-pmeta">${priceMeta(c,v,src)}</div></section>
+    ${shActs(c)}
     <div class="sh-links"><a class="sh-site" href="${esc(gimg)}" target="_blank" rel="noopener" data-ev="google-imagens" data-vid="${esc(c.id)}" title="Abre o Google Imagens já pesquisando este carro"><span><small>Fotos reais no Google Imagens</small><b>${esc(full)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     ${(()=>{const u=siteOf(c.mk);return u?`<a class="sh-site" href="${esc(u)}" target="_blank" rel="noopener" data-ev="site-oficial" data-vid="${esc(c.id)}"><span><small>Site oficial da ${esc(c.mk)} no Brasil</small><b>${esc(siteHost(u))}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`:""})()}</div>
     <section class="dr-group"><h3>Características</h3>
@@ -2530,8 +2573,45 @@ let dbT;document.getElementById("dbQ").addEventListener("input",()=>{clearTimeou
 ["dbOrigin","dbStatus","dbPend"].forEach(id=>document.getElementById(id).addEventListener("change",renderDB));
 document.getElementById("dbOpenAll").onclick=e=>{dbOpenAll=!dbOpenAll;e.target.textContent=dbOpenAll?"Fechar tudo":"Abrir tudo";renderDB()};
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!dbPanel.hidden&&sheet.hidden){if(dbMenuOn())dbMenuSet(false);else closeDB()}});
+/* ---------- Minha garagem: carros salvos para acompanhar e comparar (privada, guardada na conta) ---------- */
+let GARAGE=new Map(),garageLoad=Promise.resolve();const GAR_MAX=40,gSel=new Set();
+const garPanel=document.getElementById("garPanel"),gBody=document.getElementById("gBody"),gFoot=document.getElementById("gFoot");
+async function loadGarage(){if(!myId||!window.giroGarage)return;try{const l=await giroGarage.list();GARAGE=new Map(l.map(x=>[x.id,x.at]));paintGarage()}catch(e){}}
+function paintGarage(){const n=GARAGE.size,b=document.getElementById("gCount");b.hidden=!n;b.textContent=n;
+  document.querySelectorAll("[data-garage]").forEach(x=>{const on=GARAGE.has(x.dataset.garage);x.classList.toggle("on",on);x.setAttribute("aria-pressed",on);const t=x.querySelector("span");if(t)t.textContent=on?"Na garagem":"Salvar na garagem"});
+  if(!garPanel.hidden)renderGarage()}
+async function toggleGarage(id){const had=GARAGE.has(id),c=ALLCARS.find(x=>x.id===id);
+  if(!had&&GARAGE.size>=GAR_MAX)return toast(`A garagem guarda até ${GAR_MAX} carros. Tire algum para salvar este.`);
+  had?GARAGE.delete(id):GARAGE.set(id,new Date().toISOString());if(had)gSel.delete(id);paintGarage();
+  if(window.giroTrack)giroTrack("save",{version_id:id,model_id:c&&c.mid,meta:{on:!had}});
+  try{had?await giroGarage.remove(id):await giroGarage.add(id);if(!had)toast(`${c?`${c.mk} ${c.nm}`:"Carro"} salvo na Minha garagem, no menu da sua conta.`)}
+  catch(err){had?GARAGE.set(id,new Date().toISOString()):GARAGE.delete(id);paintGarage();toast("Não deu para salvar na garagem. Tente de novo.")}}
+function renderGarage(){
+  const its=[...GARAGE.entries()].sort((a,b)=>String(b[1]).localeCompare(String(a[1]))).map(([id])=>({id,c:CARS.find(x=>x.id===id)}));
+  for(const id of [...gSel])if(!GARAGE.has(id)||!CARS.some(x=>x.id===id))gSel.delete(id);
+  document.getElementById("gSub").textContent=its.length?`${its.length} ${its.length>1?"carros salvos":"carro salvo"} · só você vê`:"Só você vê";
+  if(!its.length){gBody.innerHTML=`<div class="empty"><b>Sua garagem está vazia</b>Abra a ficha de um carro e toque em “Salvar na garagem”. Depois, marque de 2 a 4 carros aqui para comparar lado a lado.</div>`;gFoot.hidden=true;return}
+  gBody.innerHTML=`<p class="g-tip">Marque de 2 a 4 carros para comparar lado a lado. Toque no carro para abrir a ficha.</p><ul class="g-list">${its.map(({id,c})=>{
+    if(!c)return `<li class="g-it fora"><span class="g-ck"></span><span class="g-open"><span class="g-ph"></span><span class="g-tx"><b>Versão fora do site</b><span>Saiu de linha ou deixou de ser vendida</span></span></span><button type="button" class="g-x" data-gdel="${esc(id)}" aria-label="Tirar da garagem" title="Tirar da garagem">✕</button></li>`;
+    const ph=(photoOf(c.mid,c.ano)||{}).asset,nm=`${c.mk} ${c.nm} ${c.ver}`;
+    return `<li class="g-it${gSel.has(id)?" sel":""}"><label class="g-ck"><input type="checkbox" data-gsel="${esc(id)}"${gSel.has(id)?" checked":""} aria-label="Marcar ${esc(nm)} para comparar"></label><button type="button" class="g-open" data-gopen="${esc(id)}"><span class="g-ph">${ph?`<img src="${blobUrl(ph)}" alt="" loading="lazy">`:""}</span><span class="g-tx"><small>${esc(c.mk)}</small><b>${esc(c.nm)}</b><span>${esc(c.ver)}${c.ano?` · ${c.ano}`:""}</span><em>${c.p?fmt(c.p):"preço não divulgado"}</em></span></button><button type="button" class="g-x" data-gdel="${esc(id)}" aria-label="Tirar ${esc(nm)} da garagem" title="Tirar da garagem">✕</button></li>`}).join("")}</ul>`;
+  paintGSel()}
+function paintGSel(){const n=gSel.size,ok=n>=2&&n<=4,a=document.getElementById("gCmp");gFoot.hidden=false;
+  document.getElementById("gSel").textContent=n<2?(n?"Marque mais 1 para comparar":"Marque 2 a 4 carros"):`${n} carros marcados`;
+  a.classList.toggle("off",!ok);a.setAttribute("aria-disabled",String(!ok));
+  if(ok){const cs=[...gSel].map(id=>CARS.find(x=>x.id===id)).filter(Boolean);a.href=`/comparar/${cs.map(c=>encodeURIComponent(c.mid)).join("-vs-")}?versoes=${cs.map(c=>encodeURIComponent(c.id)).join(",")}`}else a.removeAttribute("href")}
+gBody.addEventListener("change",e=>{const x=e.target.closest("[data-gsel]");if(!x)return;const id=x.dataset.gsel;
+  if(x.checked&&gSel.size>=4){x.checked=false;return toast("Dá para comparar até 4 carros por vez.")}
+  x.checked?gSel.add(id):gSel.delete(id);x.closest(".g-it").classList.toggle("sel",x.checked);paintGSel()});
+gBody.addEventListener("click",e=>{const o=e.target.closest("[data-gopen]");if(o){const id=o.dataset.gopen;closeGarage(true);return openInfo(id)}
+  const d=e.target.closest("[data-gdel]");if(d)toggleGarage(d.dataset.gdel)});
+function openGarage(){if(!myId)return openAuth();lastFocus=document.activeElement;renderGarage();garPanel.hidden=false;scrim.hidden=false;gBody.scrollTop=0;document.getElementById("gClose").focus()}
+function closeGarage(keepScrim){garPanel.hidden=true;if(!keepScrim)scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+document.getElementById("gbtn").onclick=openGarage;document.getElementById("gClose").onclick=()=>closeGarage();
 function closeSheet(){sheet.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
 document.getElementById("shClose").onclick=closeSheet;
+/* ficha: salvar na Minha garagem (sem conta, pede para entrar e salva logo depois) */
+shBody.addEventListener("click",e=>{const gb=e.target.closest("[data-garage]");if(gb)myId?toggleGarage(gb.dataset.garage):askAccount("save",gb.dataset.garage)});
 shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]");
   if(cp){const t=cp.dataset.copy,lb=cp.parentElement.querySelector(".copied");
     try{await navigator.clipboard.writeText(t);lb.textContent="copiado ✓";cp.classList.add("ok")}
@@ -2865,6 +2945,7 @@ document.getElementById("ipClose").onclick=closeImg;
     const [d,u]=await Promise.all([claude.use("db"),claude.use("user")]);
     if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Abra o Autokan pelo link com sua conta conectada para ver a biblioteca.";swap();return}
     db=d;userNS=u;myId=u?await u.id():null;
+    garageLoad=loadGarage();
     const timer=setTimeout(()=>{if(!live)status("Sem conexão com os favoritos",false)},10000);
     const ct=setTimeout(()=>{if(!loaded){loadErr="Não deu para conectar ao banco. Verifique a internet; a página tenta de novo sozinha.";swap()}},10000);
     visReady=loadVis().catch(()=>{});
@@ -2880,7 +2961,8 @@ document.getElementById("ipClose").onclick=closeImg;
     db.collection("photos").onSnapshot(snap=>{const p={},ai={};snap.docs.forEach(x=>{const d=x.data()||{},a=d.asset;if(typeof a==="string"&&/^[0-9a-f]{32}$/.test(a)){p[x.id]=a;if(d.ai===true)ai[x.id]=1}});photos=p;photoAI=ai;refresh();if(!imgPanel.hidden)renderImgPanel();if(FX)fxPaint();if(!rdPanel.hidden)renderRadar();},()=>{});
     db.collection("votes").onSnapshot(snap=>{
       counts=snap.counts;mine=new Set(snap.mine);live=true;clearTimeout(timer);
-      if(myId&&!pendDone){pendDone=true;const pd=takePending();if(pd&&pd.kind==="like"){const c=ALLCARS.find(x=>x.id===pd.id);if(!mine.has(pd.id))setTimeout(()=>toggle(pd.id),0);toast(`Pronto: ${c?`o ${c.mk} ${c.nm}`:"o carro que escolheu"} está nos seus favoritos.`)}}
+      if(myId&&!pendDone){pendDone=true;const pd=takePending();if(pd&&pd.kind==="like"){const c=ALLCARS.find(x=>x.id===pd.id);if(!mine.has(pd.id))setTimeout(()=>toggle(pd.id),0);toast(`Pronto: ${c?`o ${c.mk} ${c.nm}`:"o carro que escolheu"} está nos seus favoritos.`)}
+        else if(pd&&pd.kind==="save")garageLoad.then(()=>{if(!GARAGE.has(pd.id))toggleGarage(pd.id)})}
       status(myId?`${snap.people} ${snap.people===1?"pessoa favoritou":"pessoas favoritaram"}`:"Entre para favoritar",!!myId);
       refreshCounts();
     },()=>{clearTimeout(timer);status("Favoritos fora do ar",false)});

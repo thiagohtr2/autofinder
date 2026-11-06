@@ -22,7 +22,10 @@ A roleta (`public/index.html`) monta tudo no navegador, então o Google quase n�
 - `/carros`: todas as marcas, com atalhos por preço, tipo e combustível.
 - `/carros/<marca>` e `/carros/<marca>/<modelo>`: por exemplo, `/carros/chevrolet/tracker`.
 - `/carros-ate-<N>-mil`, `/carros-acima-de-500-mil`, `/suvs`, `/picapes` (e outros tipos), `/carros-eletricos`, `/carros-hibridos`, `/carros-diesel`.
-- `/sitemap.xml`: a lista de todas essas páginas para o Google.
+- `/comparar`: comparações prontas de carros na mesma faixa de preço; `/comparar/<modelo>-vs-<modelo>` (até 4 carros, com `?versoes=` para escolher a versão de cada um) e `/comparar/<modelo>` para escolher o outro carro. A comparação é neutra: mostra os dados lado a lado e aponta só fatos (menor preço, maior potência).
+- `/sitemap.xml`: a lista de todas essas páginas para o Google (inclui as comparações de cada carro com os 3 mais parecidos).
+
+**Minha garagem:** na ficha do carro, "Salvar na garagem" guarda a versão na tabela `garage` do Supabase (privada: cada pessoa vê só a sua; migração `20261106180000_minha_garagem.sql`). A garagem fica no menu da conta, e dali dá para marcar de 2 a 4 carros e abrir a comparação.
 
 As páginas seguem as regras do site: só versões à venda entram nas listas, e marcas e modelos tirados do site no painel Banco de dados somem das páginas. Os pontos fortes usam as mesmas regras, copiadas em `netlify/lib/pontos-fortes.mjs`; se mudar uma regra em `index.html`, copie de novo. A Netlify guarda cada página pronta por 1 hora, então mudanças no banco aparecem em até 1 hora. Na roleta, `/?carro=<modelo>` leva até o carro e abre a ficha.
 
