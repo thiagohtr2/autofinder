@@ -388,9 +388,8 @@ ${ficha.length ? `<section class="sec" aria-labelledby="s-fc"><h2 id="s-fc">Fich
 ${faq.length ? `<section class="sec" aria-labelledby="s-fq"><h2 id="s-fq">Perguntas frequentes</h2><div class="faq">${faq.map(([q, r]) => `<div><h3>${esc(q)}</h3><p>${esc(r)}</p></div>`).join("")}</div></section>` : ""}
 ${secNoticias}
 ${secAvisos}
-${comp.length ? `<section class="sec" aria-labelledby="s-cp"><h2 id="s-cp">Compare com carros na mesma faixa de preço</h2><ul class="grade">${comp.map((x) => cartao(x)).join("")}</ul>
-<h3 style="margin-top:22px">Lado a lado com o ${esc(m.nome)}</h3><ul class="chips" style="margin-top:10px">${comp.map((x) => `<li><a href="${urlPar(m, x)}">${esc(m.nome)} x ${esc(x.nome)}</a></li>`).join("")}<li><a href="/comparar/${m.id}">Outro carro…</a></li></ul></section>` : ""}
-${outros.length ? `<section class="sec" aria-labelledby="s-om"><h2 id="s-om">Outros carros da ${esc(marca.nome)}</h2><ul class="chips">${outros.map((x) => `<li><a href="${x.url}">${esc(x.nome)}${x.precoMin ? ` <small>${reais(x.precoMin)}</small>` : ""}</a></li>`).join("")}</ul></section>` : ""}
+${comp.length ? `<section class="sec" aria-labelledby="s-cp"><h2 id="s-cp">Compare o ${esc(m.nome)} com carros da mesma faixa de preço</h2><ul class="grade">${comp.map((x) => cartao(x, { href: urlPar(m, x) })).join("")}</ul><div class="acoes"><a class="btn" href="/comparar/${m.id}">${COMPARAR_ICO}Buscar outro carro para comparar</a></div></section>` : ""}
+${outros.length ? `<section class="sec" aria-labelledby="s-om"><h2 id="s-om">Outros carros da ${esc(marca.nome)}</h2><ul class="grade">${outros.map((x) => cartao(x)).join("")}</ul></section>` : ""}
 </article>`;
 
   return pagina({ titulo, descricao: desc, caminho, imagemOg: m.foto ? SITE + imagem(m.foto, 800, "&fm=png") : null, imagemAlt: `${nomeAno} (imagem ilustrativa)`, tipoOg: "product", ld, corpo });

@@ -1,7 +1,7 @@
 /* Autokan: comparação lado a lado (de 2 a 4 carros) e as páginas que levam até ela.
    Neutra: mostra os dados de cada versão na mesma linha e aponta só fatos (o menor preço, a maior potência),
    sem dar nota nem eleger um vencedor. */
-import { SITE, parecidos, imagem } from "./base.mjs";
+import { SITE, parecidos, imagem, semAcento } from "./base.mjs";
 import { pagina, esc, trilha, ldTrilha, cartao, fotoTag, reais, pl, mesAno, lista, ico, SETA, ROLETA, COMPARAR_ICO, COMB_FRASE, INICIO, urlPar } from "./paginas.mjs";
 
 export const MAX_CARROS = 4;
@@ -111,8 +111,8 @@ export function paginaComparacao(base, pares) {
 <span class="cmp-mk">${esc(c.m.marca)}</span><a class="cmp-nm" href="${c.m.url}">${esc(c.m.nome)}</a>
 <label class="sr" for="v${i}">Versão do ${esc(c.m.titulo)}</label><select id="v${i}" name="v${i}">${c.m.versoes.map((v) => `<option value="${esc(v.id)}"${v.id === c.v.id ? " selected" : ""}>${esc(v.nome || c.m.nome)}${v.preco ? ` · ${reais(v.preco)}` : ""}</option>`).join("")}</select></th>`).join("");
 
-  // outras comparações: o primeiro carro com os parecidos dele
-  const outras = [...new Map(ms.flatMap((m) => parecidos(base, m, 4).filter((x) => !ms.some((y) => y.id === x.id)).map((x) => [urlPar(m, x), `${m.nome} x ${x.nome}`]))).entries()].slice(0, 10);
+  // outros carros para comparar com o primeiro (cards; cada um abre a comparação dos dois)
+  const outros = porSemelhanca(base, ms[0]).filter((x) => !ms.some((y) => y.id === x.id)).slice(0, 8);
 
   const corpo = `${trilha(itens)}
 <div class="lista-top"><h1>${esc(n === 2 ? `${nomes[0]} x ${nomes[1]}` : nomes.join(" x "))}</h1>
@@ -126,7 +126,7 @@ ${resumo.length ? `<div class="resumo">${resumo.map((r) => `<p>${esc(r)}</p>`).j
 <p class="nota">Preço de tabela sugerido pela montadora ou FIPE 0 km. "Menor preço" e "maior potência" comparam só as versões escolhidas acima. Confirme os dados com a concessionária.</p>
 <div class="acoes"><a class="btn pri" href="/?carro=${encodeURIComponent(ms[0].id)}">${ROLETA}Ver na roleta de preços</a>${n < MAX_CARROS ? `<a class="btn" href="/comparar/${ms[0].id}">${COMPARAR_ICO}Comparar com outro carro</a>` : ""}</div>
 </section>
-${outras.length ? `<section class="sec" aria-labelledby="s-ot"><h2 id="s-ot">Outras comparações</h2><ul class="chips">${outras.map(([u, t]) => `<li><a href="${u}">${esc(t)}</a></li>`).join("")}</ul></section>` : ""}
+${outros.length ? `<section class="sec" aria-labelledby="s-ot"><h2 id="s-ot">Compare o ${esc(ms[0].nome)} com outros carros</h2><ul class="grade">${outros.map((x) => cartao(x, { href: urlPar(ms[0], x) })).join("")}</ul><div class="acoes"><a class="btn" href="/comparar/${ms[0].id}">${COMPARAR_ICO}Buscar outro carro</a></div></section>` : ""}
 <script>(()=>{const f=document.querySelector(".cmp-f");if(!f)return;f.addEventListener("change",()=>{const v=[...f.querySelectorAll("select")].map(s=>s.value).join(",");location.href=f.getAttribute("action")+"?versoes="+encodeURIComponent(v).replace(/%2C/g,",")})})()</script>`;
 
   return pagina({
@@ -138,21 +138,69 @@ ${outras.length ? `<section class="sec" aria-labelledby="s-ot"><h2 id="s-ot">Out
 const PLURAL = { SUV: "SUVs", Hatch: "hatches", "Sedã": "sedãs", Picape: "picapes", Van: "vans", Perua: "peruas", Minivan: "minivans", Esportivo: "esportivos" };
 const TAG_NOME = { eletrico: "Elétrico", hibrido: "Híbrido", potente: "Potente", economico: "Econômico", turbo: "Turbo", x4: "4x4", diesel: "Diesel", espaco: "Espaçoso", tech: "Tecnologia" };
 
+/* ---------- escolher carros: busca no topo e cards embaixo, 10 de cada vez (aparecem mais ao descer) */
+
+const POR_VEZ = 10;
+const CSS_ESCOLHA = `
+.busca{display:flex;align-items:center;gap:10px;height:52px;padding:0 16px;border:1px solid var(--line);border-radius:14px;background:var(--panel);margin:20px 0 4px;transition:border-color .15s,background .15s}
+.busca:focus-within{border-color:var(--accent);background:#fff;box-shadow:0 0 0 3px rgba(29,107,255,.12)}
+.busca svg{width:19px;height:19px;color:var(--muted);flex:none}
+.busca input{flex:1;min-width:0;height:100%;border:0;background:none;font:600 16px var(--body);color:var(--ink);outline:none}
+.busca input::placeholder{color:#8a92a3;font-weight:500}
+.esc-h{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:22px 0 12px}
+.esc-h h2{margin:0}
+.esc-fim{height:1px}
+`.replace(/\n\s*/g, "");
+const LUPA = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+
+/* carros da lista: dados mínimos para o navegador montar os próximos cards e buscar */
+function dadosEscolha(lista, href) {
+  return lista.map((x) => ({
+    h: href(x), mk: x.marca, n: x.nome, t: `${x.titulo}${x.ano ? ` ${x.ano}` : ""}`, p: x.precoMin || 0, f: x.foto || "",
+    s: [x.carroc, x.combs.slice(0, 2).join(" ou "), pl(x.versoes.length, "versão", "versões")].filter(Boolean).join(" · "),
+    q: semAcento(`${x.marca} ${x.nome} ${x.carroc} ${x.combs.join(" ")}`),
+  }));
+}
+
+export function escolha({ lista, href, titulo, placeholder }) {
+  const dados = dadosEscolha(lista, href);
+  return `<label class="busca"><span class="sr">Buscar carro</span>${LUPA}<input id="esc-q" type="search" placeholder="${esc(placeholder)}" autocomplete="off" enterkeyhint="search"></label>
+<div class="esc-h"><h2 id="esc-t">${esc(titulo)}</h2></div>
+<ul class="grade" id="esc-l">${lista.slice(0, POR_VEZ).map((x) => cartao(x, { href: href(x) })).join("")}</ul>
+<p class="lead" id="esc-v" hidden>Nenhum carro com esse nome. Tente só a marca ou só o modelo.</p>
+<div class="esc-fim" id="esc-fim"></div>
+<script type="application/json" id="esc-d">${JSON.stringify(dados).replace(/</g, "\\u003c")}</script>
+<script>(()=>{const d=JSON.parse(document.getElementById("esc-d").textContent),ul=document.getElementById("esc-l"),q=document.getElementById("esc-q"),fim=document.getElementById("esc-fim"),tt=document.getElementById("esc-t"),vz=document.getElementById("esc-v"),T0=tt.textContent,N=${POR_VEZ};
+let lista=d,feitos=ul.children.length;
+const sa=t=>t.normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase(),e=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const im=(f,w)=>"/.netlify/images?url="+encodeURIComponent(f)+"&w="+w,rs=n=>"R$\\u00a0"+String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g,".");
+const card=x=>'<li><a class="mc" href="'+e(x.h)+'"><span class="mc-ph">'+(x.f?'<img src="'+im(x.f,360)+'" srcset="'+im(x.f,360)+' 360w, '+im(x.f,576)+' 576w" sizes="(max-width:520px) 46vw, 260px" alt="'+e(x.t)+'" width="360" height="203" loading="lazy" decoding="async">':'<span class="mc-sem">'+e(x.n)+'</span>')+'</span><span class="mc-tx"><span class="mc-mk">'+e(x.mk)+'</span><span class="mc-nm">'+e(x.n)+'</span><span class="mc-sub">'+e(x.s)+'</span><span class="mc-pr">'+(x.p?'<small>a partir de</small>'+rs(x.p):'<small>preço ainda não divulgado</small>')+'</span></span></a></li>';
+const mais=()=>{if(feitos>=lista.length)return;ul.insertAdjacentHTML("beforeend",lista.slice(feitos,feitos+N).map(card).join(""));feitos=Math.min(lista.length,feitos+N)};
+const io=new IntersectionObserver(es=>{if(es.some(x=>x.isIntersecting)){mais();io.unobserve(fim);io.observe(fim)}},{rootMargin:"700px 0px"});io.observe(fim);
+let tm;q.addEventListener("input",()=>{clearTimeout(tm);tm=setTimeout(()=>{const ts=sa(q.value.trim()).split(/\\s+/).filter(Boolean);
+  lista=ts.length?d.filter(x=>ts.every(t=>x.q.includes(t))):d;tt.textContent=ts.length?(lista.length+(lista.length===1?" carro encontrado":" carros encontrados")):T0;
+  vz.hidden=!!lista.length;ul.innerHTML="";feitos=0;mais();io.unobserve(fim);io.observe(fim)},120)});
+})()</script>`;
+}
+
+/* ordem das sugestões para comparar com um carro: mesma faixa de preço e mesmo tipo primeiro, depois os mais diferentes */
+export function porSemelhanca(base, m) {
+  return base.aVenda.filter((x) => x.id !== m.id)
+    .map((x) => ({ x, d: (m.precoMin && x.precoMin ? Math.abs(x.precoMin - m.precoMin) / m.precoMin : 2) + (x.carroc === m.carroc ? 0 : 0.35) + (x.bid === m.bid ? 0.05 : 0) }))
+    .sort((a, b) => a.d - b.d).map(({ x }) => x);
+}
+
 /* ---------- escolher com qual carro comparar */
 
 export function paginaEscolher(base, m, vid) {
   const v = m.versoes.find((x) => x.id === vid) || null;
   const itens = [INICIO, COMPARAR, { nome: m.titulo, url: `/comparar/${m.id}` }];
-  const opcoes = parecidos(base, m, 12);
-  const mesmoTipo = base.aVenda.filter((x) => x.id !== m.id && x.carroc === m.carroc && !opcoes.includes(x)).sort((a, b) => (a.precoMin ?? Infinity) - (b.precoMin ?? Infinity));
-  const link = (x) => urlComparacao([{ m, v }, { m: x, v: null }]);
   const corpo = `${trilha(itens)}
 <div class="lista-top"><h1>Comparar o ${esc(m.titulo)} com…</h1>
-<p class="lead">Escolha o outro carro. Depois dá para trocar a versão de cada um e incluir mais carros${v ? `. Versão escolhida: ${esc(v.nome)}${v.preco ? `, ${reais(v.preco)}` : ""}` : ""}.</p></div>
-${opcoes.length ? `<section class="sec" aria-labelledby="s-pp"><h2 id="s-pp">Na mesma faixa de preço</h2><ul class="grade">${opcoes.map((x) => cartao(x, { href: link(x) })).join("")}</ul></section>` : ""}
-${mesmoTipo.length ? `<section class="sec" aria-labelledby="s-mt"><h2 id="s-mt">Outros ${esc(PLURAL[m.carroc] || "carros do mesmo tipo")}</h2><ul class="chips">${mesmoTipo.map((x) => `<li><a href="${link(x)}">${esc(x.titulo)}${x.precoMin ? ` <small>${reais(x.precoMin)}</small>` : ""}</a></li>`).join("")}</ul></section>` : ""}`;
+<p class="lead">Busque o outro carro ou escolha um dos sugeridos. Depois dá para trocar a versão de cada um e incluir mais carros${v ? `. Versão escolhida do ${esc(m.nome)}: ${esc(v.nome)}${v.preco ? `, ${reais(v.preco)}` : ""}` : ""}.</p></div>
+<section class="sec" aria-label="Escolher o outro carro">${escolha({ lista: porSemelhanca(base, m), href: (x) => urlComparacao([{ m, v }, { m: x, v: null }]), titulo: `Sugeridos para comparar com o ${m.nome}`, placeholder: "Buscar carro: marca ou modelo" })}</section>`;
   return pagina({ titulo: `Comparar o ${m.titulo} com outro carro | Autokan`, descricao: `Escolha um carro para comparar com o ${m.titulo}: preço de cada versão, motor, potência, câmbio e pontos fortes, lado a lado.`,
-    caminho: `/comparar/${m.id}`, corpo, indexar: false, ld: [ldTrilha(itens)] });
+    caminho: `/comparar/${m.id}`, corpo, css: CSS_ESCOLHA, indexar: false, ld: [ldTrilha(itens)] });
 }
 
 /* ---------- todas as comparações (porta de entrada para o Google) */
@@ -165,21 +213,12 @@ export function paresPopulares(base, porModelo = 3) {
 
 export function paginaComparacoes(base) {
   const itens = [INICIO, COMPARAR];
-  const pares = paresPopulares(base, 2);
-  const grupos = new Map();
-  for (const [u, [a, b]] of pares) { const t = a.carroc === b.carroc ? a.carroc || "Outros" : "Tipos diferentes"; (grupos.get(t) || grupos.set(t, []).get(t)).push([u, a, b]); }
-  const ordem = ["SUV", "Hatch", "Sedã", "Picape", "Esportivo", "Van", "Perua", "Minivan", "Tipos diferentes", "Outros"];
-  const nomeGrupo = { SUV: "SUVs", Hatch: "Hatches", "Sedã": "Sedãs", Picape: "Picapes", Esportivo: "Esportivos", Van: "Vans", Perua: "Peruas", Minivan: "Minivans" };
-  const secoes = [...grupos.entries()].sort((a, b) => ((ordem.indexOf(a[0]) + 1) || 99) - ((ordem.indexOf(b[0]) + 1) || 99)).map(([t, ps]) => {
-    ps.sort((x, y) => Math.min(x[1].precoMin ?? Infinity, x[2].precoMin ?? Infinity) - Math.min(y[1].precoMin ?? Infinity, y[2].precoMin ?? Infinity));
-    const gid = "g-" + t.normalize("NFKD").replace(/[^\w]+/g, "-").toLowerCase();
-    return `<section class="sec" aria-labelledby="${gid}"><h2 id="${gid}">${esc(nomeGrupo[t] || t)}</h2><ul class="chips">${ps.map(([u, a, b]) => `<li><a href="${u}">${esc(a.titulo)} x ${esc(b.titulo)}</a></li>`).join("")}</ul></section>`;
-  }).join("");
+  const lista = [...base.aVenda].sort((a, b) => (a.precoMin ?? Infinity) - (b.precoMin ?? Infinity) || a.titulo.localeCompare(b.titulo, "pt-BR"));
   const corpo = `${trilha(itens)}
 <div class="lista-top"><h1>Comparar carros 0 km</h1>
-<p class="lead">Preço de cada versão, motor, potência, câmbio e pontos fortes lado a lado, de 2 a 4 carros. Abaixo, comparações de carros na mesma faixa de preço. Para comparar qualquer carro, abra a página dele e toque em "Comparar com outro carro".</p></div>
-${secoes}`;
+<p class="lead">Preço de cada versão, motor, potência, câmbio e pontos fortes lado a lado, de 2 a 4 carros. Escolha o primeiro carro; em seguida, o outro.</p></div>
+<section class="sec" aria-label="Escolher o primeiro carro">${escolha({ lista, href: (x) => `/comparar/${x.id}`, titulo: "Escolha o primeiro carro", placeholder: "Buscar carro: marca ou modelo" })}</section>`;
   return pagina({ titulo: "Comparar carros 0 km: preço e versões lado a lado | Autokan",
-    descricao: `Compare carros 0 km lado a lado: preço de cada versão, motor, potência, câmbio e pontos fortes. ${pares.size} comparações de carros na mesma faixa de preço.`,
-    caminho: "/comparar", corpo, ld: [ldTrilha(itens)] });
+    descricao: `Compare carros 0 km lado a lado: preço de cada versão, motor, potência, câmbio e pontos fortes. Escolha entre ${base.aVenda.length} modelos à venda no Brasil.`,
+    caminho: "/comparar", corpo, css: CSS_ESCOLHA, ld: [ldTrilha(itens)] });
 }
