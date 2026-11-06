@@ -2,13 +2,15 @@
 <html lang="pt-BR">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>AutoKan · Conheça. Compare. Escolha.</title>
+<title>Autokan · Conheça. Compare. Escolha.</title>
 <link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png?v=5">
 <link rel="icon" type="image/png" sizes="192x192" href="/marca/favicon-192.png?v=5">
 <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png?v=5">
 <script src="/puxar.js" defer></script>
 <script src="/tracker.js"></script>
 <meta name="theme-color" content="#060b1c">
+<meta name="apple-mobile-web-app-title" content="Autokan">
+<meta name="application-name" content="Autokan">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
 <style>
@@ -1018,8 +1020,8 @@ html{background:#060b1c}
 <div class="app">
   <header class="top">
     <div class="logo">
-      <img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="AutoKan" width="168" height="18">
-      <img class="logo-ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="AutoKan" width="42" height="18">
+      <img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="Autokan" width="168" height="18">
+      <img class="logo-ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="Autokan" width="42" height="18">
     </div>
     <div class="chiprow" id="chiprow">
     <button type="button" class="fbtn" id="fbtn" aria-haspopup="dialog" aria-controls="drawer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M6 10h8M8.5 15h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Filtros<span class="fcount" id="fcount" hidden></span></button>
@@ -1080,7 +1082,7 @@ html{background:#060b1c}
 <div class="scrim" id="scrim" hidden></div>
 <section class="dbp" id="rdPanel" role="dialog" aria-modal="true" aria-labelledby="rdTitle" hidden>
   <div class="dbp-in" style="width:min(860px,100%)">
-    <header class="dbp-head"><div><h2 id="rdTitle">Radar de lançamentos</h2><p class="dbp-sub">Só você vê. Novidades do mercado 0 km no Brasil para manter o AutoKan atualizado; a busca roda sozinha várias vezes por dia.</p></div><button type="button" class="dr-x" id="rdClose" aria-label="Fechar radar">✕</button></header>
+    <header class="dbp-head"><div><h2 id="rdTitle">Radar de lançamentos</h2><p class="dbp-sub">Só você vê. Novidades do mercado 0 km no Brasil para manter o Autokan atualizado; a busca roda sozinha várias vezes por dia.</p></div><button type="button" class="dr-x" id="rdClose" aria-label="Fechar radar">✕</button></header>
     <div class="dbp-tools" id="rdTools"></div>
     <div class="dbp-body" id="rdBody"></div>
   </div>
@@ -1088,7 +1090,7 @@ html{background:#060b1c}
 <div class="rd-toast" id="rdToast" role="status" hidden></div>
 <section class="dbp" id="dbPanel" role="dialog" aria-modal="true" aria-labelledby="dbTitle" hidden>
   <div class="dbp-in">
-    <header class="dbp-head"><div><h2 id="dbTitle">Banco de dados</h2><p class="dbp-sub">Só editores veem este painel. Marcas, modelos e versões como estão gravados na base do AutoKan.</p></div><button type="button" class="dr-x" id="dbClose" aria-label="Fechar banco de dados">✕</button></header>
+    <header class="dbp-head"><div><h2 id="dbTitle">Banco de dados</h2><p class="dbp-sub">Só editores veem este painel. Marcas, modelos e versões como estão gravados na base do Autokan.</p></div><button type="button" class="dr-x" id="dbClose" aria-label="Fechar banco de dados">✕</button></header>
     <div class="dbp-tabs" id="dbTabs"><button type="button" data-dbtab="all" aria-pressed="true">Banco completo</button><button type="button" data-dbtab="new" aria-pressed="false">Novidades da internet<b id="dbNewN" hidden>0</b></button></div>
     <div class="dbp-stats" id="dbStats"></div>
     <div class="dbp-tools">
@@ -1112,7 +1114,7 @@ html{background:#060b1c}
 <aside class="drawer sheet" id="authPanel" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
   <div class="as-in">
     <button type="button" class="dr-x" id="authClose" aria-label="Fechar">✕</button>
-    <img class="as-logo" src="/marca/autokan-logo-geral-escuro.png?v=5" alt="AutoKan · Knowledge · Analysis · Navigation" width="300" height="41">
+    <img class="as-logo" src="/marca/autokan-logo-geral-escuro.png?v=5" alt="Autokan · Knowledge · Analysis · Navigation" width="300" height="41">
     <div class="dr-head"><h2 id="authTitle">Sua conta</h2></div>
     <div class="dr-body" id="authBody"></div>
   </div>
@@ -1588,7 +1590,7 @@ function headerFor(){
 }
 function emptyHTML(i){
   const [lo,hi]=bandAt(i);
-  if(!loaded)return `<div class="row-empty"><div class="empty"><b>${loadErr?"Biblioteca indisponível":"Carregando a biblioteca"}</b>${loadErr||"Buscando as versões 0 km no banco do AutoKan…"}</div></div>`;
+  if(!loaded)return `<div class="row-empty"><div class="empty"><b>${loadErr?"Biblioteca indisponível":"Carregando a biblioteca"}</b>${loadErr||"Buscando as versões 0 km no banco do Autokan…"}</div></div>`;
   const pool=CARS.filter(c=>c.p&&matches(c));
   if(!pool.length)return `<div class="row-empty"><div class="empty"><b>Nenhum carro com esses filtros</b>Tire um dos filtros lá em cima para ver mais modelos.</div></div>`;
   const below=pool.filter(c=>K(c)<lo).sort((x,y)=>y.p-x.p)[0],above=pool.filter(c=>K(c)>hi).sort((x,y)=>x.p-y.p)[0];
@@ -1680,7 +1682,7 @@ function openTip(btn){
   if(tipFor===btn)return closeTip();closeTip();const k=btn.dataset.tip;
   const cd=btn.closest("[data-id]"),car=cd&&ALLCARS.find(c=>c.id===cd.dataset.id),why=car&&car.why&&car.why[k];
   tipEl=document.createElement("div");tipEl.className="tip";tipEl.setAttribute("role","tooltip");
-  tipEl.innerHTML=`<span class="ic" data-k="${k}">${ico(k)}</span><div><b>${TAGS[k]}</b><p>${TAGDESC[k]||""}</p>${why?`<p class="why"><em>Por que este carro tem:</em> ${esc(why)}</p>`:""}${TAGRULE[k]&&TAGRULE[k]!==why?`<p class="rule"><em>Critério do AutoKan:</em> ${TAGRULE[k]}</p>`:""}</div>`;
+  tipEl.innerHTML=`<span class="ic" data-k="${k}">${ico(k)}</span><div><b>${TAGS[k]}</b><p>${TAGDESC[k]||""}</p>${why?`<p class="why"><em>Por que este carro tem:</em> ${esc(why)}</p>`:""}${TAGRULE[k]&&TAGRULE[k]!==why?`<p class="rule"><em>Critério do Autokan:</em> ${TAGRULE[k]}</p>`:""}</div>`;
   document.body.appendChild(tipEl);tipFor=btn;
   const r=btn.getBoundingClientRect(),w=tipEl.offsetWidth,h=tipEl.offsetHeight;
   let x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2)),y=r.top-h-10,below=false;
@@ -2086,7 +2088,7 @@ function renderNews(mid){
   nfBody.innerHTML=`<div class="nf-list">${items.map(i=>`<a class="nf-item" href="${esc(safeUrl(i.url))}" target="_blank" rel="noopener noreferrer">
       <span class="nf-meta"><span>${esc(i.source||"")}</span>${i.date?`<i class="dot"></i><time datetime="${esc(i.date)}">${fdate(i.date)}</time>`:""}</span>
       <h4>${esc(i.title)}</h4>${i.summary?`<p>${esc(i.summary)}</p>`:""}<span class="nf-go">Ler na fonte ↗</span></a>`).join("")}</div>
-    <p class="nf-note">Resumos escritos pelo AutoKan a partir das matérias. Toque numa notícia para ler o texto completo no site da fonte.${d.updated_at?` Atualizado em ${fdate(d.updated_at)}.`:""}</p>`;
+    <p class="nf-note">Resumos escritos pelo Autokan a partir das matérias. Toque numa notícia para ler o texto completo no site da fonte.${d.updated_at?` Atualizado em ${fdate(d.updated_at)}.`:""}</p>`;
 }
 let newsFor=null;
 function openNews(mid){closeTip&&closeTip();lastFocus=document.activeElement;newsFor=mid;renderNews(mid);newsPanel.hidden=false;scrim.hidden=false;nfBody.scrollTop=0;document.getElementById("nfClose").focus()}
@@ -2169,7 +2171,7 @@ function renderAL(mid){
     <div class="nf-list">${list.map(i=>`<a class="nf-item" href="${esc(safeUrl(i.url))}" target="_blank" rel="noopener noreferrer">
       <span class="nf-meta"><span class="al-kind${i.kind==="recall"?" recall":""}">${esc(ALKIND[i.kind]||"Atenção")}</span><span>${esc(i.source||"")}</span>${i.date?`<i class="dot"></i><time datetime="${esc(i.date)}">${fdate(i.date)}</time>`:""}</span>
       <h4>${esc(i.title)}</h4>${i.summary?`<p>${esc(i.summary)}</p>`:""}${i.affects?`<p><b>Quais carros:</b> ${esc(i.affects)}</p>`:""}<span class="nf-go">Ler na fonte ↗</span></a>`).join("")}</div>
-    <p class="nf-note">Avisos reunidos pelo AutoKan a partir de comunicados de recall e da imprensa. Nem todo aviso atinge todas as unidades; confira os detalhes na fonte.${a&&a.updated_at?` Atualizado em ${fdate(a.updated_at)}.`:""}</p>`;
+    <p class="nf-note">Avisos reunidos pelo Autokan a partir de comunicados de recall e da imprensa. Nem todo aviso atinge todas as unidades; confira os detalhes na fonte.${a&&a.updated_at?` Atualizado em ${fdate(a.updated_at)}.`:""}</p>`;
 }
 function openPanel(kind,mid,vid){closeTip&&closeTip();closePanel(true);lastFocus=document.activeElement;
   const pn=kind==="cm"?cmPanel:alPanel;if(kind==="cm"){cmFor=mid;cmScope=vid||"";renderCM(mid)}else{alFor=mid;renderAL(mid)}
@@ -2760,7 +2762,7 @@ document.getElementById("ipClose").onclick=closeImg;
   bandChanged();
   try{
     const [d,u]=await Promise.all([claude.use("db"),claude.use("user")]);
-    if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Abra o AutoKan pelo link com sua conta conectada para ver a biblioteca.";swap();return}
+    if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Abra o Autokan pelo link com sua conta conectada para ver a biblioteca.";swap();return}
     db=d;userNS=u;myId=u?await u.id():null;
     const timer=setTimeout(()=>{if(!live)status("Sem conexão com os favoritos",false)},10000);
     const ct=setTimeout(()=>{if(!loaded){loadErr="Não deu para conectar ao banco. Verifique a internet; a página tenta de novo sozinha.";swap()}},10000);

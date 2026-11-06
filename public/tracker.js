@@ -1,4 +1,4 @@
-/* AutoKan: medição de uso (visitas, pessoas online, origem, aparelho e ações).
+/* Autokan: medição de uso (visitas, pessoas online, origem, aparelho e ações).
  *
  * COMO USAR
  * 1. Coloque em todas as páginas, no <head>, antes dos outros scripts:

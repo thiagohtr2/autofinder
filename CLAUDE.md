@@ -1,6 +1,6 @@
 # Instruções para o Claude
 
-Projeto AutoKan (antes giroauto; repositório autofinder). Escreva commits, PRs e mensagens em português do Brasil.
+Projeto Autokan (antes giroauto; repositório autofinder). Escreva commits, PRs e mensagens em português do Brasil.
 
 ## Como as mudanças vão para o ar
 
