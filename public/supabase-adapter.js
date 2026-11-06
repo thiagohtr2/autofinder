@@ -58,6 +58,7 @@
   // ---------- sessão
 
   let currentUser = null;
+  let settingsPromise = null;
   let isAdmin = false;
 
   const ready = (async () => {
@@ -81,7 +82,17 @@
 
   window.giroAuth = {
     ready,
-    current: () => (currentUser ? { email: currentUser.email, isAdmin } : null),
+    current: () => {
+      if (!currentUser) return null;
+      const meta = currentUser.user_metadata || {};
+      return { email: currentUser.email, isAdmin, name: meta.full_name || meta.name || "", avatar: typeof meta.avatar_url === "string" && /^https:\/\//.test(meta.avatar_url) ? meta.avatar_url : "" };
+    },
+    // o que está ligado no Supabase (ex.: login com Google), para o site não oferecer o que não funciona
+    authSettings() {
+      if (!settingsPromise) settingsPromise = fetch(SUPABASE_URL + "/auth/v1/settings", { headers: { apikey: SUPABASE_ANON_KEY } })
+        .then((r) => (r.ok ? r.json() : null)).catch(() => null);
+      return settingsPromise;
+    },
     async signIn(email, password) {
       const { error } = await sb.auth.signInWithPassword({ email, password });
       if (error) throw toError(error);
