@@ -7,7 +7,7 @@ import { ICONS, TAGDESC } from "./pontos-fortes.mjs";
 
 export const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
 const num = (n) => String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const reais = (n) => `R$ ${num(n)}`;
+const reais = (n) => `R$\u00a0${num(n)}`; // sem quebra de linha entre "R$" e o valor
 const pl = (n, um, varios) => `${num(n)} ${n === 1 ? um : varios}`;
 const MESES = ["jan", "fev", "mar", "abr", "mai", "jun", "jul", "ago", "set", "out", "nov", "dez"];
 const mesAno = (s) => { const m = /^(\d{4})-(\d{2})/.exec(s || ""); return m ? `${MESES[+m[2] - 1]}/${m[1]}` : ""; };
@@ -162,6 +162,7 @@ ${["eletrico:#fbf3db:#e0a800", "hibrido:#deeee6:#11864c", "potente:#fae3e0:#d83a
 .chips a[aria-current] small{color:#c9d3e6}
 .lista-top{display:flex;flex-direction:column;gap:14px;padding:6px 0 0}
 .lista-top .chips{margin-top:6px}
+@media (max-width:640px){.lead{font-size:15.5px}.lista-top .chips{flex-wrap:nowrap;overflow-x:auto;margin-left:-16px;margin-right:-16px;padding:2px 16px 6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.lista-top .chips::-webkit-scrollbar{display:none}.lista-top .chips li{flex:none}}
 .marca-top{display:flex;align-items:center;gap:16px;padding:6px 0 0}
 .marca-top .bc-lg{width:64px;height:64px;padding:9px}
 /* rodapé */
@@ -447,7 +448,7 @@ export function paginaLista(base, l) {
   const comp = primeiro ? ` O mais barato é o ${primeiro.m.titulo}, por ${reais(primeiro.de)}.` : "";
   let h1, titulo, desc, lead;
   if (ehFaixa) {
-    const faixaTxt = l.max === Infinity ? `acima de R$ ${num(l.min - 1)}` : `até R$ ${num(l.max)}`;
+    const faixaTxt = l.max === Infinity ? `acima de ${reais(l.min - 1)}` : `até ${reais(l.max)}`;
     h1 = `${l.titulo} em ${ano}`;
     titulo = `${l.titulo} em ${ano}: ${pl(n, "modelo", "modelos")} | Autokan`;
     lead = `${n === 1 ? "Há 1 modelo" : `Há ${num(n)} modelos`} 0 km com versões ${faixaTxt} à venda no Brasil, do mais barato ao mais caro.${comp}${porTipo.length > 1 ? ` Entre eles: ${lista(porTipo.slice(0, 5).map(([t, q]) => `${q} ${nomeTipo(t, q)}`))}.` : ""}`;
