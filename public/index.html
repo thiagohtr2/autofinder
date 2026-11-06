@@ -1187,6 +1187,7 @@ html{background:#060b1c}
   .nwbtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 }
 @media (max-width:760px){.status{display:none}}
+.sh-tbl sup.ftr{font-size:10px;font-weight:700;color:#5d6577;margin-left:2px}.ftl{margin:0;padding-left:18px;font-size:12.5px;line-height:1.45;color:#5d6577}.ftl li{margin:3px 0}.ftl a{font-weight:700}
 </style>
 
 <div class="app pre">
@@ -2324,8 +2325,19 @@ function setSheetNav(c){
 function sheetStep(d){const t=shList[shIdx+d];if(!t)return;openInfo(t.id);shBody.scrollTop=0}
 document.getElementById("shPrev").onclick=()=>sheetStep(-1);document.getElementById("shNext").onclick=()=>sheetStep(1);
 addEventListener("keydown",e=>{if(sheet.hidden||e.target.closest("input,textarea"))return;if(e.key==="ArrowLeft"){e.preventDefault();sheetStep(-1)}else if(e.key==="ArrowRight"){e.preventDefault();sheetStep(1)}});
+/* ficha técnica da versão (versions.specs, cada dado com fonte): os campos e o formato vêm de /ficha-tecnica.mjs,
+   o mesmo arquivo das páginas do carro; as fontes aparecem numeradas embaixo, com link e data da consulta */
+let FTM=null,FTP=null;const fichaMod=()=>FTP||(FTP=import("/ficha-tecnica.mjs").then(m=>FTM=m).catch(()=>null));
+function fichaSheet(v,fts){
+  if(!v)return `<section class="dr-group"><h3>Ficha técnica</h3><div class="sh-meta">Carregando…</div></section>`;
+  const f=FTM&&v.specs?FTM.fichaDe(v.specs):[];
+  if(!f.length)return `<section class="dr-group"><h3>Ficha técnica</h3><div class="sh-meta">Esta versão ainda não tem ficha técnica confirmada. Os dados só entram com fonte.</div></section>`;
+  const ordem=[];f.forEach(g=>g.itens.forEach(i=>i.s.forEach(x=>{if(!ordem.includes(x))ordem.push(x)})));
+  return f.map(g=>`<section class="dr-group"><h3>${esc(g.grupo)}</h3><table class="sh-tbl">${g.itens.map(i=>`<tr><th>${esc(i.rot)}</th><td>${esc(i.t)}<sup class="ftr" title="Fonte ${i.s.map(x=>ordem.indexOf(x)+1).join(", ")}">${i.s.map(x=>ordem.indexOf(x)+1).join(",")}</sup></td></tr>`).join("")}</table></section>`).join("")
+    +`<section class="dr-group"><h3>Fontes da ficha técnica</h3><ol class="ftl">${ordem.map(x=>{const o=fts.get(x)||{};return `<li>${o.url&&/^https?:\/\//.test(o.url)?`<a href="${esc(o.url)}" target="_blank" rel="noopener nofollow">${esc(o.name||"Fonte")}</a>`:esc(o.name||"Fonte")}${o.consulted_at?` <small>consultada em ${esc(fdate(o.consulted_at)||o.consulted_at)}</small>`:""}</li>`}).join("")}</ol></section>`;
+}
 async function openInfo(id){
-  const c=ALLCARS.find(x=>x.id===id);if(!c)return;const tok=++shTok;
+  const c=ALLCARS.find(x=>x.id===id);if(!c)return;const tok=++shTok;const fts=new Map();
   if(sheet.hidden)lastFocus=document.activeElement;scrim.hidden=false;sheet.hidden=false;
   setSheetNav(c);if(window.giroTrack)giroTrack("view_car",{version_id:c.id,model_id:c.mid});
   document.getElementById("shTitle").textContent=`${c.mk} ${c.nm}`;
@@ -2353,10 +2365,8 @@ async function openInfo(id){
       <tr><th>Tração</th><td>${val(v&&v.powertrain.drive)}</td></tr>
       <tr><th>Turbo</th><td>${v&&v.powertrain.turbo===true?"Sim":NA}</td></tr>
     </table></section>
-    <section class="dr-group"><h3>Ficha técnica</h3><table class="sh-tbl">
-      ${["Dimensões e porta-malas","Desempenho","Consumo e autonomia","Segurança","Tecnologia","Conforto","Garantia"].map(k=>`<tr><th>${k}</th><td>${NA}</td></tr>`).join("")}
-    </table></section>
-    ${v&&v.quality?`<section class="dr-group"><h3>Completude da ficha · ${+v.quality.completeness_pct||0}%</h3><div class="qbar"><i style="width:${Math.max(0,Math.min(100,+v.quality.completeness_pct||0))}%"></i></div><div class="sh-meta" style="margin-top:6px">Atualizado em ${esc(fdate(v.updated_at)||v.updated_at||"")}. Campos sem fonte ficam como "não informado".</div></section>`:""}
+    ${fichaSheet(v,fts)}
+    ${v&&FTM?(()=>{const q=FTM.completude(v.specs);return `<section class="dr-group"><h3>Completude da ficha · ${q.pct}%</h3><div class="qbar"><i style="width:${q.pct}%"></i></div><div class="sh-meta" style="margin-top:6px">${q.tem.length} de ${q.tem.length+q.faltam.length} dados principais confirmados com fonte.${q.faltam.length?` Falta${q.faltam.length>1?"m":""}: ${esc(q.faltam.join(", ").toLowerCase())}.`:""}</div></section>`})():""}
     <section class="dr-group"><h3>Versões do ${esc(c.nm)}</h3><div class="sh-vers">${sib.map(x=>`<button type="button" data-sib="${x.id}" ${x.id===c.id?'aria-current="true"':""}><span>${esc(x.ver)}${x.ano?` · ${x.ano}`:""}</span><b>${x.p?fmt(x.p):"—"}</b></button>`).join("")}</div></section>
     <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} ${(counts[c.id]||0)===1?"pessoa favoritou":"pessoas favoritaram"} esta versão</div></section>`;
   /* toda ficha abre do topo, com a foto do carro, mesmo que a anterior tenha sido lida até o fim */
@@ -2365,6 +2375,11 @@ async function openInfo(id){
   try{const vs=await db.collection("versions").doc(id).get();if(tok!==shTok)return;const v=vs.exists?vs.data():null;let src=null;
     const sid=v&&v.price&&v.price.source_id;if(sid){const ss=await db.collection("sources").doc(sid).get();if(tok!==shTok)return;src=ss.exists?ss.data():null;if(src&&!/^https?:\/\//.test(src.url||""))src=null;}
     if(v&&!v.powertrain)v.powertrain={};
+    if(v)await fichaMod();if(tok!==shTok)return;
+    if(v&&v.specs&&Object.keys(v.specs).length&&FTM){
+      const ids=[...new Set(FTM.fichaDe(v.specs).flatMap(g=>g.itens.flatMap(i=>i.s)))];
+      const docs=await Promise.all(ids.map(x=>db.collection("sources").doc(x).get().catch(()=>null)));if(tok!==shTok)return;
+      docs.forEach((d,k)=>{if(d&&d.exists)fts.set(ids[k],d.data())});}
     sheetDetails(base(v,src));}catch(e){}
 }
 /* a ficha completa chega depois; a foto fica onde está, senão a animação de entrada toca de novo */
