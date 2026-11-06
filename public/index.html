@@ -421,7 +421,7 @@ button,input{font:inherit;color:inherit}
 .mode{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--bg)}
 .mode button{border:0;background:none;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer}
 .mode button[aria-pressed="true"]{background:var(--ink);color:#fff}
-.ajbtn{display:none}
+.ajbtn,.fuq{display:none}
 .mode-l{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:0 6px 0 9px;align-self:center}
 .sr-right{flex-wrap:wrap;justify-content:flex-end}
 .sr-right{display:flex;align-items:center;gap:12px}
@@ -815,7 +815,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .mode.sort button{height:28px;padding:0 4px;font-size:12px!important;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;color:#3b4352;font-size:12.5px}
   .mode.sort button[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:none}
   /* ordem, Modelos/Versões e filtros ficam atrás de um ícone; abrem e fecham no mesmo botão */
-  .sr-head{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"l t a" "o o o" "m m m"}
+  .sr-head{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"l t a" "f f f" "o o o" "m m m"}
   .mode:not(.sort){display:grid;grid-template-columns:1fr 1fr;margin-top:8px;border-radius:10px;padding:2px}
   .mode:not(.sort) button{height:26px;border-radius:8px}
   .ajbtn{grid-area:a;position:relative;display:grid;place-items:center;width:36px;height:30px;padding:0;border:0;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;color:var(--accent);cursor:pointer;transition:background .15s,color .15s}
@@ -825,7 +825,20 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .app.aj .ajbtn{background:var(--ink);color:#fff;box-shadow:none}
   .ajbtn b{position:absolute;top:-6px;right:-6px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--accent);color:#fff;font:800 10px/17px var(--body);text-align:center;box-shadow:0 0 0 2px #f7faff}
   .app.aj .ajbtn b{display:none}
-  .app:not(.aj) .sr-head .mode,.app:not(.aj) .chiprow{display:none}
+  .app:not(.aj) .sr-head .mode,.app:not(.aj) .chiprow,.app:not(.aj) .fuq{display:none}
+  /* atalhos de combustível dentro da caixa aberta */
+  .fuq{grid-area:f;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:8px}
+  .fuq:empty{display:none}
+  .fq{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;height:50px;padding:0 2px;border:0;border-radius:10px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;font:700 11px var(--body);color:#3b4352;cursor:pointer;transition:background .15s,color .15s}
+  .fq svg{flex:none;width:22px;height:22px;padding:4px;border-radius:50%;box-sizing:border-box}
+  .fq span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;letter-spacing:-.01em}
+  .fq[data-k="eletrico"] svg{background:#fbf3db;color:#e0a800}
+  .fq[data-k="hibrido"] svg{background:#deeee6;color:#11864c}
+  .fq[data-k="plugin"] svg{background:#dcf0f4;color:#0891b2}
+  .fq[data-k="diesel"] svg{background:#fceadd;color:#ea6a0c}
+  .fq[aria-pressed="true"]{background:var(--ink);color:#fff;box-shadow:none}
+  .fq[aria-pressed="true"] svg{background:rgba(255,255,255,.16);color:#fff}
+  .chiprow .pill.fqp{display:none}
 }
 @media (max-width:380px){
   .top{gap:8px}
@@ -837,12 +850,15 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .mode button{padding:4px 7px;font-size:11px}
   .sr-title{font-size:14px;letter-spacing:-.05em}
   .sr-head::before{display:none}
-  .sr-head{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"t a" "o o" "m m"}
+  .sr-head{grid-template-columns:minmax(0,1fr) auto;grid-template-areas:"t a" "f f" "o o" "m m"}
   .mode.sort button{font-size:11px!important;padding:0 1px}
+  .fq{font-size:10.5px}
   .sr-head{gap:0 6px}
   .mode:not(.sort) button{padding:3px 8px;font-size:11px}
   .mode.sort button{font-size:11.5px}
 }
+/* tablet: cabe ícone e nome lado a lado */
+@media (min-width:560px) and (max-width:760px){.fq{flex-direction:row;gap:6px;height:36px;font-size:12px}}
 .dial.short .ro-btns .jump{display:none}
 @media (prefers-reduced-motion: reduce){.row:not(.ghost) .c-dn,.card.enter,.card.leave,.sweep.go::before,.like.pop svg,.sh-hero img{animation:none}.card,.stage img,.stage svg.car{transition:none}}
 /* editor de imagens (administrador) */
@@ -962,6 +978,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
         <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar</span><button type="button" data-sort="likes" aria-pressed="false">Curtidas</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
+        <span class="fuq" id="fuq" role="group" aria-label="Filtrar por combustível"></span>
         <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><b id="ajN" hidden></b></button>
       </div>
       <div class="stagewrap">
@@ -1625,6 +1642,8 @@ const GROUPS=[
   {key:"k",title:"Pontos fortes",multi:c=>c.k.map(k=>TAGS[k]),order:Object.values(TAGS)},
 ];
 const F={};GROUPS.forEach(g=>F[g.key]=new Set());
+const FUQ=[["Elétrico","eletrico","Elétrico"],["Híbrido","hibrido","Híbrido"],["Híbrido plug-in","plugin","Plug-in"],["Diesel","diesel","Diesel"]];
+const PLUG_ICO='<path d="M9 3v5M15 3v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M6 8h12v3a6 6 0 0 1-12 0z" fill="currentColor"/><path d="M12 17v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
 const vals=(g,c)=>(g.multi?g.multi(c):[g.val(c)]).filter(v=>v!=null);
 let DEAL=false,PRICE_CHANGES=[];
 const isReduced=c=>!!(c.pc&&c.pc.new_price<c.pc.old_price);
@@ -1696,8 +1715,9 @@ function renderDrawer(){
 function renderPills(){
   const reduced=CARS.filter(isReduced).length;
   document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
-  const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
+  const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill${g.key==="fu"&&FUQ.some(f=>f[0]===v)?" fqp":""}" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
+  document.getElementById("fuq").innerHTML=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)).map(([v,k,l])=>`<button type="button" class="fq" data-fu="${v}" data-k="${k}" data-ev="comb-${k}" aria-pressed="${F.fu.has(v)}" aria-label="${v}" title="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${k==="plugin"?PLUG_ICO:ICONS[k]}</svg><span>${l}</span></button>`).join("");
   const fc=document.getElementById("fcount"),n=activeCount();fc.hidden=!n;fc.textContent=n;
   const an=document.getElementById("ajN");an.hidden=!n;an.textContent=n;
   document.getElementById("ajBtn").setAttribute("aria-label",ajLabel());
@@ -1714,6 +1734,12 @@ function setAj(on,save){
 }
 {let on=false;try{on=localStorage.getItem("autokan_ajustes")==="1"}catch(e){}setAj(on,false)}
 ajBtn.addEventListener("click",()=>setAj(!APP.classList.contains("aj"),true));
+/* atalhos de combustível (celular e tablet): ligam e desligam o mesmo filtro da gaveta; se a faixa atual ficar vazia, a roleta vai ao carro mais próximo */
+document.getElementById("fuq").addEventListener("click",e=>{
+  const b=e.target.closest("[data-fu]");if(!b)return;const v=b.dataset.fu,on=!F.fu.has(v);on?F.fu.add(v):F.fu.delete(v);filtersChanged();
+  if(on&&!listAt(dial.sel).length){const [lo,hi]=band(),mid=(lo+hi)/2,near=CARS.filter(c=>c.p&&matches(c)).sort((a,b)=>Math.abs(K(a)-mid)-Math.abs(K(b)-mid))[0];
+    if(near)dial.goTo(clamp(VALUES.findIndex(v=>v>=K(near))))}
+});
 function filtersChanged(){renderPills();if(!drawer.hidden)renderDrawer();swap()}
 let lastFocus=null;
 function openDrawer(){lastFocus=document.activeElement;DRCAT="mk";renderDrawer();drawer.hidden=false;scrim.hidden=false;document.getElementById("drClose").focus()}
