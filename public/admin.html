@@ -223,7 +223,7 @@ function showGate(kind, msg){
       <p class="err" id="gErr" role="alert" hidden></p>
       <button class="btn primary" type="submit" id="gGo">Entrar</button>
     </form>
-    <button class="btn gbtn" type="button" id="gGoogle">${G_ICON}Entrar com Google</button>
+    <button class="btn gbtn" type="button" id="gGoogle" hidden>${G_ICON}Entrar com Google</button>
     <p>Só a conta admin vê os números.</p>`;
   $("gForm").onsubmit = async e => {
     e.preventDefault(); const err = $("gErr"); err.hidden = true; $("gGo").disabled = true;
@@ -232,6 +232,7 @@ function showGate(kind, msg){
     if (error){ err.textContent = /invalid/i.test(error.message) ? "E-mail ou senha incorretos." : "Não deu para entrar agora. Tente de novo."; err.hidden = false; return; }
     boot();
   };
+  fetch("https://ljgcvxadsekaicffztbi.supabase.co/auth/v1/settings", {headers: {apikey: sb.supabaseKey}}).then(r => r.ok ? r.json() : null).then(st => { const g = $("gGoogle"); if (g && st && st.external && st.external.google) g.hidden = false; }).catch(() => {});
   $("gGoogle").onclick = async () => {
     const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + "/admin.html" } });
     if (error) toast("O login com Google ainda não está ligado no Supabase.");

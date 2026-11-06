@@ -153,6 +153,26 @@ button,input{font:inherit;color:inherit}
 .sclose svg{width:14px;height:14px}
 .pbtn{width:36px;height:36px;flex:0 0 auto;border-radius:50%;border:0;background:#eaf1ff;color:var(--accent);display:grid;place-items:center;cursor:pointer;box-shadow:inset 0 0 0 1.5px #c9dafa;transition:all .2s var(--ease)}
 .pbtn svg{width:18px;height:18px}
+.pwrap{position:relative;z-index:40}
+.pbtn{position:relative}
+.p-dot{position:absolute;top:-1px;right:-1px;width:10px;height:10px;border-radius:50%;background:var(--like);box-shadow:0 0 0 2px var(--bg)}
+.pmenu{position:absolute;right:0;top:calc(100% + 8px);width:300px;max-width:calc(100vw - 32px);background:var(--bg);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px -24px rgba(12,17,28,.45);padding:6px;display:flex;flex-direction:column;gap:2px;white-space:normal;animation:fade .15s}
+.pm-head{display:flex;align-items:center;gap:10px;padding:10px 10px 12px;border-bottom:1px solid var(--line);margin-bottom:4px;min-width:0}
+.pm-av{width:36px;height:36px;flex:none;border-radius:50%;background:#eaf1ff;color:var(--accent);display:grid;place-items:center;font:700 14px var(--display);overflow:hidden}
+.pm-av img{width:100%;height:100%;object-fit:cover}
+.pm-who{display:flex;flex-direction:column;min-width:0}
+.pm-who b{font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-who small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pm-sec{display:flex;flex-direction:column;gap:2px}
+.pm-sec+.pm-sec{border-top:1px solid var(--line);padding-top:4px;margin-top:2px}
+.pm-h{font-size:10.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 10px 4px}
+.pm-item{display:flex;align-items:center;gap:11px;width:100%;border:0;background:none;border-radius:10px;padding:9px 10px;font:600 13.5px var(--body);color:var(--ink);text-align:left;text-decoration:none;cursor:pointer;position:relative}
+.pm-item:hover,.pm-item:focus-visible{background:var(--panel)}
+.pm-item:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.pm-item svg{width:18px;height:18px;flex:none;color:var(--muted)}
+.pm-item span{display:flex;flex-direction:column;gap:1px;min-width:0;flex:1}
+.pm-item small{font-size:11.5px;font-weight:500;color:var(--muted)}
+.pm-item .rd-dot{position:static;flex:none}
 .pbtn:hover{background:var(--accent);color:#fff;box-shadow:none}
 .pbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .search{position:relative;flex:0 1 260px;min-width:170px;display:flex;align-items:center}
@@ -898,13 +918,23 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     </div>
     <div class="meta">
       <div class="status" id="status"><i></i><span>Conectando</span></div>
-      <button type="button" class="editbtn rdbtn" id="rdbtn" hidden>Radar<b class="rd-dot" id="rdDot" hidden></b></button>
-      <button type="button" class="editbtn rdbtn" id="dbbtn" hidden>Banco<b class="rd-dot" id="dbDot" hidden style="background:var(--accent)"></b></button>
-      <button type="button" class="editbtn" id="editbtn" hidden>Imagens</button>
       <button type="button" class="sbtn" id="sbtn" aria-label="Buscar carro" aria-expanded="false" aria-controls="q"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <button type="button" class="editbtn authbtn" id="loginbtn" hidden>Entrar</button>
       <button type="button" class="editbtn authbtn primary" id="signupbtn" hidden>Cadastrar</button>
-      <button type="button" class="pbtn" id="pbtn" aria-label="Sua conta" title="Sua conta" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c1-3.2 3.6-4.8 6.5-4.8s5.5 1.6 6.5 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <div class="pwrap">
+      <button type="button" class="pbtn" id="pbtn" aria-label="Sua conta" title="Sua conta" aria-haspopup="menu" aria-expanded="false" aria-controls="pmenu" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="7" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 17c1-3.2 3.6-4.8 6.5-4.8s5.5 1.6 6.5 4.8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><b class="p-dot" id="pDot" hidden></b></button>
+      <div class="pmenu" id="pmenu" role="menu" aria-label="Sua conta" hidden>
+        <div class="pm-head"><span class="pm-av" id="pmAv" aria-hidden="true"></span><span class="pm-who"><b id="pmName"></b><small id="pmEmail"></small></span></div>
+        <div class="pm-sec" id="pmAdmin" hidden>
+          <div class="pm-h">Administração</div>
+          <a class="pm-item" role="menuitem" href="/admin.html" id="pmPainel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16V9m5 7V4m5 12v-5m4 5H2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Painel de uso<small>Visitas, cadastros e o que as pessoas fazem</small></span></a>
+          <button type="button" class="pm-item" role="menuitem" id="dbbtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="6" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 4.5v11c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-11M4 10c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Banco de dados<small>Marcas, modelos, versões e o que aparece no site</small></span><b class="rd-dot" id="dbDot" hidden style="background:var(--accent)"></b></button>
+          <button type="button" class="pm-item" role="menuitem" id="rdbtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="10" r="7.2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="3.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 10 15 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Radar de lançamentos<small>Novidades do mercado para revisar</small></span><b class="rd-dot" id="rdDot" hidden></b></button>
+          <button type="button" class="pm-item" role="menuitem" id="editbtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="15" height="13" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3 14 4.5-4.5 3.5 3.5 2.5-2.5 3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="13.5" cy="7.5" r="1.4" fill="currentColor"/></svg><span>Imagens<small>Fotos dos carros e logos das marcas</small></span></button>
+        </div>
+        <div class="pm-sec"><button type="button" class="pm-item" role="menuitem" id="pmOut"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8 4H5a1.5 1.5 0 0 0-1.5 1.5v9A1.5 1.5 0 0 0 5 16h3m4-9.5L15.5 10 12 13.5M15.5 10H8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Sair</span></button></div>
+      </div>
+      </div>
     </div>
   </header>
 
@@ -1281,8 +1311,8 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
     document.getElementById("authOut").onclick=async()=>{try{await giroAuth.signOut();location.reload()}catch(e){toast("Não deu para sair. Tente de novo.")}};return}
   const signup=authMode==="signup";title.textContent=signup?"Criar conta":"Entrar";
   authBody.innerHTML=`<div class="auth-stack">${authReason?`<p class="auth-why">${authReason}</p>`:""}<div class="auth-tabs" role="group" aria-label="Entrar ou criar conta"><button type="button" data-auth-mode="login" aria-pressed="${!signup}">Entrar</button><button type="button" data-auth-mode="signup" aria-pressed="${signup}">Cadastrar</button></div>
-    <button type="button" class="gbtn" id="authGoogle">${G_ICON}${signup?"Cadastrar com Google":"Entrar com Google"}</button>
-    <div class="auth-or">ou com e-mail</div></div>
+    <div class="auth-stack" id="authG" hidden><button type="button" class="gbtn" id="authGoogle">${G_ICON}${signup?"Cadastrar com Google":"Entrar com Google"}</button>
+    <div class="auth-or">ou com e-mail</div></div></div>
     <form class="cm-form auth-form" id="authForm">
       ${authInput("E-mail","authEmail","email",signup?"email":"username")}
       ${signup?authInput("Repita o e-mail","authEmail2","email","email",'autocapitalize="off"'):""}
@@ -1294,6 +1324,7 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
     </form>`;
   const emailField=document.getElementById("authEmail");emailField.value=authDraftEmail;
   authBody.querySelectorAll("[data-auth-mode]").forEach(b=>b.onclick=()=>{authDraftEmail=emailField.value;authMode=b.dataset.authMode;renderAuth();focusAuth()});
+  giroAuth.authSettings().then(st=>{const g=document.getElementById("authG");if(g&&st&&st.external&&st.external.google)g.hidden=false});
   document.getElementById("authGoogle").onclick=async()=>{try{localStorage.setItem("autokan_oauth",String(Date.now()))}catch(e){}
     try{await giroAuth.signInWithGoogle()}catch(x){try{localStorage.removeItem("autokan_oauth")}catch(e){}toast("Não deu para abrir o login do Google agora. Use o e-mail ou tente de novo.")}};
   document.getElementById("authForm").onsubmit=async e=>{e.preventDefault();
@@ -1327,7 +1358,27 @@ function askAccount(kind,id){const c=ALLCARS.find(x=>x.id===id),nm=c?`o ${esc(c.
   openAuth("signup")}
 function trackThenReload(kind,meta){if(window.giroTrack)giroTrack(kind,{meta:meta||{}});setTimeout(()=>location.reload(),350)}
 const G_ICON='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
-document.getElementById("pbtn").onclick=()=>openAuth();
+/* menu do perfil: conta, administração (só admin) e sair */
+const pbtn=document.getElementById("pbtn"),pmenu=document.getElementById("pmenu");
+const pmItems=()=>[...pmenu.querySelectorAll(".pm-item")].filter(x=>!x.hidden&&!x.closest("[hidden]"));
+function openPMenu(){const me=giroAuth.current();if(!me)return openAuth();
+  const name=me.name||me.email.split("@")[0];document.getElementById("pmName").textContent=name;document.getElementById("pmEmail").textContent=me.email;
+  const av=document.getElementById("pmAv");av.textContent="";if(me.avatar){const im=document.createElement("img");im.src=me.avatar;im.alt="";im.referrerPolicy="no-referrer";av.appendChild(im)}else av.textContent=name.trim().charAt(0).toUpperCase();
+  document.getElementById("pmAdmin").hidden=!me.isAdmin;
+  pmenu.hidden=false;pbtn.setAttribute("aria-expanded","true");const f=pmItems()[0];f&&f.focus()}
+function closePMenu(focus){if(pmenu.hidden)return;pmenu.hidden=true;pbtn.setAttribute("aria-expanded","false");if(focus)pbtn.focus()}
+pbtn.onclick=()=>pmenu.hidden?openPMenu():closePMenu(true);
+// ao escolher uma opção, o menu fecha antes e o foco volta para o ícone (os painéis devolvem o foco para ele ao fechar)
+pmenu.addEventListener("click",e=>{if(e.target.closest(".pm-item"))closePMenu(true)},true);
+document.addEventListener("click",e=>{if(!pmenu.hidden&&!e.target.closest(".pwrap"))closePMenu(false)});
+pmenu.addEventListener("keydown",e=>{const it=pmItems(),i=it.indexOf(document.activeElement);
+  if(e.key==="Escape"){e.preventDefault();e.stopPropagation();closePMenu(true)}
+  else if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();const n=it[(i+(e.key==="ArrowDown"?1:-1)+it.length)%it.length];n&&n.focus()}
+  else if(e.key==="Tab"&&(e.shiftKey?i===0:i===it.length-1))closePMenu(false)});
+document.getElementById("pmOut").onclick=async()=>{try{await giroAuth.signOut();location.reload()}catch(e){toast("Não deu para sair. Tente de novo.")}};
+// pendências do radar e do banco viram um ponto no ícone de perfil
+{const sync=()=>{document.getElementById("pDot").hidden=document.getElementById("rdDot").hidden&&document.getElementById("dbDot").hidden};
+ const mo=new MutationObserver(sync);["rdDot","dbDot"].forEach(id=>mo.observe(document.getElementById(id),{attributes:true,attributeFilter:["hidden"]}));}
 document.getElementById("loginbtn").onclick=()=>openAuth("login");
 document.getElementById("signupbtn").onclick=()=>openAuth("signup");
 /* o link de confirmação vencido volta para o site com o erro no endereço */
