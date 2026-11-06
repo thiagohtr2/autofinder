@@ -18,26 +18,26 @@ function texto(d) {
 /* campos que juntam mais de um dado (flex, kgfm e Nm) */
 function potencia(g) {
   const e = g["potencia_cv_etanol"], ga = g["potencia_cv_gasolina"];
-  if (e && ga && e.v !== ga.v) return { t: `${num(e.v)} cv (etanol) · ${num(ga.v)} cv (gasolina)`, s: [e.s, ga.s] };
+  if (e && ga && e.v !== ga.v) return { t: `${num(e.v)} cv (etanol) · ${num(ga.v)} cv (gasolina)`, s: [e.s, ga.s], r: e.r };
   const d = g["potencia_cv"] || e || ga;
-  return d ? { t: `${num(d.v)} cv`, s: [d.s] } : null;
+  return d ? { t: `${num(d.v)} cv`, s: [d.s], r: d.r } : null;
 }
 function torque(g, base = "torque") {
   const par = (sufixo) => {
     const k = g[`${base}_kgfm${sufixo}`], n = g[`${base}_nm${sufixo}`];
-    if (k && n) return { t: `${num(k.v)} kgfm (${num(n.v)} Nm)`, s: [k.s, n.s] };
-    if (k) return { t: `${num(k.v)} kgfm (≈ ${num(k.v * NM_POR_KGFM, 0)} Nm)`, s: [k.s] };
-    if (n) return { t: `${num(n.v)} Nm (≈ ${num(n.v / NM_POR_KGFM, 1)} kgfm)`, s: [n.s] };
+    if (k && n) return { t: `${num(k.v)} kgfm (${num(n.v)} Nm)`, s: [k.s, n.s], r: k.r };
+    if (k) return { t: `${num(k.v)} kgfm (≈ ${num(k.v * NM_POR_KGFM, 0)} Nm)`, s: [k.s], r: k.r };
+    if (n) return { t: `${num(n.v)} Nm (≈ ${num(n.v / NM_POR_KGFM, 1)} kgfm)`, s: [n.s], r: n.r };
     return null;
   };
   const e = par("_etanol"), ga = par("_gasolina");
-  if (e && ga && e.t !== ga.t) return { t: `${e.t} etanol · ${ga.t} gasolina`, s: [...e.s, ...ga.s] };
+  if (e && ga && e.t !== ga.t) return { t: `${e.t} etanol · ${ga.t} gasolina`, s: [...e.s, ...ga.s], r: e.r };
   return par("") || e || ga;
 }
 function autonomia(g) {
   const d = g["eletrica_km"]; if (!d) return null;
   const c = g["ciclo"];
-  return { t: `${num(d.v)} km${c ? ` (${c.v})` : ""}`, s: c ? [d.s, c.s] : [d.s] };
+  return { t: `${num(d.v)} km${c ? ` (${c.v})` : ""}`, s: c ? [d.s, c.s] : [d.s], r: d.r };
 }
 
 /* grupos na ordem da ficha: [grupo do banco, campo ou função, rótulo] */
@@ -92,7 +92,7 @@ export const GRUPOS = [
   ]],
 ];
 
-/* lista [{grupo, itens:[{rot, t, s:[ids de fonte]}]}] de uma versão; vazia quando não há dado */
+/* lista [{grupo, itens:[{rot, t, s:[ids de fonte], r:referência}]}] de uma versão; vazia quando não há dado */
 export function fichaDe(specs) {
   if (!specs || typeof specs !== "object") return [];
   const out = [];
@@ -102,8 +102,8 @@ export function fichaDe(specs) {
       const dados = specs[g] || {};
       let r = null;
       if (typeof campo === "function") r = campo(dados);
-      else { const t = texto(dados[campo]); if (t) r = { t, s: [dados[campo].s] }; }
-      if (r) itens.push({ rot, chave: typeof campo === "string" ? `${g}.${campo}` : `${g}.${rot}`, t: r.t, s: [...new Set(r.s.filter(Boolean))] });
+      else { const t = texto(dados[campo]); if (t) r = { t, s: [dados[campo].s], r: dados[campo].r }; }
+      if (r) itens.push({ rot, chave: typeof campo === "string" ? `${g}.${campo}` : `${g}.${rot}`, t: r.t, s: [...new Set(r.s.filter(Boolean))], r: r.r || null });
     }
     if (itens.length) out.push({ grupo, itens });
   }
@@ -127,4 +127,10 @@ export function completude(specs) {
   const s = specs && typeof specs === "object" ? specs : {};
   const tem = PRINCIPAIS.filter(([, f]) => f(s)).map(([n]) => n);
   return { pct: Math.round((tem.length / PRINCIPAIS.length) * 100), tem, faltam: PRINCIPAIS.map(([n]) => n).filter((n) => !tem.includes(n)) };
+}
+
+/* ano da ficha usada quando é diferente do ano-modelo da versão (ex.: dado da ficha 2026 num carro 2027); senão null */
+export function anoOutro(item, anoVersao) {
+  const r = item && item.r != null ? String(item.r) : "";
+  return /^(19|20)\d{2}$/.test(r) && anoVersao && +r !== +anoVersao ? r : null;
 }
