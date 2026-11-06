@@ -6,6 +6,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/marca/favicon-192.png">
 <link rel="apple-touch-icon" href="/marca/apple-touch-icon.png">
+<script src="/tracker.js"></script>
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
@@ -325,6 +326,11 @@ button,input{font:inherit;color:inherit}
 .auth-tabs{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
 .auth-tabs button{flex:1;border:0;background:none;border-radius:999px;padding:8px 12px;font:700 13px var(--body);color:var(--muted);cursor:pointer}
 .auth-tabs button[aria-pressed="true"]{background:var(--ink);color:#fff}
+.gbtn{display:flex;align-items:center;justify-content:center;gap:10px;height:44px;border:1px solid var(--line);border-radius:12px;background:var(--bg);font:700 14px var(--body);color:var(--ink);cursor:pointer}
+.gbtn:hover{border-color:var(--ink)}.gbtn svg{width:18px;height:18px}
+.auth-or{display:flex;align-items:center;gap:10px;font-size:12px;font-weight:600;color:var(--muted)}.auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:var(--line)}
+.auth-why{margin:0;padding:10px 12px;border-radius:12px;background:var(--accent-soft);font-size:13px;line-height:1.45;color:var(--ink)}
+.auth-stack{display:flex;flex-direction:column;gap:12px}
 .authbtn{flex:0 0 auto;color:var(--ink)}
 .authbtn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .cm-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
@@ -458,6 +464,13 @@ button,input{font:inherit;color:inherit}
 .dbp-sub{margin:4px 0 0;font-size:12.5px;color:var(--muted)}
 .dbp-stats{display:flex;flex-wrap:wrap;gap:8px;padding:8px 22px 4px}
 .dbs{display:flex;flex-direction:column;gap:1px;padding:8px 14px;border-radius:14px;background:var(--panel);min-width:96px}
+.dbs-bod{flex:1 1 100%;display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;padding:10px 14px;border-radius:14px;background:var(--panel)}
+.dbs-bod-l{font-size:12px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-right:4px}
+.dbs-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:4px 10px 4px 8px;font-size:12.5px;font-weight:700;cursor:pointer;background:var(--bg)}
+.dbs-chip input{width:15px;height:15px;margin:0;accent-color:var(--accent)}
+.dbs-chip small{font:600 11px var(--mono);color:var(--muted)}
+.dbs-chip.off{opacity:.6;text-decoration:line-through}
+.dbs-bod-n{flex:1 1 100%;font-size:12px;color:var(--muted)}
 .dbs b{font-family:var(--mono);font-size:20px;font-weight:600;letter-spacing:-.03em}
 .dbs small{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
 .dbs.warn b{color:#c8361d}
@@ -641,7 +654,8 @@ body.editing .edit{display:grid}
 .brand{min-height:16px}
 .brand em{font-style:normal;color:#8a92a3;margin-left:0}
 .brand em::before{content:"· ";color:var(--faint)}
-.nm{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.02em;line-height:1.15;margin:2px 0 0;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s}
+.nm{font-family:var(--display);font-weight:600;font-size:17px;letter-spacing:-.02em;line-height:1.15;margin:2px 0 -.2em;padding-bottom:.2em;max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;transition:color .3s}
+/* o recorte do nome longo (overflow) cortava as pernas de g, j, p, q, y: o respiro de .2em embaixo é devolvido pela margem, sem mudar a altura do card */
 @media (hover:hover){.card:hover .nm{color:var(--accent)}}
 .vr{font-size:11.5px;font-weight:600;color:var(--muted);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .price{font-family:var(--mono);font-weight:600;font-size:15.5px;font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-top:0}
@@ -904,7 +918,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
     <section class="showroom" aria-live="polite">
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
-        <span class="sr-right"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar</span><button type="button" data-sort="likes" aria-pressed="true">Curtidas</button><button type="button" data-sort="price" aria-pressed="false">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
+        <span class="sr-right"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar</span><button type="button" data-sort="likes" aria-pressed="false">Curtidas</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
       </div>
       <div class="stagewrap">
         <div class="track" aria-hidden="true"></div>
@@ -1130,7 +1144,7 @@ const brandSlug=m=>m.normalize('NFKD').replace(/[^\w]/g,'').toLowerCase();
 const SITES_BASE={"renault": "https://www.renault.com.br", "fiat": "https://www.fiat.com.br", "citroen": "https://www.citroen.com.br", "hyundai": "https://www.hyundai.com.br", "volkswagen": "https://www.vw.com.br", "chevrolet": "https://www.chevrolet.com.br", "peugeot": "https://www.peugeot.com.br", "byd": "https://www.byd.com/br", "toyota": "https://www.toyota.com.br", "honda": "https://www.honda.com.br/automoveis", "jeep": "https://www.jeep.com.br", "gwm": "https://www.gwmmotors.com.br", "ford": "https://www.ford.com.br", "ram": "https://www.ram.com.br", "leapmotor": "https://www.leapmotor.com.br", "nissan": "https://www.nissan.com.br", "mitsubishi": "https://www.mitsubishimotors.com.br", "suzuki": "https://www.suzukiveiculos.com.br", "kia": "https://www.kia.com.br", "chery": "https://www.caoachery.com.br", "omoda": "https://www.omodajaecoo.com.br", "jaecoo": "https://www.omodajaecoo.com.br", "jac": "https://www.jacmotors.com.br", "jetour": "https://www.jetour.com.br", "ferrari": "https://www.ferrari.com/pt-BR", "lamborghini": "https://www.lamborghini.com/pt-br", "mclaren": "https://cars.mclaren.com", "astonmartin": "https://www.astonmartin.com", "lotus": "https://www.lotuscars.com", "foton": "https://www.fotonbrasil.com.br", "iveco": "https://www.iveco.com/brasil", "mercedesbenz": "https://www.mercedes-benz.com.br", "geely": "https://www.geely.com.br", "caoachangan": "https://www.caoachangan.com.br", "avatr": "https://www.avatr.com.br", "zeekr": "https://www.zeekr.com.br", "gac": "https://www.gacmotor.com.br", "mg": "https://www.mgmotor.com.br", "denza": "https://www.denza.com.br", "baic": "https://www.baicbrasil.com.br", "dfm": "https://www.dfmbrasil.com.br", "bmw": "https://www.bmw.com.br", "mini": "https://www.mini.com.br", "audi": "https://www.audi.com.br", "porsche": "https://www.porsche.com/brazil/pt/", "volvo": "https://www.volvocars.com/br", "landrover": "https://www.landrover.com.br", "lexus": "https://www.lexus.com.br", "cadillac": "https://www.cadillac.com.br", "agrale": "https://www.agrale.com.br", "effa": "https://www.effa.com.br", "hitechelectric": "https://www.hitechelectric.com.br", "shineray": "https://www.shineray.com.br"};let SITES={...SITES_BASE};
 const siteOf=mk=>{const u=SITES[brandSlug(mk)];return /^https:\/\//.test(u||"")?u:null};
 const siteHost=u=>{try{return new URL(u).hostname.replace(/^www\./,"")}catch(e){return u}};
-let db=null,myId=null,assets=null,writing=Promise.resolve();
+let db=null,myId=null,assets=null,writing=Promise.resolve(),pendDone=false;
 const reduce=matchMedia("(prefers-reduced-motion: reduce)").matches;
 const css=getComputedStyle(document.documentElement);
 const C={ink:css.getPropertyValue("--ink").trim(),muted:css.getPropertyValue("--muted").trim(),faint:css.getPropertyValue("--faint").trim(),line:css.getPropertyValue("--line").trim(),accent:css.getPropertyValue("--accent").trim()};
@@ -1221,7 +1235,9 @@ function makeDial(el,start,onChange){
 const WINDOW=20;
 let swapTimer=0;
 const roBand=document.getElementById("roBand");
-function bandChanged(d){
+let spinT=0,lastSpin=null;
+function trackSpin(){try{const v=VALUES[dial.sel];if(lastSpin===null){lastSpin=v;return}clearTimeout(spinT);spinT=setTimeout(()=>{const w=VALUES[dial.sel];if(w!==lastSpin){lastSpin=w;window.giroTrack&&giroTrack("spin",{price_band:w})}},1500)}catch(e){}}
+function bandChanged(d){trackSpin();
   if(typeof closeTip==="function")closeTip();
   const [lo,hi]=band();{const t=krange(lo,hi),m=t.match(/^(.*?)\s(mil|mi)$/);roBand.innerHTML=m?`${esc(m[1])}<span class="rb-u">${m[2]}</span>`:esc(t)}
   headerFor();syncRows(false);rewindRows();
@@ -1264,30 +1280,34 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
   if(me){title.textContent="Sua conta";authBody.innerHTML=`<div class="cm-form auth-form"><div><div class="nf-sub">Conectado como</div><b>${esc(me.email)}</b></div>${me.isAdmin?'<div class="nf-sub">Conta master: banco, radar e imagens liberados.</div>':""}<button type="button" class="cm-send" id="authOut">Sair</button></div>`;
     document.getElementById("authOut").onclick=async()=>{try{await giroAuth.signOut();location.reload()}catch(e){toast("Não deu para sair. Tente de novo.")}};return}
   const signup=authMode==="signup";title.textContent=signup?"Criar conta":"Entrar";
-  authBody.innerHTML=`<div class="auth-tabs" role="group" aria-label="Entrar ou criar conta"><button type="button" data-auth-mode="login" aria-pressed="${!signup}">Entrar</button><button type="button" data-auth-mode="signup" aria-pressed="${signup}">Cadastrar</button></div>
+  authBody.innerHTML=`<div class="auth-stack">${authReason?`<p class="auth-why">${authReason}</p>`:""}<div class="auth-tabs" role="group" aria-label="Entrar ou criar conta"><button type="button" data-auth-mode="login" aria-pressed="${!signup}">Entrar</button><button type="button" data-auth-mode="signup" aria-pressed="${signup}">Cadastrar</button></div>
+    <button type="button" class="gbtn" id="authGoogle">${G_ICON}${signup?"Cadastrar com Google":"Entrar com Google"}</button>
+    <div class="auth-or">ou com e-mail</div></div>
     <form class="cm-form auth-form" id="authForm">
-      ${signup?authInput("Nome","authName","text","name",'maxlength="60"'):""}
       ${authInput("E-mail","authEmail","email",signup?"email":"username")}
+      ${signup?authInput("Repita o e-mail","authEmail2","email","email",'autocapitalize="off"'):""}
       ${authInput(signup?`Senha (mínimo de ${AUTH_MIN_PASSWORD} caracteres)`:"Senha","authPass","password",signup?"new-password":"current-password",signup?`minlength="${AUTH_MIN_PASSWORD}"`:"")}
       ${signup?authInput("Repita a senha","authPass2","password","new-password"):""}
-      ${signup?'<p class="auth-note">Seu nome aparece nos comentários. Seu e-mail não é mostrado no site.</p>':""}
+      ${signup?`<label>Nome (opcional)<input type="text" id="authName" autocomplete="name" maxlength="60"></label><p class="auth-note">O nome aparece só se você comentar. Seu e-mail não é mostrado no site.</p>`:""}
       <p class="auth-err" id="authErr" role="alert" hidden></p>
       <button type="submit" class="cm-send" id="authSubmit">${signup?"Criar conta":"Entrar"}</button>
     </form>`;
   const emailField=document.getElementById("authEmail");emailField.value=authDraftEmail;
   authBody.querySelectorAll("[data-auth-mode]").forEach(b=>b.onclick=()=>{authDraftEmail=emailField.value;authMode=b.dataset.authMode;renderAuth();focusAuth()});
+  document.getElementById("authGoogle").onclick=async()=>{try{localStorage.setItem("autokan_oauth",String(Date.now()))}catch(e){}
+    try{await giroAuth.signInWithGoogle()}catch(x){try{localStorage.removeItem("autokan_oauth")}catch(e){}toast("Não deu para abrir o login do Google agora. Use o e-mail ou tente de novo.")}};
   document.getElementById("authForm").onsubmit=async e=>{e.preventDefault();
     const btn=document.getElementById("authSubmit"),err=document.getElementById("authErr"),email=emailField.value.trim(),password=document.getElementById("authPass").value;
     const fail=m=>{err.textContent=m;err.hidden=false;btn.disabled=false};
     err.hidden=true;btn.disabled=true;
     try{
-      if(!signup){await giroAuth.signIn(email,password);location.reload();return}
-      const name=document.getElementById("authName").value.trim();
-      if(!name)return fail("Informe seu nome.");
+      if(!signup){await giroAuth.signIn(email,password);trackThenReload("login");return}
+      if(email.toLowerCase()!==document.getElementById("authEmail2").value.trim().toLowerCase())return fail("Os e-mails não são iguais.");
       if(password.length<AUTH_MIN_PASSWORD)return fail(`A senha precisa ter pelo menos ${AUTH_MIN_PASSWORD} caracteres.`);
       if(password!==document.getElementById("authPass2").value)return fail("As senhas não são iguais.");
+      const name=document.getElementById("authName").value.trim()||email.split("@")[0].slice(0,60);
       const {needsConfirmation}=await giroAuth.signUp(name,email,password);
-      if(!needsConfirmation){location.reload();return}
+      if(!needsConfirmation){trackThenReload("signup");return}
       title.textContent="Confirme seu e-mail";authDraftEmail=email;authMode="login";
       authBody.innerHTML=`<div class="cm-form auth-form"><p class="auth-note">Enviamos um link para <b>${esc(email)}</b>. Abra esse link para ativar sua conta e depois entre com sua senha. Se não encontrar a mensagem, olhe na caixa de spam.</p><button type="button" class="cm-send" id="authDone">Entendi</button></div>`;
       document.getElementById("authDone").onclick=closeAuth;document.getElementById("authDone").focus();
@@ -1295,13 +1315,25 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
 }
 function focusAuth(){const field=authBody.querySelector("input");(field||document.getElementById("authClose")).focus()}
 function openAuth(mode){lastFocus=document.activeElement;if(mode)authMode=mode;renderAuth();authPanel.hidden=false;scrim.hidden=false;focusAuth()}
-function closeAuth(){authPanel.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeAuth(){authPanel.hidden=true;scrim.hidden=true;if(!giroAuth.current())clearPending();authReason="";lastFocus&&lastFocus.focus&&lastFocus.focus()}
+/* ações que pedem conta (curtir, salvar): ficam guardadas e acontecem sozinhas depois do login, inclusive vindo do Google */
+let authReason="";
+const PEND_KEY="autokan_pendente";
+function setPending(o){try{localStorage.setItem(PEND_KEY,JSON.stringify(Object.assign({},o,{at:Date.now()})))}catch(e){}}
+function clearPending(){try{localStorage.removeItem(PEND_KEY)}catch(e){}}
+function takePending(){try{const r=JSON.parse(localStorage.getItem(PEND_KEY)||"null");clearPending();if(r&&r.id&&Date.now()-r.at<3600000)return r}catch(e){}return null}
+function askAccount(kind,id){const c=ALLCARS.find(x=>x.id===id),nm=c?`o ${esc(c.mk)} ${esc(c.nm)}`:"este carro";setPending({kind,id});
+  authReason=kind==="like"?`Para curtir ${nm}, entre ou crie sua conta. A curtida fica guardada e entra assim que você entrar.`:`Para salvar ${nm} na Minha garagem, entre ou crie sua conta. Ele aparece salvo assim que você entrar.`;
+  openAuth("signup")}
+function trackThenReload(kind,meta){if(window.giroTrack)giroTrack(kind,{meta:meta||{}});setTimeout(()=>location.reload(),350)}
+const G_ICON='<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>';
 document.getElementById("pbtn").onclick=()=>openAuth();
 document.getElementById("loginbtn").onclick=()=>openAuth("login");
 document.getElementById("signupbtn").onclick=()=>openAuth("signup");
 /* o link de confirmação vencido volta para o site com o erro no endereço */
 const authLinkError=new URLSearchParams(location.hash.slice(1)).get("error_code");
 giroAuth.ready.then(()=>{const on=!!giroAuth.current();
+  try{if(localStorage.getItem("autokan_oauth")){localStorage.removeItem("autokan_oauth");if(on&&window.giroTrack)giroTrack(giroAuth.createdRecently(600000)?"signup":"login",{meta:{via:"google"}})}}catch(e){}
   document.getElementById("pbtn").hidden=!on;document.getElementById("loginbtn").hidden=on;document.getElementById("signupbtn").hidden=on;
   if(authLinkError){toast("Esse link venceu ou já foi usado. Tente entrar ou cadastre-se de novo.");history.replaceState(null,"",location.pathname+location.search)}});
 document.getElementById("authClose").onclick=closeAuth;
@@ -1321,7 +1353,7 @@ function listAt(i){const [lo,hi]=bandAt(i);
     return Object.assign(Object.create(vs[0]),{_score:vs.reduce((s,c)=>s+(counts[c.id]||0),0),_more:vs.length-1})})
     .sort((a,b)=>SORTFN(a,b,a._score,b._score));}
 /* ordering: likes (default), lowest price, or most strengths (a future car score will plug in here) */
-let SORT="likes";
+let SORT="price";   // padrão: ordenado por preço
 const SORTLBL={likes:"ranking por curtidas",price:"do maior preço ao menor",strong:"por pontos fortes"};
 function SORTFN(a,b,sa,sb){
   if(SORT==="price")return b.p-a.p||sb-sa;
@@ -1352,7 +1384,7 @@ function cardHTML(c,i,anim){
       </div>
       ${c.k.length?`<div class="icons">${c.k.map(k=>`<button type="button" class="ic" data-k="${k}" data-tip="${k}" aria-label="${TAGS[k]}: o que significa">${ico(k)}</button>`).join("")}</div>`:""}
       <div class="c-act">
-        <button type="button" class="like${on?" on":""}" data-like="${c.id}" aria-pressed="${on}" ${db&&myId?"":"disabled"} aria-label="${on?"Remover curtida de":"Curtir"} ${esc(c.mk)} ${esc(c.nm)}">${HEART}<span>${live?n:"–"}</span></button>
+        <button type="button" class="like${on?" on":""}" data-like="${c.id}" aria-pressed="${on}" ${db?"":"disabled"} aria-label="${on?"Remover curtida de":"Curtir"} ${esc(c.mk)} ${esc(c.nm)}">${HEART}<span>${live?n:"–"}</span></button>
         <button type="button" class="go" data-info="${c.id}">Ver ficha</button>
         <button type="button" class="info" data-info="${c.id}" aria-label="Ficha completa do ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)}">i</button>
       </div>
@@ -1477,7 +1509,7 @@ rowsEl.addEventListener("click",e=>{
   const nb=e.target.closest("[data-news]");if(nb)return openNews(nb.dataset.news);
   const cb=e.target.closest("[data-cm]");if(cb)return openPanel("cm",cb.dataset.cm,cb.dataset.cv||"");
   const ab=e.target.closest("[data-al]");if(ab)return openPanel("al",ab.dataset.al);
-  const l=e.target.closest("[data-like]");if(l&&!l.disabled)return toggle(l.dataset.like);
+  const l=e.target.closest("[data-like]");if(l&&!l.disabled)return myId?toggle(l.dataset.like):askAccount("like",l.dataset.like);
   const g=e.target.closest("[data-go]");if(g)return dial.goTo(+g.dataset.go);
   const r=e.target.closest("[data-rm]");if(r)return removePhoto(r.dataset.rm);
   const inf=e.target.closest("[data-info]");if(inf)return openInfo(inf.dataset.info);
@@ -1557,7 +1589,7 @@ function closePrice(){document.getElementById("pcPanel").hidden=true;if(sheet.hi
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pc]");if(b)openPrice(b.dataset.pc)});
 document.getElementById("pcClose").onclick=closePrice;
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("pcPanel").hidden){e.stopImmediatePropagation();closePrice()}},true);
-const matches=(c,skip)=>(!DEAL||isReduced(c))&&GROUPS.every(g=>g.key===skip||!F[g.key].size||vals(g,c).some(v=>F[g.key].has(v)));
+const matches=(c,skip)=>(!DEAL||isReduced(c))&&(skip==="t"||F.t.size>0||!START_OUT.has(c.body))&&GROUPS.every(g=>g.key===skip||!F[g.key].size||vals(g,c).some(v=>F[g.key].has(v)));
 const activeCount=()=>GROUPS.reduce((n,g)=>n+F[g.key].size,DEAL?1:0);
 const TAGICON=Object.fromEntries(Object.entries(TAGS).map(([k,v])=>[v,k]));
 const drawer=document.getElementById("drawer"),scrim=document.getElementById("scrim"),drBody=document.getElementById("drBody");
@@ -1671,7 +1703,7 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
  sb.onclick=()=>top.classList.contains("searching")?closeS():openS();
  document.getElementById("sclose").onclick=closeS;
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
-function pickResult(i){const g=qRes[i];if(!g)return;closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}`;qIn.blur();goToCar(g.pick)}
+function pickResult(i){const g=qRes[i];if(!g)return;if(window.giroTrack)giroTrack("search",{version_id:g.pick&&g.pick.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60)}});closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}`;qIn.blur();goToCar(g.pick)}
 function goToCar(c){
   if(!matches(c)){DEAL=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
   const idx=clamp(VALUES.findIndex(x=>x>=K(c)));dial.goTo(idx);
@@ -1686,12 +1718,14 @@ function goToCar(c){
       card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900);
     },260)})();
 }
+document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("[data-ev]");if(a&&window.giroTrack)giroTrack("click",{version_id:a.dataset.vid||null,meta:{el:a.dataset.ev}})},true);
 const toastEl=document.getElementById("toast");let tt;
 function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,3800)}
 function status(t,ok){document.getElementById("status").innerHTML=`<i class="${ok?"on":""}"></i><span>${t}</span>`}
 function toggle(id){
   const had=mine.has(id);had?mine.delete(id):mine.add(id);counts[id]=(counts[id]||0)+(had?-1:1);
   refreshCounts();const r=curRow(),b=r&&r.querySelector(`[data-like="${id}"]`);if(b&&!had)b.classList.add("pop");
+  if(window.giroTrack)giroTrack("vote",{version_id:id,model_id:(ALLCARS.find(x=>x.id===id)||{}).mid,meta:{on:!had}});
   const body={cars:[...mine],at:Date.now()};
   writing=writing.then(()=>db.collection("votes").doc(myId).set(body)).catch(err=>{
     had?mine.add(id):mine.delete(id);counts[id]=(counts[id]||0)+(had?1:-1);refreshCounts();
@@ -1742,7 +1776,10 @@ let RAWCAT=[];
 /* marcas e modelos que o administrador tirou do site (meta/visibility); o painel Banco continua mostrando todos */
 let HIDE={b:new Set(),m:new Set()},lastCat=null,visReady=Promise.resolve();
 const shown=(bid,mid)=>!HIDE.b.has(bid)&&!HIDE.m.has(mid);
-function setHide(v){const ids=a=>Array.isArray(a)?a.filter(x=>typeof x==="string"):[];HIDE={b:new Set(ids(v&&v.hidden_brands)),m:new Set(ids(v&&v.hidden_models))}}
+/* tipos de carro que começam fora da roleta (ex.: Minivan); o visitante ainda os encontra escolhendo o tipo em Filtros */
+let START_OUT=new Set();
+function setHide(v){const ids=a=>Array.isArray(a)?a.filter(x=>typeof x==="string"):[];HIDE={b:new Set(ids(v&&v.hidden_brands)),m:new Set(ids(v&&v.hidden_models))};START_OUT=new Set(ids(v&&v.start_hidden_bodies))}
+const visDoc=()=>({hidden_brands:[...HIDE.b].sort(),hidden_models:[...HIDE.m].sort(),start_hidden_bodies:[...START_OUT].sort()});
 const loadVis=()=>db.collection("meta").doc("visibility").get().then(d=>setHide(d.exists?d.data():null));
 function setCatalog(snap){lastCat=snap;
   const raw=[];snap.docs.forEach(d=>{const x=d.data()||{};(Array.isArray(x.rows)?x.rows:[]).forEach(r=>{if(r&&typeof r.i==="string")raw.push({...r,mk:String(x.brand||""),bid:d.id})})});RAWCAT=raw;
@@ -1758,6 +1795,16 @@ document.querySelector(".mode:not(.sort)").addEventListener("click",e=>{const b=
   document.querySelectorAll("[data-mode]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.mode===VIEW));swap()});
 const sheet=document.getElementById("sheet"),shBody=document.getElementById("shBody");
 const NA='<span class="na">não informado</span>';
+/* de onde vem o preço e quando foi conferido: mostrado em toda ficha, para o preço da loja poder ser diferente sem surpresa */
+const dBR=d=>{const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(d||"");return m?`${m[3]}/${m[2]}/${m[1]}`:""};
+const mBR=m=>{const x=/^(\d{4})-(\d{2})$/.exec(m||"");return x?`${x[2]}/${x[1]}`:""};
+function priceMeta(c,v,src){
+  if(c.pc){const t=c.pc.change_type==="promocional"?"Preço de oferta":"Novo preço de tabela",d=dBR(c.pc.reported_on||c.pc.starts_on),u=/^https?:\/\//.test(c.pc.source_url||"")?c.pc.source_url:"";
+    return `${t}${d?`, atualizado em ${d}`:""}${c.pc.source_name?` · Fonte: ${u?`<a href="${esc(u)}" target="_blank" rel="noopener" data-ev="fonte-preco" data-vid="${esc(c.id)}">${esc(c.pc.source_name)} ↗</a>`:esc(c.pc.source_name)}`:""}`}
+  const t=c.kind==="FIPE"?"Tabela FIPE 0 km":"Preço sugerido de fábrica";
+  const d=src&&dBR(src.consulted_at),ref=v&&v.price&&mBR(v.price.ref_month);
+  return `${t}${d?`, atualizado em ${d}`:ref?`, referência ${ref}`:""}${src&&src.url?` · Fonte: <a href="${esc(src.url)}" target="_blank" rel="noopener" data-ev="fonte-preco" data-vid="${esc(c.id)}">${esc(src.name||"fonte")} ↗</a>`:""}`;
+}
 const val=(v,u="")=>v==null||v===""?NA:esc(v)+u;
 let shTok=0;
 /* prev/next inside the spec sheet: walks the cards of the current price band, in the order shown */
@@ -1776,7 +1823,7 @@ addEventListener("keydown",e=>{if(sheet.hidden||e.target.closest("input,textarea
 async function openInfo(id){
   const c=ALLCARS.find(x=>x.id===id);if(!c)return;const tok=++shTok;
   if(sheet.hidden)lastFocus=document.activeElement;scrim.hidden=false;sheet.hidden=false;
-  setSheetNav(c);
+  setSheetNav(c);if(window.giroTrack)giroTrack("view_car",{version_id:c.id,model_id:c.mid});
   document.getElementById("shTitle").textContent=`${c.mk} ${c.nm}`;
   {const lg=logos[brandSlug(c.mk)],el=document.getElementById("shLogo");el.hidden=false;el.classList.toggle("ini",!lg);
    el.innerHTML=lg?`<img src="${blobUrl(lg)}" alt="${esc(c.mk)}">`:esc(c.mk.slice(0,2).toUpperCase());el.title=c.mk;}
@@ -1785,9 +1832,9 @@ async function openInfo(id){
   const full=`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`,gimg="https://www.google.com/search?tbm=isch&q="+encodeURIComponent(full);
   const base=(v,src)=>`<section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
       <div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
-      <div class="sh-meta">${c.pc?(c.pc.change_type==="promocional"?"Preço de oferta":"Novo preço de tabela"):c.kind==="FIPE"?"Valor FIPE 0 km":"Preço de tabela sugerido"}${v&&v.price&&v.price.ref_month?` · ref. ${esc(v.price.ref_month)}`:""}${src&&src.url?` · <a href="${esc(src.url)}" target="_blank" rel="noopener">${esc(src.name||"fonte")} ↗</a>`:""}</div></section>
-    <div class="sh-links"><a class="sh-site" href="${esc(gimg)}" target="_blank" rel="noopener" title="Abre o Google Imagens já pesquisando este carro"><span><small>Fotos reais no Google Imagens</small><b>${esc(full)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    ${(()=>{const u=siteOf(c.mk);return u?`<a class="sh-site" href="${esc(u)}" target="_blank" rel="noopener"><span><small>Site oficial da ${esc(c.mk)} no Brasil</small><b>${esc(siteHost(u))}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`:""})()}</div>
+      <div class="sh-meta sh-pmeta">${priceMeta(c,v,src)}</div></section>
+    <div class="sh-links"><a class="sh-site" href="${esc(gimg)}" target="_blank" rel="noopener" data-ev="google-imagens" data-vid="${esc(c.id)}" title="Abre o Google Imagens já pesquisando este carro"><span><small>Fotos reais no Google Imagens</small><b>${esc(full)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    ${(()=>{const u=siteOf(c.mk);return u?`<a class="sh-site" href="${esc(u)}" target="_blank" rel="noopener" data-ev="site-oficial" data-vid="${esc(c.id)}"><span><small>Site oficial da ${esc(c.mk)} no Brasil</small><b>${esc(siteHost(u))}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`:""})()}</div>
     <section class="dr-group"><h3>Características</h3>
       <div class="feat">${[["Tipo",c.body],["Combustível",c.fu],["Câmbio",c.cb],["Tração",v&&v.powertrain&&v.powertrain.drive==="Integral"?"Integral (4x4 / AWD)":null],["Potência",c.cv?Math.round(c.cv)+" cv":null],["Ano-modelo",c.ano]].map(([k,x])=>`<div class="ft"><small>${k}</small>${x?`<b>${esc(x)}</b>`:NA}</div>`).join("")}</div>
       ${c.k.length?`<div class="fchips">${c.k.map(k=>`<span class="fchip2" data-k="${k}">${ico(k)}${TAGS[k]}</span>`).join("")}</div>`:""}</section>
@@ -1941,6 +1988,9 @@ function renderDB(){
   const mids=new Set(rows.map(r=>r.m));
   const noPrice=rows.filter(r=>typeof r.p!=="number").length,noPhoto=[...mids].filter(m=>!hasAnyPhoto(m)).length,noLogo=brands.filter(b=>!logos[brandSlug(b)]).length;
   document.getElementById("dbStats").innerHTML=[["Marcas",brands.length],["Modelos",mids.size],["Versões",rows.length],["À venda",rows.filter(r=>!r.st||r.st==="on_sale").length],["Sem preço",noPrice,noPrice?"warn":""],["Modelos sem foto",noPhoto,noPhoto?"warn":""],["Marcas sem logo",noLogo,noLogo?"warn":""],["Com notícias",Object.keys(NEWS).length]].map(([l,n,c])=>`<div class="dbs ${c||""}"><b>${n}</b><small>${l}</small></div>`).join("")+'<div class="dbs warn" id="dbsOff" hidden><b></b><small>Modelos fora do site</small></div>';
+  {const order=GROUPS.find(g=>g.key==="t").order,bodies=[...new Set(rows.map(r=>r.b).filter(Boolean))].sort((a,b)=>((order.indexOf(a)+1)||99)-((order.indexOf(b)+1)||99)||a.localeCompare(b,"pt-BR"));
+    const nM=b=>new Set(rows.filter(r=>r.b===b).map(r=>r.m)).size;
+    document.getElementById("dbStats").insertAdjacentHTML("beforeend",`<div class="dbs-bod" role="group" aria-labelledby="dbsBodL"><span class="dbs-bod-l" id="dbsBodL">Tipos que aparecem de início</span>${bodies.map(b=>`<label class="dbs-chip${START_OUT.has(b)?" off":""}"><input type="checkbox" data-show-t="${esc(b)}" ${START_OUT.has(b)?"":"checked"}>${esc(b)}<small>${nM(b)}</small></label>`).join("")}<span class="dbs-bod-n">Desmarcado, o tipo sai da roleta para quem chega ao site. Quem escolher esse tipo em Filtros ainda vê os carros.</span></div>`);}
   const match=r=>{if(stf&&(r.st||"on_sale")!==stf)return false;if(og&&(BRANDCO[r.mk]||"Sem origem")!==og)return false;
     if(pend&&!(typeof r.p!=="number"||!photoOf(r.m,r.y)))return false;if(q&&!norm(`${r.mk} ${r.mn} ${r.v}`).includes(q))return false;return true};
   const f=rows.filter(match);
@@ -1980,12 +2030,19 @@ function paintShow(){
       m.querySelector(":scope>summary .off-tag").hidden=vis})});
 }
 let visQ=Promise.resolve();
+document.getElementById("dbStats").addEventListener("change",e=>{const x=e.target.closest("[data-show-t]");if(!x||!db)return;
+  const t=x.dataset.showT;if(x.checked)START_OUT.delete(t);else START_OUT.add(t);x.parentElement.classList.toggle("off",!x.checked);
+  if(lastCat)setCatalog(lastCat);
+  visQ=visQ.then(()=>db.collection("meta").doc("visibility").set(visDoc()))
+    .then(()=>toast(x.checked?`${t} volta a aparecer de início.`:`${t} fica fora de início; aparece só para quem escolher em Filtros.`))
+    .catch(()=>{toast("Não deu para salvar. Tente de novo.");return loadVis().then(()=>{renderDB();if(lastCat)setCatalog(lastCat)},()=>{})});
+});
 dbBody.addEventListener("change",e=>{const x=e.target.closest("[data-show-b],[data-show-m]");if(!x||!db)return;
   const brand=x.dataset.showB!=null,set=brand?HIDE.b:HIDE.m,id=brand?x.dataset.showB:x.dataset.showM;
   if(x.checked)set.delete(id);else set.add(id);
   paintShow();if(lastCat)setCatalog(lastCat);
   // cada gravação leva o estado mais recente, então cliques rápidos não se atropelam
-  visQ=visQ.then(()=>db.collection("meta").doc("visibility").set({hidden_brands:[...HIDE.b].sort(),hidden_models:[...HIDE.m].sort()}))
+  visQ=visQ.then(()=>db.collection("meta").doc("visibility").set(visDoc()))
     .catch(()=>{toast("Não deu para salvar o que aparece no site. Tente de novo.");return loadVis().then(()=>{paintShow();if(lastCat)setCatalog(lastCat)},()=>{})});
 });
 /* ---------- admin: radar de lançamentos (db: radar/<id> itens, radar_runs/<id> resumos de cada atualização) ---------- */
@@ -2511,6 +2568,7 @@ document.getElementById("ipClose").onclick=closeImg;
     db.collection("photos").onSnapshot(snap=>{const p={},ai={};snap.docs.forEach(x=>{const d=x.data()||{},a=d.asset;if(typeof a==="string"&&/^[0-9a-f]{32}$/.test(a)){p[x.id]=a;if(d.ai===true)ai[x.id]=1}});photos=p;photoAI=ai;refresh();if(!imgPanel.hidden)renderImgPanel();if(FX)fxPaint();if(!rdPanel.hidden)renderRadar();},()=>{});
     db.collection("votes").onSnapshot(snap=>{
       counts=snap.counts;mine=new Set(snap.mine);live=true;clearTimeout(timer);
+      if(myId&&!pendDone){pendDone=true;const pd=takePending();if(pd&&pd.kind==="like"){const c=ALLCARS.find(x=>x.id===pd.id);if(!mine.has(pd.id))setTimeout(()=>toggle(pd.id),0);toast(`Pronto: você curtiu ${c?`o ${c.mk} ${c.nm}`:"o carro que escolheu"}.`)}}
       status(myId?`${snap.people} ${snap.people===1?"pessoa votou":"pessoas votaram"}`:"Entre para curtir",!!myId);
       refreshCounts();
     },()=>{clearTimeout(timer);status("Curtidas fora do ar",false)});

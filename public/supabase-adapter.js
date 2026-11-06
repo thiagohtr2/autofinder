@@ -97,8 +97,18 @@
       if (data.user && data.user.identities && !data.user.identities.length) {
         throw Object.assign(new Error("E-mail já cadastrado."), { code: "user_already_exists" });
       }
-      return { needsConfirmation: !data.session };
+      if (data.session) return { needsConfirmation: false };
+      // sem sessão: tenta entrar direto (funciona quando a confirmação de e-mail está desligada no Supabase)
+      const { error: signInError } = await sb.auth.signInWithPassword({ email, password });
+      return { needsConfirmation: !!signInError };
     },
+    // entrar ou cadastrar com Google: sai do site e volta para a mesma página já logado
+    async signInWithGoogle() {
+      const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname + location.search } });
+      if (error) throw toError(error);
+    },
+    // para o rastreamento: a conta acabou de ser criada?
+    createdRecently: (ms) => !!(currentUser && currentUser.created_at && Date.now() - new Date(currentUser.created_at).getTime() < (ms || 120000)),
     async signOut() {
       const { error } = await sb.auth.signOut();
       if (error) throw toError(error);
