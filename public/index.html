@@ -1004,6 +1004,14 @@ html{background:#0d1631}
 .top{position:sticky;top:0;z-index:20;background-color:#0d1631}
 /* sem conta, o espaço do ícone de perfil (vazio) não ocupa lugar: o Cadastrar fica a 16 px da borda, como a logo do outro lado */
 .meta .pwrap:not(:has(> .pbtn:not([hidden]))){display:none}
+/* celular: busca, Entrar, Cadastrar e perfil com a mesma altura (30 px) */
+@media (max-width:760px){
+  .top .sbtn,.top .pbtn{width:30px;height:30px}
+  .top .sbtn svg{width:14px;height:14px}
+  .top .pbtn svg{width:15px;height:15px}
+  .top .authbtn{display:inline-flex;align-items:center;height:30px;padding:0 13px;font-size:12.5px;line-height:1}
+}
+@media (max-width:380px){.top .authbtn{padding:0 10px}}
 </style>
 
 <div class="app">
