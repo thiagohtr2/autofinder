@@ -2,6 +2,7 @@
    Neutra: mostra os dados de cada versão na mesma linha e aponta só fatos (o menor preço, a maior potência),
    sem dar nota nem eleger um vencedor. */
 import { SITE, parecidos, imagem, semAcento } from "./base.mjs";
+import { linhasComparacao } from "./ficha-tecnica.mjs";
 import { pagina, esc, trilha, ldTrilha, cartao, fotoTag, reais, pl, mesAno, lista, ico, SETA, ROLETA, COMPARAR_ICO, COMB_FRASE, INICIO, urlPar } from "./paginas.mjs";
 
 export const MAX_CARROS = 4;
@@ -18,6 +19,7 @@ const CSS = `
 .cmp-nm{display:block;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.02em;line-height:1.2;color:var(--ink);text-decoration:none;margin:1px 0 8px}
 .cmp-nm:hover{color:var(--accent-ink);text-decoration:underline}
 .cmp select{width:100%;height:40px;border:1px solid var(--line);border-radius:10px;background:#fff;padding:0 30px 0 10px;font:600 14px var(--body);color:var(--ink);-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6l4 4 4-4' fill='none' stroke='%235d6577' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:14px}
+.cmp tr.gp th{text-align:left;font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:-.01em;color:var(--ink);padding:26px 10px 4px}
 .cmp tr.lb th{text-align:left;font-size:11px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding:14px 10px 6px;border-top:1px solid var(--line)}
 .cmp td{vertical-align:top;padding:0 10px 4px}
 .cmp td b.num{font-size:17px}
@@ -105,6 +107,7 @@ export function paginaComparacao(base, pares) {
     linha("Pontos fortes", (c) => (c.v.tags.length ? `<ul class="selos">${c.v.tags.map((k) => `<li class="selo" data-k="${k}">${ico(k)}${esc(TAG_NOME[k] || k)}</li>`).join("")}</ul>` : "")),
     linha("Outras versões", (c) => `${pl(c.m.versoes.length, "versão", "versões")}${c.m.precoMin && c.m.precoMax !== c.m.precoMin ? `, de ${reais(c.m.precoMin)} a ${reais(c.m.precoMax)}` : ""}<br><a class="fnt" href="${c.m.url}">Ver página do ${esc(c.m.nome)}</a>`),
     linha("Fonte do preço", (c) => (c.v.fonte && c.v.fonte.url ? `<a class="fnt" href="${esc(c.v.fonte.url)}" target="_blank" rel="noopener nofollow" title="${esc(c.v.fonte.nome)}">Ver fonte${SETA}</a>` : "")),
+    linhasComparacao(cols, base.fontes),
   ].join("");
 
   const cab = cols.map((c, i) => `<th scope="col"><a class="cmp-ph" href="${c.m.url}" tabindex="-1" aria-hidden="true">${fotoTag(c.m, 360, "(max-width:640px) 45vw, 260px", i < 2) || ""}</a>

@@ -48,12 +48,12 @@ const urlSegura = (u) => (typeof u === "string" && /^https?:\/\/[^\s"<>]+$/.test
 
 async function montar() {
   const [versoes, marcasDb, modelosDb, midias, meta, fontesDb, noticiasDb, avisosDb, radarDb] = await Promise.all([
-    ler("versions", "select=id,brand_id,brand,model_id,catalog_row,price_source_id,price_ref_month,drive,manufactured_in,updated_at&catalog_row=not.is.null&order=id"),
+    ler("versions", "select=id,brand_id,brand,model_id,catalog_row,price_source_id,price_ref_month,drive,manufactured_in,updated_at,specs&catalog_row=not.is.null&order=id"),
     ler("brands", "select=id,name,country&order=id"),
     ler("models", "select=id,brand_id,name,body&order=id"),
     ler("media", "select=kind,owner_id,bucket,storage_path,uploaded_at&is_current=eq.true&kind=in.(model_photo,brand_logo)&order=id"),
     ler("site_meta", "select=key,value&key=in.(visibility,brand_sites)&order=key"),
-    ler("sources", "select=id,name,url&order=id"),
+    ler("sources", "select=id,name,url,consulted_at&order=id"),
     ler("news", "select=model_id,title,summary,source,url,date&order=id"),
     ler("alerts", "select=model_id,kind,title,summary,affects,source,url,date&order=id"),
     // notícias de mercado do radar (o público lê só estas colunas; sem elas o resto do site funciona igual)
@@ -64,7 +64,7 @@ async function montar() {
   const vis = metaDe("visibility"), sitesMarcas = metaDe("brand_sites");
   const ids = (a) => new Set(Array.isArray(a) ? a.filter((x) => typeof x === "string") : []);
   const marcaFora = ids(vis.hidden_brands), modeloFora = ids(vis.hidden_models);
-  const fontes = new Map(fontesDb.map((f) => [f.id, { nome: f.name || "", url: urlSegura(f.url) }]));
+  const fontes = new Map(fontesDb.map((f) => [f.id, { nome: f.name || "", url: urlSegura(f.url), consultado: f.consulted_at || null }]));
   const nomeModelo = new Map(modelosDb.map((m) => [m.id, m.name]));
 
   // fotos: carro = modelo num ano (ex.: jeep-compass_2028); a antiga fica guardada só pelo modelo
@@ -103,6 +103,7 @@ async function montar() {
       fipe: r.pk === "fipe", mes: typeof v.price_ref_month === "string" ? v.price_ref_month : null, fonte: fontes.get(v.price_source_id) || null,
       motor: String(r.e || ""), cv: cvOf(r), cambio: String(r.t || ""), comb: String(r.f || ""), carroc: String(r.b || ""),
       tracao: v.drive || null, fabricado: v.manufactured_in || null, status: r.st || "on_sale", tags: tg.k, porque: tg.why, atualizado: v.updated_at,
+      specs: v.specs && typeof v.specs === "object" ? v.specs : null,
     };
     (versao.status === "on_sale" ? m.versoes : m.breve).push(versao);
   }
@@ -153,7 +154,7 @@ async function montar() {
   const anos = contar(aVenda.flatMap((m) => m.versoes.map((v) => v.ano)));
   const meses = contar(aVenda.flatMap((m) => m.versoes.map((v) => v.mes)));
   return {
-    modelos, marcas, aVenda, feed: montarFeed({ noticiasDb, avisosDb, radarDb, modelos, marcas }),
+    modelos, marcas, aVenda, fontes, feed: montarFeed({ noticiasDb, avisosDb, radarDb, modelos, marcas }),
     anoLinha: anos[0] || new Date().getFullYear(), mesPrecos: meses.sort().pop() || null,
     totalVersoes: aVenda.reduce((t, m) => t + m.versoes.length, 0),
     atualizado: [...modelos.values()].reduce((d, m) => (m.atualizado > d ? m.atualizado : d), ""),

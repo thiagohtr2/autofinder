@@ -2,6 +2,7 @@
    Tudo sai pronto do servidor, para o Google ler sem depender de JavaScript. */
 import { SITE, SB_URL, SB_CHAVE, FAIXAS, FAIXAS_ENTRE, ATALHOS_PRECO, TIPOS, COMBUSTIVEIS, filtrar, parecidos, imagem } from "./base.mjs";
 import { ICONS, TAGDESC } from "./pontos-fortes.mjs";
+import { secaoFicha, CSS_FICHA } from "./ficha-tecnica.mjs";
 
 /* ---------- formatação */
 
@@ -504,7 +505,8 @@ ${tabela}
 <p class="nota">${esc(rotuloPreco(m.versoes))}. Cada versão tem link para a fonte do preço. Viu algo errado? <a href="/contato?assunto=erro&amp;pagina=${encodeURIComponent(m.url)}&amp;titulo=${encodeURIComponent(m.titulo)}" rel="nofollow">Avise a gente</a>.</p>${breve}
 </section>
 ${pontos}
-${ficha.length ? `<section class="sec" aria-labelledby="s-fc"><h2 id="s-fc">Ficha do ${esc(m.titulo)}</h2><dl class="ficha">${ficha.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl></section>` : ""}
+${ficha.length ? `<section class="sec" aria-labelledby="s-fc"><h2 id="s-fc">Resumo do ${esc(m.titulo)}</h2><dl class="ficha">${ficha.map(([k, v]) => `<div><dt>${k}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl></section>` : ""}
+${secaoFicha(m, base.fontes)}
 ${faq.length ? `<section class="sec" aria-labelledby="s-fq"><h2 id="s-fq">Perguntas frequentes</h2><div class="faq">${faq.map(([q, r]) => `<div><h3>${esc(q)}</h3><p>${esc(r)}</p></div>`).join("")}</div></section>` : ""}
 ${secNoticias}
 ${secAvisos}
@@ -512,7 +514,7 @@ ${comp.length ? `<section class="sec" aria-labelledby="s-cp"><h2 id="s-cp">Compa
 ${outros.length ? `<section class="sec" aria-labelledby="s-om"><h2 id="s-om">Outros carros da ${esc(marca.nome)}</h2><ul class="grade">${outros.map((x) => cartao(x)).join("")}</ul></section>` : ""}
 </article>`;
 
-  return pagina({ titulo, descricao: desc, caminho, imagemOg: m.foto ? SITE + imagem(m.foto, 800, "&fm=png") : null, imagemAlt: `${nomeAno} (imagem ilustrativa)`, tipoOg: "product", ld, corpo });
+  return pagina({ titulo, descricao: desc, caminho, imagemOg: m.foto ? SITE + imagem(m.foto, 800, "&fm=png") : null, imagemAlt: `${nomeAno} (imagem ilustrativa)`, tipoOg: "product", ld, corpo, css: CSS_FICHA });
 }
 
 /* ---------- página da marca */
