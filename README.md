@@ -9,7 +9,7 @@ Você gira a roleta de preço e vê os carros daquela faixa, rankeados pelas cur
 
 | Pasta | O que é |
 |---|---|
-| `public/` | O site, sem build: `index.html` e `supabase-adapter.js`, que liga o site ao Supabase. É o que a Netlify publica. |
+| `public/` | O site, sem build: `index.html` e `supabase-adapter.js`, que liga o site ao Supabase. É o que a Netlify publica. A biblioteca do Supabase fica em `public/vendor/` (servida pelo próprio site, para a roleta não depender de um CDN externo). |
 | `data/` | Cópia completa do banco de dados original, exportada em 05/11/2026: 53 marcas, 327 modelos, 831 versões, alertas, notícias, fontes, radar de lançamentos e o mapa das fotos e logos. Serviu para carregar o Supabase. |
 | `tools/pipeline/` | Scripts e lotes de pesquisa usados para montar o banco original no Claude (`build.py` monta, `sync.py` compara e envia). |
 | `supabase/` | Esquema do banco no Supabase, funções (importação e contato) e modelos dos e-mails de login. Veja `supabase/README.md`. |

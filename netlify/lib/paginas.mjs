@@ -237,7 +237,7 @@ const COMPARA_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="
 
 function topo() {
   return `<header class="top" id="topo"><div class="wrap top-in">
-<a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="Autokan" width="42" height="18"></a>
+<a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18"></a>
 <nav class="top-nav" aria-label="Principal"><a href="/carros">Marcas</a><a href="/carros#precos">Preços</a><a class="so-larga" href="/carros#tipos">Tipos</a><a href="/noticias">Notícias</a><a href="/comparar">Comparar</a></nav>
 <div class="top-acts">
 <a class="t-ic so-cel" href="/noticias" aria-label="Notícias" title="Notícias">${NOTICIAS_ICO}</a>
@@ -493,7 +493,7 @@ ${temTracao ? `<td data-l="Tração">${v.tracao ? esc(v.tracao) : '<span class="
 <p class="hero-sub">${esc([m.carroc, lista(m.combs), m.aVenda ? pl(m.versoes.length, "versão à venda", "versões à venda") : statusTxt].filter(Boolean).join(" · "))}</p>
 <div class="preco"><b>${faixa}</b><small>${esc(rotuloPreco(m.versoes))}</small></div>
 ${selos}
-<div class="acoes"><a class="btn pri" href="/?carro=${encodeURIComponent(m.id)}">${ROLETA}Ver na roleta de preços</a><a class="btn" href="/comparar/${m.id}">${COMPARAR_ICO}Comparar com outro carro</a>${marca.site ? `<a class="btn" href="${esc(marca.site)}" target="_blank" rel="noopener">Site da ${esc(marca.nome)}${SETA}</a>` : ""}</div>
+<div class="acoes">${m.aVenda ? `<a class="btn pri" href="/?carro=${encodeURIComponent(m.id)}">${ROLETA}Ver na roleta de preços</a>` : ""}${m.aVenda ? `<a class="btn" href="/comparar/${m.id}">${COMPARAR_ICO}Comparar com outro carro</a>` : ""}${marca.site ? `<a class="btn" href="${esc(marca.site)}" target="_blank" rel="noopener">Site da ${esc(marca.nome)}${SETA}</a>` : ""}</div>
 </div>
 <figure class="foto">${fotoTag(m, 640, "(max-width:860px) 92vw, 540px", true) || `<span class="sem">${esc(m.titulo)}</span>`}${m.foto ? "<figcaption>Imagem ilustrativa</figcaption>" : ""}</figure>
 </section>

@@ -28,12 +28,14 @@
 <meta name="apple-mobile-web-app-title" content="Autokan">
 <meta name="application-name" content="Autokan">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap"></noscript>
 <style>
 /* Layout: a precision dial on the left edge (top on phones) feeds a 4×2 showroom grid; #1 sits next to the dial's beam. Single deliberate light theme. */
 :root{
   color-scheme:light;
-  --bg:#ffffff; --panel:#f5f7fa; --ink:#0c111c; --muted:#6a7284; --faint:#a9b0be; --line:#e7eaf0;
+  --bg:#ffffff; --panel:#f5f7fa; --ink:#0c111c; --muted:#646c7e; --faint:#a9b0be; --line:#e7eaf0;
   --accent:#1d6bff; --accent-soft:rgba(29,107,255,.10); --glow:rgba(29,107,255,.35); --like:#f2a100;
   --display:"Sora","Segoe UI",system-ui,sans-serif;
   --body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -76,7 +78,7 @@ button,input{font:inherit;color:inherit}
 .dr-opts{display:flex;flex-wrap:wrap;gap:7px}
 .opt{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:7px 12px;font-size:13px;font-weight:600;cursor:pointer;transition:all .2s var(--ease)}
 .opt svg{width:15px;height:15px}
-.opt small{color:var(--faint);font-weight:600;font-variant-numeric:tabular-nums}
+.opt small{color:var(--muted);font-weight:600;font-variant-numeric:tabular-nums}
 .opt:hover{border-color:var(--faint)}
 .opt[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 .opt[aria-pressed="true"] small{color:rgba(255,255,255,.6)}
@@ -92,7 +94,7 @@ button,input{font:inherit;color:inherit}
 .dr-pane{flex:1;min-width:0;overflow-y:auto;padding:16px 16px 20px;display:flex;flex-direction:column;gap:8px}
 .dr-ph{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin-bottom:4px}
 .dr-ph h3{margin:0;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.01em;color:var(--ink);text-transform:none}
-.dr-ph span{font-size:11.5px;color:var(--faint);font-weight:600;text-align:right}
+.dr-ph span{font-size:11.5px;color:var(--muted);font-weight:600;text-align:right}
 .og{display:flex;flex-direction:column;gap:8px}
 .og+.og{margin-top:10px}
 .og-btn{display:flex;align-items:center;gap:10px;padding:6px 4px 4px;border:0;background:none;cursor:pointer;text-align:left;font-family:var(--body);color:var(--ink)}
@@ -106,7 +108,7 @@ button,input{font:inherit;color:inherit}
 .og-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
 .opt2{display:flex;align-items:center;gap:12px;min-height:52px;padding:0 14px;border:1px solid #e3e7ee;background:var(--bg);border-radius:14px;font:700 14.5px var(--body);color:var(--ink);cursor:pointer;text-align:left;transition:all .2s var(--ease)}
 .opt2 .ol{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.opt2 small{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--faint)}
+.opt2 small{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--muted)}
 .opt2:hover:not(:disabled){border-color:#c9d3e3}
 .opt2:disabled{border-style:dashed;color:#b8bfcc;cursor:default}
 .opt2:disabled .bdg{opacity:.45}
@@ -264,12 +266,12 @@ button,input{font:inherit;color:inherit}
 .q-item[aria-selected="true"],.q-item:hover{background:#f2f6fd}
 .q-th{width:72px;height:44px;flex:0 0 auto;border-radius:10px;background:radial-gradient(ellipse at 50% 85%,var(--panel),var(--bg) 70%);display:grid;place-items:center;overflow:hidden}
 .q-th img{width:100%;height:100%;object-fit:contain}
-.q-th span{font:300 13px var(--display);color:var(--faint)}
+.q-th span{font:300 13px var(--display);color:var(--muted)}
 .q-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
 .q-br{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .q-br img{height:14px;width:auto;max-width:40px;object-fit:contain}
 .q-nm{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.q-nm mark{background:none;color:var(--accent)}
+.q-nm mark{background:none;color:#1857d6}
 .q-sub{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .q-pr{font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap;color:var(--ink)}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
@@ -285,7 +287,7 @@ button,input{font:inherit;color:inherit}
 .main{--dw:236px;display:grid;grid-template-columns:var(--dw) minmax(0,1fr);min-height:0}
 .dial{position:relative;z-index:3;isolation:isolate;user-select:none;touch-action:none;cursor:grab;outline:none;pointer-events:none}
 .dial canvas{pointer-events:auto;-webkit-mask-image:linear-gradient(transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(transparent,#000 9%,#000 91%,transparent)}
-.dial:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:12px}
+.ro-pill:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .dial:active{cursor:grabbing}
 .dial canvas{position:absolute;left:0;top:0;width:calc(100% + 56px);height:100%;display:block}
 .readout{position:absolute;z-index:4;left:4px;right:14px;top:50%;transform:translateY(-50%);height:64px;display:flex;align-items:center;justify-content:flex-end;gap:4px;pointer-events:none}
@@ -344,25 +346,25 @@ button,input{font:inherit;color:inherit}
 .card.sel{background:#f7faff;box-shadow:inset 0 0 0 1.5px var(--accent),0 0 0 4px rgba(29,107,255,.10),0 18px 36px -22px rgba(29,107,255,.55)}
 .row.ghost .card.sel{background:none;box-shadow:none}
 .c-top{width:100%;display:flex;justify-content:space-between;align-items:center;margin-bottom:auto;height:16px}
-.ctag{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#8a92a3}
-.stage .ctag{position:absolute;right:0;top:2px;z-index:2;font-size:7.5px;opacity:.85}
+.ctag{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.stage .ctag{position:absolute;right:0;top:2px;z-index:2;font-size:8px}
 .c-brandtop{height:auto!important;padding-bottom:7px;border-bottom:1px solid #e6edf8;gap:8px}
 .cb-mk{display:inline-flex;align-items:center;gap:7px;min-width:0}
 .cb-badge{width:24px;height:24px;flex:0 0 auto;border-radius:50%;background:#fff;box-shadow:0 0 0 1px #e3e8f0;display:grid;place-items:center;overflow:hidden;padding:3px;box-sizing:border-box}
 .cb-badge img{width:100%;height:100%;object-fit:contain}
 .cb-badge.ini{font:800 8.5px var(--body);color:var(--muted);padding:0}
-.cb-name{font-size:9.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#3b4352;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cb-name{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#3b4352;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .vr-row{display:flex;align-items:center;justify-content:center;gap:5px;max-width:100%;min-width:0;margin-top:1px}
 .vr-row .more{margin:0;padding:1px 6px;font-size:9.5px;line-height:1.4;flex:0 0 auto}
 .row.ghost .ctag{display:none}
 .stage .aitag{display:none}
 .spec{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin-top:7px;padding-top:7px;border-top:1px solid #eaeef4}
 .spec div{display:flex;flex-direction:column;gap:1px;min-width:0}
-.spec small{font-size:7.5px;letter-spacing:.06em;text-transform:uppercase;color:#8a92a3}
+.spec small{font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
 .spec b{font-size:10.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .spec b.mono{font-family:var(--mono);font-weight:600;letter-spacing:-.03em}
 .brand .more{margin:0 0 0 6px;padding:1px 6px;font-size:9.5px;letter-spacing:0;line-height:1.4}
-.spec b.na{color:var(--faint)}
+.spec b.na{color:var(--muted)}
 .card .go{display:none;flex:1;height:34px;border:0;border-radius:10px;background:var(--accent);color:#fff;font-weight:700;font-size:12.5px;cursor:pointer;box-shadow:none}
 .card .go:hover{filter:brightness(1.08)}
 .card.sel .go{display:inline-flex;align-items:center;justify-content:center}
@@ -434,7 +436,7 @@ button,input{font:inherit;color:inherit}
 .authbtn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
 .cm-form textarea:focus{outline:2px solid var(--accent);outline-offset:1px}
 .cm-row{display:flex;justify-content:space-between;align-items:center;gap:10px}
-.cm-count{font:600 11.5px var(--mono);color:var(--faint)}
+.cm-count{font:600 11.5px var(--mono);color:var(--muted)}
 .cm-count.warn{color:#b45309}
 .cm-send{height:36px;padding:0 16px;border:0;border-radius:10px;background:var(--accent);color:#fff;font:700 13px var(--body);cursor:pointer}
 .cm-send:disabled{opacity:.45;cursor:default}
@@ -443,7 +445,7 @@ button,input{font:inherit;color:inherit}
 .cm-item.mine{border-color:rgba(29,107,255,.35);background:var(--accent-soft)}
 .cm-head{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--muted);margin-bottom:5px}
 .cm-head b{color:var(--ink);font-size:13px}
-.cm-head time{font-family:var(--mono);color:var(--faint)}
+.cm-head time{font-family:var(--mono);color:var(--muted)}
 .cm-scope{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:16px;background:#e9f1ff;box-shadow:inset 0 0 0 1.5px rgba(29,107,255,.35)}
 .cm-scope.ver{background:#f3ecff;box-shadow:inset 0 0 0 1.5px rgba(122,79,214,.4)}
 .cm-sc-ic{flex:0 0 auto;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#fff;font:800 15px var(--body)}
@@ -458,7 +460,7 @@ button,input{font:inherit;color:inherit}
 .cm-tgt{color:var(--ink)}
 .cm-chip{display:inline-flex;align-items:center;height:18px;padding:0 7px;border-radius:999px;font-size:10.5px;font-weight:700;background:#e9f1ff;color:var(--accent);max-width:46%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .cm-chip.ver{background:#f3ecff;color:#7a4fd6}
-.cm-del{margin-left:auto;border:0;background:none;color:var(--faint);font:700 11.5px var(--body);cursor:pointer;padding:2px 4px}
+.cm-del{margin-left:auto;border:0;background:none;color:var(--muted);font:700 11.5px var(--body);cursor:pointer;padding:2px 4px}
 .cm-del:hover{color:#dc2626}
 .cm-text{margin:0;font-size:13.5px;line-height:1.55;color:#2a3140;white-space:pre-wrap;overflow-wrap:anywhere}
 .cm-text.clip{display:-webkit-box;-webkit-line-clamp:8;-webkit-box-orient:vertical;overflow:hidden}
@@ -472,21 +474,21 @@ button,input{font:inherit;color:inherit}
 .nf-item:hover{border-color:#c9d3e3;box-shadow:0 12px 26px -18px rgba(12,17,28,.35)}
 .nf-item:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .nf-meta{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.04em;color:var(--muted);text-transform:uppercase}
-.nf-meta time{font-family:var(--mono);letter-spacing:0;text-transform:none;color:var(--faint);font-weight:600}
+.nf-meta time{font-family:var(--mono);letter-spacing:0;text-transform:none;color:var(--muted);font-weight:600}
 .nf-meta .dot{width:3px;height:3px;border-radius:50%;background:var(--faint)}
 .nf-item h4{margin:0;font-family:var(--display);font-weight:600;font-size:15.5px;line-height:1.3;letter-spacing:-.01em;text-wrap:balance}
 .nf-item p{margin:0;font-size:13px;line-height:1.5;color:#3b4352}
 .nf-go{font-size:12px;font-weight:700;color:var(--accent)}
 .nf-empty{text-align:center;color:var(--muted);padding:40px 10px;display:flex;flex-direction:column;gap:6px;align-items:center}
 .nf-empty b{font-family:var(--display);font-size:18px;color:var(--ink)}
-.nf-note{font-size:11.5px;color:var(--faint);line-height:1.5}
+.nf-note{font-size:11.5px;color:var(--muted);line-height:1.5}
 .card.sel .c-act{width:100%}
 .card.enter{animation:enter .6s var(--ease) both;animation-delay:calc(var(--i)*50ms)}
 .card.leave{animation:leave .16s ease-in both}
 @keyframes enter{0%{opacity:0;transform:translateX(-56px);filter:blur(8px)}100%{opacity:1;transform:none;filter:none}}
 @keyframes leave{to{opacity:0;transform:translateX(30px);filter:blur(6px)}}
 .c-up{display:flex;flex-direction:column;justify-content:flex-end;align-items:center;position:relative;padding-bottom:9px;min-width:0;text-align:center}
-.rank{font-family:var(--mono);font-weight:600;font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums;transition:color .3s}
+.rank{font-family:var(--mono);font-weight:600;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;transition:color .3s}
 .card.first .rank{color:var(--accent);font-weight:500}
 .stage{position:relative;width:100%;height:92px;margin-bottom:6px;display:flex;align-items:flex-end;justify-content:center}
 .stage img,.stage svg.car{position:relative;z-index:1;width:100%;height:100%;object-fit:contain;object-position:center bottom;transition:transform .5s var(--ease),filter .5s var(--ease);transform-origin:50% 100%}
@@ -501,7 +503,7 @@ button,input{font:inherit;color:inherit}
 .mode button{border:0;background:none;border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;color:var(--muted);cursor:pointer}
 .mode button[aria-pressed="true"]{background:var(--ink);color:#fff}
 .ajbtn,.fuq{display:none}
-.mode-l{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);padding:0 6px 0 9px;align-self:center}
+.mode-l{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 6px 0 9px;align-self:center}
 .sr-right{flex-wrap:wrap;justify-content:flex-end}
 .sr-right{display:flex;align-items:center;gap:12px}
 .more{border:0;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:11px;border-radius:999px;padding:3px 9px;margin-top:4px;cursor:pointer}
@@ -522,7 +524,7 @@ button,input{font:inherit;color:inherit}
 .sh-tbl{width:100%;border-collapse:collapse;font-size:13px}
 .sh-tbl th{text-align:left;font-weight:600;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--line);width:46%;vertical-align:top}
 .sh-tbl td{padding:7px 0;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
-.na{color:var(--faint);font-style:italic}
+.na{color:var(--muted);font-style:italic}
 .sh-vers{display:flex;flex-direction:column;gap:6px}
 .sh-vers button{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--bg);border-radius:10px;padding:9px 12px;font-size:13px;cursor:pointer;text-align:left}
 .sh-vers button[aria-current="true"]{border-color:var(--accent);background:var(--accent-soft)}
@@ -648,7 +650,7 @@ button,input{font:inherit;color:inherit}
 .dbv th{text-align:left;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:8px 8px;border-bottom:1px solid var(--line);white-space:nowrap}
 .dbv td{padding:7px 8px;border-bottom:1px solid #f0f2f6;vertical-align:middle}
 .dbv td.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
-.dbv .na{color:var(--faint)}
+.dbv .na{color:var(--muted)}
 .dbv .st{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:999px;background:var(--panel);white-space:nowrap}
 .dbv .st.announced,.dbv .st.pre_order{background:#fff6dc;color:#8b6500}
 .dbv .ics{display:flex;gap:3px}
@@ -751,7 +753,7 @@ button,input{font:inherit;color:inherit}
 .sn-btn.nx{justify-content:flex-end;text-align:right}
 .sn-btn svg{width:16px;height:16px;flex:0 0 auto;color:var(--accent)}
 .sn-btn span{display:flex;flex-direction:column;min-width:0}
-.sn-btn small{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.sn-btn small{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .sn-btn b{font-size:13.5px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .sn-btn:hover:not(:disabled){border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .sn-btn:disabled{opacity:.4;cursor:default}
@@ -811,7 +813,7 @@ body.editing .edit{display:grid}
 @media (hover:hover){.card:hover .nm{color:var(--accent)}}
 .vr{font-size:11.5px;font-weight:600;color:var(--muted);max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:1px}
 .price{font-family:var(--mono);font-weight:600;font-size:15.5px;font-variant-numeric:tabular-nums;letter-spacing:-.02em;margin-top:0}
-.icons{display:flex;flex-wrap:nowrap;gap:5px;margin-top:7px;justify-content:center;width:100%;min-width:0}
+.icons{display:flex;flex-wrap:nowrap;gap:8px;margin-top:7px;justify-content:center;width:100%;min-width:0}
 .icons .ic{flex:0 1 22px;min-width:15px;height:auto;aspect-ratio:1}
 .icons .ic svg{width:60%;height:60%}
 .icons:has(.ic:nth-child(6)){gap:3px}
@@ -847,6 +849,8 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .src{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--muted);text-decoration:none;font-size:12px;transition:all .2s}
 .src:hover{border-color:var(--accent);color:var(--accent)}
 .empty{margin:auto;text-align:center;max-width:54ch;color:var(--muted)}
+.empty-acts{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:14px}
+.empty-acts .gp-btn{display:inline-flex;align-items:center;text-decoration:none}
 .empty b{display:block;font-family:var(--display);font-weight:600;font-size:20px;color:var(--ink);margin-bottom:6px}
 .empty button{margin-top:14px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:9px 18px;font-weight:700;cursor:pointer}
 .eg-row{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:14px}
@@ -855,7 +859,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .eg-d{font-weight:800;font-size:13.5px}
 .eg.up .eg-d{color:var(--accent)}
 .eg-c{font-size:11.5px;color:var(--muted)}
-.eg-tip{display:block;margin-top:12px;font-size:11.5px;color:var(--faint)}
+.eg-tip{display:block;margin-top:12px;font-size:11.5px;color:var(--muted)}
 .empty .eg:hover{border-color:var(--accent)}
 .note{font-size:11.5px;color:var(--muted);padding-block:8px 12px}
 .note-a{color:var(--muted);font-weight:700;text-decoration:underline;text-underline-offset:2px;white-space:nowrap}
@@ -983,7 +987,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .fq[data-k="diesel"][aria-pressed="true"]{background:#fcede2;box-shadow:inset 0 0 0 1px rgba(234,106,12,.55),0 0 0 3px rgba(234,106,12,.08)}
   .fq[data-k="diesel"][aria-pressed="true"] svg{background:#ea6a0c;color:#fff}
   .chiprow .pill.fqp{display:none}
-  .mode.sort .mode-l{display:block;grid-column:1/-1;margin:2px 0 -1px 2px;padding:0;font:800 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .mode.sort .mode-l{display:block;grid-column:1/-1;margin:2px 0 -1px 2px;padding:0;font:800 10px var(--body);letter-spacing:.14em;text-transform:uppercase;color:#1857d6}
 }
 @media (max-width:380px){
   .top{gap:8px}
@@ -1141,13 +1145,27 @@ html{background:#060b1c}
   .top .authbtn{display:inline-flex;align-items:center;height:30px;padding:0 13px;font-size:12.5px;line-height:1}
 }
 @media (max-width:380px){.top .authbtn{padding:0 10px}}
+/* tablets e telas médias (761 a 1699 px): Filtros e os atalhos de tipo descem para uma segunda linha do topo,
+   para Entrar e Cadastrar não saírem da tela e os atalhos não ficarem escondidos (antes sumiam, mas o Tab ainda passava por eles) */
+@media (min-width:761px) and (max-width:1699px){
+  .top{flex-wrap:wrap;row-gap:10px}
+  .top::after{content:"";order:2;flex:0 0 100%;height:0}
+  .top .fbtn{order:3}
+  .top .filters{order:4;flex:1 1 0}
+  .top .filters:empty{display:none}
+  .search{flex:1 1 220px;min-width:120px;max-width:560px}
+  .meta{margin-left:auto}
+  .status span{display:none}
+  .nwbtn{width:32px;padding:0;justify-content:center}
+  .nwbtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+}
 </style>
 
 <div class="app">
   <header class="top">
     <div class="logo">
-      <img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=5" alt="Autokan" width="168" height="18">
-      <img class="logo-ico" src="/marca/autokan-simbolo-topo.png?v=5" alt="Autokan" width="42" height="18">
+      <img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18">
+      <img class="logo-ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18">
     </div>
     <div class="chiprow" id="chiprow">
     <button type="button" class="fbtn" id="fbtn" aria-haspopup="dialog" aria-controls="drawer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M6 10h8M8.5 15h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Filtros<span class="fcount" id="fcount" hidden></span></button>
@@ -1184,14 +1202,14 @@ html{background:#060b1c}
     </div>
   </header>
 
-  <main class="main">
-    <div class="dial" id="dial" tabindex="0" role="slider" aria-label="Orçamento máximo">
+  <main class="main" aria-label="Roleta de preços">
+    <div class="dial" id="dial">
       <canvas></canvas>
-      <div class="readout"><span class="ro-band" id="roBand">135 – 150 mil</span><span class="ro-pill"><span class="ro-lbl">até</span><span class="ro-val">150<small>mil</small></span></span></div>
-      <div class="ro-btns up" role="group" aria-label="Diminuir orçamento"><button type="button" data-step="-1" aria-label="Menos R$ 5 mil, pulando as faixas sem carro" title="Menos R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="-50" aria-label="Menos R$ 50 mil" title="Menos R$ 50 mil">−50<small>mil</small></button></div><div class="ro-btns dn" role="group" aria-label="Aumentar orçamento"><button type="button" data-step="1" aria-label="Mais R$ 5 mil, pulando as faixas sem carro" title="Mais R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="50" aria-label="Mais R$ 50 mil" title="Mais R$ 50 mil">+50<small>mil</small></button></div>
+      <div class="readout"><span class="ro-band" id="roBand">135 – 150 mil</span><span class="ro-pill" id="dialThumb" tabindex="0" role="slider" aria-label="Orçamento máximo" aria-orientation="vertical"><span class="ro-lbl">até</span><span class="ro-val">150<small>mil</small></span></span></div>
+      <div class="ro-btns up" role="group" aria-label="Diminuir orçamento"><button type="button" data-step="-1" aria-label="Menos R$ 5 mil, pulando as faixas sem carro" title="Menos R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="-50" title="Menos R$ 50 mil">−50<small>mil</small><span class="sr"> (diminuir R$ 50 mil)</span></button></div><div class="ro-btns dn" role="group" aria-label="Aumentar orçamento"><button type="button" data-step="1" aria-label="Mais R$ 5 mil, pulando as faixas sem carro" title="Mais R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="50" title="Mais R$ 50 mil">+50<small>mil</small><span class="sr"> (aumentar R$ 50 mil)</span></button></div>
     </div>
 
-    <section class="showroom" aria-live="polite">
+    <section class="showroom" aria-labelledby="srTitle">
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
         <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
@@ -1207,7 +1225,7 @@ html{background:#060b1c}
       <p class="note">Todas as versões 0 km à venda, linha 2027 (ou 2026 quando ainda não há 2027). Preço de tabela sugerido pela montadora em nov/2026, ou FIPE 0 km quando a montadora não divulga. Cada carro tem link para a fonte. <a class="note-a" href="/carros">Ver todas as marcas e listas de preços</a> · <a class="note-a" href="/contato">Fale com a gente</a></p>
     </section>
   </main>
-<section class="gp" id="garPage" aria-labelledby="gpTitle" hidden>
+<main class="gp" id="garPage" aria-labelledby="gpTitle" hidden>
   <div class="gp-scroll" id="gpScroll"><div class="gp-in">
   <header class="gp-bar">
     <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para a roleta"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
@@ -1217,7 +1235,7 @@ html{background:#060b1c}
     <div id="gpBody"></div>
   </div></div>
   <div class="g-foot" id="gpFoot" hidden><span id="gpSel"></span><a class="g-cmp off" id="gpCmp" aria-disabled="true" data-ev="comparar-salvos">Comparar lado a lado</a></div>
-</section>
+</main>
 </div>
 <div class="scrim" id="scrim" hidden></div>
 <section class="dbp" id="rdPanel" role="dialog" aria-modal="true" aria-labelledby="rdTitle" hidden>
@@ -1257,39 +1275,39 @@ html{background:#060b1c}
     </nav>
   </div>
 </section>
-<aside class="drawer sheet" id="newsPanel" role="dialog" aria-modal="true" aria-labelledby="nfTitle" hidden>
+<div class="drawer sheet" id="newsPanel" role="dialog" aria-modal="true" aria-labelledby="nfTitle" hidden>
   <div class="dr-head"><div><h2 id="nfTitle">Notícias</h2><div class="nf-sub" id="nfSub"></div></div><button type="button" class="dr-x" id="nfClose" aria-label="Fechar notícias">✕</button></div>
   <div class="dr-body" id="nfBody"></div>
-</aside>
-<aside class="drawer sheet" id="pcPanel" role="dialog" aria-modal="true" aria-labelledby="pcTitle" hidden>
+</div>
+<div class="drawer sheet" id="pcPanel" role="dialog" aria-modal="true" aria-labelledby="pcTitle" hidden>
   <div class="dr-head"><div><h2 id="pcTitle">O preço mudou</h2><div class="nf-sub" id="pcSub"></div></div><button type="button" class="dr-x" id="pcClose" aria-label="Fechar">✕</button></div>
   <div class="dr-body" id="pcBody"></div>
-</aside>
-<aside class="drawer sheet" id="authPanel" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
+</div>
+<div class="drawer sheet" id="authPanel" role="dialog" aria-modal="true" aria-labelledby="authTitle" hidden>
   <div class="as-in">
     <button type="button" class="dr-x" id="authClose" aria-label="Fechar">✕</button>
-    <img class="as-logo" src="/marca/autokan-logo-geral-escuro.png?v=5" alt="Autokan · Knowledge · Analysis · Navigation" width="300" height="41">
+    <img class="as-logo" src="/marca/autokan-logo-geral-escuro.png?v=6" alt="Autokan" width="300" height="41" loading="lazy">
     <div class="dr-head"><h2 id="authTitle">Sua conta</h2></div>
     <div class="dr-body" id="authBody"></div>
   </div>
-</aside>
-<aside class="drawer sheet" id="cmPanel" role="dialog" aria-modal="true" aria-labelledby="cmTitle" hidden>
+</div>
+<div class="drawer sheet" id="cmPanel" role="dialog" aria-modal="true" aria-labelledby="cmTitle" hidden>
   <div class="dr-head"><div><h2 id="cmTitle">Comentários</h2><div class="nf-sub" id="cmSub"></div></div><button type="button" class="dr-x" id="cmClose" aria-label="Fechar comentários">✕</button></div>
   <div class="dr-body" id="cmBody"></div>
-</aside>
-<aside class="drawer sheet" id="alPanel" role="dialog" aria-modal="true" aria-labelledby="alTitle" hidden>
+</div>
+<div class="drawer sheet" id="alPanel" role="dialog" aria-modal="true" aria-labelledby="alTitle" hidden>
   <div class="dr-head"><div><h2 id="alTitle">Atenção</h2><div class="nf-sub" id="alSub"></div></div><button type="button" class="dr-x" id="alClose" aria-label="Fechar avisos">✕</button></div>
   <div class="dr-body" id="alBody"></div>
-</aside>
-<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drTitle" hidden>
+</div>
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drTitle" hidden>
   <div class="dr-head"><h2 id="drTitle">Filtros</h2><button type="button" class="dr-x" id="drClose" aria-label="Fechar filtros">✕</button></div>
   <div class="dr-body dr-split" id="drBody"></div>
   <div class="dr-foot"><button type="button" class="dr-clear" id="drClear">Limpar tudo</button><button type="button" class="dr-go" id="drGo">Ver carros</button></div>
-</aside>
-<aside class="drawer sheet" id="imgPanel" role="dialog" aria-modal="true" aria-labelledby="ipTitle" hidden>
+</div>
+<div class="drawer sheet" id="imgPanel" role="dialog" aria-modal="true" aria-labelledby="ipTitle" hidden>
   <div class="dr-head"><h2 id="ipTitle">Imagens dos carros</h2><button type="button" class="dr-x" id="ipClose" aria-label="Fechar">✕</button></div>
   <div class="dr-body" id="ipBody"></div>
-</aside>
+</div>
 <section class="dbp fx" id="fxPanel" role="dialog" aria-modal="true" aria-labelledby="fxTitle" hidden>
   <div class="dbp-in fx-in">
     <header class="dbp-head fx-head"><div><h2 id="fxTitle">Ajustar imagens</h2><p class="dbp-sub" id="fxSub"></p></div>
@@ -1325,14 +1343,16 @@ html{background:#060b1c}
     <p class="fx-keys">Teclado: ← → passam as fotos · A ajusta tudo · B rodas no chão · C centraliza · T só o tamanho · E espelha · + − tamanho · ↑ ↓ altura · Z desfaz · Enter aprova e salva · / busca · Esc fecha</p>
   </div>
 </section>
-<aside class="drawer sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" hidden>
+<div class="drawer sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" hidden>
   <div class="dr-head"><div class="sh-head"><span class="sh-logo" id="shLogo" hidden></span><h2 id="shTitle">Versão</h2></div><button type="button" class="dr-x" id="shClose" aria-label="Fechar ficha">✕</button></div>
   <div class="dr-body" id="shBody"></div>
-  <div class="sh-nav" id="shNav" hidden><button type="button" class="sn-btn" id="shPrev"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small><b id="shPrevN"></b></span></button><span class="sn-pos" id="shPos"></span><button type="button" class="sn-btn nx" id="shNext"><span><small>Próximo</small><b id="shNextN"></b></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-</aside>
+  <div class="sh-nav" id="shNav" hidden><button type="button" class="sn-btn" id="shPrev"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small> <b id="shPrevN"></b></span></button><span class="sn-pos" id="shPos"></span><button type="button" class="sn-btn nx" id="shNext"><span><small>Próximo</small> <b id="shNextN"></b></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+</div>
+<noscript><p style="position:fixed;inset:auto 16px 16px;z-index:50;margin:0;padding:14px 16px;border-radius:14px;background:#060b1c;color:#fff;font:600 14px/1.5 system-ui,sans-serif">A roleta de preços precisa do JavaScript ligado no navegador. Sem ele, veja <a href="/carros" style="color:#8fb3ff">todas as marcas e os preços</a>.</p></noscript>
 <div class="toast" id="toast" hidden></div>
+<div class="sr" id="anuncio" role="status" aria-live="polite"></div>
 
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.49.4/dist/umd/supabase.js" integrity="sha384-rwykjmWNwVxboyFmvK9OXN0wj9hnMHA2aAHtits54DuACyCq0M2PrSNxhRb+hvXT" crossorigin="anonymous"></script>
+<script src="/vendor/supabase-js-2.49.4.js"></script>
 <script src="/supabase-adapter.js"></script>
 <script>
 let CARS=[],ALLCARS=[];let loaded=false,loadErr=null;
@@ -1471,7 +1491,7 @@ const C={ink:css.getPropertyValue("--ink").trim(),muted:css.getPropertyValue("--
 
 /* ---------- dials ---------- */
 function makeDial(el,start,onChange){
-  const cv=el.querySelector("canvas"),ctx=cv.getContext("2d"),ro=el.querySelector(".ro-val");
+  const cv=el.querySelector("canvas"),ctx=cv.getContext("2d"),ro=el.querySelector(".ro-val"),thumb=el.querySelector("#dialThumb")||el;
   const d={pos:start,target:start,sel:start,vel:0,last:start,dragging:false,anim:0,G:null,W:0,H:0};
   d.geom=()=>{const r=el.getBoundingClientRect(),dpr=Math.min(2,devicePixelRatio||1);
     /* a tela de desenho estica para a esquerda até a borda da tela (a margem da página), e o desenho se desloca junto */
@@ -1537,8 +1557,8 @@ function makeDial(el,start,onChange){
     if(d.dragging||d.pos!==d.target||Math.abs(d.vel)>.0005)d.anim=requestAnimationFrame(loop);else{d.anim=0;d.vel=0;d.draw();}};
   d.kick=()=>{if(!d.anim)d.anim=requestAnimationFrame(loop)};
   d.goTo=i=>{d.target=clamp(i);d.kick()};
-  d.label=()=>{const v=VALUES[d.sel];ro.innerHTML=`${kv(v)}<small>${ku(v)}</small>`;el.setAttribute("aria-valuenow",v);el.setAttribute("aria-valuetext",kmoney(v))};
-  el.setAttribute("aria-valuemin",MIN);el.setAttribute("aria-valuemax",MAX);
+  d.label=()=>{const v=VALUES[d.sel];ro.innerHTML=`${kv(v)}<small>${ku(v)}</small>`;thumb.setAttribute("aria-valuenow",v);thumb.setAttribute("aria-valuetext",`até ${kmoney(v)}`)};
+  thumb.setAttribute("aria-valuemin",MIN);thumb.setAttribute("aria-valuemax",MAX);
   let last=0,samples=[];
   el.addEventListener("pointerdown",e=>{if(e.target.closest("button"))return;d.dragging=true;el.setPointerCapture(e.pointerId);last=e.clientY;samples=[];d.kick()});
   el.addEventListener("pointermove",e=>{if(!d.dragging)return;const c=e.clientY,df=c-last;last=c;
@@ -1550,7 +1570,7 @@ function makeDial(el,start,onChange){
   let wacc=0;
   el.addEventListener("wheel",e=>{e.preventDefault();wacc+=Math.abs(e.deltaY)>Math.abs(e.deltaX)?e.deltaY:e.deltaX;
     while(Math.abs(wacc)>=73){const sg=Math.sign(wacc);wacc-=sg*73;d.target=clamp(d.target+sg);}d.kick()},{passive:false});
-  el.addEventListener("keydown",e=>{const m={ArrowUp:-1,ArrowLeft:-1,ArrowDown:1,ArrowRight:1,PageUp:-10,PageDown:10}[e.key];
+  el.addEventListener("keydown",e=>{const m={ArrowUp:1,ArrowRight:1,ArrowDown:-1,ArrowLeft:-1,PageUp:10,PageDown:-10}[e.key];
     if(e.key==="Home"){e.preventDefault();d.goTo(0)}else if(e.key==="End"){e.preventDefault();d.goTo(VALUES.length-1)}else if(m){e.preventDefault();d.goTo(d.target+m)}});
   el.querySelectorAll("[data-step]").forEach(b=>b.onclick=()=>{const i=stepTarget(d.target,+b.dataset.step);if(i!=null)d.goTo(i)});
   /* ±50 mil por valor (o passo da roleta cresce com o preço) */
@@ -1647,7 +1667,7 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
 }
 function focusAuth(){const field=authBody.querySelector("input");(field||document.getElementById("authClose")).focus()}
 function openAuth(mode){lastFocus=document.activeElement;if(mode)authMode=mode;renderAuth();authPanel.hidden=false;scrim.hidden=false;focusAuth()}
-function closeAuth(){authPanel.hidden=true;scrim.hidden=true;if(!giroAuth.current())clearPending();authReason="";lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeAuth(){authPanel.hidden=true;scrim.hidden=true;if(!giroAuth.current())clearPending();authReason="";devolveFoco()}
 /* ações que pedem conta (favoritar, salvar): ficam guardadas e acontecem sozinhas depois do login, inclusive vindo do Google */
 let authReason="";
 const PEND_KEY="autokan_pendente";
@@ -1744,12 +1764,12 @@ function cardHTML(c,i,anim){
       </div>
       ${c.k.length?`<div class="icons">${c.k.map(k=>`<button type="button" class="ic" data-k="${k}" data-tip="${k}" aria-label="${TAGS[k]}: o que significa">${ico(k)}</button>`).join("")}</div>`:""}
       <div class="c-act">
-        <button type="button" class="like${on?" on":""}" data-like="${c.id}" aria-pressed="${on}" ${db?"":"disabled"} aria-label="${on?"Tirar dos favoritos:":"Favoritar"} ${esc(c.mk)} ${esc(c.nm)}">${HEART}<span>${live?n:"–"}</span></button>
+        <button type="button" class="like${on?" on":""}" data-like="${c.id}" aria-pressed="${on}" ${db?"":"disabled"}>${HEART}<span>${live?n:"–"}</span><span class="sr"> · favoritar o ${esc(c.mk)} ${esc(c.nm)}</span></button>
         <button type="button" class="go" data-info="${c.id}">Ver ficha</button>
-        <button type="button" class="info" data-info="${c.id}" aria-label="Ficha completa do ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)}">i</button>
+        <button type="button" class="info" data-info="${c.id}" title="Ver ficha">i<span class="sr">: ficha completa do ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)}</span></button>
       </div>
       <div class="c-more">
-      <button type="button" class="nw${NEWS[mid]?" has":""}" data-news="${mid}" title="Notícias" aria-label="Notícias do ${esc(c.mk)} ${esc(c.nm)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h12v14H6a2 2 0 0 1-2-2zM16 9h4v8a2 2 0 0 1-2 2h-2M7 9h6M7 12h6M7 15h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><span>${NEWS[mid]?NEWS[mid].items.length:""}</span></button>
+      <button type="button" class="nw${NEWS[mid]?" has":""}" data-news="${mid}" title="Notícias"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h12v14H6a2 2 0 0 1-2-2zM16 9h4v8a2 2 0 0 1-2 2h-2M7 9h6M7 12h6M7 15h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round"/></svg><span>${NEWS[mid]?NEWS[mid].items.length:""}</span><span class="sr"> notícias do ${esc(c.mk)} ${esc(c.nm)}</span></button>
       ${cmBtn(mid,c)}${alBtn(mid,c)}
       </div>
     </div>
@@ -1762,7 +1782,7 @@ function headerFor(){
 }
 function emptyHTML(i){
   const [lo,hi]=bandAt(i);
-  if(!loaded)return `<div class="row-empty"><div class="empty"><b>${loadErr?"Biblioteca indisponível":"Carregando a biblioteca"}</b>${loadErr||"Buscando as versões 0 km no banco do Autokan…"}</div></div>`;
+  if(!loaded)return `<div class="row-empty"><div class="empty"${loadErr?' role="alert"':""}><b>${loadErr?"Não deu para carregar os carros":"Carregando os carros"}</b>${loadErr||"Buscando as versões 0 km no banco do Autokan…"}${loadErr?`<span class="empty-acts"><button type="button" class="gp-btn pri" onclick="location.reload()">Tentar de novo</button><a class="gp-btn" href="/carros">Ver a lista de carros</a></span>`:""}</div></div>`;
   const pool=CARS.filter(c=>c.p&&matches(c));
   if(!pool.length)return `<div class="row-empty"><div class="empty"><b>Nenhum carro com esses filtros</b>Tire um dos filtros lá em cima para ver mais modelos.</div></div>`;
   const below=pool.filter(c=>K(c)<lo).sort((x,y)=>y.p-x.p)[0],above=pool.filter(c=>K(c)>hi).sort((x,y)=>x.p-y.p)[0];
@@ -1832,7 +1852,7 @@ function refreshCounts(){
     el.querySelectorAll(".card").forEach((card,k)=>{const id=card.dataset.id,n=counts[id]||0;
       card.classList.toggle("first",k===0&&scoreOf(el._list[k]||{})>0);
       const b=card.querySelector("[data-like]");if(!b)return;const on=mine.has(id);
-      b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);b.querySelector("span").textContent=live?n:"–";});
+      b.classList.toggle("on",on);b.setAttribute("aria-pressed",on);b.querySelector("span:not(.sr)").textContent=live?n:"–";});
   }
 }
 dial.onFrame=()=>{if(!rowAnim)rowAnim=requestAnimationFrame(rowsTick)};
@@ -1849,13 +1869,13 @@ const refresh=swap;
 const curRow=()=>rowMap.get(dial.sel);
 /* strength icon → small popover explaining it */
 let tipEl=null,tipFor=null;
-function closeTip(){if(tipEl){tipEl.remove();tipEl=null;tipFor=null}}
+function closeTip(){if(tipEl){if(tipFor){tipFor.removeAttribute("aria-describedby");tipFor.setAttribute("aria-expanded","false")}tipEl.remove();tipEl=null;tipFor=null}}
 function openTip(btn){
   if(tipFor===btn)return closeTip();closeTip();const k=btn.dataset.tip;
   const cd=btn.closest("[data-id]"),car=cd&&ALLCARS.find(c=>c.id===cd.dataset.id),why=car&&car.why&&car.why[k];
   tipEl=document.createElement("div");tipEl.className="tip";tipEl.setAttribute("role","tooltip");
   tipEl.innerHTML=`<span class="ic" data-k="${k}">${ico(k)}</span><div><b>${TAGS[k]}</b><p>${TAGDESC[k]||""}</p>${why?`<p class="why"><em>Por que este carro tem:</em> ${esc(why)}</p>`:""}${TAGRULE[k]&&TAGRULE[k]!==why?`<p class="rule"><em>Critério do Autokan:</em> ${TAGRULE[k]}</p>`:""}</div>`;
-  document.body.appendChild(tipEl);tipFor=btn;
+  tipEl.id="tipAtual";document.body.appendChild(tipEl);tipFor=btn;btn.setAttribute("aria-describedby","tipAtual");btn.setAttribute("aria-expanded","true");
   const r=btn.getBoundingClientRect(),w=tipEl.offsetWidth,h=tipEl.offsetHeight;
   let x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2)),y=r.top-h-10,below=false;
   if(y<8){y=r.bottom+10;below=true}
@@ -1934,7 +1954,7 @@ function applyPrices(){const today=todayBR(),byVersion=new Map();
 const PC_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v5M12 7.5v.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
 const shortDate=d=>{const m=/^\d{4}-(\d{2})-(\d{2})/.exec(d||"");return m?`${m[2]}/${m[1]}`:""};
 function priceLine(c){const x=c.pc;if(!x)return"";const promo=x.change_type==="promocional",note=promo?(x.ends_on?` · até ${shortDate(x.ends_on)}`:" · oferta"):"";
-  return `<button type="button" class="pc-line${x.new_price>x.old_price?" up":""}" data-pc="${esc(c.id)}" aria-label="Antes ${fmt(x.old_price)}. Ver por que o preço mudou e a fonte" title="Ver por que o preço mudou e a fonte">${promo?"":"antes "}<s>${fmt(x.old_price)}</s>${note}${PC_ICON}</button>`}
+  return `<button type="button" class="pc-line${x.new_price>x.old_price?" up":""}" data-pc="${esc(c.id)}" title="Ver por que o preço mudou e a fonte">${promo?"":"antes "}<s>${fmt(x.old_price)}</s>${note}${PC_ICON}<span class="sr">. Ver por que o preço mudou e a fonte</span></button>`}
 function openPrice(id){const c=ALLCARS.find(v=>v.id===id),x=c&&c.pc;if(!x)return;closeTip&&closeTip();lastFocus=document.activeElement;
   const down=x.new_price<x.old_price,diff=Math.abs(x.new_price-x.old_price),pct=Math.round(diff/x.old_price*100),promo=x.change_type==="promocional";
   const validity=promo?(x.ends_on?`Oferta válida até ${esc(fdate(x.ends_on))}.`:"Oferta sem data de término informada."):"Novo preço de tabela, sem data para acabar.";
@@ -1946,7 +1966,7 @@ function openPrice(id){const c=ALLCARS.find(v=>v.id===id),x=c&&c.pc;if(!x)return
     <a class="pc-source" href="${esc(x.source_url)}" target="_blank" rel="noopener">Ver na fonte: ${esc(x.source_name||"notícia")} ↗</a>
     <p class="nf-note">${x.reported_on?`Informado em ${esc(fdate(x.reported_on))}. `:""}Condições podem variar por região e estoque; confirme com a concessionária.</p>`;
   document.getElementById("pcPanel").hidden=false;scrim.hidden=false;body.scrollTop=0;document.getElementById("pcClose").focus()}
-function closePrice(){document.getElementById("pcPanel").hidden=true;if(sheet.hidden)scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closePrice(){document.getElementById("pcPanel").hidden=true;if(sheet.hidden)scrim.hidden=true;devolveFoco()}
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pc]");if(b)openPrice(b.dataset.pc)});
 document.getElementById("pcClose").onclick=closePrice;
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("pcPanel").hidden){e.stopImmediatePropagation();closePrice()}},true);
@@ -2019,8 +2039,26 @@ document.getElementById("fuq").addEventListener("click",e=>{
 });
 function filtersChanged(){renderPills();if(!drawer.hidden)renderDrawer();swap()}
 let lastFocus=null;
+/* ao fechar um painel, o foco volta para o botão que o abriu; se o card foi redesenhado nesse meio-tempo,
+   volta para o "Ver ficha" do carro escolhido (assim quem usa teclado ou leitor de tela não se perde) */
+function devolveFoco(){
+  if(lastFocus&&lastFocus.isConnected&&lastFocus.getClientRects().length){lastFocus.focus();return}
+  const alvo=document.querySelector(".row:not(.ghost) .card.sel button.go")||document.querySelector(".showroom button.go")||document.getElementById("dialThumb");
+  alvo&&alvo.focus();
+}
+/* painéis que abrem por cima (aria-modal): Tab e Shift+Tab ficam dentro do painel aberto, como numa janela */
+const FOCAVEIS='a[href],button:not([disabled]),input:not([disabled]):not([type=hidden]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])';
+const naTela=e=>e.getClientRects().length>0&&getComputedStyle(e).visibility!=="hidden";
+addEventListener("keydown",e=>{if(e.key!=="Tab")return;
+  const abertos=[...document.querySelectorAll('[aria-modal="true"]')].filter(d=>!d.hidden&&naTela(d));if(!abertos.length)return;
+  const d=abertos.find(x=>x.contains(document.activeElement))||abertos[abertos.length-1];
+  const fs=[...d.querySelectorAll(FOCAVEIS)].filter(x=>naTela(x)&&!x.closest("[inert],[hidden]"));if(!fs.length)return;
+  const i=fs.indexOf(document.activeElement);
+  if(i===-1){e.preventDefault();fs[e.shiftKey?fs.length-1:0].focus();return}
+  if(!e.shiftKey&&i===fs.length-1){e.preventDefault();fs[0].focus()}else if(e.shiftKey&&i===0){e.preventDefault();fs[fs.length-1].focus()}
+});
 function openDrawer(){lastFocus=document.activeElement;DRCAT="mk";renderDrawer();drawer.hidden=false;scrim.hidden=false;document.getElementById("drClose").focus()}
-function closeDrawer(){drawer.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeDrawer(){drawer.hidden=true;scrim.hidden=true;devolveFoco()}
 document.getElementById("fbtn").onclick=openDrawer;
 document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!document.getElementById("pcPanel").hidden)return closePrice();if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
 document.getElementById("drGo").onclick=closeDrawer;
@@ -2099,11 +2137,19 @@ function goToCar(c){
       const card=row.querySelectorAll(".card")[k];if(!card)return;
       const padl=parseFloat(getComputedStyle(row).paddingLeft)||0;row.scrollTo({left:Math.max(0,card.offsetLeft-padl),behavior:reduce?"auto":"smooth"});
       card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900);
+      /* o carro buscado passa a ser o escolhido da faixa (com o "Ver ficha"), e o foco vai para ele */
+      SELBY[row._i]=card.dataset.id;applySel(row);
+      const go=card.querySelector("button.go");if(go&&(document.activeElement===document.body||document.activeElement===qIn||!document.activeElement))go.focus({preventScroll:true});
     },260)})();
 }
 document.addEventListener("click",e=>{const a=e.target.closest&&e.target.closest("[data-ev]");if(a&&window.giroTrack)giroTrack("click",{version_id:a.dataset.vid||null,meta:{el:a.dataset.ev}})},true);
 const toastEl=document.getElementById("toast");let tt;
-function toast(m){toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,3800)}
+/* leitores de tela: avisos curtos numa região própria (antes a vitrine inteira era lida a cada mudança) */
+function anuncia(t){const a=document.getElementById("anuncio");if(!a)return;a.textContent="";setTimeout(()=>{a.textContent=t},80)}
+{let ta=0;const resumo=()=>{clearTimeout(ta);ta=setTimeout(()=>{if(!loaded||!document.getElementById("garPage").hidden)return;
+  anuncia(`${document.getElementById("srTitle").textContent}. ${document.getElementById("srSub").textContent}`)},900)};
+ const mo=new MutationObserver(resumo);["srTitle","srSub"].forEach(id=>{const el=document.getElementById(id);el&&mo.observe(el,{childList:true,characterData:true,subtree:true})})}
+function toast(m){anuncia(m);toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,3800)}
 function status(t,ok){document.getElementById("status").innerHTML=`<i class="${ok?"on":""}"></i><span>${t}</span>`}
 function toggle(id){
   const had=mine.has(id);had?mine.delete(id):mine.add(id);counts[id]=(counts[id]||0)+(had?-1:1);
@@ -2205,7 +2251,6 @@ function setSheetNav(c){
   const nav=document.getElementById("shNav");nav.hidden=shIdx<0||shList.length<2;if(nav.hidden)return;
   const pv=shList[shIdx-1],nx=shList[shIdx+1],P=document.getElementById("shPrev"),N=document.getElementById("shNext");
   P.disabled=!pv;N.disabled=!nx;document.getElementById("shPrevN").textContent=pv?pv.nm:"—";document.getElementById("shNextN").textContent=nx?nx.nm:"—";
-  P.setAttribute("aria-label",pv?`Anterior: ${pv.mk} ${pv.nm}`:"Sem anterior");N.setAttribute("aria-label",nx?`Próximo: ${nx.mk} ${nx.nm}`:"Sem próximo");
   document.getElementById("shPos").textContent=`${shIdx+1} de ${shList.length}`;
 }
 function sheetStep(d){const t=shList[shIdx+d];if(!t)return;openInfo(t.id);shBody.scrollTop=0}
@@ -2243,7 +2288,7 @@ async function openInfo(id){
     <section class="dr-group"><h3>Ficha técnica</h3><table class="sh-tbl">
       ${["Dimensões e porta-malas","Desempenho","Consumo e autonomia","Segurança","Tecnologia","Conforto","Garantia"].map(k=>`<tr><th>${k}</th><td>${NA}</td></tr>`).join("")}
     </table></section>
-    ${v&&v.quality?`<section class="dr-group"><h3>Completude da ficha · ${+v.quality.completeness_pct||0}%</h3><div class="qbar"><i style="width:${Math.max(0,Math.min(100,+v.quality.completeness_pct||0))}%"></i></div><div class="sh-meta" style="margin-top:6px">Atualizado em ${esc(v.updated_at||"")}. Campos sem fonte ficam como "não informado".</div></section>`:""}
+    ${v&&v.quality?`<section class="dr-group"><h3>Completude da ficha · ${+v.quality.completeness_pct||0}%</h3><div class="qbar"><i style="width:${Math.max(0,Math.min(100,+v.quality.completeness_pct||0))}%"></i></div><div class="sh-meta" style="margin-top:6px">Atualizado em ${esc(fdate(v.updated_at)||v.updated_at||"")}. Campos sem fonte ficam como "não informado".</div></section>`:""}
     <section class="dr-group"><h3>Versões do ${esc(c.nm)}</h3><div class="sh-vers">${sib.map(x=>`<button type="button" data-sib="${x.id}" ${x.id===c.id?'aria-current="true"':""}><span>${esc(x.ver)}${x.ano?` · ${x.ano}`:""}</span><b>${x.p?fmt(x.p):"—"}</b></button>`).join("")}</div></section>
     <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} ${(counts[c.id]||0)===1?"pessoa favoritou":"pessoas favoritaram"} esta versão</div></section>`;
   /* toda ficha abre do topo, com a foto do carro, mesmo que a anterior tenha sido lida até o fim */
@@ -2274,7 +2319,7 @@ function renderNews(mid){
 }
 let newsFor=null;
 function openNews(mid){closeTip&&closeTip();lastFocus=document.activeElement;newsFor=mid;renderNews(mid);newsPanel.hidden=false;scrim.hidden=false;nfBody.scrollTop=0;document.getElementById("nfClose").focus()}
-function closeNews(){newsPanel.hidden=true;scrim.hidden=true;newsFor=null;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeNews(){newsPanel.hidden=true;scrim.hidden=true;newsFor=null;devolveFoco()}
 document.getElementById("nfClose").onclick=closeNews;
 /* ---------- comments (db: comments/<userId> = {items:[{id,mid,text,ts}]}, one doc per person) and alerts (db: alerts/<model_id>) ---------- */
 const CM_MAX=10000; /* mesmo limite de caracteres de um comentário no YouTube */
@@ -2287,12 +2332,14 @@ const verName=vid=>{const c=ALLCARS.find(x=>x.id===vid)||RAWCAT.find(x=>x.i===vi
 const CHAT='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h14a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1h-7l-4 3.5V16H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
 const WARN='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4 2.8 19.5h18.4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 10v4.5M12 17.2v.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 function alInfo(mid){const a=ALERTS[mid];const items=a&&Array.isArray(a.items)?a.items.filter(i=>i&&i.title):[];return {n:items.length,recall:items.some(i=>i.kind==="recall"),items,a}}
-function cmBtn(mid,c){const vid=VIEW==="versions"?c.id:"",n=cmByMid(mid,vid).length;return `<button type="button" class="nw cm${n?" has":""}" data-cm="${mid}" data-cv="${vid}" title="${vid?`Comentários desta versão`:"Comentários do modelo (todas as versões)"}" aria-label="Comentários sobre o ${esc(c.mk)} ${esc(c.nm)}${n?` (${n})`:""}">${CHAT}<span>${n||""}</span></button>`}
-function alBtn(mid,c){const i=alInfo(mid);return `<button type="button" class="nw al${i.n?" on":""}${i.recall?" recall":""}" data-al="${mid}" title="Atenção: recalls e alertas" aria-label="${i.n?`Atenção: ${i.n} ${i.n===1?"aviso":"avisos"}`:"Sem avisos"} sobre o ${esc(c.mk)} ${esc(c.nm)}">${WARN}${i.n?`<span>${i.n}</span>`:""}</button>`}
+function cmBtn(mid,c){const vid=VIEW==="versions"?c.id:"",n=cmByMid(mid,vid).length;return `<button type="button" class="nw cm${n?" has":""}" data-cm="${mid}" data-cv="${vid}" title="${vid?`Comentários desta versão`:"Comentários do modelo (todas as versões)"}">${CHAT}<span>${n||""}</span><span class="sr"> comentários sobre o ${esc(c.mk)} ${esc(c.nm)}</span></button>`}
+function alBtn(mid,c){const i=alInfo(mid);return `<button type="button" class="nw al${i.n?" on":""}${i.recall?" recall":""}" data-al="${mid}" title="Atenção: recalls e alertas">${WARN}${i.n?`<span>${i.n}</span>`:""}<span class="sr">${alSr(i.n,c)}</span></button>`}
+const alSr=(n,c)=>`${n?` ${n===1?"aviso":"avisos"}`:"Sem avisos"} sobre o ${c.mk} ${c.nm}`;
 function paintMore(){
-  document.querySelectorAll(".nw.cm[data-cm]").forEach(b=>{const n=cmByMid(b.dataset.cm,b.dataset.cv||"").length;b.classList.toggle("has",!!n);b.querySelector("span").textContent=n||""});
+  document.querySelectorAll(".nw.cm[data-cm]").forEach(b=>{const n=cmByMid(b.dataset.cm,b.dataset.cv||"").length;b.classList.toggle("has",!!n);b.querySelector("span:not(.sr)").textContent=n||""});
   document.querySelectorAll(".nw.al[data-al]").forEach(b=>{const i=alInfo(b.dataset.al);b.classList.toggle("on",!!i.n);b.classList.toggle("recall",i.recall);
-    let sp=b.querySelector("span");if(i.n){if(!sp){sp=document.createElement("span");b.appendChild(sp)}sp.textContent=i.n}else if(sp)sp.remove()});
+    let sp=b.querySelector("span:not(.sr)");const sr=b.querySelector(".sr");if(i.n){if(!sp){sp=document.createElement("span");b.insertBefore(sp,sr)}sp.textContent=i.n}else if(sp)sp.remove();
+    const car=ALLCARS.find(x=>x.mid===b.dataset.al);if(sr&&car)sr.textContent=alSr(i.n,car)});
 }
 const cmPanel=document.getElementById("cmPanel"),cmBody=document.getElementById("cmBody"),alPanel=document.getElementById("alPanel"),alBody=document.getElementById("alBody");
 const panelOpen=()=>!cmPanel.hidden||!alPanel.hidden;
@@ -2358,7 +2405,7 @@ function renderAL(mid){
 function openPanel(kind,mid,vid){closeTip&&closeTip();closePanel(true);lastFocus=document.activeElement;
   const pn=kind==="cm"?cmPanel:alPanel;if(kind==="cm"){cmFor=mid;cmScope=vid||"";renderCM(mid)}else{alFor=mid;renderAL(mid)}
   pn.hidden=false;scrim.hidden=false;pn.querySelector(".dr-body").scrollTop=0;pn.querySelector(".dr-x").focus()}
-function closePanel(silent){if(cmPanel.hidden&&alPanel.hidden)return;cmPanel.hidden=true;alPanel.hidden=true;cmFor=alFor=null;if(!silent){scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}}
+function closePanel(silent){if(cmPanel.hidden&&alPanel.hidden)return;cmPanel.hidden=true;alPanel.hidden=true;cmFor=alFor=null;if(!silent){scrim.hidden=true;devolveFoco()}}
 document.getElementById("cmClose").onclick=()=>closePanel();document.getElementById("alClose").onclick=()=>closePanel();
 cmBody.addEventListener("click",e=>{const d=e.target.closest("[data-cmdel]");if(d){const [u,i]=d.dataset.cmdel.split("|");if(confirmDel(d))deleteComment(u,i);return}
   const m=e.target.closest("[data-cmmore]");if(m){m.previousElementSibling.classList.remove("clip");m.remove()}});
@@ -2609,7 +2656,7 @@ function renderNovidades(){
   dbBody.innerHTML=`<div class="nv-list">${cars.length?`<div class="nv-h">Carros · ${cars.length}</div>${cars.map(card).join("")}`:""}${brands.length?`<div class="nv-h">Marcas · ${brands.length}</div>${brands.map(card).join("")}`:""}
     ${added.length?`<div class="nv-h">Adicionados nos últimos ${NV_DAYS} dias</div>${added.map(i=>`<article class="nv-card"><div class="rd-meta"><span class="tagx ok">adicionado em ${fdt(i.applied_at)}</span><span>${esc(i.applied_brand||i.brand||"")} ${esc(i.applied_model||i.model||"")}</span></div><div class="nv-why">${(i.applied_log||[]).map(x=>`+ ${esc(x)}`).join("<br>")}</div>${nvWhy(i)}</article>`).join("")}`:""}</div>`}
 function openRadar(){lastFocus=document.activeElement;rdPanel.hidden=false;renderRadar();if(RUNS[0])lsSet("giro_radar_seen",RUNS[0].id);document.getElementById("rdToast").hidden=true;document.getElementById("rdClose").focus()}
-function closeRadar(){rdPanel.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeRadar(){rdPanel.hidden=true;devolveFoco()}
 document.getElementById("rdClose").onclick=closeRadar;
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!rdPanel.hidden)closeRadar()});
 function startRadar(){if(!db)return;rdOn=true;const b=document.getElementById("rdbtn");b.hidden=false;b.onclick=openRadar;
@@ -2617,7 +2664,7 @@ function startRadar(){if(!db)return;rdOn=true;const b=document.getElementById("r
   db.collection("radar_runs").onSnapshot(snap=>{RUNS=snap.docs.map(d=>({...(d.data()||{}),id:d.id})).sort((a,b)=>String(b.id).localeCompare(String(a.id)));if(!rdPanel.hidden)renderRadar();else rdToast()},()=>{});
 }
 function openDB(){lastFocus=document.activeElement;dbMenuSet(false);dbPanel.hidden=false;renderDB();document.getElementById("dbClose").focus()}
-function closeDB(){dbPanel.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeDB(){dbPanel.hidden=true;devolveFoco()}
 document.getElementById("dbClose").onclick=closeDB;
 dbPanel.addEventListener("click",e=>{if(e.target===dbPanel)return closeDB();const b=e.target.closest("[data-dbinfo]");if(b){closeDB();openInfo(b.dataset.dbinfo)}});
 let dbT;document.getElementById("dbQ").addEventListener("input",()=>{clearTimeout(dbT);dbT=setTimeout(renderDB,150)});
@@ -2695,7 +2742,7 @@ document.getElementById("gbtn").onclick=()=>openGarPage();
 /* Esc fecha a página só quando não há ficha nem painel aberto por cima (roda antes dos outros, que fecham esses) */
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!garPage.hidden&&sheet.hidden&&newsPanel.hidden&&!panelOpen()&&authPanel.hidden)closeGarPage()},true);
 if(location.pathname==="/salvos")openGarPage(false);
-function closeSheet(){sheet.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeSheet(){sheet.hidden=true;scrim.hidden=true;devolveFoco()}
 document.getElementById("shClose").onclick=closeSheet;
 /* ficha: salvar o carro (sem conta, pede para entrar e salva logo depois) */
 shBody.addEventListener("click",e=>{const gb=e.target.closest("[data-garage]");if(gb)myId?toggleGarage(gb.dataset.garage):askAccount("save",gb.dataset.garage)});
@@ -2974,7 +3021,7 @@ function openFx(setId){if(!db||!assets)return;const sets=photoSets(),items=sets.
   $fx("fxStrip").dataset.set="";fxQ.value="";fxQList.hidden=true;lastFocus=document.activeElement;fxPanel.hidden=false;fxGo(0);$fx("fxOk").focus();fxMeasureAll()}
 function closeFx(){if(!FX||FX.busy)return;const n=FX.items.filter(fxDirty).length;
   if(n&&!confirm(`${n} ${n>1?"fotos ajustadas não foram salvas":"foto ajustada não foi salva"}. Fechar mesmo assim?`))return;
-  fxPanel.hidden=true;FX=null;if(!imgPanel.hidden)renderImgPanel();lastFocus&&lastFocus.focus&&lastFocus.focus()}
+  fxPanel.hidden=true;FX=null;if(!imgPanel.hidden)renderImgPanel();devolveFoco()}
 {const on=(id,fn)=>$fx(id).onclick=fn;
   on("fxPrev",()=>fxStep(-1));on("fxNext",()=>fxStep(1));on("fxFit",fxFit);on("fxFloor",fxFloorAlign);on("fxCenter",fxCenterAlign);on("fxSize",fxSizeOnly);on("fxFlip",fxFlip);
   on("fxSm",()=>fxZoom(1/1.02));on("fxLg",()=>fxZoom(1.02));on("fxUp",()=>fxMove(-.005));on("fxDn",()=>fxMove(.005));on("fxUndo",fxUndo);on("fxOk",fxApprove);on("fxClose",closeFx);
@@ -3021,7 +3068,7 @@ async function sendQueue(){
   sending=false;toast("Envio concluído.");
 }
 function openImg(){lastFocus=document.activeElement;renderImgPanel();imgPanel.hidden=false;scrim.hidden=false;document.getElementById("ipClose").focus()}
-function closeImg(){imgPanel.hidden=true;scrim.hidden=true;lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function closeImg(){imgPanel.hidden=true;scrim.hidden=true;devolveFoco()}
 document.getElementById("ipClose").onclick=closeImg;
 
 (async()=>{
@@ -3030,16 +3077,16 @@ document.getElementById("ipClose").onclick=closeImg;
   bandChanged();
   try{
     const [d,u]=await Promise.all([claude.use("db"),claude.use("user")]);
-    if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Abra o Autokan pelo link com sua conta conectada para ver a biblioteca.";swap();return}
+    if(!d){status("Favoritos indisponíveis aqui",false);loadErr="Confira sua conexão com a internet e tente de novo.";swap();return}
     db=d;userNS=u;myId=u?await u.id():null;
     authKnown=true;garageLoad=loadGarage().then(renderGarPage);
     const timer=setTimeout(()=>{if(!live)status("Sem conexão com os favoritos",false)},10000);
-    const ct=setTimeout(()=>{if(!loaded){loadErr="Não deu para conectar ao banco. Verifique a internet; a página tenta de novo sozinha.";swap()}},10000);
+    const ct=setTimeout(()=>{if(!loaded){loadErr="Está demorando mais que o normal. Confira sua internet; a página continua tentando sozinha.";swap()}},10000);
     visReady=loadVis().catch(()=>{});
-    db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;visReady.then(()=>setCatalog(snap))},()=>{clearTimeout(ct);loadErr="A biblioteca não pôde ser carregada agora.";swap()});
+    db.collection("catalog").onSnapshot(snap=>{if(!snap.metadata.fromCache)clearTimeout(ct);if(snap.empty&&snap.metadata.fromCache)return;visReady.then(()=>setCatalog(snap))},()=>{clearTimeout(ct);loadErr="Confira sua conexão com a internet e tente de novo.";swap()});
     db.collection("price_changes").onSnapshot(snap=>{PRICE_CHANGES=snap.docs.map(d=>d.data());if(loaded){applyPrices();filtersChanged()}},()=>{});
     db.collection("news").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data();if(d&&Array.isArray(d.items)&&d.items.length)p[x.id]=d});NEWS=p;
-      document.querySelectorAll(".nw[data-news]").forEach(b=>{const d=NEWS[b.dataset.news];b.classList.toggle("has",!!d);const t=b.querySelector("span");if(t)t.textContent=d?d.items.length:""});if(newsFor&&!newsPanel.hidden)renderNews(newsFor);},()=>{});
+      document.querySelectorAll(".nw[data-news]").forEach(b=>{const d=NEWS[b.dataset.news];b.classList.toggle("has",!!d);const t=b.querySelector("span:not(.sr)");if(t)t.textContent=d?d.items.length:""});if(newsFor&&!newsPanel.hidden)renderNews(newsFor);},()=>{});
     db.collection("comments").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data()||{};if(Array.isArray(d.items))p[x.id]=d.items.filter(i=>i&&typeof i.text==="string"&&typeof i.mid==="string").map(i=>({...i,text:i.text.slice(0,CM_MAX)}))});COMM=p;paintMore();if(cmFor&&!cmPanel.hidden)renderCM(cmFor,true)},()=>{});
     db.collection("alerts").onSnapshot(snap=>{const p={};snap.docs.forEach(x=>{const d=x.data();if(d&&Array.isArray(d.items)&&d.items.length)p[x.id]=d});ALERTS=p;paintMore();if(alFor&&!alPanel.hidden)renderAL(alFor)},()=>{});
     db.collection("brands").onSnapshot(snap=>{const m={};snap.docs.forEach(x=>{const d=x.data()||{};if(d.name&&d.country)m[d.name]=String(d.country)});BRANDCO=m;if(!drawer.hidden)renderDrawer();},()=>{});
@@ -3060,6 +3107,6 @@ document.getElementById("ipClose").onclick=closeImg;
       const dbb=document.getElementById("dbbtn");dbb.hidden=false;dbb.onclick=openDB;
       startRadar();
     }
-  }catch(e){status("Favoritos indisponíveis aqui",false);loadErr="A biblioteca não pôde ser carregada agora.";swap()}
+  }catch(e){status("Favoritos indisponíveis aqui",false);loadErr="Confira sua conexão com a internet e tente de novo.";swap()}
 })();
 </script>

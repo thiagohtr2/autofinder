@@ -42,3 +42,10 @@
   for = "/site.webmanifest"
   [headers.values]
     Content-Type = "application/manifest+json; charset=utf-8"
+
+# bibliotecas servidas pelo próprio site (antes vinham de um CDN externo; se ele falhasse, a roleta não abria).
+# O nome do arquivo leva a versão, então pode ficar guardado por 1 ano.
+[[headers]]
+  for = "/vendor/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
