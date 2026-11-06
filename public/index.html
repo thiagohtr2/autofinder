@@ -1245,7 +1245,10 @@ function makeDial(el,start,onChange){
   d.draw=()=>{const G=d.G;if(!G)return;const {R,cx,cy,base,dir,step}=G,pos=d.pos;
     ctx.clearRect(-(d.off||0),0,d.CW||d.W,d.H);
     // round backdrop that follows the end of the ticks: cars slide behind a disc, never a rectangle
-    if(DIAL_DISC==='white'){ctx.fillStyle='#ffffff';ctx.beginPath();ctx.arc(cx,cy,G.Rd,0,Math.PI*2);ctx.fill();ctx.strokeStyle='#e4e8ef';ctx.lineWidth=1;ctx.stroke();}
+    if(DIAL_DISC==='white'){ctx.fillStyle='#ffffff';ctx.beginPath();ctx.arc(cx,cy,G.Rd,0,Math.PI*2);ctx.fill();
+      /* borda cinza clara: inteira perto do centro e sumindo bem antes das pontas (a máscara da roleta só apaga nos 9% finais) */
+      const bf=ctx.createLinearGradient(0,0,0,d.H);bf.addColorStop(.1,'rgba(228,232,239,0)');bf.addColorStop(.36,'rgba(228,232,239,1)');bf.addColorStop(.64,'rgba(228,232,239,1)');bf.addColorStop(.9,'rgba(228,232,239,0)');
+      ctx.strokeStyle=bf;ctx.lineWidth=1;ctx.stroke();}
     else if(DIAL_DISC){const Rd=G.Rd,g=ctx.createRadialGradient(cx,cy,R-60,cx,cy,Rd);g.addColorStop(0,"#ffffff");g.addColorStop(.75,"#fdfdff");g.addColorStop(1,"#f8fafd");
      ctx.save();ctx.shadowColor="rgba(12,17,28,.10)";ctx.shadowBlur=16;ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,Rd,0,Math.PI*2);ctx.fill();ctx.restore();
      ctx.strokeStyle="rgba(12,17,28,.06)";ctx.lineWidth=1;ctx.beginPath();ctx.arc(cx,cy,Rd,-1.6,1.6);ctx.stroke();}
