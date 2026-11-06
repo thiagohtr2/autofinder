@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <title>Painel · AutoKan</title>
+<meta name="theme-color" content="#0d1631">
 <script src="/puxar.js" defer></script>
 <link rel="icon" type="image/png" sizes="32x32" href="/marca/favicon-32.png?v=3">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,12 +30,12 @@ button,input,select{font:inherit;color:inherit}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 header.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;justify-content:space-between}
 /* topo igual ao do site: barra branca de borda a borda, logo à esquerda (volta para o site), presa no alto ao rolar */
-.sitebar{position:sticky;top:0;z-index:30;margin:-16px calc(-1 * max(16px,env(safe-area-inset-right,0px))) 16px calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));background:#fff;border-bottom:1px solid var(--line)}
+.sitebar{position:sticky;top:0;z-index:30;margin:-16px calc(-1 * max(16px,env(safe-area-inset-right,0px))) 16px calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));background:linear-gradient(115deg,#121d40 0%,#0a1230 55%,#060b1c 100%);border-bottom:1px solid rgba(111,151,255,.22)}
 .sb-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
 .sb-logo{display:block;border-radius:8px}
 .sb-logo img{height:28px;width:auto;display:block}
-.sb-back{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px 0 11px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--ink);font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap}
-.sb-back:hover{border-color:var(--faint)}
+.sb-back{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px 0 11px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap}
+.sb-back:hover{border-color:rgba(255,255,255,.6)}
 .sb-back svg{width:15px;height:15px}
 @media (max-width:760px){.sitebar{padding-block:10px}.sb-logo img{height:23px}}
 @media (max-width:380px){.sb-logo img{height:22px}.sb-back{padding:0 11px 0 9px;font-size:12.5px}}
@@ -131,7 +132,7 @@ tr:last-child td{border-bottom:0}
 
 <header class="sitebar">
   <div class="sb-in">
-    <a class="sb-logo" href="/" title="Voltar para o site" aria-label="AutoKan: voltar para o site"><img src="/marca/autokan-logo-topo.png?v=3" alt="AutoKan" width="206" height="28"></a>
+    <a class="sb-logo" href="/" title="Voltar para o site" aria-label="AutoKan: voltar para o site"><img src="/marca/autokan-logo-topo-escuro.png?v=3" alt="AutoKan" width="206" height="28"></a>
     <a class="sb-back" href="/"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Voltar ao site</a>
   </div>
 </header>
