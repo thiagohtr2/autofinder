@@ -163,7 +163,7 @@ tr:last-child td{border-bottom:0}
     <div class="kpi"><small id="kPerLbl">Visitantes · 7 dias</small><b class="num" id="kPer">–</b><span id="kPerSub">&nbsp;</span></div>
     <div class="kpi"><small>Voltaram</small><b class="num" id="kBack">–</b><span id="kBackSub">&nbsp;</span></div>
     <div class="kpi"><small>Cadastros</small><b class="num" id="kUsers">–</b><span id="kUsersSub">&nbsp;</span></div>
-    <div class="kpi"><small>Curtidas</small><b class="num" id="kVotes">–</b><span id="kVotesSub">&nbsp;</span></div>
+    <div class="kpi"><small>Favoritos</small><b class="num" id="kVotes">–</b><span id="kVotesSub">&nbsp;</span></div>
   </section>
 
   <section class="card">
@@ -186,7 +186,7 @@ tr:last-child td{border-bottom:0}
   </div>
 
   <div class="grid g2">
-    <section class="card"><h2>Mais curtidos</h2><p class="sub">Desde o início.</p><div class="tbl-wrap"><table id="voted"></table></div></section>
+    <section class="card"><h2>Mais favoritados</h2><p class="sub">Desde o início.</p><div class="tbl-wrap"><table id="voted"></table></div></section>
     <section class="card"><h2>Páginas mais vistas</h2><p class="sub">No período.</p><ul class="blist" id="pages"></ul></section>
   </div>
 
@@ -258,8 +258,8 @@ function showGate(kind, msg){
 }
 
 // ---------- rótulos
-const EV = {page_view: "Páginas vistas", spin: "Roleta parou numa faixa", view_car: "Fichas de carro abertas", compare: "Comparações abertas", save: "Carros salvos", vote: "Curtidas", share: "Compartilhamentos", search: "Buscas", signup: "Cadastros", login: "Entradas na conta", click: "Cliques acompanhados"};
-const EV_SHORT = {page_view: "Página", spin: "Roleta", view_car: "Abriu carro", compare: "Comparou", save: "Salvou", vote: "Curtiu", share: "Compartilhou", search: "Buscou", signup: "Cadastrou", login: "Entrou", click: "Clique"};
+const EV = {page_view: "Páginas vistas", spin: "Roleta parou numa faixa", view_car: "Fichas de carro abertas", compare: "Comparações abertas", save: "Carros salvos", vote: "Favoritos", share: "Compartilhamentos", search: "Buscas", signup: "Cadastros", login: "Entradas na conta", click: "Cliques acompanhados"};
+const EV_SHORT = {page_view: "Página", spin: "Roleta", view_car: "Abriu carro", compare: "Comparou", save: "Salvou", vote: "Favoritou", share: "Compartilhou", search: "Buscou", signup: "Cadastrou", login: "Entrou", click: "Clique"};
 function srcLabel(s){
   const v = String(s || "").toLowerCase();
   if (!v || v === "direto") return "Direto";
@@ -337,7 +337,7 @@ async function loadOverview(){
   $("kUsers").textContent = nf(o.users_total);
   $("kUsersSub").textContent = `${nf(o.users_today)} hoje · ${nf(o.users_period)} no período`;
   $("kVotes").textContent = nf(o.votes_total);
-  $("kVotesSub").textContent = `${nf(o.voters_total)} pessoa${o.voters_total === 1 ? "" : "s"} curtiram`;
+  $("kVotesSub").textContent = `${nf(o.voters_total)} pessoa${o.voters_total === 1 ? "" : "s"} favoritaram`;
 
   if (days === 1){
     $("dailyTitle").textContent = "Visitantes por hora, hoje"; $("dailySub").textContent = "Pessoas diferentes ativas em cada hora (horário de Brasília).";
@@ -366,7 +366,7 @@ async function loadOverview(){
   const cars = o.top_cars || [];
   $("cars").innerHTML = cars.length ? `<thead><tr><th>Carro</th><th class="n">Preço</th><th class="n">Vezes</th><th class="n">Pessoas</th></tr></thead><tbody>${cars.map(c => `<tr><td>${esc(c.name || c.version_id)}</td><td class="n">${brl(c.price)}</td><td class="n">${nf(c.views)}</td><td class="n">${nf(c.people)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma ficha aberta no período.</td></tr></tbody>';
   const voted = o.top_voted || [];
-  $("voted").innerHTML = voted.length ? `<thead><tr><th>Carro</th><th class="n">Curtidas</th></tr></thead><tbody>${voted.map(c => `<tr><td>${esc(c.name || c.version_id)}</td><td class="n">${nf(c.votes)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma curtida ainda.</td></tr></tbody>';
+  $("voted").innerHTML = voted.length ? `<thead><tr><th>Carro</th><th class="n">Favoritos</th></tr></thead><tbody>${voted.map(c => `<tr><td>${esc(c.name || c.version_id)}</td><td class="n">${nf(c.votes)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhum favorito ainda.</td></tr></tbody>';
   $("upd").textContent = "Atualizado às " + new Date().toLocaleTimeString("pt-BR", {hour: "2-digit", minute: "2-digit"});
 }
 async function loadOnline(){
@@ -392,7 +392,7 @@ async function loadUsers(){
   const rows = await rpc("admin_users", {p_search: q || null, p_limit: U_LIMIT, p_offset: uOffset});
   const total = rows.length ? Number(rows[0].total) : 0;
   $("usersSub").textContent = `${nf(total)} conta${total === 1 ? "" : "s"}${q ? " encontradas" : " no site"}.`;
-  $("users").innerHTML = rows.length ? `<thead><tr><th>Nome</th><th>E-mail</th><th>Entrou com</th><th class="n">Cadastro</th><th class="n">Última visita</th><th class="n">Visitas</th><th class="n">Curtidas</th></tr></thead><tbody>${rows.map(u => `<tr>
+  $("users").innerHTML = rows.length ? `<thead><tr><th>Nome</th><th>E-mail</th><th>Entrou com</th><th class="n">Cadastro</th><th class="n">Última visita</th><th class="n">Visitas</th><th class="n">Favoritos</th></tr></thead><tbody>${rows.map(u => `<tr>
     <td>${esc(u.display_name || "—")}${u.role === "admin" ? ' <span class="pill acc">admin</span>' : ""}</td><td>${esc(u.email)}</td>
     <td>${u.provider === "google" ? "Google" : "E-mail"}</td><td class="n">${fdate(u.created_at)}</td><td class="n">${u.last_seen ? ago(u.last_seen) : "—"}</td>
     <td class="n">${nf(u.sessions)}</td><td class="n">${nf(u.votes)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma conta encontrada.</td></tr></tbody>';
