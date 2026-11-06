@@ -797,9 +797,10 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 /* editor de imagens (administrador) */
 .fx{z-index:34}
 .fx-in{width:min(1180px,100%);height:100%}
+.fx-in>*:not(.fx-main){flex-shrink:0} /* só a área da foto encolhe quando falta altura */
 .fx-main{position:relative;display:flex;align-items:center;gap:12px;padding:4px 22px 0;flex:1 1 auto;min-height:0}
 .fx-stage{flex:1;min-width:0;display:flex;justify-content:center;align-items:center}
-.fx-stage canvas{width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 370px);border-radius:14px;box-shadow:0 0 0 1px var(--line);background:#fff}
+.fx-stage canvas{width:auto;height:auto;max-width:100%;max-height:calc(100dvh - 450px);border-radius:14px;box-shadow:0 0 0 1px var(--line);background:#fff}
 .fx-nav{flex:0 0 auto;width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--bg);font-size:28px;line-height:1;cursor:pointer;display:grid;place-items:center;padding-bottom:3px}
 .fx-nav:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
 .fx-nav:disabled,.fx-tools button:disabled{opacity:.35;cursor:default}
@@ -813,6 +814,26 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .fx-card canvas{width:150px;height:auto;border-radius:10px;box-shadow:0 0 0 1px var(--line)}
 .fx-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding:10px 22px}
 .fx-tools .dr-go{flex:0 0 auto;padding:12px 18px}
+.fx-head{align-items:center}
+.fx-q{position:relative;flex:0 1 330px;margin-left:auto}
+.fx-q input{width:100%;height:40px;border:1px solid var(--line);border-radius:12px;padding:0 12px;font:600 13.5px var(--body);background:var(--panel)}
+.fx-q input:focus{outline:2px solid var(--accent);outline-offset:1px;background:var(--bg)}
+.fx-qlist{position:absolute;left:0;right:0;top:44px;z-index:5;margin:0;padding:6px;list-style:none;background:var(--bg);border-radius:12px;box-shadow:0 0 0 1px var(--line),0 18px 40px -16px rgba(12,17,28,.35);max-height:320px;overflow:auto}
+.fx-qlist button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;border:0;background:none;padding:8px 10px;border-radius:8px;cursor:pointer;text-align:left;font-weight:600;font-size:13px}
+.fx-qlist button:hover,.fx-qlist li:first-child button{background:var(--accent-soft)}
+.fx-qlist small{font-size:11px;color:var(--muted);white-space:nowrap}
+.fx-qlist .none{padding:8px 10px;font-size:13px;color:var(--muted)}
+.fx-auto{display:flex;gap:6px;flex-wrap:wrap}
+.fx-auto button:not(.dr-go){height:42px;border-radius:10px;border:1px solid var(--line);background:var(--bg);font-weight:700;font-size:13px;cursor:pointer;padding:0 12px}
+.fx-auto button:not(.dr-go):hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
+.fx-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:0 22px 8px;font-size:12.5px;color:var(--muted)}
+#fxGroupInfo{flex:1 1 280px;font-weight:600}
+.fx-filter{display:flex;align-items:center;gap:6px;font-weight:600}
+.fx-filter select{height:34px;border:1px solid var(--line);border-radius:10px;background:var(--bg);font:600 12.5px var(--body);color:var(--ink);padding:0 8px}
+.fx-group .dr-clear{flex:0 0 auto;padding:8px 12px;font-size:12.5px}
+.fx-group .dr-clear:disabled{opacity:.4;cursor:default}
+.fx-th.off{box-shadow:inset 0 -3px 0 #ff7a00}
+.fx-th.dim{opacity:.35}
 .fx-fine{display:flex;gap:6px}
 .fx-fine button{min-width:40px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--bg);font-weight:700;font-size:15px;cursor:pointer;padding:0 10px}
 .fx-fine button:hover:not(:disabled){border-color:var(--accent);color:var(--accent)}
@@ -833,6 +854,8 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .fx-nav{position:absolute;z-index:2;top:50%;transform:translateY(-50%);width:40px;height:40px;box-shadow:0 6px 16px -8px rgba(12,17,28,.4)}
   #fxPrev{left:14px}#fxNext{right:14px}
   .fx-stage canvas{max-height:calc(100dvh - 400px)}
+  .fx-head{flex-wrap:wrap}.fx-q{order:3;flex:1 1 100%;margin-left:0}
+  .fx-group{padding-left:14px;padding-right:14px}
   .fx-bar,.fx-tools{padding-left:14px;padding-right:14px}.fx-strip{padding-left:14px;padding-right:14px}
   .fx-card canvas{width:120px}
   .fx-tools .fx-ok{margin-left:0;flex:1 1 100%}
@@ -945,7 +968,9 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 </aside>
 <section class="dbp fx" id="fxPanel" role="dialog" aria-modal="true" aria-labelledby="fxTitle" hidden>
   <div class="dbp-in fx-in">
-    <header class="dbp-head"><div><h2 id="fxTitle">Ajustar imagens</h2><p class="dbp-sub" id="fxSub"></p></div><button type="button" class="dr-x" id="fxClose" aria-label="Fechar">✕</button></header>
+    <header class="dbp-head fx-head"><div><h2 id="fxTitle">Ajustar imagens</h2><p class="dbp-sub" id="fxSub"></p></div>
+      <div class="fx-q"><input type="search" id="fxQ" placeholder="Buscar carro (ex.: compass 2027)" autocomplete="off" spellcheck="false" aria-label="Buscar a foto de um carro"><ul id="fxQList" class="fx-qlist" hidden></ul></div>
+      <button type="button" class="dr-x" id="fxClose" aria-label="Fechar">✕</button></header>
     <div class="fx-main">
       <button type="button" class="fx-nav" id="fxPrev" aria-label="Foto anterior">‹</button>
       <div class="fx-stage"><canvas id="fxCanvas" width="1672" height="941" aria-label="Foto sobre o grid padrão do site"></canvas></div>
@@ -956,13 +981,24 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
       <div class="fx-card"><small>Como fica no card</small><canvas id="fxCard" width="300" height="169"></canvas></div>
     </div>
     <div class="fx-tools">
-      <button type="button" class="dr-go" id="fxFit">Ajustar ao grid</button>
+      <div class="fx-auto" role="group" aria-label="Ajustes automáticos">
+        <button type="button" class="dr-go" id="fxFit" title="Tamanho, centro e rodas no chão (A)">Ajustar tudo ao grid</button>
+        <button type="button" id="fxFloor" title="Põe a base dos pneus na linha do chão, sem mudar o tamanho (B)">Rodas no chão</button>
+        <button type="button" id="fxCenter" title="Centraliza o carro na horizontal (C)">Centralizar</button>
+        <button type="button" id="fxSize" title="Deixa o carro do tamanho padrão, sem tirar do lugar (T)">Só o tamanho</button>
+        <button type="button" id="fxFlip" title="Vira o carro para o outro lado (E)">Espelhar</button>
+      </div>
       <div class="fx-fine" role="group" aria-label="Ajuste fino"><button type="button" id="fxSm" aria-label="Diminuir o carro" title="Diminuir (−)">−</button><button type="button" id="fxLg" aria-label="Aumentar o carro" title="Aumentar (+)">+</button><button type="button" id="fxUp" aria-label="Subir o carro" title="Subir (↑)">↑</button><button type="button" id="fxDn" aria-label="Descer o carro" title="Descer (↓)">↓</button><button type="button" id="fxUndo" title="Volta à imagem salva (Z)">Desfazer</button></div>
       <label class="fx-grid"><input type="checkbox" id="fxGrid" checked> Mostrar grid</label>
       <button type="button" class="dr-go fx-ok" id="fxOk">Aprovar</button>
     </div>
+    <div class="fx-group"><span id="fxGroupInfo"></span>
+      <label class="fx-filter">Setas passam por <select id="fxFilter"><option value="todas">todas as fotos</option><option value="fora">só as fora do padrão</option><option value="pendentes">só as não aprovadas</option></select></label>
+      <button type="button" class="dr-clear" id="fxFixAll">Ajustar as fora do padrão</button>
+      <button type="button" class="dr-clear" id="fxSaveAll">Salvar e aprovar as ajustadas</button>
+    </div>
     <div class="fx-strip" id="fxStrip"></div>
-    <p class="fx-keys">Teclado: ← → passam as fotos · A ajusta ao grid · + − tamanho · ↑ ↓ altura · Z desfaz · Enter aprova e salva · Esc fecha</p>
+    <p class="fx-keys">Teclado: ← → passam as fotos · A ajusta tudo · B rodas no chão · C centraliza · T só o tamanho · E espelha · + − tamanho · ↑ ↓ altura · Z desfaz · Enter aprova e salva · / busca · Esc fecha</p>
   </div>
 </section>
 <aside class="drawer sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="shTitle" hidden>
@@ -1668,11 +1704,15 @@ async function bitmapOf(src){const b=src instanceof Blob?src:await fetch(src,{mo
 function carBox(bmp){const c=document.createElement("canvas"),W=c.width=bmp.width,H=c.height=bmp.height,x=c.getContext("2d",{willReadFrequently:true});x.drawImage(bmp,0,0);
   const d=x.getImageData(0,0,W,H).data;let x0=W,y0=H,x1=-1,y1=-1,n=0;
   for(let y=0;y<H;y++)for(let i=y*W*4+3,k=0;k<W;k++,i+=4)if(d[i]>24){n++;if(k<x0)x0=k;if(k>x1)x1=k;if(y<y0)y0=y;if(y>y1)y1=y}
-  return x1<0||n>.97*W*H?null:{x:x0,y:y0,w:x1-x0+1,h:y1-y0+1,W,H}}
+  if(x1<0||n>.97*W*H)return null;
+  // base dos pneus: a linha mais baixa com pixels sólidos; sombra semitransparente embaixo do carro não conta
+  let sb=y1+1;const need=Math.max(3,(x1-x0+1)*.01);
+  for(let y=y1;y>=y0;y--){let c=0;for(let i=(y*W+x0)*4+3,k=x0;k<=x1;k++,i+=4)if(d[i]>=200)c++;if(c>=need){sb=y+1;break}}
+  return {x:x0,y:y0,w:x1-x0+1,h:y1-y0+1,sb,W,H}}
 const frameScale=b=>Math.max(b.w/b.W/FRAME.bw,b.h/b.H/FRAME.bh); // 1 = tamanho padrão
 function reframe(bmp,b){const c=document.createElement("canvas");c.width=FRAME.W;c.height=FRAME.H;const x=c.getContext("2d");x.imageSmoothingQuality="high";
   const s=Math.min(FRAME.bw*FRAME.W/b.w,FRAME.bh*FRAME.H/b.h),w=b.w*s,h=b.h*s;
-  x.drawImage(bmp,b.x,b.y,b.w,b.h,(FRAME.W-w)/2,FRAME.H*(1-FRAME.bottom)-h,w,h);
+  x.drawImage(bmp,b.x,b.y,b.w,b.h,(FRAME.W-w)/2,FRAME.H*(1-FRAME.bottom)-(b.sb-b.y)*s,w,h); // pneus na linha do chão
   return new Promise((ok,no)=>c.toBlob(bl=>bl?ok(bl):no(new Error("png")),"image/png"))}
 /* a foto que vai ser enviada, já no tamanho padrão; sem fundo transparente, vai como veio */
 async function standardFile(file){try{const bmp=await bitmapOf(file),b=carBox(bmp);if(!b)return {file,framed:false};
@@ -2256,9 +2296,10 @@ function drawFrames(){const o=ipBody.querySelector("#fsOut");if(!o)return;const 
     ${pend?`<button type="button" class="dr-go" id="fsFix" style="margin-top:10px;width:100%"${FS.busy?" disabled":""}>Padronizar ${pend} ${pend>1?"fotos":"foto"}</button>`:""}`:""}`;
   const f=o.querySelector("#fsFix");if(f)f.onclick=fixFrames}
 /* ---------- editor de imagens: as fotos passam sobre o grid padrão do site; com um clique o carro se encaixa no grid, e o administrador aprova e salva ----------
-   O ajuste é guardado como escala e posição sobre a imagem original, então mexer várias vezes não perde qualidade: a imagem nova só é gerada ao salvar.
+   O ajuste é guardado como escala, posição e espelhamento sobre a imagem original, então mexer várias vezes não perde qualidade: a imagem só é gerada ao salvar.
+   O chão é a base sólida dos pneus (sombra semitransparente não conta), para as rodas de todos os carros ficarem na mesma linha.
    As fotos aprovadas ficam em meta/photo_review (chave da foto -> id da imagem aprovada); se a foto for trocada depois, ela volta a aparecer como não revisada. */
-const fxPanel=document.getElementById("fxPanel"),fxCv=document.getElementById("fxCanvas"),fxCardCv=document.getElementById("fxCard");
+const fxPanel=document.getElementById("fxPanel"),fxCv=document.getElementById("fxCanvas"),fxCardCv=document.getElementById("fxCard"),fxQ=document.getElementById("fxQ"),fxQList=document.getElementById("fxQList");
 let FX=null,REVIEW=null,reviewQ=Promise.resolve();
 /* os grupos do painel e, por último, as fotos de antes dos grupos; cada foto aparece uma vez */
 function photoSets(){const ms=carList(),byId=carsById(ms),seen=new Set();
@@ -2268,90 +2309,148 @@ function photoSets(){const ms=carList(),byId=carsById(ms),seen=new Set();
   return sets.map(st=>({...st,items:st.cars.filter(carHas).map(m=>({key:ownPhotoKey(m.mid,m.ano),name:`${m.mk} ${m.nm}${m.ano?` ${m.ano}`:""}`,set:st.id,title:st.title}))
     .filter(it=>!seen.has(it.key)&&seen.add(it.key))})).filter(st=>st.items.length)}
 const fxCur=()=>FX&&FX.items[FX.i];
-const sameT=(a,b)=>a&&b&&Math.abs(a.s/b.s-1)<1e-6&&Math.abs(a.dx-b.dx)<.5&&Math.abs(a.dy-b.dy)<.5;
+const sameT=(a,b)=>a&&b&&!!a.f===!!b.f&&Math.abs(a.s/b.s-1)<1e-6&&Math.abs(a.dx-b.dx)<.5&&Math.abs(a.dy-b.dy)<.5;
 const fxDirty=it=>!!(it&&it.t&&!sameT(it.t,it.t0));
 const fxApproved=it=>!!(REVIEW&&it&&REVIEW[it.key]&&REVIEW[it.key]===(it.asset||photos[it.key])&&!fxDirty(it));
+const FLOOR=()=>FRAME.H*(1-FRAME.bottom);
 /* a imagem como o site mostra: inteira, centralizada e apoiada embaixo */
-function containT(bmp){const s=Math.min(FRAME.W/bmp.width,FRAME.H/bmp.height);return {s,dx:(FRAME.W-bmp.width*s)/2,dy:FRAME.H-bmp.height*s}}
-/* o carro dentro da caixa padrão, centralizado e com as rodas no chão */
-function fitT(b){const s=Math.min(FRAME.bw*FRAME.W/b.w,FRAME.bh*FRAME.H/b.h);return {s,dx:(FRAME.W-b.w*s)/2-b.x*s,dy:FRAME.H*(1-FRAME.bottom)-(b.y+b.h)*s}}
-/* onde o carro está em relação ao padrão: tamanho (1 = padrão) e distância do chão e do centro, em fração da imagem */
-function fxMeasure(it){const b=it&&it.box,t=it&&it.t;if(!b||!t)return null;const w=b.w*t.s,h=b.h*t.s,x=t.dx+b.x*t.s,y=t.dy+b.y*t.s;
-  return {size:Math.max(w/FRAME.W/FRAME.bw,h/FRAME.H/FRAME.bh),floor:(y+h-FRAME.H*(1-FRAME.bottom))/FRAME.H,center:(x+w/2-FRAME.W/2)/FRAME.W,x,y,w,h}}
+function containT(bmp){const s=Math.min(FRAME.W/bmp.width,FRAME.H/bmp.height);return {s,dx:(FRAME.W-bmp.width*s)/2,dy:FRAME.H-bmp.height*s,f:false}}
+function drawT(x,bmp,t){const w=bmp.width*t.s,h=bmp.height*t.s;if(t.f){x.save();x.translate(t.dx+w,t.dy);x.scale(-1,1);x.drawImage(bmp,0,0,w,h);x.restore()}else x.drawImage(bmp,t.dx,t.dy,w,h)}
+/* onde o carro está na tela e em relação ao padrão: tamanho (1 = padrão) e distância das rodas ao chão e do carro ao centro, em fração da imagem */
+function measureT(b,t,imgW){const x0=t.f?imgW-(b.x+b.w):b.x,x=t.dx+x0*t.s,y=t.dy+b.y*t.s,w=b.w*t.s,h=b.h*t.s,fy=t.dy+b.sb*t.s;
+  return {x,y,w,h,fy,size:Math.max(w/FRAME.W/FRAME.bw,h/FRAME.H/FRAME.bh),floor:(fy-FLOOR())/FRAME.H,center:(x+w/2-FRAME.W/2)/FRAME.W}}
+const fxMeasure=it=>it&&it.box&&it.t&&it.iw?measureT(it.box,it.t,it.iw):null;
 /* folgas do "no grid": entre as fotos que já estão no padrão, o tamanho varia uns 5% e a altura do chão uns 2% */
 const FX_TOL={size:.06,floor:.025,center:.025};
 const fxOnGrid=m=>!!m&&Math.abs(m.size-1)<FX_TOL.size&&Math.abs(m.floor)<FX_TOL.floor&&Math.abs(m.center)<FX_TOL.center;
+/* fora do padrão? pela imagem carregada ou pela medição feita em segundo plano; null enquanto não se sabe */
+function fxOff(it){const m=it.t?fxMeasure(it):it.m0;return m?!fxOnGrid(m):it.m0===false?false:null}
 function fxDiff(m){const p=[],sz=Math.round((m.size-1)*100);
   if(Math.abs(m.size-1)>=FX_TOL.size)p.push(`carro ${Math.abs(sz)}% ${sz>0?"maior":"menor"} que o padrão`);
-  if(Math.abs(m.floor)>=FX_TOL.floor)p.push(`${Math.round(Math.abs(m.floor)*100)}% ${m.floor<0?"acima":"abaixo"} do chão`);
+  if(Math.abs(m.floor)>=FX_TOL.floor)p.push(`rodas ${Math.round(Math.abs(m.floor)*100)}% ${m.floor<0?"acima":"abaixo"} do chão`);
   if(Math.abs(m.center)>=FX_TOL.center)p.push("fora do centro");
   const t=p.join(" · ");return t.charAt(0).toUpperCase()+t.slice(1)}
-function fxLoad(it){if(!it)return null;if(it.ready)return it.ready;it.asset=photos[it.key];
-  it.ready=originalBitmap(it.asset).then(bmp=>{it.bmp=bmp;it.box=carBox(bmp);it.t0=containT(bmp);it.t={...it.t0}},()=>{it.err=true});return it.ready}
+/* ajustes automáticos: cada um mexe só no que diz o nome */
+const tFloor=(b,t)=>({...t,dy:FLOOR()-b.sb*t.s});
+const tCenter=(b,t,w)=>({...t,dx:FRAME.W/2-((t.f?w-(b.x+b.w):b.x)+b.w/2)*t.s});
+const tFit=(b,t,w)=>tCenter(b,tFloor(b,{...t,s:Math.min(FRAME.bw*FRAME.W/b.w,FRAME.bh*FRAME.H/b.h)}),w);
+function tSize(b,t,w){const m=measureT(b,t,w),k=1/m.size,ax=m.x+m.w/2,ay=m.fy;return {...t,s:t.s*k,dx:ax-k*(ax-t.dx),dy:ay-k*(ay-t.dy)}}
+function tFlip(b,t,w){const n={...t,f:!t.f};if(!b)return n;return {...n,dx:n.dx+measureT(b,t,w).x-measureT(b,n,w).x}} // o carro fica no mesmo lugar
+/* carrega a imagem original; o ajuste (t) vale para a imagem em it.src, então só recomeça se a foto do carro mudou */
+function fxLoad(it){if(!it)return null;if(it.ready)return it.ready;const asset=photos[it.key];
+  it.ready=originalBitmap(asset).then(bmp=>{it.bmp=bmp;it.err=false;if(it.src!==asset||!it.t){it.src=it.asset=asset;it.iw=bmp.width;it.box=carBox(bmp);it.t0=containT(bmp);it.t={...it.t0}}},
+    ()=>{it.err=true;it.ready=null});return it.ready}
+/* só as imagens perto da foto atual ficam na memória (cada original ocupa uns 6 MB); o ajuste de cada foto fica guardado */
+function fxTrim(){if(FX)FX.items.forEach((it,n)=>{if(it.bmp&&Math.abs(n-FX.i)>2){if(it.bmp.close)it.bmp.close();it.bmp=null;it.ready=null}})}
+/* mede em segundo plano todas as fotos, pela cópia reduzida do CDN, para o filtro e os contadores dos grupos */
+async function fxMeasureAll(){const me=FX;
+  await pool(me.items.filter(it=>it.m0===undefined),4,async it=>{if(FX!==me||it.m0!==undefined)return;
+    try{const bmp=await bitmapOf(blobUrl(photos[it.key])),b=carBox(bmp);it.m0=b?measureT(b,containT(bmp),bmp.width):false;if(bmp.close)bmp.close()}catch(e){it.m0=false}
+    fxInfoSoon()})}
+let fxInfoT=0;const fxInfoSoon=()=>{if(!fxInfoT)fxInfoT=setTimeout(()=>{fxInfoT=0;if(FX&&!fxPanel.hidden){fxStrip();fxGroup()}},250)};
 function fxDraw(cv,it,grid){const x=cv.getContext("2d"),k=cv.width/FRAME.W,line=(a,b,c,d)=>{x.beginPath();x.moveTo(a,b);x.lineTo(c,d);x.stroke()};
   x.setTransform(1,0,0,1,0,0);x.clearRect(0,0,cv.width,cv.height);x.fillStyle="#fff";x.fillRect(0,0,cv.width,cv.height);x.setTransform(k,0,0,k,0,0);
-  if(it&&it.bmp&&it.t){x.imageSmoothingQuality="high";x.drawImage(it.bmp,it.t.dx,it.t.dy,it.bmp.width*it.t.s,it.bmp.height*it.t.s)}
+  if(it&&it.bmp&&it.t){x.imageSmoothingQuality="high";drawT(x,it.bmp,it.t)}
   if(!grid)return;
-  const bx=(1-FRAME.bw)/2*FRAME.W,bw=FRAME.bw*FRAME.W,bh=FRAME.bh*FRAME.H,fy=FRAME.H*(1-FRAME.bottom);
+  const bx=(1-FRAME.bw)/2*FRAME.W,bw=FRAME.bw*FRAME.W,bh=FRAME.bh*FRAME.H,fy=FLOOR();
   x.lineWidth=1.5;x.strokeStyle="rgba(12,17,28,.07)";for(let i=1;i<16;i++)line(i*FRAME.W/16,0,i*FRAME.W/16,FRAME.H);for(let j=1;j<9;j++)line(0,j*FRAME.H/9,FRAME.W,j*FRAME.H/9);
   x.strokeStyle=C.accent;x.fillStyle=C.accent;x.lineWidth=4;x.setLineDash([18,12]);x.strokeRect(bx,fy-bh,bw,bh);
   x.lineWidth=2.5;x.setLineDash([8,10]);line(FRAME.W/2,0,FRAME.W/2,FRAME.H);x.setLineDash([]);x.lineWidth=5;line(0,fy,FRAME.W,fy);
-  x.font="700 26px Manrope, system-ui, sans-serif";x.fillText("caixa padrão",bx+8,fy-bh-14);x.fillText("chão",18,fy-14);
-  const m=fxMeasure(it);if(m){x.strokeStyle=fxOnGrid(m)?"#11864c":"#ff7a00";x.lineWidth=3;x.strokeRect(m.x,m.y,m.w,m.h)}}
-function fxPaint(){if(!FX||fxPanel.hidden)return;const it=fxCur(),m=fxMeasure(it),$=id=>document.getElementById(id);
+  x.font="700 26px Manrope, system-ui, sans-serif";x.fillText("caixa padrão",bx+8,fy-bh-14);x.fillText("chão (base dos pneus)",18,fy-14);
+  const m=fxMeasure(it);if(m){const ok=fxOnGrid(m);x.strokeStyle=x.fillStyle=ok?"#11864c":"#ff7a00";x.lineWidth=3;x.strokeRect(m.x,m.y,m.w,m.h);
+    x.lineWidth=3;x.setLineDash([4,6]);line(m.x-30,m.fy,m.x+m.w+30,m.fy);x.setLineDash([])}}
+const $fx=id=>document.getElementById(id);
+function fxPaint(){if(!FX||fxPanel.hidden)return;const it=fxCur(),m=fxMeasure(it);
   fxDraw(fxCv,it,FX.grid);fxDraw(fxCardCv,it,false);
-  {const inSet=FX.items.filter(x=>x.set===it.set);const pos=inSet.indexOf(it)+1;$("fxSub").textContent=`${it.title} · foto ${pos} de ${inSet.length}${pos===inSet.length&&FX.i<FX.items.length-1?" · a seta → segue para o próximo grupo":""}`}$("fxName").textContent=it.name;
+  {const inSet=FX.items.filter(x=>x.set===it.set),pos=inSet.indexOf(it)+1;$fx("fxSub").textContent=`${it.title} · foto ${pos} de ${inSet.length}${pos===inSet.length&&FX.i<FX.items.length-1?" · a seta → segue para o próximo grupo":""}`}
+  $fx("fxName").textContent=it.name;
   let t,c="warn";
   if(it.err)t="Não deu para abrir esta imagem. Passe para a próxima.";else if(!it.bmp){t="Carregando a imagem…";c=""}
-  else if(FX.busy){t="Salvando…";c=""}else if(fxDirty(it))t=`Ajustada, falta aprovar e salvar${m&&!fxOnGrid(m)?` · ${fxDiff(m).toLowerCase()}`:""}`;
+  else if(FX.busy){t=FX.job||"Salvando…";c=""}else if(fxDirty(it))t=`Ajustada, falta aprovar e salvar${m&&!fxOnGrid(m)?` · ${fxDiff(m).toLowerCase()}`:""}`;
   else if(fxApproved(it)){t="Aprovada ✓";c="ok"}else if(!it.box)t="Sem fundo transparente: ajuste à mão com + − ↑ ↓";
   else if(fxOnGrid(m)){t="No grid padrão";c="ok"}else t=fxDiff(m);
-  $("fxState").textContent=t;$("fxState").className=c;
-  const off=!it.bmp||FX.busy;$("fxPrev").disabled=FX.busy||FX.i===0;$("fxNext").disabled=FX.busy||FX.i===FX.items.length-1;
-  $("fxFit").disabled=off||!it.box||fxOnGrid(m);["fxSm","fxLg","fxUp","fxDn"].forEach(id=>$(id).disabled=off);$("fxUndo").disabled=off||!fxDirty(it);
-  $("fxOk").disabled=off||it.err;$("fxOk").textContent=fxDirty(it)?"Aprovar e salvar":fxApproved(it)?"Aprovada ✓ · próxima":"Aprovar";
-  fxStrip()}
-function fxStrip(){const it=fxCur(),el=document.getElementById("fxStrip");
+  $fx("fxState").textContent=t;$fx("fxState").className=c;
+  const off=!it.bmp||FX.busy;$fx("fxPrev").disabled=FX.busy||fxNextIdx(-1)<0;$fx("fxNext").disabled=FX.busy||fxNextIdx(1)<0;
+  const onG=fxOnGrid(m);$fx("fxFit").disabled=off||!it.box||onG;
+  $fx("fxFloor").disabled=off||!it.box||!m||Math.abs(m.floor)<.002;$fx("fxCenter").disabled=off||!it.box||!m||Math.abs(m.center)<.002;$fx("fxSize").disabled=off||!it.box||!m||Math.abs(m.size-1)<.005;
+  ["fxFlip","fxSm","fxLg","fxUp","fxDn"].forEach(id=>$fx(id).disabled=off);$fx("fxUndo").disabled=off||!fxDirty(it);
+  $fx("fxOk").disabled=off||it.err;$fx("fxOk").textContent=fxDirty(it)?"Aprovar e salvar":fxApproved(it)?"Aprovada ✓ · próxima":"Aprovar";
+  fxStrip();fxGroup()}
+function fxStrip(){const it=fxCur(),el=$fx("fxStrip");
   if(el.dataset.set!==it.set){el.dataset.set=it.set;el.innerHTML=`<b class="fx-st">${esc(it.title)}</b>`+FX.items.filter(x=>x.set===it.set).map(x=>`<button type="button" class="fx-th" data-k="${esc(x.key)}" title="${esc(x.name)}" aria-label="${esc(x.name)}"><img alt="" loading="lazy" decoding="async"></button>`).join("")}
   el.querySelectorAll(".fx-th").forEach(b=>{const x=FX.items.find(y=>y.key===b.dataset.k);if(!x)return;const im=b.querySelector("img"),u=blobUrl(photos[x.key]);if(u&&im.getAttribute("src")!==u)im.src=u;
-    b.classList.toggle("cur",x===it);b.classList.toggle("ok",fxApproved(x));b.classList.toggle("dirty",fxDirty(x))});
+    const ok=fxApproved(x),dirty=fxDirty(x);b.classList.toggle("cur",x===it);b.classList.toggle("ok",ok);b.classList.toggle("dirty",dirty);b.classList.toggle("off",!ok&&!dirty&&fxOff(x)===true);b.classList.toggle("dim",!fxMatch(x))});
   const cur=el.querySelector(".fx-th.cur");if(cur){const r=cur.getBoundingClientRect(),er=el.getBoundingClientRect();if(r.left<er.left||r.right>er.right)el.scrollLeft+=r.left-er.left-er.width/2+r.width/2}}
+/* resumo e ações do grupo atual */
+function fxGroup(){const it=fxCur(),items=FX.items.filter(x=>x.set===it.set),el=$fx("fxGroupInfo");
+  const off=items.filter(x=>!fxApproved(x)&&!fxDirty(x)&&fxOff(x)===true).length,dirty=items.filter(fxDirty).length,ok=items.filter(fxApproved).length,unk=items.filter(x=>fxOff(x)===null).length;
+  el.textContent=`${it.title}: ${items.length} ${items.length>1?"fotos":"foto"} · ${off} fora do padrão · ${dirty} ${dirty===1?"ajustada":"ajustadas"} sem salvar · ${ok} ${ok===1?"aprovada":"aprovadas"}${unk?` · medindo ${items.length-unk} de ${items.length}…`:""}`;
+  $fx("fxFixAll").textContent=`Ajustar as fora do padrão (${off})`;$fx("fxFixAll").disabled=FX.busy||!off;
+  $fx("fxSaveAll").textContent=`Salvar e aprovar as ajustadas (${dirty})`;$fx("fxSaveAll").disabled=FX.busy||!dirty}
+/* o filtro das setas: todas, só as fora do padrão ou só as ainda não aprovadas */
+const fxMatch=it=>FX.filter==="fora"?(fxDirty(it)||!fxApproved(it)&&fxOff(it)!==false):FX.filter==="pendentes"?!fxApproved(it):true;
+function fxNextIdx(dir){for(let n=FX.i+dir;n>=0&&n<FX.items.length;n+=dir)if(fxMatch(FX.items[n]))return n;return -1}
+function fxStep(dir){if(!FX||FX.busy)return;const n=fxNextIdx(dir);if(n<0){toast(FX.filter==="todas"?(dir>0?"Essa é a última foto.":"Essa é a primeira foto."):`Não há mais fotos ${FX.filter==="fora"?"fora do padrão":"para aprovar"} ${dir>0?"à frente":"para trás"}.`);return}fxGo(n-FX.i)}
 async function fxGo(d){if(!FX||FX.busy)return;const n=FX.i+d;if(n<0||n>=FX.items.length)return;FX.i=n;const it=fxCur();fxPaint();
-  await fxLoad(it);fxLoad(FX.items[n+1]);fxLoad(FX.items[n-1]);if(fxCur()===it)fxPaint()}
+  await fxLoad(it);if(fxCur()===it)fxPaint();await Promise.all([fxLoad(FX.items[n+1]),fxLoad(FX.items[n-1])]);if(FX&&fxCur()===it)fxTrim()}
 function fxEdit(fn){const it=fxCur();if(!it||!it.t||FX.busy)return;it.t=fn(it.t,it)||it.t;fxPaint()}
-const fxZoom=k=>fxEdit(t=>{const ax=FRAME.W/2,ay=FRAME.H*(1-FRAME.bottom);return {s:t.s*k,dx:ax-k*(ax-t.dx),dy:ay-k*(ay-t.dy)}});
+const fxZoom=k=>fxEdit(t=>{const ax=FRAME.W/2,ay=FLOOR();return {...t,s:t.s*k,dx:ax-k*(ax-t.dx),dy:ay-k*(ay-t.dy)}});
 const fxMove=f=>fxEdit(t=>({...t,dy:t.dy+f*FRAME.H}));
-const fxFit=()=>fxEdit((t,it)=>it.box?fitT(it.box):t);
+const fxAuto=fn=>fxEdit((t,it)=>it.box?fn(it.box,t,it.iw):t);
+const fxFit=()=>fxAuto(tFit),fxFloorAlign=()=>fxAuto(tFloor),fxCenterAlign=()=>fxAuto(tCenter),fxSizeOnly=()=>fxAuto(tSize);
+const fxFlip=()=>fxEdit((t,it)=>tFlip(it.box,t,it.iw));
 const fxUndo=()=>fxEdit((t,it)=>({...it.t0}));
 function fxReview(it){REVIEW[it.key]=it.asset;
   reviewQ=reviewQ.then(()=>db.collection("meta").doc("photo_review").set({items:REVIEW,updated_at:new Date().toISOString()})).catch(()=>toast("Não deu para registrar a aprovação. Tente de novo."))}
-/* aprova a foto; se foi ajustada, gera a imagem nova, grava no mesmo carro (a antiga fica guardada) e passa para a próxima */
+/* gera a imagem ajustada e grava no mesmo carro; a antiga fica guardada */
+async function fxSave(it){if(!it.bmp)await fxLoad(it);if(!it.bmp)throw new Error("imagem");const c=document.createElement("canvas");c.width=FRAME.W;c.height=FRAME.H;const x=c.getContext("2d");x.imageSmoothingQuality="high";drawT(x,it.bmp,it.t);
+  const blob=await new Promise((ok,no)=>c.toBlob(b=>b?ok(b):no(new Error("png")),"image/png"));
+  const r=await assets.upload(new File([blob],it.key+".png",{type:"image/png"}));
+  await db.collection("photos").doc(it.key).set({asset:r.id,at:Date.now(),ai:!!photoAI[it.key]});
+  it.asset=r.id;it.t0={...it.t};it.m0=fxMeasure(it)}
 async function fxApprove(){const it=fxCur();if(!it||!it.bmp||it.err||FX.busy)return;
-  if(fxDirty(it)){FX.busy=true;fxPaint();
-    try{const c=document.createElement("canvas");c.width=FRAME.W;c.height=FRAME.H;const x=c.getContext("2d");x.imageSmoothingQuality="high";
-      x.drawImage(it.bmp,it.t.dx,it.t.dy,it.bmp.width*it.t.s,it.bmp.height*it.t.s);
-      const blob=await new Promise((ok,no)=>c.toBlob(b=>b?ok(b):no(new Error("png")),"image/png"));
-      const r=await assets.upload(new File([blob],it.key+".png",{type:"image/png"}));
-      await db.collection("photos").doc(it.key).set({asset:r.id,at:Date.now(),ai:!!photoAI[it.key]});
-      it.asset=r.id;it.t0={...it.t}}
-    catch(e){FX.busy=false;fxPaint();toast("Não deu para salvar a imagem"+(e&&e.code?` (${e.code})`:"")+".");return}
+  if(fxDirty(it)){FX.busy=true;FX.job="Salvando…";fxPaint();
+    try{await fxSave(it)}catch(e){FX.busy=false;fxPaint();toast("Não deu para salvar a imagem"+(e&&e.code?` (${e.code})`:"")+".");return}
     FX.busy=false}
-  fxReview(it);if(FX.i<FX.items.length-1)fxGo(1);else{fxPaint();toast("Essa era a última foto.")}}
+  fxReview(it);const n=fxNextIdx(1);if(n>=0)fxGo(n-FX.i);else{fxPaint();toast("Não há mais fotos à frente nesse filtro.")}}
+/* ações do grupo: ajustar todas as fora do padrão (ficam para você conferir) e salvar e aprovar as ajustadas */
+async function fxFixGroup(){const it0=fxCur();if(!it0||FX.busy)return;const items=FX.items.filter(x=>x.set===it0.set&&!fxApproved(x)&&!fxDirty(x)&&fxOff(x)!==false);
+  FX.busy=true;let n=0,done=0;
+  for(const it of items){FX.job=`Ajustando ${++n} de ${items.length}…`;fxPaint();await fxLoad(it);
+    const m=fxMeasure(it);if(it.box&&m&&!fxOnGrid(m)){it.t=tFit(it.box,it.t,it.iw);done++}fxTrim()}
+  FX.busy=false;FX.job="";fxPaint();toast(done?`${done} ${done>1?"fotos ajustadas":"foto ajustada"}. Confira passando as miniaturas e salve.`:"Nenhuma foto do grupo estava fora do padrão.")}
+async function fxSaveGroup(){const it0=fxCur();if(!it0||FX.busy)return;const items=FX.items.filter(x=>x.set===it0.set&&fxDirty(x));
+  FX.busy=true;let n=0,fail=0;
+  for(const it of items){FX.job=`Salvando ${++n} de ${items.length}…`;fxPaint();try{await fxSave(it);fxReview(it)}catch(e){fail++}fxTrim()}
+  FX.busy=false;FX.job="";fxPaint();toast(fail?`${items.length-fail} salvas; ${fail} não deram certo, tente de novo.`:`${items.length} ${items.length>1?"fotos salvas e aprovadas":"foto salva e aprovada"}.`)}
+/* busca: vai direto para a foto de um carro */
+function fxSearch(){const q=norm(fxQ.value.trim());if(!q||!FX){fxQList.hidden=true;return}
+  const ts=q.split(/\s+/),res=FX.items.map((it,n)=>({it,n})).filter(({it})=>{const s=norm(it.name);return ts.every(t=>s.includes(t))}).slice(0,8);
+  fxQList.innerHTML=res.length?res.map(({it,n})=>`<li><button type="button" data-n="${n}"><span>${esc(it.name)}</span><small>${esc(it.title)}${fxApproved(it)?" · aprovada ✓":""}</small></button></li>`).join(""):`<li class="none">Nenhuma foto com “${esc(fxQ.value.trim())}”.</li>`;
+  fxQList.hidden=false}
+function fxPick(n){fxQ.value="";fxQList.hidden=true;fxQ.blur();if(FX)fxGo(n-FX.i)}
 function openFx(setId){if(!db||!assets)return;const sets=photoSets(),items=sets.flatMap(st=>st.items);if(!items.length)return;
-  FX={items,i:Math.max(0,items.findIndex(it=>it.set===String(setId))),grid:document.getElementById("fxGrid").checked,busy:false};
+  FX={items,i:Math.max(0,items.findIndex(it=>it.set===String(setId))),grid:$fx("fxGrid").checked,filter:$fx("fxFilter").value,busy:false,job:""};
   if(!REVIEW){REVIEW={};db.collection("meta").doc("photo_review").get().then(d=>{const v=d.exists&&d.data();if(v&&v.items)Object.assign(REVIEW,v.items);fxPaint()}).catch(()=>{})}
-  document.getElementById("fxStrip").dataset.set="";lastFocus=document.activeElement;fxPanel.hidden=false;fxGo(0);document.getElementById("fxOk").focus()}
-function closeFx(){if(!FX)return;const n=FX.items.filter(fxDirty).length;
+  $fx("fxStrip").dataset.set="";fxQ.value="";fxQList.hidden=true;lastFocus=document.activeElement;fxPanel.hidden=false;fxGo(0);$fx("fxOk").focus();fxMeasureAll()}
+function closeFx(){if(!FX||FX.busy)return;const n=FX.items.filter(fxDirty).length;
   if(n&&!confirm(`${n} ${n>1?"fotos ajustadas não foram salvas":"foto ajustada não foi salva"}. Fechar mesmo assim?`))return;
   fxPanel.hidden=true;FX=null;if(!imgPanel.hidden)renderImgPanel();lastFocus&&lastFocus.focus&&lastFocus.focus()}
-{const on=(id,fn)=>document.getElementById(id).onclick=fn;
-  on("fxPrev",()=>fxGo(-1));on("fxNext",()=>fxGo(1));on("fxFit",fxFit);on("fxSm",()=>fxZoom(1/1.02));on("fxLg",()=>fxZoom(1.02));
-  on("fxUp",()=>fxMove(-.005));on("fxDn",()=>fxMove(.005));on("fxUndo",fxUndo);on("fxOk",fxApprove);on("fxClose",closeFx);
-  document.getElementById("fxGrid").onchange=e=>{if(FX){FX.grid=e.target.checked;fxPaint()}};
-  document.getElementById("fxStrip").onclick=e=>{const b=e.target.closest(".fx-th");if(!b||!FX)return;const n=FX.items.findIndex(x=>x.key===b.dataset.k);if(n>=0)fxGo(n-FX.i)};
+{const on=(id,fn)=>$fx(id).onclick=fn;
+  on("fxPrev",()=>fxStep(-1));on("fxNext",()=>fxStep(1));on("fxFit",fxFit);on("fxFloor",fxFloorAlign);on("fxCenter",fxCenterAlign);on("fxSize",fxSizeOnly);on("fxFlip",fxFlip);
+  on("fxSm",()=>fxZoom(1/1.02));on("fxLg",()=>fxZoom(1.02));on("fxUp",()=>fxMove(-.005));on("fxDn",()=>fxMove(.005));on("fxUndo",fxUndo);on("fxOk",fxApprove);on("fxClose",closeFx);
+  on("fxFixAll",fxFixGroup);on("fxSaveAll",fxSaveGroup);
+  $fx("fxGrid").onchange=e=>{e.target.blur();if(FX){FX.grid=e.target.checked;fxPaint()}};
+  $fx("fxFilter").onchange=e=>{e.target.blur();if(FX){FX.filter=e.target.value;fxPaint()}};
+  $fx("fxStrip").onclick=e=>{const b=e.target.closest(".fx-th");if(!b||!FX)return;const n=FX.items.findIndex(x=>x.key===b.dataset.k);if(n>=0)fxGo(n-FX.i)};
+  fxQ.oninput=fxSearch;fxQ.onfocus=fxSearch;fxQList.onclick=e=>{const b=e.target.closest("[data-n]");if(b)fxPick(+b.dataset.n)};
+  addEventListener("click",e=>{if(!fxQList.hidden&&!e.target.closest(".fx-q"))fxQList.hidden=true});
   addEventListener("keydown",e=>{if(!FX||fxPanel.hidden||e.ctrlKey||e.metaKey||e.altKey)return;
-    const act={ArrowLeft:()=>fxGo(-1),ArrowRight:()=>fxGo(1),ArrowUp:()=>fxMove(-.005),ArrowDown:()=>fxMove(.005),"+":()=>fxZoom(1.02),"=":()=>fxZoom(1.02),"-":()=>fxZoom(1/1.02),
-      a:fxFit,A:fxFit,z:fxUndo,Z:fxUndo,Enter:fxApprove,Escape:closeFx}[e.key];
+    if(e.target===fxQ){if(e.key==="Enter"){e.preventDefault();const b=fxQList.querySelector("[data-n]");if(b)fxPick(+b.dataset.n)}
+      else if(e.key==="Escape"){e.preventDefault();e.stopPropagation();if(fxQ.value){fxQ.value="";fxQList.hidden=true}else fxQ.blur()}return}
+    if(e.target.closest&&e.target.closest("input,select,textarea")&&e.key!=="Escape")return;
+    const act={ArrowLeft:()=>fxStep(-1),ArrowRight:()=>fxStep(1),ArrowUp:()=>fxMove(-.005),ArrowDown:()=>fxMove(.005),"+":()=>fxZoom(1.02),"=":()=>fxZoom(1.02),"-":()=>fxZoom(1/1.02),
+      a:fxFit,A:fxFit,b:fxFloorAlign,B:fxFloorAlign,c:fxCenterAlign,C:fxCenterAlign,t:fxSizeOnly,T:fxSizeOnly,e:fxFlip,E:fxFlip,z:fxUndo,Z:fxUndo,Enter:fxApprove,"/":()=>fxQ.focus(),Escape:closeFx}[e.key];
     if(act){e.preventDefault();e.stopPropagation();act()}},true);}
 function matchFiles(files){
   // só o código liga o arquivo a um carro: nome parecido não basta, para a imagem de um ano não cair em outro
