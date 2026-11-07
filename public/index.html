@@ -1007,9 +1007,13 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .app.aj .ajbtn{background:var(--ink);color:#fff;box-shadow:none}
   .ajbtn b{position:absolute;top:-6px;right:-6px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--accent);color:#fff;font:800 10px/17px var(--body);text-align:center;box-shadow:0 0 0 2px #f7faff}
   .app.aj .ajbtn b{display:none}
-  .app:not(.aj) .sr-head .mode,.app:not(.aj) .chiprow,.app:not(.aj) .fuq{display:none}
+  .app:not(.aj) .sr-head .mode.sort,.app:not(.aj) .chiprow,.app:not(.aj) .fuq{display:none}
   /* a ordem, os tipos e a motorização ficam no painel rápido (#ajPanel), que abre por cima */
-  .app.aj .sr-head .mode,.app.aj .chiprow,.app.aj .fuq{display:none}
+  .app.aj .sr-head .mode.sort,.app.aj .chiprow,.app.aj .fuq{display:none}
+  /* Modelos/Versões fica fora da caixa: logo abaixo dela, à direita, sempre visível */
+  .sr-head{position:relative;margin-bottom:40px}
+  .app .sr-head .mode:not(.sort){grid-area:auto;display:inline-grid;grid-template-columns:auto auto;position:absolute;right:0;top:calc(100% + 8px);margin:0;padding:2px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6}
+  .app .sr-head .mode:not(.sort) button{height:26px;padding:0 13px;border-radius:999px;font-size:12px}
   /* atalhos de combustível dentro da caixa aberta */
   .fuq{grid-area:f;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
   .fuq:empty{display:none}
@@ -1080,10 +1084,6 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .ajp-fortes{margin-top:8px;animation:ajabre .22s var(--ease) backwards}
 @keyframes ajabre{from{opacity:0;transform:translateY(-6px)}}
 .ajp-fortes small{display:block;margin:0 0 6px;font:600 12px var(--body);color:#5d6577}
-.ajp-ex{display:grid;grid-template-columns:1fr 1fr;padding:2px;border:1.5px solid #dfe3ea;border-radius:12px;background:#f5f7fa}
-.ajp-e{display:flex;align-items:center;justify-content:center;gap:6px;height:34px;border:1.5px solid transparent;border-radius:10px;background:none;font:600 13px var(--body);color:var(--ink);cursor:pointer}
-.ajp-e svg{width:17px;height:17px}
-.ajp-e[aria-pressed="true"]{background:#eef4ff;border-color:var(--accent);color:var(--accent);font-weight:800}
 .ajp-ft{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:6px;padding-top:10px}
 .ajp-b{display:flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 10px;border:1.5px solid #dfe3ea;border-radius:11px;background:#fff;font:600 13px var(--body);color:var(--ink);cursor:pointer;white-space:nowrap}
 .ajp-b svg{flex:none;width:16px;height:16px}
@@ -2193,12 +2193,11 @@ function renderAjPanel(){if(!ajPanel||ajPanel.hidden)return;
   const mot=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)),tipos=GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l));
   const fortes=TAGORDER.filter(k=>CARS.some(c=>c.k.includes(k))).map(k=>TAGS[k]);
   const reduced=CARS.filter(isReduced).length,n=CARS.filter(c=>matches(c)).length,sx=[...ajPanel.querySelectorAll(".ajp-pills")].map(x=>x.scrollLeft),tinhaFortes=!!ajPanel.querySelector(".ajp-fortes");
-  const SORTS=[["likes","Favoritos"],["price","Preço"],["strong","Pontos fortes"]],VIEWS=[["models","Modelos"],["versions","Versões"]];
+  const SORTS=[["likes","Favoritos"],["price","Preço"],["strong","Pontos fortes"]];
   ajPanel.innerHTML=`${mot.length?`<div class="ajp-s"><h3>Motorização</h3><div class="ajp-mot" role="group" aria-label="Motorização">${mot.map(([v,k,l])=>`<button type="button" class="ajp-m" data-ajfu="${esc(v)}" aria-pressed="${F.fu.has(v)}">${svg24(AJI[k])}<span>${esc(l)}</span></button>`).join("")}</div></div>`:""}
     <div class="ajp-s"><h3>Tipo de carro</h3><div class="ajp-pills" role="group" aria-label="Tipo de carro">${tipos.map(l=>`<button type="button" class="ajp-p" data-ajt="${esc(l)}" aria-pressed="${F.t.has(l)}">${esc(l)}</button>`).join("")}${reduced?`<button type="button" class="ajp-p" data-ajdeal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:""}</div></div>
     <div class="ajp-s"><h3>Ordenar por</h3><div class="ajp-ord" role="group" aria-label="Ordenar por">${SORTS.map(([k,l])=>`<button type="button" class="ajp-o" data-ajsort="${k}" aria-pressed="${SORT===k}"${k==="strong"?' aria-controls="ajpFortes"':""}>${svg24(AJI[k])}<span>${l}</span></button>`).join("")}</div>
       ${(SORT==="strong"||F.k.size)&&fortes.length?`<div class="ajp-fortes" id="ajpFortes"><small>Qual ponto forte você quer?</small><div class="ajp-pills" role="group" aria-label="Pontos fortes">${fortes.map(l=>`<button type="button" class="ajp-p" data-ajk="${esc(l)}" aria-pressed="${F.k.has(l)}">${esc(l)}</button>`).join("")}</div></div>`:""}</div>
-    <div class="ajp-s"><h3>Exibir resultados por</h3><div class="ajp-ex" role="group" aria-label="Exibir resultados por">${VIEWS.map(([k,l])=>`<button type="button" class="ajp-e" data-ajview="${k}" aria-pressed="${VIEW===k}">${svg24(AJI[k])}<span>${l}</span></button>`).join("")}</div></div>
     <div class="ajp-ft"><button type="button" class="ajp-b" data-ajmais>${svg24(AJI.mais)}Mais filtros</button><button type="button" class="ajp-b" data-ajlimpa>${svg24(AJI.limpa)}Limpar</button><button type="button" class="ajp-b pri" data-ajclose>Aplicar filtros (${n})${svg24(AJI.seta)}</button></div>`;
   ajPanel.querySelectorAll(".ajp-pills").forEach((x,i)=>{if(sx[i])x.scrollLeft=sx[i]});
   /* a lista de pontos fortes desce só quando aparece (não a cada toque) */
@@ -2212,8 +2211,7 @@ ajPanel.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)re
   if(d.ajt){const q=[...document.querySelectorAll("#quick [data-q]")].find(x=>x.dataset.q===d.ajt);q?q.click():(F.t.has(d.ajt)?F.t.delete(d.ajt):F.t.add(d.ajt),filtersChanged());return renderAjPanel()}
   if("ajdeal" in d){const q=document.querySelector("#quick [data-deal]");q&&q.click();return renderAjPanel()}
   if(d.ajsort){const q=document.querySelector(`.mode.sort [data-sort="${d.ajsort}"]`);q&&q.click();return renderAjPanel()}
-  if(d.ajk){F.k.has(d.ajk)?F.k.delete(d.ajk):F.k.add(d.ajk);filtersChanged();return renderAjPanel()}
-  if(d.ajview){const q=document.querySelector(`.mode:not(.sort) [data-mode="${d.ajview}"]`);q&&q.click();return renderAjPanel()}});
+  if(d.ajk){F.k.has(d.ajk)?F.k.delete(d.ajk):F.k.add(d.ajk);filtersChanged();return renderAjPanel()}});
 document.getElementById("ajBg").addEventListener("click",()=>setAj(false));
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!ajPanel.hidden){e.stopImmediatePropagation();setAj(false)}},true);
 addEventListener("resize",()=>{if(!ajPanel.hidden&&!matchMedia("(max-width:760px)").matches)setAj(false)});
