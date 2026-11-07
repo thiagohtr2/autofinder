@@ -1,0 +1,287 @@
+{
+ "gerado_em": "2026-11-07",
+ "grupos": [
+  {
+   "grupo": "audi",
+   "versoes": 27,
+   "com_dado": 26,
+   "dados": 755,
+   "fontes": 32,
+   "fontes_por_tipo": {
+    "montadora": 1,
+    "imprensa_oficial": 31
+   },
+   "pendencias": 89,
+   "divergencias": 0
+  },
+  {
+   "grupo": "bmw-mini",
+   "versoes": 49,
+   "com_dado": 48,
+   "dados": 744,
+   "fontes": 54,
+   "fontes_por_tipo": {
+    "montadora": 24,
+    "imprensa_oficial": 30
+   },
+   "pendencias": 91,
+   "divergencias": 3
+  },
+  {
+   "grupo": "byd-denza",
+   "versoes": 25,
+   "com_dado": 25,
+   "dados": 1157,
+   "fontes": 42,
+   "fontes_por_tipo": {
+    "montadora": 39,
+    "imprensa_oficial": 3
+   },
+   "pendencias": 71,
+   "divergencias": 14
+  },
+  {
+   "grupo": "chevrolet",
+   "versoes": 46,
+   "com_dado": 46,
+   "dados": 1567,
+   "fontes": 31,
+   "fontes_por_tipo": {
+    "montadora": 15,
+    "imprensa_oficial": 16
+   },
+   "pendencias": 97,
+   "divergencias": 23
+  },
+  {
+   "grupo": "citroen-peugeot",
+   "versoes": 32,
+   "com_dado": 30,
+   "dados": 1074,
+   "fontes": 37,
+   "fontes_por_tipo": {
+    "imprensa_oficial": 35,
+    "montadora": 2
+   },
+   "pendencias": 67,
+   "divergencias": 9
+  },
+  {
+   "grupo": "esportivos",
+   "versoes": 30,
+   "com_dado": 30,
+   "dados": 817,
+   "fontes": 35,
+   "fontes_por_tipo": {
+    "montadora": 35
+   },
+   "pendencias": 121,
+   "divergencias": 3
+  },
+  {
+   "grupo": "fiat",
+   "versoes": 45,
+   "com_dado": 40,
+   "dados": 1292,
+   "fontes": 52,
+   "fontes_por_tipo": {
+    "imprensa_oficial": 45,
+    "revista": 7
+   },
+   "pendencias": 117,
+   "divergencias": 5
+  },
+  {
+   "grupo": "ford",
+   "versoes": 32,
+   "com_dado": 31,
+   "dados": 623,
+   "fontes": 36,
+   "fontes_por_tipo": {
+    "revista": 36
+   },
+   "pendencias": 82,
+   "divergencias": 0
+  },
+  {
+   "grupo": "gac-geely-zeekr-leapmotor-avatr",
+   "versoes": 31,
+   "com_dado": 29,
+   "dados": 1366,
+   "fontes": 37,
+   "fontes_por_tipo": {
+    "montadora": 29,
+    "imprensa_oficial": 8
+   },
+   "pendencias": 55,
+   "divergencias": 4
+  },
+  {
+   "grupo": "gwm-caoachery",
+   "versoes": 37,
+   "com_dado": 37,
+   "dados": 1419,
+   "fontes": 51,
+   "fontes_por_tipo": {
+    "montadora": 39,
+    "imprensa_oficial": 12
+   },
+   "pendencias": 118,
+   "divergencias": 17
+  },
+  {
+   "grupo": "honda-nissan-suzuki",
+   "versoes": 33,
+   "com_dado": 33,
+   "dados": 1384,
+   "fontes": 26,
+   "fontes_por_tipo": {
+    "montadora": 13,
+    "imprensa_oficial": 13
+   },
+   "pendencias": 104,
+   "divergencias": 3
+  },
+  {
+   "grupo": "hyundai-kia",
+   "versoes": 36,
+   "com_dado": 36,
+   "dados": 1708,
+   "fontes": 55,
+   "fontes_por_tipo": {
+    "imprensa_oficial": 8,
+    "montadora": 47
+   },
+   "pendencias": 95,
+   "divergencias": 11
+  },
+  {
+   "grupo": "jeep-ram",
+   "versoes": 39,
+   "com_dado": 39,
+   "dados": 1567,
+   "fontes": 60,
+   "fontes_por_tipo": {
+    "montadora": 26,
+    "imprensa_oficial": 34
+   },
+   "pendencias": 109,
+   "divergencias": 36
+  },
+  {
+   "grupo": "mercedes",
+   "versoes": 70,
+   "com_dado": 65,
+   "dados": 1678,
+   "fontes": 37,
+   "fontes_por_tipo": {
+    "imprensa_oficial": 37
+   },
+   "pendencias": 82,
+   "divergencias": 26
+  },
+  {
+   "grupo": "mg-jac-jetour-changan-baic",
+   "versoes": 30,
+   "com_dado": 30,
+   "dados": 1299,
+   "fontes": 40,
+   "fontes_por_tipo": {
+    "montadora": 37,
+    "revista": 3
+   },
+   "pendencias": 112,
+   "divergencias": 12
+  },
+  {
+   "grupo": "mitsubishi",
+   "versoes": 19,
+   "com_dado": 19,
+   "dados": 836,
+   "fontes": 28,
+   "fontes_por_tipo": {
+    "montadora": 27,
+    "imprensa_oficial": 1
+   },
+   "pendencias": 90,
+   "divergencias": 2
+  },
+  {
+   "grupo": "porsche",
+   "versoes": 50,
+   "com_dado": 42,
+   "dados": 1474,
+   "fontes": 42,
+   "fontes_por_tipo": {
+    "montadora": 42
+   },
+   "pendencias": 96,
+   "divergencias": 11
+  },
+  {
+   "grupo": "renault",
+   "versoes": 31,
+   "com_dado": 31,
+   "dados": 1084,
+   "fontes": 45,
+   "fontes_por_tipo": {
+    "montadora": 43,
+    "imprensa_oficial": 2
+   },
+   "pendencias": 55,
+   "divergencias": 7
+  },
+  {
+   "grupo": "toyota-lexus",
+   "versoes": 44,
+   "com_dado": 44,
+   "dados": 1001,
+   "fontes": 32,
+   "fontes_por_tipo": {
+    "montadora": 14,
+    "revista": 17,
+    "outro": 1
+   },
+   "pendencias": 82,
+   "divergencias": 0
+  },
+  {
+   "grupo": "utilitarios-eletricos",
+   "versoes": 32,
+   "com_dado": 26,
+   "dados": 769,
+   "fontes": 20,
+   "fontes_por_tipo": {
+    "montadora": 20
+   },
+   "pendencias": 112,
+   "divergencias": 8
+  },
+  {
+   "grupo": "volkswagen",
+   "versoes": 38,
+   "com_dado": 37,
+   "dados": 1398,
+   "fontes": 41,
+   "fontes_por_tipo": {
+    "montadora": 37,
+    "imprensa_oficial": 4
+   },
+   "pendencias": 93,
+   "divergencias": 3
+  },
+  {
+   "grupo": "volvo-landrover",
+   "versoes": 28,
+   "com_dado": 17,
+   "dados": 421,
+   "fontes": 13,
+   "fontes_por_tipo": {
+    "montadora": 9,
+    "imprensa_oficial": 4
+   },
+   "pendencias": 73,
+   "divergencias": 3
+  }
+ ]
+}
