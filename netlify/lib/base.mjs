@@ -94,7 +94,7 @@ async function montar() {
   const modelos = new Map();
   for (const v of versoes) {
     const r = v.catalog_row;
-    if (!r || typeof r.i !== "string") continue;
+    if (!r || typeof r.i !== "string" || r.st === "discontinued") continue; // fora de linha não aparece no site
     const bid = v.brand_id, mid = r.m || v.model_id;
     if (!bid || !mid || marcaFora.has(bid) || modeloFora.has(mid) || !mid.startsWith(bid + "-")) continue;
     let m = modelos.get(mid);
