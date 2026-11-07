@@ -158,6 +158,29 @@ tr:last-child td{border-bottom:0}
 .sec-corpo{margin-top:4px}
 .ac-pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:12.5px;color:var(--muted)}
 .ac-pager span{display:flex;gap:6px;flex-wrap:wrap}
+/* alterações automáticas */
+#alteracoes{scroll-margin-top:72px}
+#alteracoes:focus{outline:none}
+.au-of{border:1px solid var(--line);border-radius:14px;padding:11px 13px;margin:0 0 14px;background:var(--bg)}
+.au-of h3{margin:0 0 6px;font-family:var(--display);font-size:13.5px;font-weight:600}
+.au-of ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px;font-size:13px}
+.au-of li{display:flex;flex-wrap:wrap;gap:2px 8px;align-items:baseline}
+.au-of li b{font-weight:700}
+.au-of li span{color:var(--muted)}
+.aus{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.au{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel);min-width:0}
+.au-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 8px;font-size:13.5px}
+.au-t b{font-weight:700;overflow-wrap:anywhere}
+.au-t time{margin-left:auto;font:600 11.5px var(--mono);color:var(--muted);white-space:nowrap}
+.au-v{margin:5px 0 0;font-size:13px}
+.au-v s{color:var(--muted)}
+.au-v .ar{color:var(--faint);margin:0 4px}
+.au-v strong{color:var(--ok)}
+.au p.dt{margin:5px 0 0;font-size:12.5px;color:#3b4352;line-height:1.5;overflow-wrap:anywhere}
+.au p.dt a{font-weight:700;color:var(--accent);text-decoration:none}
+.pill.of{background:#e8f6ee;color:var(--ok)}
+.pill.fim{background:#fff4e5;color:#8a5a00}
+.pill.nv{background:var(--accent-soft);color:#0b4fd6}
 /* pendências da base */
 #pendencias{scroll-margin-top:72px}
 #pendencias:focus{outline:none}
@@ -231,6 +254,7 @@ tr:last-child td{border-bottom:0}
       <label class="tog" title="As suas visitas ao site, neste navegador, deixam de entrar nos números"><input type="checkbox" id="notrack"> Não contar minhas visitas neste navegador</label>
       <a class="btn hbtn" href="#mensagens" id="msgJump">Mensagens <i id="msgBadge" hidden>0</i></a>
       <a class="btn hbtn" href="#pendencias" id="pdJump">Pendências <i id="pdBadge" hidden>0</i></a>
+      <a class="btn hbtn" href="#alteracoes" id="auJump">Alterações automáticas</a>
       <span class="upd" id="upd">Carregando…</span>
       <button type="button" class="btn" id="verPc" hidden>Ver como no computador</button>
       <button type="button" class="btn" id="out">Sair</button>
@@ -258,6 +282,18 @@ tr:last-child td{border-bottom:0}
     </div>
     <ul class="msgs" id="msgs"><li class="empty">Carregando…</li></ul>
     <div class="pager"><span id="mInfo"></span><button class="btn" type="button" id="mMore" hidden>Ver mais antigas</button></div>
+  </section>
+
+  <section class="card" id="alteracoes" tabindex="-1">
+    <div class="msg-h">
+      <div><h2>Alterações automáticas</h2><p class="sub" id="auSub">O que o Claude e o sistema mudaram sozinhos no site: preços, ofertas, fim de ofertas e ajustes de cadastro. Carro novo continua esperando você no Radar.</p></div>
+      <button class="btn sec-tg" type="button" id="auToggle" aria-expanded="false" aria-controls="auCorpo" data-rotulo="Mostrar histórico">Mostrar histórico</button>
+    </div>
+    <div class="sec-corpo" id="auCorpo" hidden>
+      <div class="au-of" id="auOfertas" hidden></div>
+      <ul class="aus" id="aus"><li class="empty">Carregando…</li></ul>
+      <div class="ac-pager"><span id="auInfo"></span><span><button class="btn" type="button" id="auMais" hidden>Ver mais 50</button><button class="btn" type="button" id="auTodas" hidden>Ver todas</button></span></div>
+    </div>
   </section>
 
   <section class="card" id="pendencias" tabindex="-1">
@@ -726,6 +762,35 @@ $("acToggle").onclick = () => { const abrir = $("acCorpo").hidden; abreSecao($("
 $("acMais").onclick = () => { acN += 50; loadRecent().catch(() => toast("Não deu para carregar agora.")); };
 $("acTodas").onclick = () => { acN = Math.min(2000, Number($("acTodas").dataset.total) || 2000); loadRecent().catch(() => toast("Não deu para carregar agora.")); };
 
+// ---------- alterações automáticas (histórico do que o Claude e o sistema mudaram sozinhos)
+const AU_KIND = {oferta: ["Oferta", "of"], preco: ["Preço", "of"], fim_oferta: ["Fim da oferta", "fim"], nova_versao: ["Nova versão", "nv"], situacao: ["Situação", ""], atualizacao: ["Atualização", ""], cadastro: ["Cadastro", ""], radar: ["Notícia", ""]};
+const AU_QUEM = {claude: "Claude", sistema: "automático", admin: "você"};
+let auN = 20;
+async function loadAuto(){
+  const [rows, ofertas] = await Promise.all([rpc("admin_auto_changes", {p_limit: auN, p_offset: 0}), rpc("admin_ofertas_com_prazo").catch(() => [])]);
+  const lista = rows || [], total = lista.length ? Number(lista[0].total) || lista.length : 0;
+  const semana = lista.filter(r => Date.now() - new Date(r.at).getTime() < 7 * 864e5).length;
+  $("auSub").textContent = total ? `${nf(total)} alteraç${total === 1 ? "ão" : "ões"} registrada${total === 1 ? "" : "s"}${semana ? `, ${nf(semana)} nos últimos 7 dias` : ""}. Preços, ofertas, fim de ofertas e ajustes de cadastro feitos sem precisar de você; carro novo continua esperando você no Radar.` : "Nenhuma alteração automática ainda. Preços e ofertas que o Claude aplicar sozinho aparecem aqui.";
+  const of = ofertas || [];
+  $("auOfertas").hidden = !of.length;
+  if (of.length) $("auOfertas").innerHTML = `<h3>Ofertas em andamento (${nf(of.length)})</h3><ul>${of.map(o => `<li><b>${esc(o.carro)}</b><span>${fmtR(o.preco_oferta)} ${o.ate ? `até ${new Date(o.ate + "T12:00:00").toLocaleDateString("pt-BR")}, depois volta sozinho a ${fmtR(o.preco_normal)}` : `sem data de término (antes ${fmtR(o.preco_normal)})`}</span></li>`).join("")}</ul>`;
+  $("aus").innerHTML = lista.length ? lista.map(r => {
+    const [rot, cls] = AU_KIND[r.kind] || [r.kind, ""];
+    const valores = r.old_value || r.new_value ? `<p class="au-v">${r.old_value && r.old_value !== r.new_value ? `<s>${esc(r.old_value)}</s><span class="ar">→</span>` : ""}<strong>${esc(r.new_value || r.old_value)}</strong></p>` : "";
+    const fonte = r.source_url && /^https?:\/\//.test(r.source_url) ? ` <a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.source_name || "fonte")} ↗</a>` : "";
+    return `<li class="au"><div class="au-t"><span class="pill ${cls}">${esc(rot)}</span><b>${esc(r.title)}</b><time datetime="${esc(r.at)}" title="${esc(new Date(r.at).toLocaleString("pt-BR"))}">${fdate(r.at)} · ${esc(AU_QUEM[r.actor] || r.actor)}</time></div>${valores}${r.detail || fonte ? `<p class="dt">${esc(r.detail || "")}${fonte}</p>` : ""}</li>`;
+  }).join("") : '<li class="empty">Nenhuma alteração automática ainda.</li>';
+  const falta = total - lista.length;
+  $("auInfo").textContent = total ? `Mostrando ${nf(lista.length)} de ${nf(total)}` : "";
+  $("auMais").hidden = falta <= 0; $("auMais").textContent = `Ver mais ${nf(Math.min(50, falta))}`;
+  $("auTodas").hidden = falta <= 50; $("auTodas").textContent = `Ver todas (${nf(total)})`; $("auTodas").dataset.total = total;
+}
+const fmtR = n => n == null ? "—" : "R$ " + Number(n).toLocaleString("pt-BR");
+$("auToggle").onclick = () => abreSecao($("auToggle"), $("auCorpo"), $("auCorpo").hidden);
+$("auJump").onclick = e => { e.preventDefault(); abreSecao($("auToggle"), $("auCorpo"), true); history.replaceState(null, "", "#alteracoes"); $("alteracoes").scrollIntoView({behavior: "smooth", block: "start"}); $("alteracoes").focus({preventScroll: true}); };
+$("auMais").onclick = () => { auN += 50; loadAuto().catch(() => toast("Não deu para carregar agora.")); };
+$("auTodas").onclick = () => { auN = Math.min(2000, Number($("auTodas").dataset.total) || 2000); loadAuto().catch(() => toast("Não deu para carregar agora.")); };
+
 function renderLinks(){
   const base = location.origin + "/";
   const ch = [["Instagram (bio e stories)", "instagram"], ["WhatsApp", "whatsapp"], ["Facebook", "facebook"], ["TikTok", "tiktok"], ["YouTube", "youtube"], ["Anúncio pago", "anuncio"]];
@@ -757,10 +822,12 @@ async function doBoot(){
   $("notrack").checked = LS.get("autokan_sem_rastreio") === "1";
   renderLinks();
   const msgs = Promise.all([loadMsgs(), loadMsgCount()]).catch(() => { $("msgs").innerHTML = '<li class="empty">Não deu para carregar as mensagens agora.</li>'; });
+  const auto = loadAuto().catch(() => { $("aus").innerHTML = '<li class="empty">Não deu para carregar o histórico agora.</li>'; });
+  if (location.hash === "#alteracoes") auto.then(() => { abreSecao($("auToggle"), $("auCorpo"), true); $("alteracoes").scrollIntoView({block: "start"}); $("alteracoes").focus({preventScroll: true}); });
   const pend = loadPend().catch(() => { $("pd").innerHTML = '<p class="empty">Não deu para carregar as pendências agora.</p>'; });
   if (location.hash === "#pendencias") pend.then(() => { abreSecao($("pdToggle"), $("pdCorpo"), true); $("pendencias").scrollIntoView({block: "start"}); $("pendencias").focus({preventScroll: true}); });
   if (location.hash === "#mensagens") msgs.then(() => { $("mensagens").scrollIntoView({block: "start"}); $("mensagens").focus({preventScroll: true}); });
-  await Promise.all([refreshAll(), loadUsers().catch(() => {}), msgs, pend]);
+  await Promise.all([refreshAll(), loadUsers().catch(() => {}), msgs, pend, auto]);
   timers.forEach(clearInterval);
   timers = [setInterval(() => loadOnline().catch(() => {}), 20000), setInterval(() => { loadOverview().catch(() => {}); loadRecent().catch(() => {}); loadMsgCount().catch(() => {}); if (olH <= 24) loadOnlineHist().catch(() => {}); }, 60000)];
 }
