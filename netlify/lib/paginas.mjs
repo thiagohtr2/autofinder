@@ -180,6 +180,7 @@ ${["eletrico:#fbf3db:#e0a800", "hibrido:#deeee6:#11864c", "potente:#fae3e0:#d83a
 .mc:hover{border-color:rgba(29,107,255,.5);box-shadow:0 18px 36px -24px rgba(29,107,255,.55);transform:translateY(-2px)}
 .mc-ph{position:relative;aspect-ratio:16/9;background:radial-gradient(120% 90% at 50% 100%,#eef2f8 0,#f7f9fc 60%,#fff 100%);display:grid;place-items:center}
 .mc-ph img{width:100%;height:100%;object-fit:contain}
+.mc-ph .ilus{right:8px;top:8px;bottom:auto;font-size:9px;padding:2px 6px;border-radius:5px}
 .mc-sem{font-size:20px}
 .mc-tx{display:flex;flex-direction:column;gap:2px;padding:12px 14px 14px;flex:1}
 .mc-mk{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -370,7 +371,7 @@ export function fotoTag(m, w, sizes, prioridade = false) {
 export function cartao(m, { de, extra, href } = {}) {
   const preco = de ?? m.precoMin;
   const sub = [m.carroc, m.combs.slice(0, 2).join(" ou "), m.aVenda ? pl(m.versoes.length, "versão", "versões") : STATUS[m.breve[0]?.status] || ""].filter(Boolean).join(" · ");
-  return `<li><a class="mc" href="${href || m.url}"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 92vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(sub)}</span>${extra ? `<span class="mc-x">${esc(extra)}</span>` : ""}<span class="mc-pr">${preco && Number.isFinite(preco) ? `<small>a partir de</small>${reais(preco)}` : "<small>preço ainda não divulgado</small>"}</span></span></a></li>`;
+  return `<li><a class="mc" href="${href || m.url}"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 92vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(sub)}</span>${extra ? `<span class="mc-x">${esc(extra)}</span>` : ""}<span class="mc-pr">${preco && Number.isFinite(preco) ? `<small>a partir de</small>${reais(preco)}` : "<small>preço ainda não divulgado</small>"}</span></span></a></li>`;
 }
 
 const logoMarca = (b, w = 64) => `<span class="bc-lg">${b.logo ? `<img src="${imagem(b.logo, w * 2)}" alt="" width="${w}" height="${w}" loading="lazy">` : esc(b.nome.slice(0, 2).toUpperCase())}</span>`;
@@ -402,7 +403,7 @@ function filtroPreco({ acao, de, ate, versoes, titulo = "Buscar por preço" }) {
 /* card de uma versão (na lista com "Ver todas as versões"): leva à tabela de versões do carro */
 function cartaoVersao(m, v) {
   const sub = [v.motor || null, v.cambio || null].filter(Boolean).join(" · ");
-  return `<li><a class="mc" href="${m.url}#versoes"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 46vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(v.nome || m.nome)}${v.ano ? ` · ${v.ano}` : ""}</span>${sub ? `<span class="mc-sub">${esc(sub)}</span>` : ""}<span class="mc-pr">${v.preco ? reais(v.preco) : "<small>preço não divulgado</small>"}</span></span></a></li>`;
+  return `<li><a class="mc" href="${m.url}#versoes"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 46vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(v.nome || m.nome)}${v.ano ? ` · ${v.ano}` : ""}</span>${sub ? `<span class="mc-sub">${esc(sub)}</span>` : ""}<span class="mc-pr">${v.preco ? reais(v.preco) : "<small>preço não divulgado</small>"}</span></span></a></li>`;
 }
 
 /* lista longa: os primeiros cards já vêm na página e os outros aparecem conforme a pessoa desce */

@@ -93,7 +93,8 @@ export const CSS_RANK = `
 .rk{list-style:none;margin:0;padding:0;display:grid;gap:10px;counter-reset:rk}
 .rk>li{display:grid;grid-template-columns:34px 112px minmax(0,1fr) auto;align-items:center;gap:14px;padding:12px 16px 12px 12px;border:1px solid var(--line);border-radius:16px;background:#fff}
 .rk-n{font:800 18px var(--display);color:var(--muted);text-align:center}
-.rk-ph{display:block;width:112px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:var(--panel)}
+.rk-ph{position:relative;display:block;width:112px;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:var(--panel)}
+.rk-ph .ilus{right:3px;top:3px;bottom:auto;font-size:7px;letter-spacing:.04em;padding:1px 4px;border-radius:4px}
 .rk-ph img{width:100%;height:100%;object-fit:cover;display:block}
 .rk-tx{min-width:0;display:flex;flex-direction:column;gap:2px}
 .rk-mk{font-size:11.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
@@ -137,7 +138,7 @@ export function paginaRanking(base, r) {
     : "Ainda não há carros com esse dado confirmado por fonte.";
   const lis = linhas.map(({ m, v, x }, i) => {
     const preco = v.preco ? reais(v.preco) : "preço não divulgado";
-    return `<li><span class="rk-n">${i + 1}</span><a class="rk-ph" href="${m.url}" tabindex="-1" aria-hidden="true">${fotoTag(m, 224, "112px") || ""}</a>
+    return `<li><span class="rk-n">${i + 1}</span><a class="rk-ph" href="${m.url}" tabindex="-1" aria-hidden="true">${fotoTag(m, 224, "112px") || ""}${m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}</a>
 <span class="rk-tx"><span class="rk-mk">${esc(m.marca)}</span><a href="${m.url}">${esc(m.nome)}</a><span class="rk-vs">${esc(v.nome || "")}</span>${x.preco ? "" : `<span class="rk-pr">${preco}</span>`}</span>
 <span class="rk-x"><b>${esc(x.t)}</b>${x.sub ? `<small>${esc(x.sub)}</small>` : ""}${fonteLink(base.fontes, x.s, x.fonte)}</span></li>`;
   }).join("");
