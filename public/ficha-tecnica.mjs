@@ -96,6 +96,10 @@ export const GRUPOS = [
 export function fichaDe(specs) {
   if (!specs || typeof specs !== "object") return [];
   const out = [];
+  // híbrido (motor a combustão + elétrico): potência e torque sem "combinada" são do motor a combustão; o rótulo diz isso
+  const m = specs.motor || {};
+  const hibrido = !!(m.cilindrada_cm3 || m.cilindros) && !!(m.potencia_combinada_cv || m.potencia_eletrica_cv || m.motores_eletricos || specs.bateria);
+  const ROT_HIB = { "Potência": "Potência do motor a combustão", "Torque": "Torque do motor a combustão" };
   for (const [grupo, campos] of GRUPOS) {
     const itens = [];
     for (const [g, campo, rot] of campos) {
@@ -103,7 +107,7 @@ export function fichaDe(specs) {
       let r = null;
       if (typeof campo === "function") r = campo(dados);
       else { const t = texto(dados[campo]); if (t) r = { t, s: [dados[campo].s], r: dados[campo].r }; }
-      if (r) itens.push({ rot, chave: typeof campo === "string" ? `${g}.${campo}` : `${g}.${rot}`, t: r.t, s: [...new Set(r.s.filter(Boolean))], r: r.r || null });
+      if (r) itens.push({ rot: hibrido && g === "motor" && ROT_HIB[rot] ? ROT_HIB[rot] : rot, chave: typeof campo === "string" ? `${g}.${campo}` : `${g}.${rot}`, t: r.t, s: [...new Set(r.s.filter(Boolean))], r: r.r || null });
     }
     if (itens.length) out.push({ grupo, itens });
   }
