@@ -5,6 +5,7 @@ import { ICONS, TAGDESC } from "./pontos-fortes.mjs";
 import { secaoFicha, CSS_FICHA } from "./ficha-tecnica.mjs";
 import { secaoHistorico, CSS_HIST } from "./historico.mjs";
 import { RANKINGS, GRUPOS_RANKING, chipsRanking } from "./rankings.mjs";
+import { perguntasFicha, ldFicha, ldPerguntas } from "./perguntas.mjs";
 
 /* ---------- formatação */
 
@@ -21,6 +22,7 @@ export const ico = (k) => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k
 export const SETA = '<svg class="ext" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3 4 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 export const STATUS = { on_sale: "À venda", announced: "Anunciado", pre_order: "Pré-venda" };
 export const COMB_FRASE = { Flex: "flex", Gasolina: "a gasolina", Etanol: "a etanol", Diesel: "a diesel", "Elétrico": "100% elétrico", "Híbrido": "híbrido", "Híbrido plug-in": "híbrido plug-in" };
+const COMB_VERSOES = { ...COMB_FRASE, "Elétrico": "100% elétricas", "Híbrido": "híbridas", "Híbrido plug-in": "híbridas plug-in", "Híbrido leve": "híbridas leves" }; // "Todas as versões são …" / "Há versões …"
 const PAIS_EM = { Brasil: "no Brasil", China: "na China", "México": "no México", Argentina: "na Argentina", Alemanha: "na Alemanha", EUA: "nos EUA", "Estados Unidos": "nos Estados Unidos", "Japão": "no Japão", "Coreia do Sul": "na Coreia do Sul", "Índia": "na Índia", "França": "na França", Espanha: "na Espanha", "Itália": "na Itália", "Reino Unido": "no Reino Unido", "Tailândia": "na Tailândia", Hungria: "na Hungria", "Eslováquia": "na Eslováquia", "Suécia": "na Suécia", "Bélgica": "na Bélgica", Turquia: "na Turquia", Uruguai: "no Uruguai", "Áustria": "na Áustria", Portugal: "em Portugal", "Indonésia": "na Indonésia", "África do Sul": "na África do Sul", "Polônia": "na Polônia", "República Tcheca": "na República Tcheca", "Canadá": "no Canadá", "Malásia": "na Malásia", Inglaterra: "na Inglaterra", Holanda: "na Holanda", "Países Baixos": "nos Países Baixos" };
 const paisEm = (p) => PAIS_EM[p] || `em ${p}`;
 const IMG_OG = `${SITE}/marca/autokan-compartilhar.jpg`;
@@ -461,10 +463,11 @@ ${temTracao ? `<td data-l="Tração">${v.tracao ? esc(v.tracao) : '<span class="
   const mais = m.versoes.filter((v) => v.preco), barata = mais[0], cara = mais[mais.length - 1];
   const faq = [];
   if (barata) faq.push([`Quanto custa o ${nomeAno}?`, `O ${nomeAno} custa a partir de ${reais(barata.preco)}${barata.nome ? ` na versão ${barata.nome}` : ""}${cara && cara !== barata ? ` e chega a ${reais(cara.preco)}${cara.nome ? ` na versão ${cara.nome}` : ""}` : ""}. ${rotuloPreco(m.versoes)}.`]);
-  if (barata && mais.length > 1) faq.push([`Qual é a versão mais barata do ${m.titulo}?`, `É a ${barata.nome || m.nome}, por ${reais(barata.preco)}${barata.motor ? `, com motor ${barata.motor}` : ""}${barata.cambio ? ` e câmbio ${barata.cambio.toLowerCase()}` : ""}.`]);
+  if (barata && mais.length > 1) faq.push([`Qual é a versão mais barata do ${m.titulo}?`, `É a ${barata.nome || m.nome}, por ${reais(barata.preco)}${barata.motor ? `, com motor ${barata.motor}` : ""}${barata.cambio ? ` e câmbio ${/^[A-Z]{2,}/.test(barata.cambio) ? barata.cambio : barata.cambio.toLowerCase()}` : ""}.`]);
   if (cvTxt) faq.push([`Qual é a potência do ${m.titulo}?`, m.cvMax !== m.cvMin ? `Vai de ${m.cvMin} cv a ${m.cvMax} cv, conforme a versão.` : `Tem ${m.cvMin} cv.`]);
-  if (m.combs.length) faq.push([`O ${m.titulo} é flex, elétrico ou híbrido?`, m.combs.length === 1 ? `${m.aVenda && m.versoes.length > 1 ? "Todas as versões são" : "É"} ${COMB_FRASE[m.combs[0]] || m.combs[0].toLowerCase()}.` : `Há versões ${lista(m.combs.map((c) => COMB_FRASE[c] || c.toLowerCase()))}.`]);
+  if (m.combs.length) faq.push([`O ${m.titulo} é flex, elétrico ou híbrido?`, m.combs.length === 1 ? (m.aVenda && m.versoes.length > 1 ? `Todas as versões são ${COMB_VERSOES[m.combs[0]] || m.combs[0].toLowerCase()}.` : `É ${COMB_FRASE[m.combs[0]] || m.combs[0].toLowerCase()}.`) : `Há versões ${lista(m.combs.map((c) => COMB_VERSOES[c] || c.toLowerCase()))}.`]);
   if (m.fabricado.length) faq.push([`Onde o ${m.titulo} é fabricado?`, `O ${m.titulo} vendido no Brasil é fabricado ${lista(m.fabricado.map(paisEm))}.`]);
+  faq.push(...perguntasFicha(m, vs));
 
   const noticias = m.noticias.slice(0, 6);
   const secNoticias = noticias.length ? `<section class="sec" aria-labelledby="s-nt"><h2 id="s-nt">Notícias do ${esc(m.titulo)}</h2><ul class="nt">${noticias.map((n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener nofollow">${esc(n.title)}${SETA}</a>${n.summary ? `<p>${esc(n.summary)}</p>` : ""}<small>${esc([n.source, dataBr(n.date)].filter(Boolean).join(" · "))}</small></li>`).join("")}</ul><p class="nota">Resumos escritos pelo Autokan a partir das matérias. O texto completo está no site de cada fonte. <a href="/noticias?marca=${encodeURIComponent(marca.id)}">Todas as notícias da ${esc(marca.nome)}</a></p></section>` : "";
@@ -487,7 +490,9 @@ ${temTracao ? `<td data-l="Tração">${v.tracao ? esc(v.tracao) : '<span class="
   if (m.combs[0]) produto.fuelType = lista(m.combs);
   if (m.foto) produto.image = [SITE + imagem(m.foto, 1200)];
   if (m.precoMin) produto.offers = { "@type": "AggregateOffer", priceCurrency: "BRL", lowPrice: m.precoMin, highPrice: m.precoMax || m.precoMin, offerCount: mais.length };
+  Object.assign(produto, ldFicha(m, vs));
   ld.push(produto);
+  if (faq.length) ld.push(ldPerguntas(faq));
 
   const corpo = `${trilha(itens)}
 <article>
