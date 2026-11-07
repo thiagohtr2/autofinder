@@ -101,7 +101,7 @@ f.addEventListener("submit",async x=>{x.preventDefault();er.hidden=true;
     const d=await r.json().catch(()=>({}));
     if(!r.ok||!d.ok)throw new Error(d.erro||"Não deu para enviar agora. Tente de novo em alguns minutos.");
     try{window.giroTrack&&window.giroTrack("click",{meta:{el:"contato-enviado",assunto:as.value}})}catch(y){}
-    $("ctArea").innerHTML='<div class="ct-feito" role="status" tabindex="-1" id="ctFeito">${OK_ICO.replace(/'/g, "\\'")}<h2>Mensagem enviada</h2><p>Obrigado, '+e(nome.value.trim().split(/\\s+/)[0])+'. A resposta vai para <b>'+e(email.value.trim())+'</b>.</p><div class="acoes"><a class="btn" href="/">Voltar para a roleta</a><a class="btn" href="/contato">Mandar outra</a></div></div>';
+    $("ctArea").innerHTML='<div class="ct-feito" role="status" tabindex="-1" id="ctFeito">${OK_ICO.replace(/'/g, "\\'")}<h2>Mensagem enviada</h2><p>Obrigado, '+e(nome.value.trim().split(/\\s+/)[0])+'. A resposta vai para <b>'+e(email.value.trim())+'</b>.</p><div class="acoes"><a class="btn" href="/">Voltar para o início</a><a class="btn" href="/contato">Mandar outra</a></div></div>';
     const ft=$("ctFeito");ft.focus({preventScroll:true});ft.scrollIntoView({block:"start",behavior:"smooth"});
   }catch(y){bt.disabled=false;bt.textContent="Enviar mensagem";erro(y.message==="Failed to fetch"?"Sem conexão agora. Confira a internet e tente de novo.":y.message)}
 });
