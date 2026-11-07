@@ -1049,43 +1049,43 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 @media (prefers-reduced-motion: reduce){.row:not(.ghost) .c-dn,.card.enter,.card.leave,.sweep.go::before,.like.pop svg,.sh-hero img{animation:none}.card,.stage img,.stage svg.car{transition:none}}
 
 /* celular: painel rápido de filtros (faixa, motorização, tipo, ordem, exibição) */
-.ajp-bg{position:fixed;inset:0;z-index:39;background:rgba(6,11,28,.28)}
-.ajp{position:fixed;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));top:70px;z-index:40;max-height:calc(100dvh - 82px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:22px;box-shadow:0 18px 50px rgba(6,11,28,.22),0 0 0 1px rgba(6,11,28,.06);padding:4px 16px 14px;color:var(--ink)}
-.ajp-hd{display:flex;align-items:center;gap:12px;padding:14px 0 12px;border-bottom:1px solid #e7eaf0}
-.ajp-hd .tag{flex:none;width:30px;height:30px;color:var(--accent)}
-.ajp-hd .tx{flex:1;min-width:0;display:grid;gap:1px}
-.ajp-hd small{font:800 11px var(--body);letter-spacing:.1em;text-transform:uppercase;color:#4a5263}
-.ajp-hd b{font-family:var(--display);font-size:24px;font-weight:700;letter-spacing:-.02em;line-height:1.1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ajp-x{flex:none;width:40px;height:40px;border:0;border-radius:50%;background:#eef1f5;color:var(--ink);display:grid;place-items:center;cursor:pointer}
-.ajp-x svg{width:16px;height:16px}
-.ajp-s{padding:14px 0;border-bottom:1px solid #e7eaf0}
-.ajp-s h3{margin:0 0 10px;font-family:var(--display);font-size:17px;font-weight:700;letter-spacing:-.01em}
-.ajp-mot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
-.ajp-m{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-width:0;height:72px;padding:0 4px;border:1.5px solid #dfe3ea;border-radius:14px;background:#fff;font:600 13.5px var(--body);color:var(--ink);cursor:pointer}
-.ajp-m svg{width:24px;height:24px}
-.ajp-m span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ajp-bg{position:fixed;left:0;right:0;bottom:0;top:0;z-index:39;background:rgba(6,11,28,.22);animation:fade .2s var(--ease)}
+/* o painel desce da caixa de preço (como os controles abriam antes), sem cobrir a faixa */
+.ajp{position:fixed;left:max(10px,env(safe-area-inset-left,0px));right:max(10px,env(safe-area-inset-right,0px));top:70px;z-index:40;max-height:calc(100dvh - 82px);overflow-y:auto;overscroll-behavior:contain;background:#fff;border-radius:18px;box-shadow:0 18px 44px rgba(6,11,28,.2),0 0 0 1px rgba(6,11,28,.06);padding:2px 12px 12px;color:var(--ink);transform-origin:top center;animation:ajdesce .26s var(--ease) backwards}
+@keyframes ajdesce{from{opacity:0;transform:translateY(-10px);clip-path:inset(0 0 100% 0 round 18px)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0 round 18px)}}
+.ajp-s{padding:10px 0 9px;border-bottom:1px solid #eef0f4}
+.ajp-s h3{margin:0 0 7px;font:800 10.5px var(--body);letter-spacing:.12em;text-transform:uppercase;color:#5d6577}
+.ajp-mot{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.ajp-m{position:relative;display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;height:38px;padding:0 4px;border:1.5px solid #dfe3ea;border-radius:11px;background:#fff;font:600 12.5px var(--body);color:var(--ink);cursor:pointer}
+.ajp-m svg{flex:none;width:17px;height:17px}
+.ajp-m span{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .ajp-m[aria-pressed="true"]{border-color:var(--accent);background:#eef4ff;color:var(--accent);font-weight:800}
-.ajp-m[aria-pressed="true"]::after{content:"";position:absolute;top:-7px;right:-7px;width:20px;height:20px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 8.5l2.6 2.5L12 5.5' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/14px no-repeat;box-shadow:0 0 0 2px #fff}
-.ajp-pills{display:flex;flex-wrap:wrap;gap:8px}
-.ajp-p{height:38px;padding:0 16px;border:1.5px solid #dfe3ea;border-radius:999px;background:#fff;font:600 14px var(--body);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:6px}
-.ajp-p b{font:800 11.5px var(--body);color:#11864c}
+/* tipo de carro e pontos fortes: uma linha só, deslizando para o lado */
+.ajp-pills{display:flex;flex-wrap:nowrap;gap:6px;overflow-x:auto;margin:0 -12px;padding:1px 12px 2px;scrollbar-width:none;-webkit-overflow-scrolling:touch;scroll-padding-inline:12px}
+.ajp-pills::-webkit-scrollbar{display:none}
+.ajp-p{flex:none;height:34px;padding:0 13px;border:1.5px solid #dfe3ea;border-radius:999px;background:#fff;font:600 13px var(--body);color:var(--ink);cursor:pointer;display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+.ajp-p b{font:800 11px var(--body);color:#11864c}
 .ajp-p[aria-pressed="true"]{border-color:var(--accent);background:#eef4ff;color:var(--accent);font-weight:800}
-.ajp-ord{display:flex;gap:8px}
-.ajp-o{flex:1 0 auto;display:flex;align-items:center;justify-content:center;gap:6px;height:44px;padding:0 8px;border:1.5px solid #dfe3ea;border-radius:12px;background:#fff;font:600 13px var(--body);color:var(--ink);cursor:pointer;white-space:nowrap}
-.ajp-o svg{flex:none;width:16px;height:16px}
-.ajp-o span{overflow:hidden;text-overflow:ellipsis}
+.ajp-ord{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+.ajp-o{display:flex;align-items:center;justify-content:center;gap:5px;min-width:0;height:36px;padding:0 6px;border:1.5px solid #dfe3ea;border-radius:11px;background:#fff;font:600 12.5px var(--body);color:var(--ink);cursor:pointer;white-space:nowrap}
+.ajp-o svg{flex:none;width:15px;height:15px}
+.ajp-o span{min-width:0;overflow:hidden;text-overflow:ellipsis}
 .ajp-o[aria-pressed="true"]{background:#0b1736;border-color:#0b1736;color:#fff}
-.ajp-ex{display:grid;grid-template-columns:1fr 1fr;padding:3px;border:1.5px solid #dfe3ea;border-radius:14px;background:#f5f7fa}
-.ajp-e{display:flex;align-items:center;justify-content:center;gap:8px;height:44px;border:1.5px solid transparent;border-radius:11px;background:none;font:600 14.5px var(--body);color:var(--ink);cursor:pointer}
-.ajp-e svg{width:20px;height:20px}
+.ajp-fortes{margin-top:8px;animation:ajabre .22s var(--ease) backwards}
+@keyframes ajabre{from{opacity:0;transform:translateY(-6px)}}
+.ajp-fortes small{display:block;margin:0 0 6px;font:600 12px var(--body);color:#5d6577}
+.ajp-ex{display:grid;grid-template-columns:1fr 1fr;padding:2px;border:1.5px solid #dfe3ea;border-radius:12px;background:#f5f7fa}
+.ajp-e{display:flex;align-items:center;justify-content:center;gap:6px;height:34px;border:1.5px solid transparent;border-radius:10px;background:none;font:600 13px var(--body);color:var(--ink);cursor:pointer}
+.ajp-e svg{width:17px;height:17px}
 .ajp-e[aria-pressed="true"]{background:#eef4ff;border-color:var(--accent);color:var(--accent);font-weight:800}
-.ajp-ft{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding-top:14px}.ajp-ft .pri{grid-column:1/-1}
-@media (min-width:440px){.ajp-ft{grid-template-columns:auto auto minmax(0,1fr)}.ajp-ft .pri{grid-column:auto}}
-.ajp-b{display:flex;align-items:center;justify-content:center;gap:7px;height:46px;padding:0 12px;border:1.5px solid #dfe3ea;border-radius:12px;background:#fff;font:600 13.5px var(--body);color:var(--ink);cursor:pointer;white-space:nowrap}
-.ajp-b svg{flex:none;width:18px;height:18px}
-.ajp-b.pri{border-color:var(--accent);background:var(--accent);color:#fff;font-weight:800}
+.ajp-ft{display:grid;grid-template-columns:auto auto minmax(0,1fr);gap:6px;padding-top:10px}
+.ajp-b{display:flex;align-items:center;justify-content:center;gap:6px;height:40px;padding:0 10px;border:1.5px solid #dfe3ea;border-radius:11px;background:#fff;font:600 13px var(--body);color:var(--ink);cursor:pointer;white-space:nowrap}
+.ajp-b svg{flex:none;width:16px;height:16px}
+.ajp-b.pri{border-color:var(--accent);background:var(--accent);color:#fff;font-weight:800;min-width:0}
 .ajp button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-@media (max-width:380px){.ajp{padding:2px 12px 12px}.ajp-hd b{font-size:21px}.ajp-m{height:64px;font-size:12px}.ajp-ord{gap:6px}.ajp-o{font-size:12px;gap:4px;padding:0 6px}.ajp-o svg{width:14px;height:14px}.ajp-b{padding:0 9px;font-size:13px}}
+@media (max-width:430px){.ajp-o svg{display:none}.ajp-b{padding:0 9px}.ajp-b svg{display:none}.ajp-b.pri svg{display:block}}
+@media (max-width:380px){.ajp{padding:2px 10px 10px}.ajp-pills{margin:0 -10px;padding:1px 10px 2px}.ajp-m{font-size:11.5px;gap:3px}.ajp-m svg{width:15px;height:15px}.ajp-o{font-size:11.5px;padding:0 4px}.ajp-b{padding:0 8px;font-size:12.5px}}
+@media (prefers-reduced-motion: reduce){.ajp,.ajp-bg,.ajp-fortes{animation:none}}
 @media (min-width:761px){.ajp,.ajp-bg{display:none!important}}
 /* editor de imagens (administrador) */
 .fx{z-index:34}
@@ -1326,7 +1326,7 @@ html{background:#060b1c}
 </div>
 <div class="scrim" id="scrim" hidden></div>
 <div class="ajp-bg" id="ajBg" hidden></div>
-<section class="ajp" id="ajPanel" role="dialog" aria-modal="true" aria-labelledby="ajpTitle" hidden></section>
+<section class="ajp" id="ajPanel" role="dialog" aria-modal="true" aria-label="Ordem e filtros" hidden></section>
 <section class="dbp" id="rdPanel" role="dialog" aria-modal="true" aria-labelledby="rdTitle" hidden>
   <div class="dbp-in" style="width:min(860px,100%)">
     <header class="dbp-head"><div><h2 id="rdTitle">Radar de lançamentos</h2><p class="dbp-sub">Só você vê. Novidades do mercado 0 km no Brasil para manter o Autokan atualizado; a busca roda sozinha várias vezes por dia.</p></div><button type="button" class="dr-x" id="rdClose" aria-label="Fechar radar">✕</button></header>
@@ -2155,8 +2155,11 @@ function setAj(on){
   if(!ajPanel)ajPanel=document.getElementById("ajPanel");
   const pnl=matchMedia("(max-width:760px)").matches&&on;
   if(pnl!==!ajPanel.hidden){ajPanel.hidden=!pnl;document.getElementById("ajBg").hidden=!pnl;
-    if(pnl){const h=document.querySelector(".sr-head"),r=h&&h.getBoundingClientRect();ajPanel.style.top=r&&r.top>0?Math.round(r.top)+"px":"";renderAjPanel();
-      const f=ajPanel.querySelector(".ajp-x");f&&f.focus({preventScroll:true})}
+    if(pnl){const h=document.querySelector(".sr-head"),r=h&&h.getBoundingClientRect(),bg=document.getElementById("ajBg");
+      const t=r&&r.bottom>0&&r.bottom<innerHeight-280?Math.round(r.bottom)+6:70;
+      ajPanel.style.top=t+"px";ajPanel.style.maxHeight=`calc(100dvh - ${t+10}px)`;bg.style.top=(r&&r.bottom>0?Math.round(r.bottom):0)+"px";
+      delete ajPanel.dataset.anim;renderAjPanel();
+      const f=ajPanel.querySelector("button");f&&f.focus({preventScroll:true})}
     else if(ajPanel.contains(document.activeElement))ajBtn.focus({preventScroll:true})}
   ajBtn.setAttribute("aria-expanded",String(on));ajBtn.setAttribute("aria-label",ajLabel());
   ajBtn.title=on?"Esconder ordem e filtros":"Mostrar ordem e filtros";
@@ -2181,15 +2184,19 @@ const AJI={
 };
 const svg24=p=>`<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
 function renderAjPanel(){if(!ajPanel||ajPanel.hidden)return;
-  const [lo,hi]=band(),mot=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)),tipos=GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l));
-  const reduced=CARS.filter(isReduced).length,n=CARS.filter(c=>matches(c)).length;
+  const mot=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)),tipos=GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l));
+  const fortes=TAGORDER.filter(k=>CARS.some(c=>c.k.includes(k))).map(k=>TAGS[k]);
+  const reduced=CARS.filter(isReduced).length,n=CARS.filter(c=>matches(c)).length,sx=[...ajPanel.querySelectorAll(".ajp-pills")].map(x=>x.scrollLeft),tinhaFortes=!!ajPanel.querySelector(".ajp-fortes");
   const SORTS=[["likes","Favoritos"],["price","Preço"],["strong","Pontos fortes"]],VIEWS=[["models","Modelos"],["versions","Versões"]];
-  ajPanel.innerHTML=`<div class="ajp-hd">${AJI.tag}<div class="tx"><small id="ajpTitle">Faixa selecionada</small><b>R$ ${krange(lo,hi)}</b></div><button type="button" class="ajp-x" data-ajclose aria-label="Fechar filtros">${AJI.x}</button></div>
-    ${mot.length?`<div class="ajp-s"><h3>Motorização</h3><div class="ajp-mot" role="group" aria-label="Motorização">${mot.map(([v,k,l])=>`<button type="button" class="ajp-m" data-ajfu="${esc(v)}" aria-pressed="${F.fu.has(v)}">${svg24(AJI[k])}<span>${esc(l)}</span></button>`).join("")}</div></div>`:""}
+  ajPanel.innerHTML=`${mot.length?`<div class="ajp-s"><h3>Motorização</h3><div class="ajp-mot" role="group" aria-label="Motorização">${mot.map(([v,k,l])=>`<button type="button" class="ajp-m" data-ajfu="${esc(v)}" aria-pressed="${F.fu.has(v)}">${svg24(AJI[k])}<span>${esc(l)}</span></button>`).join("")}</div></div>`:""}
     <div class="ajp-s"><h3>Tipo de carro</h3><div class="ajp-pills" role="group" aria-label="Tipo de carro">${tipos.map(l=>`<button type="button" class="ajp-p" data-ajt="${esc(l)}" aria-pressed="${F.t.has(l)}">${esc(l)}</button>`).join("")}${reduced?`<button type="button" class="ajp-p" data-ajdeal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:""}</div></div>
-    <div class="ajp-s"><h3>Ordenar por</h3><div class="ajp-ord" role="group" aria-label="Ordenar por">${SORTS.map(([k,l])=>`<button type="button" class="ajp-o" data-ajsort="${k}" aria-pressed="${SORT===k}">${svg24(AJI[k])}<span>${l}</span></button>`).join("")}</div></div>
+    <div class="ajp-s"><h3>Ordenar por</h3><div class="ajp-ord" role="group" aria-label="Ordenar por">${SORTS.map(([k,l])=>`<button type="button" class="ajp-o" data-ajsort="${k}" aria-pressed="${SORT===k}"${k==="strong"?' aria-controls="ajpFortes"':""}>${svg24(AJI[k])}<span>${l}</span></button>`).join("")}</div>
+      ${(SORT==="strong"||F.k.size)&&fortes.length?`<div class="ajp-fortes" id="ajpFortes"><small>Qual ponto forte você quer?</small><div class="ajp-pills" role="group" aria-label="Pontos fortes">${fortes.map(l=>`<button type="button" class="ajp-p" data-ajk="${esc(l)}" aria-pressed="${F.k.has(l)}">${esc(l)}</button>`).join("")}</div></div>`:""}</div>
     <div class="ajp-s"><h3>Exibir resultados por</h3><div class="ajp-ex" role="group" aria-label="Exibir resultados por">${VIEWS.map(([k,l])=>`<button type="button" class="ajp-e" data-ajview="${k}" aria-pressed="${VIEW===k}">${svg24(AJI[k])}<span>${l}</span></button>`).join("")}</div></div>
-    <div class="ajp-ft"><button type="button" class="ajp-b" data-ajmais>${svg24(AJI.mais)}Mais filtros</button><button type="button" class="ajp-b" data-ajlimpa>${svg24(AJI.limpa)}Limpar</button><button type="button" class="ajp-b pri" data-ajclose>Aplicar filtros (${n})${svg24(AJI.seta)}</button></div>`}
+    <div class="ajp-ft"><button type="button" class="ajp-b" data-ajmais>${svg24(AJI.mais)}Mais filtros</button><button type="button" class="ajp-b" data-ajlimpa>${svg24(AJI.limpa)}Limpar</button><button type="button" class="ajp-b pri" data-ajclose>Aplicar filtros (${n})${svg24(AJI.seta)}</button></div>`;
+  ajPanel.querySelectorAll(".ajp-pills").forEach((x,i)=>{if(sx[i])x.scrollLeft=sx[i]});
+  /* a lista de pontos fortes desce só quando aparece (não a cada toque) */
+  if(tinhaFortes||!ajPanel.dataset.anim)ajPanel.querySelectorAll(".ajp-fortes").forEach(x=>x.style.animation="none");ajPanel.dataset.anim="1"}
 /* cada botão do painel usa o mesmo comando do controle que ele substitui no celular */
 ajPanel.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const d=b.dataset;
   if("ajclose" in d)return setAj(false);
@@ -2199,6 +2206,7 @@ ajPanel.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)re
   if(d.ajt){const q=[...document.querySelectorAll("#quick [data-q]")].find(x=>x.dataset.q===d.ajt);q?q.click():(F.t.has(d.ajt)?F.t.delete(d.ajt):F.t.add(d.ajt),filtersChanged());return renderAjPanel()}
   if("ajdeal" in d){const q=document.querySelector("#quick [data-deal]");q&&q.click();return renderAjPanel()}
   if(d.ajsort){const q=document.querySelector(`.mode.sort [data-sort="${d.ajsort}"]`);q&&q.click();return renderAjPanel()}
+  if(d.ajk){F.k.has(d.ajk)?F.k.delete(d.ajk):F.k.add(d.ajk);filtersChanged();return renderAjPanel()}
   if(d.ajview){const q=document.querySelector(`.mode:not(.sort) [data-mode="${d.ajview}"]`);q&&q.click();return renderAjPanel()}});
 document.getElementById("ajBg").addEventListener("click",()=>setAj(false));
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!ajPanel.hidden){e.stopImmediatePropagation();setAj(false)}},true);
