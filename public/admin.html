@@ -148,6 +148,13 @@ tr:last-child td{border-bottom:0}
 .pill.nova{background:var(--accent);color:#fff}
 .hbtn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink)}
 .hbtn i{font-style:normal;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--accent);color:#fff;font:700 11.5px var(--mono);display:inline-grid;place-items:center}
+/* seções que começam fechadas (Pendências, Últimas ações) */
+.sec-tg{display:inline-flex;align-items:center;gap:7px}
+.sec-tg::after{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .15s}
+.sec-tg[aria-expanded="true"]::after{transform:translateY(1px) rotate(-135deg)}
+.sec-corpo{margin-top:4px}
+.ac-pager{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.ac-pager span{display:flex;gap:6px;flex-wrap:wrap}
 /* pendências da base */
 #pendencias{scroll-margin-top:72px}
 #pendencias:focus{outline:none}
@@ -252,13 +259,16 @@ tr:last-child td{border-bottom:0}
   <section class="card" id="pendencias" tabindex="-1">
     <div class="msg-h">
       <div><h2>Pendências da base</h2><p class="sub" id="pdSub">Diferenças entre o cadastro e a fonte oficial que precisam da sua decisão.</p></div>
-      <div class="seg" role="group" aria-label="Quais pendências">
+      <button class="btn sec-tg" type="button" id="pdToggle" aria-expanded="false" aria-controls="pdCorpo" data-rotulo="Mostrar pendências">Mostrar pendências</button>
+    </div>
+    <div class="sec-corpo" id="pdCorpo" hidden>
+      <div class="seg" role="group" aria-label="Quais pendências" style="margin-bottom:12px">
         <button type="button" data-pf="aberta" aria-pressed="true">Abertas</button>
         <button type="button" data-pf="resolvidas">Resolvidas</button>
       </div>
+      <div class="pd-tipos" id="pdTipos" role="group" aria-label="Tipo de pendência"></div>
+      <div id="pd"><p class="empty">Carregando…</p></div>
     </div>
-    <div class="pd-tipos" id="pdTipos" role="group" aria-label="Tipo de pendência"></div>
-    <div id="pd"><p class="empty">Carregando…</p></div>
   </section>
 
   <section class="card">
@@ -300,7 +310,16 @@ tr:last-child td{border-bottom:0}
 
   <section class="card"><h2>Online agora</h2><p class="sub">Quem deu sinal nos últimos 90 segundos. Atualiza sozinho a cada 20 s.</p><div class="tbl-wrap"><table id="online"></table></div></section>
 
-  <section class="card"><h2>Últimas ações</h2><p class="sub">As 60 mais recentes.</p><div class="tbl-wrap"><table id="recent"></table></div></section>
+  <section class="card" id="acoes">
+    <div class="msg-h">
+      <div><h2>Últimas ações</h2><p class="sub" id="acSub">O que os visitantes fizeram no site, da mais recente para a mais antiga.</p></div>
+      <button class="btn sec-tg" type="button" id="acToggle" aria-expanded="false" aria-controls="acCorpo" data-rotulo="Mostrar ações">Mostrar ações</button>
+    </div>
+    <div class="sec-corpo" id="acCorpo" hidden>
+      <div class="tbl-wrap"><table id="recent"></table></div>
+      <div class="ac-pager"><span id="acInfo"></span><span><button class="btn" type="button" id="acMais" hidden>Ver mais 50</button><button class="btn" type="button" id="acTodas" hidden>Ver todas</button></span></div>
+    </div>
+  </section>
 
   <section class="card">
     <h2>Pessoas cadastradas</h2><p class="sub" id="usersSub">Contas criadas no site.</p>
@@ -509,13 +528,21 @@ async function loadOnline(){
     <td>${r.user_email ? `<span class="pill acc">${esc(r.user_name || r.user_email)}</span>` : (r.is_new_visitor ? '<span class="pill">novo</span>' : '<span class="pill ok">voltou</span>')}</td>
     <td class="n">${nf(r.page_views)}</td><td class="n">${ago(r.started_at)}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Ninguém no site agora.</td></tr></tbody>';
 }
+let acN = 10;
 async function loadRecent(){
-  const rows = await rpc("admin_recent_events", {p_limit: 60});
+  if ($("acCorpo").hidden) return;
+  const rows = (await rpc("admin_events", {p_limit: acN, p_offset: 0})) || [];
+  const total = rows.length ? Number(rows[0].total) || rows.length : 0;
   $("recent").innerHTML = rows.length ? `<thead><tr><th class="n">Quando</th><th>Ação</th><th>Detalhe</th><th>Quem</th><th>Aparelho</th></tr></thead><tbody>${rows.map(r => `<tr>
-    <td class="n">${ago(r.created_at)}</td><td>${esc(EV_SHORT[r.type] || r.type)}</td>
+    <td class="n" title="${esc(new Date(r.created_at).toLocaleString("pt-BR"))}">${Date.now() - new Date(r.created_at).getTime() < 864e5 ? ago(r.created_at) : fdate(r.created_at)}</td><td>${esc(EV_SHORT[r.type] || r.type)}</td>
     <td>${r.car ? esc(r.car) : r.price_band ? esc(bandLabel(r.price_band)) : `<span class="muted">${esc(r.path || "")}</span>`}</td>
     <td>${r.user_email ? esc(r.user_email) : `<span class="muted">visitante ${esc(String(r.visitor_id || "").slice(0, 6))}</span>`}</td>
     <td>${esc(r.device || "")}</td></tr>`).join("")}</tbody>` : '<tbody><tr><td class="empty">Nenhuma ação registrada ainda.</td></tr></tbody>';
+  const falta = total - rows.length;
+  $("acInfo").textContent = total ? `Mostrando ${nf(rows.length)} de ${nf(total)} ações` : "";
+  $("acMais").hidden = falta <= 0; $("acMais").textContent = `Ver mais ${nf(Math.min(50, falta))}`;
+  $("acTodas").hidden = falta <= 50; $("acTodas").textContent = `Ver todas (${nf(total)})`;
+  $("acTodas").dataset.total = total;
 }
 async function loadUsers(){
   const q = $("uQ").value.trim();
@@ -588,6 +615,11 @@ document.querySelectorAll("[data-mf]").forEach(b => b.onclick = () => {
 $("mMore").onclick = () => { mMax += M_LIMIT; loadMsgs().catch(() => {}); };
 $("msgJump").onclick = e => { e.preventDefault(); history.replaceState(null, "", "#mensagens"); $("mensagens").scrollIntoView({behavior: "smooth", block: "start"}); $("mensagens").focus({preventScroll: true}); };
 
+// ---------- seções que começam fechadas
+function abreSecao(btn, corpo, abrir){
+  corpo.hidden = !abrir; btn.setAttribute("aria-expanded", String(abrir));
+  btn.textContent = abrir ? "Esconder" : btn.dataset.rotulo;
+}
 // ---------- pendências da base (decisões de cadastro): aplicar o que diz a fonte oficial ou manter
 const PD_TIPOS = [
   ["fora_de_linha", "Saiu de linha?", "Versões que sumiram do site ou da lista de preços da montadora. Aplicar tira a versão do Autokan (nada é apagado; dá para desfazer)."],
@@ -683,7 +715,12 @@ document.querySelectorAll("[data-pf]").forEach(b => b.onclick = () => {
   document.querySelectorAll("[data-pf]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
   renderPend();
 });
-$("pdJump").onclick = e => { e.preventDefault(); history.replaceState(null, "", "#pendencias"); $("pendencias").scrollIntoView({behavior: "smooth", block: "start"}); $("pendencias").focus({preventScroll: true}); };
+$("pdToggle").onclick = () => abreSecao($("pdToggle"), $("pdCorpo"), $("pdCorpo").hidden);
+$("pdJump").onclick = e => { e.preventDefault(); abreSecao($("pdToggle"), $("pdCorpo"), true); history.replaceState(null, "", "#pendencias"); $("pendencias").scrollIntoView({behavior: "smooth", block: "start"}); $("pendencias").focus({preventScroll: true}); };
+
+$("acToggle").onclick = () => { const abrir = $("acCorpo").hidden; abreSecao($("acToggle"), $("acCorpo"), abrir); if (abrir){ acN = 10; loadRecent().catch(() => { $("recent").innerHTML = '<tbody><tr><td class="empty">Não deu para carregar agora.</td></tr></tbody>'; }); } };
+$("acMais").onclick = () => { acN += 50; loadRecent().catch(() => toast("Não deu para carregar agora.")); };
+$("acTodas").onclick = () => { acN = Math.min(2000, Number($("acTodas").dataset.total) || 2000); loadRecent().catch(() => toast("Não deu para carregar agora.")); };
 
 function renderLinks(){
   const base = location.origin + "/";
@@ -717,7 +754,7 @@ async function doBoot(){
   renderLinks();
   const msgs = Promise.all([loadMsgs(), loadMsgCount()]).catch(() => { $("msgs").innerHTML = '<li class="empty">Não deu para carregar as mensagens agora.</li>'; });
   const pend = loadPend().catch(() => { $("pd").innerHTML = '<p class="empty">Não deu para carregar as pendências agora.</p>'; });
-  if (location.hash === "#pendencias") pend.then(() => { $("pendencias").scrollIntoView({block: "start"}); $("pendencias").focus({preventScroll: true}); });
+  if (location.hash === "#pendencias") pend.then(() => { abreSecao($("pdToggle"), $("pdCorpo"), true); $("pendencias").scrollIntoView({block: "start"}); $("pendencias").focus({preventScroll: true}); });
   if (location.hash === "#mensagens") msgs.then(() => { $("mensagens").scrollIntoView({block: "start"}); $("mensagens").focus({preventScroll: true}); });
   await Promise.all([refreshAll(), loadUsers().catch(() => {}), msgs, pend]);
   timers.forEach(clearInterval);
