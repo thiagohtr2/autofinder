@@ -67,7 +67,7 @@ export function linhasComparacao(cols, fontes) {
       const chave = typeof campo === "string" ? `${g}.${campo}` : `${g}.${rot}`;
       const vals = porChave.map((m) => m.get(chave));
       if (!vals.some(Boolean)) continue;
-      linhas.push(`<tr class="lb"><th colspan="${n}" scope="colgroup">${esc(rot)}</th></tr><tr>${vals.map((i, k) => `<td>${i ? `${esc(i.t)}${anoOutro(i, cols[k].v.ano) ? `<small>ficha ${anoOutro(i, cols[k].v.ano)}</small>` : ""}` : '<span class="na">—</span>'}</td>`).join("")}</tr>`);
+      linhas.push(`<tr class="lb"><th colspan="${n}" scope="colgroup">${esc(rot)}</th></tr><tr>${vals.map((i, k) => `<td>${i ? `${esc(i.t)}${i.rot !== rot ? `<small>${esc(i.rot.replace(/^\S+\s/, ""))}</small>` : ""}${anoOutro(i, cols[k].v.ano) ? `<small>ficha ${anoOutro(i, cols[k].v.ano)}</small>` : ""}` : '<span class="na">—</span>'}</td>`).join("")}</tr>`);
     }
     if (linhas.length) out.push(`<tr class="gp"><th colspan="${n}" scope="colgroup">${esc(grupo)}</th></tr>${linhas.join("")}`);
   }
