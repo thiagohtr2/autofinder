@@ -544,6 +544,8 @@ button,input{font:inherit;color:inherit}
 .mode-l{font-size:10.5px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 6px 0 9px;align-self:center}
 .sr-right{flex-wrap:wrap;justify-content:flex-end}
 .sr-right{display:flex;align-items:center;gap:12px}
+.sr-vis{display:contents}
+.oft{display:none}
 .more{border:0;background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:11px;border-radius:999px;padding:3px 9px;margin-top:4px;cursor:pointer}
 .info{width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:var(--bg);display:grid;place-items:center;color:var(--muted);cursor:pointer;font-weight:700;font-size:12px;font-family:var(--display)}
 .info:hover{border-color:var(--accent);color:var(--accent)}
@@ -1012,7 +1014,12 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
   .app.aj .sr-head .mode.sort,.app.aj .chiprow,.app.aj .fuq{display:none}
   /* Modelos/Versões fica fora da caixa: logo abaixo dela, à direita, sempre visível */
   .sr-head{position:relative;margin-bottom:40px}
-  .app .sr-head .mode:not(.sort){grid-area:auto;display:inline-grid;grid-template-columns:auto auto;position:absolute;right:0;top:calc(100% + 8px);margin:0;padding:2px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6}
+  .sr-vis{grid-area:auto;position:absolute;right:0;top:calc(100% + 8px);display:flex;align-items:center;gap:8px}
+  .app .sr-head .mode:not(.sort){display:inline-grid;grid-template-columns:auto auto;margin:0;padding:2px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6}
+  .oft{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 13px;border:0;border-radius:999px;background:#f4fbf7;box-shadow:inset 0 0 0 1px rgba(15,138,75,.55);font:700 12px var(--body);color:#0f8a4b;cursor:pointer;white-space:nowrap}
+  .oft[hidden]{display:none}
+  .oft b{font:800 11px var(--body)}
+  .oft[aria-pressed="true"]{background:#0f8a4b;box-shadow:none;color:#fff}
   .app .sr-head .mode:not(.sort) button{height:26px;padding:0 13px;border-radius:999px;font-size:12px}
   /* atalhos de combustível dentro da caixa aberta */
   .fuq{grid-area:f;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
@@ -1304,7 +1311,7 @@ html{background:#060b1c}
     <section class="showroom" aria-labelledby="srTitle">
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
-        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span>
+        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="sr-vis"><button type="button" class="oft" id="oftBtn" data-ev="ofertas" aria-pressed="false" hidden>Ofertas <b></b></button><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span></span>
         <span class="fuq" id="fuq" role="group" aria-label="Filtrar por combustível"></span>
         <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><b id="ajN" hidden></b></button>
       </div>
@@ -2144,6 +2151,7 @@ function renderDrawer(){
 }
 function renderPills(){
   const reduced=CARS.filter(isReduced).length;
+  const ob=document.getElementById("oftBtn");if(ob){ob.hidden=!reduced;ob.setAttribute("aria-pressed",String(DEAL));ob.querySelector("b").textContent=reduced||"";ob.setAttribute("aria-label",`Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}`)}
   document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill${g.key==="fu"&&FUQ.some(f=>f[0]===v)?" fqp":""}" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
@@ -2192,10 +2200,10 @@ const svg24=p=>`<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`;
 function renderAjPanel(){if(!ajPanel||ajPanel.hidden)return;
   const mot=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)),tipos=GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l));
   const fortes=TAGORDER.filter(k=>CARS.some(c=>c.k.includes(k))).map(k=>TAGS[k]);
-  const reduced=CARS.filter(isReduced).length,n=CARS.filter(c=>matches(c)).length,sx=[...ajPanel.querySelectorAll(".ajp-pills")].map(x=>x.scrollLeft),tinhaFortes=!!ajPanel.querySelector(".ajp-fortes");
+  const n=CARS.filter(c=>matches(c)).length,sx=[...ajPanel.querySelectorAll(".ajp-pills")].map(x=>x.scrollLeft),tinhaFortes=!!ajPanel.querySelector(".ajp-fortes");
   const SORTS=[["likes","Favoritos"],["price","Preço"],["strong","Pontos fortes"]];
   ajPanel.innerHTML=`${mot.length?`<div class="ajp-s"><h3>Motorização</h3><div class="ajp-mot" role="group" aria-label="Motorização">${mot.map(([v,k,l])=>`<button type="button" class="ajp-m" data-ajfu="${esc(v)}" aria-pressed="${F.fu.has(v)}">${svg24(AJI[k])}<span>${esc(l)}</span></button>`).join("")}</div></div>`:""}
-    <div class="ajp-s"><h3>Tipo de carro</h3><div class="ajp-pills" role="group" aria-label="Tipo de carro">${tipos.map(l=>`<button type="button" class="ajp-p" data-ajt="${esc(l)}" aria-pressed="${F.t.has(l)}">${esc(l)}</button>`).join("")}${reduced?`<button type="button" class="ajp-p" data-ajdeal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:""}</div></div>
+    <div class="ajp-s"><h3>Tipo de carro</h3><div class="ajp-pills" role="group" aria-label="Tipo de carro">${tipos.map(l=>`<button type="button" class="ajp-p" data-ajt="${esc(l)}" aria-pressed="${F.t.has(l)}">${esc(l)}</button>`).join("")}</div></div>
     <div class="ajp-s"><h3>Ordenar por</h3><div class="ajp-ord" role="group" aria-label="Ordenar por">${SORTS.map(([k,l])=>`<button type="button" class="ajp-o" data-ajsort="${k}" aria-pressed="${SORT===k}"${k==="strong"?' aria-controls="ajpFortes"':""}>${svg24(AJI[k])}<span>${l}</span></button>`).join("")}</div>
       ${(SORT==="strong"||F.k.size)&&fortes.length?`<div class="ajp-fortes" id="ajpFortes"><small>Qual ponto forte você quer?</small><div class="ajp-pills" role="group" aria-label="Pontos fortes">${fortes.map(l=>`<button type="button" class="ajp-p" data-ajk="${esc(l)}" aria-pressed="${F.k.has(l)}">${esc(l)}</button>`).join("")}</div></div>`:""}</div>
     <div class="ajp-ft"><button type="button" class="ajp-b" data-ajmais>${svg24(AJI.mais)}Mais filtros</button><button type="button" class="ajp-b" data-ajlimpa>${svg24(AJI.limpa)}Limpar</button><button type="button" class="ajp-b pri" data-ajclose>Aplicar filtros (${n})${svg24(AJI.seta)}</button></div>`;
@@ -2209,7 +2217,6 @@ ajPanel.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)re
   if("ajlimpa" in d){document.getElementById("drClear").click();return renderAjPanel()}
   if(d.ajfu){const q=[...document.querySelectorAll("#fuq [data-fu]")].find(x=>x.dataset.fu===d.ajfu);q?q.click():(F.fu.has(d.ajfu)?F.fu.delete(d.ajfu):F.fu.add(d.ajfu),filtersChanged());return renderAjPanel()}
   if(d.ajt){const q=[...document.querySelectorAll("#quick [data-q]")].find(x=>x.dataset.q===d.ajt);q?q.click():(F.t.has(d.ajt)?F.t.delete(d.ajt):F.t.add(d.ajt),filtersChanged());return renderAjPanel()}
-  if("ajdeal" in d){const q=document.querySelector("#quick [data-deal]");q&&q.click();return renderAjPanel()}
   if(d.ajsort){const q=document.querySelector(`.mode.sort [data-sort="${d.ajsort}"]`);q&&q.click();return renderAjPanel()}
   if(d.ajk){F.k.has(d.ajk)?F.k.delete(d.ajk):F.k.add(d.ajk);filtersChanged();return renderAjPanel()}});
 document.getElementById("ajBg").addEventListener("click",()=>setAj(false));
@@ -2253,6 +2260,7 @@ addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return 
 drBody.addEventListener("click",e=>{const ob=e.target.closest(".og-btn");if(ob&&!ob.disabled){const o=ob.dataset.origin,ks=[...new Set(CARS.map(c=>c.mk))].filter(k=>(BRANDCO[k]||"Outras origens")===o);
     const on=ob.getAttribute("aria-pressed")==="true";ks.forEach(k=>on?F.mk.delete(k):F.mk.add(k));filtersChanged();const f=[...drBody.querySelectorAll(".og-btn")].find(x=>x.dataset.origin===o);f&&f.focus();return}
   const tb=e.target.closest(".dr-tab");if(tb){DRCAT=tb.dataset.cat;renderDrawer();const f=drBody.querySelector(`.dr-tab[data-cat="${DRCAT}"]`);f&&f.focus();return}const o=e.target.closest(".opt");if(!o||o.disabled)return;const set=F[o.dataset.g],v=o.dataset.v;set.has(v)?set.delete(v):set.add(v);filtersChanged();const fo=[...drBody.querySelectorAll(".opt2")].find(x=>x.dataset.v===v);fo&&fo.focus()});
+document.getElementById("oftBtn").addEventListener("click",()=>{const q=document.querySelector("#quick [data-deal]");if(q)q.click()});
 document.getElementById("quick").addEventListener("click",e=>{
   if(e.target.closest("[data-deal]")){DEAL=!DEAL;filtersChanged();
     /* com o filtro ligado, leva a roleta até o carro com preço reduzido mais próximo */
