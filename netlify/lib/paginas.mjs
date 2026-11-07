@@ -313,6 +313,12 @@ export function pagina({ titulo, descricao, caminho, imagemOg, imagemOgW = 800, 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>/* celular deitado: mostra o site como no computador (1280 px), reduzido para caber na tela; em pé, volta ao normal */
+(function(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var N="width=device-width, initial-scale=1, viewport-fit=cover",L="width=1280, viewport-fit=cover",t;
+function deitado(){var o=screen.orientation&&screen.orientation.type;if(o)return o.indexOf("landscape")===0;if(typeof window.orientation==="number")return Math.abs(window.orientation)===90;return innerWidth>innerHeight}
+function ajusta(){var cel=Math.min(screen.width,screen.height)<600&&matchMedia("(pointer:coarse)").matches,c=cel&&deitado()?L:N;if(m.content===c||(c===N&&m.content.indexOf("maximum-scale")>0))return;
+  clearTimeout(t);if(c===N&&m.content===L){m.content=N+", maximum-scale=1";t=setTimeout(function(){m.content=N},400)}else m.content=c}
+ajusta();addEventListener("orientationchange",function(){setTimeout(ajusta,60)});if(screen.orientation&&screen.orientation.addEventListener)screen.orientation.addEventListener("change",ajusta);addEventListener("resize",ajusta)})();</script>
 <title>${esc(titulo)}</title>
 <meta name="description" content="${esc(descricao)}">
 ${caminho ? `<link rel="canonical" href="${SITE}${caminho}">\n` : ""}<meta name="robots" content="${indexar ? "index, follow, max-image-preview:large" : "noindex, follow"}">
