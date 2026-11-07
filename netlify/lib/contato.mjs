@@ -10,6 +10,7 @@ export const ASSUNTOS_CONTATO = [
   ["sugestao", "Sugestão ou ideia"],
   ["problema", "Problema no site ou na conta"],
   ["parceria", "Parcerias e imprensa"],
+  ["privacidade", "Privacidade e dados pessoais (LGPD)"],
   ["outro", "Outro assunto"],
 ];
 

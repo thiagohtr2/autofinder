@@ -110,11 +110,13 @@
       const { error } = await sb.auth.signInWithPassword({ email, password });
       if (error) throw toError(error);
     },
-    async signUp(name, email, password) {
+    // termos: versão dos Termos de uso aceita no cadastro (fica na conta, com a data)
+    async signUp(name, email, password, termos) {
+      const aceite = termos ? { termos_versao: termos, termos_aceitos_em: new Date().toISOString() } : {};
       const { data, error } = await sb.auth.signUp({
         email,
         password,
-        options: { data: { full_name: name }, emailRedirectTo: location.origin + location.pathname },
+        options: { data: { full_name: name, ...aceite }, emailRedirectTo: location.origin + location.pathname },
       });
       if (error) throw toError(error);
       // com a confirmação de e-mail ligada, um e-mail já cadastrado volta sem erro e sem identidades
@@ -129,6 +131,12 @@
     // entrar ou cadastrar com Google: sai do site e volta para a mesma página já logado
     async signInWithGoogle() {
       const { error } = await sb.auth.signInWithOAuth({ provider: "google", options: { redirectTo: location.origin + location.pathname + location.search } });
+      if (error) throw toError(error);
+    },
+    // grava na conta o aceite dos Termos de uso (cadastro pelo Google, que não passa pelo formulário)
+    async aceitarTermos(versao) {
+      if (!currentUser || !versao || (currentUser.user_metadata || {}).termos_versao === versao) return;
+      const { error } = await sb.auth.updateUser({ data: { termos_versao: versao, termos_aceitos_em: new Date().toISOString() } });
       if (error) throw toError(error);
     },
     // para o rastreamento: a conta acabou de ser criada?

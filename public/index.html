@@ -446,6 +446,8 @@ button,input{font:inherit;color:inherit}
 .auth-form input:focus{outline:2px solid var(--accent);outline-offset:1px}
 .auth-err{margin:0;font-size:12.5px;font-weight:600;color:#b42318}
 .auth-note{margin:0;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.auth-ok{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;color:var(--ink);cursor:pointer}.auth-ok input{width:18px;height:18px;margin:1px 0 0;flex:none;accent-color:var(--accent)}.auth-ok a,.auth-note a{color:inherit;text-decoration:underline}
+.sh-aviso{margin:18px 0 4px;font-size:12px;line-height:1.5;color:var(--muted)}.sh-aviso a{color:inherit;text-decoration:underline}
 .auth-tabs{display:flex;gap:2px;padding:3px;border:1px solid var(--line);border-radius:999px;background:var(--bg)}
 .auth-tabs button{flex:1;border:0;background:none;border-radius:999px;padding:8px 12px;font:700 13px var(--body);color:var(--muted);cursor:pointer}
 .auth-tabs button[aria-pressed="true"]{background:var(--ink);color:#fff}
@@ -1148,6 +1150,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 #authPanel .auth-or::before,#authPanel .auth-or::after{background:rgba(255,255,255,.16)}
 #authPanel .auth-why{background:rgba(79,134,255,.16);color:#e8eefc}
 #authPanel .auth-note,#authPanel .nf-sub{color:rgba(232,238,252,.66)}
+#authPanel .auth-ok{color:#e8eefc}
 #authPanel .auth-err{color:#ff9b8f}
 #authPanel .cm-send{height:44px;font-size:14px}
 /* topo no celular: só o símbolo (aba "Topo no celular" da bancada, Versão 6: 18 px) */
@@ -1659,12 +1662,15 @@ const AUTH_ERRORS={
   signup_disabled:"Os cadastros estão fechados no momento."
 };
 let authMode="login",authDraftEmail="";
+/* versão dos Termos de uso e da Política de privacidade (a mesma de netlify/lib/termos.mjs): fica gravada na conta de quem aceita */
+const TERMOS_VERSAO="2026-11-07";
 const authInput=(label,id,type,autocomplete,attrs="")=>`<label>${label}<input type="${type}" id="${id}" autocomplete="${autocomplete}" required ${attrs}></label>`;
 function renderAuth(){const me=giroAuth.current(),title=document.getElementById("authTitle");
   if(me){title.textContent="Sua conta";authBody.innerHTML=`<div class="cm-form auth-form"><div><div class="nf-sub">Conectado como</div><b>${esc(me.email)}</b></div>${me.isAdmin?'<div class="nf-sub">Conta master: banco, radar e imagens liberados.</div>':""}<button type="button" class="cm-send" id="authOut">Sair</button></div>`;
     document.getElementById("authOut").onclick=async()=>{try{await giroAuth.signOut();location.reload()}catch(e){toast("Não deu para sair. Tente de novo.")}};return}
   const signup=authMode==="signup";title.textContent=signup?"Criar conta":"Entrar";
   authBody.innerHTML=`<div class="auth-stack">${authReason?`<p class="auth-why">${authReason}</p>`:""}<div class="auth-tabs" role="group" aria-label="Entrar ou criar conta"><button type="button" data-auth-mode="login" aria-pressed="${!signup}">Entrar</button><button type="button" data-auth-mode="signup" aria-pressed="${signup}">Cadastrar</button></div>
+    ${signup?`<label class="auth-ok"><input type="checkbox" id="authTermos"><span>Li e aceito os <a href="/termos" target="_blank" rel="noopener">Termos de uso</a> e a <a href="/privacidade" target="_blank" rel="noopener">Política de privacidade</a>. Entendo que o Autokan mostra dados para eu comparar e não indica qual carro comprar.</span></label>`:""}
     <div class="auth-stack" id="authG" hidden><button type="button" class="gbtn" id="authGoogle">${G_ICON}${signup?"Cadastrar com Google":"Entrar com Google"}</button>
     <div class="auth-or">ou com e-mail</div></div></div>
     <form class="cm-form auth-form" id="authForm">
@@ -1675,11 +1681,14 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
       ${signup?`<label>Nome (opcional)<input type="text" id="authName" autocomplete="name" maxlength="60"></label><p class="auth-note">O nome aparece só se você comentar. Seu e-mail não é mostrado no site.</p>`:""}
       <p class="auth-err" id="authErr" role="alert" hidden></p>
       <button type="submit" class="cm-send" id="authSubmit">${signup?"Criar conta":"Entrar"}</button>
+      ${signup?"":`<p class="auth-note">Ao entrar, você concorda com os <a href="/termos" target="_blank" rel="noopener">Termos de uso</a> e a <a href="/privacidade" target="_blank" rel="noopener">Política de privacidade</a>.</p>`}
     </form>`;
   const emailField=document.getElementById("authEmail");emailField.value=authDraftEmail;
   authBody.querySelectorAll("[data-auth-mode]").forEach(b=>b.onclick=()=>{authDraftEmail=emailField.value;authMode=b.dataset.authMode;renderAuth();focusAuth()});
   giroAuth.authSettings().then(st=>{const g=document.getElementById("authG");if(g&&st&&st.external&&st.external.google)g.hidden=false});
-  document.getElementById("authGoogle").onclick=async()=>{try{localStorage.setItem("autokan_oauth",String(Date.now()))}catch(e){}
+  const termosOk=()=>{const t=document.getElementById("authTermos");if(!t||t.checked)return true;const err=document.getElementById("authErr");err.textContent="Para criar a conta, marque que leu e aceita os Termos de uso e a Política de privacidade.";err.hidden=false;t.focus();return false};
+  document.getElementById("authGoogle").onclick=async()=>{if(signup&&!termosOk())return;
+    try{localStorage.setItem("autokan_oauth",String(Date.now()));if(signup)localStorage.setItem("autokan_termos",TERMOS_VERSAO)}catch(e){}
     try{await giroAuth.signInWithGoogle()}catch(x){try{localStorage.removeItem("autokan_oauth")}catch(e){}toast("Não deu para abrir o login do Google agora. Use o e-mail ou tente de novo.")}};
   document.getElementById("authForm").onsubmit=async e=>{e.preventDefault();
     const btn=document.getElementById("authSubmit"),err=document.getElementById("authErr"),email=emailField.value.trim(),password=document.getElementById("authPass").value;
@@ -1687,11 +1696,12 @@ function renderAuth(){const me=giroAuth.current(),title=document.getElementById(
     err.hidden=true;btn.disabled=true;
     try{
       if(!signup){await giroAuth.signIn(email,password);trackThenReload("login");return}
+      if(!termosOk()){btn.disabled=false;return}
       if(email.toLowerCase()!==document.getElementById("authEmail2").value.trim().toLowerCase())return fail("Os e-mails não são iguais.");
       if(password.length<AUTH_MIN_PASSWORD)return fail(`A senha precisa ter pelo menos ${AUTH_MIN_PASSWORD} caracteres.`);
       if(password!==document.getElementById("authPass2").value)return fail("As senhas não são iguais.");
       const name=document.getElementById("authName").value.trim()||email.split("@")[0].slice(0,60);
-      const {needsConfirmation}=await giroAuth.signUp(name,email,password);
+      const {needsConfirmation}=await giroAuth.signUp(name,email,password,TERMOS_VERSAO);
       if(!needsConfirmation){trackThenReload("signup");return}
       title.textContent="Confirme seu e-mail";authDraftEmail=email;authMode="login";
       authBody.innerHTML=`<div class="cm-form auth-form"><p class="auth-note">Enviamos um link para <b>${esc(email)}</b>. Abra esse link para ativar sua conta e depois entre com sua senha. Se não encontrar a mensagem, olhe na caixa de spam.</p><button type="button" class="cm-send" id="authDone">Entendi</button></div>`;
@@ -1738,6 +1748,7 @@ document.getElementById("signupbtn").onclick=()=>openAuth("signup");
 /* o link de confirmação vencido volta para o site com o erro no endereço */
 const authLinkError=new URLSearchParams(location.hash.slice(1)).get("error_code");
 giroAuth.ready.then(()=>{const on=!!giroAuth.current();
+  try{const tv=localStorage.getItem("autokan_termos");if(tv&&on){localStorage.removeItem("autokan_termos");giroAuth.aceitarTermos(tv).catch(()=>{})}}catch(e){}
   try{if(localStorage.getItem("autokan_oauth")){localStorage.removeItem("autokan_oauth");if(on&&window.giroTrack)giroTrack(giroAuth.createdRecently(600000)?"signup":"login",{meta:{via:"google"}})}}catch(e){}
   document.getElementById("pbtn").hidden=!on;document.getElementById("loginbtn").hidden=on;document.getElementById("signupbtn").hidden=on;
   if(authLinkError){toast("Esse link venceu ou já foi usado. Tente entrar ou cadastre-se de novo.");history.replaceState(null,"",location.pathname+location.search)}
@@ -2368,7 +2379,8 @@ async function openInfo(id){
     ${fichaSheet(v,fts)}
     ${v&&FTM?(()=>{const q=FTM.completude(v.specs);return `<section class="dr-group"><h3>Completude da ficha · ${q.pct}%</h3><div class="qbar"><i style="width:${q.pct}%"></i></div><div class="sh-meta" style="margin-top:6px">${q.tem.length} de ${q.tem.length+q.faltam.length} dados principais confirmados com fonte.${q.faltam.length?` Falta${q.faltam.length>1?"m":""}: ${esc(q.faltam.join(", ").toLowerCase())}.`:""}</div></section>`})():""}
     <section class="dr-group"><h3>Versões do ${esc(c.nm)}</h3><div class="sh-vers">${sib.map(x=>`<button type="button" data-sib="${x.id}" ${x.id===c.id?'aria-current="true"':""}><span>${esc(x.ver)}${x.ano?` · ${x.ano}`:""}</span><b>${x.p?fmt(x.p):"—"}</b></button>`).join("")}</div></section>
-    <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} ${(counts[c.id]||0)===1?"pessoa favoritou":"pessoas favoritaram"} esta versão</div></section>`;
+    <section class="dr-group"><h3>Comunidade</h3><div class="sh-meta">${counts[c.id]||0} ${(counts[c.id]||0)===1?"pessoa favoritou":"pessoas favoritaram"} esta versão</div></section>
+    <p class="sh-aviso">O Autokan mostra dados com fonte para você comparar e não indica qual carro é melhor: a escolha é sua. Confirme preço e itens com a concessionária. <a href="/termos" target="_blank" rel="noopener">Termos de uso</a></p>`;
   /* toda ficha abre do topo, com a foto do carro, mesmo que a anterior tenha sido lida até o fim */
   shBody.innerHTML=hero+base(null,null);shBody.scrollTop=0;document.getElementById("shClose").focus();
   if(!db)return;

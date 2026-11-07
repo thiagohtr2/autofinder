@@ -294,8 +294,8 @@ ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
 ${col("Autokan", [["/", "Escolha o preço"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"], ["/contato", "Contato"]])}
 </div>
-<p class="foot-nota">Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
-<p class="foot-copy">© ${new Date().getFullYear()} Autokan · Conheça. Compare. Escolha.</p>
+<p class="foot-nota"><strong>O Autokan mostra dados para você comparar e não indica qual carro é melhor: a escolha é sua.</strong> Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
+<p class="foot-copy">© ${new Date().getFullYear()} Autokan · Conheça. Compare. Escolha. · <a href="/termos">Termos de uso</a> · <a href="/privacidade">Privacidade</a></p>
 </div></footer>`;
 }
 
