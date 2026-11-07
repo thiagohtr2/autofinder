@@ -7,6 +7,7 @@ import { lerFiltros, paginaNoticias } from "../lib/noticias.mjs";
 import { paginaContato } from "../lib/contato.mjs";
 import { paginaTermos, paginaPrivacidade } from "../lib/termos.mjs";
 import { desligarAvisos, paginaAvisos } from "../lib/avisos.mjs";
+import { RANKING, RANKINGS, paginaRanking, linhasRanking } from "../lib/rankings.mjs";
 import { lerComparacao, paginaComparacao, paginaEscolher, paginaComparacoes, paresPopulares } from "../lib/comparar.mjs";
 
 const LISTAS = new Map([...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].map((l) => [l.slug, l]));
@@ -86,6 +87,7 @@ export default async (req) => {
     const ver = url.searchParams.get("ver") === "versoes" ? "?ver=versoes" : "";
     return new Response(null, { status: 302, headers: { Location: alvo ? `/${alvo}${ver}` : "/carros#precos", "Cache-Control": "no-store" } });
   }
+  if (p.length === 1 && RANKING.has(p[0])) return html(paginaRanking(base, RANKING.get(p[0])));
   if (p.length === 1) {
     const l = LISTAS.get(p[0]) || faixaPorSlug(p[0]);
     if (l) {
@@ -112,6 +114,7 @@ function sitemap(base) {
   const linhas = [
     url("/", base.atualizado), url("/carros", base.atualizado), url("/comparar", base.atualizado), url("/noticias", (base.feed[0] || {}).date || base.atualizado), url("/contato", "2026-11-06"), url("/termos", "2026-11-07"), url("/privacidade", "2026-11-07"),
     ...[...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].filter((l) => filtrar(base, l).length).map((l) => url(`/${l.slug}`, base.atualizado)),
+    ...RANKINGS.filter((r) => linhasRanking(base, r).length >= 3).map((r) => url(`/${r.slug}`, base.atualizado)),
     ...[...base.marcas.values()].map((b) => url(b.url, b.atualizado)),
     ...[...base.modelos.values()].filter((m) => m.marcaInfo).map((m) => url(m.url, m.atualizado, m.foto ? [[imagem(m.foto, 1200), `${m.titulo}${m.ano ? ` ${m.ano}` : ""} (imagem ilustrativa)`]] : [])),
     ...[...paresPopulares(base)].map(([u, [a, b]]) => url(u, a.atualizado > b.atualizado ? a.atualizado : b.atualizado)),
@@ -122,6 +125,6 @@ function sitemap(base) {
 
 // escrito por extenso: a Netlify lê esta configuração sem rodar o código. Os tipos são os de TIPOS em netlify/lib/base.mjs.
 export const config = {
-  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
+  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs-com-maior-porta-malas", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
   method: ["GET", "HEAD"],
 };

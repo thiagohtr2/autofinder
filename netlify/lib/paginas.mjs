@@ -4,6 +4,7 @@ import { SITE, SB_URL, SB_CHAVE, FAIXAS, FAIXAS_ENTRE, ATALHOS_PRECO, TIPOS, COM
 import { ICONS, TAGDESC } from "./pontos-fortes.mjs";
 import { secaoFicha, CSS_FICHA } from "./ficha-tecnica.mjs";
 import { secaoHistorico, CSS_HIST } from "./historico.mjs";
+import { RANKINGS, GRUPOS_RANKING, chipsRanking } from "./rankings.mjs";
 
 /* ---------- formatação */
 
@@ -293,6 +294,7 @@ function rodape() {
 ${col("Por preço", ATALHOS_PRECO.map((f) => [`/${f.slug}`, f.titulo.replace("Carros 0 km ", "").replace(/^./, (c) => c.toUpperCase())]))}
 ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
+${col("Pela ficha técnica", GRUPOS_RANKING.map(([g, t]) => [`/${RANKINGS.find((r) => r.grupo === g).slug}`, t]))}
 ${col("Autokan", [["/", "Escolha o preço"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"], ["/contato", "Contato"]])}
 </div>
 <p class="foot-nota"><strong>O Autokan mostra dados para você comparar e não indica qual carro é melhor: a escolha é sua.</strong> Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
@@ -558,6 +560,7 @@ export function paginaCarros(base) {
 <section class="sec" id="precos" aria-labelledby="s-fx"><h2 id="s-fx">Por faixa de preço</h2>${filtroPreco({ acao: "/carros-faixa" })}<div style="height:12px"></div>${ch.faixas}</section>
 <section class="sec" id="tipos" aria-labelledby="s-tp"><h2 id="s-tp">Por tipo</h2>${ch.tipos}</section>
 <section class="sec" aria-labelledby="s-cb"><h2 id="s-cb">Por combustível</h2>${ch.combs}</section>
+<section class="sec" id="listas" aria-labelledby="s-rk"><h2 id="s-rk">Pela ficha técnica</h2>${chipsRanking(base)}<p class="nota">Listas ordenadas por um número com fonte (consumo e autonomia do Inmetro, porta-malas e lugares da ficha da montadora), a mesma regra para todos os carros.</p></section>
 <section class="sec" id="marcas" aria-labelledby="s-mc"><h2 id="s-mc">Marcas</h2><ul class="marcas">${marcas.map(cartaoMarca).join("")}</ul></section>`;
   return pagina({ titulo: "Carros 0 km à venda no Brasil: todas as marcas e preços | Autokan",
     descricao: `Preço, versões e ficha técnica de ${pl(base.aVenda.length, "modelo", "modelos")} 0 km de ${comVenda.length} marcas à venda no Brasil. Encontre por marca, faixa de preço, tipo ou combustível.`,
