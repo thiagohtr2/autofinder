@@ -127,7 +127,7 @@ ${resumo.length ? `<div class="resumo">${resumo.map((r) => `<p>${esc(r)}</p>`).j
 <noscript><button class="btn cmp-ok" type="submit">Atualizar versões</button></noscript>
 </form>
 <p class="nota">Preço de tabela sugerido pela montadora ou FIPE 0 km. "Menor preço" e "maior potência" comparam só as versões escolhidas acima. Confirme os dados com a concessionária.</p>
-<div class="acoes"><a class="btn pri" href="/?carro=${encodeURIComponent(ms[0].id)}">${ROLETA}Ver na roleta de preços</a>${n < MAX_CARROS ? `<a class="btn" href="/comparar/${ms[0].id}">${COMPARAR_ICO}Comparar com outro carro</a>` : ""}</div>
+<div class="acoes"><a class="btn pri" href="/?carro=${encodeURIComponent(ms[0].id)}">${ROLETA}Ver carros do mesmo preço</a>${n < MAX_CARROS ? `<a class="btn" href="/comparar/${ms[0].id}">${COMPARAR_ICO}Comparar com outro carro</a>` : ""}</div>
 </section>
 ${outros.length ? `<section class="sec" aria-labelledby="s-ot"><h2 id="s-ot">Compare o ${esc(ms[0].nome)} com outros carros</h2><ul class="grade">${outros.map((x) => cartao(x, { href: urlPar(ms[0], x) })).join("")}</ul><div class="acoes"><a class="btn" href="/comparar/${ms[0].id}">${COMPARAR_ICO}Buscar outro carro</a></div></section>` : ""}
 <script>(()=>{const f=document.querySelector(".cmp-f");if(!f)return;f.addEventListener("change",()=>{const v=[...f.querySelectorAll("select")].map(s=>s.value).join(",");location.href=f.getAttribute("action")+"?versoes="+encodeURIComponent(v).replace(/%2C/g,",")})})()</script>`;

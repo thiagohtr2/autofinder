@@ -3,14 +3,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Autokan: todos os carros 0 km do Brasil por faixa de preço</title>
-<meta name="description" content="Gire a roleta de preço e veja todos os carros 0 km à venda no Brasil que cabem no seu bolso. Compare versões, preços, potência e ficha técnica de mais de 300 modelos.">
+<meta name="description" content="Escolha o preço e veja todos os carros 0 km à venda no Brasil que cabem no seu bolso. Compare versões, preços, potência e ficha técnica de mais de 300 modelos.">
 <link rel="canonical" href="https://autokan.com.br/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Autokan">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Autokan: todos os carros 0 km do Brasil por faixa de preço">
-<meta property="og:description" content="Gire a roleta de preço e veja os carros 0 km que cabem no seu bolso. Compare versões, preços e ficha técnica. Conheça. Compare. Escolha.">
+<meta property="og:description" content="Escolha o preço e veja os carros 0 km que cabem no seu bolso. Compare versões, preços e ficha técnica. Conheça. Compare. Escolha.">
 <meta property="og:url" content="https://autokan.com.br/">
 <meta property="og:image" content="https://autokan.com.br/marca/autokan-compartilhar.jpg">
 <meta property="og:image:width" content="1200">
@@ -1232,7 +1232,7 @@ html{background:#060b1c}
     </div>
   </header>
 
-  <main class="main" aria-label="Roleta de preços">
+  <main class="main" aria-label="Carros por preço">
     <div class="dial" id="dial">
       <canvas></canvas>
       <div class="readout"><span class="ro-band" id="roBand">135 – 150 mil</span><span class="ro-pill" id="dialThumb" tabindex="0" role="slider" aria-label="Orçamento máximo" aria-orientation="vertical"><span class="ro-lbl">até</span><span class="ro-val">150<small>mil</small></span></span></div>
@@ -1258,7 +1258,7 @@ html{background:#060b1c}
 <main class="gp" id="garPage" aria-labelledby="gpTitle" hidden>
   <div class="gp-scroll" id="gpScroll"><div class="gp-in">
   <header class="gp-bar">
-    <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para a roleta"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para os carros"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="gp-ttl"><h1 id="gpTitle">Salvos</h1><p id="gpSub"></p></div>
   </header>
     <div class="gp-tools" id="gpTools" hidden><span class="gp-tl" id="gpOrgL">Organizar por</span><div class="gp-seg" role="group" aria-labelledby="gpOrgL"><button type="button" data-gorg="tipo" aria-pressed="true">Tipo</button><button type="button" data-gorg="preco" aria-pressed="false">Preço</button><button type="button" data-gorg="forte" aria-pressed="false">Ponto forte</button></div></div>
@@ -1378,7 +1378,7 @@ html{background:#060b1c}
   <div class="dr-body" id="shBody"></div>
   <div class="sh-nav" id="shNav" hidden><button type="button" class="sn-btn" id="shPrev"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small> <b id="shPrevN"></b></span></button><span class="sn-pos" id="shPos"></span><button type="button" class="sn-btn nx" id="shNext"><span><small>Próximo</small> <b id="shNextN"></b></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 </div>
-<noscript><p style="position:fixed;inset:auto 16px 16px;z-index:50;margin:0;padding:14px 16px;border-radius:14px;background:#060b1c;color:#fff;font:600 14px/1.5 system-ui,sans-serif">A roleta de preços precisa do JavaScript ligado no navegador. Sem ele, veja <a href="/carros" style="color:#8fb3ff">todas as marcas e os preços</a>.</p></noscript>
+<noscript><p style="position:fixed;inset:auto 16px 16px;z-index:50;margin:0;padding:14px 16px;border-radius:14px;background:#060b1c;color:#fff;font:600 14px/1.5 system-ui,sans-serif">Para escolher o preço, ative o JavaScript no navegador. Sem ele, veja <a href="/carros" style="color:#8fb3ff">todas as marcas e os preços</a>.</p></noscript>
 <div class="toast" id="toast" hidden aria-hidden="true"></div>
 <div class="sr" id="anuncio" role="status" aria-live="polite"></div>
 
@@ -1825,7 +1825,7 @@ function emptyHTML(i){
   const nAbove=above?new Set(pool.filter(c=>K(c)>hi&&K(c)<=VALUES[Math.min(VALUES.length-1,tgt(above)+8)]).map(c=>c.mid)).size:0;
   const btn=(c,dir)=>{const t=tgt(c);return `<button type="button" class="eg${dir==="up"?" up":""}" data-go="${t}"><span class="eg-d">${dir==="up"?"↑ Subir para":"↓ Descer para"} ${kmoney(VALUES[t])}</span><span class="eg-c">${dir==="up"?"Mais barato acima":"Mais caro abaixo"}: ${esc(c.mk)} ${esc(c.nm)} · ${fmt(c.p)}</span></button>`};
   return `<div class="row-empty"><div class="empty"><b>Nenhum modelo entre ${kmoney(lo)} e ${kmoney(hi)}</b>${above?`Acima desta faixa ainda há carros: o próximo começa em ${fmt(above.p)}${nAbove>1?`, e são ${nAbove} modelos até ${kmoney(VALUES[Math.min(VALUES.length-1,tgt(above)+8)])}`:""}.`:"Não há carros acima desta faixa com os filtros atuais."}
-    <div class="eg-row">${above?btn(above,"up"):""}${below?btn(below,"down"):""}</div><span class="eg-tip">Os pontos azuis na roleta marcam os valores que têm carros.</span></div></div>`;
+    <div class="eg-row">${above?btn(above,"up"):""}${below?btn(below,"down"):""}</div><span class="eg-tip">Os pontos azuis marcam os preços que têm carros.</span></div></div>`;
 }
 const rowMap=new Map();
 const CHUNK=10;
@@ -2203,7 +2203,7 @@ function dicaPrimeiraVez(){
   if(dicaVista)return;dicaVista=true;let v=null;try{v=localStorage.getItem("autokan_dica_roleta")}catch(e){}
   if(v||location.search||!garPage.hidden)return;try{localStorage.setItem("autokan_dica_roleta","1")}catch(e){}
   setTimeout(()=>{if(!sheet.hidden||!authPanel.hidden||!drawer.hidden)return;
-    toast(matchMedia("(max-width:760px)").matches?"Dica: arraste a roleta ou toque em − e + para escolher quanto quer gastar. Os carros dessa faixa aparecem ao lado.":"Dica: gire a roleta com o mouse ou use − e + para escolher quanto quer gastar. Os carros dessa faixa aparecem ao lado.");
+    toast(matchMedia("(max-width:760px)").matches?"Dica: arraste para os lados ou toque em − e + para escolher quanto quer gastar. Os carros desse preço aparecem ao lado.":"Dica: arraste com o mouse, use a rodinha ou − e + para escolher quanto quer gastar. Os carros desse preço aparecem ao lado.");
     clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,8000)},1500);
 }
 function toast(m){anuncia(m);toastEl.textContent=m;toastEl.hidden=false;clearTimeout(tt);tt=setTimeout(()=>toastEl.hidden=true,3800)}
@@ -2790,7 +2790,7 @@ function renderGarPage(){
   sub.textContent=cars.length?`${cars.length} ${cars.length>1?"carros salvos":"carro salvo"} · só você vê`:"Só você vê";
   tools.hidden=!cars.length;
   const avisoFora=fora.length?`<p class="gp-note">${fora.length>1?`${fora.length} carros que você salvou saíram`:"1 carro que você salvou saiu"} de linha ou do site. <button type="button" class="gp-lnk" data-gclean>Tirar dos salvos</button></p>`:"";
-  if(!cars.length){gpFoot.hidden=true;gpBody.innerHTML=vazio("Você ainda não salvou nenhum carro","Na roleta, abra a ficha de um carro e toque em “Salvar”. Ele aparece aqui, junto com os outros que você salvar.",`<button type="button" class="gp-btn pri" data-gclose>Ir para a roleta</button>`)+avisoFora;return}
+  if(!cars.length){gpFoot.hidden=true;gpBody.innerHTML=vazio("Você ainda não salvou nenhum carro","Escolha o preço, abra a ficha de um carro e toque em “Salvar”. Ele aparece aqui, junto com os outros que você salvar.",`<button type="button" class="gp-btn pri" data-gclose>Escolher o preço</button>`)+avisoFora;return}
   const gs=garGroups(cars);
   gpBody.innerHTML=(GORG==="forte"?`<p class="gp-note">Um carro aparece em cada ponto forte que ele tem.</p>`:"")+gs.map(g=>`<section class="gp-g"><h2>${g.k?`<span class="ic" data-k="${g.k}">${ico(g.k)}</span>`:""}<span>${esc(g.label)}</span><small>${g.cars.length} ${g.cars.length>1?"carros":"carro"}</small></h2><div class="gp-grid">${g.cars.map((c,i)=>`<div class="gp-it"><div class="gp-ctl"><label class="gp-ck"><input type="checkbox" data-gsel="${esc(c.id)}"${gSel.has(c.id)?" checked":""}> Comparar</label><button type="button" class="gp-x" data-gdel="${esc(c.id)}" aria-label="Tirar ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)} dos salvos" title="Tirar dos salvos">✕ Tirar</button></div>${cardHTML(c,i).replace('class="card','class="card sel')}</div>`).join("")}</div></section>`).join("")+avisoFora;
   paintGpSel()}

@@ -244,7 +244,7 @@ function topo() {
 <a class="t-ic so-cel" href="/noticias" aria-label="Notícias" title="Notícias">${NOTICIAS_ICO}</a>
 <a class="t-ic so-cel so-cel-larga" href="/comparar" aria-label="Comparar carros" title="Comparar carros">${COMPARA_ICO}</a>
 <button type="button" class="t-ic" id="tBuscaBtn" aria-label="Buscar carro" title="Buscar carro" aria-expanded="false" aria-controls="tBusca">${LUPA_T}</button>
-<a class="top-cta so-pc" href="/">${ROLETA}Roleta de preços</a>
+<a class="top-cta so-pc" href="/">${ROLETA}Escolha o preço</a>
 <span class="t-conta" id="tConta"><a class="t-btn" href="/?entrar=1">Entrar</a><a class="t-btn pri" href="/?cadastrar=1">Cadastrar</a></span>
 </div></div>
 <div class="t-busca" id="tBusca" hidden><div class="wrap"><label class="t-bq">${LUPA_T}<span class="sr">Buscar carro ou marca</span><input type="search" id="tBq" placeholder="Buscar carro ou marca" autocomplete="off" enterkeyhint="go"></label><ul class="t-br" id="tBr"></ul></div></div>
@@ -261,7 +261,7 @@ const u=s&&s.user,box=document.getElementById("tConta");
 if(u&&box){const m=u.user_metadata||{},nome=m.full_name||m.name||(u.email||"").split("@")[0]||"Você",av=typeof m.avatar_url==="string"&&/^https:\\/\\//.test(m.avatar_url)?m.avatar_url:"";
   box.innerHTML='<button type="button" class="t-pf" id="tPf" aria-haspopup="menu" aria-expanded="false" aria-controls="tPm" aria-label="Sua conta" title="Sua conta">'+(av?'<img src="'+e(av)+'" alt="" referrerpolicy="no-referrer">':e(nome.trim().charAt(0).toUpperCase()))+'</button>'+
    '<div class="t-pm" id="tPm" role="menu" aria-label="Sua conta" hidden><div class="t-pm-h"><b>'+e(nome)+'</b><small>'+e(u.email||"")+'</small></div>'+
-   '<a role="menuitem" href="/salvos">Salvos</a><a role="menuitem" href="/">Roleta de preços</a><a role="menuitem" href="/admin.html" class="t-adm" hidden>Painel de uso</a><a role="menuitem" href="/admin.html#mensagens" class="t-adm" hidden>Mensagens</a><a role="menuitem" href="/contato">Fale com a gente</a><button type="button" role="menuitem" id="tSair">Sair</button></div>';
+   '<a role="menuitem" href="/salvos">Salvos</a><a role="menuitem" href="/">Escolha o preço</a><a role="menuitem" href="/admin.html" class="t-adm" hidden>Painel de uso</a><a role="menuitem" href="/admin.html#mensagens" class="t-adm" hidden>Mensagens</a><a role="menuitem" href="/contato">Fale com a gente</a><button type="button" role="menuitem" id="tSair">Sair</button></div>';
   const pf=document.getElementById("tPf"),pm=document.getElementById("tPm");
   const abre=v=>{pm.hidden=!v;pf.setAttribute("aria-expanded",String(v))};
   pf.onclick=x=>{x.stopPropagation();abre(pm.hidden)};document.addEventListener("click",x=>{if(!pm.hidden&&!x.target.closest("#tPm"))abre(false)});
@@ -292,7 +292,7 @@ function rodape() {
 ${col("Por preço", ATALHOS_PRECO.map((f) => [`/${f.slug}`, f.titulo.replace("Carros 0 km ", "").replace(/^./, (c) => c.toUpperCase())]))}
 ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
-${col("Autokan", [["/", "Roleta de preços"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"], ["/contato", "Contato"]])}
+${col("Autokan", [["/", "Escolha o preço"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"], ["/contato", "Contato"]])}
 </div>
 <p class="foot-nota">Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
 <p class="foot-copy">© ${new Date().getFullYear()} Autokan · Conheça. Compare. Escolha.</p>
@@ -495,7 +495,7 @@ ${temTracao ? `<td data-l="Tração">${v.tracao ? esc(v.tracao) : '<span class="
 <p class="hero-sub">${esc([m.carroc, lista(m.combs), m.aVenda ? pl(m.versoes.length, "versão à venda", "versões à venda") : statusTxt].filter(Boolean).join(" · "))}</p>
 <div class="preco"><b>${faixa}</b><small>${esc(rotuloPreco(m.versoes))}</small></div>
 ${selos}
-<div class="acoes">${m.aVenda ? `<a class="btn pri" href="/?carro=${encodeURIComponent(m.id)}">${ROLETA}Ver na roleta de preços</a>` : ""}${m.aVenda ? `<a class="btn" href="/comparar/${m.id}">${COMPARAR_ICO}Comparar com outro carro</a>` : ""}${marca.site ? `<a class="btn" href="${esc(marca.site)}" target="_blank" rel="noopener">Site da ${esc(marca.nome)}${SETA}</a>` : ""}</div>
+<div class="acoes">${m.aVenda ? `<a class="btn pri" href="/?carro=${encodeURIComponent(m.id)}">${ROLETA}Ver carros do mesmo preço</a>` : ""}${m.aVenda ? `<a class="btn" href="/comparar/${m.id}">${COMPARAR_ICO}Comparar com outro carro</a>` : ""}${marca.site ? `<a class="btn" href="${esc(marca.site)}" target="_blank" rel="noopener">Site da ${esc(marca.nome)}${SETA}</a>` : ""}</div>
 </div>
 <figure class="foto">${fotoTag(m, 640, "(max-width:860px) 92vw, 540px", true) || `<span class="sem">${esc(m.titulo)}</span>`}${m.foto ? "<figcaption>Imagem ilustrativa</figcaption>" : ""}</figure>
 </section>
@@ -614,7 +614,7 @@ export function paginaLista(base, l, opts = {}) {
 
 export function pagina404() {
   const corpo = `<div class="lista-top" style="padding:48px 0 8px"><h1>Página não encontrada</h1>
-<p class="lead">O endereço pode ter mudado ou o carro saiu de linha. Procure pela marca ou volte para a roleta de preços.</p>
-<div class="acoes"><a class="btn pri" href="/">${ROLETA}Roleta de preços</a><a class="btn" href="/carros">Todas as marcas</a></div></div>`;
+<p class="lead">O endereço pode ter mudado ou o carro saiu de linha. Procure pela marca ou volte ao início para escolher o preço.</p>
+<div class="acoes"><a class="btn pri" href="/">${ROLETA}Escolha o preço</a><a class="btn" href="/carros">Todas as marcas</a></div></div>`;
   return pagina({ titulo: "Página não encontrada | Autokan", descricao: "Esta página do Autokan não existe mais.", caminho: null, corpo, indexar: false });
 }
