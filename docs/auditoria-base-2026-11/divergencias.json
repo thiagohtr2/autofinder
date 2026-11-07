@@ -1,0 +1,1802 @@
+[
+ {
+  "grupo": "bmw-mini",
+  "versao": "MINI Cooper 3 portas JCW GP Inspired Edition",
+  "version_id": "mini-cooper-3-portas-jcw-gp-inspired-edition",
+  "coluna": "potencia_cv",
+  "nosso": 258,
+  "oficial": 231,
+  "detalhe": "Release de 28/08/2026: \"o modelo mantém o motor a gasolina MINI TwinPower Turbo de quatro cilindros e 2.0 litros, capaz de entregar 231 cv de potência e 380 Nm de torque máximo\" (baseado no JCW Hatch, 231 cv)"
+ },
+ {
+  "grupo": "bmw-mini",
+  "versao": "BMW iX2 xDrive30 M Sport",
+  "version_id": "bmw-ix2-xdrive30-m-sport",
+  "coluna": "potencia_cv",
+  "nosso": 306,
+  "oficial": 313,
+  "detalhe": "Tabela do site: \"Potência 306cv (313cv Boost*)\" — 313 cv é a potência máxima com boost temporário de 10 s; 306 cv é a nominal"
+ },
+ {
+  "grupo": "bmw-mini",
+  "versao": "BMW X3 M50 xDrive",
+  "version_id": "bmw-x3-m50-xdrive",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina",
+  "detalhe": "Release de 18/02/2025: \"o novo BMW X3 M50 xDrive é equipado com o motor a gasolina de seis cilindros em linha\"; site: \"motor a gasolina M TwinPower Turbo de 6 cilindros em linha\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Dolphin Mini GS (38 kWh)",
+  "version_id": "dolphinmini-gs-38-kwh",
+  "coluna": "versao (bateria no nome)",
+  "nosso": "38 kWh",
+  "oficial": "38,88 kWh",
+  "detalhe": "Ficha: \"Capacidade da bateria (kWh): 30,08 | 38,88\"; a página do modelo arredonda para \"38 kWh\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Atto 2 DM-i GL 1.5 DM-i Flex (7,85 kWh)",
+  "version_id": "byd-atto-2-dm-i-gl-1-5-dm-i-flex-7-85-kwh",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Híbrido Plug-in Flex (etanol, gasolina ou eletricidade)",
+  "detalhe": "Ficha: \"Tipo de energia: Híbrido Plug-in Flex\"; \"Combustivel: Etanol, Gasolina ou Eletricidade\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Atto 2 DM-i GS 1.5 DM-i Flex (18,03 kWh)",
+  "version_id": "byd-atto-2-dm-i-gs-1-5-dm-i-flex-18-03-kwh",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Híbrido Plug-in Flex (etanol, gasolina ou eletricidade)",
+  "detalhe": "Ficha: \"Tipo de energia: Híbrido Plug-in Flex\"; \"Combustivel: Etanol, Gasolina ou Eletricidade\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Han AWD 76,9 kWh",
+  "version_id": "byd-han-awd-76-9-kwh",
+  "coluna": "versao (bateria no nome)",
+  "nosso": "76,9 kWh",
+  "oficial": "85,4 kWh",
+  "detalhe": "A BYD Brasil vende um único Han (AWD, 517 cv, 2 motores, 349 km PBEV) e a ficha oficial diz \"Capacidade da bateria (kWh): 85,4\"; o nome da versão na base cita 76,9 kWh. Dados aplicados porque potência, tração e modelo batem; ficha não indica ano-modelo (a base diz 2025)."
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Seal AWD 82,5 kWh",
+  "version_id": "seal",
+  "coluna": "potencia_cv",
+  "nosso": 530,
+  "oficial": 531,
+  "detalhe": "Ficha: \"Potência máxima (cv): 531\"; página do modelo: \"531 CV — Potência Máxima\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Song Plus 1.5 DM-i Turbo",
+  "version_id": "byd-song-plus-1-5-dm-i-turbo",
+  "coluna": "potencia_cv",
+  "nosso": 239,
+  "oficial": 240,
+  "detalhe": "Ficha: \"Potência máxima combinada (cv): 240\"; página: \"240 cv — Potência combinada\"; mas o release oficial do Song Plus 2027 (04/03/2026) diz 239 cv — conflito entre fontes oficiais, ver pendência"
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Song Pro GL 1.5 DM-i Flex",
+  "version_id": "songpro",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Híbrido Plug-in Flex (etanol, gasolina ou eletricidade)",
+  "detalhe": "Ficha: \"Tipo de energia: Híbrido Plug-in Flex\"; \"Combustivel: Etanol, Gasolina ou Eletricidade\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Song Pro GS 1.5 DM-i Flex",
+  "version_id": "songpro-gs-1-5-dm-i-flex",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Híbrido Plug-in Flex (etanol, gasolina ou eletricidade)",
+  "detalhe": "Ficha: \"Tipo de energia: Híbrido Plug-in Flex\"; \"Combustivel: Etanol, Gasolina ou Eletricidade\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Song Pro GL 1.5 DM-i Flex",
+  "version_id": "songpro",
+  "coluna": "potencia_cv",
+  "nosso": 219,
+  "oficial": 218,
+  "detalhe": "Ficha: \"Potência combinada (cv): 218 | 219\" (GL | GS); a página destaca \"219 cv — Potência combinada\" sem citar versão"
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Yuan Plus 60,8 kWh",
+  "version_id": "byd-yuan-plus-60-8-kwh",
+  "coluna": "versao (bateria no nome)",
+  "nosso": "60,8 kWh",
+  "oficial": "60,48 kWh",
+  "detalhe": "Release 07/04/2026: \"A bateria também evoluiu, passando de 60,48 kWh para 74,88 kWh\""
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "BYD Yuan Plus AWD 74,8 kWh",
+  "version_id": "byd-yuan-plus-awd-74-8-kwh",
+  "coluna": "versao (bateria no nome)",
+  "nosso": "74,8 kWh",
+  "oficial": "74,88 kWh",
+  "detalhe": "Ficha: \"Capacidade da bateria (kWh): 74,88\" (diferença só de arredondamento no nome)"
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "Denza B5 GL 4WD",
+  "version_id": "denza-b5-gl-4wd",
+  "coluna": "potencia_cv",
+  "nosso": 687,
+  "oficial": "505 kW (catálogo) / 677 cv (release)",
+  "detalhe": "Catálogo: \"Potência máxima combinada (kW): 505\"; Newsroom (release \"Denza lança Flash Charging no Brasil...\"): \"São até 677 cv de potência e 760 Nm de torque\". Os 687 cv da base correspondem a 505 kW convertidos; os 677 do release não batem"
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "Denza B5 GS 4WD",
+  "version_id": "denza-b5-gs-4wd",
+  "coluna": "potencia_cv",
+  "nosso": 687,
+  "oficial": "505 kW (catálogo) / 677 cv (release)",
+  "detalhe": "Catálogo: \"Potência máxima combinada (kW): 505\"; Newsroom (release \"Denza lança Flash Charging no Brasil...\"): \"São até 677 cv de potência e 760 Nm de torque\". Os 687 cv da base correspondem a 505 kW convertidos; os 677 do release não batem"
+ },
+ {
+  "grupo": "byd-denza",
+  "versao": "Denza Z9 GT EV AWD",
+  "version_id": "denza-z9-gt-ev-awd",
+  "coluna": "potencia_cv",
+  "nosso": 952,
+  "oficial": "850 kW (ficha) / 952 cv (release)",
+  "detalhe": "Ficha: \"Potência máxima combinada (kW): 850\" (230 kW dianteiro + 310 kW x 2 traseiros); Newsroom (20/08/2026): \"Com 952 cv de potência\". 952 cv equivalem a cerca de 700 kW, não a 850 kW"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix 1.0 Turbo AT",
+  "version_id": "onix-1-0-turbo-at",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Site Onix 2027: \"Motor turbo de 115 CV e 16,8 kgfm\"; release 2027 (ECO): \"mantendo a potência de 115 cv\"; ficha 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix 1.0 Turbo AT Eco (só etanol)",
+  "version_id": "onix",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Site Onix 2027: \"Motor turbo de 115 CV e 16,8 kgfm\"; release 2027 (ECO): \"mantendo a potência de 115 cv\"; ficha 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix 1.0 Turbo MT",
+  "version_id": "onix-1-0-turbo-mt",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Site Onix 2027: \"Motor turbo de 115 CV e 16,8 kgfm\"; release 2027 (ECO): \"mantendo a potência de 115 cv\"; ficha 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix Activ 1.0 Turbo AT",
+  "version_id": "onix-activ-1-0-turbo-at",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Site Onix 2027: \"Motor turbo de 115 CV e 16,8 kgfm\"; release 2027 (ECO): \"mantendo a potência de 115 cv\"; ficha 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix Premier 1.0 Turbo AT",
+  "version_id": "onix-premier-1-0-turbo-at",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Site Onix 2027: \"Motor turbo de 115 CV e 16,8 kgfm\"; release 2027 (ECO): \"mantendo a potência de 115 cv\"; ficha 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix RS 1.0 Turbo AT",
+  "version_id": "onix-rs-1-0-turbo-at",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Site Onix 2027: \"Motor turbo de 115 CV e 16,8 kgfm\"; release 2027 (ECO): \"mantendo a potência de 115 cv\"; ficha 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix Plus 1.0 Turbo AT",
+  "version_id": "onixplus-1-0-turbo-at",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release linha Onix 2027 (hatch e sedã): \"refinamento do motor, hoje com até 115 cv\"; ECO: \"mantendo a potência de 115 cv\"; ficha Onix Plus 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix Plus 1.0 Turbo AT Eco (só etanol)",
+  "version_id": "onixplus",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release linha Onix 2027 (hatch e sedã): \"refinamento do motor, hoje com até 115 cv\"; ECO: \"mantendo a potência de 115 cv\"; ficha Onix Plus 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix Plus 1.0 Turbo MT",
+  "version_id": "onixplus-1-0-turbo-mt",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release linha Onix 2027 (hatch e sedã): \"refinamento do motor, hoje com até 115 cv\"; ECO: \"mantendo a potência de 115 cv\"; ficha Onix Plus 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix Plus LTZ 1.0 Turbo AT",
+  "version_id": "onixplus-ltz-1-0-turbo-at",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release linha Onix 2027 (hatch e sedã): \"refinamento do motor, hoje com até 115 cv\"; ECO: \"mantendo a potência de 115 cv\"; ficha Onix Plus 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Onix Plus Premier 1.0 Turbo AT",
+  "version_id": "onixplus-premier-1-0-turbo-at",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release linha Onix 2027 (hatch e sedã): \"refinamento do motor, hoje com até 115 cv\"; ECO: \"mantendo a potência de 115 cv\"; ficha Onix Plus 2026: \"115 cv (85 Kw) @ 5.500\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Tracker Turbo AT",
+  "version_id": "tracker",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release Tracker 2027: \"As versões 1.0 Turbo entregam 115 cv e até 18,9 kgfm de torque\"; ficha 2026: \"115 cv (85 Kw) @ 5.000\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Tracker LT",
+  "version_id": "tracker-lt",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release Tracker 2027: \"As versões 1.0 Turbo entregam 115 cv e até 18,9 kgfm de torque\"; ficha 2026: \"115 cv (85 Kw) @ 5.000\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Tracker LTZ",
+  "version_id": "tracker-ltz",
+  "coluna": "potencia_cv",
+  "nosso": 116,
+  "oficial": 115,
+  "detalhe": "Release Tracker 2027: \"As versões 1.0 Turbo entregam 115 cv e até 18,9 kgfm de torque\"; ficha 2026: \"115 cv (85 Kw) @ 5.000\""
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet S10 Cabine Simples WT 2.8 4x4 MT",
+  "version_id": "chevrolet-s10-cabine-simples-wt-2-8-4x4-mt",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 High / Low)",
+  "detalhe": "Ficha S10 (2026 e Trail Boss 2027): \"4x4 (Seletor eletrônico de tração 4x2, 4x4 High / Low)\", tração predominante traseira — é 4x4 de engate com reduzida, não tração integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet S10 High Country CD 2.8 4x4 AT",
+  "version_id": "chevrolet-s10-high-country-cd-2-8-4x4-at",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 High / Low)",
+  "detalhe": "Ficha S10 (2026 e Trail Boss 2027): \"4x4 (Seletor eletrônico de tração 4x2, 4x4 High / Low)\", tração predominante traseira — é 4x4 de engate com reduzida, não tração integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet S10 LTZ CD 2.8 4x4 AT",
+  "version_id": "chevrolet-s10-ltz-cd-2-8-4x4-at",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 High / Low)",
+  "detalhe": "Ficha S10 (2026 e Trail Boss 2027): \"4x4 (Seletor eletrônico de tração 4x2, 4x4 High / Low)\", tração predominante traseira — é 4x4 de engate com reduzida, não tração integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet S10 Trail Boss CD 2.8 4x4 AT",
+  "version_id": "chevrolet-s10-trail-boss-cd-2-8-4x4-at",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 High / Low)",
+  "detalhe": "Ficha S10 (2026 e Trail Boss 2027): \"4x4 (Seletor eletrônico de tração 4x2, 4x4 High / Low)\", tração predominante traseira — é 4x4 de engate com reduzida, não tração integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet S10 WT CD 2.8 4x4 AT",
+  "version_id": "chevrolet-s10-wt-cd-2-8-4x4-at",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 High / Low)",
+  "detalhe": "Ficha S10 (2026 e Trail Boss 2027): \"4x4 (Seletor eletrônico de tração 4x2, 4x4 High / Low)\", tração predominante traseira — é 4x4 de engate com reduzida, não tração integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet S10 WT CD 2.8 4x4 MT",
+  "version_id": "chevrolet-s10-wt-cd-2-8-4x4-mt",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 High / Low)",
+  "detalhe": "Ficha S10 (2026 e Trail Boss 2027): \"4x4 (Seletor eletrônico de tração 4x2, 4x4 High / Low)\", tração predominante traseira — é 4x4 de engate com reduzida, não tração integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet S10 Z71 CD 2.8 4x4 AT",
+  "version_id": "chevrolet-s10-z71-cd-2-8-4x4-at",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 High / Low)",
+  "detalhe": "Ficha S10 (2026 e Trail Boss 2027): \"4x4 (Seletor eletrônico de tração 4x2, 4x4 High / Low)\", tração predominante traseira — é 4x4 de engate com reduzida, não tração integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Trailblazer High Country 2.8 4x4 AT (7 lugares)",
+  "version_id": "chevrolet-trailblazer-high-country-2-8-4x4-at-7-lugares",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 / reduzida)",
+  "detalhe": "Lista de preços: \"Seletor eletrônico de tração 4x2, 4x4 e reduzida\"; ficha Midnight 2027: \"4x4 (com seletor eletrônico de tração: 4x2, 4x4 High / Low)\", tração predominante traseira — 4x4 de engate, não integral permanente"
+ },
+ {
+  "grupo": "chevrolet",
+  "versao": "Chevrolet Trailblazer Midnight 2.8 4x4 AT (7 lugares)",
+  "version_id": "chevrolet-trailblazer-midnight-2-8-4x4-at-7-lugares",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (4x2 / 4x4 / reduzida)",
+  "detalhe": "Lista de preços: \"Seletor eletrônico de tração 4x2, 4x4 e reduzida\"; ficha Midnight 2027: \"4x4 (com seletor eletrônico de tração: 4x2, 4x4 High / Low)\", tração predominante traseira — 4x4 de engate, não integral permanente"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Citroën Aircross Feel Turbo 200 AT (5 lugares)",
+  "version_id": "citroen-aircross-feel-turbo-200-at-5-lugares",
+  "coluna": "potencia_cv",
+  "nosso": 130,
+  "oficial": 114,
+  "detalhe": "Potência: 114 cv a 5.550 (gasolina) / 114 cv a 5.250 rpm (etanol) — nosso motor_desc diz \"1.0 turbo T200 125/130 cv\"; a ficha 2026/2027 dá 114 cv nos dois combustíveis"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Citroën Aircross Feel Pack 7 Turbo 200 AT (7 lugares)",
+  "version_id": "citroen-aircross-feel-pack-7-turbo-200-at-7-lugares",
+  "coluna": "potencia_cv",
+  "nosso": 130,
+  "oficial": 114,
+  "detalhe": "Potência: 114 cv (gasolina) a 5.500 rpm / 114 cv (etanol) a 5.250 rpm — nosso motor_desc diz \"1.0 turbo T200 125/130 cv\"; a ficha 2026/2027 dá 114 cv nos dois combustíveis"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Citroën Aircross XTR 7 Turbo 200 AT (7 lugares)",
+  "version_id": "citroen-aircross-xtr-7-turbo-200-at-7-lugares",
+  "coluna": "potencia_cv",
+  "nosso": 130,
+  "oficial": 114,
+  "detalhe": "Potência: 114 cv (gasolina) a 5.500 rpm / 114 cv (etanol) a 5.250 rpm — nosso motor_desc diz \"1.0 turbo T200 125/130 cv\"; a ficha 2026/2027 dá 114 cv nos dois combustíveis"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Citroën Aircross Feel Turbo 200 AT (5 lugares)",
+  "version_id": "citroen-aircross-feel-turbo-200-at-5-lugares",
+  "coluna": "versao",
+  "nosso": "Feel Turbo 200 AT (5 lugares)",
+  "oficial": "Feel 7 Turbo 200 AT (lista de itens e ficha 2026/2027, com \"3ª fileira com 2 assentos individuais, rebatíveis e removíveis\")",
+  "detalhe": "Release: \"a gama do Aircross passa a ser composta por Feel Turbo 200 AT, Feel Pack 7 Turbo 200 AT [...] e XTR 7 Turbo 200 AT\", mas a lista diz \"Citroën Aircross Feel 7 Turbo 200 AT – R$ 124.990\" com 3ª fileira; a fonte oficial é ambígua quanto aos 5 lugares"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Citroën Jumper Minibus Executive 17L 2.2 Turbodiesel",
+  "version_id": "citroen-jumper-minibus-executive-17l-2-2-turbodiesel",
+  "coluna": "versao",
+  "nosso": "Minibus Executive 17L 2.2 Turbodiesel",
+  "oficial": "não consta na linha Jumper 2026 (há Minibus Comfort 17+1 e Minibus Luxo 15+1)",
+  "detalhe": "Confira o preço público sugerido para a linha Citroën Jumper: Furgão – R$ 280.990; Cargo – R$ 295.990; Minibus Comfort – R$ 375.990; Minibus Luxo – R$ 384.990"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Citroën Jumper Vitré 2.2 Turbodiesel",
+  "version_id": "citroen-jumper-vitre-2-2-turbodiesel",
+  "coluna": "versao",
+  "nosso": "Vitré 2.2 Turbodiesel",
+  "oficial": "não consta na linha Jumper 2026",
+  "detalhe": "Confira o preço público sugerido para a linha Citroën Jumper: Furgão – R$ 280.990; Cargo – R$ 295.990; Minibus Comfort – R$ 375.990; Minibus Luxo – R$ 384.990"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Peugeot 208 GT 1.0 Turbo 200 MHEV",
+  "version_id": "208-gt-1-0-turbo-200-mhev",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Gasolina/Etanol (flex) — híbrido leve MHEV com bateria de íons de lítio de 12 V",
+  "detalhe": "Ficha 208 GT MHEV: \"Motor: Turbo 200 MHEV [...] Combustível: Gasolina/Etanol; Bateria Tipo: íon-lítio, Tensão: 12 V\"; release: \"sistema híbrido leve MHEV [...] motor elétrico auxiliar e uma bateria de íons de lítio de 12V\" — não é híbrido pleno; nossa propulsao \"híbrido\" também deveria ser \"híbrido leve\""
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Peugeot 2008 GT MHEV Turbo 200 AT",
+  "version_id": "peugeot-2008-gt-mhev-turbo-200-at",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Etanol (flex) — híbrido leve MHEV com bateria de íons de lítio de 12 V",
+  "detalhe": "Ficha 2008 GT MHEV: \"Motor: Turbo 200 Hybrid [...] Combustível: Gasolina/Etanol; Bateria Tipo: íon-lítio, Tensão: 12 V\" — o combustível oficial é flex; a propulsao \"híbrido leve\" que temos confere"
+ },
+ {
+  "grupo": "citroen-peugeot",
+  "versao": "Peugeot Partner Rapid Business Pack 1.3 Flex",
+  "version_id": "peugeot-partner-rapid-business-pack-1-3-flex",
+  "coluna": "motor_desc (potência gasolina)",
+  "nosso": "1.3 flex 107 cv (E) / 98 cv (G)",
+  "oficial": "folheto MY 25/26: 107 cv a 6.250 rpm também na gasolina; ficha de imprensa jan/2025: 98 cv (G)",
+  "detalhe": "Potência máxima - Etanol (cv): 107 a 6250 rpm; Potência máxima - Gasolina (cv): 107 a 6250 rpm — fontes oficiais divergem, não corrigir sem confirmação"
+ },
+ {
+  "grupo": "esportivos",
+  "versao": "Ferrari 849 Testarossa Coupé 4.0 V8 biturbo híbrido",
+  "version_id": "ferrari-849-testarossa-coupe-4-0-v8-biturbo-hibrido",
+  "coluna": "potencia_cv",
+  "nosso": 830,
+  "oficial": 1050,
+  "detalhe": "Ferrari: \"Maximum power: 1,050 cv (IBRIDO)\" para o sistema híbrido; os 830 cv que temos são só do V8 (\"Maximum power*: 830 cv @ 7,500 rpm\")"
+ },
+ {
+  "grupo": "esportivos",
+  "versao": "McLaren Artura Coupé 3.0 V6 híbrido",
+  "version_id": "mclaren-artura-coupe-3-0-v6-hibrido",
+  "coluna": "potencia_cv",
+  "nosso": 680,
+  "oficial": 700,
+  "detalhe": "Página BR da Artura: \"Potência máxima: 700 CV (690 bhp)\"; janela Performance: \"O E-motor M630 gera 605 cv. Somando o motor elétrico, você terá um total de 700 cv.\"; o guia linkado dá \"700PS* (605PS ICE + 95PS E-motor) / 720Nm\" e \"*680PS (585PS ICE + 95PS E-motor) / 720Nm in China Market\""
+ },
+ {
+  "grupo": "esportivos",
+  "versao": "McLaren Artura Spider 3.0 V6 híbrido",
+  "version_id": "mclaren-artura-spider-3-0-v6-hibrido",
+  "coluna": "potencia_cv",
+  "nosso": 680,
+  "oficial": 700,
+  "detalhe": "Página BR da Artura Spider: \"Potência máxima: 700 PS (690 bhp)\"; janela Performance: \"Juntos, somam 700 cv\""
+ },
+ {
+  "grupo": "fiat",
+  "versao": "Fiat Toro Volcano 1.3 Turbo Flex MHEV",
+  "version_id": "toro-volcano-1-3-turbo-flex-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com sistema híbrido leve 48V",
+  "detalhe": "Combustível oficial confere com o nosso: ficha técnica \"Combustível: gasolina / etanol\" + \"Motor elétrico 48V\"; Inmetro PBEV classifica como propulsão \"Híbrido\", combustível F (flex). Sem divergência no combustível."
+ },
+ {
+  "grupo": "fiat",
+  "versao": "Fiat Toro Ultra 1.3 Turbo Flex MHEV",
+  "version_id": "toro-ultra-1-3-turbo-flex-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com sistema híbrido leve 48V",
+  "detalhe": "Combustível oficial confere com o nosso: ficha técnica \"Combustível: gasolina / etanol\" + \"Motor elétrico 48V\"; Inmetro PBEV classifica como propulsão \"Híbrido\", combustível F (flex). Sem divergência no combustível."
+ },
+ {
+  "grupo": "fiat",
+  "versao": "Fiat Fastback Audace MHEV",
+  "version_id": "fastback-audace-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com sistema híbrido leve 12V",
+  "detalhe": "Combustível oficial confere com o nosso: ficha técnica \"Combustível: gasolina / etanol\" + \"Motor elétrico ... 12V – 3kW\"; Inmetro PBEV: propulsão \"Híbrido\", combustível F (flex). Sem divergência no combustível."
+ },
+ {
+  "grupo": "fiat",
+  "versao": "Fiat Fastback Impetus MHEV",
+  "version_id": "fastback-impetus-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com sistema híbrido leve 12V",
+  "detalhe": "Combustível oficial confere com o nosso: ficha técnica \"Combustível: gasolina / etanol\" + \"Motor elétrico ... 12V – 3kW\"; Inmetro PBEV: propulsão \"Híbrido\", combustível F (flex). Sem divergência no combustível."
+ },
+ {
+  "grupo": "fiat",
+  "versao": "Fiat Pulse Audace T200 MHEV",
+  "version_id": "pulse-audace-t200-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com sistema híbrido leve 12V",
+  "detalhe": "Combustível oficial confere com o nosso: ficha técnica \"Combustível: gasolina / etanol\" + \"Motor elétrico ... Tensão: 12V\"; Inmetro PBEV: propulsão \"Híbrido\", combustível F (flex). Sem divergência no combustível."
+ },
+ {
+  "grupo": "gac-geely-zeekr-leapmotor-avatr",
+  "versao": "GAC Hyptec HT Elite",
+  "version_id": "gac-hyptec-ht-elite",
+  "coluna": "potencia_cv",
+  "nosso": 245,
+  "oficial": 340,
+  "detalhe": "Especificação: \"Potência - motor elétrico (kW): 250 (340 cv)\", confirmado pelo release de 27/07/2026 (\"o Hyptec HT recebeu uma nova configuração de bateria, elevando seu desempenho para 340 cv\"). Nosso motor_desc também traz bateria de 72,7 kWh (a página Especificação traz 83 kWh; a página do modelo ainda diz 72,7 kWh)"
+ },
+ {
+  "grupo": "gac-geely-zeekr-leapmotor-avatr",
+  "versao": "GAC Hyptec HT Ultra",
+  "version_id": "gac-hyptec-ht-ultra",
+  "coluna": "potencia_cv",
+  "nosso": 245,
+  "oficial": 340,
+  "detalhe": "Especificação: \"Potência - motor elétrico (kW): 250 (340 cv)\", confirmado pelo release de 27/07/2026 (\"o Hyptec HT recebeu uma nova configuração de bateria, elevando seu desempenho para 340 cv\"). Nosso motor_desc também traz bateria de 72,7 kWh (a página Especificação traz 83 kWh; a página do modelo ainda diz 72,7 kWh)"
+ },
+ {
+  "grupo": "gac-geely-zeekr-leapmotor-avatr",
+  "versao": "GAC GS4 Hybrid Elite",
+  "version_id": "gac-gs4-hybrid-elite",
+  "coluna": "potencia_cv",
+  "nosso": 234,
+  "oficial": 235,
+  "detalhe": "Especificação: \"Potência combinada (kw): 173 (235 cv)\""
+ },
+ {
+  "grupo": "gac-geely-zeekr-leapmotor-avatr",
+  "versao": "GAC GS4 Hybrid Premium",
+  "version_id": "gac-gs4-hybrid-premium",
+  "coluna": "potencia_cv",
+  "nosso": 234,
+  "oficial": 235,
+  "detalhe": "Especificação: \"Potência combinada (kw): 173 (235 cv)\""
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Chery Tiggo 7 Pro PHEV 1.5 Turbo DHT",
+  "version_id": "chery-tiggo-7-pro-phev-1-5-turbo-dht",
+  "coluna": "potencia_cv",
+  "nosso": 135,
+  "oficial": 279,
+  "detalhe": "Ficha: \"Potência máxima (cv) 135\" é só do motor 1.5 a combustão; \"Potência máxima combinada - cv 279\" (motor_desc já cita 279 cv combinados)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Chery Tiggo 8 Pro PHEV 1.5 Turbo DHT",
+  "version_id": "chery-tiggo-8-pro-phev-1-5-turbo-dht",
+  "coluna": "potencia_cv",
+  "nosso": 135,
+  "oficial": 279,
+  "detalhe": "Ficha: \"Potência máxima (cv) 135\" é só do motor 1.5 a combustão; \"Potência máxima combinada - cv 279\" (motor_desc já cita 279 cv combinados)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Haval H6 HEV One",
+  "version_id": "haval",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Flex (etanol/gasolina) — híbrido",
+  "detalhe": "Ficha: \"Motor (combustão) 1.5 Turbo Flex\"; release 09/06/2026: \"Todas as versões do modelo passam a aceitar etanol e gasolina\" (não é MHEV; base usa o tipo de híbrido no campo combustível)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Haval H6 HEV2",
+  "version_id": "haval-hev2",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Flex (etanol/gasolina) — híbrido",
+  "detalhe": "Ficha: \"Motor (combustão) 1.5 Turbo Flex\"; release 09/06/2026: \"Todas as versões do modelo passam a aceitar etanol e gasolina\" (não é MHEV; base usa o tipo de híbrido no campo combustível)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Haval H6 PHEV19",
+  "version_id": "haval-phev19",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Flex (etanol/gasolina) — híbrido plug-in",
+  "detalhe": "Ficha: \"Motor (combustão) 1.5 Turbo Flex\"; release 09/06/2026: \"Todas as versões do modelo passam a aceitar etanol e gasolina\" (não é MHEV; base usa o tipo de híbrido no campo combustível)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Haval H6 PHEV35 AWD",
+  "version_id": "haval-phev35-awd",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Flex (etanol/gasolina) — híbrido plug-in",
+  "detalhe": "Ficha: \"Motor (combustão) 1.5 Turbo Flex\"; release 09/06/2026: \"Todas as versões do modelo passam a aceitar etanol e gasolina\" (não é MHEV; base usa o tipo de híbrido no campo combustível)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Haval H6 GT PHEV AWD",
+  "version_id": "haval-gt-phev-awd",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Flex (etanol/gasolina) — híbrido plug-in",
+  "detalhe": "Ficha: \"Motor (combustão) 1.5 Turbo Flex\"; release 09/06/2026: \"Todas as versões do modelo passam a aceitar etanol e gasolina\" (não é MHEV; base usa o tipo de híbrido no campo combustível)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Haval H7 1.5 Turbo PHEV Flex AWD",
+  "version_id": "gwm-haval-h7-1-5-turbo-phev-flex-awd",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Flex (etanol/gasolina) — híbrido plug-in",
+  "detalhe": "Ficha: \"Motor 1.5 Turbo Flex (PHEV)\"; release: \"potência combinada de 370 cv ... tanto no uso de gasolina quanto de etanol\""
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Tank 300 2.0 Hi4-T PHEV Flex 4x4",
+  "version_id": "gwm-tank-300-2-0-hi4-t-phev-flex-4x4",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Flex (etanol/gasolina) — híbrido plug-in",
+  "detalhe": "Ficha: \"Motor (combustão) 2.0 Turbo Flex\"; consumo declarado com gasolina e com etanol"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Tank 300 TerraForce 2.0 Hi4-T PHEV Flex 4x4",
+  "version_id": "gwm-tank-300-terraforce-2-0-hi4-t-phev-flex-4x4",
+  "coluna": "combustivel",
+  "nosso": "Híbrido plug-in",
+  "oficial": "Flex (etanol/gasolina) — híbrido plug-in",
+  "detalhe": "Ficha: \"Motor (combustão) 2.0 Turbo Flex\"; consumo declarado com gasolina e com etanol"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "GWM Ora 5 58,3 kWh",
+  "version_id": "gwm-ora-5-58-3-kwh",
+  "coluna": "cambio",
+  "nosso": "Automático",
+  "oficial": "redução única (velocidade única)",
+  "detalhe": "Ficha: \"Transmissão — Tipo: De velocidade única, para veículos elétricos\""
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Jaecoo Jaecoo 5 SHS-H Comfort",
+  "version_id": "jaecoo-jaecoo-5-shs-h-comfort",
+  "coluna": "cambio",
+  "nosso": "Automático",
+  "oficial": "híbrido dedicado (1DHT)",
+  "detalhe": "Página: \"Motor 1.5TGDI + EV + 1DHT com 224cv\""
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Jaecoo Jaecoo 5 SHS-H Prestige",
+  "version_id": "jaecoo-jaecoo-5-shs-h-prestige",
+  "coluna": "cambio",
+  "nosso": "Automático",
+  "oficial": "híbrido dedicado (1DHT)",
+  "detalhe": "Página: \"Motor 1.5TGDI + EV + 1DHT com 224cv\""
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Omoda Omoda 5 SHS-H Luxury",
+  "version_id": "omoda-omoda-5-shs-h-luxury",
+  "coluna": "potencia_cv",
+  "nosso": 135,
+  "oficial": 224,
+  "detalhe": "Página: \"224cv Potência Combinada\"; os 135 cv da base são só do motor 1.5 a combustão (motor_desc já cita 224 cv combinados)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Omoda Omoda 5 SHS-H Prestige",
+  "version_id": "omoda-omoda-5-shs-h-prestige",
+  "coluna": "potencia_cv",
+  "nosso": 135,
+  "oficial": 224,
+  "detalhe": "Página: \"224cv Potência Combinada\"; os 135 cv da base são só do motor 1.5 a combustão (motor_desc já cita 224 cv combinados)"
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Omoda E5 Elite",
+  "version_id": "omoda-e5-elite",
+  "coluna": "autonomia.eletrica_inmetro_km (Inmetro carregado)",
+  "nosso": 345,
+  "oficial": 278,
+  "detalhe": "O cruzamento PBEV casou o Novo E5 com a linha antiga \"OMODA E5 --\" (345 km); a página do Novo E5 diz \"Segundo o INMETRO: 278 km na versão Elite\""
+ },
+ {
+  "grupo": "gwm-caoachery",
+  "versao": "Omoda E5 Prestige",
+  "version_id": "omoda-e5-prestige",
+  "coluna": "autonomia.eletrica_inmetro_km (Inmetro carregado)",
+  "nosso": 345,
+  "oficial": 320,
+  "detalhe": "O cruzamento PBEV casou o Novo E5 com a linha antiga \"OMODA E5 --\" (345 km); a página do Novo E5 diz \"320 km na versão Prestige\""
+ },
+ {
+  "grupo": "honda-nissan-suzuki",
+  "versao": "Suzuki e Vitara 4Style 4x4 ALLGRIP-e",
+  "version_id": "suzuki-e-vitara-4style-4x4-allgrip-e",
+  "coluna": "cambio",
+  "nosso": "Automático (elétrico/DHT)",
+  "oficial": "redução única (acionamento elétrico de velocidade única)",
+  "detalhe": "Ficha: \"Transmissão — Tipo: Acionamento elétrico de velocidade única\"; não é DHT (câmbio de híbrido)"
+ },
+ {
+  "grupo": "honda-nissan-suzuki",
+  "versao": "Honda Civic Type R",
+  "version_id": "civic-type-r",
+  "coluna": "potencia_cv",
+  "nosso": 315,
+  "oficial": 297,
+  "detalhe": "Ficha técnica oficial Honda Brasil (lançamento, \"Civic Type R 2023\"): \"Potência: 297 cv @ 6.500 rpm\"; 315 cv é número de outros mercados/revistas; Honda Brasil não publicou dado do Type R 2027"
+ },
+ {
+  "grupo": "honda-nissan-suzuki",
+  "versao": "Honda CR-V Advanced Hybrid 2.0 AWD",
+  "version_id": "honda-cr-v-advanced-hybrid-2-0-awd",
+  "coluna": "potencia_cv",
+  "nosso": 207,
+  "oficial": 184,
+  "detalhe": "Ficha oficial Honda Brasil: motor elétrico de tração \"184 cv\" e motor a combustão \"147 cv a 6.100 rpm\"; a Honda Brasil não declara potência combinada de 207 cv"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Hyundai Creta Action 1.0 TGDi",
+  "version_id": "creta",
+  "coluna": "potencia_cv",
+  "nosso": 115,
+  "oficial": "120 (E) na ficha de imprensa / 115 no catálogo",
+  "detalhe": "Ficha técnica de imprensa 26/27: \"Potência máxima (cv @ RPM) 120 (E) | 115 (G) @6,000 RPM\"; catálogos 26/27: \"115 (E) | 115 (G) @ 6.000 rpm\" — fontes oficiais não batem (ver pendências)"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Hyundai Creta Comfort 1.0 TGDi",
+  "version_id": "creta-comfort-1-0-tgdi",
+  "coluna": "potencia_cv",
+  "nosso": 115,
+  "oficial": "120 (E) na ficha de imprensa / 115 no catálogo",
+  "detalhe": "Ficha técnica de imprensa 26/27: \"Potência máxima (cv @ RPM) 120 (E) | 115 (G) @6,000 RPM\"; catálogos 26/27: \"115 (E) | 115 (G) @ 6.000 rpm\" — fontes oficiais não batem (ver pendências)"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Hyundai Creta Limited 1.0 TGDi",
+  "version_id": "creta-limited-1-0-tgdi",
+  "coluna": "potencia_cv",
+  "nosso": 115,
+  "oficial": "120 (E) na ficha de imprensa / 115 no catálogo",
+  "detalhe": "Ficha técnica de imprensa 26/27: \"Potência máxima (cv @ RPM) 120 (E) | 115 (G) @6,000 RPM\"; catálogos 26/27: \"115 (E) | 115 (G) @ 6.000 rpm\" — fontes oficiais não batem (ver pendências)"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Hyundai Creta Platinum 1.0 TGDi",
+  "version_id": "creta-platinum-1-0-tgdi",
+  "coluna": "potencia_cv",
+  "nosso": 115,
+  "oficial": "120 (E) na ficha de imprensa / 115 no catálogo",
+  "detalhe": "Ficha técnica de imprensa 26/27: \"Potência máxima (cv @ RPM) 120 (E) | 115 (G) @6,000 RPM\"; catálogos 26/27: \"115 (E) | 115 (G) @ 6.000 rpm\" — fontes oficiais não batem (ver pendências)"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Kia EV5 Land",
+  "version_id": "kia-ev5-land",
+  "coluna": "cambio",
+  "nosso": "Automático (elétrico/DHT)",
+  "oficial": "Sistema de engrenagem de redução (N° de marchas N/A)",
+  "detalhe": "Ficha técnica EV5: \"TRANSMISSÃO Tipo Sistema de engrenagem de redução; N° de marchas N/A\" (a etiqueta Inmetro diz \"Transmissão Automática\"); \"DHT\" (transmissão de híbrido) não aparece nas fontes da Kia"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Kia EV9 GT-Line",
+  "version_id": "kia-ev9-gt-line",
+  "coluna": "cambio",
+  "nosso": "Automático (elétrico/DHT)",
+  "oficial": "Sistema de engrenagem de redução (N° de marchas N/A)",
+  "detalhe": "Itens de série EV9: \"Transmissão - Sistema de engrenagem de redução\" ● ●; ficha GTL: \"N° de marchas N/A\" — \"DHT\" (transmissão de híbrido) não aparece nas fontes da Kia"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Kia EV9 GT-Line Fosco",
+  "version_id": "kia-ev9-gt-line-fosco",
+  "coluna": "cambio",
+  "nosso": "Automático (elétrico/DHT)",
+  "oficial": "Sistema de engrenagem de redução (N° de marchas N/A)",
+  "detalhe": "Itens de série EV9: \"Transmissão - Sistema de engrenagem de redução\" ● ●; ficha GTL: \"N° de marchas N/A\" — \"DHT\" (transmissão de híbrido) não aparece nas fontes da Kia"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Kia Sportage EX Prestige 1.6 T-GDI MHEV DCT",
+  "version_id": "kia-sportage-ex-prestige-1-6-t-gdi-mhev-dct",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina",
+  "detalhe": "Ficha técnica Sportage: \"COMBUSTÍVEL Gasolina\"; itens de série: \"Motor Gamma II 1.6 L Smartstream Turbo com Injeção Direta (T-GDI) Híbrido de 48V, 178 cv, 27 kgm - Gasolina\" — híbrido leve (MHEV) a gasolina, não flex"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Kia Stonic SX 1.0 TGDI MHEV DCT",
+  "version_id": "kia-stonic-sx-1-0-tgdi-mhev-dct",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina",
+  "detalhe": "Ficha técnica Stonic: \"COMBUSTÍVEL Gasolina\"; itens de série: \"Motor Kappa 1.0 L Smartstream Turbo, com Injeção Direta (T-GDI) híbrido de 48V, 120 CV, 20,4 kgm - Gasolina\" — híbrido leve (MHEV) a gasolina, não flex"
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Kia Tasman GL 2.2 Turbodiesel 4x4 AT",
+  "version_id": "kia-tasman-gl-2-2-turbodiesel-4x4-at",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (2H / 4A / 4H / 4L)",
+  "detalhe": "Itens de série Tasman: \"Tração 4x4 com reduzida, botão de seleção no console central e acionamento da trava do diferencial automático\"; \"Botão seletor de tipo de tração no console central (2H / 4A / 4H / 4L)\"; ficha GL: \"TRAÇÃO 4X4 com reduzida\""
+ },
+ {
+  "grupo": "hyundai-kia",
+  "versao": "Kia Tasman PGL 2.2 Turbodiesel 4x4 AT",
+  "version_id": "kia-tasman-pgl-2-2-turbodiesel-4x4-at",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (2H / 4A / 4H / 4L)",
+  "detalhe": "Itens de série Tasman: \"Tração 4x4 com reduzida, botão de seleção no console central e acionamento da trava do diferencial automático\"; \"Botão seletor de tipo de tração no console central (2H / 4A / 4H / 4L)\"; ficha GL: \"TRAÇÃO 4X4 com reduzida\""
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Avenger Altitude T200 MHEV CVT",
+  "version_id": "jeep-avenger-altitude-t200-mhev-cvt",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 12V",
+  "detalhe": "Sem divergência na coluna: fichas 27/27 dizem \"Combustível: gasolina / etanol\" e \"Motor elétrico — Tensão: 12V\"; o híbrido leve não muda o combustível (continua Flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Avenger Longitude T200 MHEV CVT",
+  "version_id": "jeep-avenger-longitude-t200-mhev-cvt",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 12V",
+  "detalhe": "Sem divergência na coluna: fichas 27/27 dizem \"Combustível: gasolina / etanol\" e \"Motor elétrico — Tensão: 12V\"; o híbrido leve não muda o combustível (continua Flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Avenger Limited T200 MHEV CVT",
+  "version_id": "jeep-avenger-limited-t200-mhev-cvt",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 12V",
+  "detalhe": "Sem divergência na coluna: fichas 27/27 dizem \"Combustível: gasolina / etanol\" e \"Motor elétrico — Tensão: 12V\"; o híbrido leve não muda o combustível (continua Flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Avenger Longitude 85 Anos T200 MHEV CVT",
+  "version_id": "jeep-avenger-longitude-85-anos-t200-mhev-cvt",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 12V",
+  "detalhe": "Sem divergência na coluna: release 85 Anos diz \"sistema MHEV de 12V da Stellantis, com o reconhecido motor turbo T200\" (motor flex, mesmo das demais versões)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Compass Longitude Night Eagle 1.3 Turbo MHEV",
+  "version_id": "compass-longitude-night-eagle-1-3-turbo-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 48V",
+  "detalhe": "Sem divergência na coluna: ficha 27/27 diz \"Combustível: gasolina / etanol\" e \"Motor elétrico — Tensão: 48V\"; o híbrido leve não muda o combustível (continua Flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Compass Série S 1.3 Turbo MHEV",
+  "version_id": "compass-serie-s-1-3-turbo-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 48V",
+  "detalhe": "Sem divergência na coluna: ficha 27/27 diz \"Combustível: gasolina / etanol\" e \"Motor elétrico — Tensão: 48V\"; o híbrido leve não muda o combustível (continua Flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Commander Limited T270 MHEV",
+  "version_id": "jeep-commander-limited-t270-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 48V",
+  "detalhe": "Sem divergência na coluna: ficha 26/27 diz \"Combustíveis: Gasolina e etanol\" e \"Motor elétrico — Tensão: 48V\"; o híbrido leve não muda o combustível (continua Flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Commander Overland T270 MHEV",
+  "version_id": "jeep-commander-overland-t270-mhev",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 48V",
+  "detalhe": "Sem divergência na coluna: ficha 26/27 diz \"Combustíveis: Gasolina e etanol\" e \"Motor elétrico — Tensão: 48V\"; o híbrido leve não muda o combustível (continua Flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Commander Overland 2.2 Turbodiesel 4x4",
+  "version_id": "jeep-commander-overland-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (Active Drive Low)",
+  "detalhe": "Ficha do site: \"TRAÇÃO 4X4\" e \"Tração 4x4 Active Drive Low\"/\"Modo 4x4 Low\"; site Motores Jeep: \"tração 4x4 com reduzida\"; ficha de imprensa: \"Tração: Integral\" — é 4x4 sob demanda com reduzida"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Commander Blackhawk Hurricane 2.0 Turbo 4x4",
+  "version_id": "jeep-commander-blackhawk-hurricane-2-0-turbo-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 com reduzida (Active Drive Low)",
+  "detalhe": "Ficha do site: \"TRAÇÃO 4X4\" e \"Tração 4x4 Active Drive Low\"/\"Modo 4x4 Low\"; site Motores Jeep: \"tração 4x4 com reduzida\"; ficha de imprensa: \"Tração: Integral\" — é 4x4 sob demanda com reduzida"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Renegade Longitude T270 MHEV AT6",
+  "version_id": "jeep-renegade-longitude-t270-mhev-at6",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 48V",
+  "detalhe": "Sem divergência na coluna: ficha 2027 diz \"MOTOR 1.3 L GSE TURBO FLEX MHEV\" (flex com híbrido leve de 48V; site: \"recarregar a bateria de 48 V\")"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Renegade Sahara T270 MHEV AT6",
+  "version_id": "jeep-renegade-sahara-t270-mhev-at6",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 48V",
+  "detalhe": "Sem divergência na coluna: ficha 2027 diz \"MOTOR 1.3 L GSE TURBO FLEX MHEV\" (flex com híbrido leve de 48V; site: \"recarregar a bateria de 48 V\")"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Renegade Longitude 85 Anos T270 MHEV AT6",
+  "version_id": "jeep-renegade-longitude-85-anos-t270-mhev-at6",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Flex (gasolina/etanol) com híbrido leve MHEV 48V",
+  "detalhe": "Sem divergência na coluna: release diz \"Tecnologia MHEV 48V\" no Renegade Longitude (motor T270 flex)"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Renegade Willys T270 4x4 AT9",
+  "version_id": "jeep-renegade-willys-t270-4x4-at9",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda com modo 4x4 Low",
+  "detalhe": "Ficha: \"4X4\", \"Modo 4x4 Low e seletor de terrenos\", \"Tração 4x4 com bloqueio eletrônico de diferencial\"; site: sistema que identifica o terreno e \"aciona e desativa automaticamente\" a tração 4x4 — não é integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Wrangler Rubicon 2.0 Turbo 4x4",
+  "version_id": "jeep-wrangler-rubicon-2-0-turbo-4x4",
+  "coluna": "ano_modelo",
+  "nosso": null,
+  "oficial": 2026,
+  "detalhe": "Página do modelo: \"O interior aprimorado do Wrangler 2026...\" / \"O interior do Gladiator 2026...\""
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Wrangler Rubicon 2.0 Turbo 4x4",
+  "version_id": "jeep-wrangler-rubicon-2-0-turbo-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 Rock-Trac com reduzida (4:1)",
+  "detalhe": "Página do modelo: \"Tração 4x4 Rock-Trac ... caixa de transferência de cinco posições, com relação reduzida de 4:1\"; site Motores Jeep: \"tração 4x4 com reduzida\" — 4x4 de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Gladiator Rubicon 3.6 V6 4x4",
+  "version_id": "jeep-gladiator-rubicon-3-6-v6-4x4",
+  "coluna": "ano_modelo",
+  "nosso": null,
+  "oficial": 2026,
+  "detalhe": "Página do modelo: \"O interior aprimorado do Wrangler 2026...\" / \"O interior do Gladiator 2026...\""
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "Jeep Gladiator Rubicon 3.6 V6 4x4",
+  "version_id": "jeep-gladiator-rubicon-3-6-v6-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 Rock-Trac com reduzida (4:1)",
+  "detalhe": "Página do modelo: \"Tração 4x4 Rock-Trac ... caixa de transferência de cinco posições, com relação reduzida de 4:1\"; site Motores Jeep: \"tração 4x4 com reduzida\" — 4x4 de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Rampage Big Horn 2.2 Turbodiesel 4x4",
+  "version_id": "ram-rampage-big-horn-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda (4x4 Auto) com reduzida",
+  "detalhe": "Rampage: \"tração 4x4 Auto ... modo 4x4 Low\"; fichas: \"4X4 sob demanda com modo reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Rampage Laramie 2.0 Hurricane 4 Turbo Flex 4x4",
+  "version_id": "ram-rampage-laramie-2-0-hurricane-4-turbo-flex-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda (4x4 Auto) com reduzida",
+  "detalhe": "Rampage: \"tração 4x4 Auto ... modo 4x4 Low\"; fichas: \"4X4 sob demanda com modo reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Rampage Laramie 2.2 Turbodiesel 4x4",
+  "version_id": "ram-rampage-laramie-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda (4x4 Auto) com reduzida",
+  "detalhe": "Rampage: \"tração 4x4 Auto ... modo 4x4 Low\"; fichas: \"4X4 sob demanda com modo reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Rampage R/T 2.0 Hurricane 4 Turbo Flex 4x4",
+  "version_id": "ram-rampage-r-t-2-0-hurricane-4-turbo-flex-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda (4x4 Auto) com reduzida",
+  "detalhe": "Rampage: \"tração 4x4 Auto ... modo 4x4 Low\"; fichas: \"4X4 sob demanda com modo reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Rampage Rebel 2.2 Turbodiesel 4x4",
+  "version_id": "ram-rampage-rebel-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda (4x4 Auto) com reduzida",
+  "detalhe": "Rampage: \"tração 4x4 Auto ... modo 4x4 Low\"; fichas: \"4X4 sob demanda com modo reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Rampage Rebel Ignition 2.0 Hurricane 4 Turbo Flex 4x4",
+  "version_id": "ram-rampage-rebel-ignition-2-0-hurricane-4-turbo-flex-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda (4x4 Auto) com reduzida",
+  "detalhe": "Rampage: \"tração 4x4 Auto ... modo 4x4 Low\"; fichas: \"4X4 sob demanda com modo reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Rampage Rebel Ignition 2.2 Turbodiesel 4x4",
+  "version_id": "ram-rampage-rebel-ignition-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 sob demanda (4x4 Auto) com reduzida",
+  "detalhe": "Rampage: \"tração 4x4 Auto ... modo 4x4 Low\"; fichas: \"4X4 sob demanda com modo reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Dakota Big Horn 2.2 Turbodiesel 4x4",
+  "version_id": "ram-dakota-big-horn-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 automática (sob demanda) com 4x2 e reduzida",
+  "detalhe": "Dakota: \"Tração: 4x4 automática com modo 4x2 e 4x4 com reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Dakota Warlock 2.2 Turbodiesel 4x4",
+  "version_id": "ram-dakota-warlock-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 automática (sob demanda) com 4x2 e reduzida",
+  "detalhe": "Dakota: \"Tração: 4x4 automática com modo 4x2 e 4x4 com reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Dakota Laramie 2.2 Turbodiesel 4x4",
+  "version_id": "ram-dakota-laramie-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 automática (sob demanda) com 4x2 e reduzida",
+  "detalhe": "Dakota: \"Tração: 4x4 automática com modo 4x2 e 4x4 com reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM Dakota Laramie Night Edition 2.2 Turbodiesel 4x4",
+  "version_id": "ram-dakota-laramie-night-edition-2-2-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 automática (sob demanda) com 4x2 e reduzida",
+  "detalhe": "Dakota: \"Tração: 4x4 automática com modo 4x2 e 4x4 com reduzida\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM 1500 Big Horn 3.0 Hurricane 6 Biturbo 4x4",
+  "version_id": "ram-1500-big-horn-3-0-hurricane-6-biturbo-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 Auto (sob demanda) com modos 4x2, 4x4 High e 4x4 Low (reduzida)",
+  "detalhe": "1500: \"tração 4x4 Auto acopla automaticamente o eixo dianteiro ... 4x2 ... 4x4 High ... 4x4 Low\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM 1500 Laramie 3.0 Hurricane 6 Biturbo 4x4",
+  "version_id": "ram-1500-laramie-3-0-hurricane-6-biturbo-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 Auto (sob demanda) com modos 4x2, 4x4 High e 4x4 Low (reduzida)",
+  "detalhe": "1500: \"tração 4x4 Auto acopla automaticamente o eixo dianteiro ... 4x2 ... 4x4 High ... 4x4 Low\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM 1500 Laramie Night Edition 3.0 Hurricane 6 Biturbo 4x4",
+  "version_id": "ram-1500-laramie-night-edition-3-0-hurricane-6-biturbo-4x",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 Auto (sob demanda) com modos 4x2, 4x4 High e 4x4 Low (reduzida)",
+  "detalhe": "1500: \"tração 4x4 Auto acopla automaticamente o eixo dianteiro ... 4x2 ... 4x4 High ... 4x4 Low\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM 2500 Laramie 6.7 Cummins Turbodiesel 4x4",
+  "version_id": "ram-2500-laramie-6-7-cummins-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 part-time com reduzida (4x2, 4x4 High, 4x4 Low)",
+  "detalhe": "2500: \"Caixa de transferência: Part-time com comando elétrico; Modos de operação: 4x2, 4x4, 4x4 reduzida e neutro\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM 2500 Laramie Night Edition 6.7 Cummins Turbodiesel 4x4",
+  "version_id": "ram-2500-laramie-night-edition-6-7-cummins-turbodiesel-4x",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 part-time com reduzida (4x2, 4x4 High, 4x4 Low)",
+  "detalhe": "2500: \"Caixa de transferência: Part-time com comando elétrico; Modos de operação: 4x2, 4x4, 4x4 reduzida e neutro\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM 3500 Laramie Night Edition 6.7 Cummins Turbodiesel 4x4",
+  "version_id": "ram-3500-laramie-night-edition-6-7-cummins-turbodiesel-4x",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 part-time com reduzida (4x2, 4x4 High, 4x4 Low)",
+  "detalhe": "3500: \"Caixa de transferência: Part-time com comando elétrico; Modos de operação: 4x2, 4x4, 4x4 reduzida e neutro\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "jeep-ram",
+  "versao": "RAM 3500 Limited Longhorn 6.7 Cummins Turbodiesel 4x4",
+  "version_id": "ram-3500-limited-longhorn-6-7-cummins-turbodiesel-4x4",
+  "coluna": "tracao",
+  "nosso": "Integral",
+  "oficial": "4x4 part-time com reduzida (4x2, 4x4 High, 4x4 Low)",
+  "detalhe": "3500: \"Caixa de transferência: Part-time com comando elétrico; Modos de operação: 4x2, 4x4, 4x4 reduzida e neutro\" — 4x4 sob demanda/de engate com reduzida, não integral permanente"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz CLA 200 AMG Line",
+  "version_id": "mercedes-benz-cla-200-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"CLA 200 AMG Line 25/26  25/26  329.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz CLA Mercedes-AMG CLA 35 4MATIC",
+  "version_id": "mercedes-benz-cla-mercedes-amg-cla-35-4matic",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG CLA 35 4MATIC 25/26  25/26  511.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz Classe C C 200 AMG Line",
+  "version_id": "mercedes-benz-classe-c-c-200-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"C 200 AMG Line 26/26  26/26  396.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz Classe C C 300 AMG Line",
+  "version_id": "mercedes-benz-classe-c-c-300-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"C 300 AMG Line 26/26  26/26  459.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz Classe E E 300 Exclusive",
+  "version_id": "mercedes-benz-classe-e-e-300-exclusive",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"E 300 Exclusive 26/27  26/27  629.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz Classe G Mercedes-AMG G 63 4MATIC",
+  "version_id": "mercedes-benz-classe-g-mercedes-amg-g-63-4matic",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG G 63 4MATIC 26/27  26/27  2.153.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz Classe G Mercedes-AMG G 63 4MATIC MANUFAKTUR",
+  "version_id": "mercedes-benz-classe-g-mercedes-amg-g-63-4matic-manufaktur",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG G 63 4MATIC MANUFAKTUR 26/27  26/27  2.337.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz Classe V V 300 Avantgarde",
+  "version_id": "mercedes-benz-classe-v-v-300-avantgarde",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"V 300 Avantgarde 26/27  26/27  729.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz Classe V V 300 Elegance",
+  "version_id": "mercedes-benz-classe-v-v-300-elegance",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"V 300 Elegance 26/27  26/27  834.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLA 200 AMG Line",
+  "version_id": "mercedes-benz-gla-200-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLA 200 AMG Line 26/27  26/27  387.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLA 200 Night Edition",
+  "version_id": "mercedes-benz-gla-200-night-edition",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLA 200 Night Edition 26/27  26/27  392.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLA 200 Progressive",
+  "version_id": "mercedes-benz-gla-200-progressive",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLA 200 Progressive 26/27  26/27  362.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLA Mercedes-AMG GLA 35 4MATIC",
+  "version_id": "mercedes-benz-gla-mercedes-amg-gla-35-4matic",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLA 35 4MATIC 26/27  26/27  552.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLB 220 4MATIC AMG Line",
+  "version_id": "mercedes-benz-glb-220-4matic-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLB 220 4MATIC AMG Line 26/26  26/26  411.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLB 220 4MATIC Night Edition",
+  "version_id": "mercedes-benz-glb-220-4matic-night-edition",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLB 220 4MATIC Night Edition 26/26  26/26  416.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLB 220 4MATIC Progressive",
+  "version_id": "mercedes-benz-glb-220-4matic-progressive",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLB 220 4MATIC Progressive 26/26  26/26  381.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLB Mercedes-AMG GLB 35 4MATIC",
+  "version_id": "mercedes-benz-glb-mercedes-amg-glb-35-4matic",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLB 35 4MATIC 26/26  26/26  562.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLC 300 4MATIC AMG Line",
+  "version_id": "mercedes-benz-glc-300-4matic-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLC 300 4MATIC AMG Line 26/27  26/27  532.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLC Mercedes-AMG GLC 43 4MATIC",
+  "version_id": "mercedes-benz-glc-mercedes-amg-glc-43-4matic",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLC 43 4MATIC 26/26  26/26  699.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLC Mercedes-AMG GLC 53 4MATIC+",
+  "version_id": "mercedes-benz-glc-mercedes-amg-glc-53-4matic",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLC 53 4MATIC+ 26/27  26/27  729.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLC Coupé GLC 300 4MATIC Coupé AMG Line",
+  "version_id": "mercedes-benz-glc-coupe-glc-300-4matic-coupe-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLC 300 4MATIC Coupé AMG Line 26/27  26/27  547.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLC Coupé Mercedes-AMG GLC 43 4MATIC Coupé",
+  "version_id": "mercedes-benz-glc-coupe-mercedes-amg-glc-43-4matic-coupe",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLC 43 4MATIC Coupé 26/26  26/26  720.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLC Coupé Mercedes-AMG GLC 53 4MATIC+ Coupé",
+  "version_id": "mercedes-benz-glc-coupe-mercedes-amg-glc-53-4matic-coupe",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLC 53 4MATIC+ Coupé 26/27  26/27  749.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLE Mercedes-AMG GLE 53 4MATIC+",
+  "version_id": "mercedes-benz-gle-mercedes-amg-gle-53-4matic",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLE 53 4MATIC+ 26/26  26/26  921.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLE Coupé Mercedes-AMG GLE 63 S 4MATIC+ Coupé",
+  "version_id": "mercedes-benz-gle-coupe-mercedes-amg-gle-63-s-4matic-coupe",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"Mercedes-AMG GLE 63 S 4MATIC+ Coupé 26/26  26/26  1.332.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mercedes",
+  "versao": "Mercedes-Benz GLS 450 4MATIC AMG Line",
+  "version_id": "mercedes-benz-gls-450-4matic-amg-line",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Gasolina/Híbrido Leve",
+  "detalhe": "Tabela de preços out/2026: \"GLS 450 4MATIC AMG Line 26/26  26/26  1.070.900  Gasolina/Híbrido Leve\" — a montadora não declara versão flex"
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "BAIC Arcfox T1 Pro",
+  "version_id": "baic-arcfox-t1-pro",
+  "coluna": "cambio",
+  "nosso": "Automático",
+  "oficial": "redução única (sem câmbio)",
+  "detalhe": "\"Não tem câmbio, o motor é acoplado diretamente a um redutor e diferencial\"; nas outras marcas do grupo os elétricos estão como \"Automático (elétrico/DHT)\""
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "BAIC Arcfox T1 Max",
+  "version_id": "baic-arcfox-t1-max",
+  "coluna": "cambio",
+  "nosso": "Automático",
+  "oficial": "redução única (sem câmbio)",
+  "detalhe": "\"Não tem câmbio, o motor é acoplado diretamente a um redutor e diferencial\"; nas outras marcas do grupo os elétricos estão como \"Automático (elétrico/DHT)\""
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour T1 Advance 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-t1-advance-1-5-tgdi-phev-dht",
+  "coluna": "potencia_cv",
+  "nosso": 315,
+  "oficial": null,
+  "detalhe": "Nossa base usa 315 cv \"combinados\"; o site oficial não declara potência combinada: ficha 2027 dá motor a combustão 135 cv + motor elétrico 204 cv, e a página diz \"Potência total instalada de 339 cv * (simples soma das potências individuais, não disponível simultaneamente)\". O valor de 315 cv só aparece na imprensa (provavelmente do release de lançamento, não conferido)"
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour T1 Premium 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-t1-premium-1-5-tgdi-phev-dht",
+  "coluna": "potencia_cv",
+  "nosso": 315,
+  "oficial": null,
+  "detalhe": "Nossa base usa 315 cv \"combinados\"; o site oficial não declara potência combinada: ficha 2027 dá motor a combustão 135 cv + motor elétrico 204 cv, e a página diz \"Potência total instalada de 339 cv * (simples soma das potências individuais, não disponível simultaneamente)\". O valor de 315 cv só aparece na imprensa (provavelmente do release de lançamento, não conferido)"
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour T2 Advance 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-t2-advance-1-5-tgdi-phev-dht",
+  "coluna": "potencia_cv",
+  "nosso": 320,
+  "oficial": null,
+  "detalhe": "Nossa base usa 320 cv \"combinados\"; o site oficial não declara potência combinada: ficha 2027 dá motor a combustão 135 cv + motores elétricos 102 cv e 122 cv, e a página diz \"Potência total instalada de 359 cv * (simples soma ... não disponível simultaneamente)\""
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour T2 Premium 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-t2-premium-1-5-tgdi-phev-dht",
+  "coluna": "potencia_cv",
+  "nosso": 320,
+  "oficial": null,
+  "detalhe": "Nossa base usa 320 cv \"combinados\"; o site oficial não declara potência combinada: ficha 2027 dá motor a combustão 135 cv + motores elétricos 102 cv e 122 cv, e a página diz \"Potência total instalada de 359 cv * (simples soma ... não disponível simultaneamente)\""
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour T2 XWD 4x4 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-t2-xwd-4x4-1-5-tgdi-phev-dht",
+  "coluna": "potencia_cv",
+  "nosso": 597,
+  "oficial": null,
+  "detalhe": "Nossa base usa 597 cv; a página oficial chama 597 cv de \"Potência total instalada * (simples soma das potências e torques individuais, não disponível simultaneamente)\" — não é potência combinada. Ficha: combustão 135 cv + elétricos 102, 122 e 238 cv"
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour S06 Advance 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-s06-advance-1-5-tgdi-phev-dht",
+  "coluna": "motor_desc",
+  "nosso": "1.5 turbo 135 cv + motor elétrico 204 cv, 315 cv combinados",
+  "oficial": null,
+  "detalhe": "Página S06: \"Potência total instalada de 339 cv * (simples soma das potências individuais, não disponível simultaneamente)\"; a Jetour não publica potência combinada (nem 315 cv)"
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour S06 Premium 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-s06-premium-1-5-tgdi-phev-dht",
+  "coluna": "motor_desc",
+  "nosso": "1.5 turbo 135 cv + motor elétrico 204 cv, 315 cv combinados",
+  "oficial": null,
+  "detalhe": "Página S06: \"Potência total instalada de 339 cv * (simples soma das potências individuais, não disponível simultaneamente)\"; a Jetour não publica potência combinada (nem 315 cv)"
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "Jetour S08 Premium 1.5 TGDI PHEV DHT",
+  "version_id": "jetour-s08-premium-1-5-tgdi-phev-dht",
+  "coluna": "motor_desc",
+  "nosso": "1.5 turbo 135 cv + motor elétrico 204 cv, 339 cv combinados",
+  "oficial": null,
+  "detalhe": "Ficha/página S08: \"Potência total instalada 339 cv* — simples soma das potências individuais, potência não disponível simultaneamente\"; não é potência combinada"
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "MG MG4 Comfort",
+  "version_id": "mg-mg4-comfort",
+  "coluna": "potencia_cv",
+  "nosso": 204,
+  "oficial": 190,
+  "detalhe": "Ficha MG4, coluna Comfort RWD 64kWh: \"Potência máxima (cv) 190\" / \"Potência máxima líquida (kW) 140\"; página: \"MG4 Comfort ... Com motor de 190 cv, tração traseira e bateria de 64 kWh\". Nosso motor_desc: \"elétrico traseiro 204 cv\""
+ },
+ {
+  "grupo": "mg-jac-jetour-changan-baic",
+  "versao": "MG S5 Luxury",
+  "version_id": "mg-s5-luxury",
+  "coluna": "potencia_cv",
+  "nosso": 305,
+  "oficial": 205,
+  "detalhe": "Ficha MGS5 (Comfort e Luxury RWD 62kWh): \"Potência máxima (cv) 205\" / \"Potência máxima líquida (kW) 151\". Nosso motor_desc: \"elétrico 305 cv (bateria 62 kWh)\""
+ },
+ {
+  "grupo": "mitsubishi",
+  "versao": "Mitsubishi Outlander HPE-S 2.4 PHEV 4x4",
+  "version_id": "mitsubishi-outlander-hpe-s-2-4-phev-4x4",
+  "coluna": "cambio",
+  "nosso": "Automático (elétrico/DHT)",
+  "oficial": "redução única, sem marchas",
+  "detalhe": "Ficha técnica, Transmissão: \"Dianteira: Caixa redução com acoplamento, sem marcha\" / \"Traseira: Caixa redução, sem marcha\""
+ },
+ {
+  "grupo": "mitsubishi",
+  "versao": "Mitsubishi Outlander Signature 2.4 PHEV 4x4",
+  "version_id": "mitsubishi-outlander-signature-2-4-phev-4x4",
+  "coluna": "cambio",
+  "nosso": "Automático (elétrico/DHT)",
+  "oficial": "redução única, sem marchas",
+  "detalhe": "Ficha técnica, Transmissão: \"Dianteira: Caixa redução com acoplamento, sem marcha\" / \"Traseira: Caixa redução, sem marcha\""
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Carrera",
+  "version_id": "porsche-911-carrera",
+  "coluna": "potencia_cv",
+  "nosso": 394,
+  "oficial": 401,
+  "detalhe": "Dados técnicos > Unidade de Potência: \"Potência Combustível Brasil: 401 cv\"; a aba \"Equipamento de série\" traz \"Potência máxima: 290 kW (394 cv), torque máximo: 450 Nm.\" (valor nominal)"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Carrera Cabriolet",
+  "version_id": "porsche-911-carrera-cabriolet",
+  "coluna": "potencia_cv",
+  "nosso": 394,
+  "oficial": 401,
+  "detalhe": "Dados técnicos > Unidade de Potência: \"Potência Combustível Brasil: 401 cv\"; a aba \"Equipamento de série\" traz \"Potência máxima: 290 kW (394 cv), torque máximo: 450 Nm.\" (valor nominal)"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Carrera T",
+  "version_id": "porsche-911-carrera-t",
+  "coluna": "potencia_cv",
+  "nosso": 394,
+  "oficial": 401,
+  "detalhe": "Dados técnicos > Unidade de Potência: \"Potência Combustível Brasil: 401 cv\"; a aba \"Equipamento de série\" traz \"Potência máxima: 290 kW (394 cv), torque máximo: 450 Nm.\" (valor nominal)"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Carrera T Cabriolet",
+  "version_id": "porsche-911-carrera-t-cabriolet",
+  "coluna": "potencia_cv",
+  "nosso": 394,
+  "oficial": 401,
+  "detalhe": "Dados técnicos > Unidade de Potência: \"Potência Combustível Brasil: 401 cv\"; a aba \"Equipamento de série\" traz \"Potência máxima: 290 kW (394 cv), torque máximo: 450 Nm.\" (valor nominal)"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Carrera GTS",
+  "version_id": "porsche-911-carrera-gts",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Gasolina",
+  "detalhe": "Cartão do modelo na página: \"911 Carrera GTS | 2027 | Gasolina | Tração traseira | PDK (Automático)\". A própria página descreve o conjunto híbrido (motor a combustão com eTurbo + E-Machine e potência combinada); o rótulo \"Gasolina\" do cartão é o combustível, não o tipo de propulsão — provável diferença de classificação, não erro"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Carrera GTS Cabriolet",
+  "version_id": "porsche-911-carrera-gts-cabriolet",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Gasolina",
+  "detalhe": "Cartão do modelo na página: \"911 Carrera GTS Cabriolet | 2027 | Gasolina | Tração traseira | PDK (Automático)\". A própria página descreve o conjunto híbrido (motor a combustão com eTurbo + E-Machine e potência combinada); o rótulo \"Gasolina\" do cartão é o combustível, não o tipo de propulsão — provável diferença de classificação, não erro"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Targa 4 GTS",
+  "version_id": "porsche-911-targa-4-gts",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Gasolina",
+  "detalhe": "Cartão do modelo na página: \"911 Targa 4 GTS | 2027 | Gasolina | Tração integral | PDK (Automático)\". A própria página descreve o conjunto híbrido (motor a combustão com eTurbo + E-Machine e potência combinada); o rótulo \"Gasolina\" do cartão é o combustível, não o tipo de propulsão — provável diferença de classificação, não erro"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Turbo S",
+  "version_id": "porsche-911-turbo-s",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Gasolina",
+  "detalhe": "Cartão do modelo na página: \"911 Turbo S | 2027 | Gasolina | Tração integral | PDK (Automático)\". A própria página descreve o conjunto híbrido (motor a combustão com eTurbo + E-Machine e potência combinada); o rótulo \"Gasolina\" do cartão é o combustível, não o tipo de propulsão — provável diferença de classificação, não erro"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche 911 Turbo S Cabriolet",
+  "version_id": "porsche-911-turbo-s-cabriolet",
+  "coluna": "combustivel",
+  "nosso": "Híbrido",
+  "oficial": "Gasolina",
+  "detalhe": "Cartão do modelo na página: \"911 Turbo S Cabriolet | 2027 | Gasolina | Tração integral | PDK (Automático)\". A própria página descreve o conjunto híbrido (motor a combustão com eTurbo + E-Machine e potência combinada); o rótulo \"Gasolina\" do cartão é o combustível, não o tipo de propulsão — provável diferença de classificação, não erro"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche Cayenne GTS",
+  "version_id": "porsche-cayenne-gts",
+  "coluna": "potencia_cv",
+  "nosso": 500,
+  "oficial": 510,
+  "detalhe": "Dados técnicos > Unidade de Potência: \"Potência Combustível Brasil: 510 cv\"; a mesma aba traz \"Potência (cv): 500 cv\" (valor nominal)"
+ },
+ {
+  "grupo": "porsche",
+  "versao": "Porsche Cayenne Coupé Cayenne GTS Coupé",
+  "version_id": "porsche-cayenne-coupe-cayenne-gts-coupe",
+  "coluna": "potencia_cv",
+  "nosso": 500,
+  "oficial": 510,
+  "detalhe": "Dados técnicos > Unidade de Potência: \"Potência Combustível Brasil: 510 cv\"; a mesma aba traz \"Potência (cv): 500 cv\" (valor nominal)"
+ },
+ {
+  "grupo": "renault",
+  "versao": "Renault Duster Iconic Plus 1.3 TCe X-Tronic",
+  "version_id": "renault-duster-iconic-plus-1-3-tce-x-tronic",
+  "coluna": "potencia_cv",
+  "nosso": 170,
+  "oficial": 163,
+  "detalhe": "Página da versão Iconic Plus 1.3 TCe: \"Motor 1.3 TCe com 163 cv\", \"potência máxima (cv@rpm) 163@5.500\"; catálogo out/2026: \"163 cv (etanol) @ 5.500 rpm\""
+ },
+ {
+  "grupo": "renault",
+  "versao": "Renault Duster Intense Plus 1.6 SCe MT",
+  "version_id": "renault-duster-intense-plus-1-6-sce-mt",
+  "coluna": "potencia_cv",
+  "nosso": 120,
+  "oficial": 112,
+  "detalhe": "Catálogo out/2026, motor 1.6 SCe: \"109 cv (gasolina) @ 5.500 rpm / 112 cv (etanol) @ 5.500 rpm\""
+ },
+ {
+  "grupo": "renault",
+  "versao": "Renault Duster Intense Plus 1.6 SCe X-Tronic",
+  "version_id": "renault-duster-intense-plus-1-6-sce-x-tronic",
+  "coluna": "potencia_cv",
+  "nosso": 120,
+  "oficial": 112,
+  "detalhe": "Catálogo out/2026, motor 1.6 SCe: \"109 cv (gasolina) @ 5.500 rpm / 112 cv (etanol) @ 5.500 rpm\""
+ },
+ {
+  "grupo": "renault",
+  "versao": "Renault Duster Iconic Plus 1.6 SCe X-Tronic",
+  "version_id": "renault-duster-iconic-plus-1-6-sce-x-tronic",
+  "coluna": "potencia_cv",
+  "nosso": 120,
+  "oficial": 112,
+  "detalhe": "Catálogo out/2026, motor 1.6 SCe: \"109 cv (gasolina) @ 5.500 rpm / 112 cv (etanol) @ 5.500 rpm\""
+ },
+ {
+  "grupo": "renault",
+  "versao": "Renault Boreal Evolution 1.3 TCe EDC",
+  "version_id": "renault-boreal-evolution-1-3-tce-edc",
+  "coluna": "potencia_cv",
+  "nosso": 170,
+  "oficial": 163,
+  "detalhe": "Comparador 2026/2026: \"potência máxima (cv@rpm) 163 cv @5250 RPM\"; versão: \"turbo TCe 163 cv 270 Nm flex\""
+ },
+ {
+  "grupo": "renault",
+  "versao": "Renault Boreal Techno 1.3 TCe EDC",
+  "version_id": "renault-boreal-techno-1-3-tce-edc",
+  "coluna": "potencia_cv",
+  "nosso": 170,
+  "oficial": 163,
+  "detalhe": "Comparador 2026/2026: \"potência máxima (cv@rpm) 163 cv @5250 RPM\"; versão: \"turbo TCe 163 cv 270 Nm flex\""
+ },
+ {
+  "grupo": "renault",
+  "versao": "Renault Boreal Iconic 1.3 TCe EDC",
+  "version_id": "renault-boreal-iconic-1-3-tce-edc",
+  "coluna": "potencia_cv",
+  "nosso": 170,
+  "oficial": 163,
+  "detalhe": "Comparador 2026/2026: \"potência máxima (cv@rpm) 163 cv @5250 RPM\"; versão: \"turbo TCe 163 cv 270 Nm flex\""
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Hitech Electric E-Work EC31 Baú 38,7 kWh",
+  "version_id": "hitech-electric-e-work-ec31-bau-38-7-kwh",
+  "coluna": "potencia_cv",
+  "nosso": 81,
+  "oficial": 82,
+  "detalhe": "Aba \"Motor e Transmissão\": \"Potência de pico: 60 kW (82 CV) / 9.000 rpm\" (matéria TranspoNews de jan/2025 citava 81 cv)"
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Hitech Electric E-Work EC31 Caçamba 38,7 kWh",
+  "version_id": "hitech-electric-e-work-ec31-cacamba-38-7-kwh",
+  "coluna": "potencia_cv",
+  "nosso": 81,
+  "oficial": 82,
+  "detalhe": "Aba \"Motor e Transmissão\": \"Potência de pico: 60 kW (82 CV) / 9.000 rpm\" (matéria TranspoNews de jan/2025 citava 81 cv)"
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Hitech Electric E-Work EC31 Refrigerado 38,7 kWh",
+  "version_id": "hitech-electric-e-work-ec31-refrigerado-38-7-kwh",
+  "coluna": "potencia_cv",
+  "nosso": 81,
+  "oficial": 82,
+  "detalhe": "Aba \"Motor e Transmissão\": \"Potência de pico: 60 kW (82 CV) / 9.000 rpm\" (matéria TranspoNews de jan/2025 citava 81 cv)"
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Agrale Marruá AM200 MO AM200 MO 3.8 TDI 4x4 (11 lugares)",
+  "version_id": "agrale-marrua-am200-mo-am200-mo-3-8-tdi-4x4-11-lugares",
+  "coluna": "cambio",
+  "nosso": "Manual",
+  "oficial": "Manual ou Automática",
+  "detalhe": "Ficha AM200 MO: \"Eaton ESO 6205 - Manual / Allison LCT1000 XFE - Automática\"; página: \"Transmissão: Manual ou Automática\" — o cadastro tem só a versão manual (sem dizer no nome)"
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Foton Tunland V7 2.0 Turbo Diesel 4x4 AT",
+  "version_id": "foton-tunland-v7-2-0-turbo-diesel-4x4-at",
+  "coluna": "potencia_cv",
+  "nosso": 163,
+  "oficial": 175,
+  "detalhe": "Ficha 2026 e manual: só \"Potência combinada 175 cv @ 3600 rpm\" (diesel + híbrido 48V); a Foton não publica os 163 cv do diesel isolado nem os 12 cv do elétrico do nosso cadastro"
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Foton Tunland V9 2.0 Turbo Diesel 4x4 AT",
+  "version_id": "foton-tunland-v9-2-0-turbo-diesel-4x4-at",
+  "coluna": "potencia_cv",
+  "nosso": 163,
+  "oficial": 175,
+  "detalhe": "Ficha 2026 e manual: só \"Potência combinada 175 cv @ 3600 rpm\" (diesel + híbrido 48V); a Foton não publica os 163 cv do diesel isolado nem os 12 cv do elétrico do nosso cadastro"
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Foton Tunland V7 2.0 Turbo Diesel 4x4 AT",
+  "version_id": "foton-tunland-v7-2-0-turbo-diesel-4x4-at",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Diesel",
+  "detalhe": "Ficha 2026: \"Motor Aucan 4F20 2.0 turbo Diesel\" + \"Sistema de propulsão hibrido Bosch de 48V\" (híbrido leve a diesel)"
+ },
+ {
+  "grupo": "utilitarios-eletricos",
+  "versao": "Foton Tunland V9 2.0 Turbo Diesel 4x4 AT",
+  "version_id": "foton-tunland-v9-2-0-turbo-diesel-4x4-at",
+  "coluna": "combustivel",
+  "nosso": "Flex",
+  "oficial": "Diesel",
+  "detalhe": "Ficha 2026: \"Motor Aucan 4F20 2.0 turbo Diesel\" + \"Sistema de propulsão hibrido Bosch de 48V\" (híbrido leve a diesel)"
+ },
+ {
+  "grupo": "volkswagen",
+  "versao": "Volkswagen Jetta GLI 2.0 350 TSI DSG",
+  "version_id": "volkswagen-jetta-gli-2-0-350-tsi-dsg",
+  "coluna": "ano_modelo",
+  "nosso": 2026,
+  "oficial": 2027,
+  "detalhe": "Configurador vende \"Jetta GLI 350 TSI 231cv  Automática DSG, Tiptronic – 7 velocidades  4 portas Modelo 2027\""
+ },
+ {
+  "grupo": "volkswagen",
+  "versao": "Volkswagen Tiguan R-Line 2.0 350 TSI 4Motion",
+  "version_id": "volkswagen-tiguan-r-line-2-0-350-tsi-4motion",
+  "coluna": "ano_modelo",
+  "nosso": 2026,
+  "oficial": 2027,
+  "detalhe": "Configurador vende \"Tiguan R-Line 2.0 350 TSI 272 cv Automática de 8 velocidades  4 portas Modelo 2027\""
+ },
+ {
+  "grupo": "volkswagen",
+  "versao": "Volkswagen Virtus Sense 170 TSI",
+  "version_id": "virtus",
+  "coluna": "potencia_cv",
+  "nosso": 109,
+  "oficial": 116,
+  "detalhe": "Configurador, aba \"Dados técnicos\" — Potência líquida máxima: 116 cv (E) / 109 cv (G) - 5.000 rpm"
+ },
+ {
+  "grupo": "volvo-landrover",
+  "versao": "Land Rover Range Rover Autobiography 3.0 P550e PHEV",
+  "version_id": "land-rover-range-rover-autobiography-3-0-p550e-phev",
+  "coluna": "ano_modelo",
+  "nosso": 2026,
+  "oficial": 2027,
+  "detalhe": "O site oficial vende o Range Rover como ano-modelo 2027 (configurador l460_k27); dados registrados com ano_ref 2027. Preço no site: R$1.773.950"
+ },
+ {
+  "grupo": "volvo-landrover",
+  "versao": "Land Rover Range Rover SV 3.0 P550e PHEV",
+  "version_id": "land-rover-range-rover-sv-3-0-p550e-phev",
+  "coluna": "ano_modelo",
+  "nosso": 2026,
+  "oficial": 2027,
+  "detalhe": "O site oficial vende o Range Rover como ano-modelo 2027 (configurador l460_k27); dados registrados com ano_ref 2027. Preço no site: R$2.137.950"
+ },
+ {
+  "grupo": "volvo-landrover",
+  "versao": "Land Rover Range Rover Sport Dynamic 3.0 P550e PHEV",
+  "version_id": "land-rover-range-rover-sport-dynamic-3-0-p550e-phev",
+  "coluna": "versao",
+  "nosso": "Dynamic (R$ 1.063.950)",
+  "oficial": "Dynamic SE (R$ 1.040.750)",
+  "detalhe": "Página Modelos e especificações do Range Rover Sport lista apenas \"Range Rover Sport Dynamic SE\" e \"Range Rover Sport Autobiography\" (P550e)"
+ }
+]

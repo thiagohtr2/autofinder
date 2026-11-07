@@ -1,0 +1,1367 @@
+[
+ {
+  "version_id": "agrale-marrua-am200-mo-am200-mo-3-8-tdi-4x4-11-lugares",
+  "versao": "Agrale Marruá AM200 MO AM200 MO 3.8 TDI 4x4 (11 lugares)",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "agrale-marrua-am250-cabine-dupla-3-8-tdi",
+  "versao": "Agrale Marruá AM250 Cabine Dupla 3.8 TDI",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "agrale-marrua-am250-cabine-dupla-3-8-tdi-automatico",
+  "versao": "Agrale Marruá AM250 Cabine Dupla 3.8 TDI Automático",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "agrale-marrua-am250-cabine-simples-3-8-tdi",
+  "versao": "Agrale Marruá AM250 Cabine Simples 3.8 TDI",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "agrale-marrua-am250-cabine-simples-3-8-tdi-automatico",
+  "versao": "Agrale Marruá AM250 Cabine Simples 3.8 TDI Automático",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "aston-martin-db12-coupe-4-0-v8-biturbo",
+  "versao": "Aston Martin DB12 Coupé 4.0 V8 biturbo",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "aston-martin-db12-volante-4-0-v8-biturbo",
+  "versao": "Aston Martin DB12 Volante 4.0 V8 biturbo",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "aston-martin-dbx-707-4-0-v8-biturbo",
+  "versao": "Aston Martin DBX 707 4.0 V8 biturbo",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "aston-martin-dbx-s-4-0-v8-biturbo",
+  "versao": "Aston Martin DBX S 4.0 V8 biturbo",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "aston-martin-vanquish-5-2-v12-biturbo",
+  "versao": "Aston Martin Vanquish 5.2 V12 biturbo",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "aston-martin-vantage-s-coupe-4-0-v8-biturbo",
+  "versao": "Aston Martin Vantage S Coupé 4.0 V8 biturbo",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "aston-martin-vantage-s-roadster-4-0-v8-biturbo",
+  "versao": "Aston Martin Vantage S Roadster 4.0 V8 biturbo",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "audi-a6-sportback-e-tron-performance-black",
+  "versao": "Audi A6 Sportback e-tron Performance Black",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "audi-q3-launch-edition-2-0-tfsi-quattro",
+  "versao": "Audi Q3 Launch Edition 2.0 TFSI quattro",
+  "motivo": "8 linhas possíveis com números diferentes: Launch edition | Launch edition (ed.0)"
+ },
+ {
+  "version_id": "audi-q5-dynamic-2-0-tfsi-quattro",
+  "versao": "Audi Q5 Dynamic 2.0 TFSI quattro",
+  "motivo": "4 linhas possíveis com números diferentes: Advanced | S line"
+ },
+ {
+  "version_id": "audi-q5-s-line-2-0-tfsi-quattro",
+  "versao": "Audi Q5 S Line 2.0 TFSI quattro",
+  "motivo": "4 linhas possíveis com números diferentes: Advanced | S line"
+ },
+ {
+  "version_id": "audi-q5-sportback-sq5-sportback-3-0-v6-tfsi-quattro",
+  "versao": "Audi Q5 Sportback SQ5 Sportback 3.0 V6 TFSI quattro",
+  "motivo": "cilindrada 3 não bate"
+ },
+ {
+  "version_id": "audi-q5-sq5-3-0-v6-tfsi-quattro",
+  "versao": "Audi Q5 SQ5 3.0 V6 TFSI quattro",
+  "motivo": "cilindrada 3 não bate"
+ },
+ {
+  "version_id": "audi-q6-e-tron-s-line-quattro",
+  "versao": "Audi Q6 e-tron S Line quattro",
+  "motivo": "7 linhas possíveis com números diferentes: Dynamic | Performance | Performance black | S line"
+ },
+ {
+  "version_id": "audi-q6-sportback-e-tron-sq6-sportback-e-tron-quattro",
+  "versao": "Audi Q6 Sportback e-tron SQ6 Sportback e-tron quattro",
+  "motivo": "2 linhas possíveis com números diferentes: Performance black | S line"
+ },
+ {
+  "version_id": "avatr-11-4-lugares-2-2",
+  "versao": "Avatr 11 4 lugares (2+2)",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "avatr-11-5-lugares",
+  "versao": "Avatr 11 5 lugares",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "baic-arcfox-t1-max",
+  "versao": "BAIC Arcfox T1 Max",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "baic-arcfox-t1-pro",
+  "versao": "BAIC Arcfox T1 Pro",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "bmw-i4-edrive40-m-sport",
+  "versao": "BMW i4 eDrive40 M Sport",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "bmw-i4-m50-xdrive",
+  "versao": "BMW i4 M50 xDrive",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "bmw-serie-3-320i-sport-gp",
+  "versao": "BMW Série 3 320i Sport GP",
+  "motivo": "4 linhas possíveis com números diferentes: Active Flex | GP Flex | M Sport Flex | Sport GP Flex"
+ },
+ {
+  "version_id": "byd-song-plus-1-5-dm-i-turbo",
+  "versao": "BYD Song Plus 1.5 DM-i Turbo",
+  "motivo": "3 linhas possíveis com números diferentes: GS DM | PREM DM | PREM DM (MY27)"
+ },
+ {
+  "version_id": "byd-song-plus-premium-1-5-dm-i-turbo-awd",
+  "versao": "BYD Song Plus Premium 1.5 DM-i Turbo AWD",
+  "motivo": "3 linhas possíveis com números diferentes: GS DM | PREM DM | PREM DM (MY27)"
+ },
+ {
+  "version_id": "byd-yuan-plus-60-8-kwh",
+  "versao": "BYD Yuan Plus 60,8 kWh",
+  "motivo": "3 linhas possíveis com números diferentes: GL310 EV | GS 560EV | GS310 EV"
+ },
+ {
+  "version_id": "byd-yuan-plus-awd-74-8-kwh",
+  "versao": "BYD Yuan Plus AWD 74,8 kWh",
+  "motivo": "3 linhas possíveis com números diferentes: GL310 EV | GS 560EV | GS310 EV"
+ },
+ {
+  "version_id": "c3",
+  "versao": "Citroën C3 Live Go 1.0",
+  "motivo": "7 linhas possíveis com números diferentes: FEEL 1.0 | FEEL PLUS 1.0 | LIVE 1.0 | LIVE GO 1.0 | LIVE PK 1.0 | LIVE PLUS 1.0 | XTR 1.0"
+ },
+ {
+  "version_id": "c3-feel-plus-1-0",
+  "versao": "Citroën C3 Feel Plus 1.0",
+  "motivo": "7 linhas possíveis com números diferentes: FEEL 1.0 | FEEL PLUS 1.0 | LIVE 1.0 | LIVE GO 1.0 | LIVE PK 1.0 | LIVE PLUS 1.0 | XTR 1.0"
+ },
+ {
+  "version_id": "c3-live-plus-1-0",
+  "versao": "Citroën C3 Live Plus 1.0",
+  "motivo": "7 linhas possíveis com números diferentes: FEEL 1.0 | FEEL PLUS 1.0 | LIVE 1.0 | LIVE GO 1.0 | LIVE PK 1.0 | LIVE PLUS 1.0 | XTR 1.0"
+ },
+ {
+  "version_id": "caoa-changan-cs55-infinity-1-5-tgdi-turbo-flex-7dct",
+  "versao": "CAOA Changan CS55 Infinity 1.5 TGDi Turbo Flex 7DCT",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "chery-tiggo-7-pro-1-6-tgdi-dct",
+  "versao": "Chery Tiggo 7 Pro 1.6 TGDI DCT",
+  "motivo": "2 linhas possíveis com números diferentes: PRO 16TA"
+ },
+ {
+  "version_id": "chery-tiggo-7-pro-phev-1-5-turbo-dht",
+  "versao": "Chery Tiggo 7 Pro PHEV 1.5 Turbo DHT",
+  "motivo": "2 linhas possíveis com números diferentes: PHEV"
+ },
+ {
+  "version_id": "chery-tiggo-7-sport-1-5-tci-cvt",
+  "versao": "Chery Tiggo 7 Sport 1.5 TCI CVT",
+  "motivo": "4 linhas possíveis com números diferentes: PRO HA | SPORT"
+ },
+ {
+  "version_id": "chery-tiggo-8-pro-phev-1-5-turbo-dht",
+  "versao": "Chery Tiggo 8 Pro PHEV 1.5 Turbo DHT",
+  "motivo": "2 linhas possíveis com números diferentes: PHEV"
+ },
+ {
+  "version_id": "chery-tiggo-9-2-0-tgdi-awd",
+  "versao": "Chery Tiggo 9 2.0 TGDI AWD",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "chery-tiggo-9-phev-awd",
+  "versao": "Chery Tiggo 9 PHEV AWD",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "chevrolet-s10-ltz-cd-2-8-4x4-at",
+  "versao": "Chevrolet S10 LTZ CD 2.8 4x4 AT",
+  "motivo": "9 linhas possíveis com números diferentes: HC DD4A | HIGH COUNTRY Cabine Dupla | LTZ Cabine Dupla | LTZ DD4A | WT Cabine Duple | WT DD4A | Z71 | Z71 Cabine Dupla"
+ },
+ {
+  "version_id": "chevrolet-s10-trail-boss-cd-2-8-4x4-at",
+  "versao": "Chevrolet S10 Trail Boss CD 2.8 4x4 AT",
+  "motivo": "9 linhas possíveis com números diferentes: HC DD4A | HIGH COUNTRY Cabine Dupla | LTZ Cabine Dupla | LTZ DD4A | WT Cabine Duple | WT DD4A | Z71 | Z71 Cabine Dupla"
+ },
+ {
+  "version_id": "chevrolet-s10-wt-cd-2-8-4x4-at",
+  "versao": "Chevrolet S10 WT CD 2.8 4x4 AT",
+  "motivo": "9 linhas possíveis com números diferentes: HC DD4A | HIGH COUNTRY Cabine Dupla | LTZ Cabine Dupla | LTZ DD4A | WT Cabine Duple | WT DD4A | Z71 | Z71 Cabine Dupla"
+ },
+ {
+  "version_id": "chevrolet-s10-wt-cd-2-8-4x4-mt",
+  "versao": "Chevrolet S10 WT CD 2.8 4x4 MT",
+  "motivo": "5 linhas possíveis com números diferentes: WT Cabine Chassis | WT Cabine Simples | WT DD4 | WT DS4 | WT DS4C"
+ },
+ {
+  "version_id": "chevrolet-trailblazer-high-country-2-8-4x4-at-7-lugares",
+  "versao": "Chevrolet Trailblazer High Country 2.8 4x4 AT (7 lugares)",
+  "motivo": "3 linhas possíveis com números diferentes: HC D4A | HC MID | LT D4A"
+ },
+ {
+  "version_id": "citroen-aircross-feel-pack-7-turbo-200-at-7-lugares",
+  "versao": "Citroën Aircross Feel Pack 7 Turbo 200 AT (7 lugares)",
+  "motivo": "8 linhas possíveis com números diferentes: 7 FL | 7 FL PK | 7 SH | FL | FL PK | SH | XTR | XTR 7"
+ },
+ {
+  "version_id": "citroen-aircross-feel-turbo-200-at-5-lugares",
+  "versao": "Citroën Aircross Feel Turbo 200 AT (5 lugares)",
+  "motivo": "8 linhas possíveis com números diferentes: 7 FL | 7 FL PK | 7 SH | FL | FL PK | SH | XTR | XTR 7"
+ },
+ {
+  "version_id": "citroen-jumper-minibus-executive-17l-2-2-turbodiesel",
+  "versao": "Citroën Jumper Minibus Executive 17L 2.2 Turbodiesel",
+  "motivo": "6 linhas possíveis com números diferentes: CARGOPK | COMFORT | FURG PK | L3H2AMB | MB16 | VITRE"
+ },
+ {
+  "version_id": "civic-type-r",
+  "versao": "Honda Civic Type R",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "denza-z9-gt-ev-awd",
+  "versao": "Denza Z9 GT EV AWD",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "dolphinmini-gs-38-kwh",
+  "versao": "BYD Dolphin Mini GS (38 kWh)",
+  "motivo": "3 linhas possíveis com números diferentes: GL 5 EV | GS 5 EV | GS EV"
+ },
+ {
+  "version_id": "effa-v21-pick-up-bau-1-5-16v",
+  "versao": "EFFA V21 Pick-up Baú 1.5 16V",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "effa-v21-pick-up-cabine-simples-1-5-16v",
+  "versao": "EFFA V21 Pick-up Cabine Simples 1.5 16V",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "effa-v22-pick-up-cabine-dupla-1-5-16v",
+  "versao": "EFFA V22 Pick-up Cabine Dupla 1.5 16V",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "effa-v25-furgao-1-5-16v",
+  "versao": "EFFA V25 Furgão 1.5 16V",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "fastback-blackmotion",
+  "versao": "Fiat Fastback BlackMotion",
+  "motivo": "3 linhas possíveis com números diferentes: AUDACE HYB | IMPETUS HY | TURBO 200"
+ },
+ {
+  "version_id": "fastback-smart-drive",
+  "versao": "Fiat Fastback Smart Drive",
+  "motivo": "3 linhas possíveis com números diferentes: AUDACE HYB | IMPETUS HY | TURBO 200"
+ },
+ {
+  "version_id": "ferrari-12cilindri-coupe-6-5-v12",
+  "versao": "Ferrari 12Cilindri Coupé 6.5 V12",
+  "motivo": "2 linhas possíveis com números diferentes: -- | SPI"
+ },
+ {
+  "version_id": "ferrari-296-speciale",
+  "versao": "Ferrari 296 Speciale",
+  "motivo": "2 linhas possíveis com números diferentes: GTB | GTS"
+ },
+ {
+  "version_id": "ferrari-296-speciale-a",
+  "versao": "Ferrari 296 Speciale A",
+  "motivo": "2 linhas possíveis com números diferentes: GTB | GTS"
+ },
+ {
+  "version_id": "ferrari-849-testarossa-coupe-4-0-v8-biturbo-hibrido",
+  "versao": "Ferrari 849 Testarossa Coupé 4.0 V8 biturbo híbrido",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "ferrari-amalfi-3-9-v8-biturbo",
+  "versao": "Ferrari Amalfi 3.9 V8 biturbo",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "fiat-ducato-maxicargo-2-2-turbodiesel",
+  "versao": "Fiat Ducato Maxicargo 2.2 Turbodiesel",
+  "motivo": "6 linhas possíveis com números diferentes: FURGAO 13M | L3H2AMB | MB COMFORT | MB LUXO 16 | MULTI 13M | MXCARGO13M"
+ },
+ {
+  "version_id": "ford-mustang-mach-e-gt-performance-eawd",
+  "versao": "Ford Mustang Mach-E GT Performance eAWD",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "ford-transit-furgao-longo-2-0-turbodiesel-aut",
+  "versao": "Ford Transit Furgão Longo 2.0 Turbodiesel Aut.",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "ford-transit-furgao-medio-2-0-turbodiesel-aut",
+  "versao": "Ford Transit Furgão Médio 2.0 Turbodiesel Aut.",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "ford-transit-minibus-15-lugares-2-0-turbodiesel-aut",
+  "versao": "Ford Transit Minibus 15 lugares 2.0 Turbodiesel Aut.",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "ford-transit-minibus-18-lugares-2-0-turbodiesel-aut",
+  "versao": "Ford Transit Minibus 18 lugares 2.0 Turbodiesel Aut.",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "ford-transit-minibus-vidrada-2-0-turbodiesel-aut",
+  "versao": "Ford Transit Minibus Vidrada 2.0 Turbodiesel Aut.",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "foton-etoano-pro-teto-alto",
+  "versao": "Foton eToano Pro Teto Alto",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "foton-etoano-pro-teto-medio",
+  "versao": "Foton eToano Pro Teto Médio",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "foton-eview-connect",
+  "versao": "Foton eView Connect",
+  "motivo": "2 linhas possíveis com números diferentes: GRAND53 | GRAND77"
+ },
+ {
+  "version_id": "foton-eview-grand-teto-baixo",
+  "versao": "Foton eView Grand Teto Baixo",
+  "motivo": "2 linhas possíveis com números diferentes: GRAND53 | GRAND77"
+ },
+ {
+  "version_id": "foton-eview-grand-teto-medio",
+  "versao": "Foton eView Grand Teto Médio",
+  "motivo": "2 linhas possíveis com números diferentes: GRAND53 | GRAND77"
+ },
+ {
+  "version_id": "gwm-haval-h7-1-5-turbo-phev-flex-awd",
+  "versao": "GWM Haval H7 1.5 Turbo PHEV Flex AWD",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "gwm-ora-5-58-3-kwh",
+  "versao": "GWM Ora 5 58,3 kWh",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "gwm-tank-300-2-0-hi4-t-phev-flex-4x4",
+  "versao": "GWM Tank 300 2.0 Hi4-T PHEV Flex 4x4",
+  "motivo": "2 linhas possíveis com números diferentes: PHEV | PHEV FLEX"
+ },
+ {
+  "version_id": "gwm-tank-300-terraforce-2-0-hi4-t-phev-flex-4x4",
+  "versao": "GWM Tank 300 TerraForce 2.0 Hi4-T PHEV Flex 4x4",
+  "motivo": "2 linhas possíveis com números diferentes: PHEV | PHEV FLEX"
+ },
+ {
+  "version_id": "haval",
+  "versao": "GWM Haval H6 HEV One",
+  "motivo": "11 linhas possíveis com números diferentes: GT (MY26) | GT FF | HEV ESP | HEV ONE (MY26) | HEV1 FLEX | HEV2 (MY26) | HEV2 FLEX | PHEV19 (MY26) | PHEV19 FF | PHEV35 (MY26) | PHEV35 FF"
+ },
+ {
+  "version_id": "haval-gt-phev-awd",
+  "versao": "GWM Haval H6 GT PHEV AWD",
+  "motivo": "6 linhas possíveis com números diferentes: GT (MY26) | GT FF | PHEV19 (MY26) | PHEV19 FF | PHEV35 (MY26) | PHEV35 FF"
+ },
+ {
+  "version_id": "haval-phev19",
+  "versao": "GWM Haval H6 PHEV19",
+  "motivo": "6 linhas possíveis com números diferentes: GT (MY26) | GT FF | PHEV19 (MY26) | PHEV19 FF | PHEV35 (MY26) | PHEV35 FF"
+ },
+ {
+  "version_id": "haval-phev35-awd",
+  "versao": "GWM Haval H6 PHEV35 AWD",
+  "motivo": "6 linhas possíveis com números diferentes: GT (MY26) | GT FF | PHEV19 (MY26) | PHEV19 FF | PHEV35 (MY26) | PHEV35 FF"
+ },
+ {
+  "version_id": "hitech-electric-delivery-bau-11-5-kwh",
+  "versao": "Hitech Electric Delivery Baú 11,5 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-delivery-bau-23-kwh",
+  "versao": "Hitech Electric Delivery Baú 23 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-delivery-bau-refrigerado-23-kwh",
+  "versao": "Hitech Electric Delivery Baú Refrigerado 23 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-delivery-cacamba-11-5-kwh",
+  "versao": "Hitech Electric Delivery Caçamba 11,5 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-delivery-cacamba-23-kwh",
+  "versao": "Hitech Electric Delivery Caçamba 23 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-e-work-ec31-bau-38-7-kwh",
+  "versao": "Hitech Electric E-Work EC31 Baú 38,7 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-e-work-ec31-cacamba-38-7-kwh",
+  "versao": "Hitech Electric E-Work EC31 Caçamba 38,7 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-e-work-ec31-refrigerado-38-7-kwh",
+  "versao": "Hitech Electric E-Work EC31 Refrigerado 38,7 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hitech-electric-e-work-ec35-van-38-7-kwh",
+  "versao": "Hitech Electric E-Work EC35 Van 38,7 kWh",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "hyundai-i20-comfort-1-0-mt",
+  "versao": "Hyundai i20 Comfort 1.0 MT",
+  "motivo": "6 linhas possíveis com números diferentes: Comfort | Limited | Sense"
+ },
+ {
+  "version_id": "hyundai-i20-limited-1-0-mt",
+  "versao": "Hyundai i20 Limited 1.0 MT",
+  "motivo": "6 linhas possíveis com números diferentes: Comfort | Limited | Sense"
+ },
+ {
+  "version_id": "hyundai-tucson-limited-1-6-t-gdi",
+  "versao": "Hyundai Tucson Limited 1.6 T-GDI",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "iveco-daily-furgao-30-160-3-0-12-m3",
+  "versao": "Iveco Daily Furgão 30-160 3.0 12 m³",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "iveco-daily-furgao-45-160-3-0-12-m3",
+  "versao": "Iveco Daily Furgão 45-160 3.0 12 m³",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "iveco-daily-furgao-55-180-3-0-12-m3",
+  "versao": "Iveco Daily Furgão 55-180 3.0 12 m³",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "iveco-daily-furgao-55-180-3-0-16-m3",
+  "versao": "Iveco Daily Furgão 55-180 3.0 16 m³",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "jac-hunter-4work-2-0-turbo-diesel-mt",
+  "versao": "JAC Hunter 4Work 2.0 Turbo Diesel MT",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "jaecoo-jaecoo-5-shs-h-comfort",
+  "versao": "Jaecoo Jaecoo 5 SHS-H Comfort",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "jaecoo-jaecoo-5-shs-h-prestige",
+  "versao": "Jaecoo Jaecoo 5 SHS-H Prestige",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "jeep-avenger-longitude-85-anos-t200-mhev-cvt",
+  "versao": "Jeep Avenger Longitude 85 Anos T200 MHEV CVT",
+  "motivo": "3 linhas possíveis com números diferentes: ALTIT HYB | LIMITED HYB | LONGT HYB"
+ },
+ {
+  "version_id": "jeep-avenger-longitude-t200-mhev-cvt",
+  "versao": "Jeep Avenger Longitude T200 MHEV CVT",
+  "motivo": "3 linhas possíveis com números diferentes: ALTIT HYB | LIMITED HYB | LONGT HYB"
+ },
+ {
+  "version_id": "jeep-commander-overland-t270-mhev",
+  "versao": "Jeep Commander Overland T270 MHEV",
+  "motivo": "5 linhas possíveis com números diferentes: LIM 7 270 | LMTD HYB | LON 7 270 | OVE 7 270 | OVER HYB"
+ },
+ {
+  "version_id": "jeep-renegade-altitude-t270-1-3-turbo-at6",
+  "versao": "Jeep Renegade Altitude T270 1.3 Turbo AT6",
+  "motivo": "13 linhas possíveis com números diferentes: ALTIT HYB | ALTIT T270 | ALTIT T270 (MY27) | LGTD T270 | LONGIT HYB | SAHARA | SAHARA HYB | SPORT FLEX (MY27) | SPORT T270 (MY27) | SPT T FLEX | SPT TURBO | WIL"
+ },
+ {
+  "version_id": "jeep-renegade-longitude-85-anos-t270-mhev-at6",
+  "versao": "Jeep Renegade Longitude 85 Anos T270 MHEV AT6",
+  "motivo": "13 linhas possíveis com números diferentes: ALTIT HYB | ALTIT T270 | ALTIT T270 (MY27) | LGTD T270 | LONGIT HYB | SAHARA | SAHARA HYB | SPORT FLEX (MY27) | SPORT T270 (MY27) | SPT T FLEX | SPT TURBO | WIL"
+ },
+ {
+  "version_id": "jeep-renegade-longitude-t270-mhev-at6",
+  "versao": "Jeep Renegade Longitude T270 MHEV AT6",
+  "motivo": "13 linhas possíveis com números diferentes: ALTIT HYB | ALTIT T270 | ALTIT T270 (MY27) | LGTD T270 | LONGIT HYB | SAHARA | SAHARA HYB | SPORT FLEX (MY27) | SPORT T270 (MY27) | SPT T FLEX | SPT TURBO | WIL"
+ },
+ {
+  "version_id": "jeep-renegade-sahara-t270-mhev-at6",
+  "versao": "Jeep Renegade Sahara T270 MHEV AT6",
+  "motivo": "13 linhas possíveis com números diferentes: ALTIT HYB | ALTIT T270 | ALTIT T270 (MY27) | LGTD T270 | LONGIT HYB | SAHARA | SAHARA HYB | SPORT FLEX (MY27) | SPORT T270 (MY27) | SPT T FLEX | SPT TURBO | WIL"
+ },
+ {
+  "version_id": "jetour-s08-premium-1-5-tgdi-phev-dht",
+  "versao": "Jetour S08 Premium 1.5 TGDI PHEV DHT",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "kardian-evolution",
+  "versao": "Renault Kardian Evolution",
+  "motivo": "3 linhas possíveis com números diferentes: 10T AT | ICO AT | TECH AT"
+ },
+ {
+  "version_id": "kia-ev9-gt-line",
+  "versao": "Kia EV9 GT-Line",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "kia-ev9-gt-line-fosco",
+  "versao": "Kia EV9 GT-Line Fosco",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "kia-stonic-sx-1-0-tgdi-mhev-dct",
+  "versao": "Kia Stonic SX 1.0 TGDI MHEV DCT",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "lamborghini-revuelto-coupe-lp-1015-4",
+  "versao": "Lamborghini Revuelto Coupé LP 1015-4",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "lamborghini-temerario-4-0-v8-biturbo-hibrido",
+  "versao": "Lamborghini Temerario 4.0 V8 biturbo híbrido",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "lamborghini-urus-se-4-0-v8-biturbo-hibrido",
+  "versao": "Lamborghini Urus SE 4.0 V8 biturbo híbrido",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "land-rover-defender-110-x-d350",
+  "versao": "Land Rover Defender 110 X D350",
+  "motivo": "6 linhas possíveis com números diferentes: HSE XD | HSEXD 7L | TROPHY | X | X 7L | X7L"
+ },
+ {
+  "version_id": "land-rover-defender-110-x-dynamic-hse-d350",
+  "versao": "Land Rover Defender 110 X-Dynamic HSE D350",
+  "motivo": "6 linhas possíveis com números diferentes: HSE XD | HSEXD 7L | TROPHY | X | X 7L | X7L"
+ },
+ {
+  "version_id": "land-rover-defender-130-x-d350",
+  "versao": "Land Rover Defender 130 X D350",
+  "motivo": "6 linhas possíveis com números diferentes: HSE XD | HSEXD 7L | TROPHY | X | X 7L | X7L"
+ },
+ {
+  "version_id": "land-rover-defender-90-x-dynamic-hse-d350",
+  "versao": "Land Rover Defender 90 X-Dynamic HSE D350",
+  "motivo": "6 linhas possíveis com números diferentes: HSE XD | HSEXD 7L | TROPHY | X | X 7L | X7L"
+ },
+ {
+  "version_id": "leapmotor-b10-ultra-hibrido-reev",
+  "versao": "Leapmotor B10 Ultra-Híbrido REEV",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "lexus-es-350h",
+  "versao": "Lexus ES 350h",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "lotus-eletre-600-sport-se",
+  "versao": "Lotus Eletre 600 Sport SE",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "lotus-eletre-900",
+  "versao": "Lotus Eletre 900",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "lotus-emeya-900",
+  "versao": "Lotus Emeya 900",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "lotus-emira-turbo-se",
+  "versao": "Lotus Emira Turbo SE",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "lotus-emira-v6-se",
+  "versao": "Lotus Emira V6 SE",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "mclaren-gts-coupe-4-0-v8-biturbo",
+  "versao": "McLaren GTS Coupé 4.0 V8 biturbo",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-amg-gt-mercedes-amg-gt-63-e-performance-2-dr",
+  "versao": "Mercedes-Benz AMG GT Mercedes-AMG GT 63 E PERFORMANCE 2-Dr",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-cla-mercedes-amg-cla-35-4matic",
+  "versao": "Mercedes-Benz CLA Mercedes-AMG CLA 35 4MATIC",
+  "motivo": "4 linhas possíveis com números diferentes:  | AMG LINE | PROGRESSIVE"
+ },
+ {
+  "version_id": "mercedes-benz-cla-mercedes-amg-cla-45-s-4matic",
+  "versao": "Mercedes-Benz CLA Mercedes-AMG CLA 45 S 4MATIC",
+  "motivo": "4 linhas possíveis com números diferentes:  | AMG LINE | PROGRESSIVE"
+ },
+ {
+  "version_id": "mercedes-benz-classe-c-c-200-amg-line",
+  "versao": "Mercedes-Benz Classe C C 200 AMG Line",
+  "motivo": "2 linhas possíveis com números diferentes: AMG LINE"
+ },
+ {
+  "version_id": "mercedes-benz-classe-c-c-300-amg-line",
+  "versao": "Mercedes-Benz Classe C C 300 AMG Line",
+  "motivo": "2 linhas possíveis com números diferentes: AMG LINE"
+ },
+ {
+  "version_id": "mercedes-benz-classe-e-e-300-exclusive",
+  "versao": "Mercedes-Benz Classe E E 300 Exclusive",
+  "motivo": "2 linhas possíveis com números diferentes: EXCLUSIVE"
+ },
+ {
+  "version_id": "mercedes-benz-classe-g-mercedes-amg-g-63-4matic",
+  "versao": "Mercedes-Benz Classe G Mercedes-AMG G 63 4MATIC",
+  "motivo": "3 linhas possíveis com números diferentes:  | GRD | MFKT"
+ },
+ {
+  "version_id": "mercedes-benz-classe-g-mercedes-amg-g-63-4matic-manufaktur",
+  "versao": "Mercedes-Benz Classe G Mercedes-AMG G 63 4MATIC MANUFAKTUR",
+  "motivo": "3 linhas possíveis com números diferentes:  | GRD | MFKT"
+ },
+ {
+  "version_id": "mercedes-benz-classe-v-v-300-avantgarde",
+  "versao": "Mercedes-Benz Classe V V 300 Avantgarde",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-classe-v-v-300-elegance",
+  "versao": "Mercedes-Benz Classe V V 300 Elegance",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-gla-200-night-edition",
+  "versao": "Mercedes-Benz GLA 200 Night Edition",
+  "motivo": "3 linhas possíveis com números diferentes:  | AMG LINE | PROGRESSIVE"
+ },
+ {
+  "version_id": "mercedes-benz-gla-mercedes-amg-gla-35-4matic",
+  "versao": "Mercedes-Benz GLA Mercedes-AMG GLA 35 4MATIC",
+  "motivo": "3 linhas possíveis com números diferentes:  | AMG LINE | PROGRESSIVE"
+ },
+ {
+  "version_id": "mercedes-benz-glb-220-4matic-night-edition",
+  "versao": "Mercedes-Benz GLB 220 4MATIC Night Edition",
+  "motivo": "3 linhas possíveis com números diferentes:  | AMG LINE | PROGRESSIVE"
+ },
+ {
+  "version_id": "mercedes-benz-glb-mercedes-amg-glb-35-4matic",
+  "versao": "Mercedes-Benz GLB Mercedes-AMG GLB 35 4MATIC",
+  "motivo": "3 linhas possíveis com números diferentes:  | AMG LINE | PROGRESSIVE"
+ },
+ {
+  "version_id": "mercedes-benz-glc-300-4matic-amg-line",
+  "versao": "Mercedes-Benz GLC 300 4MATIC AMG Line",
+  "motivo": "5 linhas possíveis com números diferentes:  | CO"
+ },
+ {
+  "version_id": "mercedes-benz-glc-coupe-glc-300-4matic-coupe-amg-line",
+  "versao": "Mercedes-Benz GLC Coupé GLC 300 4MATIC Coupé AMG Line",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-glc-coupe-mercedes-amg-glc-43-4matic-coupe",
+  "versao": "Mercedes-Benz GLC Coupé Mercedes-AMG GLC 43 4MATIC Coupé",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-glc-coupe-mercedes-amg-glc-53-4matic-coupe",
+  "versao": "Mercedes-Benz GLC Coupé Mercedes-AMG GLC 53 4MATIC+ Coupé",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-glc-coupe-mercedes-amg-glc-63-s-4matic-e-performance-coupe",
+  "versao": "Mercedes-Benz GLC Coupé Mercedes-AMG GLC 63 S 4MATIC E PERFORMANCE Coupé",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-glc-mercedes-amg-glc-43-4matic",
+  "versao": "Mercedes-Benz GLC Mercedes-AMG GLC 43 4MATIC",
+  "motivo": "5 linhas possíveis com números diferentes:  | CO"
+ },
+ {
+  "version_id": "mercedes-benz-glc-mercedes-amg-glc-53-4matic",
+  "versao": "Mercedes-Benz GLC Mercedes-AMG GLC 53 4MATIC+",
+  "motivo": "5 linhas possíveis com números diferentes:  | CO"
+ },
+ {
+  "version_id": "mercedes-benz-gle-coupe-gle-450-d-4matic-coupe-amg-line",
+  "versao": "Mercedes-Benz GLE Coupé GLE 450 d 4MATIC Coupé AMG Line",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-gls-450-4matic-amg-line",
+  "versao": "Mercedes-Benz GLS 450 4MATIC AMG Line",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-315-furgao-extra-longo-teto-alto-2-0-diesel",
+  "versao": "Mercedes-Benz Sprinter 315 Furgão Extra Longo Teto Alto 2.0 Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-315-furgao-longo-teto-alto-2-0-diesel",
+  "versao": "Mercedes-Benz Sprinter 315 Furgão Longo Teto Alto 2.0 Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-315-furgao-longo-teto-baixo-2-0-diesel",
+  "versao": "Mercedes-Benz Sprinter 315 Furgão Longo Teto Baixo 2.0 Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-317-furgao-extra-longo-teto-alto-2-0-diesel",
+  "versao": "Mercedes-Benz Sprinter 317 Furgão Extra Longo Teto Alto 2.0 Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-317-furgao-extra-longo-teto-alto-2-0-diesel-aut",
+  "versao": "Mercedes-Benz Sprinter 317 Furgão Extra Longo Teto Alto 2.0 Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-317-furgao-longo-teto-alto-2-0-diesel",
+  "versao": "Mercedes-Benz Sprinter 317 Furgão Longo Teto Alto 2.0 Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-317-furgao-longo-teto-alto-2-0-diesel-aut",
+  "versao": "Mercedes-Benz Sprinter 317 Furgão Longo Teto Alto 2.0 Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-317-furgao-longo-teto-baixo-2-0-diesel",
+  "versao": "Mercedes-Benz Sprinter 317 Furgão Longo Teto Baixo 2.0 Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-furgao-extra-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Furgão Extra Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-furgao-extra-longo-teto-alto-diesel-aut",
+  "versao": "Mercedes-Benz Sprinter 417 Furgão Extra Longo Teto Alto Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-furgao-longo-teto-alto-2-0-diesel-aut",
+  "versao": "Mercedes-Benz Sprinter 417 Furgão Longo Teto Alto 2.0 Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-furgao-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Furgão Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-furgao-longo-teto-baixo-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Furgão Longo Teto Baixo Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-furgao-vidrado-extra-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Furgão Vidrado Extra Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-furgao-vidrado-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Furgão Vidrado Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-van-10-lugares-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Van 10 lugares Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-van-10-lugares-longo-teto-baixo-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Van 10 lugares Longo Teto Baixo Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-alto-2-0-diesel-au",
+  "versao": "Mercedes-Benz Sprinter 417 Van 16 lugares Longo Teto Alto 2.0 Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Van 16 lugares Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-baixo-2-0-diesel-a",
+  "versao": "Mercedes-Benz Sprinter 417 Van 16 lugares Longo Teto Baixo 2.0 Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-417-van-16-lugares-longo-teto-baixo-diesel",
+  "versao": "Mercedes-Benz Sprinter 417 Van 16 lugares Longo Teto Baixo Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-furgao-extra-longo-porta-teto-alto-2-0-diese",
+  "versao": "Mercedes-Benz Sprinter 517 Furgão Extra Longo Porta Teto Alto 2.0 Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-furgao-extra-longo-porta-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 517 Furgão Extra Longo Porta Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-furgao-extra-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 517 Furgão Extra Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-furgao-vidrado-extra-longo-porta-teto-alto-d",
+  "versao": "Mercedes-Benz Sprinter 517 Furgão Vidrado Extra Longo Porta Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-van-18-lugares-extra-longo-teto-alto-diesel",
+  "versao": "Mercedes-Benz Sprinter 517 Van 18 lugares Extra Longo Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-van-20-lugares-extra-longo-porta-teto-alto-d",
+  "versao": "Mercedes-Benz Sprinter 517 Van 20 lugares Extra Longo Porta Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-van-21-lugares-extra-longo-porta-teto-alto-d",
+  "versao": "Mercedes-Benz Sprinter 517 Van 21 lugares Extra Longo Porta Teto Alto Diesel",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mercedes-benz-sprinter-517-van-21-lugares-extra-longo-porta-teto-alto-d-diesel",
+  "versao": "Mercedes-Benz Sprinter 517 Van 21 lugares Extra Longo Porta Teto Alto Diesel Aut.",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mg-mg4-comfort",
+  "versao": "MG MG4 Comfort",
+  "motivo": "7 linhas possíveis com números diferentes: 64 KWH AWD | 64 KWH COM | 64 KWH LUX | URB EV43KWH COM | URB EV43KWH LUX | URB EV54KWH COM | URB EV54KWH LUX"
+ },
+ {
+  "version_id": "mg-mg4-luxury",
+  "versao": "MG MG4 Luxury",
+  "motivo": "7 linhas possíveis com números diferentes: 64 KWH AWD | 64 KWH COM | 64 KWH LUX | URB EV43KWH COM | URB EV43KWH LUX | URB EV54KWH COM | URB EV54KWH LUX"
+ },
+ {
+  "version_id": "mg-mg4-urban-comfort-43-kwh",
+  "versao": "MG MG4 Urban Comfort 43 kWh",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mg-mg4-urban-luxury-43-kwh",
+  "versao": "MG MG4 Urban Luxury 43 kWh",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mg-mg4-urban-luxury-54-kwh",
+  "versao": "MG MG4 Urban Luxury 54 kWh",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "mini-cooper-3-portas-cooper-s-exclusive",
+  "versao": "MINI Cooper 3 portas Cooper S Exclusive",
+  "motivo": "10 linhas possíveis com números diferentes: 3P | CABRIO | COUNTRYMAN | COUNTRYMAN EX | S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-cooper-3-portas-cooper-s-top",
+  "versao": "MINI Cooper 3 portas Cooper S Top",
+  "motivo": "10 linhas possíveis com números diferentes: 3P | CABRIO | COUNTRYMAN | COUNTRYMAN EX | S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-cooper-3-portas-jcw",
+  "versao": "MINI Cooper 3 portas JCW",
+  "motivo": "10 linhas possíveis com números diferentes: 3P | CABRIO | COUNTRYMAN | COUNTRYMAN EX | S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-cooper-3-portas-jcw-1965-victory-edition",
+  "versao": "MINI Cooper 3 portas JCW 1965 Victory Edition",
+  "motivo": "10 linhas possíveis com números diferentes: 3P | CABRIO | COUNTRYMAN | COUNTRYMAN EX | S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-cooper-3-portas-jcw-gp-inspired-edition",
+  "versao": "MINI Cooper 3 portas JCW GP Inspired Edition",
+  "motivo": "10 linhas possíveis com números diferentes: 3P | CABRIO | COUNTRYMAN | COUNTRYMAN EX | S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-cooper-5-portas-cooper-s-exclusive",
+  "versao": "MINI Cooper 5 portas Cooper S Exclusive",
+  "motivo": "6 linhas possíveis com números diferentes: S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-cooper-5-portas-cooper-s-top",
+  "versao": "MINI Cooper 5 portas Cooper S Top",
+  "motivo": "6 linhas possíveis com números diferentes: S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-cooper-cabrio-cooper-s-cabrio",
+  "versao": "MINI Cooper Cabrio Cooper S Cabrio",
+  "motivo": "10 linhas possíveis com números diferentes: 3P | CABRIO | COUNTRYMAN | COUNTRYMAN EX | S 3P EXCLUSIVE | S 3P SPORT | S 3P TOP | S 5P EXCLUSIVE | S 5P TOP | S CABRIO"
+ },
+ {
+  "version_id": "mini-countryman-jcw-countryman-all4",
+  "versao": "MINI Countryman JCW Countryman ALL4",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mini-countryman-jcw-countryman-all4-exclusive",
+  "versao": "MINI Countryman JCW Countryman ALL4 Exclusive",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "mitsubishi-eclipse-cross-tarmac-1-5-turbo-cvt",
+  "versao": "Mitsubishi Eclipse Cross Tarmac 1.5 Turbo CVT",
+  "motivo": "6 linhas possíveis com números diferentes: HPE | HPE BLACK | HPE-S | HPE-S BLACK S-AWC | HPE-S S-AWC | RUSH"
+ },
+ {
+  "version_id": "mitsubishi-triton-bf-ms-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton BF///MS 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-gl-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton GL 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-gl-2-4-biturbo-diesel-4x4-mt",
+  "versao": "Mitsubishi Triton GL 2.4 Biturbo Diesel 4x4 MT",
+  "motivo": "câmbio não bate"
+ },
+ {
+  "version_id": "mitsubishi-triton-gls-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton GLS 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-gls-tarmac-2-4-biturbo-diesel-4x2-at",
+  "versao": "Mitsubishi Triton GLS Tarmac 2.4 Biturbo Diesel 4x2 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-hpe-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton HPE 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-hpe-s-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton HPE-S 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-savana-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton Savana 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-sertoes-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton Sertões 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "mitsubishi-triton-terra-2-4-biturbo-diesel-4x4-at",
+  "versao": "Mitsubishi Triton Terra 2.4 Biturbo Diesel 4x4 AT",
+  "motivo": "8 linhas possíveis com números diferentes: GL AT2 | GL AT4 | GL MT4 | GLS AT2 | GLS AT4 | HPE AT4 | HPE-S AT4 | KATANA AT4"
+ },
+ {
+  "version_id": "onix-1-0-mt",
+  "versao": "Chevrolet Onix 1.0 MT",
+  "motivo": "4 linhas possíveis com números diferentes: 10MT LOG | LOG | MT"
+ },
+ {
+  "version_id": "onix-1-0-mt-log",
+  "versao": "Chevrolet Onix 1.0 MT Log",
+  "motivo": "4 linhas possíveis com números diferentes: 10MT LOG | LOG | MT"
+ },
+ {
+  "version_id": "onix-1-0-mt-pro",
+  "versao": "Chevrolet Onix 1.0 MT Pro",
+  "motivo": "4 linhas possíveis com números diferentes: 10MT LOG | LOG | MT"
+ },
+ {
+  "version_id": "onix-rs-1-0-turbo-at",
+  "versao": "Chevrolet Onix RS 1.0 Turbo AT",
+  "motivo": "5 linhas possíveis com números diferentes: AT | LT | LTZ | PREMIER | RS"
+ },
+ {
+  "version_id": "onixplus-1-0-mt",
+  "versao": "Chevrolet Onix Plus 1.0 MT",
+  "motivo": "2 linhas possíveis com números diferentes: MT"
+ },
+ {
+  "version_id": "porsche-911-carrera-s",
+  "versao": "Porsche 911 Carrera S",
+  "motivo": "4 linhas possíveis com números diferentes: CARRERA | CARRERA C | CARRERA S | CARRERA SC"
+ },
+ {
+  "version_id": "porsche-911-carrera-s-cabriolet",
+  "versao": "Porsche 911 Carrera S Cabriolet",
+  "motivo": "7 linhas possíveis com números diferentes: CAR T MT | CAR T MT 2 | CAR T MTCA | CARRERA | CARRERA C | CARRERA S | CARRERA SC"
+ },
+ {
+  "version_id": "porsche-cayenne-coupe-cayenne-e-hybrid-coupe",
+  "versao": "Porsche Cayenne Coupé Cayenne E-Hybrid Coupé",
+  "motivo": "8 linhas possíveis com números diferentes: CP PHE | CPH BE | PH BE | PHEV | S PHEV | SCPHBE | SCPHEV | SPH BE"
+ },
+ {
+  "version_id": "porsche-cayenne-coupe-cayenne-gts-coupe",
+  "versao": "Porsche Cayenne Coupé Cayenne GTS Coupé",
+  "motivo": "5 linhas possíveis com números diferentes: GT COUPE | GTP | GTS CP | S | S CP"
+ },
+ {
+  "version_id": "porsche-cayenne-coupe-cayenne-s-coupe",
+  "versao": "Porsche Cayenne Coupé Cayenne S Coupé",
+  "motivo": "7 linhas possíveis com números diferentes: COUPE | GT COUPE | GTP | GTS CP | S | S CP | V6"
+ },
+ {
+  "version_id": "porsche-cayenne-coupe-cayenne-s-coupe-electric",
+  "versao": "Porsche Cayenne Coupé Cayenne S Coupé Electric",
+  "motivo": "12 linhas possíveis com números diferentes: E | E CO | E OF | EC | ET | ET C | ET CO | ET OF"
+ },
+ {
+  "version_id": "porsche-cayenne-coupe-cayenne-turbo-coupe-electric",
+  "versao": "Porsche Cayenne Coupé Cayenne Turbo Coupé Electric",
+  "motivo": "12 linhas possíveis com números diferentes: E | E CO | E OF | EC | ET | ET C | ET CO | ET OF"
+ },
+ {
+  "version_id": "porsche-cayenne-coupe-electric",
+  "versao": "Porsche Cayenne Coupé Electric",
+  "motivo": "12 linhas possíveis com números diferentes: E | E CO | E OF | EC | ET | ET C | ET CO | ET OF"
+ },
+ {
+  "version_id": "porsche-cayenne-e-hybrid",
+  "versao": "Porsche Cayenne E-Hybrid",
+  "motivo": "8 linhas possíveis com números diferentes: CP PHE | CPH BE | PH BE | PHEV | S PHEV | SCPHBE | SCPHEV | SPH BE"
+ },
+ {
+  "version_id": "porsche-cayenne-electric",
+  "versao": "Porsche Cayenne Electric",
+  "motivo": "12 linhas possíveis com números diferentes: E | E CO | E OF | EC | ET | ET C | ET CO | ET OF"
+ },
+ {
+  "version_id": "porsche-cayenne-s-electric",
+  "versao": "Porsche Cayenne S Electric",
+  "motivo": "12 linhas possíveis com números diferentes: E | E CO | E OF | EC | ET | ET C | ET CO | ET OF"
+ },
+ {
+  "version_id": "porsche-cayenne-turbo-electric",
+  "versao": "Porsche Cayenne Turbo Electric",
+  "motivo": "12 linhas possíveis com números diferentes: E | E CO | E OF | EC | ET | ET C | ET CO | ET OF"
+ },
+ {
+  "version_id": "porsche-macan-4-eletrico",
+  "versao": "Porsche Macan 4 Elétrico",
+  "motivo": "4 linhas possíveis com números diferentes: E4 | E4S | EGTS | ETURBO"
+ },
+ {
+  "version_id": "porsche-macan-4s-eletrico",
+  "versao": "Porsche Macan 4S Elétrico",
+  "motivo": "4 linhas possíveis com números diferentes: E4 | E4S | EGTS | ETURBO"
+ },
+ {
+  "version_id": "porsche-macan-gts",
+  "versao": "Porsche Macan GTS",
+  "motivo": "4 linhas possíveis com números diferentes:  | GTS (MY 2026) | S | T"
+ },
+ {
+  "version_id": "porsche-macan-gts-eletrico",
+  "versao": "Porsche Macan GTS Elétrico",
+  "motivo": "4 linhas possíveis com números diferentes: E4 | E4S | EGTS | ETURBO"
+ },
+ {
+  "version_id": "porsche-macan-macan",
+  "versao": "Porsche Macan Macan",
+  "motivo": "4 linhas possíveis com números diferentes:  | GTS (MY 2026) | S | T"
+ },
+ {
+  "version_id": "porsche-macan-turbo-eletrico",
+  "versao": "Porsche Macan Turbo Elétrico",
+  "motivo": "4 linhas possíveis com números diferentes: E4 | E4S | EGTS | ETURBO"
+ },
+ {
+  "version_id": "porsche-panamera-turbo-e-hybrid",
+  "versao": "Porsche Panamera Turbo E-Hybrid",
+  "motivo": "2 linhas possíveis com números diferentes: TPHEV | TSEHY"
+ },
+ {
+  "version_id": "porsche-panamera-turbo-s-e-hybrid",
+  "versao": "Porsche Panamera Turbo S E-Hybrid",
+  "motivo": "2 linhas possíveis com números diferentes: TPHEV | TSEHY"
+ },
+ {
+  "version_id": "porsche-taycan-gts",
+  "versao": "Porsche Taycan GTS",
+  "motivo": "7 linhas possíveis com números diferentes: 4CT | 4S | 4S BE | 4S CT | TURBO S | TURBOCT | TURBOGT"
+ },
+ {
+  "version_id": "pulse-blackmotion-1-3-cvt",
+  "versao": "Fiat Pulse BlackMotion 1.3 CVT",
+  "motivo": "2 linhas possíveis com números diferentes: ABARTH 270 | DRIVE AT"
+ },
+ {
+  "version_id": "ram-2500-laramie-6-7-cummins-turbodiesel-4x4",
+  "versao": "RAM 2500 Laramie 6.7 Cummins Turbodiesel 4x4",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "ram-2500-laramie-night-edition-6-7-cummins-turbodiesel-4x",
+  "versao": "RAM 2500 Laramie Night Edition 6.7 Cummins Turbodiesel 4x4",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "ram-3500-laramie-night-edition-6-7-cummins-turbodiesel-4x",
+  "versao": "RAM 3500 Laramie Night Edition 6.7 Cummins Turbodiesel 4x4",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "ram-3500-limited-longhorn-6-7-cummins-turbodiesel-4x4",
+  "versao": "RAM 3500 Limited Longhorn 6.7 Cummins Turbodiesel 4x4",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "ram-rampage-r-t-2-0-hurricane-4-turbo-flex-4x4",
+  "versao": "RAM Rampage R/T 2.0 Hurricane 4 Turbo Flex 4x4",
+  "motivo": "3 linhas possíveis com números diferentes: LARAMIE FLEX | REBEL FLEX | RT FLEX"
+ },
+ {
+  "version_id": "ranger-limited-3-0-v6-4x4-cd-aut",
+  "versao": "Ford Ranger Limited+ 3.0 V6 4x4 CD Aut.",
+  "motivo": "4 linhas possíveis com números diferentes: LTD | LTD+ | XLS | XLT"
+ },
+ {
+  "version_id": "ranger-raptor-3-0-v6-biturbo-4wd",
+  "versao": "Ford Ranger Raptor 3.0 V6 biturbo 4WD",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "renault-master-vitre-2-3-dci",
+  "versao": "Renault Master Vitré 2.3 dCi",
+  "motivo": "13 linhas possíveis com números diferentes: CHASSICAB | FURGÃO L1 | FURGÃO L2 | FURGÃO L3 | FURGÃOL1R | FURGÃOL2R | FURGÃOL3R | MINIBUSL3 | PRÓ L1 | PRÓ L2 | PRÓ L3 | VITPRO3AC | VITPROL3R"
+ },
+ {
+  "version_id": "shineray-dtruck-cabine-dupla-1-6-16v",
+  "versao": "Shineray DTRUCK Cabine Dupla 1.6 16V",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "shineray-tlux-1-6-16v-cacamba",
+  "versao": "Shineray TLUX 1.6 16V (caçamba)",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "shineray-tlux-cargo-1-6-16v-bau",
+  "versao": "Shineray TLUX Cargo 1.6 16V (baú)",
+  "motivo": "marca fora da tabela do Inmetro"
+ },
+ {
+  "version_id": "songpro",
+  "versao": "BYD Song Pro GL 1.5 DM-i Flex",
+  "motivo": "4 linhas possíveis com números diferentes: GL DM | GL DM FLEX | GS DM | GS DM FLEX"
+ },
+ {
+  "version_id": "songpro-gs-1-5-dm-i-flex",
+  "versao": "BYD Song Pro GS 1.5 DM-i Flex",
+  "motivo": "4 linhas possíveis com números diferentes: GL DM | GL DM FLEX | GS DM | GS DM FLEX"
+ },
+ {
+  "version_id": "strada-freedom-cabine-dupla-1-3",
+  "versao": "Fiat Strada Freedom Cabine Dupla 1.3",
+  "motivo": "4 linhas possíveis com números diferentes: ENDURAN CS13 | FREEDOM CD13 | FREEDOM CS13 | VOLCANO CD13"
+ },
+ {
+  "version_id": "strada-freedom-cabine-plus-1-3",
+  "versao": "Fiat Strada Freedom Cabine Plus 1.3",
+  "motivo": "4 linhas possíveis com números diferentes: ENDURAN CS13 | FREEDOM CD13 | FREEDOM CS13 | VOLCANO CD13"
+ },
+ {
+  "version_id": "suzuki-e-vitara-4style-4x4-allgrip-e",
+  "versao": "Suzuki e Vitara 4Style 4x4 ALLGRIP-e",
+  "motivo": "2 linhas possíveis com números diferentes: 4STY 2WD | 4STY 4WD"
+ },
+ {
+  "version_id": "tcross",
+  "versao": "Volkswagen T-Cross Sense 200 TSI",
+  "motivo": "6 linhas possíveis com números diferentes:  | 200TSI AUTOMATICO | SENSE 200TSI AUTOMATICO"
+ },
+ {
+  "version_id": "tcross-200-tsi",
+  "versao": "Volkswagen T-Cross 200 TSI",
+  "motivo": "6 linhas possíveis com números diferentes:  | 200TSI AUTOMATICO | SENSE 200TSI AUTOMATICO"
+ },
+ {
+  "version_id": "tcross-comfortline-200-tsi",
+  "versao": "Volkswagen T-Cross Comfortline 200 TSI",
+  "motivo": "6 linhas possíveis com números diferentes:  | 200TSI AUTOMATICO | SENSE 200TSI AUTOMATICO"
+ },
+ {
+  "version_id": "toro-ultra-1-3-turbo-flex-mhev",
+  "versao": "Fiat Toro Ultra 1.3 Turbo Flex MHEV",
+  "motivo": "6 linhas possíveis com números diferentes: ENDUR T270 AT | FREED T270 AT | ULTRA T270 AT | ULTRA T270 HYB | VOLC T270 AT | VOLC T270 HYB"
+ },
+ {
+  "version_id": "toro-volcano-1-3-turbo-flex-mhev",
+  "versao": "Fiat Toro Volcano 1.3 Turbo Flex MHEV",
+  "motivo": "6 linhas possíveis com números diferentes: ENDUR T270 AT | FREED T270 AT | ULTRA T270 AT | ULTRA T270 HYB | VOLC T270 AT | VOLC T270 HYB"
+ },
+ {
+  "version_id": "toyota-bz4x-awd-73-1-kwh",
+  "versao": "Toyota bZ4X AWD 73,1 kWh",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "toyota-gr-corolla-circuit-gr-four-1-6-turbo-mt",
+  "versao": "Toyota GR Corolla Circuit GR-Four 1.6 Turbo MT",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "toyota-hiace-furgao-dx-2-8-turbo-diesel-at",
+  "versao": "Toyota Hiace Furgão DX 2.8 Turbo Diesel AT",
+  "motivo": "2 linhas possíveis com números diferentes: HIACE CARGO AT DX | MINIBUS AT DX"
+ },
+ {
+  "version_id": "toyota-hilux-cs-4x4-mt",
+  "versao": "Toyota Hilux CS 4x4 MT",
+  "motivo": "3 linhas possíveis com números diferentes: CABINE SIMPLES MT | CHASSI MT | POWER PACK MT"
+ },
+ {
+  "version_id": "toyota-rav4-xse-2-5-phev-awd",
+  "versao": "Toyota RAV4 XSE 2.5 PHEV AWD",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "virtus-comfortline-200-tsi",
+  "versao": "Volkswagen Virtus Comfortline 200 TSI",
+  "motivo": "3 linhas possíveis com números diferentes: COMFORTLINE 200TSI AUT | HIGHLINE 200TSI AUT | TSI AUTOMÁTICO"
+ },
+ {
+  "version_id": "virtus-highline-200-tsi",
+  "versao": "Volkswagen Virtus Highline 200 TSI",
+  "motivo": "3 linhas possíveis com números diferentes: COMFORTLINE 200TSI AUT | HIGHLINE 200TSI AUT | TSI AUTOMÁTICO"
+ },
+ {
+  "version_id": "volkswagen-id-4-pro",
+  "versao": "Volkswagen ID.4 Pro",
+  "motivo": "modelo não encontrado no Inmetro"
+ },
+ {
+  "version_id": "volkswagen-saveiro-extreme-cd-1-6-msi",
+  "versao": "Volkswagen Saveiro Extreme CD 1.6 MSI",
+  "motivo": "3 linhas possíveis com números diferentes:  | CABINE DUPLA EXTREME MF | CABINE DUPLA ROBUST MF"
+ },
+ {
+  "version_id": "volkswagen-saveiro-robust-cd-1-6-msi",
+  "versao": "Volkswagen Saveiro Robust CD 1.6 MSI",
+  "motivo": "3 linhas possíveis com números diferentes:  | CABINE DUPLA EXTREME MF | CABINE DUPLA ROBUST MF"
+ },
+ {
+  "version_id": "volkswagen-saveiro-robust-cs-1-6-msi",
+  "versao": "Volkswagen Saveiro Robust CS 1.6 MSI",
+  "motivo": "nenhuma linha com o mesmo combustível/propulsão"
+ },
+ {
+  "version_id": "volvo-ec40-plus",
+  "versao": "Volvo EC40 Plus",
+  "motivo": "8 linhas possíveis com números diferentes: 6 CORE | 6 PLUS | 6 ULTRA | 8 CORE | 8 PLUS | 8 ULTRA | PERF BLACK | PERF ULTRA"
+ },
+ {
+  "version_id": "volvo-ec40-ultra",
+  "versao": "Volvo EC40 Ultra",
+  "motivo": "8 linhas possíveis com números diferentes: 6 CORE | 6 PLUS | 6 ULTRA | 8 CORE | 8 PLUS | 8 ULTRA | PERF BLACK | PERF ULTRA"
+ },
+ {
+  "version_id": "volvo-ex30-cross-country-twin-motor",
+  "versao": "Volvo EX30 Cross Country Twin Motor",
+  "motivo": "8 linhas possíveis com números diferentes: C COUNTRY | CROSSC PLUS | E40 CORE | E40 PLUS | E60 CORE | E60 PLUS | E60 ULTRA | TWIN ULTRA"
+ },
+ {
+  "version_id": "volvo-ex30-plus-single-motor",
+  "versao": "Volvo EX30 Plus Single Motor",
+  "motivo": "8 linhas possíveis com números diferentes: C COUNTRY | CROSSC PLUS | E40 CORE | E40 PLUS | E60 CORE | E60 PLUS | E60 ULTRA | TWIN ULTRA"
+ },
+ {
+  "version_id": "volvo-ex30-ultra-twin-motor",
+  "versao": "Volvo EX30 Ultra Twin Motor",
+  "motivo": "8 linhas possíveis com números diferentes: C COUNTRY | CROSSC PLUS | E40 CORE | E40 PLUS | E60 CORE | E60 PLUS | E60 ULTRA | TWIN ULTRA"
+ },
+ {
+  "version_id": "volvo-ex40-plus",
+  "versao": "Volvo EX40 Plus",
+  "motivo": "8 linhas possíveis com números diferentes: 6 CORE | 6 PLUS | 6 ULTRA | 8 CORE | 8 PLUS | 8 ULTRA | PERF BLACK | PERF ULTRA"
+ },
+ {
+  "version_id": "volvo-ex40-ultra",
+  "versao": "Volvo EX40 Ultra",
+  "motivo": "8 linhas possíveis com números diferentes: 6 CORE | 6 PLUS | 6 ULTRA | 8 CORE | 8 PLUS | 8 ULTRA | PERF BLACK | PERF ULTRA"
+ }
+]
