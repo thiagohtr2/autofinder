@@ -2081,18 +2081,17 @@ function renderPills(){
   const an=document.getElementById("ajN");an.hidden=!n;an.textContent=n;
   document.getElementById("ajBtn").setAttribute("aria-label",ajLabel());
 }
-/* celular e tablet: ordem, Modelos/Versões e filtros ficam recolhidos atrás do ícone; a escolha fica guardada neste navegador */
+/* celular e tablet: ordem, Modelos/Versões e filtros ficam recolhidos atrás do ícone; o site sempre abre com eles fechados */
 const APP=document.querySelector(".app"),ajBtn=document.getElementById("ajBtn");
 function ajLabel(){const n=activeCount();return document.querySelector(".app").classList.contains("aj")?"Esconder ordem e filtros":`Mostrar ordem e filtros${n?` (${n} ${n>1?"filtros ativos":"filtro ativo"})`:""}`}
-function setAj(on,save){
+function setAj(on){
   APP.classList.toggle("aj",on);
   ajBtn.setAttribute("aria-expanded",String(on));ajBtn.setAttribute("aria-label",ajLabel());
   ajBtn.title=on?"Esconder ordem e filtros":"Mostrar ordem e filtros";
   ajBtn.dataset.ev=on?"ajustes-fechar":"ajustes-abrir";
-  if(save)try{localStorage.setItem("autokan_ajustes",on?"1":"0")}catch(e){}
 }
-{let on=false;try{on=localStorage.getItem("autokan_ajustes")==="1"}catch(e){}setAj(on,false)}
-ajBtn.addEventListener("click",()=>setAj(!APP.classList.contains("aj"),true));
+setAj(false);try{localStorage.removeItem("autokan_ajustes")}catch(e){} /* apaga a escolha que versões antigas guardavam */
+ajBtn.addEventListener("click",()=>setAj(!APP.classList.contains("aj")));
 /* atalhos de combustível (celular e tablet): ligam e desligam o mesmo filtro da gaveta; se a faixa atual ficar vazia, a roleta vai ao carro mais próximo */
 document.getElementById("fuq").addEventListener("click",e=>{
   const b=e.target.closest("[data-fu]");if(!b)return;const v=b.dataset.fu,on=!F.fu.has(v);on?F.fu.add(v):F.fu.delete(v);filtersChanged();
