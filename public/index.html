@@ -183,7 +183,7 @@ button,input{font:inherit;color:inherit}
 .fchip svg{width:15px;height:15px}
 .fchip:hover{border-color:var(--faint);color:var(--ink)}
 .fchip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
-/* "Preço reduzido": leve destaque no verde da oferta dos cards; aceso fica verde cheio */
+/* "Ofertas" (preço reduzido): leve destaque no verde da oferta dos cards; aceso fica verde cheio */
 .fchip[data-deal]{border-color:rgba(15,138,75,.55);background:#f4fbf7;color:#0f8a4b;box-shadow:0 0 0 2px rgba(15,138,75,.12)}
 .fchip[data-deal]:hover{border-color:#0f8a4b;color:#0b6e3c}
 .fchip[data-deal][aria-pressed="true"]{background:#0f8a4b;border-color:#0f8a4b;color:#fff;box-shadow:0 0 0 2px rgba(15,138,75,.2)}
@@ -2152,7 +2152,7 @@ function renderDrawer(){
 function renderPills(){
   const reduced=CARS.filter(isReduced).length;
   const ob=document.getElementById("oftBtn");if(ob){ob.hidden=!reduced;ob.setAttribute("aria-pressed",String(DEAL));ob.querySelector("b").textContent=reduced||"";ob.setAttribute("aria-label",`Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}`)}
-  document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}">Preço reduzido <b>${reduced}</b></button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
+  document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}" aria-label="Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}">Ofertas <b>${reduced}</b></button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill${g.key==="fu"&&FUQ.some(f=>f[0]===v)?" fqp":""}" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
   document.getElementById("fuq").innerHTML=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)).map(([v,k,l])=>`<button type="button" class="fq" data-fu="${v}" data-k="${k}" data-ev="comb-${k}" aria-pressed="${F.fu.has(v)}" aria-label="${v}" title="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg><span>${l}</span></button>`).join("");
