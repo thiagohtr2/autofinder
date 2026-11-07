@@ -252,6 +252,8 @@ button,input{font:inherit;color:inherit}
 .gp-g>h2 .ic svg{width:14px;height:14px}
 .gp-note{margin:12px 0 0;font-size:12.5px;color:var(--muted)}
 .gp-lnk{border:0;background:none;padding:0;font:inherit;font-weight:700;color:#1450c8;text-decoration:underline;cursor:pointer}
+.gp-al{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 16px;margin:6px 0 4px;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}.gp-al .gp-lnk{font-size:12.5px}
+.gp-sw{display:flex;align-items:center;gap:12px;cursor:pointer;min-width:0}.gp-sw input{position:absolute;opacity:0;width:1px;height:1px}.gp-sw .sw{flex:none;width:42px;height:24px;border-radius:999px;background:#c9d0dc;position:relative;transition:background .15s}.gp-sw .sw::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .15s}.gp-sw input:checked+.sw{background:var(--accent)}.gp-sw input:checked+.sw::after{transform:translateX(18px)}.gp-sw input:focus-visible+.sw{outline:2px solid var(--accent);outline-offset:2px}.gp-sw .tx{display:grid;gap:2px;min-width:0}.gp-sw .tx b{font-size:14px}.gp-sw .tx small{font-size:12.5px;color:var(--muted)}
 .gp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(168px,1fr));gap:16px 14px}
 .gp-it{display:flex;flex-direction:column;min-width:0}
 .gp-it .card{flex:none;width:auto;margin-top:4px;cursor:default}
@@ -1264,6 +1266,7 @@ html{background:#060b1c}
     <button type="button" class="gp-back" id="gpBack" aria-label="Voltar para os carros"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4 6.5 10l6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <div class="gp-ttl"><h1 id="gpTitle">Salvos</h1><p id="gpSub"></p></div>
   </header>
+    <div class="gp-al" id="gpAlerta" hidden><label class="gp-sw"><input type="checkbox" role="switch" id="gpAlOn"><span class="sw" aria-hidden="true"></span><span class="tx"><b>Avisar por e-mail quando o preço baixar</b><small id="gpAlTx">Se o preço de um carro salvo cair, mandamos um e-mail para você.</small></span></label><button type="button" class="gp-lnk" id="gpAlEx" hidden>Mandar um e-mail de exemplo para mim</button></div>
     <div class="gp-tools" id="gpTools" hidden><span class="gp-tl" id="gpOrgL">Organizar por</span><div class="gp-seg" role="group" aria-labelledby="gpOrgL"><button type="button" data-gorg="tipo" aria-pressed="true">Tipo</button><button type="button" data-gorg="preco" aria-pressed="false">Preço</button><button type="button" data-gorg="forte" aria-pressed="false">Ponto forte</button></div></div>
     <div id="gpBody"></div>
   </div></div>
@@ -2776,7 +2779,7 @@ async function toggleGarage(id){const had=GARAGE.has(id),c=ALLCARS.find(x=>x.id=
   if(!had&&GARAGE.size>=GAR_MAX)return toast(`Dá para salvar até ${GAR_MAX} carros. Tire algum para salvar este.`);
   had?GARAGE.delete(id):GARAGE.set(id,new Date().toISOString());if(had)gSel.delete(id);paintGarage();
   if(window.giroTrack)giroTrack("save",{version_id:id,model_id:c&&c.mid,meta:{on:!had}});
-  try{had?await giroGarage.remove(id):await giroGarage.add(id);if(!had)toast(`${c?`${c.mk} ${c.nm}`:"Carro"} salvo. Veja em Salvos, no menu da sua conta.`)}
+  try{had?await giroGarage.remove(id):await giroGarage.add(id);if(!had)toast(`${c?`${c.mk} ${c.nm}`:"Carro"} salvo. Veja em Salvos, no menu da sua conta. Se o preço baixar, avisamos por e-mail.`)}
   catch(err){had?GARAGE.set(id,new Date().toISOString()):GARAGE.delete(id);paintGarage();toast("Não deu para salvar. Tente de novo.")}}
 
 /* página dos salvos (/salvos): os cards da roleta, todos como selecionados, organizados por tipo, preço ou ponto forte,
@@ -2795,6 +2798,7 @@ function renderGarPage(){
   document.querySelectorAll("[data-gorg]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.gorg===GORG)));
   const sub=document.getElementById("gpSub"),tools=document.getElementById("gpTools"),vazio=(t,p,acts)=>`<div class="gp-empty"><b>${t}</b><p>${p}</p><div class="acts">${acts}</div></div>`;
   if(!authKnown||(myId&&!loaded)){tools.hidden=true;gpFoot.hidden=true;sub.textContent="";gpBody.innerHTML=`<div class="gp-empty"><p>Carregando seus carros salvos…</p></div>`;return}
+  paintAlerta();
   if(!myId){sub.textContent="Só você vê";tools.hidden=true;gpFoot.hidden=true;
     gpBody.innerHTML=vazio("Entre para ver seus carros salvos","Salve os carros de que você está de olho, organize por tipo, preço ou ponto forte e compare lado a lado.",`<button type="button" class="gp-btn pri" data-gauth="signup">Criar conta</button><button type="button" class="gp-btn" data-gauth="login">Entrar</button>`);return}
   const ids=[...GARAGE.keys()],cars=ids.map(id=>CARS.find(x=>x.id===id)).filter(Boolean),fora=ids.filter(id=>!CARS.some(x=>x.id===id));
@@ -2806,6 +2810,23 @@ function renderGarPage(){
   const gs=garGroups(cars);
   gpBody.innerHTML=(GORG==="forte"?`<p class="gp-note">Um carro aparece em cada ponto forte que ele tem.</p>`:"")+gs.map(g=>`<section class="gp-g"><h2>${g.k?`<span class="ic" data-k="${g.k}">${ico(g.k)}</span>`:""}<span>${esc(g.label)}</span><small>${g.cars.length} ${g.cars.length>1?"carros":"carro"}</small></h2><div class="gp-grid">${g.cars.map((c,i)=>`<div class="gp-it"><div class="gp-ctl"><label class="gp-ck"><input type="checkbox" data-gsel="${esc(c.id)}"${gSel.has(c.id)?" checked":""}> Comparar</label><button type="button" class="gp-x" data-gdel="${esc(c.id)}" aria-label="Tirar ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)} dos salvos" title="Tirar dos salvos">✕ Tirar</button></div>${cardHTML(c,i).replace('class="card','class="card sel')}</div>`).join("")}</div></section>`).join("")+avisoFora;
   paintGpSel()}
+/* aviso por e-mail quando baixa o preço de um carro salvo: liga/desliga aqui (o e-mail também tem link para desligar) */
+var alertaOn=null,alertaDe=null;
+function paintAlerta(){const box=document.getElementById("gpAlerta"),me=giroAuth.current();
+  if(!myId||!me){box.hidden=true;return}box.hidden=false;
+  document.getElementById("gpAlTx").textContent=`Se o preço de um carro salvo cair, mandamos um e-mail para ${me.email}.`;
+  document.getElementById("gpAlEx").hidden=!me.isAdmin;
+  const inp=document.getElementById("gpAlOn");
+  if(alertaDe!==myId){alertaDe=myId;alertaOn=null;inp.disabled=true;giroAvisos.get().then(r=>{alertaOn=r.enabled;inp.checked=r.enabled;inp.disabled=false}).catch(()=>{inp.disabled=false;inp.checked=true})}
+  else if(alertaOn!==null)inp.checked=alertaOn}
+document.getElementById("gpAlOn").addEventListener("change",async e=>{const on=e.target.checked;e.target.disabled=true;
+  try{await giroAvisos.set(on);alertaOn=on;toast(on?"Pronto: avisamos por e-mail quando o preço de um carro salvo baixar.":"Avisos de preço desligados. Você pode ligar de novo aqui quando quiser.");if(window.giroTrack)giroTrack("click",{meta:{el:"aviso-preco",on}})}
+  catch(x){e.target.checked=!on;toast("Não deu para mudar agora. Tente de novo.")}
+  finally{e.target.disabled=false}});
+document.getElementById("gpAlEx").addEventListener("click",async e=>{const b=e.currentTarget;b.disabled=true;
+  try{const r=await giroAvisos.exemplo();toast(`E-mail de exemplo enviado para ${r.enviado_para}.`)}
+  catch(x){toast(x&&x.message?x.message:"Não deu para enviar o exemplo.")}
+  finally{b.disabled=false}});
 function paintGpSel(){const n=gSel.size,ok=n>=2&&n<=4,a=document.getElementById("gpCmp");gpFoot.hidden=false;
   document.getElementById("gpSel").textContent=n<2?(n?"Marque mais 1 para comparar":"Marque 2 a 4 carros para comparar"):`${n} carros marcados`;
   a.classList.toggle("off",!ok);a.setAttribute("aria-disabled",String(!ok));

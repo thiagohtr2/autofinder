@@ -6,6 +6,7 @@ import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc } 
 import { lerFiltros, paginaNoticias } from "../lib/noticias.mjs";
 import { paginaContato } from "../lib/contato.mjs";
 import { paginaTermos, paginaPrivacidade } from "../lib/termos.mjs";
+import { desligarAvisos, paginaAvisos } from "../lib/avisos.mjs";
 import { lerComparacao, paginaComparacao, paginaEscolher, paginaComparacoes, paresPopulares } from "../lib/comparar.mjs";
 
 const LISTAS = new Map([...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].map((l) => [l.slug, l]));
@@ -28,6 +29,18 @@ export default async (req) => {
   if (caminho === "/contato") return html(paginaContato());
   if (caminho === "/termos") return html(paginaTermos());
   if (caminho === "/privacidade") return html(paginaPrivacidade());
+  // link "desligar avisos de preço" do e-mail: abrir o link só mostra a confirmação (programas de e-mail abrem
+  // links sozinhos); desliga no POST, que vem do botão da página ou do "cancelar inscrição" do Gmail e outros
+  if (caminho === "/avisos/desligar") {
+    const t = url.searchParams.get("t") || "";
+    const semCache = { "Content-Type": "text/html; charset=utf-8", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" };
+    if (req.method !== "POST") return new Response(paginaAvisos(/^[0-9a-f-]{36}$/i.test(t) ? "confirmar" : "invalido", t), { status: 200, headers: semCache });
+    let ok = false;
+    try { ok = await desligarAvisos(t); } catch (e) { console.error("avisos: falha ao desligar", e); }
+    const navegador = (req.headers.get("accept") || "").includes("text/html");
+    if (!navegador) return new Response(ok ? "ok" : "nao encontrado", { status: ok ? 200 : 404, headers: { ...semCache, "Content-Type": "text/plain; charset=utf-8" } });
+    return new Response(paginaAvisos(ok ? "ok" : "invalido"), { status: ok ? 200 : 404, headers: semCache });
+  }
 
   let base;
   try { base = await carregar(); }
@@ -109,6 +122,6 @@ function sitemap(base) {
 
 // escrito por extenso: a Netlify lê esta configuração sem rodar o código. Os tipos são os de TIPOS em netlify/lib/base.mjs.
 export const config = {
-  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/contato", "/termos", "/privacidade", "/sitemap.xml", "/busca.json", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
+  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
   method: ["GET", "HEAD"],
 };

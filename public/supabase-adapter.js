@@ -308,6 +308,32 @@
     },
   };
 
+  // ---------- aviso por e-mail quando baixa o preço de um carro salvo (sem linha = ligado)
+  window.giroAvisos = {
+    async get() {
+      await ready;
+      if (!currentUser) return { enabled: false };
+      const rows = await run(sb.from("price_alert_prefs").select("enabled").eq("user_id", currentUser.id));
+      return { enabled: rows.length ? !!rows[0].enabled : true };
+    },
+    async set(enabled) {
+      await ready;
+      if (!currentUser) throw notSignedIn();
+      await run(sb.from("price_alert_prefs").upsert({ user_id: currentUser.id, enabled: !!enabled, updated_at: new Date().toISOString() }, { onConflict: "user_id" }));
+    },
+    // só admin: manda um e-mail de exemplo (valores fictícios) para a própria conta, para conferir o visual
+    async exemplo() {
+      await ready;
+      const { data } = await sb.auth.getSession();
+      const tok = data && data.session && data.session.access_token;
+      if (!tok) throw notSignedIn();
+      const r = await fetch(SUPABASE_URL + "/functions/v1/avisos-preco", { method: "POST", headers: { "Content-Type": "application/json", apikey: SUPABASE_ANON_KEY, Authorization: "Bearer " + tok }, body: JSON.stringify({ exemplo: true }) });
+      const out = await r.json().catch(() => ({}));
+      if (!r.ok) throw Object.assign(new Error(out.erro || "Não deu para enviar."), { code: "avisos_" + r.status });
+      return out;
+    },
+  };
+
   // ---------- comentários
 
   // o site guarda os comentários por pessoa e regrava a lista inteira a cada mudança
