@@ -44,7 +44,7 @@
   var noop = function () {};
   if (get("autokan_sem_rastreio") === "1") { window.giroTrack = noop; window.giroTrackOff = true; return; }
   // navegador controlado por programa (testes automáticos, robôs): não entra nos números
-  if (navigator.webdriver) { window.giroTrack = noop; window.giroTrackOff = true; return; }
+  if (navigator.webdriver || /bot|crawl|spider|slurp|headless|lighthouse|pagespeed|preview/i.test(navigator.userAgent || "")) { window.giroTrack = noop; window.giroTrackOff = true; return; }
   if (!window.fetch || !window.Promise) { window.giroTrack = noop; return; }
 
   function uuid() {

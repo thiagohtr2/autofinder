@@ -78,6 +78,8 @@
     if (!currentUser) return;
     const profile = await run(sb.from("profiles").select("role").eq("id", currentUser.id).maybeSingle());
     isAdmin = !!profile && profile.role === "admin";
+    // as visitas do dono não entram nos números: este navegador para de contar (vale mesmo depois de sair da conta)
+    if (isAdmin) { try { localStorage.setItem("autokan_sem_rastreio", "1"); } catch (e) {} if (window.giroTrackOff !== true) window.giroTrack = function () {}; }
   })().catch(() => {});
 
   const userApi = {
