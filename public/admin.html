@@ -267,6 +267,19 @@ tr:last-child td{border-bottom:0}
     <div class="chart" id="daily"></div>
   </section>
 
+  <section class="card" id="simult">
+    <div class="msg-h">
+      <div><h2>Pessoas online ao mesmo tempo</h2><p class="sub" id="olSub">Pico de cada intervalo: quantas pessoas estavam no site no mesmo minuto.</p></div>
+      <div class="seg" role="group" aria-label="Período do gráfico de pessoas online">
+        <button type="button" data-olh="24" aria-pressed="true">24 horas</button>
+        <button type="button" data-olh="168">7 dias</button>
+        <button type="button" data-olh="720">30 dias</button>
+      </div>
+    </div>
+    <div class="chart" id="olChart"><div class="empty">Carregando…</div></div>
+    <p class="note" id="olNote" hidden></p>
+  </section>
+
   <div class="grid g3">
     <section class="card"><h2>De onde vieram</h2><p class="sub">Visitas por origem no período.</p><ul class="blist" id="refs"></ul>
       <p class="note">Quem abre um link pelo WhatsApp quase sempre aparece como “Direto”. Para separar, divulgue os links com origem do fim da página.</p></section>
@@ -397,7 +410,7 @@ function bars(el, items, opt){
     const d = h > 0 ? `M${x.toFixed(1)} ${(H - B).toFixed(1)}V${(yy + r).toFixed(1)}Q${x.toFixed(1)} ${yy.toFixed(1)} ${(x + r).toFixed(1)} ${yy.toFixed(1)}H${(x + bw - r).toFixed(1)}Q${(x + bw).toFixed(1)} ${yy.toFixed(1)} ${(x + bw).toFixed(1)} ${(yy + r).toFixed(1)}V${(H - B).toFixed(1)}Z` : "";
     s += `<rect class="hit" data-i="${i}" x="${(L + slot * i).toFixed(1)}" y="${T}" width="${slot.toFixed(1)}" height="${H - T - B}"/>`;
     s += d ? `<path class="bar" d="${d}"/>` : `<path class="bar" d="M0 0"/>`;
-    if (i % every === 0 || i === n - 1 && n <= 14) s += `<text class="axis" x="${(L + slot * i + slot / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(it.x)}</text>`;
+    if (opt.labelAt ? opt.labelAt(it, i) : (i % every === 0 || i === n - 1 && n <= 14)) s += `<text class="axis" x="${(L + slot * i + slot / 2).toFixed(1)}" y="${H - 8}" text-anchor="middle">${esc(it.x)}</text>`;
   });
   s += "</svg>";
   el.innerHTML = s + '<div class="tip" hidden></div>';
@@ -415,8 +428,30 @@ function niceStep(max){ if (max <= 4) return 1; const raw = max / 4, p = Math.po
 
 // ---------- dados
 let days = 7, uOffset = 0, lastW = 0, rT = 0; const U_LIMIT = 25;
-addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => { if (Math.abs(innerWidth - lastW) > 40 && !$("app").hidden){ lastW = innerWidth; loadOverview().catch(() => {}); } }, 300); });
+addEventListener("resize", () => { clearTimeout(rT); rT = setTimeout(() => { if (Math.abs(innerWidth - lastW) > 40 && !$("app").hidden){ lastW = innerWidth; loadOverview().catch(() => {}); loadOnlineHist().catch(() => {}); } }, 300); });
 async function rpc(fn, args){ const { data, error } = await sb.rpc(fn, args || {}); if (error) throw error; return data; }
+// pessoas online ao mesmo tempo: pico de cada intervalo (10 min em 24 h, 1 h em 7 dias, 1 dia em 30 dias)
+let olH = 24;
+async function loadOnlineHist(){
+  const rows = (await rpc("admin_online_history", {p_horas: olH})) || [];
+  const hora = d => d.toLocaleTimeString("pt-BR", {hour: "2-digit", minute: "2-digit"}), dia = d => d.toLocaleDateString("pt-BR", {day: "2-digit", month: "2-digit"});
+  const items = rows.map(r => { const d = new Date(r.inicio); return {v: r.pico, d, m: r.momento ? new Date(r.momento) : null, media: Number(r.media) || 0, est: !!r.estimado,
+    x: olH <= 24 ? `${d.getHours()}h` : dia(d)}; });
+  const quando = it => olH <= 24 ? `${hora(it.d)} a ${hora(new Date(it.d.getTime() + 600000))}` : olH <= 168 ? `${it.d.toLocaleDateString("pt-BR", {weekday: "short", day: "2-digit", month: "2-digit"})}, ${it.d.getHours()}h às ${it.d.getHours() + 1}h` : it.d.toLocaleDateString("pt-BR", {weekday: "short", day: "2-digit", month: "2-digit"});
+  bars($("olChart"), items, {label: "Pico de pessoas online ao mesmo tempo", h: 190,
+    labelAt: olH <= 24 ? (it => it.d.getMinutes() === 0 && it.d.getHours() % 3 === 0) : olH <= 168 ? (it => it.d.getHours() === 0) : undefined,
+    tip: it => `<small>${quando(it)}</small><b>${nf(it.v)}</b> ao mesmo tempo${it.v && it.m ? ` · pico às ${hora(it.m)}` : ""}<br>média ${it.media.toLocaleString("pt-BR", {maximumFractionDigits: 1})}${it.est ? " · estimado" : ""}`});
+  const top = items.reduce((a, b) => (b.v > a.v ? b : a), {v: 0});
+  $("olSub").textContent = top.v ? `Pico no período: ${nf(top.v)} pessoa${top.v === 1 ? "" : "s"} ao mesmo tempo, em ${dia(top.m || top.d)} às ${hora(top.m || top.d)}. Cada barra mostra o pico do intervalo.` : "Ninguém no site ao mesmo tempo no período.";
+  const est = items.filter(i => i.est), fimEst = est.length ? est[est.length - 1].d : null;
+  $("olNote").hidden = !est.length;
+  if (fimEst) $("olNote").textContent = `Até ${dia(fimEst)} às ${hora(fimEst)}, os números são estimados pelo início e pelo fim de cada visita (podem contar a mais quem deixou a aba aberta). Depois disso, o painel anota a cada minuto.`;
+}
+document.querySelectorAll("[data-olh]").forEach(b => b.onclick = () => {
+  olH = +b.dataset.olh;
+  document.querySelectorAll("[data-olh]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  loadOnlineHist().catch(() => { $("olChart").innerHTML = '<div class="empty">Não deu para carregar agora.</div>'; });
+});
 async function loadOverview(){
   const o = await rpc("admin_overview", {p_days: days});
   $("kOnline").textContent = nf(o.online_now);
@@ -663,7 +698,7 @@ function renderLinks(){
 // ---------- montagem
 let timers = [];
 async function refreshAll(){
-  try { await Promise.all([loadOverview(), loadOnline(), loadRecent()]); }
+  try { await Promise.all([loadOverview(), loadOnline(), loadRecent(), loadOnlineHist().catch(() => { $("olChart").innerHTML = '<div class="empty">Não deu para carregar agora.</div>'; })]); }
   catch(e){ $("upd").textContent = "Não deu para atualizar agora"; }
 }
 let bootP = null;
@@ -686,7 +721,7 @@ async function doBoot(){
   if (location.hash === "#mensagens") msgs.then(() => { $("mensagens").scrollIntoView({block: "start"}); $("mensagens").focus({preventScroll: true}); });
   await Promise.all([refreshAll(), loadUsers().catch(() => {}), msgs, pend]);
   timers.forEach(clearInterval);
-  timers = [setInterval(() => loadOnline().catch(() => {}), 20000), setInterval(() => { loadOverview().catch(() => {}); loadRecent().catch(() => {}); loadMsgCount().catch(() => {}); }, 60000)];
+  timers = [setInterval(() => loadOnline().catch(() => {}), 20000), setInterval(() => { loadOverview().catch(() => {}); loadRecent().catch(() => {}); loadMsgCount().catch(() => {}); if (olH <= 24) loadOnlineHist().catch(() => {}); }, 60000)];
 }
 $("notrack").onchange = e => { LS.set("autokan_sem_rastreio", e.target.checked ? "1" : "0"); toast(e.target.checked ? "Suas visitas neste navegador não entram mais nos números." : "Suas visitas neste navegador voltam a contar."); };
 document.querySelectorAll("[data-days]").forEach(b => b.onclick = () => {
