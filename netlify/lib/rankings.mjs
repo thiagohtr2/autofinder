@@ -10,7 +10,7 @@ const dado = (v, g, c) => { const d = v.specs?.[g]?.[c]; return d && typeof d.v 
 const LIMITE = 30;
 
 /* versões com 7 lugares ou mais: pela ficha técnica ou pelo nome oficial da versão ("7 lugares", sem "5 ou 7") */
-function lugares(v) {
+export function lugares(v) {
   const d = dado(v, "capacidades", "ocupantes");
   if (d) return { n: d.v, s: d.s };
   const m = /\b([789])\s*lugares\b/i.exec(v.nome || "");
