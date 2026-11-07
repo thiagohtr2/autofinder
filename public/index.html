@@ -1022,10 +1022,11 @@ html.deitado .note-a{font-weight:600}
   .sr-head{position:relative;margin-bottom:40px}
   .sr-vis{grid-area:auto;position:absolute;right:0;top:calc(100% + 8px);display:flex;align-items:center;gap:8px}
   .app .sr-head .mode:not(.sort){display:inline-grid;grid-template-columns:auto auto;margin:0;padding:2px;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6}
-  .oft{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 13px;border:0;border-radius:999px;background:#f4fbf7;box-shadow:inset 0 0 0 1px rgba(15,138,75,.55);font:700 12px var(--body);color:#0f8a4b;cursor:pointer;white-space:nowrap}
+  /* "Ofertas" com o mesmo desenho do Modelos/Versões: pílula branca de borda azul-clara; ligado fica azul cheio, com o mesmo respiro branco por dentro */
+  .oft{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 15px;border:0;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;font:700 12px var(--body);color:var(--muted);cursor:pointer;white-space:nowrap}
   .oft[hidden]{display:none}
   .oft b{font:800 11px var(--body)}
-  .oft[aria-pressed="true"]{background:#0f8a4b;box-shadow:none;color:#fff}
+  .oft[aria-pressed="true"]{background:var(--accent);color:#fff;box-shadow:inset 0 0 0 1px #dbe5f6,inset 0 0 0 2px #fff}
   .app .sr-head .mode:not(.sort) button{height:26px;padding:0 13px;border-radius:999px;font-size:12px}
   /* atalhos de combustível dentro da caixa aberta */
   .fuq{grid-area:f;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
