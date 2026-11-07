@@ -47,7 +47,7 @@ const urlSegura = (u) => (typeof u === "string" && /^https?:\/\/[^\s"<>]+$/.test
 /* ---------- montagem */
 
 async function montar() {
-  const [versoes, marcasDb, modelosDb, midias, meta, fontesDb, noticiasDb, avisosDb, radarDb] = await Promise.all([
+  const [versoes, marcasDb, modelosDb, midias, meta, fontesDb, noticiasDb, avisosDb, radarDb, precosDb, mudancasDb] = await Promise.all([
     ler("versions", "select=id,brand_id,brand,model_id,catalog_row,price_source_id,price_ref_month,drive,manufactured_in,updated_at,specs&catalog_row=not.is.null&order=id"),
     ler("brands", "select=id,name,country&order=id"),
     ler("models", "select=id,brand_id,name,body&order=id"),
@@ -58,6 +58,9 @@ async function montar() {
     ler("alerts", "select=model_id,kind,title,summary,affects,source,url,date&order=id"),
     // notícias de mercado do radar (o público lê só estas colunas; sem elas o resto do site funciona igual)
     ler("radar_items", "select=id,title,summary,kind,brand,model,model_id,date,source,url&order=id").catch(() => []),
+    // histórico de preço: cada preço que a versão já teve no site e as mudanças noticiadas (com fonte)
+    ler("version_prices", "select=version_id,price,price_kind,valid_from&order=valid_from").catch(() => []),
+    ler("price_changes", "select=version_id,old_price,new_price,change_type,starts_on,ends_on,reported_on,source_name,source_url&order=id").catch(() => []),
   ]);
 
   const metaDe = (k) => (meta.find((x) => x.key === k) || {}).value || {};
@@ -83,6 +86,8 @@ async function montar() {
     return fotos.get(mid) || null;
   };
 
+  const porVersao = (linhas) => { const m = new Map(); linhas.forEach((x) => (m.get(x.version_id) || m.set(x.version_id, []).get(x.version_id)).push(x)); return m; };
+  const precosPorVersao = porVersao(precosDb), mudancasPorVersao = porVersao(mudancasDb);
   const porModelo = (linhas) => { const m = new Map(); linhas.forEach((x) => (m.get(x.model_id) || m.set(x.model_id, []).get(x.model_id)).push(x)); return m; };
   const noticias = porModelo(noticiasDb), avisos = porModelo(avisosDb);
 
@@ -104,6 +109,7 @@ async function montar() {
       motor: String(r.e || ""), cv: cvOf(r), cambio: String(r.t || ""), comb: String(r.f || ""), carroc: String(r.b || ""),
       tracao: v.drive || null, fabricado: v.manufactured_in || null, status: r.st || "on_sale", tags: tg.k, porque: tg.why, atualizado: v.updated_at,
       specs: v.specs && typeof v.specs === "object" ? v.specs : null,
+      precos: precosPorVersao.get(r.i) || [], mudancas: mudancasPorVersao.get(r.i) || [],
     };
     (versao.status === "on_sale" ? m.versoes : m.breve).push(versao);
   }
