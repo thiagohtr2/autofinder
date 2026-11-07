@@ -3,11 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>/* celular deitado: mostra o site como no computador (1280 px), reduzido para caber na tela; em pé, volta ao normal */
-(function(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var N="width=device-width, initial-scale=1, viewport-fit=cover",L="width=1280, viewport-fit=cover",t;
+<script>/* celular deitado (ou com "ver como no computador" ligado, só para o admin): mostra o site como no computador (1280 px), reduzido para caber na tela */
+(function(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var N="width=device-width, initial-scale=1, viewport-fit=cover",L="width=1280, viewport-fit=cover",K="autokan_ver_pc",t;
 function deitado(){var o=screen.orientation&&screen.orientation.type;if(o)return o.indexOf("landscape")===0;if(typeof window.orientation==="number")return Math.abs(window.orientation)===90;return innerWidth>innerHeight}
-function ajusta(){var cel=Math.min(screen.width,screen.height)<600&&matchMedia("(pointer:coarse)").matches,c=cel&&deitado()?L:N;document.documentElement.classList.toggle("deitado",c===L);if(m.content===c||(c===N&&m.content.indexOf("maximum-scale")>0))return;
+function cel(){return Math.min(screen.width,screen.height)<600&&matchMedia("(pointer:coarse)").matches}
+function fixo(){try{return localStorage.getItem(K)==="1"}catch(e){return false}}
+function ajusta(){var c=cel()&&(deitado()||fixo())?L:N;document.documentElement.classList.toggle("deitado",c===L);if(m.content===c||(c===N&&m.content.indexOf("maximum-scale")>0))return;
   clearTimeout(t);if(c===N&&m.content===L){m.content=N+", maximum-scale=1";t=setTimeout(function(){m.content=N},400)}else m.content=c}
+window.autokanCelular=cel;window.autokanVerPC=function(on){if(on===undefined)return fixo();try{on?localStorage.setItem(K,"1"):localStorage.removeItem(K)}catch(e){}ajusta()};
 ajusta();addEventListener("orientationchange",function(){setTimeout(ajusta,60)});if(screen.orientation&&screen.orientation.addEventListener)screen.orientation.addEventListener("change",ajusta);addEventListener("resize",ajusta)})();</script>
 <meta name="robots" content="noindex, nofollow">
 <title>Painel · Autokan</title>
@@ -229,6 +232,7 @@ tr:last-child td{border-bottom:0}
       <a class="btn hbtn" href="#mensagens" id="msgJump">Mensagens <i id="msgBadge" hidden>0</i></a>
       <a class="btn hbtn" href="#pendencias" id="pdJump">Pendências <i id="pdBadge" hidden>0</i></a>
       <span class="upd" id="upd">Carregando…</span>
+      <button type="button" class="btn" id="verPc" hidden>Ver como no computador</button>
       <button type="button" class="btn" id="out">Sair</button>
     </div>
   </header>
@@ -769,6 +773,10 @@ document.querySelectorAll("[data-days]").forEach(b => b.onclick = () => {
 $("uForm").onsubmit = e => { e.preventDefault(); uOffset = 0; loadUsers().catch(() => toast("Não deu para buscar agora.")); };
 $("uPrev").onclick = () => { uOffset = Math.max(0, uOffset - U_LIMIT); loadUsers().catch(() => {}); };
 $("uNext").onclick = () => { uOffset += U_LIMIT; loadUsers().catch(() => {}); };
+if (window.autokanCelular && autokanCelular()){
+  const rotPc = () => { $("verPc").textContent = autokanVerPC() ? "Ver como no celular" : "Ver como no computador"; };
+  rotPc(); $("verPc").hidden = false; $("verPc").onclick = () => { autokanVerPC(!autokanVerPC()); rotPc(); };
+}
 $("out").onclick = async () => { await sb.auth.signOut(); timers.forEach(clearInterval); showGate("login"); };
 sb.auth.onAuthStateChange((ev) => { if (ev === "SIGNED_IN" && $("app").hidden) boot(); });
 boot();

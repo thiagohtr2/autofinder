@@ -266,13 +266,13 @@ const u=s&&s.user,box=document.getElementById("tConta");
 if(u&&box){const m=u.user_metadata||{},nome=m.full_name||m.name||(u.email||"").split("@")[0]||"Você",av=typeof m.avatar_url==="string"&&/^https:\\/\\//.test(m.avatar_url)?m.avatar_url:"";
   box.innerHTML='<button type="button" class="t-pf" id="tPf" aria-haspopup="menu" aria-expanded="false" aria-controls="tPm" aria-label="Sua conta" title="Sua conta">'+(av?'<img src="'+e(av)+'" alt="" referrerpolicy="no-referrer">':e(nome.trim().charAt(0).toUpperCase()))+'</button>'+
    '<div class="t-pm" id="tPm" role="menu" aria-label="Sua conta" hidden><div class="t-pm-h"><b>'+e(nome)+'</b><small>'+e(u.email||"")+'</small></div>'+
-   '<a role="menuitem" href="/salvos">Salvos</a><a role="menuitem" href="/">Escolha o preço</a><a role="menuitem" href="/admin.html" class="t-adm" hidden>Painel de uso</a><a role="menuitem" href="/admin.html#mensagens" class="t-adm" hidden>Mensagens</a><a role="menuitem" href="/contato">Fale com a gente</a><button type="button" role="menuitem" id="tSair">Sair</button></div>';
+   '<a role="menuitem" href="/salvos">Salvos</a><a role="menuitem" href="/">Escolha o preço</a><a role="menuitem" href="/admin.html" class="t-adm" hidden>Painel de uso</a><a role="menuitem" href="/admin.html#mensagens" class="t-adm" hidden>Mensagens</a><button type="button" role="menuitem" id="tVerPc" hidden></button><a role="menuitem" href="/contato">Fale com a gente</a><button type="button" role="menuitem" id="tSair">Sair</button></div>';
   const pf=document.getElementById("tPf"),pm=document.getElementById("tPm");
   const abre=v=>{pm.hidden=!v;pf.setAttribute("aria-expanded",String(v))};
   pf.onclick=x=>{x.stopPropagation();abre(pm.hidden)};document.addEventListener("click",x=>{if(!pm.hidden&&!x.target.closest("#tPm"))abre(false)});
   document.addEventListener("keydown",x=>{if(x.key==="Escape"&&!pm.hidden){abre(false);pf.focus()}});
   const tok=s.access_token,valido=tok&&(!s.expires_at||s.expires_at*1000>Date.now());
-  if(valido)fetch(SB+"/rest/v1/profiles?select=role&id=eq."+encodeURIComponent(u.id),{headers:{apikey:K,Authorization:"Bearer "+tok}}).then(r=>r.ok?r.json():[]).then(r=>{if(r[0]&&r[0].role==="admin")document.querySelectorAll(".t-adm").forEach(a=>a.hidden=false)}).catch(()=>{});
+  if(valido)fetch(SB+"/rest/v1/profiles?select=role&id=eq."+encodeURIComponent(u.id),{headers:{apikey:K,Authorization:"Bearer "+tok}}).then(r=>r.ok?r.json():[]).then(r=>{if(r[0]&&r[0].role==="admin"){document.querySelectorAll(".t-adm").forEach(a=>a.hidden=false);const vp=document.getElementById("tVerPc");if(vp&&window.autokanCelular&&autokanCelular()){const rot=()=>{vp.textContent=autokanVerPC()?"Ver como no celular":"Ver como no computador"};rot();vp.hidden=false;vp.onclick=()=>{abre(false);autokanVerPC(!autokanVerPC());rot()}}}}).catch(()=>{});
   document.getElementById("tSair").onclick=()=>{(valido?fetch(SB+"/auth/v1/logout",{method:"POST",headers:{apikey:K,Authorization:"Bearer "+tok}}):Promise.resolve()).catch(()=>{}).finally(()=>{try{localStorage.removeItem(CH)}catch(x){}location.reload()})};
 }
 /* busca */
@@ -313,11 +313,14 @@ export function pagina({ titulo, descricao, caminho, imagemOg, imagemOgW = 800, 
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>/* celular deitado: mostra o site como no computador (1280 px), reduzido para caber na tela; em pé, volta ao normal */
-(function(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var N="width=device-width, initial-scale=1, viewport-fit=cover",L="width=1280, viewport-fit=cover",t;
+<script>/* celular deitado (ou com "ver como no computador" ligado, só para o admin): mostra o site como no computador (1280 px), reduzido para caber na tela */
+(function(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var N="width=device-width, initial-scale=1, viewport-fit=cover",L="width=1280, viewport-fit=cover",K="autokan_ver_pc",t;
 function deitado(){var o=screen.orientation&&screen.orientation.type;if(o)return o.indexOf("landscape")===0;if(typeof window.orientation==="number")return Math.abs(window.orientation)===90;return innerWidth>innerHeight}
-function ajusta(){var cel=Math.min(screen.width,screen.height)<600&&matchMedia("(pointer:coarse)").matches,c=cel&&deitado()?L:N;document.documentElement.classList.toggle("deitado",c===L);if(m.content===c||(c===N&&m.content.indexOf("maximum-scale")>0))return;
+function cel(){return Math.min(screen.width,screen.height)<600&&matchMedia("(pointer:coarse)").matches}
+function fixo(){try{return localStorage.getItem(K)==="1"}catch(e){return false}}
+function ajusta(){var c=cel()&&(deitado()||fixo())?L:N;document.documentElement.classList.toggle("deitado",c===L);if(m.content===c||(c===N&&m.content.indexOf("maximum-scale")>0))return;
   clearTimeout(t);if(c===N&&m.content===L){m.content=N+", maximum-scale=1";t=setTimeout(function(){m.content=N},400)}else m.content=c}
+window.autokanCelular=cel;window.autokanVerPC=function(on){if(on===undefined)return fixo();try{on?localStorage.setItem(K,"1"):localStorage.removeItem(K)}catch(e){}ajusta()};
 ajusta();addEventListener("orientationchange",function(){setTimeout(ajusta,60)});if(screen.orientation&&screen.orientation.addEventListener)screen.orientation.addEventListener("change",ajusta);addEventListener("resize",ajusta)})();</script>
 <title>${esc(titulo)}</title>
 <meta name="description" content="${esc(descricao)}">

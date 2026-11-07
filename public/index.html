@@ -2,11 +2,14 @@
 <html lang="pt-BR">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script>/* celular deitado: mostra o site como no computador (1280 px), reduzido para caber na tela; em pé, volta ao normal */
-(function(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var N="width=device-width, initial-scale=1, viewport-fit=cover",L="width=1280, viewport-fit=cover",t;
+<script>/* celular deitado (ou com "ver como no computador" ligado, só para o admin): mostra o site como no computador (1280 px), reduzido para caber na tela */
+(function(){var m=document.querySelector('meta[name="viewport"]');if(!m)return;var N="width=device-width, initial-scale=1, viewport-fit=cover",L="width=1280, viewport-fit=cover",K="autokan_ver_pc",t;
 function deitado(){var o=screen.orientation&&screen.orientation.type;if(o)return o.indexOf("landscape")===0;if(typeof window.orientation==="number")return Math.abs(window.orientation)===90;return innerWidth>innerHeight}
-function ajusta(){var cel=Math.min(screen.width,screen.height)<600&&matchMedia("(pointer:coarse)").matches,c=cel&&deitado()?L:N;document.documentElement.classList.toggle("deitado",c===L);if(m.content===c||(c===N&&m.content.indexOf("maximum-scale")>0))return;
+function cel(){return Math.min(screen.width,screen.height)<600&&matchMedia("(pointer:coarse)").matches}
+function fixo(){try{return localStorage.getItem(K)==="1"}catch(e){return false}}
+function ajusta(){var c=cel()&&(deitado()||fixo())?L:N;document.documentElement.classList.toggle("deitado",c===L);if(m.content===c||(c===N&&m.content.indexOf("maximum-scale")>0))return;
   clearTimeout(t);if(c===N&&m.content===L){m.content=N+", maximum-scale=1";t=setTimeout(function(){m.content=N},400)}else m.content=c}
+window.autokanCelular=cel;window.autokanVerPC=function(on){if(on===undefined)return fixo();try{on?localStorage.setItem(K,"1"):localStorage.removeItem(K)}catch(e){}ajusta()};
 ajusta();addEventListener("orientationchange",function(){setTimeout(ajusta,60)});if(screen.orientation&&screen.orientation.addEventListener)screen.orientation.addEventListener("change",ajusta);addEventListener("resize",ajusta)})();</script>
 <title>Autokan: todos os carros 0 km do Brasil por faixa de preço</title>
 <meta name="description" content="Escolha o preço e veja todos os carros 0 km à venda no Brasil que cabem no seu bolso. Compare versões, preços, potência e ficha técnica de mais de 300 modelos.">
@@ -1292,6 +1295,7 @@ html{background:#060b1c}
         <div class="pm-sec"><button type="button" class="pm-item" role="menuitem" id="gbtn"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 2.8h9a.9.9 0 0 1 .9.9v13.6L10 13.5l-5.4 3.8V3.7a.9.9 0 0 1 .9-.9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg><span>Salvos<small>Carros que você salvou, para comparar</small></span><b class="pm-n" id="gCount" hidden></b></button></div>
         <div class="pm-sec" id="pmAdmin" hidden>
           <div class="pm-h">Administração</div>
+          <button type="button" class="pm-item" role="menuitem" id="pmVerPc" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="15" height="10" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 17h6M10 13.5V17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="pmVerPcT">Ver como no computador<small>Só neste celular, só para você</small></span></button>
           <a class="pm-item" role="menuitem" href="/admin.html" id="pmPainel"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 16V9m5 7V4m5 12v-5m4 5H2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span>Painel de uso<small>Visitas, cadastros e o que as pessoas fazem</small></span></a>
           <a class="pm-item" role="menuitem" href="/admin.html#mensagens" id="pmMsgs"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4" width="15" height="12" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m3 5.5 7 5.5 7-5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg><span>Mensagens<small>O que chegou pelo formulário de contato</small></span></a>
           <button type="button" class="pm-item" role="menuitem" id="dbbtn" hidden><svg viewBox="0 0 20 20" aria-hidden="true"><ellipse cx="10" cy="4.5" rx="6" ry="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M4 4.5v11c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5v-11M4 10c0 1.4 2.7 2.5 6 2.5s6-1.1 6-2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>Banco de dados<small>Marcas, modelos, versões e o que aparece no site</small></span><b class="rd-dot" id="dbDot" hidden style="background:var(--accent)"></b></button>
@@ -1801,9 +1805,12 @@ function openPMenu(){const me=giroAuth.current();if(!me)return openAuth();
   const name=me.name||me.email.split("@")[0];document.getElementById("pmName").textContent=name;document.getElementById("pmEmail").textContent=me.email;
   const av=document.getElementById("pmAv");av.textContent="";if(me.avatar){const im=document.createElement("img");im.src=me.avatar;im.alt="";im.referrerPolicy="no-referrer";av.appendChild(im)}else av.textContent=name.trim().charAt(0).toUpperCase();
   document.getElementById("pmAdmin").hidden=!me.isAdmin;
+  const vp=document.getElementById("pmVerPc");vp.hidden=!(me.isAdmin&&window.autokanCelular&&autokanCelular());
+  document.getElementById("pmVerPcT").innerHTML=window.autokanVerPC&&autokanVerPC()?"Ver como no celular<small>Volta ao desenho de celular</small>":"Ver como no computador<small>Só neste celular, só para você</small>";
   pmenu.hidden=false;pbtn.setAttribute("aria-expanded","true");const f=pmItems()[0];f&&f.focus()}
 function closePMenu(focus){if(pmenu.hidden)return;pmenu.hidden=true;pbtn.setAttribute("aria-expanded","false");if(focus)pbtn.focus()}
 pbtn.onclick=()=>pmenu.hidden?openPMenu():closePMenu(true);
+document.getElementById("pmVerPc").onclick=()=>{closePMenu(false);if(window.autokanVerPC)autokanVerPC(!autokanVerPC())};
 // ao escolher uma opção, o menu fecha antes e o foco volta para o ícone (os painéis devolvem o foco para ele ao fechar)
 pmenu.addEventListener("click",e=>{if(e.target.closest(".pm-item"))closePMenu(true)},true);
 document.addEventListener("click",e=>{if(!pmenu.hidden&&!e.target.closest(".pwrap"))closePMenu(false)});
