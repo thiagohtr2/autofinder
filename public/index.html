@@ -1354,7 +1354,7 @@ html{background:#060b1c}
         <div class="dbx-sec"><div class="dbx-h">Números da base</div><div class="dbp-stats" id="dbStats"></div></div>
         <div class="dbx-sec dbp-tools"><div class="dbx-h">Filtrar a lista</div>
           <select id="dbOrigin" aria-label="Origem"><option value="">Todas as origens</option></select>
-          <select id="dbStatus" aria-label="Situação"><option value="">Todas as situações</option><option value="on_sale">À venda</option><option value="announced">Anunciados</option><option value="pre_order">Pré-venda</option></select>
+          <select id="dbStatus" aria-label="Situação"><option value="">Todas as situações</option><option value="on_sale">À venda</option><option value="announced">Anunciados</option><option value="pre_order">Pré-venda</option><option value="discontinued">Fora de linha</option></select>
           <label class="dbp-chk"><input type="checkbox" id="dbPend"> Só pendências (sem preço ou sem foto)</label>
           <button type="button" class="dbp-tg" id="dbOpenAll">Abrir tudo</button>
         </div>
@@ -2622,7 +2622,7 @@ cmBody.addEventListener("click",e=>{const d=e.target.closest("[data-cmdel]");if(
 function confirmDel(b){if(b.dataset.arm){return true}b.dataset.arm=1;b.textContent="Confirmar?";setTimeout(()=>{if(b.isConnected){delete b.dataset.arm;b.textContent="Apagar"}},3000);return false}
 /* ---------- admin: database browser (editors only) ---------- */
 const dbPanel=document.getElementById("dbPanel"),dbBody=document.getElementById("dbBody");
-const STLBL={on_sale:"À venda",announced:"Anunciado",pre_order:"Pré-venda"};
+const STLBL={on_sale:"À venda",announced:"Anunciado",pre_order:"Pré-venda",discontinued:"Fora de linha"};
 let dbOpenAll=false;
 let dbTab="all";
 document.getElementById("dbTabs").addEventListener("click",e=>{const b=e.target.closest("[data-dbtab]");if(!b)return;dbTab=b.dataset.dbtab;document.querySelectorAll("#dbTabs [data-dbtab]").forEach(x=>x.setAttribute("aria-pressed",x===b));renderDB();dbBody.scrollTop=0;dbMenuSet(false)});

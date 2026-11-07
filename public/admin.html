@@ -142,6 +142,37 @@ tr:last-child td{border-bottom:0}
 .pill.nova{background:var(--accent);color:#fff}
 .hbtn{display:inline-flex;align-items:center;gap:7px;text-decoration:none;color:var(--ink)}
 .hbtn i{font-style:normal;min-width:20px;height:20px;padding:0 6px;border-radius:999px;background:var(--accent);color:#fff;font:700 11.5px var(--mono);display:inline-grid;place-items:center}
+/* pendências da base */
+#pendencias{scroll-margin-top:72px}
+#pendencias:focus{outline:none}
+.pd-tipos{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 12px}
+.pd-tipos button{border:1px solid var(--line);background:var(--panel);border-radius:999px;padding:5px 11px;font-weight:700;font-size:12.5px;cursor:pointer;color:var(--ink)}
+.pd-tipos button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.pd-tipos button i{font-style:normal;font:600 11px var(--mono);margin-left:4px;opacity:.75}
+.pd-g{margin:0 0 18px}
+.pd-g:last-child{margin-bottom:0}
+.pd-gh{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 12px;margin:0 0 8px}
+.pd-gh h3{margin:0;font-family:var(--display);font-size:13.5px;font-weight:600}
+.pd-gh p{margin:2px 0 0;color:var(--muted);font-size:12.5px}
+.pds{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.pd{border:1px solid var(--line);border-radius:14px;padding:11px 13px;background:var(--bg);min-width:0}
+.pd-t{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 8px;font-size:14px}
+.pd-t a{font-weight:700;color:var(--ink);text-decoration:none}
+.pd-t a:hover{color:var(--accent);text-decoration:underline}
+.pd-t span{color:var(--muted);font-size:13px}
+.pd-c{margin:6px 0 0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 8px;font-size:13px}
+.pd-c .de{color:var(--muted)}
+.pd-c .de s{color:var(--muted)}
+.pd-c .pa b{color:var(--ok)}
+.pd-c .ar{color:var(--faint)}
+.pd p.dt{margin:6px 0 0;font-size:12.5px;color:#3b4352;line-height:1.5;overflow-wrap:anywhere}
+.pd-a{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:9px}
+.pd-a .btn,.pd-gh .btn{padding:6px 11px;font-size:12.5px;white-space:normal;text-align:left;max-width:100%;overflow-wrap:anywhere}
+.pd-a form{display:flex;flex-wrap:wrap;gap:6px;align-items:center;flex:1 1 260px}
+.pd-a form[hidden]{display:none}
+.pd-a input,.pd-a select{flex:1 1 160px;min-width:0;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:6px 10px;font:inherit;font-size:13px}
+.pd-a small{color:var(--muted);font-size:12px}
+.pd.feita{opacity:.85}
 /* entrar */
 .gate{max-width:380px;margin:8vh auto 0;display:flex;flex-direction:column;gap:14px}
 .gate img{height:38px;width:auto;align-self:center}
@@ -183,6 +214,7 @@ tr:last-child td{border-bottom:0}
       </div>
       <label class="tog" title="As suas visitas ao site, neste navegador, deixam de entrar nos números"><input type="checkbox" id="notrack"> Não contar minhas visitas neste navegador</label>
       <a class="btn hbtn" href="#mensagens" id="msgJump">Mensagens <i id="msgBadge" hidden>0</i></a>
+      <a class="btn hbtn" href="#pendencias" id="pdJump">Pendências <i id="pdBadge" hidden>0</i></a>
       <span class="upd" id="upd">Carregando…</span>
       <button type="button" class="btn" id="out">Sair</button>
     </div>
@@ -209,6 +241,18 @@ tr:last-child td{border-bottom:0}
     </div>
     <ul class="msgs" id="msgs"><li class="empty">Carregando…</li></ul>
     <div class="pager"><span id="mInfo"></span><button class="btn" type="button" id="mMore" hidden>Ver mais antigas</button></div>
+  </section>
+
+  <section class="card" id="pendencias" tabindex="-1">
+    <div class="msg-h">
+      <div><h2>Pendências da base</h2><p class="sub" id="pdSub">Diferenças entre o cadastro e a fonte oficial que precisam da sua decisão.</p></div>
+      <div class="seg" role="group" aria-label="Quais pendências">
+        <button type="button" data-pf="aberta" aria-pressed="true">Abertas</button>
+        <button type="button" data-pf="resolvidas">Resolvidas</button>
+      </div>
+    </div>
+    <div class="pd-tipos" id="pdTipos" role="group" aria-label="Tipo de pendência"></div>
+    <div id="pd"><p class="empty">Carregando…</p></div>
   </section>
 
   <section class="card">
@@ -503,6 +547,103 @@ document.querySelectorAll("[data-mf]").forEach(b => b.onclick = () => {
 $("mMore").onclick = () => { mMax += M_LIMIT; loadMsgs().catch(() => {}); };
 $("msgJump").onclick = e => { e.preventDefault(); history.replaceState(null, "", "#mensagens"); $("mensagens").scrollIntoView({behavior: "smooth", block: "start"}); $("mensagens").focus({preventScroll: true}); };
 
+// ---------- pendências da base (decisões de cadastro): aplicar o que diz a fonte oficial ou manter
+const PD_TIPOS = [
+  ["fora_de_linha", "Saiu de linha?", "Versões que sumiram do site ou da lista de preços da montadora. Aplicar tira a versão do Autokan (nada é apagado; dá para desfazer)."],
+  ["ano", "Ano-modelo", "O ano do cadastro é diferente do que a montadora vende hoje."],
+  ["nome", "Nome da versão", "A montadora usa outro nome para a versão. O endereço da página do carro não muda."],
+  ["potencia", "Potência", "Potência do cadastro diferente da fonte oficial, ou fontes oficiais que não batem entre si."],
+  ["motor", "Texto do motor", "A descrição do motor cita números que a fonte oficial não traz."],
+  ["combustivel", "Combustível", "O combustível do cadastro é diferente do que a montadora informa."],
+  ["cambio", "Câmbio", "Nome do câmbio fora do padrão usado nos outros carros do Autokan."],
+];
+const PD_COMBS = ["Flex", "Gasolina", "Etanol", "Diesel", "Elétrico", "Híbrido", "Híbrido plug-in"];
+let pdFiltro = "aberta", pdTipo = "", pdRows = [];
+const pdVal = (r, v) => v == null || v === "" ? "vazio" : r.field === "status" ? ({on_sale: "à venda", discontinued: "fora de linha (sai do site)", announced: "anunciado", pre_order: "pré-venda"}[v] || v) : r.field === "power_cv" ? `${String(v).replace(".", ",")} cv` : String(v);
+const pdUrl = v => { if (!v || !v.brand_id) return null; const m = (v.catalog_row && v.catalog_row.m) || v.model_id || ""; return `/carros/${v.brand_id}/${m.slice(v.brand_id.length + 1)}`; };
+async function loadPend(){
+  const { data, error } = await sb.from("catalog_issues").select("id,kind,field,version_id,current_value,proposed_value,detail,source_url,status,applied_value,resolved_at,versions(brand,model,version,brand_id,model_id,catalog_row)").order("id");
+  if (error) throw error;
+  pdRows = data || [];
+  renderPend();
+}
+function renderPend(){
+  const abertas = pdRows.filter(r => r.status === "aberta");
+  const b = $("pdBadge"); b.textContent = nf(abertas.length); b.hidden = !abertas.length;
+  $("pdSub").textContent = abertas.length ? `${nf(abertas.length)} decisõe${abertas.length === 1 ? "" : "s"} de cadastro esperando você. Cada uma mostra o que está no cadastro e o que diz a fonte oficial.`.replace("1 decisõe ", "1 decisão ") : "Nenhuma decisão de cadastro pendente.";
+  const base = pdRows.filter(r => pdFiltro === "aberta" ? r.status === "aberta" : r.status !== "aberta");
+  const tipos = PD_TIPOS.filter(([k]) => base.some(r => r.kind === k));
+  if (pdTipo && !tipos.some(([k]) => k === pdTipo)) pdTipo = "";
+  $("pdTipos").innerHTML = tipos.length > 1 ? [`<button type="button" data-pt="" aria-pressed="${!pdTipo}">Todas<i>${nf(base.length)}</i></button>`, ...tipos.map(([k, t]) => `<button type="button" data-pt="${k}" aria-pressed="${pdTipo === k}">${esc(t)}<i>${nf(base.filter(r => r.kind === k).length)}</i></button>`)].join("") : "";
+  const grupos = tipos.filter(([k]) => !pdTipo || pdTipo === k);
+  $("pd").innerHTML = grupos.length ? grupos.map(([k, titulo, explica]) => {
+    const rs = base.filter(r => r.kind === k), comProposta = rs.filter(r => r.status === "aberta" && r.proposed_value);
+    return `<div class="pd-g"><div class="pd-gh"><div><h3>${esc(titulo)} <span class="pill">${nf(rs.length)}</span></h3><p>${esc(explica)}</p></div>${comProposta.length > 1 ? `<button class="btn" type="button" data-todas="${k}">Aplicar as ${nf(comProposta.length)} propostas</button>` : ""}</div><ul class="pds">${rs.map(pdItem).join("")}</ul></div>`;
+  }).join("") : `<p class="empty">${pdFiltro === "aberta" ? "Tudo resolvido. Nenhuma pendência aberta." : "Nada resolvido ainda."}</p>`;
+}
+function pdItem(r){
+  const v = r.versions || {}, url = pdUrl(v), nome = `${v.brand || ""} ${v.model || ""}`.trim() || r.version_id;
+  const titulo = `<div class="pd-t">${url ? `<a href="${esc(url)}" target="_blank" rel="noopener">${esc(nome)}</a>` : `<b>${esc(nome)}</b>`}<span>${esc(v.version || "")}</span></div>`;
+  const dt = `<p class="dt">${esc(r.detail)}${r.source_url ? ` <a href="${esc(r.source_url)}" target="_blank" rel="noopener">fonte</a>` : ""}</p>`;
+  if (r.status !== "aberta"){
+    const quando = r.resolved_at ? ` em ${fdate(r.resolved_at)}` : "";
+    const res = r.status === "aplicada" ? `<span class="pill ok">Aplicado${quando}</span> <span class="de"><s>${esc(pdVal(r, r.current_value))}</s></span> <span class="ar">→</span> <b>${esc(pdVal(r, r.applied_value))}</b>` : `<span class="pill">Mantido${quando}</span> <b>${esc(pdVal(r, r.current_value))}</b>`;
+    return `<li class="pd feita">${titulo}<div class="pd-c">${res}</div>${dt}<div class="pd-a"><button class="btn" type="button" data-pd="reabrir" data-id="${r.id}">${r.status === "aplicada" ? `Desfazer (voltar para ${esc(pdVal(r, r.current_value))})` : "Reabrir"}</button></div></li>`;
+  }
+  const muda = r.proposed_value ? `<span class="de">No cadastro: <s>${esc(pdVal(r, r.current_value))}</s></span><span class="ar">→</span><span class="pa">Fonte oficial: <b>${esc(pdVal(r, r.proposed_value))}</b></span>` : `<span class="de">No cadastro: <b>${esc(pdVal(r, r.current_value))}</b></span><span class="pa">· as fontes oficiais não batem: você decide</span>`;
+  const outro = r.field === "status" ? "" : r.field === "fuel"
+    ? `<form data-outro="${r.id}"><select name="v" aria-label="Outro combustível">${PD_COMBS.map(c => `<option${c === r.proposed_value ? " selected" : ""}>${c}</option>`).join("")}</select><button class="btn" type="submit">Usar este</button></form>`
+    : `<form data-outro="${r.id}"${r.proposed_value ? " hidden" : ""}><input name="v" ${r.field === "model_year" || r.field === "power_cv" ? 'inputmode="numeric"' : ""} placeholder="${r.field === "power_cv" ? "potência em cv" : r.field === "model_year" ? "ano" : "novo valor"}" aria-label="Outro valor" autocomplete="off"><button class="btn" type="submit">Usar este valor</button></form>`;
+  const acoes = [
+    r.proposed_value ? `<button class="btn primary" type="button" data-pd="aplicar" data-id="${r.id}">${r.field === "status" ? "Tirar do site" : `Aplicar ${esc(pdVal(r, r.proposed_value))}`}</button>` : "",
+    `<button class="btn" type="button" data-pd="manter" data-id="${r.id}">${r.field === "status" ? "Continua à venda" : `Manter ${esc(pdVal(r, r.current_value))}`}</button>`,
+    r.proposed_value && r.field !== "status" && r.field !== "fuel" ? `<button class="btn" type="button" data-abre="${r.id}">Outro valor</button>` : "",
+    outro,
+  ].join("");
+  return `<li class="pd">${titulo}<div class="pd-c">${muda}</div>${dt}<div class="pd-a">${acoes}</div></li>`;
+}
+async function pdResolver(id, acao, valor){
+  const r = await rpc("resolve_catalog_issue", {p_id: id, p_acao: acao, p_valor: valor == null ? null : valor});
+  const i = pdRows.findIndex(x => x.id === id);
+  if (i >= 0) pdRows[i] = {...pdRows[i], ...r};
+  return r;
+}
+const PD_ERRO = e => { const m = String((e && e.message) || ""); return /inválid|vazio|informe/.test(m) ? m.charAt(0).toUpperCase() + m.slice(1) + "." : "Não deu para salvar agora. Tente de novo."; };
+$("pd").addEventListener("click", async e => {
+  const bt = e.target.closest("[data-pd]"), todas = e.target.closest("[data-todas]"), abre = e.target.closest("[data-abre]");
+  if (abre){ const f = $("pd").querySelector(`form[data-outro="${abre.dataset.abre}"]`); if (f){ f.hidden = false; abre.hidden = true; const i = f.querySelector("input"); if (i) i.focus(); } return; }
+  try {
+    if (bt){
+      bt.disabled = true;
+      const acao = bt.dataset.pd, r = await pdResolver(+bt.dataset.id, acao);
+      toast(acao === "aplicar" ? (r.field === "status" ? "Versão tirada do site." : "Aplicado no cadastro.") : acao === "manter" ? "Mantido como está." : "Desfeito: a pendência voltou para as abertas.");
+    } else if (todas){
+      const rs = pdRows.filter(r => r.kind === todas.dataset.todas && r.status === "aberta" && r.proposed_value);
+      if (!confirm(`Aplicar as ${rs.length} propostas deste grupo no cadastro? Cada uma pode ser desfeita depois em "Resolvidas".`)) return;
+      todas.disabled = true;
+      let ok = 0; for (const r of rs){ try { await pdResolver(r.id, "aplicar"); ok++; } catch(err){} }
+      toast(ok === rs.length ? `${ok} propostas aplicadas.` : `${ok} de ${rs.length} aplicadas. As outras continuam abertas.`);
+    } else return;
+  } catch(err){ toast(PD_ERRO(err)); }
+  renderPend();
+});
+$("pd").addEventListener("submit", async e => {
+  const f = e.target.closest("form[data-outro]"); if (!f) return;
+  e.preventDefault();
+  const v = String(f.elements.v.value || "").trim();
+  if (!v){ toast("Digite o valor."); return; }
+  const b = f.querySelector("button"); b.disabled = true;
+  try { await pdResolver(+f.dataset.outro, "aplicar", v); toast("Aplicado no cadastro."); renderPend(); }
+  catch(err){ toast(PD_ERRO(err)); b.disabled = false; }
+});
+$("pdTipos").addEventListener("click", e => { const b = e.target.closest("[data-pt]"); if (!b) return; pdTipo = b.dataset.pt; renderPend(); });
+document.querySelectorAll("[data-pf]").forEach(b => b.onclick = () => {
+  pdFiltro = b.dataset.pf; pdTipo = "";
+  document.querySelectorAll("[data-pf]").forEach(x => x.setAttribute("aria-pressed", String(x === b)));
+  renderPend();
+});
+$("pdJump").onclick = e => { e.preventDefault(); history.replaceState(null, "", "#pendencias"); $("pendencias").scrollIntoView({behavior: "smooth", block: "start"}); $("pendencias").focus({preventScroll: true}); };
+
 function renderLinks(){
   const base = location.origin + "/";
   const ch = [["Instagram (bio e stories)", "instagram"], ["WhatsApp", "whatsapp"], ["Facebook", "facebook"], ["TikTok", "tiktok"], ["YouTube", "youtube"], ["Anúncio pago", "anuncio"]];
@@ -534,8 +675,10 @@ async function doBoot(){
   $("notrack").checked = LS.get("autokan_sem_rastreio") === "1";
   renderLinks();
   const msgs = Promise.all([loadMsgs(), loadMsgCount()]).catch(() => { $("msgs").innerHTML = '<li class="empty">Não deu para carregar as mensagens agora.</li>'; });
+  const pend = loadPend().catch(() => { $("pd").innerHTML = '<p class="empty">Não deu para carregar as pendências agora.</p>'; });
+  if (location.hash === "#pendencias") pend.then(() => { $("pendencias").scrollIntoView({block: "start"}); $("pendencias").focus({preventScroll: true}); });
   if (location.hash === "#mensagens") msgs.then(() => { $("mensagens").scrollIntoView({block: "start"}); $("mensagens").focus({preventScroll: true}); });
-  await Promise.all([refreshAll(), loadUsers().catch(() => {}), msgs]);
+  await Promise.all([refreshAll(), loadUsers().catch(() => {}), msgs, pend]);
   timers.forEach(clearInterval);
   timers = [setInterval(() => loadOnline().catch(() => {}), 20000), setInterval(() => { loadOverview().catch(() => {}); loadRecent().catch(() => {}); loadMsgCount().catch(() => {}); }, 60000)];
 }
