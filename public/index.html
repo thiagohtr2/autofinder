@@ -403,6 +403,42 @@ button,input{font:inherit;color:inherit}
 /* selo "Novo": carro ou versão lançados há pouco (regras na página /novidades) */
 .stage .ntag{position:absolute;left:0;top:4.5px;z-index:2;font:800 7.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:2.5px 5px 2px;border-radius:4px;pointer-events:none}
 .row.ghost .ntag{display:none}
+/* comparar direto da roleta: botão no cartão e barra embaixo com os dois escolhidos */
+/* a linha de ações (favoritar, comparar, ficha) cabe no cartão estreito */
+.card .c-act{gap:5px}
+.card .c-act .like{padding:0 7px;gap:4px}
+.card .c-act .go{padding:0 6px;font-size:12px;white-space:nowrap}
+.card .go .g2{display:none}
+@media (max-width:370px){.card .go .g1{display:none}.card .go .g2{display:inline}}
+.card .cmpb{flex:none;box-sizing:border-box;width:30px;height:34px;margin:0;padding:0;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--muted);display:grid;place-items:center;cursor:pointer;-webkit-appearance:none;appearance:none;transition:all .2s var(--ease)}
+.card .cmpb svg{width:17px;height:17px}
+.card .cmpb:hover{border-color:var(--accent);color:var(--accent)}
+.card .cmpb[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+body.cmp-1 .card .cmpb[aria-pressed="false"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.row.ghost .cmpb{visibility:hidden}
+.cmpbar{position:fixed;left:50%;bottom:calc(14px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:19;width:min(620px,calc(100% - 24px));box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:10px;background:#fff;border-radius:18px;box-shadow:0 18px 44px rgba(6,11,28,.22),0 0 0 1px rgba(6,11,28,.06);animation:cmpsobe .28s var(--ease)}
+.cmpbar[hidden]{display:none}
+@keyframes cmpsobe{from{opacity:0;transform:translate(-50%,14px)}to{opacity:1;transform:translate(-50%,0)}}
+.cmp-sl{list-style:none;margin:0;padding:0;flex:1;min-width:0;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cmp-s{position:relative;display:flex;align-items:center;gap:8px;min-width:0;padding:6px 26px 6px 6px;border-radius:12px;background:var(--panel)}
+.cmp-s.vazio{background:none;border:1.5px dashed var(--faint);padding-right:8px}
+.cmp-th{flex:none;width:52px;aspect-ratio:16/10;border-radius:8px;background:#fff;display:grid;place-items:center;overflow:hidden;font:800 12px var(--display);color:var(--faint)}
+.cmp-th img{width:100%;height:100%;object-fit:contain}
+.cmp-s.vazio .cmp-th{background:var(--panel);color:var(--accent)}
+.cmp-tx{display:flex;flex-direction:column;min-width:0;line-height:1.2}
+.cmp-tx b{font:700 13px var(--body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmp-tx small{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmp-s.vazio .cmp-tx b{color:var(--accent)}
+.cmp-s.vazio .cmp-tx b,.cmp-s.vazio .cmp-tx small{white-space:normal}
+.cmp-rm{position:absolute;top:4px;right:4px;width:20px;height:20px;border:0;border-radius:50%;background:transparent;color:var(--muted);font:700 14px/1 var(--body);cursor:pointer;display:grid;place-items:center;padding:0}
+.cmp-rm:hover{background:#fff;color:var(--ink)}
+.cmp-ac{flex:none;display:flex;gap:8px;align-items:center}
+.cmp-x{height:40px;padding:0 14px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:700 13px var(--body);cursor:pointer}
+.cmp-go{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:40px;padding:0 16px;border-radius:12px;background:var(--accent);color:#fff;font:700 13.5px var(--body);text-decoration:none;white-space:nowrap}
+.cmp-go svg{width:16px;height:16px}
+.cmp-go[aria-disabled="true"]{background:var(--panel);color:var(--faint);cursor:not-allowed}
+@media (max-width:620px){.cmpbar{flex-direction:column;align-items:stretch;gap:8px;padding:8px}.cmp-ac{width:100%}.cmp-x{flex:none}.cmp-go{flex:1}.cmp-th{width:44px}.cmp-tx b{font-size:12.5px}.cmp-tx small{font-size:11px}}
+@media (prefers-reduced-motion:reduce){.cmpbar{animation:none}}
 .spec{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin-top:7px;padding-top:7px;border-top:1px solid #eaeef4}
 .spec div{display:flex;flex-direction:column;gap:1px;min-width:0}
 .spec small{font-size:8.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
@@ -916,7 +952,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 /* celular deitado (desenho de computador reduzido): a nota do pé fica bem pequena, sem tampar os carros */
 html.deitado .note{bottom:3px;font-size:7.5px;line-height:1.25;color:#9aa1b0}
 html.deitado .note-a{font-weight:600}
-.toast{pointer-events:none;width:max-content;position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:12px;font-size:13px;max-width:calc(100% - 32px);z-index:20;box-shadow:0 12px 32px rgba(12,17,28,.25)}
+.toast{pointer-events:none;width:max-content;position:fixed;left:50%;bottom:calc(20px + var(--cmph,0px) + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:11px 18px;border-radius:12px;font-size:13px;max-width:calc(100% - 32px);z-index:20;box-shadow:0 12px 32px rgba(12,17,28,.25)}
 
 @media (max-width:760px){
   .top{flex-wrap:wrap;gap:10px 14px;padding-block:10px}
@@ -1470,6 +1506,7 @@ html{background:#060b1c}
   <div class="sh-nav" id="shNav" hidden><button type="button" class="sn-btn" id="shPrev"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><small>Anterior</small> <b id="shPrevN"></b></span></button><span class="sn-pos" id="shPos"></span><button type="button" class="sn-btn nx" id="shNext"><span><small>Próximo</small> <b id="shNextN"></b></span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
 </div>
 <noscript><p style="position:fixed;inset:auto 16px 16px;z-index:50;margin:0;padding:14px 16px;border-radius:14px;background:#060b1c;color:#fff;font:600 14px/1.5 system-ui,sans-serif">Para escolher o preço, ative o JavaScript no navegador. Sem ele, veja <a href="/carros" style="color:#8fb3ff">todas as marcas e os preços</a>.</p></noscript>
+<div class="cmpbar" id="cmpBar" role="region" aria-label="Comparar carros" hidden><ol class="cmp-sl" id="cmpSl"></ol><div class="cmp-ac"><button type="button" class="cmp-x" id="cmpX">Cancelar</button><a class="cmp-go" id="cmpGo" href="/comparar" data-ev="comparar-roleta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>Comparar</a></div></div>
 <div class="toast" id="toast" hidden aria-hidden="true"></div>
 <div class="sr" id="anuncio" role="status" aria-live="polite"></div>
 
@@ -1900,7 +1937,8 @@ function cardHTML(c,i,anim){
       ${c.k.length?`<div class="icons">${c.k.map(k=>`<button type="button" class="ic" data-k="${k}" data-tip="${k}" aria-label="${TAGS[k]}: o que significa">${ico(k)}</button>`).join("")}</div>`:""}
       <div class="c-act">
         <button type="button" class="like${on?" on":""}" data-like="${c.id}" aria-pressed="${on}" ${db?"":"disabled"}>${HEART}<span>${live?n:"–"}</span><span class="sr"> · favoritar o ${esc(c.mk)} ${esc(c.nm)}</span></button>
-        <button type="button" class="go" data-info="${c.id}">Ver ficha</button>
+        <button type="button" class="cmpb" data-cmp="${c.id}" aria-pressed="${cmpTem(c.id)}" title="Comparar com outro carro" aria-label="Comparar o ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)} com outro carro"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg></button>
+        <button type="button" class="go" data-info="${c.id}"><span class="g1">Ver ficha</span><span class="g2">Ficha</span></button>
         <button type="button" class="info" data-info="${c.id}" title="Ver ficha">i<span class="sr">: ficha completa do ${esc(c.mk)} ${esc(c.nm)} ${esc(c.ver)}</span></button>
       </div>
       <div class="c-more">
@@ -2034,6 +2072,41 @@ function openTip(btn){
 document.addEventListener("click",e=>{const b=e.target.closest("[data-tip]");if(b){e.stopPropagation();openTip(b);return}if(tipEl&&!e.target.closest(".tip"))closeTip()},true);
 addEventListener("keydown",e=>{if(e.key==="Escape")closeTip()});
 addEventListener("scroll",closeTip,true);addEventListener("resize",closeTip);
+/* ---------- comparar direto da roleta: toque no botão de dois cartões em um carro, gire a roleta e toque no outro.
+   A escolha fica guardada neste navegador até comparar ou cancelar. */
+const CMP_K="autokan_comparar";let CMP=[];
+try{const x=JSON.parse(localStorage.getItem(CMP_K)||"[]");if(Array.isArray(x))CMP=x.filter(o=>o&&typeof o.id==="string"&&typeof o.mid==="string").slice(0,2)}catch(e){}
+const cmpTem=id=>CMP.some(x=>x.id===id);
+function cmpSalva(){try{CMP.length?localStorage.setItem(CMP_K,JSON.stringify(CMP)):localStorage.removeItem(CMP_K)}catch(e){}}
+function cmpCarro(x){return ALLCARS.find(c=>c.id===x.id)||null}
+function renderCmp(){
+  if(loaded)CMP=CMP.filter(x=>cmpCarro(x));   // carro que saiu do site some da escolha
+  const bar=document.getElementById("cmpBar"),sl=document.getElementById("cmpSl"),go=document.getElementById("cmpGo");
+  document.querySelectorAll("[data-cmp]").forEach(b=>b.setAttribute("aria-pressed",String(cmpTem(b.dataset.cmp))));
+  document.body.classList.toggle("cmp-1",CMP.length===1);
+  bar.hidden=!CMP.length;
+  if(!CMP.length){document.body.style.setProperty("--cmph","0px");return}
+  const slot=(x,i)=>{const c=cmpCarro(x);if(!c)return"";const p=photoOf(c.mid||c.id,c.ano),ph=p&&p.asset;
+    return `<li class="cmp-s"><span class="cmp-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:esc(c.nm.slice(0,2).toUpperCase())}</span><span class="cmp-tx"><b>${esc(c.mk)} ${esc(c.nm)}</b><small>${esc(c.ver)} · ${fmt(c.p)}</small></span><button type="button" class="cmp-rm" data-cmprm="${esc(c.id)}" aria-label="Tirar o ${esc(c.mk)} ${esc(c.nm)} da comparação">✕</button></li>`};
+  sl.innerHTML=CMP.map(slot).join("")+(CMP.length<2?`<li class="cmp-s vazio"><span class="cmp-th">2</span><span class="cmp-tx"><b>Escolha o 2º carro</b><small>Gire a roleta e toque no botão de comparar do outro carro</small></span></li>`:"");
+  const ok=CMP.length===2;go.setAttribute("aria-disabled",String(!ok));
+  go.href=ok?`/comparar/${encodeURIComponent(CMP[0].mid)}-vs-${encodeURIComponent(CMP[1].mid)}?versoes=${encodeURIComponent(CMP[0].id)},${encodeURIComponent(CMP[1].id)}`:"/comparar";
+  document.body.style.setProperty("--cmph",(bar.offsetHeight+10)+"px");
+}
+function pickCmp(id){
+  const i=CMP.findIndex(x=>x.id===id),c=ALLCARS.find(x=>x.id===id);
+  if(i>=0){CMP.splice(i,1)}
+  else{if(!c)return;if(CMP.length>=2){toast("Você já escolheu dois carros. Tire um na barra de baixo para trocar.");return}
+    CMP.push({id:c.id,mid:c.mid||c.id});
+    toast(CMP.length===1?`${c.mk} ${c.nm} escolhido. Agora gire a roleta e toque no botão de comparar do outro carro.`:"Pronto! Toque em Comparar para ver os dois lado a lado.")}
+  cmpSalva();renderCmp();
+  if(CMP.length===2)document.getElementById("cmpGo").focus({preventScroll:true});
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-cmp]");if(b){e.preventDefault();pickCmp(b.dataset.cmp)}});
+document.getElementById("cmpSl").addEventListener("click",e=>{const r=e.target.closest("[data-cmprm]");if(r){CMP=CMP.filter(x=>x.id!==r.dataset.cmprm);cmpSalva();renderCmp()}});
+document.getElementById("cmpX").addEventListener("click",()=>{CMP=[];cmpSalva();renderCmp()});
+document.getElementById("cmpGo").addEventListener("click",e=>{if(CMP.length<2){e.preventDefault();toast("Escolha o segundo carro: gire a roleta e toque no botão de comparar dele.");return}CMP=[];cmpSalva()});
+addEventListener("resize",()=>{const bar=document.getElementById("cmpBar");if(!bar.hidden)document.body.style.setProperty("--cmph",(bar.offsetHeight+10)+"px")});
 rowsEl.addEventListener("click",e=>{
   {const cd=e.target.closest(".card");if(cd&&!e.target.closest("button,a,input,label")&&!cd.closest(".row.ghost")){const row=cd.closest(".row");if(row){SELBY[row._i]=cd.dataset.id;applySel(row)}return}}
   const nb=e.target.closest("[data-news]");if(nb)return openNews(nb.dataset.news);
@@ -2457,7 +2530,7 @@ function setCatalog(snap){lastCat=snap;
     if(!r||typeof r.i!=="string"||r.st&&r.st!=="on_sale")return;
     rows.push({id:r.i,mid:r.m,bid:d.id,pr:r.pr||null,mk:String(x.brand||""),nm:String(r.mn||""),ver:String(r.v||""),ano:r.y||null,p:typeof r.p==="number"?r.p:null,
       t:BODYKEY[r.b]||null,body:r.b||null,...(({k,why})=>({k,why}))(deriveTags(r)),fu:r.f||null,cb:r.t||null,mo:r.e||"",kind:r.pk==="fipe"?"FIPE":"Tabela",cv:r.cv||null})})});
-  ALLCARS=rows;CARS=rows.filter(c=>shown(c.bid,c.mid));applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();dicaPrimeiraVez();
+  ALLCARS=rows;CARS=rows.filter(c=>shown(c.bid,c.mid));applyPrices();loaded=true;loadErr=null;renderPills();if(!drawer.hidden)renderDrawer();swap();dicaPrimeiraVez();renderCmp();
   posicaoInicial();renderGarPage();
 }
 /* links das páginas próprias de cada carro: /?carro=<modelo> (e &versao=<versão>) leva a roleta até o carro e abre a ficha */
