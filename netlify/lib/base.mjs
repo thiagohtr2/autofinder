@@ -47,7 +47,7 @@ const urlSegura = (u) => (typeof u === "string" && /^https?:\/\/[^\s"<>]+$/.test
 /* ---------- montagem */
 
 async function montar() {
-  const [versoes, marcasDb, modelosDb, midias, meta, fontesDb, noticiasDb, avisosDb, radarDb, precosDb, mudancasDb] = await Promise.all([
+  const [versoes, marcasDb, modelosDb, midias, meta, fontesDb, noticiasDb, avisosDb, radarDb, precosDb, mudancasDb, lancamentosDb] = await Promise.all([
     ler("versions", "select=id,brand_id,brand,model_id,catalog_row,price_source_id,price_ref_month,drive,manufactured_in,updated_at,specs&catalog_row=not.is.null&order=id"),
     ler("brands", "select=id,name,country&order=id"),
     ler("models", "select=id,brand_id,name,body&order=id"),
@@ -61,6 +61,8 @@ async function montar() {
     // histórico de preço: cada preço que a versão já teve no site e as mudanças noticiadas (com fonte)
     ler("version_prices", "select=version_id,price,price_kind,valid_from&order=valid_from").catch(() => []),
     ler("price_changes", "select=version_id,old_price,new_price,change_type,starts_on,ends_on,reported_on,source_name,source_url&order=id").catch(() => []),
+    // Novidades: lançamentos que ainda estão no prazo (a visão do banco já aplica as regras de entrada e saída)
+    ler("lancamentos_no_ar", "select=id,model_id,tipo,titulo,resumo,versoes,lancado_em,data_precisao,fonte,fonte_url,fica_ate&order=lancado_em.desc,id.desc").catch(() => []),
   ]);
 
   const metaDe = (k) => (meta.find((x) => x.key === k) || {}).value || {};
@@ -158,9 +160,22 @@ async function montar() {
 
   const aVenda = [...modelos.values()].filter((m) => m.aVenda && m.marcaInfo);
   const anos = contar(aVenda.flatMap((m) => m.versoes.map((v) => v.ano)));
+
+  // Novidades: cada lançamento com o carro e as versões dele; "em breve" = modelos confirmados que ainda não estão à venda
+  const lancamentos = lancamentosDb.map((l) => {
+    const m = modelos.get(l.model_id);
+    if (!m || !m.marcaInfo) return null;
+    const todas = [...m.versoes, ...m.breve], ids = Array.isArray(l.versoes) ? l.versoes : [];
+    const versoes = ids.length ? todas.filter((v) => ids.includes(v.id)) : todas;   // sem lista: o modelo todo (à venda e em pré-venda)
+    if (!versoes.length) return null;
+    return { ...l, m, versoes, soAlgumas: ids.length > 0 && versoes.length < todas.length, fonte_url: urlSegura(l.fonte_url) };
+  }).filter(Boolean);
+  const comLancamento = new Set(lancamentos.map((l) => l.m.id));
+  const emBreve = [...modelos.values()].filter((m) => !m.aVenda && m.breve.length && m.marcaInfo && !comLancamento.has(m.id))
+    .sort((a, b) => (a.breve.some((v) => v.status === "pre_order") ? 0 : 1) - (b.breve.some((v) => v.status === "pre_order") ? 0 : 1) || a.titulo.localeCompare(b.titulo, "pt-BR"));
   const meses = contar(aVenda.flatMap((m) => m.versoes.map((v) => v.mes)));
   return {
-    modelos, marcas, aVenda, fontes, feed: montarFeed({ noticiasDb, avisosDb, radarDb, modelos, marcas }),
+    modelos, marcas, aVenda, fontes, feed: montarFeed({ noticiasDb, avisosDb, radarDb, modelos, marcas }), lancamentos, emBreve,
     anoLinha: anos[0] || new Date().getFullYear(), mesPrecos: meses.sort().pop() || null,
     totalVersoes: aVenda.reduce((t, m) => t + m.versoes.length, 0),
     atualizado: [...modelos.values()].reduce((d, m) => (m.atualizado > d ? m.atualizado : d), ""),

@@ -200,6 +200,7 @@ tr:last-child td{border-bottom:0}
 .au-v .ar{color:var(--faint)}
 .au-v strong{font-weight:800}
 .au-mant{color:var(--muted)}
+.au-v a{font-weight:700;color:var(--accent);text-decoration:none}
 .au-dif{font:700 11.5px var(--mono);font-style:normal;padding:1px 7px;border-radius:999px;white-space:nowrap}
 .au-dif.bx{background:var(--ok-soft);color:var(--ok)}
 .au-dif.sb{background:#fdecea;color:var(--danger)}
@@ -818,9 +819,9 @@ $("acTodas").onclick = () => { acN = Math.min(2000, Number($("acTodas").dataset.
 // ---------- alterações automáticas (histórico do que o Claude e o sistema mudaram sozinhos)
 // Cada alteração mostra a foto e o link do carro, o que mudou e a notícia (ou fonte oficial) que motivou. Separadas por dia;
 // os ajustes de cadastro do mesmo carro no mesmo dia viram um cartão só.
-const AU_KIND = {oferta: ["Oferta", "of"], preco: ["Preço", "of"], fim_oferta: ["Fim da oferta", "fim"], nova_versao: ["Versão nova", "nv"], situacao: ["Situação", "nv"], atualizacao: ["Atualização", ""], cadastro: ["Cadastro", ""], radar: ["Notícia sem mudança", ""]};
+const AU_KIND = {oferta: ["Oferta", "of"], preco: ["Preço", "of"], fim_oferta: ["Fim da oferta", "fim"], nova_versao: ["Versão nova", "nv"], lancamento: ["Lançamento", "nv"], situacao: ["Situação", "nv"], atualizacao: ["Atualização", ""], cadastro: ["Cadastro", ""], radar: ["Notícia sem mudança", ""]};
 const AU_QUEM = {claude: "Claude", sistema: "automático", admin: "você"};
-const AU_TIPOS = [["", "Todas"], ["precos", "Preços e ofertas"], ["versoes", "Versões novas"], ["cadastro", "Cadastro"], ["noticias", "Notícias sem mudança"]];
+const AU_TIPOS = [["", "Todas"], ["precos", "Preços e ofertas"], ["versoes", "Lançamentos e versões"], ["cadastro", "Cadastro"], ["noticias", "Notícias sem mudança"]];
 const AU_FONTE = {noticia: "Notícia que motivou", oficial: "Fonte oficial", inmetro: "Tabela do Inmetro"};
 let auN = 30, auTipo = "", auResumo = [], auOf = [];
 const fmtR = n => n == null ? "—" : "R$ " + Number(n).toLocaleString("pt-BR");
@@ -874,6 +875,7 @@ function auCartao(r){
   if (r.kind === "radar"){
     if (/^Notícia deixada de fora/i.test(r.title || "")){ rot = "Notícia deixada de fora"; cls = "fim"; }
   } else if (r.kind === "nova_versao") corpo = `<p class="au-v">Entrou no site${r.new_value ? ` por <strong>${esc(r.new_value)}</strong>` : ""}</p>`;
+  else if (r.kind === "lancamento") corpo = `<p class="au-v">Entrou em <a href="/novidades" target="_blank" rel="noopener">Novidades</a>${r.new_value ? ` · lançado em <strong>${esc(r.new_value)}</strong>` : ""}</p>`;
   else if (r.kind === "cadastro" || r.kind === "atualizacao") corpo = `<p class="au-campo">${esc(auCampo(r.title))}</p>${auValores(r.old_value, r.new_value)}`;
   else corpo = auValores(r.old_value, r.new_value);
   if (r.kind === "oferta") corpo += `<p class="au-ate">${r.ate ? `Vale até ${auDiaCurto(r.ate)}. No dia seguinte volta sozinho ao preço normal${r.old_value ? ` (${esc(r.old_value)})` : ""}.` : "Sem data para acabar: a tarefa automática confere se a oferta continua."}</p>`;
@@ -895,7 +897,7 @@ function auGrupo(rs){
   const fontes = [...new Map(rs.filter(x => auUrl(x.source_url)).map(x => [x.source_url, x])).values()];
   return `<li class="au">${auFoto(r, 120)}<div class="au-c">${auTopo("Cadastro", "", r, `<span class="au-n">${nf(rs.length)} ajustes</span>`)}${auCarro({...r, versao: null})}${lista}${fontes.map(auFonte).join("")}</div></li>`;
 }
-const AU_SEC = {precos: "Preços e ofertas", versoes: "Versões novas", noticias: "Notícias sem mudança no site", cadastro: "Ajustes de cadastro"};
+const AU_SEC = {precos: "Preços e ofertas", versoes: "Lançamentos e versões novas", noticias: "Notícias sem mudança no site", cadastro: "Ajustes de cadastro"};
 function auLista(lista){
   if (!lista.length) return '<p class="empty">Nenhuma alteração deste tipo ainda.</p>';
   // dia > tipo (na ordem que o banco manda: preços, versões, notícias, cadastro) > cartões

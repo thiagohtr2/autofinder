@@ -239,13 +239,15 @@ export const ROLETA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 1
 
 const LUPA_T = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 const NOTICIAS_ICO = '<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="12" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14.5 7h2a1 1 0 0 1 1 1v7a1.5 1.5 0 0 1-3 0M5.5 7h6M5.5 10h6M5.5 13h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>';
+const NOVIDADES_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="currentColor"/></svg>';
 const COMPARA_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>';
 
 function topo() {
   return `<header class="top" id="topo"><div class="wrap top-in">
 <a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18"></a>
-<nav class="top-nav" aria-label="Principal"><a href="/carros">Marcas</a><a href="/carros#precos">Preços</a><a class="so-larga" href="/carros#tipos">Tipos</a><a href="/noticias">Notícias</a><a href="/comparar">Comparar</a></nav>
+<nav class="top-nav" aria-label="Principal"><a href="/carros">Marcas</a><a href="/carros#precos">Preços</a><a class="so-larga" href="/carros#tipos">Tipos</a><a href="/novidades">Novidades</a><a href="/noticias">Notícias</a><a href="/comparar">Comparar</a></nav>
 <div class="top-acts">
+<a class="t-ic so-cel" href="/novidades" aria-label="Novidades: lançamentos" title="Novidades: lançamentos">${NOVIDADES_ICO}</a>
 <a class="t-ic so-cel" href="/noticias" aria-label="Notícias" title="Notícias">${NOTICIAS_ICO}</a>
 <a class="t-ic so-cel so-cel-larga" href="/comparar" aria-label="Comparar carros" title="Comparar carros">${COMPARA_ICO}</a>
 <button type="button" class="t-ic" id="tBuscaBtn" aria-label="Buscar carro" title="Buscar carro" aria-expanded="false" aria-controls="tBusca">${LUPA_T}</button>
@@ -298,7 +300,7 @@ ${col("Por preço", ATALHOS_PRECO.map((f) => [`/${f.slug}`, f.titulo.replace("Ca
 ${col("Por tipo", TIPOS.map((t) => [`/${t.slug}`, t.curto]))}
 ${col("Por combustível", COMBUSTIVEIS.map((c) => [`/${c.slug}`, c.curto]))}
 ${col("Pela ficha técnica", GRUPOS_RANKING.map(([g, t]) => [`/${RANKINGS.find((r) => r.grupo === g).slug}`, t]))}
-${col("Autokan", [["/", "Escolha o preço"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/noticias", "Notícias"], ["/contato", "Contato"]])}
+${col("Autokan", [["/", "Escolha o preço"], ["/carros", "Todas as marcas"], ["/comparar", "Comparar carros"], ["/novidades", "Lançamentos"], ["/noticias", "Notícias"], ["/contato", "Contato"]])}
 </div>
 <p class="foot-nota"><strong>O Autokan mostra dados para você comparar e não indica qual carro é melhor: a escolha é sua.</strong> Preços de tabela sugeridos pelas montadoras ou, quando elas não divulgam, da Tabela FIPE para carro 0 km. Cada versão tem link para a fonte. As fotos são ilustrativas. Confirme preço, versões e equipamentos com a concessionária antes de comprar.</p>
 <p class="foot-copy">© ${new Date().getFullYear()} Autokan · Conheça. Compare. Escolha. · <a href="/termos">Termos de uso</a> · <a href="/privacidade">Privacidade</a></p>
