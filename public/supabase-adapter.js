@@ -102,6 +102,13 @@
       const meta = currentUser.user_metadata || {};
       return { email: currentUser.email, isAdmin, name: meta.full_name || meta.name || "", avatar: typeof meta.avatar_url === "string" && /^https:\/\//.test(meta.avatar_url) ? meta.avatar_url : "" };
     },
+    // só para o admin: quantas pessoas estão no site agora (o dono não entra na conta); null para os outros
+    async online() {
+      await ready;
+      if (!isAdmin) return null;
+      const rows = await run(sb.rpc("admin_online"));
+      return Array.isArray(rows) ? rows.length : 0;
+    },
     // o que está ligado no Supabase (ex.: login com Google), para o site não oferecer o que não funciona
     authSettings() {
       if (!settingsPromise) settingsPromise = fetch(SUPABASE_URL + "/auth/v1/settings", { headers: { apikey: SUPABASE_ANON_KEY } })
