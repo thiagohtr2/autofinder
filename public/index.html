@@ -2209,7 +2209,8 @@ const todayBR=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo"}
 function applyPrices(){const today=todayBR(),byVersion=new Map();
   [...PRICE_CHANGES].sort((a,b)=>String(b.reported_on||"").localeCompare(String(a.reported_on||""))||b.id-a.id).forEach(x=>{if(!byVersion.has(x.version_id))byVersion.set(x.version_id,[]);byVersion.get(x.version_id).push(x)});
   ALLCARS.forEach(c=>{if(!("p0" in c))c.p0=c.p;const list=byVersion.get(c.id)||[];
-    const active=list.find(x=>(!x.starts_on||x.starts_on<=today)&&(!x.ends_on||x.ends_on>=today)),ended=!active&&list.find(x=>x.ends_on&&x.ends_on<today&&x.new_price===c.p0);
+    /* a oferta só vale quando o preço da versão no banco é o da oferta (a mesma regra da página do modelo): registro solto ou encerrado não muda o preço */
+    const active=list.find(x=>!x.encerrada_em&&x.new_price===c.p0&&(!x.starts_on||x.starts_on<=today)&&(!x.ends_on||x.ends_on>=today)),ended=!active&&list.find(x=>!x.encerrada_em&&x.ends_on&&x.ends_on<today&&x.new_price===c.p0);
     c.pc=active||null;c.p=active?active.new_price:ended?ended.old_price:c.p0})}
 const PC_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v5M12 7.5v.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
 const shortDate=d=>{const m=/^\d{4}-(\d{2})-(\d{2})/.exec(d||"");return m?`${m[2]}/${m[1]}`:""};

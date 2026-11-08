@@ -536,7 +536,7 @@
   // ---------- coleções
 
   async function readPriceChanges() {
-    const rows = await selectAll("price_changes", "id,version_id,old_price,new_price,change_type,starts_on,ends_on,reason,source_name,source_url,reported_on", "id");
+    const rows = await selectAll("price_changes", "id,version_id,old_price,new_price,change_type,starts_on,ends_on,reason,source_name,source_url,reported_on,encerrada_em", "id");
     return rows.map((row) => docOf(String(row.id), row));
   }
 
