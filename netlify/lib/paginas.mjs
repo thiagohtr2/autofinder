@@ -433,6 +433,14 @@ function gradeAosPoucos(cards, n = 24) {
 
 /* ---------- página do modelo */
 
+/* oferta em vigor na versão (o preço da versão é o da oferta enquanto ela vale) */
+const hojeSP = () => new Intl.DateTimeFormat("en-CA", { timeZone: "America/Sao_Paulo" }).format(new Date());
+export function ofertaDe(v) {
+  const h = hojeSP();
+  return (v.mudancas || []).find((x) => x.change_type === "promocional" && x.new_price === v.preco && (!x.ends_on || x.ends_on >= h) && (!x.starts_on || x.starts_on <= h)) || null;
+}
+const textoOferta = (o) => `em oferta${o.ends_on ? ` até ${dataBr(o.ends_on)}` : ""}${o.old_price ? ` (preço normal ${reais(o.old_price)})` : ""}`;
+
 export function rotuloPreco(vs) {
   const comPreco = vs.filter((v) => v.preco);
   if (!comPreco.length) return "Preço ainda não divulgado pela montadora";
@@ -455,7 +463,7 @@ export function paginaModelo(base, m) {
   const linhas = vs.map((v) => `<tr>
 <td class="vn">${esc(v.nome || m.nome)}${v.status !== "on_sale" ? `<span class="st">${STATUS[v.status] || ""}</span>` : ""}</td>
 ${temAno ? `<td data-l="Ano" class="num">${v.ano || '<span class="na">—</span>'}</td>` : ""}
-<td data-l="Preço" class="vp">${v.preco ? `<span>${reais(v.preco)}<small>${v.fipe ? "FIPE 0 km" : "sugerido de fábrica"}</small></span>` : '<span class="na">não divulgado</span>'}</td>
+<td data-l="Preço" class="vp">${v.preco ? `<span>${reais(v.preco)}<small>${(() => { const o = ofertaDe(v); return o ? `oferta${o.ends_on ? ` até ${dataBr(o.ends_on).slice(0, 5)}` : ""}${o.old_price ? ` · antes ${reais(o.old_price)}` : ""}` : v.fipe ? "FIPE 0 km" : "sugerido de fábrica"; })()}</small></span>` : '<span class="na">não divulgado</span>'}</td>
 <td data-l="Motor">${v.motor ? esc(v.motor) : '<span class="na">—</span>'}</td>
 <td data-l="Potência" class="num">${v.cv ? `${v.cv} cv` : '<span class="na">—</span>'}</td>
 <td data-l="Câmbio">${v.cambio ? esc(v.cambio) : '<span class="na">—</span>'}</td>
@@ -479,8 +487,11 @@ ${temTracao ? `<td data-l="Tração">${v.tracao ? esc(v.tracao) : '<span class="
   // perguntas frequentes: respostas tiradas só dos dados da página
   const mais = m.versoes.filter((v) => v.preco), barata = mais[0], cara = mais[mais.length - 1];
   const faq = [];
-  if (barata) faq.push([`Quanto custa o ${nomeAno}?`, `O ${nomeAno} custa a partir de ${reais(barata.preco)}${barata.nome ? ` na versão ${barata.nome}` : ""}${cara && cara !== barata ? ` e chega a ${reais(cara.preco)}${cara.nome ? ` na versão ${cara.nome}` : ""}` : ""}. ${rotuloPreco(m.versoes)}.`]);
-  if (barata && mais.length > 1) faq.push([`Qual é a versão mais barata do ${m.titulo}?`, `É a ${barata.nome || m.nome}, por ${reais(barata.preco)}${barata.motor ? `, com motor ${barata.motor}` : ""}${barata.cambio ? ` e câmbio ${/^[A-Z]{2,}/.test(barata.cambio) ? barata.cambio : barata.cambio.toLowerCase()}` : ""}.`]);
+  // a versão mais barata pode ser de outro ano-modelo (estoque) ou estar em oferta: a resposta diz isso
+  const anoDe = (v) => (v.ano && m.ano && v.ano !== m.ano ? ` linha ${v.ano}` : "");
+  const ofB = barata && ofertaDe(barata), outroAno = barata && anoDe(barata);
+  if (barata) faq.push([`Quanto custa o ${nomeAno}?`, `O ${outroAno ? m.titulo : nomeAno} custa a partir de ${reais(barata.preco)}${barata.nome ? ` na versão ${barata.nome}${outroAno}` : ""}${ofB ? `, ${textoOferta(ofB)}` : ""}${cara && cara !== barata ? `, e chega a ${reais(cara.preco)}${cara.nome ? ` na versão ${cara.nome}${anoDe(cara)}` : ""}` : ""}. ${rotuloPreco(m.versoes)}${ofB ? ", fora as ofertas" : ""}.`]);
+  if (barata && mais.length > 1) faq.push([`Qual é a versão mais barata do ${m.titulo}?`, `É a ${barata.nome || m.nome}${outroAno}, por ${reais(barata.preco)}${ofB ? ` ${textoOferta(ofB)}` : ""}${barata.motor ? `, com motor ${barata.motor}` : ""}${barata.cambio ? ` e câmbio ${/^[A-Z]{2,}/.test(barata.cambio) ? barata.cambio : barata.cambio.toLowerCase()}` : ""}.`]);
   if (cvTxt) faq.push([`Qual é a potência do ${m.titulo}?`, m.cvMax !== m.cvMin ? `Vai de ${m.cvMin} cv a ${m.cvMax} cv, conforme a versão.` : `Tem ${m.cvMin} cv.`]);
   if (m.combs.length) faq.push([`O ${m.titulo} é flex, elétrico ou híbrido?`, m.combs.length === 1 ? (m.aVenda && m.versoes.length > 1 ? `Todas as versões são ${COMB_VERSOES[m.combs[0]] || m.combs[0].toLowerCase()}.` : `É ${COMB_FRASE[m.combs[0]] || m.combs[0].toLowerCase()}.`) : `Há versões ${lista(m.combs.map((c) => COMB_VERSOES[c] || c.toLowerCase()))}.`]);
   if (m.fabricado.length) faq.push([`Onde o ${m.titulo} é fabricado?`, `O ${m.titulo} vendido no Brasil é fabricado ${lista(m.fabricado.map(paisEm))}.`]);
