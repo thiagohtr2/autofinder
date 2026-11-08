@@ -4,6 +4,7 @@
 import { SITE, carregar, semAcento, FAIXAS, FAIXAS_ENTRE, TIPOS, COMBUSTIVEIS, filtrar, imagem, faixaPorSlug, lerMil, slugFaixa } from "../lib/base.mjs";
 import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc } from "../lib/paginas.mjs";
 import { lerFiltros, paginaNoticias } from "../lib/noticias.mjs";
+import { paginaNovidades } from "../lib/novidades.mjs";
 import { paginaContato } from "../lib/contato.mjs";
 import { paginaTermos, paginaPrivacidade } from "../lib/termos.mjs";
 import { desligarAvisos, paginaAvisos } from "../lib/avisos.mjs";
@@ -54,6 +55,8 @@ export default async (req) => {
   if (caminho === "/busca.json") return busca(base);
   if (caminho === "/carros") return html(paginaCarros(base));
   if (caminho === "/comparar") return html(paginaComparacoes(base));
+  // lançamentos: a lista muda quando entra um lançamento ou acaba um prazo; a Netlify guarda por 1 hora como as outras
+  if (caminho === "/novidades") return html(paginaNovidades(base));
   if (caminho === "/noticias") {
     // o feed muda várias vezes por dia: a Netlify guarda por 15 minutos, uma cópia para cada combinação de filtros
     return html(paginaNoticias(base, lerFiltros(base, url.searchParams)), 200, {
@@ -112,7 +115,7 @@ function sitemap(base) {
   const dia = (d) => (d ? String(d).slice(0, 10) : base.lerEm.slice(0, 10));
   const url = (loc, mod, imgs = []) => `<url><loc>${SITE}${loc}</loc><lastmod>${dia(mod)}</lastmod>${imgs.map(([src, titulo]) => `<image:image><image:loc>${esc(SITE + src)}</image:loc><image:title>${esc(titulo)}</image:title></image:image>`).join("")}</url>`;
   const linhas = [
-    url("/", base.atualizado), url("/carros", base.atualizado), url("/comparar", base.atualizado), url("/noticias", (base.feed[0] || {}).date || base.atualizado), url("/contato", "2026-11-06"), url("/termos", "2026-11-07"), url("/privacidade", "2026-11-07"),
+    url("/", base.atualizado), url("/carros", base.atualizado), url("/comparar", base.atualizado), url("/noticias", (base.feed[0] || {}).date || base.atualizado), url("/novidades", (base.lancamentos[0] || {}).lancado_em || base.atualizado), url("/contato", "2026-11-06"), url("/termos", "2026-11-07"), url("/privacidade", "2026-11-07"),
     ...[...FAIXAS, ...FAIXAS_ENTRE, ...TIPOS, ...COMBUSTIVEIS].filter((l) => filtrar(base, l).length).map((l) => url(`/${l.slug}`, base.atualizado)),
     ...RANKINGS.filter((r) => linhasRanking(base, r).length >= 3).map((r) => url(`/${r.slug}`, base.atualizado)),
     ...[...base.marcas.values()].map((b) => url(b.url, b.atualizado)),
@@ -125,6 +128,6 @@ function sitemap(base) {
 
 // escrito por extenso: a Netlify lê esta configuração sem rodar o código. Os tipos são os de TIPOS em netlify/lib/base.mjs.
 export const config = {
-  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs-com-maior-porta-malas", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
+  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/novidades", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs-com-maior-porta-malas", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
   method: ["GET", "HEAD"],
 };
