@@ -190,7 +190,7 @@ button,input{font:inherit;color:inherit}
 .fchip[data-deal]{border-color:rgba(15,138,75,.55);background:#f4fbf7;color:#0f8a4b;box-shadow:0 0 0 2px rgba(15,138,75,.12)}
 .fchip[data-deal]:hover{border-color:#0f8a4b;color:#0b6e3c}
 .fchip[data-deal][aria-pressed="true"]{background:#0f8a4b;border-color:#0f8a4b;color:#fff;box-shadow:0 0 0 2px rgba(15,138,75,.2)}
-/* "Novidades": carros lançados há pouco, no azul do selo dos cartões */
+/* "Novos": carros lançados há pouco, no azul do selo dos cartões */
 .fchip[data-novo]{border-color:rgba(29,107,255,.5);background:#f2f6ff;color:#1857d6}
 .fchip[data-novo][aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 .meta{display:flex;align-items:center;gap:12px;white-space:nowrap}
@@ -400,7 +400,7 @@ button,input{font:inherit;color:inherit}
 .vr-row .more{margin:0;padding:1px 6px;font-size:9.5px;line-height:1.4;flex:0 0 auto}
 .row.ghost .ctag{display:none}
 .stage .aitag{display:none}
-/* selo de Novidade: carro ou versão lançados há pouco (regras na página /novidades) */
+/* selo "Novo": carro ou versão lançados há pouco (regras na página /novidades) */
 .stage .ntag{position:absolute;left:0;top:0;z-index:2;font:800 8.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:4px 6px 3px;border-radius:5px;pointer-events:none}
 .row.ghost .ntag{display:none}
 .spec{width:100%;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;margin-top:7px;padding-top:7px;border-top:1px solid #eaeef4}
@@ -1031,10 +1031,8 @@ html.deitado .note-a{font-weight:600}
   /* "Ofertas" com o mesmo desenho do Modelos/Versões: pílula branca de borda azul-clara; ligado fica azul cheio, com o mesmo respiro branco por dentro */
   .oft{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 15px;border:0;border-radius:999px;background:#fff;box-shadow:inset 0 0 0 1px #dbe5f6;font:700 12px var(--body);color:var(--muted);cursor:pointer;white-space:nowrap}
   .oft[hidden]{display:none}
-  .oft .ns{display:none}
   /* telas estreitas: Novidades, Ofertas e Modelos/Versões cabem na mesma linha */
   @media (max-width:379px){.sr-vis{gap:6px}.oft{padding:0 10px}}
-  @media (max-width:345px){#novBtn .nl{display:none}#novBtn .ns{display:inline}}
   .oft[aria-pressed="true"]{background:var(--accent);color:#fff;box-shadow:inset 0 0 0 1px #dbe5f6,inset 0 0 0 2px #fff}
   .app .sr-head .mode:not(.sort) button{height:26px;padding:0 13px;border-radius:999px;font-size:12px}
   /* atalhos de combustível dentro da caixa aberta */
@@ -1332,7 +1330,7 @@ html{background:#060b1c}
     <section class="showroom" aria-labelledby="srTitle">
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
-        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="sr-vis"><button type="button" class="oft" id="novBtn" data-ev="novidades-filtro" aria-pressed="false" hidden><span class="nl">Novidades</span><span class="ns" aria-hidden="true">Novos</span></button><button type="button" class="oft" id="oftBtn" data-ev="ofertas" aria-pressed="false" hidden>Ofertas</button><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span></span>
+        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="sr-vis"><button type="button" class="oft" id="novBtn" data-ev="novidades-filtro" aria-pressed="false" hidden>Novos</button><button type="button" class="oft" id="oftBtn" data-ev="ofertas" aria-pressed="false" hidden>Ofertas</button><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span></span>
         <span class="fuq" id="fuq" role="group" aria-label="Filtrar por combustível"></span>
         <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><b id="ajN" hidden></b></button>
       </div>
@@ -1886,7 +1884,7 @@ function cardHTML(c,i,anim){
   return `<article class="card${i===0&&sc>0?" first":""}${c.pc?" has-pc":""}" data-id="${c.id}">
     <div class="c-up">
       <div class="c-top c-brandtop"><span class="cb-mk" title="${esc(c.mk)}"><span class="cb-badge${lg?"":" ini"}">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(c.mk.slice(0,2).toUpperCase())}</span><span class="cb-name">${esc(c.mk)}</span></span><span class="rank">${String(i+1).padStart(2,"0")}</span></div>
-      <div class="stage">${img}<i class="floor"></i>${ph?'<span class="ctag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}${isNew(c)?`<span class="ntag" title="${esc(newTitle(c))}">Novidade</span>`:""}
+      <div class="stage">${img}<i class="floor"></i>${ph?'<span class="ctag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}${isNew(c)?`<span class="ntag" title="${esc(newTitle(c))}">Novo</span>`:""}
         <div class="edit"><label>Enviar PNG<input type="file" accept="image/png,image/webp,image/jpeg" data-up="${carKey(mid,c.ano)}"></label><label class="lg">Logo ${esc(c.mk)}<input type="file" accept="image/png,image/webp,image/svg+xml" data-logo="${bs}"></label>${own?`<button type="button" data-rm="${own}">Remover foto</button>`:""}</div>
       </div>
       <h2 class="nm" title="${esc(c.nm)} ${esc(c.ver)}">${esc(c.nm)}</h2>
@@ -2184,9 +2182,9 @@ function renderDrawer(){
 function renderPills(){
   const reduced=CARS.filter(isReduced).length;
   const ob=document.getElementById("oftBtn");if(ob){ob.hidden=!reduced;ob.setAttribute("aria-pressed",String(DEAL));ob.setAttribute("aria-label",`Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}`)}
-  const novos=CARS.filter(isNew).length,nvl=`Novidades: ${novos} ${novos===1?"versão lançada há pouco":"versões lançadas há pouco"}`;
+  const novos=CARS.filter(isNew).length,nvl=`Novos: ${novos} ${novos===1?"versão lançada há pouco":"versões lançadas há pouco"}`;
   const nb=document.getElementById("novBtn");if(nb){nb.hidden=!novos;nb.setAttribute("aria-pressed",String(NEW_ONLY));nb.setAttribute("aria-label",nvl)}
-  document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}" aria-label="Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}">Ofertas</button>`:"")+(novos?`<button type="button" class="fchip" data-novo data-ev="novidades-filtro" aria-pressed="${NEW_ONLY}" aria-label="${nvl}">Novidades</button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
+  document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}" aria-label="Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}">Ofertas</button>`:"")+(novos?`<button type="button" class="fchip" data-novo data-ev="novidades-filtro" aria-pressed="${NEW_ONLY}" aria-label="${nvl}">Novos</button>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill${g.key==="fu"&&FUQ.some(f=>f[0]===v)?" fqp":""}" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
   document.getElementById("fuq").innerHTML=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)).map(([v,k,l])=>`<button type="button" class="fq" data-fu="${v}" data-k="${k}" data-ev="comb-${k}" aria-pressed="${F.fu.has(v)}" aria-label="${v}" title="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg><span>${l}</span></button>`).join("");

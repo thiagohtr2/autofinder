@@ -380,9 +380,9 @@ export function fotoTag(m, w, sizes, prioridade = false) {
   return `<img src="${imagem(m.foto, w)}" srcset="${ws.map((x) => `${imagem(m.foto, x)} ${x}w`).join(", ")}" sizes="${sizes}" alt="${esc(`${m.titulo}${m.ano ? ` ${m.ano}` : ""}`)}" width="${w}" height="${Math.round((w * 9) / 16)}" ${prioridade ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">`;
 }
 
-/* selo "Novidade" (carro ou versão em /novidades); o título diz o tipo e a data */
+/* selo "Novo" (carro ou versão em /novidades); o título diz o tipo e a data */
 const TIPO_NOV = { carro_novo: "Carro novo lançado", nova_geracao: "Nova geração lançada", reestilizacao: "Visual novo lançado", versao_nova: "Versão nova lançada", serie_especial: "Série especial lançada" };
-export const seloNovidade = (l) => (l ? `<span class="nov" title="${esc(`${TIPO_NOV[l.tipo] || "Lançado"} em ${l.data_precisao === "mes" ? String(l.lancado_em).slice(5, 7) + "/" + String(l.lancado_em).slice(0, 4) : dataBr(l.lancado_em)}`)}">Novidade</span>` : "");
+export const seloNovidade = (l) => (l ? `<span class="nov" title="${esc(`${TIPO_NOV[l.tipo] || "Lançado"} em ${l.data_precisao === "mes" ? String(l.lancado_em).slice(5, 7) + "/" + String(l.lancado_em).slice(0, 4) : dataBr(l.lancado_em)}`)}">Novo</span>` : "");
 
 export function cartao(m, { de, extra, href } = {}) {
   const preco = de ?? m.precoMin;
