@@ -105,8 +105,16 @@ export default async (req) => {
 
 /* lista para a busca do topo das páginas: modelos à venda e marcas */
 function busca(base) {
-  const m = base.aVenda.map((x) => ({ n: x.titulo, u: x.url, p: x.precoMin || 0, q: semAcento(`${x.marca} ${x.nome} ${x.carroc}`) }))
-    .sort((a, b) => a.n.localeCompare(b.n, "pt-BR"));
+  // na troca de ano-modelo (duas linhas à venda), cada ano vira um resultado com o próprio preço
+  const m = [...base.aVenda].sort((a, b) => a.titulo.localeCompare(b.titulo, "pt-BR")).flatMap((x) => {
+    const anos = [...new Set(x.versoes.map((v) => v.ano).filter(Boolean))].sort((a, b) => b - a);
+    if (anos.length < 2) return [{ n: x.titulo, u: x.url, p: x.precoMin || 0, q: semAcento(`${x.marca} ${x.nome} ${x.carroc} ${x.ano || ""}`) }];
+    return anos.map((ano, i) => {
+      // versão sem ano conta na linha atual (a mais nova)
+      const ps = x.versoes.filter((v) => (v.ano || anos[0]) === ano && v.preco).map((v) => v.preco);
+      return { n: `${x.titulo} ${ano}`, u: `${x.url}#versoes`, p: ps.length ? Math.min(...ps) : 0, s: i ? "linha anterior" : "", q: semAcento(`${x.marca} ${x.nome} ${x.carroc} ${ano}`) };
+    });
+  });
   const b = [...base.marcas.values()].filter((x) => x.aVenda.length).map((x) => ({ n: x.nome, u: x.url, s: `${x.aVenda.length} ${x.aVenda.length > 1 ? "modelos" : "modelo"}`, q: semAcento(x.nome) }));
   return new Response(JSON.stringify({ m, b }), { headers: { "Content-Type": "application/json; charset=utf-8", ...CACHE_OK } });
 }

@@ -317,6 +317,11 @@ button,input{font:inherit;color:inherit}
 .q-nm mark{background:none;color:#1857d6}
 .q-sub{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .q-pr{font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap;color:var(--ink)}
+/* ano-modelo quando o carro tem duas linhas à venda */
+.q-ano{font-family:var(--mono);font-weight:600;font-size:12.5px;color:var(--accent);margin-left:2px}
+.q-ant{font-weight:700;color:#8a5200}
+.q-pr{text-align:right}
+.q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
 .card.found{animation:found 1.8s var(--ease)}
 @keyframes found{0%,60%{box-shadow:inset 0 0 0 2px var(--accent),0 0 0 8px rgba(29,107,255,.25),0 18px 36px -22px rgba(29,107,255,.55)}100%{}}
@@ -2423,16 +2428,20 @@ const norm=t=>String(t||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLo
 let qRes=[],qSel=-1;
 function searchCars(q){
   const toks=norm(q).split(/\s+/).filter(Boolean);if(!toks.length)return [];
+  /* na troca de ano-modelo o mesmo carro tem duas linhas à venda (ex.: Compass 2026 em estoque e 2027):
+     cada ano vira um resultado, com o próprio preço; o ano digitado também conta na busca */
+  const anos=new Map();CARS.forEach(c=>{if(c.p&&c.ano){(anos.get(c.mid)||anos.set(c.mid,new Set()).get(c.mid)).add(c.ano)}});
   const by=new Map();
   for(const c of CARS){if(!c.p)continue;
-    const hay=norm(`${c.mk} ${c.nm} ${c.ver}`);if(!toks.every(t=>hay.includes(t)))continue;
-    const base=norm(`${c.mk} ${c.nm}`),verHit=toks.some(t=>!base.includes(t));
-    const g=by.get(c.mid)||{mid:c.mid,mk:c.mk,nm:c.nm,vs:[],hit:null,score:0};
+    const as=anos.get(c.mid),dois=as&&as.size>1,ano=dois?(c.ano||Math.max(...as)):c.ano,k=dois?`${c.mid}|${ano}`:c.mid; /* versão sem ano entra na linha atual */
+    const hay=norm(`${c.mk} ${c.nm} ${c.ver} ${ano||""}`);if(!toks.every(t=>hay.includes(t)))continue;
+    const base=norm(`${c.mk} ${c.nm} ${ano||""}`),verHit=toks.some(t=>!base.includes(t));
+    const g=by.get(k)||{mid:c.mid,mk:c.mk,nm:c.nm,ano:dois?ano:null,anterior:dois&&ano<Math.max(...as),vs:[],hit:null,score:0};
     g.vs.push(c);if(verHit&&(!g.hit||c.p<g.hit.p))g.hit=c;
-    const nm=norm(c.nm);g.score=Math.max(g.score,(nm.startsWith(toks[0])?3:0)+(norm(c.mk).startsWith(toks[0])?1:0)+(nm===toks.join(" ")?4:0));
-    by.set(c.mid,g)}
+    const nm=norm(c.nm);g.score=Math.max(g.score,(nm.startsWith(toks[0])?3:0)+(norm(c.mk).startsWith(toks[0])?1:0)+(nm===toks.join(" ")?4:0)+(dois&&toks.includes(String(ano))?2:0));
+    by.set(k,g)}
   return [...by.values()].map(g=>{g.vs.sort((a,b)=>a.p-b.p);g.pick=g.hit||g.vs[0];return g})
-    .sort((a,b)=>b.score-a.score||(a.mk+a.nm).localeCompare(b.mk+b.nm,"pt-BR")).slice(0,8);
+    .sort((a,b)=>b.score-a.score||(a.mk+a.nm).localeCompare(b.mk+b.nm,"pt-BR")||(b.ano||0)-(a.ano||0)).slice(0,8);
 }
 function hl(text,q){let out=esc(text);norm(q).split(/\s+/).filter(Boolean).forEach(t=>{const i=norm(text).indexOf(t);if(i>=0&&!out.includes("<mark>")){out=esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+t.length))+"</mark>"+esc(text.slice(i+t.length))}});return out}
 function renderSearch(){
@@ -2442,8 +2451,8 @@ function renderSearch(){
     return `<li class="q-item" role="option" id="qo${i}" data-i="${i}" aria-selected="${i===qSel}">
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
       <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
-        <span class="q-nm">${hl(g.nm,q)}</span><span class="q-sub">${g.hit?esc(c.ver):`${g.vs.length} ${g.vs.length>1?"versões":"versão"}`}</span></span>
-      <span class="q-pr">${g.hit?"":"a partir de<br>"}${fmt(c.p)}</span></li>`}).join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
+        <span class="q-nm">${hl(g.nm,q)}${g.ano?` <span class="q-ano">${g.ano}</span>`:""}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${g.hit?esc(c.ver):`${g.vs.length} ${g.vs.length>1?"versões":"versão"}`}</span></span>
+      <span class="q-pr">${g.hit||g.vs.length===1?"":"a partir de<br>"}${fmt(c.p)}${isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`}).join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");qIn.setAttribute("aria-activedescendant",qSel>=0?"qo"+qSel:"");
 }
 function markSel(){qList.querySelectorAll(".q-item").forEach((x,i)=>x.setAttribute("aria-selected",i===qSel));qIn.setAttribute("aria-activedescendant",qSel>=0?"qo"+qSel:"");const el=qList.querySelector(`#qo${qSel}`);el&&el.scrollIntoView({block:"nearest"})}
@@ -2463,7 +2472,7 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
  sb.onclick=()=>top.classList.contains("searching")?closeS():openS();
  document.getElementById("sclose").onclick=closeS;
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
-function pickResult(i){const g=qRes[i];if(!g)return;if(window.giroTrack)giroTrack("search",{version_id:g.pick&&g.pick.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60)}});closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}`;qIn.blur();goToCar(g.pick)}
+function pickResult(i){const g=qRes[i];if(!g)return;if(window.giroTrack)giroTrack("search",{version_id:g.pick&&g.pick.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60)}});closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}${g.ano?` ${g.ano}`:""}`;qIn.blur();goToCar(g.pick)}
 function goToCar(c,instante){
   if(!garPage.hidden&&!instante){history.replaceState(null,"","/");hideGarPage()}
   if(!matches(c)){DEAL=false;NEW_ONLY=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
