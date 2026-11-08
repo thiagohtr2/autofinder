@@ -108,6 +108,7 @@ button,input{font:inherit;color:inherit}
 .dr-ph span{font-size:11.5px;color:var(--muted);font-weight:600;text-align:right}
 .og{display:flex;flex-direction:column;gap:8px}
 .og+.og{margin-top:10px}
+.og[hidden]{display:none}
 .og-btn{display:flex;align-items:center;gap:10px;padding:6px 4px 4px;border:0;background:none;cursor:pointer;text-align:left;font-family:var(--body);color:var(--ink)}
 .og-btn:disabled{opacity:.45;cursor:default}
 .og-ck{width:18px;height:18px;flex:0 0 auto;border-radius:6px;box-shadow:inset 0 0 0 1.5px #c9d1de;background:var(--bg);display:grid;place-items:center}
@@ -2219,6 +2220,7 @@ const DRICO={
 const semAc=t=>String(t||"").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 function filtraMarcas(){const q=semAc(DRQ).trim();let vis=0;
   drBody.querySelectorAll('.opt2[data-g="mk"]').forEach(b=>{const ok=!q||semAc(b.dataset.v).includes(q);b.hidden=!ok;if(ok)vis++});
+  drBody.querySelectorAll(".og").forEach(o=>{o.hidden=!o.querySelector(".opt2:not([hidden])")});
   const v=document.getElementById("drQv");if(v)v.hidden=vis>0}
 drBody.addEventListener("input",e=>{if(e.target.id!=="drQ")return;DRQ=e.target.value;filtraMarcas()});
 const ORIGIN_ORDER=["China","Japão","Coreia do Sul","Alemanha","EUA","França","Itália","Reino Unido","Suécia","Brasil"];
@@ -2241,7 +2243,16 @@ function renderDrawer(){
   const optHTML=k=>{const on=F[g.key].has(k),n=all.get(k);
     return `<button type="button" class="opt opt2" data-g="${g.key}" data-v="${esc(k)}"${dk(k)} aria-pressed="${on}" ${!n&&!on?"disabled":""}><span class="ck" aria-hidden="true"></span>${optBadge(g,k)}<span class="ol">${esc(k)}</span><small>${n}</small></button>`};
   let paneList;
-  if(g.key==="mk")paneList=`<label class="dr-q"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="search" id="drQ" placeholder="Buscar marca..." autocomplete="off" aria-label="Buscar marca" value="${esc(DRQ)}"></label>${keys.map(optHTML).join("")}<p class="dr-vazio" id="drQv" hidden>Nenhuma marca com esse nome.</p>`;
+  if(g.key==="mk"){
+    /* marcas agrupadas pelo país de origem: o título do país marca ou desmarca todas as marcas dele */
+    const by=new Map();keys.forEach(k=>{const o=BRANDCO[k]||"Outras origens";(by.get(o)||by.set(o,[]).get(o)).push(k)});
+    const ord=o=>o==="Outras origens"?100:(i=>i<0?99:i)(ORIGIN_ORDER.indexOf(o));
+    const origins=[...by.keys()].sort((a,b)=>ord(a)-ord(b)||a.localeCompare(b,"pt-BR"));
+    paneList=`<label class="dr-q"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><input type="search" id="drQ" placeholder="Buscar marca..." autocomplete="off" aria-label="Buscar marca" value="${esc(DRQ)}"></label>`+
+      origins.map(o=>{const ks=by.get(o),avail=ks.filter(k=>all.get(k)||F.mk.has(k)),allOn=avail.length&&avail.every(k=>F.mk.has(k)),cars=ks.reduce((t,k)=>t+(all.get(k)||0),0);
+        return `<div class="og"><button type="button" class="og-btn" data-origin="${esc(o)}" aria-pressed="${!!allOn}" ${avail.length?"":"disabled"}><span class="og-ck" aria-hidden="true"></span><span class="og-nm">${esc(o)}</span><small>${avail.length} ${avail.length===1?"marca":"marcas"} · ${cars}</small></button>${ks.map(optHTML).join("")}</div>`}).join("")+
+      `<p class="dr-vazio" id="drQv" hidden>Nenhuma marca com esse nome.</p>`;
+  }
   else paneList=keys.map(optHTML).join("");
   drBody.innerHTML=`<nav class="dr-tabs" role="tablist" aria-label="Categorias de filtro">${GROUPS.map(x=>{const n=F[x.key].size;
       return `<button type="button" class="dr-tab" role="tab" data-cat="${x.key}" aria-selected="${x.key===g.key}"><svg viewBox="0 0 24 24" aria-hidden="true">${DRICO[x.key]||""}</svg><span>${x.title}</span>${n?`<b>${n}</b>`:""}</button>`}).join("")}</nav>
