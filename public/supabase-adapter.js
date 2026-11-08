@@ -533,11 +533,18 @@
     return rows.map((row) => docOf(String(row.id), row));
   }
 
+  // Novidades: lançamentos que ainda estão no prazo (a visão do banco aplica as regras de entrada e saída)
+  async function readLancamentos() {
+    const rows = await selectAll("lancamentos_no_ar", "id,model_id,tipo,titulo,versoes,lancado_em,data_precisao,fica_ate", "id");
+    return rows.map((row) => docOf(String(row.id), row));
+  }
+
   // a mesma notícia sobre a mesma versão não vira um segundo registro
   const savePriceChange = (data) => run(sb.from("price_changes").upsert(withoutUndefined(data), { onConflict: "version_id,source_url", ignoreDuplicates: true }));
 
   const SNAPSHOT_READERS = {
     price_changes: readPriceChanges,
+    lancamentos: readLancamentos,
     catalog: readCatalog,
     news: readNews,
     alerts: readAlerts,

@@ -170,6 +170,11 @@ async function montar() {
     if (!versoes.length) return null;
     return { ...l, m, versoes, soAlgumas: ids.length > 0 && versoes.length < todas.length, fonte_url: urlSegura(l.fonte_url) };
   }).filter(Boolean);
+  // selo "Novidade" nos cartões: o modelo (lançamento do modelo todo ou de alguma versão) e cada versão lançada
+  for (const l of lancamentos) {
+    if (!l.m.novidade) l.m.novidade = l;
+    for (const v of l.soAlgumas ? l.versoes : [...l.m.versoes, ...l.m.breve]) if (!v.novidade) v.novidade = l;
+  }
   const comLancamento = new Set(lancamentos.map((l) => l.m.id));
   const emBreve = [...modelos.values()].filter((m) => !m.aVenda && m.breve.length && m.marcaInfo && !comLancamento.has(m.id))
     .sort((a, b) => (a.breve.some((v) => v.status === "pre_order") ? 0 : 1) - (b.breve.some((v) => v.status === "pre_order") ? 0 : 1) || a.titulo.localeCompare(b.titulo, "pt-BR"));
