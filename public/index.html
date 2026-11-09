@@ -307,6 +307,8 @@ button,input{font:inherit;color:inherit}
 .search input:focus{background:var(--bg);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .q-list{position:absolute;top:calc(100% + 8px);right:0;width:min(420px,calc(100vw - 32px));margin:0;padding:6px;list-style:none;background:var(--bg);border-radius:18px;box-shadow:0 0 0 1px var(--line),0 24px 48px -20px rgba(12,17,28,.35);z-index:35;max-height:min(520px,70vh);overflow-y:auto}
 .q-item{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:12px;cursor:pointer}
+/* resultados com fundo nunca encostam: 4 px entre carros, 6 px entre o carro e o painel das versões, 8 px depois do painel */
+.q-item:not(.q-v)+.q-item:not(.q-v){margin-top:4px}
 .q-item[aria-selected="true"],.q-item:hover{background:#f2f6fd}
 .q-th{width:72px;height:44px;flex:0 0 auto;border-radius:10px;background:radial-gradient(ellipse at 50% 85%,var(--panel),var(--bg) 70%);display:grid;place-items:center;overflow:hidden}
 .q-th img{width:100%;height:100%;object-fit:contain}
@@ -324,7 +326,7 @@ button,input{font:inherit;color:inherit}
 .q-pr{text-align:right}
 .q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
-.q-vh{margin:0 0 0 84px;padding:9px 12px 3px;background:#f2f5fb;border-radius:12px 12px 0 0;font:800 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none}
+.q-vh{margin:6px 0 0 84px;padding:9px 12px 3px;background:#f2f5fb;border-radius:12px 12px 0 0;font:800 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none}
 .q-v{position:relative;gap:10px;margin:0 0 0 84px;padding:8px 12px;min-height:36px;border-radius:0;background:#f2f5fb;font-size:13px}
 .q-v.last{border-radius:0 0 12px 12px;margin-bottom:8px}
 .q-v+.q-v::before{content:"";position:absolute;left:12px;right:12px;top:0;border-top:1px solid #e1e8f3}
@@ -941,7 +943,9 @@ body.editing .edit{display:grid}
 .icons{display:flex;flex-wrap:nowrap;gap:8px;margin-top:7px;justify-content:center;width:100%;min-width:0}
 .icons .ic{flex:0 1 22px;min-width:15px;height:auto;aspect-ratio:1}
 .icons .ic svg{width:60%;height:60%}
-.icons:has(.ic:nth-child(6)){gap:3px}
+/* com muitos pontos fortes os ícones encolhem um pouco, mas nunca ficam encostados */
+.icons:has(.ic:nth-child(6)){gap:5px}
+.icons:has(.ic:nth-child(7)){gap:4px}
 .ic{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:var(--panel);color:var(--ink)}
 button.ic{border:0;padding:0;cursor:pointer;transition:transform .15s var(--ease),box-shadow .15s}
 button.ic:hover{transform:scale(1.15)}
