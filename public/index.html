@@ -1768,17 +1768,18 @@ function makeDial(el,start,onChange){
     d.W=r.width;d.H=r.height;d.CW=d.W+56+d.off;cv.width=d.CW*dpr;cv.height=d.H*dpr;cv.style.left=-d.off+"px";cv.style.width=d.CW+"px";ctx.setTransform(dpr,0,0,dpr,d.off*dpr,0);
     const mobile=matchMedia("(max-width:760px)").matches;
     const R=Math.max(d.H*.72,300);d.G=mobile?{R,cx:68-R,cy:d.H/2,base:0,dir:1,mobile,px:30,lab:30,ptrX:d.W-9}:{R,cx:150-R,cy:d.H/2,base:0,dir:1,mobile,px:32,lab:38,ptrX:d.W-9};
-    d.G.step=d.G.px/d.G.R;d.G.Rd=d.G.R+(mobile?55:86); // fundo branco cobre traços e números com ~8 px de folga, sem alcançar o primeiro card
+    d.G.step=d.G.px/d.G.R;d.G.Rd=d.G.R+(mobile?76:100); // fundo branco: cheio sob traços e números (até R+58), depois um degradê até a beirada, sem alcançar o primeiro card
     /* a tela de desenho passa um pouco da roleta para os números caberem; o recorte no círculo branco impede que ela pegue
        o toque do primeiro card (o botão de favorito dele ficava embaixo dessa sobra) */
     {const G=d.G,ccx=G.cx+d.off;cv.style.clipPath=cv.style.webkitClipPath=`circle(${Math.round(G.Rd+1)}px at ${Math.round(ccx)}px ${Math.round(G.cy)}px)`;}};
   d.draw=()=>{const G=d.G;if(!G)return;const {R,cx,cy,base,dir,step}=G,pos=d.pos;
     ctx.clearRect(-(d.off||0),0,d.CW||d.W,d.H);
     // round backdrop that follows the end of the ticks: cars slide behind a disc, never a rectangle
-    if(DIAL_DISC==='white'){ctx.fillStyle='#ffffff';ctx.beginPath();ctx.arc(cx,cy,G.Rd,0,Math.PI*2);ctx.fill();
-      /* borda cinza clara: inteira perto do centro e sumindo bem antes das pontas (a máscara da roleta só apaga nos 9% finais) */
-      const bf=ctx.createLinearGradient(0,0,0,d.H);bf.addColorStop(.1,'rgba(228,232,239,0)');bf.addColorStop(.36,'rgba(228,232,239,1)');bf.addColorStop(.64,'rgba(228,232,239,1)');bf.addColorStop(.9,'rgba(228,232,239,0)');
-      ctx.strokeStyle=bf;ctx.lineWidth=1;ctx.stroke();}
+    /* fundo branco sem borda (parece velocímetro, não roleta): branco cheio perto da beirada da tela, sob os traços e os números,
+       e um degradê leve que fica transparente na beirada, perto dos carros: os cards que passam por trás somem aos poucos */
+    if(DIAL_DISC==='white'){const r0=Math.max(0,R+58),g=ctx.createRadialGradient(cx,cy,r0,cx,cy,G.Rd);
+      g.addColorStop(0,'rgba(255,255,255,1)');g.addColorStop(.45,'rgba(255,255,255,.75)');g.addColorStop(1,'rgba(255,255,255,0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,G.Rd,0,Math.PI*2);ctx.fill();}
     else if(DIAL_DISC){const Rd=G.Rd,g=ctx.createRadialGradient(cx,cy,R-60,cx,cy,Rd);g.addColorStop(0,"#ffffff");g.addColorStop(.75,"#fdfdff");g.addColorStop(1,"#f8fafd");
      ctx.save();ctx.shadowColor="rgba(12,17,28,.10)";ctx.shadowBlur=16;ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,Rd,0,Math.PI*2);ctx.fill();ctx.restore();
      ctx.strokeStyle="rgba(12,17,28,.06)";ctx.lineWidth=1;ctx.beginPath();ctx.arc(cx,cy,Rd,-1.6,1.6);ctx.stroke();}
