@@ -324,6 +324,13 @@ button,input{font:inherit;color:inherit}
 .q-pr{text-align:right}
 .q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
+.q-v{gap:10px;margin-left:84px;padding:7px 10px;min-height:34px;border-radius:10px;font-size:13px}
+.q-vn{flex:1;min-width:0;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.q-vn mark{background:none;color:#1857d6}
+.q-vp{flex:none;font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap}
+.q-v.hit .q-vn{color:#1857d6}
+.q-mais{font-size:12.5px;font-weight:700;color:var(--accent)}
+@media (max-width:420px){.q-v{margin-left:12px}}
 .card.found{animation:found 1.8s var(--ease)}
 @keyframes found{0%,60%{box-shadow:inset 0 0 0 2px var(--accent),0 0 0 8px rgba(29,107,255,.25),0 18px 36px -22px rgba(29,107,255,.55)}100%{}}
 .status{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
@@ -2512,27 +2519,44 @@ function searchCars(q){
     .sort((a,b)=>b.score-a.score||(a.mk+a.nm).localeCompare(b.mk+b.nm,"pt-BR")||(b.ano||0)-(a.ano||0)).slice(0,8);
 }
 function hl(text,q){let out=esc(text);norm(q).split(/\s+/).filter(Boolean).forEach(t=>{const i=norm(text).indexOf(t);if(i>=0&&!out.includes("<mark>")){out=esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+t.length))+"</mark>"+esc(text.slice(i+t.length))}});return out}
-function renderSearch(){
+/* resultados da busca: cada modelo com as suas versões logo abaixo, para a pessoa ir direto na que quer.
+   Com até 2 modelos encontrados, todas as versões aparecem; com mais, até 4 por modelo e "ver as outras" abre o resto ali mesmo */
+let qOpts=[],qExp=new Set(),qUlt="";
+const VER_MAX=4;
+function renderSearch(keep){
   const q=qIn.value.trim();if(!q){qList.hidden=true;qIn.setAttribute("aria-expanded","false");return}
-  qRes=searchCars(q);qSel=qRes.length?0:-1;
-  qList.innerHTML=qRes.length?qRes.map((g,i)=>{const c=g.pick,ph=(photoOf(g.mid,c&&c.ano)||{}).asset,lg=logos[brandSlug(g.mk)];
-    return `<li class="q-item" role="option" id="qo${i}" data-i="${i}" aria-selected="${i===qSel}">
+  if(q!==qUlt){qExp=new Set();qUlt=q}
+  qRes=searchCars(q);qOpts=[];
+  const poucos=qRes.length<=2,html=[];
+  qRes.forEach(g=>{const c=g.pick,ph=(photoOf(g.mid,c&&c.ano)||{}).asset,lg=logos[brandSlug(g.mk)],key=`${g.mid}|${g.ano||""}`,vs=g.vs.length>1?g.vs:[];
+    const gi=qOpts.push({t:"g",g})-1;
+    html.push(`<li class="q-item" role="option" id="qo${gi}" data-i="${gi}" aria-selected="false">
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
       <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
-        <span class="q-nm">${hl(g.nm,q)}${g.ano?` <span class="q-ano">${g.ano}</span>`:""}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${g.hit?esc(c.ver):`${g.vs.length} ${g.vs.length>1?"versões":"versão"}`}</span></span>
-      <span class="q-pr">${g.hit||g.vs.length===1?"":"a partir de<br>"}${fmt(c.p)}${isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`}).join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
-  qList.hidden=false;qIn.setAttribute("aria-expanded","true");qIn.setAttribute("aria-activedescendant",qSel>=0?"qo"+qSel:"");
+        <span class="q-nm">${hl(g.nm,q)}${g.ano?` <span class="q-ano">${g.ano}</span>`:""}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span></span>
+      <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`);
+    if(!vs.length)return;
+    const lim=poucos||qExp.has(key)?vs.length:Math.min(VER_MAX,vs.length);
+    vs.slice(0,lim).forEach(v=>{const vi=qOpts.push({t:"v",g,c:v})-1;
+      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${g.ano?` ${g.ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn">${hl(v.ver,q)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)});
+    if(lim<vs.length){const mi=qOpts.push({t:"mais",g,key})-1;
+      html.push(`<li class="q-item q-v q-mais" role="option" id="qo${mi}" data-i="${mi}" aria-selected="false">${vs.length-lim>1?`Ver as outras ${vs.length-lim} versões`:"Ver a outra versão"} do ${esc(g.nm)}</li>`)}});
+  qSel=qOpts.length?Math.min(Math.max(keep??0,0),qOpts.length-1):-1;
+  qList.innerHTML=qOpts.length?html.join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
+  qList.hidden=false;qIn.setAttribute("aria-expanded","true");markSel(keep==null);
 }
-function markSel(){qList.querySelectorAll(".q-item").forEach((x,i)=>x.setAttribute("aria-selected",i===qSel));qIn.setAttribute("aria-activedescendant",qSel>=0?"qo"+qSel:"");const el=qList.querySelector(`#qo${qSel}`);el&&el.scrollIntoView({block:"nearest"})}
+function markSel(semRolar){qList.querySelectorAll(".q-item").forEach(x=>x.setAttribute("aria-selected",+x.dataset.i===qSel));qIn.setAttribute("aria-activedescendant",qSel>=0?"qo"+qSel:"");if(semRolar)return;const el=qList.querySelector(`#qo${qSel}`);el&&el.scrollIntoView({block:"nearest"})}
 function closeSearch(){qList.hidden=true;qIn.setAttribute("aria-expanded","false")}
 qIn.addEventListener("input",renderSearch);qIn.addEventListener("focus",()=>{if(qIn.value.trim())renderSearch()});
 qIn.addEventListener("keydown",e=>{
-  if(e.key==="ArrowDown"&&qRes.length){e.preventDefault();qSel=(qSel+1)%qRes.length;markSel()}
-  else if(e.key==="ArrowUp"&&qRes.length){e.preventDefault();qSel=(qSel-1+qRes.length)%qRes.length;markSel()}
+  if(e.key==="ArrowDown"&&qOpts.length){e.preventDefault();qSel=(qSel+1)%qOpts.length;markSel()}
+  else if(e.key==="ArrowUp"&&qOpts.length){e.preventDefault();qSel=(qSel-1+qOpts.length)%qOpts.length;markSel()}
   else if(e.key==="Enter"&&qSel>=0){e.preventDefault();pickResult(qSel)}
   else if(e.key==="Escape"){closeSearch();qIn.blur()}});
 qList.addEventListener("mousedown",e=>e.preventDefault());
-qList.addEventListener("click",e=>{const li=e.target.closest(".q-item");if(li)pickResult(+li.dataset.i)});
+qList.addEventListener("click",e=>{const li=e.target.closest(".q-item");if(!li)return;
+  /* "ver as outras" redesenha a lista: o clique não pode chegar ao "clicou fora", senão ela fecha */
+  if((qOpts[+li.dataset.i]||{}).t==="mais")e.stopPropagation();pickResult(+li.dataset.i)});
 document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearch()});
 {const top=document.querySelector(".top"),sb=document.getElementById("sbtn");
  const openS=()=>{top.classList.add("searching");sb.setAttribute("aria-expanded","true");qIn.focus()};
@@ -2540,8 +2564,13 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
  sb.onclick=()=>top.classList.contains("searching")?closeS():openS();
  document.getElementById("sclose").onclick=closeS;
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
-function pickResult(i){const g=qRes[i];if(!g)return;if(window.giroTrack)giroTrack("search",{version_id:g.pick&&g.pick.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60)}});closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}${g.ano?` ${g.ano}`:""}`;qIn.blur();goToCar(g.pick)}
-function goToCar(c,instante){
+/* escolher: o modelo leva ao mais barato (ou à versão buscada); a versão leva exatamente a ela; "ver as outras" abre o resto das versões */
+function pickResult(i){const o=qOpts[i];if(!o)return;
+  if(o.t==="mais"){qExp.add(o.key);renderSearch(i);qIn.focus();return}
+  const g=o.g,c=o.t==="v"?o.c:g.pick;
+  if(window.giroTrack)giroTrack("search",{version_id:c&&c.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60),el:o.t==="v"?"versao":"modelo"}});
+  closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}${o.t==="v"?` ${c.ver}`:""}${g.ano?` ${g.ano}`:""}`;qIn.blur();goToCar(c,false,o.t==="v")}
+function goToCar(c,instante,exato){
   if(!garPage.hidden&&!instante){history.replaceState(null,"","/");hideGarPage()}
   if(!matches(c)){DEAL=false;NEW_ONLY=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
   const idx=clamp(VALUES.findIndex(x=>x>=K(c)));
@@ -2554,7 +2583,9 @@ function goToCar(c,instante){
     if((dial.sel!==idx||dial.anim)&&performance.now()-t0<4000)return setTimeout(wait,90);
     setTimeout(()=>{const row=curRow();if(!row||!row._list)return;
       /* o carro buscado passa a ser o escolhido da faixa (com o "Ver ficha"), e o foco vai para ele */
-      const card=levaAoCard(row,c,true);if(!card)return;
+      const card=levaAoCard(row,c,true);if(!card){if(exato)openInfo(c.id);return}
+      /* versão escolhida na busca: se o card mostra outra versão do mesmo modelo nesta faixa, abre a ficha da escolhida */
+      if(exato){const gb=card.querySelector("button.go");if(gb&&gb.dataset.info!==c.id){openInfo(c.id);return}}
       card.classList.remove("found");void card.offsetWidth;card.classList.add("found");setTimeout(()=>card.classList.remove("found"),1900);
       const go=card.querySelector("button.go");if(go&&(document.activeElement===document.body||document.activeElement===qIn||!document.activeElement))go.focus({preventScroll:true});
     },260)})();
