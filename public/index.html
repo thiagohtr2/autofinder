@@ -324,13 +324,18 @@ button,input{font:inherit;color:inherit}
 .q-pr{text-align:right}
 .q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
-.q-v{gap:10px;margin-left:84px;padding:7px 10px;min-height:34px;border-radius:10px;font-size:13px}
+.q-vh{margin:0 0 0 84px;padding:9px 12px 3px;background:#f2f5fb;border-radius:12px 12px 0 0;font:800 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none}
+.q-v{position:relative;gap:10px;margin:0 0 0 84px;padding:8px 12px;min-height:36px;border-radius:0;background:#f2f5fb;font-size:13px}
+.q-v.last{border-radius:0 0 12px 12px;margin-bottom:8px}
+.q-v+.q-v::before{content:"";position:absolute;left:12px;right:12px;top:0;border-top:1px solid #e1e8f3}
+.q-v[aria-selected="true"],.q-v:hover{background:#e4edfc}
+.q-vp::after{content:"›";margin-left:8px;font:700 15px var(--body);color:#9aa6bd}
 .q-vn{flex:1;min-width:0;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .q-vn mark{background:none;color:#1857d6}
 .q-vp{flex:none;font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap}
 .q-v.hit .q-vn{color:#1857d6}
 .q-mais{font-size:12.5px;font-weight:700;color:var(--accent)}
-@media (max-width:420px){.q-v{margin-left:12px}}
+@media (max-width:420px){.q-v,.q-vh{margin-left:12px}}
 .card.found{animation:found 1.8s var(--ease)}
 @keyframes found{0%,60%{box-shadow:inset 0 0 0 2px var(--accent),0 0 0 8px rgba(29,107,255,.25),0 18px 36px -22px rgba(29,107,255,.55)}100%{}}
 .status{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
@@ -2533,7 +2538,7 @@ function hl(text,q){let out=esc(text);norm(q).split(/\s+/).filter(Boolean).forEa
    Com até 2 modelos encontrados, todas as versões aparecem; com mais, até 4 por modelo e "ver as outras" abre o resto ali mesmo */
 let qOpts=[],qExp=new Set(),qUlt="";
 const VER_MAX=4;
-function renderSearch(keep){
+function renderSearch(keep){if(typeof keep!=="number")keep=null; /* chamada pelo campo, "keep" chega como o evento de digitação */
   const q=qIn.value.trim();if(!q){qList.hidden=true;qIn.setAttribute("aria-expanded","false");return}
   if(q!==qUlt){qExp=new Set();qUlt=q}
   qRes=searchCars(q);qOpts=[];
@@ -2547,10 +2552,12 @@ function renderSearch(keep){
       <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`);
     if(!vs.length)return;
     const lim=poucos||qExp.has(key)?vs.length:Math.min(VER_MAX,vs.length);
-    vs.slice(0,lim).forEach(v=>{const vi=qOpts.push({t:"v",g,c:v})-1;
-      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${g.ano?` ${g.ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn">${hl(v.ver,q)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)});
+    /* as versões ficam num painel próprio, com título, logo abaixo do carro a que pertencem */
+    html.push(`<li class="q-vh" role="presentation" aria-hidden="true">Versões do ${esc(g.nm)}${g.ano?` ${g.ano}`:""}</li>`);
+    vs.slice(0,lim).forEach((v,k)=>{const vi=qOpts.push({t:"v",g,c:v})-1;
+      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===lim-1&&lim===vs.length?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${g.ano?` ${g.ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn">${hl(v.ver,q)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)});
     if(lim<vs.length){const mi=qOpts.push({t:"mais",g,key})-1;
-      html.push(`<li class="q-item q-v q-mais" role="option" id="qo${mi}" data-i="${mi}" aria-selected="false">${vs.length-lim>1?`Ver as outras ${vs.length-lim} versões`:"Ver a outra versão"} do ${esc(g.nm)}</li>`)}});
+      html.push(`<li class="q-item q-v q-mais last" role="option" id="qo${mi}" data-i="${mi}" aria-selected="false">${vs.length-lim>1?`Ver as outras ${vs.length-lim} versões`:"Ver a outra versão"} do ${esc(g.nm)}</li>`)}});
   qSel=qOpts.length?Math.min(Math.max(keep??0,0),qOpts.length-1):-1;
   qList.innerHTML=qOpts.length?html.join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");markSel(keep==null);
