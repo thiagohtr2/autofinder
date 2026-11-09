@@ -334,7 +334,6 @@ button,input{font:inherit;color:inherit}
 .q-vn mark{background:none;color:#1857d6}
 .q-vp{flex:none;font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap}
 .q-v.hit .q-vn{color:#1857d6}
-.q-mais{font-size:12.5px;font-weight:700;color:var(--accent)}
 @media (max-width:420px){.q-v,.q-vh{margin-left:12px}}
 .card.found{animation:found 1.8s var(--ease)}
 @keyframes found{0%,60%{box-shadow:inset 0 0 0 2px var(--accent),0 0 0 8px rgba(29,107,255,.25),0 18px 36px -22px rgba(29,107,255,.55)}100%{}}
@@ -2534,16 +2533,13 @@ function searchCars(q){
     .sort((a,b)=>b.score-a.score||(a.mk+a.nm).localeCompare(b.mk+b.nm,"pt-BR")||(b.ano||0)-(a.ano||0)).slice(0,8);
 }
 function hl(text,q){let out=esc(text);norm(q).split(/\s+/).filter(Boolean).forEach(t=>{const i=norm(text).indexOf(t);if(i>=0&&!out.includes("<mark>")){out=esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+t.length))+"</mark>"+esc(text.slice(i+t.length))}});return out}
-/* resultados da busca: cada modelo com as suas versões logo abaixo, para a pessoa ir direto na que quer.
-   Com até 2 modelos encontrados, todas as versões aparecem; com mais, até 4 por modelo e "ver as outras" abre o resto ali mesmo */
-let qOpts=[],qExp=new Set(),qUlt="";
-const VER_MAX=4;
+/* resultados da busca: cada modelo com todas as suas versões logo abaixo, para a pessoa ir direto na que quer (a lista rola) */
+let qOpts=[];
 function renderSearch(keep){if(typeof keep!=="number")keep=null; /* chamada pelo campo, "keep" chega como o evento de digitação */
   const q=qIn.value.trim();if(!q){qList.hidden=true;qIn.setAttribute("aria-expanded","false");return}
-  if(q!==qUlt){qExp=new Set();qUlt=q}
   qRes=searchCars(q);qOpts=[];
-  const poucos=qRes.length<=2,html=[];
-  qRes.forEach(g=>{const c=g.pick,ph=(photoOf(g.mid,c&&c.ano)||{}).asset,lg=logos[brandSlug(g.mk)],key=`${g.mid}|${g.ano||""}`,vs=g.vs.length>1?g.vs:[];
+  const html=[];
+  qRes.forEach(g=>{const c=g.pick,ph=(photoOf(g.mid,c&&c.ano)||{}).asset,lg=logos[brandSlug(g.mk)],vs=g.vs.length>1?g.vs:[];
     const gi=qOpts.push({t:"g",g})-1;
     html.push(`<li class="q-item" role="option" id="qo${gi}" data-i="${gi}" aria-selected="false">
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
@@ -2551,13 +2547,10 @@ function renderSearch(keep){if(typeof keep!=="number")keep=null; /* chamada pelo
         <span class="q-nm">${hl(g.nm,q)}${g.ano?` <span class="q-ano">${g.ano}</span>`:""}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span></span>
       <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`);
     if(!vs.length)return;
-    const lim=poucos||qExp.has(key)?vs.length:Math.min(VER_MAX,vs.length);
     /* as versões ficam num painel próprio, com título, logo abaixo do carro a que pertencem */
     html.push(`<li class="q-vh" role="presentation" aria-hidden="true">Versões do ${esc(g.nm)}${g.ano?` ${g.ano}`:""}</li>`);
-    vs.slice(0,lim).forEach((v,k)=>{const vi=qOpts.push({t:"v",g,c:v})-1;
-      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===lim-1&&lim===vs.length?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${g.ano?` ${g.ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn">${hl(v.ver,q)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)});
-    if(lim<vs.length){const mi=qOpts.push({t:"mais",g,key})-1;
-      html.push(`<li class="q-item q-v q-mais last" role="option" id="qo${mi}" data-i="${mi}" aria-selected="false">${vs.length-lim>1?`Ver as outras ${vs.length-lim} versões`:"Ver a outra versão"} do ${esc(g.nm)}</li>`)}});
+    vs.forEach((v,k)=>{const vi=qOpts.push({t:"v",g,c:v})-1;
+      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${g.ano?` ${g.ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn">${hl(v.ver,q)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)})});
   qSel=qOpts.length?Math.min(Math.max(keep??0,0),qOpts.length-1):-1;
   qList.innerHTML=qOpts.length?html.join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");markSel(keep==null);
@@ -2572,8 +2565,7 @@ qIn.addEventListener("keydown",e=>{
   else if(e.key==="Escape"){closeSearch();qIn.blur()}});
 qList.addEventListener("mousedown",e=>e.preventDefault());
 qList.addEventListener("click",e=>{const li=e.target.closest(".q-item");if(!li)return;
-  /* "ver as outras" redesenha a lista: o clique não pode chegar ao "clicou fora", senão ela fecha */
-  if((qOpts[+li.dataset.i]||{}).t==="mais")e.stopPropagation();pickResult(+li.dataset.i)});
+  pickResult(+li.dataset.i)});
 document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearch()});
 {const top=document.querySelector(".top"),sb=document.getElementById("sbtn");
  const openS=()=>{top.classList.add("searching");sb.setAttribute("aria-expanded","true");qIn.focus()};
@@ -2581,9 +2573,8 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
  sb.onclick=()=>top.classList.contains("searching")?closeS():openS();
  document.getElementById("sclose").onclick=closeS;
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
-/* escolher: o modelo leva ao mais barato (ou à versão buscada); a versão leva exatamente a ela; "ver as outras" abre o resto das versões */
+/* escolher: o modelo leva ao mais barato (ou à versão buscada); a versão leva exatamente a ela */
 function pickResult(i){const o=qOpts[i];if(!o)return;
-  if(o.t==="mais"){qExp.add(o.key);renderSearch(i);qIn.focus();return}
   const g=o.g,c=o.t==="v"?o.c:g.pick;
   if(window.giroTrack)giroTrack("search",{version_id:c&&c.id,model_id:g.mid,meta:{q:qIn.value.trim().slice(0,60),el:o.t==="v"?"versao":"modelo"}});
   closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}${o.t==="v"?` ${c.ver}`:""}${g.ano?` ${g.ano}`:""}`;qIn.blur();goToCar(c,false,o.t==="v")}
