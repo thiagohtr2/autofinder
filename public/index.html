@@ -316,12 +316,13 @@ button,input{font:inherit;color:inherit}
 .q-tx{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}
 .q-br{display:flex;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .q-br img{height:14px;width:auto;max-width:40px;object-fit:contain}
-.q-nm{font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.q-nm{display:flex;align-items:baseline;gap:6px;min-width:0;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:-.01em}
+.q-nt,.q-vt{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .q-nm mark{background:none;color:#1857d6}
 .q-sub{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .q-pr{font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap;color:var(--ink)}
-/* ano-modelo quando o carro tem duas linhas à venda */
-.q-ano{font-family:var(--mono);font-weight:600;font-size:12.5px;color:var(--accent);margin-left:2px}
+/* ano-modelo do carro e de cada versão: menor e em cinza neutro, sem competir com o nome */
+.q-ano{flex:none;font:500 11px var(--body);letter-spacing:0;font-variant-numeric:tabular-nums;color:#6a6a6a}
 .q-ant{font-weight:700;color:#8a5200}
 .q-pr{text-align:right}
 .q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
@@ -332,7 +333,7 @@ button,input{font:inherit;color:inherit}
 .q-v+.q-v::before{content:"";position:absolute;left:12px;right:12px;top:0;border-top:1px solid #e1e8f3}
 .q-v[aria-selected="true"],.q-v:hover{background:#e4edfc}
 .q-vp::after{content:"›";margin-left:8px;font:700 15px var(--body);color:#9aa6bd}
-.q-vn{flex:1;min-width:0;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.q-vn{flex:1;min-width:0;display:flex;align-items:baseline;gap:6px;font-weight:600;color:var(--ink)}
 .q-vn mark{background:none;color:#1857d6}
 .q-vp{flex:none;font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap}
 .q-v.hit .q-vn{color:#1857d6}
@@ -2545,18 +2546,19 @@ function renderSearch(keep){if(typeof keep!=="number")keep=null; /* chamada pelo
   const q=qIn.value.trim();if(!q){qList.hidden=true;qIn.setAttribute("aria-expanded","false");return}
   qRes=searchCars(q);qOpts=[];
   const html=[];
-  qRes.forEach(g=>{const c=g.pick,ph=(photoOf(g.mid,c&&c.ano)||{}).asset,lg=logos[brandSlug(g.mk)],vs=g.vs.length>1?g.vs:[];
+  qRes.forEach(g=>{const c=g.pick,ph=(photoOf(g.mid,c&&c.ano)||{}).asset,lg=logos[brandSlug(g.mk)],vs=g.vs.length>1?g.vs:[],
+      ano=g.ano||Math.max(0,...g.vs.map(v=>v.ano||0))||null,anoHTML=a=>a?`<span class="q-ano">${a}</span>`:""; /* versão sem ano fica com o ano da linha */
     const gi=qOpts.push({t:"g",g})-1;
     html.push(`<li class="q-item" role="option" id="qo${gi}" data-i="${gi}" aria-selected="false">
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
       <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
-        <span class="q-nm">${hl(g.nm,q)}${g.ano?` <span class="q-ano">${g.ano}</span>`:""}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span></span>
+        <span class="q-nm"><span class="q-nt">${hl(g.nm,q)}</span>${anoHTML(ano)}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span></span>
       <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`);
     if(!vs.length)return;
     /* as versões ficam num painel próprio, com título, logo abaixo do carro a que pertencem */
     html.push(`<li class="q-vh" role="presentation" aria-hidden="true">Versões do ${esc(g.nm)}${g.ano?` ${g.ano}`:""}</li>`);
     vs.forEach((v,k)=>{const vi=qOpts.push({t:"v",g,c:v})-1;
-      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${g.ano?` ${g.ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn">${hl(v.ver,q)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)})});
+      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${(v.ano||ano)?` ${v.ano||ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn"><span class="q-vt">${hl(v.ver,q)}</span>${anoHTML(v.ano||ano)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)})});
   qSel=qOpts.length?Math.min(Math.max(keep??0,0),qOpts.length-1):-1;
   qList.innerHTML=qOpts.length?html.join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");markSel(keep==null);
