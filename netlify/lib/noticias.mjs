@@ -9,6 +9,10 @@ const PERIODOS = [["7", "Últimos 7 dias"], ["30", "Últimos 30 dias"], ["90", "
 const NOME_AVISO = { recall: "Recall", servico: "Campanha de serviço", defeito: "Defeito relatado", midia: "Na imprensa" };
 const dataBr = (s) => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? `${m[3]}/${m[2]}/${m[1]}` : ""; };
 const num = (n) => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+/* âncora fixa de cada notícia (pela URL da matéria): o banner da página inicial leva direto a ela */
+export function idNoticia(it) { let h = 0x811c9dc5; for (const ch of it.url || `${it.title}|${it.date}`) { h ^= ch.codePointAt(0); h = Math.imul(h, 0x01000193) >>> 0; } return `n-${h.toString(36)}`; }
+const ROTULO = { precos: "Preços e ofertas", lancamentos: "Novidade", vendas: "Mercado", avaliacoes: "Avaliação", recalls: "Recall", outras: "Notícia" };
+export const rotuloNoticia = (it) => (it.tipo === "aviso" ? NOME_AVISO[it.aviso] || "Recall" : ROTULO[it.assunto] || "Notícia");
 
 const CSS = `
 .nf-f{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
@@ -19,7 +23,8 @@ const CSS = `
 .nf-res{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin:22px 0 12px;font-size:13.5px;color:var(--muted);font-weight:600}
 .nf-res a{font-weight:700}
 .nf-l{list-style:none;margin:0;padding:0;display:grid;gap:12px}
-.nf{padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:#fff}
+.nf{padding:16px 18px;border:1px solid var(--line);border-radius:18px;background:#fff;scroll-margin-top:96px}
+.nf:target{border-color:#1d6bff;box-shadow:0 0 0 4px rgba(29,107,255,.14)}
 .nf-m{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;font-size:12px;font-weight:700;color:var(--muted)}
 .nf-c{display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.03em;background:var(--panel);color:#3b4352}
 .nf-c[data-a=precos]{background:#e8f6ee;color:#0d6b3c}.nf-c[data-a=lancamentos]{background:#e9f1ff;color:#1450c8}.nf-c[data-a=vendas]{background:#f0ebfb;color:#5b3bb0}
@@ -79,7 +84,7 @@ function item(base, it) {
   const chips = [...carros.slice(0, 6).map((m) => `<li><a href="${m.url}">${esc(m.titulo)}</a></li>`), ...(carros.length > 6 ? [`<li><span>+${carros.length - 6}</span></li>`] : []),
     ...marcasSoltas.map((b) => `<li><a href="${b.url}">${esc(b.nome)}</a></li>`)].join("");
   const titulo = it.url ? `<a href="${esc(it.url)}" target="_blank" rel="noopener nofollow">${esc(it.title)}</a>` : esc(it.title);
-  return `<li class="nf"><div class="nf-m"><span class="nf-c" data-a="${it.assunto}">${esc(rotulo)}</span>${it.source ? `<span>${esc(it.source)}</span>` : ""}${it.date ? `<span>${dataBr(it.date)}</span>` : ""}</div>
+  return `<li class="nf" id="${idNoticia(it)}"><div class="nf-m"><span class="nf-c" data-a="${it.assunto}">${esc(rotulo)}</span>${it.source ? `<span>${esc(it.source)}</span>` : ""}${it.date ? `<span>${dataBr(it.date)}</span>` : ""}</div>
 <h2>${titulo}</h2>${it.summary ? `<p>${esc(it.summary)}</p>` : ""}${it.affects ? `<p class="nf-af"><strong>Afeta:</strong> ${esc(it.affects)}</p>` : ""}
 ${chips ? `<ul class="nf-cs">${chips}</ul>` : ""}${it.url ? `<div class="nf-ft"><a href="${esc(it.url)}" target="_blank" rel="noopener nofollow">Ler na fonte${SETA}</a></div>` : ""}</li>`;
 }

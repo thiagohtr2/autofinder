@@ -3,8 +3,8 @@
    prepara a nova), então o banco é lido poucas vezes e as páginas acompanham o que muda nele. */
 import { SITE, carregar, semAcento, FAIXAS, FAIXAS_ENTRE, TIPOS, COMBUSTIVEIS, filtrar, imagem, faixaPorSlug, lerMil, slugFaixa } from "../lib/base.mjs";
 import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc } from "../lib/paginas.mjs";
-import { lerFiltros, paginaNoticias } from "../lib/noticias.mjs";
-import { paginaNovidades } from "../lib/novidades.mjs";
+import { lerFiltros, paginaNoticias, idNoticia, rotuloNoticia } from "../lib/noticias.mjs";
+import { paginaNovidades, rotuloLancamento } from "../lib/novidades.mjs";
 import { paginaContato } from "../lib/contato.mjs";
 import { paginaTermos, paginaPrivacidade } from "../lib/termos.mjs";
 import { desligarAvisos, paginaAvisos } from "../lib/avisos.mjs";
@@ -57,6 +57,7 @@ export default async (req) => {
   if (caminho === "/comparar") return html(paginaComparacoes(base));
   // lançamentos: a lista muda quando entra um lançamento ou acaba um prazo; a Netlify guarda por 1 hora como as outras
   if (caminho === "/novidades") return html(paginaNovidades(base));
+  if (caminho === "/destaques.json") return destaques(base);
   if (caminho === "/noticias") {
     // o feed muda várias vezes por dia: a Netlify guarda por 15 minutos, uma cópia para cada combinação de filtros
     return html(paginaNoticias(base, lerFiltros(base, url.searchParams)), 200, {
@@ -103,6 +104,19 @@ export default async (req) => {
   return naoAchou();
 };
 
+/* banner de últimas novidades da página inicial (computador): as notícias mais recentes e os lançamentos,
+   cada um com o link para o item no próprio site (que tem o link da fonte original) */
+function destaques(base) {
+  const curto = (t, n) => { t = String(t || "").replace(/\s+/g, " ").trim(); return t.length > n ? `${t.slice(0, n - 1).replace(/\s+\S*$/, "")}…` : t; };
+  const foto = (mid) => { const m = base.modelos.get(mid); return m && m.foto ? imagem(m.foto, 160) : null; };
+  const nots = base.feed.slice(0, 12).map((it) => ({ k: "n", rot: rotuloNoticia(it), t: curto(it.title, 140), r: curto(it.summary, 170), f: it.source || "", d: it.date || "", u: `/noticias#${idNoticia(it)}`, img: it.mids.length ? foto(it.mids[0]) : null }));
+  const lancs = [...base.lancamentos].sort((a, b) => String(b.lancado_em).localeCompare(String(a.lancado_em))).slice(0, 4)
+    .map((l) => ({ k: "l", rot: rotuloLancamento(l), t: curto(l.titulo, 140), r: curto(l.resumo, 170), f: l.fonte || "", d: l.lancado_em || "", u: `/novidades#l-${l.id}`, img: l.m.foto ? imagem(l.m.foto, 160) : null }));
+  // até 4 lançamentos entram sempre; o resto são as notícias mais novas, num total de 12, da mais recente para a mais antiga
+  const itens = [...lancs, ...nots.slice(0, 12 - lancs.length)].sort((a, b) => String(b.d).localeCompare(String(a.d)));
+  return new Response(JSON.stringify({ itens }), { headers: { "Content-Type": "application/json; charset=utf-8", ...CACHE_OK } });
+}
+
 /* lista para a busca do topo das páginas: modelos à venda e marcas */
 function busca(base) {
   // na troca de ano-modelo (duas linhas à venda), cada ano vira um resultado com o próprio preço
@@ -136,6 +150,6 @@ function sitemap(base) {
 
 // escrito por extenso: a Netlify lê esta configuração sem rodar o código. Os tipos são os de TIPOS em netlify/lib/base.mjs.
 export const config = {
-  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/novidades", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs-com-maior-porta-malas", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
+  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/novidades", "/destaques.json", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs-com-maior-porta-malas", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
   method: ["GET", "HEAD"],
 };

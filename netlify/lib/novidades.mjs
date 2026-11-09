@@ -9,6 +9,7 @@ const TIPO = {
   carro_novo: ["Carro novo", "novo"], nova_geracao: ["Nova geração", "visual"], reestilizacao: ["Visual novo", "visual"],
   versao_nova: ["Versão nova", "versao"], serie_especial: ["Série especial", "versao"],
 };
+export const rotuloLancamento = (l) => (TIPO[l.tipo] || ["Lançamento"])[0];
 const GRUPOS = [["novo", "Carros novos"], ["visual", "Nova geração e visual novo"], ["versao", "Versões novas e séries especiais"]];
 const MESES = ["janeiro", "fevereiro", "março", "abril", "maio", "junho", "julho", "agosto", "setembro", "outubro", "novembro", "dezembro"];
 const dataBr = (s) => { const m = /^(\d{4})-(\d{2})-(\d{2})/.exec(s || ""); return m ? `${m[3]}/${m[2]}/${m[1]}` : ""; };
@@ -37,7 +38,8 @@ const CSS = `
 .eb-st{font-size:12.5px;font-weight:600;color:var(--muted)}
 .eb-st b{color:#8a5200;font-weight:800}
 .lcs{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:14px}
-.lc{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff}
+.lc{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#fff;scroll-margin-top:96px}
+.lc:target{border-color:#1d6bff;box-shadow:0 0 0 4px rgba(29,107,255,.14)}
 .lc-ph{position:relative;display:grid;place-items:center;aspect-ratio:16/9;background:radial-gradient(120% 90% at 50% 100%,#eef2f8 0,#f7f9fc 60%,#fff 100%)}
 .lc-ph img{width:100%;height:100%;object-fit:contain}
 .lc-tx{display:flex;flex-direction:column;gap:6px;padding:12px 15px 14px;flex:1}
@@ -68,7 +70,7 @@ function cartaoLancamento(l) {
   // quando o lançamento é de algumas versões, diz quais (se forem poucas e o título não disser)
   const nomes = l.versoes.map((v) => v.nome).filter(Boolean);
   const nomeVersoes = l.soAlgumas && nomes.length >= 2 && nomes.length <= 3 ? nomes.join(" e ").replace(/ e (?=.* e )/, ", ") : "";
-  return `<li class="lc" data-g="${g}">
+  return `<li class="lc" data-g="${g}" id="l-${esc(String(l.id))}">
 <a class="lc-ph" href="${m.url}" tabindex="-1" aria-hidden="true">${fotoTag(m, 360, "(max-width:640px) 92vw, 340px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}</a>
 <div class="lc-tx">
 <p class="lc-m"><span class="lc-t" data-g="${g}">${rot}</span><span>Lançado ${quando(l)}</span></p>

@@ -59,7 +59,8 @@ body{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-in
   padding-left:var(--gl);padding-right:var(--gr)}
 button,input{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.app{height:100%;display:grid;grid-template-rows:auto minmax(0,1fr)}
+.app{height:100%;display:grid;grid-template-rows:auto auto minmax(0,1fr)}
+.app>.top{grid-row:1}.app>.main,.app>.gp{grid-row:3}
 
 /* top bar */
 .top{display:flex;align-items:center;gap:20px;padding-block:14px;border-bottom:1px solid var(--line);min-width:0;margin-inline:calc(-1 * var(--gl)) calc(-1 * var(--gr));padding-inline:var(--gl) var(--gr)}
@@ -1250,6 +1251,45 @@ html.deitado .note-a{font-weight:600}
 }
 /* cabeçalho escuro numa cor só (o tom mais escuro da placa do logo, #060b1c) (vale em todas as telas; fica no fim para vencer as regras do celular) */
 .top{background:#060b1c;border-bottom-color:rgba(111,151,255,.22)}
+/* faixa de últimas novidades (só no computador, com altura suficiente para a roleta) */
+.nband{grid-row:2;display:none;align-items:center;gap:14px;height:46px;min-width:0;margin-inline:calc(-1 * var(--gl)) calc(-1 * var(--gr));padding-inline:var(--gl) var(--gr);background:#0b1430;border-bottom:1px solid rgba(111,151,255,.22);color:#dfe6f5;font-size:13px}
+@media (min-width:1100px){.nband:not([hidden]){display:flex}}
+.app.gp-on .nband{display:none!important}
+.nb-l{flex:none;display:inline-flex;align-items:center;gap:8px;font:800 10.5px var(--body);letter-spacing:.09em;text-transform:uppercase;color:#8fb0ff}
+.nb-l i{width:7px;height:7px;border-radius:50%;background:#ff8a3d;box-shadow:0 0 0 3px rgba(255,138,61,.22);animation:nbPulse 2.4s ease-in-out infinite}
+@keyframes nbPulse{50%{box-shadow:0 0 0 6px rgba(255,138,61,0)}}
+.nb-s{flex:1;min-width:0;display:flex;align-items:center;gap:10px;overflow:hidden}
+.nb-s.in{animation:nbIn .35s var(--ease)}
+@keyframes nbIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.nb-img{flex:none;width:52px;height:30px;object-fit:contain}
+.nb-tag{flex:none;display:inline-flex;align-items:center;height:22px;padding:0 9px;border-radius:999px;font:800 10.5px var(--body);letter-spacing:.03em;background:rgba(255,255,255,.1);color:#c9d4ea}
+.nb-tag[data-c=l]{background:rgba(255,138,61,.16);color:#ffb27f}
+.nb-tag[data-c=p]{background:rgba(31,191,110,.16);color:#7fe3ac}
+.nb-tag[data-c=r]{background:rgba(255,92,72,.16);color:#ff9f92}
+.nb-x{flex:1 1 auto;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#dfe6f5;text-decoration:none}
+.nb-x b{color:#fff;font-weight:700}
+.nb-x span{color:#9fb1d1}
+.nb-x:hover b{text-decoration:underline}
+.nb-f{flex:none;font-size:11.5px;color:#8c9bba;white-space:nowrap}
+.nb-go{flex:none;display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:#fff;color:#0c111c;font:700 12.5px var(--body);text-decoration:none;white-space:nowrap}
+.nb-go svg{width:12px;height:12px}
+.nb-go:hover{background:#dfe8ff}
+.nb-c{flex:none;display:flex;align-items:center;gap:4px}
+.nb-b{width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:transparent;color:#c3cde3;display:grid;place-items:center;cursor:pointer;padding:0}
+.nb-b svg{width:12px;height:12px}
+.nb-b:hover{border-color:rgba(255,255,255,.5);color:#fff}
+.nb-n{min-width:38px;text-align:center;font:600 11px var(--mono);color:#8c9bba}
+/* em telas mais baixas (a maioria dos notebooks), versão compacta dentro do cabeçalho, à direita dos filtros rápidos: não tira altura da roleta */
+.app{position:relative}
+.nband.nb-cab{position:absolute;z-index:1;height:36px;margin:0;padding:0 4px 0 12px;gap:8px;border:1px solid rgba(111,151,255,.28);border-radius:999px;background:rgba(255,255,255,.05)}
+.nband.nb-cab .nb-l,.nband.nb-cab .nb-f,.nband.nb-cab .nb-img,.nband.nb-cab .nb-n,.nband.nb-cab .nb-x span,.nband.nb-cab .nb-tag,.nb-go .sm,.nband.nb-cab .nb-go .lg{display:none}
+.nband.nb-cab .nb-go .sm{display:inline}
+/* na compacta, o tipo da novidade vira a cor da bolinha */
+.nband.nb-cab .nb-s::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;background:#8fb0ff}
+.nband.nb-cab[data-c=l] .nb-s::before{background:#ff8a3d}.nband.nb-cab[data-c=p] .nb-s::before{background:#4fd68f}.nband.nb-cab[data-c=r] .nb-s::before{background:#ff7a69}
+.nband.nb-cab .nb-go{height:28px;padding:0 11px;font-size:12px}
+.nband.nb-cab .nb-b{width:28px;height:28px}
+@media (prefers-reduced-motion:reduce){.nb-s.in,.nb-l i{animation:none}}
 .top .fbtn{background:#fff;border-color:#fff;color:#0c111c}
 .top .fchip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#c3cde3}
 .top .fchip:hover{border-color:rgba(255,255,255,.4);color:#fff}
@@ -1394,6 +1434,17 @@ html{background:#060b1c}
       </div>
     </div>
   </header>
+
+  <aside class="nband" id="nBand" aria-label="Últimas novidades" hidden>
+    <span class="nb-l"><i aria-hidden="true"></i>Últimas novidades</span>
+    <div class="nb-s" id="nbSlide" aria-live="off"></div>
+    <div class="nb-c">
+      <button type="button" class="nb-b" id="nbPrev" aria-label="Novidade anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <span class="nb-n" id="nbPos" aria-hidden="true"></span>
+      <button type="button" class="nb-b" id="nbPause" aria-label="Pausar a troca automática" aria-pressed="false"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+      <button type="button" class="nb-b" id="nbNext" aria-label="Próxima novidade"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m6 3 5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    </div>
+  </aside>
 
   <main class="main" aria-label="Carros por preço">
     <div class="dial" id="dial">
@@ -3172,6 +3223,54 @@ shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]
     catch(err){const s=cp.parentElement.querySelector(".sh-full"),r=document.createRange();r.selectNodeContents(s);const sel=getSelection();sel.removeAllRanges();sel.addRange(r);lb.textContent="selecionado"}
     setTimeout(()=>{lb.textContent="";cp.classList.remove("ok")},1800);return}
   const b=e.target.closest("[data-sib]");if(b)openInfo(b.dataset.sib)});
+
+/* ---------- faixa de últimas novidades (computador): notícias e lançamentos; o botão leva ao item no próprio site, que tem o link da fonte original ---------- */
+(()=>{const band=document.getElementById("nBand");if(!band)return;
+  const slide=document.getElementById("nbSlide"),pos=document.getElementById("nbPos"),bp=document.getElementById("nbPause");
+  const mq=matchMedia("(min-width:1100px)"),reduz=matchMedia("(prefers-reduced-motion: reduce)"),topo=document.querySelector(".app>.top");
+  /* onde ela fica: embaixo do cabeçalho quando cabe sem encostar nos cards (cabeçalho + faixa 46 + título e cards 604);
+     em telas mais baixas, no rodapé da área dos carros; abaixo disso, não aparece */
+  const cr=document.getElementById("chiprow");
+  function modo(){if(!mq.matches||!topo)return null;const t=topo.offsetHeight;if(innerHeight>=t+46+604)return {m:"alto"};
+    /* compacta: só quando os filtros rápidos estão numa linha própria do cabeçalho e sobra espaço à direita deles */
+    const fb=cr&&cr.querySelector(".fbtn");if(!fb||!fb.getClientRects().length)return null;
+    const r=fb.getBoundingClientRect(),gr=Math.max(16,innerWidth-topo.getBoundingClientRect().right+16);
+    const fim=Math.max(r.right,...[...cr.querySelectorAll("#quick>*,#pills>*")].filter(e=>e.getClientRects().length).map(e=>e.getBoundingClientRect().right));
+    const linhaPropria=r.left<=40&&r.top>40,esq=Math.round(fim+20),largura=innerWidth-gr-esq;
+    return linhaPropria&&largura>=380?{m:"cab",esq,largura,meio:r.top+r.height/2}:null}
+  const SETA_NB='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const IC_PAUSA='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',IC_PLAY='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="currentColor"/></svg>';
+  let itens=null,i=0,tm=null,pausado=false,sobre=false,buscando=false;
+  const dm=d=>{const m=/^\d{4}-(\d{2})-(\d{2})/.exec(d||"");return m?`${m[2]}/${m[1]}`:""};
+  const cor=x=>x.k==="l"?"l":x.rot==="Preços e ofertas"?"p":/Recall|Campanha|Defeito|imprensa/.test(x.rot)?"r":"n";
+  function pinta(anima){const x=itens[i];
+    slide.innerHTML=`${x.img?`<img class="nb-img" src="${esc(x.img)}" alt="" width="52" height="30" decoding="async">`:""}<span class="nb-tag" data-c="${cor(x)}">${esc(x.rot)}</span><a class="nb-x" href="${esc(x.u)}" data-ev="banner-novidade" title="${esc(x.t)}"><b>${esc(x.t)}</b>${x.r?`<span> · ${esc(x.r)}</span>`:""}</a>${x.f||x.d?`<span class="nb-f">${esc([x.f,dm(x.d)].filter(Boolean).join(" · "))}</span>`:""}<a class="nb-go" href="${esc(x.u)}" data-ev="banner-novidade-ver" aria-label="Ver no Autokan: ${esc(x.t)}" title="Ver no Autokan, com o link da fonte"><span class="lg">Ver no Autokan</span><span class="sm">Ver</span>${SETA_NB}</a>`;band.dataset.c=cor(x);
+    pos.textContent=`${i+1}/${itens.length}`;
+    if(anima&&!reduz.matches){slide.classList.remove("in");void slide.offsetWidth;slide.classList.add("in")}}
+  /* troca sozinha a cada 7 s; para com o mouse em cima, com o foco do teclado, com a aba escondida, com a pausa ou para quem pediu menos movimento */
+  function agenda(){clearTimeout(tm);if(!itens||itens.length<2||pausado||sobre||reduz.matches||document.hidden||band.hidden)return;tm=setTimeout(()=>{slide.setAttribute("aria-live","off");anda(1)},7000)}
+  function anda(d,manual){if(!itens||!itens.length)return;i=(i+d+itens.length)%itens.length;if(manual)slide.setAttribute("aria-live","polite");pinta(true);agenda()}
+  async function liga(){const m=modo();if(!m){band.hidden=true;clearTimeout(tm);return}
+    if(!itens){if(buscando)return;buscando=true;try{const r=await fetch("/destaques.json");itens=r.ok?((await r.json()).itens||[]).filter(x=>x&&x.t&&x.u):[]}catch(e){itens=[]}buscando=false}
+    if(!itens.length)return;
+    /* a compacta mora dentro do cabeçalho (abaixo do menu da conta e da lista da busca); a grande fica logo abaixo dele */
+    const cab=m.m==="cab",casa=cab?topo:document.querySelector(".app");
+    if(band.parentElement!==casa){if(cab)topo.appendChild(band);else casa.insertBefore(band,document.querySelector(".app>.main"))}
+    const ap=casa.getBoundingClientRect();band.classList.toggle("nb-cab",cab);
+    band.style.left=cab?`${Math.round(m.esq-ap.left)}px`:"";band.style.width=cab?`${Math.round(m.largura)}px`:"";band.style.top=cab?`${Math.round(m.meio-18-ap.top)}px`:"";
+    if(band.hidden){band.hidden=false;pinta(false)}agenda()}
+  document.getElementById("nbPrev").onclick=()=>anda(-1,true);
+  document.getElementById("nbNext").onclick=()=>anda(1,true);
+  bp.onclick=()=>{pausado=!pausado;bp.setAttribute("aria-pressed",String(pausado));bp.setAttribute("aria-label",pausado?"Retomar a troca automática":"Pausar a troca automática");bp.innerHTML=pausado?IC_PLAY:IC_PAUSA;agenda()};
+  band.addEventListener("mouseenter",()=>{sobre=true;clearTimeout(tm)});band.addEventListener("mouseleave",()=>{sobre=false;agenda()});
+  band.addEventListener("focusin",()=>{sobre=true;clearTimeout(tm)});band.addEventListener("focusout",e=>{if(!band.contains(e.relatedTarget)){sobre=false;agenda()}});
+  document.addEventListener("visibilitychange",agenda);
+  let rz=null;const religa=()=>{clearTimeout(rz);rz=setTimeout(liga,200)};addEventListener("resize",religa);
+  /* os filtros ativos crescem a linha dos filtros rápidos: a versão compacta se reposiciona ou se esconde */
+  if(cr&&window.MutationObserver)new MutationObserver(()=>{if(!band.hidden||itens)religa()}).observe(cr,{childList:true,subtree:true});
+  /* carrega depois da roleta, para não atrasar a abertura do site */
+  const cedo=()=>setTimeout(liga,1200);if(document.readyState==="complete")cedo();else addEventListener("load",cedo,{once:true});
+})();
 
 /* ---------- image manager (editors only): prompts for AI images + bulk upload ---------- */
 const imgPanel=document.getElementById("imgPanel"),ipBody=document.getElementById("ipBody");
