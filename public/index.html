@@ -1296,6 +1296,17 @@ html.deitado .note-a{font-weight:600}
 .nband.nb-cab[data-c=l] .nb-s::before{background:#ff8a3d}.nband.nb-cab[data-c=p] .nb-s::before{background:#4fd68f}.nband.nb-cab[data-c=r] .nb-s::before{background:#ff7a69}
 .nband.nb-cab .nb-go{height:28px;padding:0 11px;font-size:12px}
 .nband.nb-cab .nb-b{width:28px;height:28px}
+/* no celular, uma linha só na faixa do logo, que fica vazia à direita dele: não ocupa altura nenhuma */
+.nband.nb-cel:not([hidden]){display:flex}
+.nband.nb-cel{height:24px;padding:0;gap:6px;border:0;border-radius:0;background:none;font-size:12.5px}
+.nband.nb-cel #nbPrev,.nband.nb-cel #nbNext{display:none}
+.nband.nb-cel .nb-s{gap:7px}
+.nband.nb-cel .nb-s::before{width:7px;height:7px}
+.nband.nb-cel .nb-x b{font-weight:600}
+.nband.nb-cel .nb-go{height:24px;padding:0 9px;font-size:11.5px;background:rgba(255,255,255,.12);color:#fff}
+.nband.nb-cel .nb-go:hover{background:rgba(255,255,255,.2)}
+.nband.nb-cel .nb-b{width:24px;height:24px}
+.top.searching .nband.nb-cel{display:none!important}
 @media (prefers-reduced-motion:reduce){.nb-s.in,.nb-l i{animation:none}}
 .top .fbtn{background:#fff;border-color:#fff;color:#0c111c}
 .top .fchip{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.16);color:#c3cde3}
@@ -3262,13 +3273,19 @@ shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]
   /* onde ela fica: embaixo do cabeçalho quando cabe sem encostar nos cards (cabeçalho + faixa 46 + título e cards 604);
      em telas mais baixas, no rodapé da área dos carros; abaixo disso, não aparece */
   const cr=document.getElementById("chiprow");
-  function modo(){if(!mq.matches||!topo)return null;const t=topo.offsetHeight;if(innerHeight>=t+46+604)return {m:"alto"};
+  function modo(){if(!topo)return null;
+    /* celular e tablet: na linha do logo, se ela tiver espaço livre à direita dele */
+    if(!mq.matches){const lg=topo.querySelector(".logo");if(!lg||topo.classList.contains("searching"))return null;const l=lg.getBoundingClientRect();
+      let fim=innerWidth-16;for(const e of topo.children){if(e===lg||e===band)continue;const r=e.getBoundingClientRect();if(r.width&&r.top<l.bottom&&r.bottom>l.top&&r.left>=l.right)fim=Math.min(fim,r.left-12)}
+      const esq=Math.round(l.right+14),largura=Math.round(fim-esq);
+      return largura>=200?{m:"cel",esq,largura,meio:l.top+l.height/2,alt:24}:null}
+    const t=topo.offsetHeight;if(innerHeight>=t+46+604)return {m:"alto"};
     /* compacta: só quando os filtros rápidos estão numa linha própria do cabeçalho e sobra espaço à direita deles */
     const fb=cr&&cr.querySelector(".fbtn");if(!fb||!fb.getClientRects().length)return null;
     const r=fb.getBoundingClientRect(),gr=Math.max(16,innerWidth-topo.getBoundingClientRect().right+16);
     const fim=Math.max(r.right,...[...cr.querySelectorAll("#quick>*,#pills>*")].filter(e=>e.getClientRects().length).map(e=>e.getBoundingClientRect().right));
     const linhaPropria=r.left<=40&&r.top>40,esq=Math.round(fim+20),largura=innerWidth-gr-esq;
-    return linhaPropria&&largura>=380?{m:"cab",esq,largura,meio:r.top+r.height/2}:null}
+    return linhaPropria&&largura>=380?{m:"cab",esq,largura,meio:r.top+r.height/2,alt:36}:null}
   const SETA_NB='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const IC_PAUSA='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5.5 3.5v9M10.5 3.5v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>',IC_PLAY='<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l7-4.5z" fill="currentColor"/></svg>';
   let itens=null,i=0,tm=null,pausado=false,sobre=false,buscando=false;
@@ -3285,10 +3302,10 @@ shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]
     if(!itens){if(buscando)return;buscando=true;try{const r=await fetch("/destaques.json");itens=r.ok?((await r.json()).itens||[]).filter(x=>x&&x.t&&x.u):[]}catch(e){itens=[]}buscando=false}
     if(!itens.length)return;
     /* a compacta mora dentro do cabeçalho (abaixo do menu da conta e da lista da busca); a grande fica logo abaixo dele */
-    const cab=m.m==="cab",casa=cab?topo:document.querySelector(".app");
+    const cab=m.m==="cab"||m.m==="cel",casa=cab?topo:document.querySelector(".app");
     if(band.parentElement!==casa){if(cab)topo.appendChild(band);else casa.insertBefore(band,document.querySelector(".app>.main"))}
-    const ap=casa.getBoundingClientRect();band.classList.toggle("nb-cab",cab);
-    band.style.left=cab?`${Math.round(m.esq-ap.left)}px`:"";band.style.width=cab?`${Math.round(m.largura)}px`:"";band.style.top=cab?`${Math.round(m.meio-18-ap.top)}px`:"";
+    const ap=casa.getBoundingClientRect();band.classList.toggle("nb-cab",cab);band.classList.toggle("nb-cel",m.m==="cel");
+    band.style.left=cab?`${Math.round(m.esq-ap.left)}px`:"";band.style.width=cab?`${Math.round(m.largura)}px`:"";band.style.top=cab?`${Math.round(m.meio-m.alt/2-ap.top)}px`:"";
     if(band.hidden){band.hidden=false;pinta(false)}agenda()}
   document.getElementById("nbPrev").onclick=()=>anda(-1,true);
   document.getElementById("nbNext").onclick=()=>anda(1,true);
@@ -3299,6 +3316,8 @@ shBody.addEventListener("click",async e=>{const cp=e.target.closest("[data-copy]
   let rz=null;const religa=()=>{clearTimeout(rz);rz=setTimeout(liga,200)};addEventListener("resize",religa);
   /* os filtros ativos crescem a linha dos filtros rápidos: a versão compacta se reposiciona ou se esconde */
   if(cr&&window.MutationObserver)new MutationObserver(()=>{if(!band.hidden||itens)religa()}).observe(cr,{childList:true,subtree:true});
+  /* a busca do celular ocupa a linha do logo: esconde enquanto ela está aberta e volta depois */
+  if(topo&&window.MutationObserver)new MutationObserver(()=>{if(itens)religa()}).observe(topo,{attributes:true,attributeFilter:["class"]});
   /* carrega depois da roleta, para não atrasar a abertura do site */
   const cedo=()=>setTimeout(liga,1200);if(document.readyState==="complete")cedo();else addEventListener("load",cedo,{once:true});
 })();
