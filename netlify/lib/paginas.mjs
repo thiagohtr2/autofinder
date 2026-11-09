@@ -84,6 +84,7 @@ button{font-family:inherit}
 .t-br a{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;padding:10px 12px;border-radius:10px;color:#fff;text-decoration:none}
 .t-br a:hover,.t-br a.on{background:rgba(255,255,255,.1)}
 .t-br b{font-weight:700;font-size:15px}
+.t-ano{margin-left:7px;font-weight:500;font-size:11.5px;font-variant-numeric:tabular-nums;color:#a3a3a3}
 .t-br small{font-size:12.5px;color:#9fb1d1;white-space:nowrap}
 .t-nada{padding:10px 12px;color:#9fb1d1;font-size:14px}
 @media (max-width:1040px){.top-nav .so-larga{display:none}}
@@ -287,7 +288,7 @@ const rs=n=>"R$\\u00a0"+String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g,".");
 q.addEventListener("input",async()=>{const d=await carrega(),ts=sa(q.value.trim()).split(/\\s+/).filter(Boolean);sel=-1;
   if(!ts.length){ul.innerHTML="";itens=[];return}
   const ok=x=>ts.every(t=>x.q.includes(t)),bs=d.b.filter(ok).slice(0,3),ms=d.m.filter(ok).slice(0,8);itens=[...bs,...ms];
-  ul.innerHTML=itens.length?itens.map(x=>'<li><a href="'+e(x.u)+'"><b>'+e(x.n)+'</b><small>'+(x.p?(x.s?e(x.s)+" · ":"")+"a partir de "+rs(x.p):x.s?e(x.s):"marca")+'</small></a></li>').join(""):'<li class="t-nada">Nenhum carro com esse nome</li>'});
+  ul.innerHTML=itens.length?itens.map(x=>'<li><a href="'+e(x.u)+'"><b>'+e(x.n)+(x.a?'<span class="t-ano">'+e(String(x.a))+'</span>':'')+'</b><small>'+(x.p?(x.s?e(x.s)+" · ":"")+"a partir de "+rs(x.p):x.s?e(x.s):"marca")+'</small></a></li>').join(""):'<li class="t-nada">Nenhum carro com esse nome</li>'});
 q.addEventListener("keydown",x=>{const as=ul.querySelectorAll("a");if(!as.length)return;
   if(x.key==="ArrowDown"||x.key==="ArrowUp"){x.preventDefault();sel=(sel+(x.key==="ArrowDown"?1:-1)+as.length)%as.length;as.forEach((a,i)=>a.classList.toggle("on",i===sel));as[sel].scrollIntoView({block:"nearest"})}
   if(x.key==="Enter"){x.preventDefault();location.href=as[Math.max(0,sel)].getAttribute("href")}});
