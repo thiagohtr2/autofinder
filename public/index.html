@@ -2183,13 +2183,13 @@ function SORTFN(a,b,sa,sb){
   if(SORT==="strong")return (b.k.length-a.k.length)||sb-sa||a.p-b.p;
   return sb-sa||b.p-a.p;
 }
-const GEAR={"Automático (elétrico/DHT)":"DHT","Dupla embreagem":"DCT","Automático":"Aut.","Manual":"Manual","CVT":"CVT"};
 const motorOf=c=>c.pr==="híbrido leve"?"Híb. leve":c.fu==="Híbrido plug-in"?"Plug-in":(c.fu||null);
 /* aviso de imagem ilustrativa do cartão: ícone; tocar abre o balão (o mesmo dos pontos fortes) com "Imagem ilustrativa" */
 const CTAG='<button type="button" class="ctag" data-tip="ilus" aria-label="Imagem ilustrativa" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.2v4M8 4.9v.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>';
 function cardHTML(c,i,anim){
   const n=counts[c.id]||0,on=mine.has(c.id),mid=c.mid||c.id,ph=(photoOf(mid,c.ano)||{}).asset,own=ownPhotoKey(mid,c.ano),bs=brandSlug(c.mk),lg=logos[bs];
-  const img=carImg(c),sc=scoreOf(c),cv=c.cv?Math.round(c.cv)+" cv":null,mo=motorOf(c),gr=c.cb?(GEAR[c.cb]||c.cb):null;
+  /* no cartão: potência, motor e ano-modelo (o ano fica só aqui, não depois da versão; o câmbio está na ficha) */
+  const img=carImg(c),sc=scoreOf(c),cv=c.cv?Math.round(c.cv)+" cv":null,mo=motorOf(c);
   const na='<b class="na">—</b>';
   return `<article class="card${i===0&&sc>0?" first":""}${c.pc?" has-pc":""}${String(live?n:"–").length>1?" curto":""}" data-id="${c.id}">
     <div class="c-up">
@@ -2198,14 +2198,14 @@ function cardHTML(c,i,anim){
         <div class="edit"><label>Enviar PNG<input type="file" accept="image/png,image/webp,image/jpeg" data-up="${carKey(mid,c.ano)}"></label><label class="lg">Logo ${esc(c.mk)}<input type="file" accept="image/png,image/webp,image/svg+xml" data-logo="${bs}"></label>${own?`<button type="button" data-rm="${own}">Remover foto</button>`:""}</div>
       </div>
       <h2 class="nm" title="${esc(c.nm)} ${esc(c.ver)}">${esc(c.nm)}</h2>
-      <span class="vr-row"><span class="vr" title="${esc(c.ver)}${c.mo?` · ${esc(c.mo)}`:""}">${esc(c.ver)}${c.ano?` · ${c.ano}`:""}</span>${c._more?`<button type="button" class="more" data-info="${c.id}" title="Mais ${c._more} ${c._more>1?"versões":"versão"} deste modelo na faixa">+${c._more}</button>`:""}</span>
+      <span class="vr-row"><span class="vr" title="${esc(c.ver)}${c.mo?` · ${esc(c.mo)}`:""}">${esc(c.ver)}</span>${c._more?`<button type="button" class="more" data-info="${c.id}" title="Mais ${c._more} ${c._more>1?"versões":"versão"} deste modelo na faixa">+${c._more}</button>`:""}</span>
     </div>
     <div class="c-dn">
       <div class="price${isReduced(c)?" is-down":""}">${fmt(c.p)}</div>${priceLine(c)}
       <div class="spec">
         <div><small>Potência</small>${cv?`<b class="mono">${cv}</b>`:na}</div>
         <div><small>Motor</small>${mo?`<b>${esc(mo)}</b>`:na}</div>
-        <div><small>Câmbio</small>${gr?`<b>${esc(gr)}</b>`:na}</div>
+        <div><small>Ano</small>${c.ano?`<b class="mono">${c.ano}</b>`:na}</div>
       </div>
       ${c.k.length?`<div class="icons">${c.k.map(k=>`<button type="button" class="ic" data-k="${k}" data-tip="${k}" aria-label="${TAGS[k]}: o que significa">${ico(k)}</button>`).join("")}</div>`:""}
       <div class="c-act">
