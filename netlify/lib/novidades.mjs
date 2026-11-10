@@ -2,7 +2,7 @@
    Quem entra e quem sai segue regras fixas, que ficam escritas na própria página (e na migração 20261108090000_novidades):
    carro novo e nova geração ficam 90 dias; visual novo, versão nova e série especial ficam 60 dias. */
 import { SITE, imagem } from "./base.mjs";
-import { pagina, esc, trilha, ldTrilha, SETA, INICIO, reais, pl, fotoTag } from "./paginas.mjs";
+import { pagina, esc, trilha, ldTrilha, SETA, INICIO, reais, pl, fotoTag, ILUS } from "./paginas.mjs";
 
 const NOVIDADES = { nome: "Novidades", url: "/novidades" };
 const TIPO = {
@@ -71,7 +71,7 @@ function cartaoLancamento(l) {
   const nomes = l.versoes.map((v) => v.nome).filter(Boolean);
   const nomeVersoes = l.soAlgumas && nomes.length >= 2 && nomes.length <= 3 ? nomes.join(" e ").replace(/ e (?=.* e )/, ", ") : "";
   return `<li class="lc" data-g="${g}" id="l-${esc(String(l.id))}">
-<a class="lc-ph" href="${m.url}" tabindex="-1" aria-hidden="true">${fotoTag(m, 360, "(max-width:640px) 92vw, 340px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}</a>
+<a class="lc-ph" href="${m.url}" tabindex="-1" aria-hidden="true">${fotoTag(m, 360, "(max-width:640px) 92vw, 340px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? ILUS : ""}</a>
 <div class="lc-tx">
 <p class="lc-m"><span class="lc-t" data-g="${g}">${rot}</span><span>Lançado ${quando(l)}</span></p>
 <h3><a href="${m.url}">${esc(l.titulo)}</a></h3>

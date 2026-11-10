@@ -3,7 +3,7 @@
    sem dar nota nem eleger um vencedor. */
 import { SITE, parecidos, imagem, semAcento } from "./base.mjs";
 import { linhasComparacao } from "./ficha-tecnica.mjs";
-import { pagina, esc, trilha, ldTrilha, cartao, fotoTag, reais, pl, mesAno, lista, ico, SETA, ROLETA, COMPARAR_ICO, COMB_FRASE, INICIO, urlPar } from "./paginas.mjs";
+import { pagina, esc, trilha, ldTrilha, cartao, fotoTag, reais, pl, mesAno, lista, ico, SETA, ROLETA, COMPARAR_ICO, COMB_FRASE, INICIO, urlPar, ILUS } from "./paginas.mjs";
 
 export const MAX_CARROS = 4;
 const COMPARAR = { nome: "Comparar", url: "/comparar" };
@@ -15,7 +15,7 @@ const CSS = `
 .cmp thead th{vertical-align:bottom;text-align:left;padding:0 10px 12px;font-weight:400}
 .cmp-ph{display:block;max-width:320px;aspect-ratio:16/9;border-radius:14px;background:radial-gradient(120% 90% at 50% 100%,#eef2f8 0,#f7f9fc 60%,#fff 100%);display:grid;place-items:center;overflow:hidden;margin-bottom:10px}
 .cmp-ph img{width:100%;height:100%;object-fit:contain}
-.cmp-ph{position:relative}.cmp-ph .ilus{right:8px;top:8px;bottom:auto;font-size:9px;padding:2px 6px;border-radius:5px}
+.cmp-ph{position:relative}
 .cmp-mk{display:block;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .cmp-nm{display:block;font-family:var(--display);font-weight:600;font-size:18px;letter-spacing:-.02em;line-height:1.2;color:var(--ink);text-decoration:none;margin:1px 0 8px}
 .cmp-nm:hover{color:var(--accent-ink);text-decoration:underline}
@@ -111,7 +111,7 @@ export function paginaComparacao(base, pares) {
     linhasComparacao(cols, base.fontes),
   ].join("");
 
-  const cab = cols.map((c, i) => `<th scope="col"><a class="cmp-ph" href="${c.m.url}" tabindex="-1" aria-hidden="true">${fotoTag(c.m, 360, "(max-width:640px) 45vw, 260px", i < 2) || ""}${c.m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}</a>
+  const cab = cols.map((c, i) => `<th scope="col"><a class="cmp-ph" href="${c.m.url}" tabindex="-1" aria-hidden="true">${fotoTag(c.m, 360, "(max-width:640px) 45vw, 260px", i < 2) || ""}${c.m.foto ? ILUS : ""}</a>
 <span class="cmp-mk">${esc(c.m.marca)}</span><a class="cmp-nm" href="${c.m.url}">${esc(c.m.nome)}</a>
 <label class="sr" for="v${i}">Versão do ${esc(c.m.titulo)}</label><select id="v${i}" name="v${i}">${c.m.versoes.map((v) => `<option value="${esc(v.id)}"${v.id === c.v.id ? " selected" : ""}>${esc(v.nome || c.m.nome)}${v.preco ? ` · ${reais(v.preco)}` : ""}</option>`).join("")}</select></th>`).join("");
 
