@@ -446,6 +446,8 @@ button,input{font:inherit;color:inherit}
 /* etiqueta Black no canto da foto; com o selo "Novo", o Novo desce para baixo dela */
 .stage .btag{position:absolute;left:0;top:4px;z-index:2;font:800 6.5px/1 var(--body);letter-spacing:.07em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:2.5px 4px 2px;border-radius:3px;pointer-events:none;white-space:nowrap}
 .stage .btag b{color:#fff;font-weight:900}
+/* selo verde de oferta: o mesmo formato do selo Black */
+.btag.otag,.btag-lg.otag,.q-bk.otag{background:#0f8a4b;color:#fff}
 .row.ghost .btag{display:none}
 .stage .btag~.ntag{top:19px}
 .stage .ntag{position:absolute;left:0;top:4.5px;z-index:2;font:800 7.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:2.5px 5px 2px;border-radius:4px;pointer-events:none}
@@ -2095,7 +2097,7 @@ function cardHTML(c,i,anim){
   return `<article class="card${i===0&&sc>0?" first":""}${c.pc?" has-pc":""}${String(live?n:"–").length>1?" curto":""}" data-id="${c.id}">
     <div class="c-up">
       <div class="c-top c-brandtop"><span class="cb-mk" title="${esc(c.mk)}"><span class="cb-badge${lg?"":" ini"}">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(c.mk.slice(0,2).toUpperCase())}</span><span class="cb-name">${esc(c.mk)}</span></span><span class="rank">${String(i+1).padStart(2,"0")}</span></div>
-      <div class="stage">${img}<i class="floor"></i>${isBlack(c)?blackTag(c.bk,"btag"):""}${ph?CTAG:""}${isNew(c)?`<span class="ntag" title="${esc(newTitle(c))}">Novo</span>`:""}
+      <div class="stage">${img}<i class="floor"></i>${offerTag(c)}${ph?CTAG:""}${isNew(c)?`<span class="ntag" title="${esc(newTitle(c))}">Novo</span>`:""}
         <div class="edit"><label>Enviar PNG<input type="file" accept="image/png,image/webp,image/jpeg" data-up="${carKey(mid,c.ano)}"></label><label class="lg">Logo ${esc(c.mk)}<input type="file" accept="image/png,image/webp,image/svg+xml" data-logo="${bs}"></label>${own?`<button type="button" data-rm="${own}">Remover foto</button>`:""}</div>
       </div>
       <h2 class="nm" title="${esc(c.nm)} ${esc(c.ver)}">${esc(c.nm)}</h2>
@@ -2363,9 +2365,12 @@ function blackOf(x){if(!x||x.change_type!=="promocional")return null;
   const r=BLACK_RE.exec(x.reason||"");if(r)return r[0].replace(/[\s_-]+/g," ").replace(/^black/i,"Black");
   const u=BLACK_RE.exec(x.source_url||"");return u?u[0].replace(/[\s_-]+/g," ").replace(/\b\w/g,l=>l.toUpperCase()):null}
 const isBlack=c=>!!(c.bk&&isReduced(c));
+/* oferta com prazo ou campanha (não a redução definitiva de tabela): selo verde "OFERTA"; se for Black, fica só o selo Black */
+const isOffer=c=>isReduced(c)&&c.pc.change_type==="promocional";
+const offerTag=c=>isBlack(c)?blackTag(c.bk,"btag"):isOffer(c)?'<span class="btag otag" title="Carro em oferta">Oferta</span>':"";
 /* etiqueta preta, como as de Black Friday: "BLACK" em branco e o resto em amarelo */
 /* busca: a etiqueta da oferta fica em cima do preço, para não apertar o nome da versão */
-const qTag=c=>isReduced(c)?`<span class="q-tg">${isBlack(c)?blackTag(c.bk,"q-bk",true):'<span class="q-of">oferta</span>'}</span>`:"";
+const qTag=c=>isReduced(c)?`<span class="q-tg">${isBlack(c)?blackTag(c.bk,"q-bk",true):isOffer(c)?'<span class="q-bk otag">Oferta</span>':'<span class="q-of">preço menor</span>'}</span>`:"";
 const blackTag=(name,cls,curto)=>{const [a,...b]=String(name).split(" ");return `<span class="${cls}" title="Oferta da campanha ${esc(name)}"><b>${esc(a)}</b>${b.length&&!curto?` ${esc(b.join(" "))}`:""}</span>`};
 const todayBR=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo"}).format(new Date());
 /* preço em vigor: a mudança mais recente que já começou e ainda não acabou; oferta vencida volta ao valor antigo */
@@ -2853,7 +2858,7 @@ async function openInfo(id){
   const ph=(photoOf(c.mid||c.id,c.ano)||{}).asset,hero=ph?`<figure class="sh-hero"><img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
   const full=`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`,gimg="https://www.google.com/search?tbm=isch&q="+encodeURIComponent(full);
   const base=(v,src)=>`<section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
-      ${isBlack(c)?`<div class="sh-bk">${blackTag(c.bk,"btag-lg")}</div>`:""}<div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
+      ${isBlack(c)?`<div class="sh-bk">${blackTag(c.bk,"btag-lg")}</div>`:isOffer(c)?'<div class="sh-bk"><span class="btag-lg otag">Oferta</span></div>':""}<div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
       <div class="sh-meta sh-pmeta">${priceMeta(c,v,src)}</div></section>
     ${shActs(c)}
     <div class="sh-links"><a class="sh-site" href="${esc(gimg)}" target="_blank" rel="noopener" data-ev="google-imagens" data-vid="${esc(c.id)}" title="Abre o Google Imagens já pesquisando este carro"><span><small>Fotos reais no Google Imagens</small><b>${esc(full)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
