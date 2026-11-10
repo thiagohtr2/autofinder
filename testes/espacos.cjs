@@ -5,6 +5,7 @@
    1. Laterais: nada sai da caixa do pai nem da tela (botão pregado na lateral, texto vazando).
    2. Encostados: dois blocos com fundo, borda ou sombra nunca ficam a menos de 3 px um do outro, em cima, embaixo
       ou do lado. Só passa quando os dois formam um mesmo painel (o mesmo fundo, sem borda) ou são linhas da mesma lista.
+   3. Etiquetas soltas (selos e avisos posicionados por cima de uma caixa) não podem se encostar umas nas outras.
    Para um caso de propósito, marque o elemento com data-espaco="ok" e explique no código por quê.
    Sai com código 1 se achar problema. */
 const { chromium } = require('playwright');
@@ -23,6 +24,7 @@ const ESTADOS = [
   ['/', 'ficha aberta', async (p) => { await p.evaluate(() => { const b = document.querySelector('.row:not(.ghost) .card.sel button.go') || document.querySelector('.showroom button.go'); b && b.click(); }); await p.waitForTimeout(900); }],
   ['/', 'ficha com oferta', async (p) => { await p.evaluate(() => { const c = CARS.find((x) => x.pc && x.bk) || CARS.find((x) => x.pc); c && openInfo(c.id); }); await p.waitForTimeout(900); }],
   ['/', 'filtro Black', async (p) => { await p.evaluate(() => { const q = document.querySelector('#quick [data-black]'); q && q.click(); }); await p.waitForTimeout(1800); }],
+  ['/', 'cartão com o selo mais longo', async (p) => { await p.evaluate(() => { const c = CARS.filter((x) => typeof isBlack === 'function' && isBlack(x)).sort((a, b) => b.bk.length - a.bk.length)[0]; c && goToCar(c, true, true); }); await p.waitForTimeout(2500); }],
   ['/', 'busca "rampage" (Black)', async (p) => { await abreBusca(p, 'rampage'); }],
   ['/carros/jeep/compass', 'busca do topo', async (p) => { await p.click('#tBuscaBtn'); await p.fill('#tBq', 'compass'); await p.waitForTimeout(600); }],
 ];
@@ -86,6 +88,20 @@ function verifica() {
     if (sobH > 8 && vaoV > -1.5 && vaoV < 3) out.push(`encostados: ${nome(a.e)} e ${nome(b.e)} (${Math.max(0, Math.round(vaoV))} px na vertical)`);
     else if (sobV > 8 && vaoH > -1.5 && vaoH < 3) out.push(`encostados: ${nome(a.e)} e ${nome(b.e)} (${Math.max(0, Math.round(vaoH))} px na horizontal)`);
     else if (sobH > 8 && sobV > 8) out.push(`sobrepostos: ${nome(a.e)} e ${nome(b.e)}`);
+  }
+  // 3. etiquetas soltas (posição absoluta) na mesma caixa não podem se encostar nem se sobrepor
+  //    (ex.: o selo Black e o "ilustrativa" no canto da foto do cartão)
+  const etq = [];
+  document.querySelectorAll('body *').forEach((e) => {
+    if (!visivel(e) || fechado(e) || ok(e)) return;
+    if (getComputedStyle(e).position !== 'absolute' || !e.textContent.trim()) return;
+    const r = e.getBoundingClientRect(); if (r.width < 4 || r.height < 4 || r.height > 40 || r.width > 320) return;
+    etq.push({ e, r, pai: e.offsetParent });
+  });
+  for (let i = 0; i < etq.length; i++) for (let j = i + 1; j < etq.length; j++) {
+    const a = etq[i], b = etq[j];
+    if (a.pai !== b.pai || a.e.contains(b.e) || b.e.contains(a.e)) continue;
+    if (a.r.left < b.r.right + 2 && b.r.left < a.r.right + 2 && a.r.top < b.r.bottom + 2 && b.r.top < a.r.bottom + 2) out.push(`etiquetas encostadas: ${nome(a.e)} e ${nome(b.e)}`);
   }
   return { lateral: document.documentElement.scrollWidth > vw + 0.5, problemas: [...new Set(out)] };
 }
