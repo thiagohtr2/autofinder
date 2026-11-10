@@ -1048,11 +1048,27 @@ const ICO = {
   sair: ic('<path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4M10 16l-4-4 4-4M6 12h10"/>'),
   pc: ic('<rect x="3" y="4" width="18" height="12" rx="1.8"/><path d="M8.5 20h7M12 16v4"/>'),
 };
-const conteudo = `<div class="mn-h"><a href="/" aria-label="Autokan: página inicial"><img src="/marca/autokan-logo-topo.png?v=6" alt="Autokan" width="168" height="18"></a><button type="button" class="mn-x" data-mn-fecha aria-label="Fechar menu">${FECHA_X}</button></div>
-<nav class="mn-b" aria-label="Menu do painel"><div class="mn-conta" id="mnConta"></div><div id="pmCorpo"></div></nav>`;
-$("topoLugar").outerHTML = topoHTML({ rotuloMenu: "Abrir o menu do painel" }) + molduraMenu(conteudo, "Menu do painel");
+/* o ☰ abre o menu do painel só para o administrador, depois que o painel confirmou a conta (o #app só aparece aí).
+   Para qualquer outra pessoa nesta página, o ☰ abre o menu comum do site, sem nada do painel */
+const CABECA = `<div class="mn-h"><a href="/" aria-label="Autokan: página inicial"><img src="/marca/autokan-logo-topo.png?v=6" alt="Autokan" width="168" height="18"></a><button type="button" class="mn-x" data-mn-fecha aria-label="Fechar menu">${FECHA_X}</button></div>`;
+/* no menu do painel não há Entrar nem Cadastrar: quem vê o painel já entrou com a conta de administrador (a conta fica no botão redondo do topo, e "Sair do painel" no fim do menu) */
+const MENU_PAINEL = CABECA + `<nav class="mn-b" aria-label="Menu do painel"><div id="pmCorpo"></div></nav>`;
+let MENU_SITE = null;
+fetch("/menu.html").then((r) => (r.ok ? r.text() : "")).then((t) => { MENU_SITE = t || null; }).catch(() => {});
+$("topoLugar").outerHTML = topoHTML() + molduraMenu("", "Menu");
 const cfg = window.autokanSB || {};
 const topo = iniciaTopo({ sb: cfg.url, chave: cfg.chave });
+let modo = "";
+function poeMenu() {
+  const mp = $("menuP"), admin = !!$("app") && !$("app").hidden;
+  if (admin) {
+    if (modo !== "painel") { mp.innerHTML = MENU_PAINEL; mp.setAttribute("aria-label", "Menu do painel"); modo = "painel"; }
+    monta();
+  } else if (modo !== "site") {
+    mp.innerHTML = MENU_SITE || CABECA + `<nav class="mn-b" aria-label="Menu do site"><a class="mn-i" href="/">${ICO.site}<span><span class="mn-l">Voltar ao site</span></span></a></nav>`;
+    mp.setAttribute("aria-label", "Menu"); modo = MENU_SITE ? "site" : ""; topo.conta();
+  }
+}
 
 /* o menu é montado a cada abertura, com o estado atual do painel (período, avisos, opções) */
 const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
@@ -1069,9 +1085,8 @@ function secoes() {
   return out;
 }
 function monta() {
-  const corpo = $("pmCorpo"), app = $("app");
+  const corpo = $("pmCorpo");
   if (!corpo) return;
-  if (!app || app.hidden) { corpo.innerHTML = `<p class="mn-t">Painel</p><p class="pm-nota" style="font-family:var(--body)">Entre com a conta de administrador para ver o painel.</p><p class="mn-t">Autokan</p>` + `<a class="mn-i" href="/">${ICO.site}<span><span class="mn-l">Voltar ao site</span></span></a>`; return; }
   const dias = [1, 7, 30, 90].map((d) => `<button type="button" data-pm-dias="${d}" aria-pressed="${$("p" + d) && $("p" + d).getAttribute("aria-pressed") === "true"}">${d === 1 ? "Hoje" : d + " dias"}</button>`).join("");
   const upd = $("upd") ? $("upd").textContent.trim() : "";
   const vp = $("verPc");
@@ -1090,7 +1105,7 @@ function monta() {
     `<a class="mn-i" href="/">${ICO.site}<span><span class="mn-l">Voltar ao site</span></span></a>` +
     item("out", ICO.sair, "Sair do painel");
 }
-$("mnBtn").addEventListener("click", monta, true);
+$("mnBtn").addEventListener("click", poeMenu, true);
 $("menuP").addEventListener("click", (e) => {
   const d = e.target.closest("[data-pm-dias]");
   if (d) { const b = $("p" + d.dataset.pmDias); if (b) b.click(); $("pmCorpo").querySelectorAll("[data-pm-dias]").forEach((x) => x.setAttribute("aria-pressed", String(x === d))); return; }
