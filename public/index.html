@@ -405,6 +405,9 @@ button,input{font:inherit;color:inherit}
   transform-origin:0 50%;will-change:transform,opacity}
 .row::-webkit-scrollbar{display:none}
 .row{contain:layout paint style}
+/* a roleta é branca por inteiro: o card que já passou para a esquerda some atrás dela, sem pedaços aparecendo entre os números
+   (o corte fica 8 px antes do card escolhido, para não pegar o contorno azul dele) */
+.row{clip-path:inset(0 0 0 calc(var(--padl,calc(var(--dw) + 8px)) - 8px))}
 .gsp{display:block;height:39px}
 .card{contain:layout style}
 .row.ghost{pointer-events:none}
@@ -1849,16 +1852,16 @@ function makeDial(el,start,onChange){
     d.W=r.width;d.H=r.height;d.CW=d.W+56+d.off;cv.width=d.CW*dpr;cv.height=d.H*dpr;cv.style.left=-d.off+"px";cv.style.width=d.CW+"px";ctx.setTransform(dpr,0,0,dpr,d.off*dpr,0);
     const mobile=matchMedia("(max-width:760px)").matches;
     const R=Math.max(d.H*.72,300);d.G=mobile?{R,cx:68-R,cy:d.H/2,base:0,dir:1,mobile,px:30,lab:30,ptrX:d.W-9}:{R,cx:150-R,cy:d.H/2,base:0,dir:1,mobile,px:32,lab:38,ptrX:d.W-9};
-    d.G.step=d.G.px/d.G.R;d.G.Rd=d.G.R+(mobile?55:86); // área da roleta (toque e arraste): cobre traços e números com folga, sem alcançar o primeiro card
+    d.G.step=d.G.px/d.G.R;d.G.Rd=d.G.R+(mobile?55:86); // fundo branco e área de toque da roleta: cobre traços e números com folga, sem alcançar o primeiro card
     /* a tela de desenho passa um pouco da roleta para os números caberem; o recorte no círculo branco impede que ela pegue
        o toque do primeiro card (o botão de favorito dele ficava embaixo dessa sobra) */
     {const G=d.G,ccx=G.cx+d.off;cv.style.clipPath=cv.style.webkitClipPath=`circle(${Math.round(G.Rd+1)}px at ${Math.round(ccx)}px ${Math.round(G.cy)}px)`;}};
   d.draw=()=>{const G=d.G;if(!G)return;const {R,cx,cy,base,dir,step}=G,pos=d.pos;
     ctx.clearRect(-(d.off||0),0,d.CW||d.W,d.H);
     // round backdrop that follows the end of the ticks: cars slide behind a disc, never a rectangle
-    /* como um velocímetro: o anel dos traços e dos números fica transparente, sem borda; o círculo de dentro, onde ficam
-       o −, o + e os botões de 50, é branco e termina na pista */
-    if(DIAL_DISC==='white'){ctx.fillStyle='#ffffff';ctx.beginPath();ctx.arc(cx,cy,Math.max(0,R-3),0,Math.PI*2);ctx.fill();}
+    /* fundo branco liso, sem borda e sem degradê: cobre o círculo de dentro (−, + e botões de 50) e também o anel dos traços
+       e dos números, com folga; os cards passam por trás dele */
+    if(DIAL_DISC==='white'){ctx.fillStyle='#ffffff';ctx.beginPath();ctx.arc(cx,cy,G.Rd,0,Math.PI*2);ctx.fill();}
     else if(DIAL_DISC){const Rd=G.Rd,g=ctx.createRadialGradient(cx,cy,R-60,cx,cy,Rd);g.addColorStop(0,"#ffffff");g.addColorStop(.75,"#fdfdff");g.addColorStop(1,"#f8fafd");
      ctx.save();ctx.shadowColor="rgba(12,17,28,.10)";ctx.shadowBlur=16;ctx.fillStyle=g;ctx.beginPath();ctx.arc(cx,cy,Rd,0,Math.PI*2);ctx.fill();ctx.restore();
      ctx.strokeStyle="rgba(12,17,28,.06)";ctx.lineWidth=1;ctx.beginPath();ctx.arc(cx,cy,Rd,-1.6,1.6);ctx.stroke();}
@@ -1879,8 +1882,6 @@ function makeDial(el,start,onChange){
         const ext=ctx.measureText(txt).width/2*Math.abs(Math.cos(a))+4.5*Math.abs(Math.sin(a)),lr=R+6+16+(G.mobile?4:6)+ext;
         ctx.globalAlpha=al*.9;ctx.fillStyle=maj?C.ink:C.muted;
         ctx.textAlign="center";ctx.textBaseline="middle";
-        /* o anel é transparente: um contorno branco fino em volta de cada número mantém a leitura quando um card passa por trás */
-        ctx.save();ctx.globalAlpha=al;ctx.strokeStyle="#ffffff";ctx.lineWidth=4;ctx.lineJoin="round";ctx.strokeText(txt,cx+Math.cos(a)*lr,cy+Math.sin(a)*lr);ctx.restore();
         ctx.fillText(txt,cx+Math.cos(a)*lr,cy+Math.sin(a)*lr);}
     }
     // dots on values that have cars
