@@ -25,6 +25,7 @@ const ESTADOS = [
   ['/', 'ficha com oferta', async (p) => { await p.evaluate(() => { const c = CARS.find((x) => x.pc && x.bk) || CARS.find((x) => x.pc); c && openInfo(c.id); }); await p.waitForTimeout(900); }],
   ['/', 'filtro Black', async (p) => { await p.evaluate(() => { const q = document.querySelector('#quick [data-black]'); q && q.click(); }); await p.waitForTimeout(1800); }],
   ['/', 'cartão com o selo mais longo', async (p) => { await p.evaluate(() => { const c = CARS.filter((x) => typeof isBlack === 'function' && isBlack(x)).sort((a, b) => b.bk.length - a.bk.length)[0]; c && goToCar(c, true, true); }); await p.waitForTimeout(2500); }],
+  ['/', 'cartão com Oferta e Novo', async (p) => { await p.evaluate(() => { const c = CARS.find((x) => typeof isOffer === 'function' && isOffer(x) && isNew(x)); c && goToCar(c, true, true); }); await p.waitForTimeout(2500); }],
   ['/', 'busca "rampage" (Black)', async (p) => { await abreBusca(p, 'rampage'); }],
   ['/carros/jeep/compass', 'busca do topo', async (p) => { await p.click('#tBuscaBtn'); await p.fill('#tBq', 'compass'); await p.waitForTimeout(600); }],
 ];
