@@ -808,7 +808,10 @@ a.ig-b{text-decoration:none}
 .dbm-th img{width:100%;height:100%;object-fit:contain}
 .dbm-nm{font-weight:700;font-size:14px}
 .dbm-sub{font-size:11.5px;color:var(--muted)}
-.db-show{display:grid;place-items:center;flex:0 0 auto;width:30px;height:30px;margin:-4px -6px -4px -6px;border-radius:8px;cursor:pointer}
+.db-show{display:grid;place-items:center;flex:0 0 auto;width:30px;height:30px;margin:-4px -6px -4px 0;border-radius:8px;cursor:pointer}
+/* a área de toque da caixinha começa na borda de dentro da linha (antes passava 6 px para fora); a linha tira esses 6 px do recuo, e a caixinha fica onde estava */
+.dbb>summary:has(>.db-show){padding-left:8px}
+.dbm>summary:has(>.db-show){padding-left:14px}
 .db-show:hover{background:var(--accent-soft)}
 .db-show input{width:18px;height:18px;margin:0;accent-color:var(--accent);cursor:pointer}
 .db-show input:disabled{cursor:not-allowed}
@@ -1474,6 +1477,39 @@ html{background:#060b1c}
    Entrar e Cadastrar com 32 px, letra de 12,5 e 12 px dos lados. O texto dos botões fica no meio pela altura das maiúsculas. */
 .mnbtn .hb-pc{display:none}
 .authbtn>.tb{display:block;text-box:trim-both cap alphabetic}
+.top .authbtn{font-weight:700} /* como na bancada e nas outras páginas */
+/* Radar: no computador as escolhas (Tudo, Essenciais…) ficam na própria janela, como sempre; no celular vão para o menu do ☰ */
+.rd-estado{display:none;margin:1px 0 0;font-size:12px;font-weight:600;color:var(--muted)}
+.rdx-so{display:none}
+@media (min-width:761px){
+  .rdx{position:static;transform:none;visibility:visible;width:auto;box-shadow:none;background:none;display:block;z-index:auto;transition:none}
+  .rdx .dbx-top,.rdx .dbx-note,.rdx .dbx-h{display:none}
+  .rdx .dbx-scroll{overflow:visible;padding:0}
+  .rdx .dbx-sec{padding:0;border:0}
+  #rdScrim{display:none}
+  .rdx .dbp-tools{align-items:center;flex-wrap:wrap}
+  .rdx .dbp-chk{padding:0}
+}
+/* celular: Banco de dados e Radar abrem logo abaixo do topo do site (o mesmo topo de todas as páginas),
+   e o ☰ do topo abre o menu de cada um. A altura do topo vem de --topo-h, medida na hora de abrir. */
+@media (max-width:760px){
+  .dbp{top:var(--topo-h,42px)}
+  html.painel-aberto .top{z-index:34}
+  .dbp-burger{display:none}
+  .dbp-bar{background:var(--bg);color:var(--ink);padding:10px 14px;border-bottom:1px solid var(--line)}
+  .dbp-bar .dr-x{background:var(--bg);border-color:var(--line);color:var(--ink)}
+  .dbp-ttl p{color:var(--muted)}
+  #rdPanel .dbp-head{align-items:center;padding:10px 14px;border-bottom:1px solid var(--line)}
+  #rdPanel .dbp-head h2{font-size:17px;letter-spacing:-.01em;line-height:1.25}
+  #rdPanel .dbp-sub{display:none}
+  .rd-estado{display:block}
+  .rdx-so{display:flex}
+  .rdx .dbp-tools{flex-direction:column;align-items:stretch;padding:0;border:0}
+  .rdx .rd-chips{flex-direction:column;gap:2px;margin:0 -6px}
+  .rdx .rd-chip{height:44px;padding:0 10px;border:0;border-radius:12px;background:transparent;text-align:left;font:700 14px var(--body);color:var(--ink)}
+  .rdx .rd-chip[aria-pressed="true"]{background:var(--accent-soft);color:var(--accent)}
+  .rdx .dbp-chk{margin-left:0!important;padding:8px 0 0}
+}
 @media (max-width:760px){
   .top{padding-block:6px 5px}   /* 6 + 30 + 5 + 1 de borda = 42 */
   .top .mnbtn{width:27px;height:27px}
@@ -1587,9 +1623,17 @@ html{background:#060b1c}
 <div class="ajp-bg" id="ajBg" hidden></div>
 <section class="ajp" id="ajPanel" role="dialog" aria-modal="true" aria-label="Ordem e filtros" hidden></section>
 <section class="dbp" id="rdPanel" role="dialog" aria-modal="true" aria-labelledby="rdTitle" hidden>
-  <div class="dbp-in" style="width:min(860px,100%)">
-    <header class="dbp-head"><div><h2 id="rdTitle">Radar de lançamentos</h2><p class="dbp-sub">Só você vê. Novidades do mercado 0 km no Brasil para manter o Autokan atualizado; a busca roda sozinha várias vezes por dia.</p></div><button type="button" class="dr-x" id="rdClose" aria-label="Fechar radar">✕</button></header>
-    <div class="dbp-tools" id="rdTools"></div>
+  <div class="dbp-in dbx-in" style="width:min(860px,100%)">
+    <header class="dbp-head"><div><h2 id="rdTitle">Radar de lançamentos</h2><p class="dbp-sub">Só você vê. Novidades do mercado 0 km no Brasil para manter o Autokan atualizado; a busca roda sozinha várias vezes por dia.</p><p class="rd-estado" id="rdEstado"></p></div><button type="button" class="dr-x" id="rdClose" aria-label="Fechar radar">✕</button></header>
+    <div class="dbx-scrim" id="rdScrim"></div>
+    <nav class="dbx rdx" id="rdMenu" aria-label="Menu do radar">
+      <div class="dbx-top"><b>Radar de lançamentos</b><button type="button" class="dr-x" id="rdMenuX" aria-label="Fechar o menu">✕</button></div>
+      <div class="dbx-scroll">
+        <div class="dbx-sec"><div class="dbx-h">Ver</div><div class="dbp-tools" id="rdTools"></div></div>
+        <div class="dbx-sec rdx-so"><div class="dbx-nav"><button type="button" data-fecha-painel><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4 3.5 10.5 10 17M4 10.5h9a7 7 0 0 1 7 7V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Fechar o radar e voltar ao site</button></div></div>
+        <p class="dbx-note">Só você vê. Novidades do mercado 0 km no Brasil para manter o Autokan atualizado; a busca roda sozinha várias vezes por dia.</p>
+      </div>
+    </nav>
     <div class="dbp-body" id="rdBody"></div>
   </div>
 </section>
@@ -1618,6 +1662,7 @@ html{background:#060b1c}
           <button type="button" class="dbp-tg" id="dbOpenAll">Abrir tudo</button>
         </div>
         <div class="dbx-sec"><div class="dbx-h" id="dbsBodL">Tipos que aparecem de início</div><div id="dbTypes"></div></div>
+        <div class="dbx-sec"><div class="dbx-nav"><button type="button" data-fecha-painel><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 4 3.5 10.5 10 17M4 10.5h9a7 7 0 0 1 7 7V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Fechar o banco e voltar ao site</button></div></div>
         <p class="dbx-note">Só editores veem este painel. Marcas, modelos e versões como estão gravados na base do Autokan.</p>
       </div>
     </nav>
@@ -2078,7 +2123,7 @@ document.addEventListener("click",e=>{if(!pmenu.hidden&&!e.target.closest(".pwra
  const focaveis=()=>[...mp.querySelectorAll("a[href],button,summary")].filter(x=>x.offsetParent!==null);
  const abre=async()=>{volta=document.activeElement;await carrega();conta();mn.hidden=false;mb.setAttribute("aria-expanded","true");const x=mp.querySelector(".mn-x");(x||mp).focus()};
  const fecha=(foco=true)=>{if(mn.hidden)return;mn.hidden=true;mb.setAttribute("aria-expanded","false");if(foco&&volta&&volta.focus)volta.focus()};
- mb.onclick=()=>mn.hidden?abre():fecha();
+ mb.onclick=()=>{if(menuDoPainel())return;mn.hidden?abre():fecha()};
  mn.addEventListener("click",e=>{
    if(e.target.closest("[data-mn-fecha]")){fecha();return}
    const ac=e.target.closest("[data-mn-acao]");
@@ -2725,7 +2770,7 @@ document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearc
 {const top=document.querySelector(".top"),sb=document.getElementById("sbtn");
  const openS=()=>{top.classList.add("searching");sb.setAttribute("aria-expanded","true");qIn.focus()};
  const closeS=()=>{top.classList.remove("searching");sb.setAttribute("aria-expanded","false");qIn.value="";closeSearch()};
- sb.onclick=()=>top.classList.contains("searching")?closeS():openS();
+ sb.onclick=()=>{if(!top.classList.contains("searching")&&typeof closeDB==="function"){closeDB(false);closeRadar(false)}top.classList.contains("searching")?closeS():openS()};
  document.getElementById("sclose").onclick=closeS;
  window._closeSearchBar=()=>{if(matchMedia("(max-width:760px)").matches){top.classList.remove("searching");sb.setAttribute("aria-expanded","false")}};}
 /* escolher: o modelo leva ao mais barato (ou à versão buscada); a versão leva exatamente a ela */
@@ -3073,8 +3118,9 @@ document.getElementById("dbTabs").addEventListener("click",e=>{const b=e.target.
 /* menu lateral do banco (☰): abas, números, filtros e tipos ficam aqui para a lista de carros ocupar a tela */
 const dbMenu=document.getElementById("dbMenu"),dbMenuBtn=document.getElementById("dbMenuBtn"),dbScrim=document.getElementById("dbScrim");
 function dbMenuOn(){return dbMenu.classList.contains("on")}
-function dbMenuSet(on){if(on===dbMenuOn())return;dbMenu.classList.toggle("on",on);dbScrim.classList.toggle("on",on);dbMenu.inert=!on;dbMenuBtn.setAttribute("aria-expanded",on);dbMenuBtn.setAttribute("aria-label",on?"Fechar o menu do banco":"Abrir o menu do banco");
-  if(on)document.getElementById("dbMenuX").focus({preventScroll:true});else if(dbMenu.contains(document.activeElement))dbMenuBtn.focus({preventScroll:true})}
+function dbMenuSet(on){if(on===dbMenuOn())return;dbMenu.classList.toggle("on",on);dbScrim.classList.toggle("on",on);dbMenu.inert=!on;
+  const bt=celPainel()?document.getElementById("mnBtn"):dbMenuBtn;dbMenuBtn.setAttribute("aria-expanded",on);dbMenuBtn.setAttribute("aria-label",on?"Fechar o menu do banco":"Abrir o menu do banco");document.getElementById("mnBtn").setAttribute("aria-expanded",on&&celPainel());
+  if(on)document.getElementById("dbMenuX").focus({preventScroll:true});else if(dbMenu.contains(document.activeElement))bt.focus({preventScroll:true})}
 dbMenuBtn.onclick=()=>dbMenuSet(!dbMenuOn());
 dbScrim.onclick=()=>dbMenuSet(false);
 document.getElementById("dbMenuX").onclick=()=>dbMenuSet(false);
@@ -3165,6 +3211,7 @@ function rdToast(){const r=RUNS[0];if(!r||!rdOn)return;const seen=lsGet("giro_ra
   t.hidden=false;document.getElementById("rdLater").onclick=()=>{t.hidden=true};document.getElementById("rdGo").onclick=()=>{t.hidden=true;openRadar()}}
 function renderRadar(){
   const run=RUNS[0],kinds=[...new Set(RADAR.map(i=>i.kind||"outro"))];
+  document.getElementById("rdEstado").textContent=`${rdFilter==="all"?"Tudo":rdFilter==="ess"?"Essenciais":rdFilter==="hist"?"Histórico":RDKIND[rdFilter]||rdFilter}${rdFilter==="hist"?"":rdHideDone?" · sem os resolvidos":" · com os resolvidos"}`;
   rdTools.innerHTML=`<div class="rd-chips">${[["all","Tudo"],["ess","Essenciais"],...kinds.map(k=>[k,RDKIND[k]||k]),["hist","Histórico"]].map(([k,l])=>`<button type="button" class="rd-chip" data-rf="${esc(k)}" aria-pressed="${rdFilter===k}">${esc(l)}</button>`).join("")}</div><label class="dbp-chk" style="margin-left:auto"><input type="checkbox" id="rdHide" ${rdHideDone?"checked":""}> Esconder resolvidos</label>`;
   let list=RADAR.slice().sort((a,b)=>String(b.date||"").localeCompare(String(a.date||""))||(b.essential?1:0)-(a.essential?1:0));
   if(rdFilter==="ess")list=list.filter(i=>i.essential);else if(rdFilter!=="all")list=list.filter(i=>(i.kind||"outro")===rdFilter);
@@ -3309,16 +3356,39 @@ function renderNovidades(){
   if(!open.length&&!added.length){dbBody.innerHTML=`<p class="dbp-empty">Nenhuma novidade em aberto. O radar procura novos carros e marcas 3 vezes por dia.</p>`;return}
   dbBody.innerHTML=`<div class="nv-list">${cars.length?`<div class="nv-h">Carros · ${cars.length}</div>${cars.map(card).join("")}`:""}${brands.length?`<div class="nv-h">Marcas · ${brands.length}</div>${brands.map(card).join("")}`:""}
     ${added.length?`<div class="nv-h">Adicionados nos últimos ${NV_DAYS} dias</div>${added.map(i=>`<article class="nv-card"><div class="rd-meta"><span class="tagx ok">adicionado em ${fdt(i.applied_at)}</span><span>${esc(i.applied_brand||i.brand||"")} ${esc(i.applied_model||i.model||"")}</span></div><div class="nv-why">${(i.applied_log||[]).map(x=>`+ ${esc(x)}`).join("<br>")}</div>${nvWhy(i)}</article>`).join("")}`:""}</div>`}
-function openRadar(){lastFocus=document.activeElement;rdPanel.hidden=false;renderRadar();if(RUNS[0])lsSet("giro_radar_seen",RUNS[0].id);document.getElementById("rdToast").hidden=true;document.getElementById("rdClose").focus()}
-function closeRadar(){rdPanel.hidden=true;devolveFoco()}
+function openRadar(){lastFocus=document.activeElement;closeDB(false);rdMenuSet(false);rdPanel.hidden=false;painelAberto();renderRadar();if(RUNS[0])lsSet("giro_radar_seen",RUNS[0].id);document.getElementById("rdToast").hidden=true;document.getElementById("rdClose").focus()}
+function closeRadar(foco=true){if(rdPanel.hidden)return;rdMenuSet(false);rdPanel.hidden=true;painelAberto();if(foco)devolveFoco()}
+/* menu do radar: no celular abre pelo ☰ do topo; no computador as escolhas ficam na própria janela */
+const rdMenu=document.getElementById("rdMenu"),rdScrim=document.getElementById("rdScrim");
+function rdMenuOn(){return rdMenu.classList.contains("on")}
+function rdMenuSet(on){on=on&&celPainel();if(on===rdMenuOn()){rdMenu.inert=celPainel()&&!on;return}rdMenu.classList.toggle("on",on);rdScrim.classList.toggle("on",on);rdMenu.inert=!on;
+  const mb=document.getElementById("mnBtn");mb.setAttribute("aria-expanded",on);
+  if(on)document.getElementById("rdMenuX").focus({preventScroll:true});else if(rdMenu.contains(document.activeElement))mb.focus({preventScroll:true})}
+document.getElementById("rdMenuX").onclick=()=>rdMenuSet(false);rdScrim.onclick=()=>rdMenuSet(false);
+/* escolher o que ver fecha o menu, para a lista aparecer */
+rdMenu.addEventListener("click",e=>{if(e.target.closest("[data-rf]")&&celPainel())setTimeout(()=>rdMenuSet(false),0)});
+rdMenuSet(false);
 document.getElementById("rdClose").onclick=closeRadar;
-addEventListener("keydown",e=>{if(e.key==="Escape"&&!rdPanel.hidden)closeRadar()});
+addEventListener("keydown",e=>{if(e.key==="Escape"&&!rdPanel.hidden){if(rdMenuOn())rdMenuSet(false);else closeRadar()}});
 function startRadar(){if(!db)return;rdOn=true;const b=document.getElementById("rdbtn");b.hidden=false;b.onclick=openRadar;
   db.collection("radar").onSnapshot(snap=>{RADAR=snap.docs.map(d=>({...(d.data()||{}),id:d.id})).filter(i=>i.title);rdAfter()},()=>{});
   db.collection("radar_runs").onSnapshot(snap=>{RUNS=snap.docs.map(d=>({...(d.data()||{}),id:d.id})).sort((a,b)=>String(b.id).localeCompare(String(a.id)));if(!rdPanel.hidden)renderRadar();else rdToast()},()=>{});
 }
-function openDB(){lastFocus=document.activeElement;dbMenuSet(false);dbPanel.hidden=false;renderDB();document.getElementById("dbClose").focus()}
-function closeDB(){dbPanel.hidden=true;devolveFoco()}
+function openDB(){lastFocus=document.activeElement;closeRadar(false);dbMenuSet(false);dbPanel.hidden=false;painelAberto();renderDB();document.getElementById("dbClose").focus()}
+function closeDB(foco=true){if(dbPanel.hidden)return;dbMenuSet(false);dbPanel.hidden=true;painelAberto();if(foco)devolveFoco()}
+/* celular: o Banco e o Radar abrem abaixo do topo do site, e o ☰ do topo abre o menu do painel que está aberto */
+function celPainel(){return matchMedia("(max-width:760px)").matches}
+function painelAberto(){const on=!dbPanel.hidden||!rdPanel.hidden,t=document.querySelector(".top"),mb=document.getElementById("mnBtn");
+  document.documentElement.classList.toggle("painel-aberto",on);
+  if(on&&t)document.documentElement.style.setProperty("--topo-h",Math.round(t.getBoundingClientRect().bottom)+"px");
+  mb.setAttribute("aria-label",on&&celPainel()?(!dbPanel.hidden?"Abrir o menu do banco":"Abrir o menu do radar"):"Abrir menu");
+  mb.setAttribute("aria-controls",on&&celPainel()?(!dbPanel.hidden?"dbMenu":"rdMenu"):"menu")}
+function menuDoPainel(){if(!celPainel())return false;
+  if(!dbPanel.hidden){dbMenuSet(!dbMenuOn());return true}
+  if(!rdPanel.hidden){rdMenuSet(!rdMenuOn());return true}
+  return false}
+document.addEventListener("click",e=>{if(e.target.closest("[data-fecha-painel]")){if(!dbPanel.hidden)closeDB();else if(!rdPanel.hidden)closeRadar()}});
+addEventListener("resize",()=>{if(!dbPanel.hidden||!rdPanel.hidden)painelAberto();if(!celPainel()){rdMenuSet(false)}else if(!rdMenuOn())rdMenu.inert=true});
 document.getElementById("dbClose").onclick=closeDB;
 dbPanel.addEventListener("click",e=>{if(e.target===dbPanel)return closeDB();const b=e.target.closest("[data-dbinfo]");if(b){closeDB();openInfo(b.dataset.dbinfo)}});
 let dbT;document.getElementById("dbQ").addEventListener("input",()=>{clearTimeout(dbT);dbT=setTimeout(renderDB,150)});

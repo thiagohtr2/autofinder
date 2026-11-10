@@ -14,7 +14,7 @@ const SO = process.env.ESPACOS_SO || '';      // para rodar só uma parte: ESPAC
 const CSS = process.env.ESPACOS_CSS || '';    // para provar que a verificação pega um erro: ESPACOS_CSS=".q-vh{margin-top:0}"
 
 const TELAS = [['celular 390', { width: 390, height: 844 }], ['celular 360', { width: 360, height: 740 }], ['computador', { width: 1280, height: 900 }]];
-const PAGINAS = ['/', '/novidades', '/carros', '/carros/jeep', '/carros/jeep/compass', '/comparar/jeep-compass-vs-toyota-corolla-cross', '/comparar', '/noticias', '/suvs', '/carros-ate-150-mil', '/contato'];
+const PAGINAS = ['/', '/admin.html', '/novidades', '/carros', '/carros/jeep', '/carros/jeep/compass', '/comparar/jeep-compass-vs-toyota-corolla-cross', '/comparar', '/noticias', '/suvs', '/carros-ate-150-mil', '/contato'];
 
 /* estados da página inicial e da busca do topo das outras páginas */
 const ESTADOS = [
@@ -31,7 +31,16 @@ const ESTADOS = [
   ['/', 'menu com grupo aberto', async (p) => { await p.click('#mnBtn'); await p.waitForTimeout(700); await p.evaluate(() => document.querySelectorAll('#menuP details').forEach((d) => { d.open = true; })); await p.waitForTimeout(200); }],
   ['/carros/jeep/compass', 'menu aberto (página do carro)', async (p) => { await p.click('#mnBtn'); await p.waitForTimeout(700); }],
   ['/carros/jeep/compass', 'busca do topo', async (p) => { await p.click('#tBuscaBtn'); await p.fill('#tBq', 'compass'); await p.waitForTimeout(600); }],
+  /* painel (admin.html) com o topo do site e o menu do painel; Banco de dados e Radar abaixo do topo, com o menu de cada um */
+  ['/admin.html', 'painel', async (p) => { await mostraPainel(p); }],
+  ['/admin.html', 'menu do painel', async (p) => { await mostraPainel(p); await p.click('#mnBtn'); await p.waitForTimeout(600); }],
+  ['/', 'banco de dados', async (p) => { await p.evaluate(() => openDB()); await p.waitForTimeout(1200); }],
+  ['/', 'menu do banco', async (p) => { await p.evaluate(() => { openDB(); dbMenuSet(true); }); await p.waitForTimeout(1200); }],
+  ['/', 'radar', async (p) => { await p.evaluate(() => openRadar()); await p.waitForTimeout(800); }],
+  ['/', 'menu do radar', async (p) => { await p.evaluate(() => { openRadar(); rdMenuSet(true); }); await p.waitForTimeout(800); }],
 ];
+/* o painel só aparece para o administrador; aqui ele é mostrado vazio, só para medir */
+async function mostraPainel(p) { await p.evaluate(() => { document.getElementById('gate').hidden = true; document.getElementById('app').hidden = false; }); await p.waitForTimeout(300); }
 async function abreBusca(p, t) {
   await p.evaluate(() => { const sb = document.getElementById('sbtn'); if (sb && getComputedStyle(sb).display !== 'none' && !document.querySelector('.top.searching')) sb.click(); });
   await p.waitForTimeout(300);

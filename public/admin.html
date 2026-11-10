@@ -43,17 +43,32 @@ button,input,select{font:inherit;color:inherit}
 .wrap{max-width:1240px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
 .num{font-family:var(--mono);font-variant-numeric:tabular-nums}
 header.top{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;justify-content:space-between}
-/* topo igual ao do site: barra branca de borda a borda, logo à esquerda (volta para o site), presa no alto ao rolar */
-.sitebar{position:sticky;top:0;z-index:30;margin:-16px calc(-1 * max(16px,env(safe-area-inset-right,0px))) 16px calc(-1 * max(16px,env(safe-area-inset-left,0px)));padding:12px max(16px,env(safe-area-inset-right,0px)) 12px max(16px,env(safe-area-inset-left,0px));background:#060b1c;border-bottom:1px solid rgba(111,151,255,.22)}
-.sb-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
-.sb-logo{display:block;border-radius:8px}
-.sb-logo img{height:18px;width:auto;display:block}
-.sb-back{display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 14px 0 11px;border:1px solid rgba(255,255,255,.3);border-radius:999px;background:rgba(255,255,255,.06);color:#fff;font-weight:700;font-size:13px;text-decoration:none;white-space:nowrap}
-.sb-back:hover{border-color:rgba(255,255,255,.6)}
-.sb-back svg{width:15px;height:15px}
-.sb-logo .sb-ico{display:none}
-@media (max-width:760px){.sb-logo .sb-full{display:none}.sb-logo .sb-ico{display:block;height:18px}.sitebar{padding-block:10px}.sb-logo img{height:15px}}
-@media (max-width:380px){.sb-logo img{height:15px}.sb-back{padding:0 11px 0 9px;font-size:12.5px}}
+/* topo do site (public/topo.mjs, o mesmo de todas as páginas): de borda a borda, preso no alto. Enquanto o módulo carrega,
+   um lugar da mesma altura e cor segura o espaço (nada pula quando o topo aparece) */
+body>.ak-top,body>.ak-lugar{margin:-16px calc(-1 * max(16px,env(safe-area-inset-right,0px))) 16px calc(-1 * max(16px,env(safe-area-inset-left,0px)))}
+body>.ak-top{z-index:30}
+.ak-lugar{height:calc(64px + env(safe-area-inset-top,0px));background:#060b1c}
+@media (max-width:760px){.ak-lugar{height:calc(42px + env(safe-area-inset-top,0px))}}
+/* menu do painel (☰): período, atalhos para cada parte, opções e saída. No celular as ferramentas do cabeçalho do painel ficam só aqui */
+#app>section,#app>.grid{scroll-margin-top:calc(58px + env(safe-area-inset-top,0px))}
+.pm-nota{margin:2px 10px 0;font:600 11.5px var(--mono);color:#5d6577}
+.pm-seg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;padding:4px 10px 6px}
+.pm-seg button{height:36px;padding:0;border:1px solid #d6dbe5;border-radius:999px;background:#fff;color:#0c111c;font:700 13px var(--body);cursor:pointer}
+.pm-seg button[aria-pressed="true"]{background:#0c111c;border-color:#0c111c;color:#fff}
+.mn-i b.pm-n{margin-left:auto;min-width:22px;height:22px;padding:0 7px;border-radius:999px;background:#1d6bff;color:#fff;font:800 11.5px/22px var(--body);text-align:center}
+.mn-i b.pm-n[hidden]{display:none}
+button.mn-i{width:100%;border:0;background:none;font-family:inherit;text-align:left;cursor:pointer}
+.pm-tg{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 10px;border-radius:12px;color:#0c111c;font-weight:700;font-size:14.5px;line-height:1.25;cursor:pointer}
+.pm-tg:hover{background:#f2f6fd}
+.pm-tg input{appearance:none;-webkit-appearance:none;flex:none;width:40px;height:24px;margin:0;border-radius:999px;background:#d6dbe5;position:relative;cursor:pointer;transition:background .15s}
+.pm-tg input::after{content:"";position:absolute;left:3px;top:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,.25);transition:transform .15s}
+.pm-tg input:checked{background:#1d6bff}
+.pm-tg input:checked::after{transform:translateX(16px)}
+.pm-tg small{display:block;font-weight:500;font-size:12px;color:#5d6577}
+@media (max-width:760px){header.top .tools{display:none}}
+.pg-bt{display:inline-flex;gap:6px}
+/* celular estreito: as quatro opções das mensagens não cabem numa linha; viram duas linhas de duas, dentro da caixa */
+@media (max-width:420px){.msg-h .seg{display:grid;grid-template-columns:1fr 1fr;width:100%;border-radius:16px}.msg-h .seg button{border-radius:12px;padding:7px 8px}}
 .brand{display:flex;align-items:center;gap:12px}
 .brand b{font-family:var(--display);font-size:20px;font-weight:600;letter-spacing:-.01em}
 .tools{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
@@ -282,12 +297,7 @@ tr:last-child td{border-bottom:0}
 </head>
 <body>
 
-<header class="sitebar">
-  <div class="sb-in">
-    <a class="sb-logo" href="/" title="Voltar para o site" aria-label="Autokan: voltar para o site"><img class="sb-full" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18"><img class="sb-ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18"></a>
-    <a class="sb-back" href="/"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3 5 8l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Voltar ao site</a>
-  </div>
-</header>
+<div class="ak-lugar" id="topoLugar" aria-hidden="true"></div>
 
 <div class="gate card" id="gate" hidden>
   <h2 style="text-align:center;font-size:17px">Painel do Autokan</h2>
@@ -419,7 +429,7 @@ tr:last-child td{border-bottom:0}
     <h2>Pessoas cadastradas</h2><p class="sub" id="usersSub">Contas criadas no site.</p>
     <form class="search" id="uForm"><input type="search" id="uQ" placeholder="Buscar por nome ou e-mail" aria-label="Buscar pessoas"><button class="btn" type="submit">Buscar</button></form>
     <div class="tbl-wrap"><table id="users"></table></div>
-    <div class="pager"><span id="uInfo"></span><span><button class="btn" type="button" id="uPrev">Anteriores</button> <button class="btn" type="button" id="uNext">Próximas</button></span></div>
+    <div class="pager"><span id="uInfo"></span><span class="pg-bt"><button class="btn" type="button" id="uPrev">Anteriores</button><button class="btn" type="button" id="uNext">Próximas</button></span></div>
   </section>
 
   <section class="card">
@@ -434,8 +444,10 @@ tr:last-child td{border-bottom:0}
 <script>
 (function(){
 "use strict";
-const sb = window.supabase.createClient("https://ljgcvxadsekaicffztbi.supabase.co",
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqZ2N2eGFkc2VrYWljZmZ6dGJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3OTYyNjMsImV4cCI6MjEwOTM3MjI2M30._lZd1-cALOXrnR3nI0rwwWkfIAXYZ_qmVHJ7s3Ka2BM");
+const SB_URL = "https://ljgcvxadsekaicffztbi.supabase.co",
+  SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqZ2N2eGFkc2VrYWljZmZ6dGJpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM3OTYyNjMsImV4cCI6MjEwOTM3MjI2M30._lZd1-cALOXrnR3nI0rwwWkfIAXYZ_qmVHJ7s3Ka2BM";
+const sb = window.supabase.createClient(SB_URL, SB_KEY);
+window.autokanSB = {url: SB_URL, chave: SB_KEY}; // o topo do site (public/topo.mjs) usa para mostrar a conta
 const $ = id => document.getElementById(id);
 const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
 const nf = n => (Number(n) || 0).toLocaleString("pt-BR");
@@ -1019,6 +1031,82 @@ $("out").onclick = async () => { await sb.auth.signOut(); timers.forEach(clearIn
 sb.auth.onAuthStateChange((ev) => { if (ev === "SIGNED_IN" && $("app").hidden) boot(); });
 boot();
 })();
+</script>
+<script type="module">
+/* topo do site (o mesmo de todas as páginas) e o menu do painel no ☰ */
+import { TOPO_CSS, MENU_CSS, FECHA_X, topoHTML, molduraMenu, iniciaTopo } from "/topo.mjs";
+const $ = (id) => document.getElementById(id);
+const st = document.createElement("style"); st.textContent = TOPO_CSS + MENU_CSS; document.head.appendChild(st);
+const ic = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${d}</g></svg>`;
+const ICO = {
+  resumo: ic('<rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/>'),
+  mensagens: ic('<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/>'),
+  alteracoes: ic('<path d="M4 12a8 8 0 0 1 13.7-5.6L20 8.5M20 4v4.5h-4.5M20 12a8 8 0 0 1-13.7 5.6L4 15.5M4 20v-4.5h4.5"/>'),
+  pendencias: ic('<path d="M12 3.5 21 19.5H3z"/><path d="M12 10v4.5M12 17.2v.3"/>'),
+  secao: ic('<path d="M4 20V10M10 20V4M16 20v-7M21 20H3"/>'),
+  site: ic('<path d="M10 4 3.5 10.5 10 17M4 10.5h9a7 7 0 0 1 7 7V20"/>'),
+  sair: ic('<path d="M14 4h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2h-4M10 16l-4-4 4-4M6 12h10"/>'),
+  pc: ic('<rect x="3" y="4" width="18" height="12" rx="1.8"/><path d="M8.5 20h7M12 16v4"/>'),
+};
+const conteudo = `<div class="mn-h"><a href="/" aria-label="Autokan: página inicial"><img src="/marca/autokan-logo-topo.png?v=6" alt="Autokan" width="168" height="18"></a><button type="button" class="mn-x" data-mn-fecha aria-label="Fechar menu">${FECHA_X}</button></div>
+<nav class="mn-b" aria-label="Menu do painel"><div class="mn-conta" id="mnConta"></div><div id="pmCorpo"></div></nav>`;
+$("topoLugar").outerHTML = topoHTML({ rotuloMenu: "Abrir o menu do painel" }) + molduraMenu(conteudo, "Menu do painel");
+const cfg = window.autokanSB || {};
+const topo = iniciaTopo({ sb: cfg.url, chave: cfg.chave });
+
+/* o menu é montado a cada abertura, com o estado atual do painel (período, avisos, opções) */
+const esc = (t) => String(t ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+const item = (acao, ico, txt, extra = "") => `<button type="button" class="mn-i" data-pm="${acao}">${ico}<span><span class="mn-l">${txt}</span></span>${extra}</button>`;
+const selo = (id) => { const b = $(id); return b && !b.hidden && b.textContent.trim() ? `<b class="pm-n">${esc(b.textContent.trim())}</b>` : ""; };
+const slug = (t) => t.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+function secoes() {
+  const fixas = new Set(["mensagens", "alteracoes", "pendencias"]), out = [];
+  document.querySelectorAll("#app > section, #app > .grid > section").forEach((sec) => {
+    const h = sec.querySelector("h2"); if (!h || sec.classList.contains("kpis")) return;
+    if (!sec.id) sec.id = "p-" + slug(h.textContent);
+    if (!fixas.has(sec.id)) out.push([sec.id, h.textContent.trim()]);
+  });
+  return out;
+}
+function monta() {
+  const corpo = $("pmCorpo"), app = $("app");
+  if (!corpo) return;
+  if (!app || app.hidden) { corpo.innerHTML = `<p class="mn-t">Painel</p><p class="pm-nota" style="font-family:var(--body)">Entre com a conta de administrador para ver o painel.</p><p class="mn-t">Autokan</p>` + `<a class="mn-i" href="/">${ICO.site}<span><span class="mn-l">Voltar ao site</span></span></a>`; return; }
+  const dias = [1, 7, 30, 90].map((d) => `<button type="button" data-pm-dias="${d}" aria-pressed="${$("p" + d) && $("p" + d).getAttribute("aria-pressed") === "true"}">${d === 1 ? "Hoje" : d + " dias"}</button>`).join("");
+  const upd = $("upd") ? $("upd").textContent.trim() : "";
+  const vp = $("verPc");
+  corpo.innerHTML =
+    `<p class="mn-t">Período</p><div class="pm-seg" role="group" aria-label="Período">${dias}</div>${upd ? `<p class="pm-nota">${esc(upd)}</p>` : ""}` +
+    `<p class="mn-t">Ir para</p>` +
+    item("topo", ICO.resumo, "Resumo") +
+    item("msgJump", ICO.mensagens, "Mensagens", selo("msgBadge")) +
+    item("pdJump", ICO.pendencias, "Pendências", selo("pdBadge")) +
+    item("auJump", ICO.alteracoes, "Alterações automáticas") +
+    secoes().map(([id, t]) => item("#" + id, ICO.secao, esc(t))).join("") +
+    `<p class="mn-t">Opções</p>` +
+    `<label class="pm-tg"><span>Não contar minhas visitas<small>Neste navegador</small></span><input type="checkbox" id="pmNoTrack"${$("notrack") && $("notrack").checked ? " checked" : ""}></label>` +
+    (vp && !vp.hidden ? item("verPc", ICO.pc, esc(vp.textContent.trim())) : "") +
+    `<p class="mn-t">Autokan</p>` +
+    `<a class="mn-i" href="/">${ICO.site}<span><span class="mn-l">Voltar ao site</span></span></a>` +
+    item("out", ICO.sair, "Sair do painel");
+}
+$("mnBtn").addEventListener("click", monta, true);
+$("menuP").addEventListener("click", (e) => {
+  const d = e.target.closest("[data-pm-dias]");
+  if (d) { const b = $("p" + d.dataset.pmDias); if (b) b.click(); $("pmCorpo").querySelectorAll("[data-pm-dias]").forEach((x) => x.setAttribute("aria-pressed", String(x === d))); return; }
+  const a = e.target.closest("[data-pm]"); if (!a) return;
+  const acao = a.dataset.pm;
+  if (acao === "verPc") { const b = $("verPc"); if (b) b.click(); monta(); return; }
+  topo.fechaMenu();
+  if (acao === "topo") { scrollTo({ top: 0, behavior: "smooth" }); return; }
+  if (acao.startsWith("#")) { const sec = document.querySelector(acao); if (sec) sec.scrollIntoView({ behavior: "smooth", block: "start" }); return; }
+  const b = $(acao); if (b) b.click();
+});
+$("menuP").addEventListener("change", (e) => {
+  if (e.target.id !== "pmNoTrack") return;
+  const n = $("notrack"); if (!n) return;
+  n.checked = e.target.checked; n.dispatchEvent(new Event("change"));
+});
 </script>
 </body>
 </html>
