@@ -51,7 +51,7 @@ button{font-family:inherit}
 .logo .ico{display:none}
 .top-acts{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
 .mnbtn{flex:none;width:34px;height:34px;padding:0;border:0;border-radius:10px;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}
-.mnbtn svg{width:22px;height:22px}
+.mnbtn svg{width:22px;height:auto}
 .mnbtn:hover,.mnbtn[aria-expanded="true"]{background:rgba(255,255,255,.1)}
 .mnbtn+.logo{margin-left:-6px}
 @media (max-width:640px){.mnbtn+.logo{margin-left:0}}
@@ -233,6 +233,17 @@ ${["eletrico:#fbf3db:#e0a800", "hibrido:#deeee6:#11864c", "potente:#fae3e0:#d83a
 .foot a:hover{color:#fff;text-decoration:underline}
 .foot-nota{margin:28px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;line-height:1.6;color:#9fb1d1;max-width:90ch}
 .foot-copy{margin:10px 0 0;font-size:12.5px;color:#9fb1d1}
+/* ===== topo no padrão da bancada (aba "Design do topo", 10/11/2026) =====
+   celular (até 760 px): barra de 42 px; ☰ de 27 px (desenho de 22 × 16, traços de 2 px a cada 6 px); logo de 18 px no meio da barra, 10 px depois do ☰;
+   buscar de 30 px só com o contorno (lupa de 14); Entrar e Cadastrar com 30 px, letra de 12,5 e 13 px dos lados; 12 px entre eles e do buscar.
+   computador: barra de 64 px; ☰ de 30 px (desenho de 22 × 13, traços a cada 4,5 px); buscar de 34 px (lupa de 16);
+   Entrar e Cadastrar com 32 px, letra de 12,5 e 12 px dos lados. O texto dos botões fica no meio pela altura das maiúsculas. */
+.mnbtn .hb-pc{display:none}
+.t-btn>span{display:block;text-box:trim-both cap alphabetic}
+.t-ic{background:transparent;border-color:rgba(255,255,255,.28)}
+@media (min-width:761px){.mnbtn .hb-cel{display:none}.mnbtn .hb-pc{display:block}.top-in{height:64px}.mnbtn{width:30px;height:30px}.mnbtn+.logo{margin-left:-8px}.top-acts,.t-conta{gap:12px}.t-ic{width:34px;height:34px}.t-ic svg{width:16px;height:16px}.t-btn{height:32px;padding:0 12px;font-size:12.5px}.t-pf{width:32px;height:32px}}
+@media (max-width:760px){.top-in{height:42px;gap:8px}.mnbtn{width:27px;height:27px}.mnbtn+.logo{margin-left:2px}.logo .ico{transform:none}.top-acts,.t-conta{gap:12px}.t-ic{width:30px;height:30px}.t-ic svg{width:14px;height:14px}.t-btn{height:30px;padding:0 13px;font-size:12.5px}.t-pf{width:30px;height:30px}}
+@media (max-width:359px){.t-btn{padding:0 10px}.top-acts,.t-conta{gap:8px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 `.replace(/\n\s*/g, "");
 
@@ -246,7 +257,7 @@ const LUPA_T = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9
 /* ---------- menu lateral (botão ☰ do topo) ----------
    Tudo o que dá para fazer no site, por assunto. É o mesmo em todas as páginas: as do servidor o trazem pronto e a
    página inicial o busca em /menu.html. A parte "Sua conta" (#mnConta) é montada no navegador, conforme a pessoa entrou ou não. */
-const HAMBURGUER = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+const HAMBURGUER = '<svg class="hb-cel" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true"><path d="M1 2H21M1 8H21M1 14H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="hb-pc" viewBox="0 0 22 13" width="22" height="13" aria-hidden="true"><path d="M1 2H21M1 6.5H21M1 11H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 const MN_X = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 const mi = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
 const MN_ICO = {
@@ -344,7 +355,7 @@ function topo() {
 <a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18"></a>
 <div class="top-acts">
 <button type="button" class="t-ic" id="tBuscaBtn" aria-label="Buscar carro" title="Buscar carro" aria-expanded="false" aria-controls="tBusca">${LUPA_T}</button>
-<span class="t-conta" id="tConta"><a class="t-btn" href="/?entrar=1">Entrar</a><a class="t-btn pri" href="/?cadastrar=1">Cadastrar</a></span>
+<span class="t-conta" id="tConta"><a class="t-btn" href="/?entrar=1"><span>Entrar</span></a><a class="t-btn pri" href="/?cadastrar=1"><span>Cadastrar</span></a></span>
 </div></div>
 <div class="t-busca" id="tBusca" hidden><div class="wrap"><label class="t-bq">${LUPA_T}<span class="sr">Buscar carro ou marca</span><input type="search" id="tBq" placeholder="Buscar carro ou marca" autocomplete="off" enterkeyhint="go"></label><ul class="t-br" id="tBr"></ul></div></div>
 </header>${molduraMenu(menuLateral())}`;
