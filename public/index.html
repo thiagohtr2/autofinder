@@ -1399,10 +1399,6 @@ html.deitado .note-a{font-weight:600}
 .top .status i.on{background:#18b46b}
 .top .sbtn{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.22);color:#fff}
 /* feed de notícias: botão com texto no computador, só o ícone no celular (como a busca) */
-.nwbtn{flex:0 0 auto;display:inline-flex;align-items:center;gap:7px;height:32px;padding:0 13px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;text-decoration:none;font:700 12.5px var(--body)}
-.nwbtn svg{width:16px;height:16px;flex:none}
-.nwbtn:hover{background:rgba(255,255,255,.14)}
-@media (max-width:760px){.nwbtn{width:30px;height:30px;padding:0;justify-content:center}.nwbtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.nwbtn svg{width:15px;height:15px}.top.searching .nwbtn{display:none}}
 .top.searching .sbtn{background:#fff;border-color:#fff;color:#0c111c}
 .top .authbtn:not(.primary){background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
 .top .q-list,.top #pmenu{color:var(--ink)}
@@ -1435,7 +1431,6 @@ html.deitado .note-a{font-weight:600}
 .logo-ico{display:none}
 @media (max-width:760px){.logo .logo-img{display:none}.logo .logo-ico{display:block;height:18px;width:auto;flex:none;transform:translateY(2px)}}
 /* o símbolo tem a barra larga em cima: descido 2 px, fica alinhado ao olho com os botões da direita */
-@media (max-width:370px){.cpbtn{display:none}}
 /* barra do relógio do iPhone na cor do topo: o fundo atrás da página é o marinho e o topo fica preso no alto
    (o Safari novo pinta a barra com essa cor; os mais antigos usam o theme-color). O conteúdo continua branco. */
 html{background:#060b1c}
@@ -1464,16 +1459,20 @@ html{background:#060b1c}
 /* telas estreitas: o indicador de conexão sumia para um ponto cinza sem explicação; some de vez, e Notícias vira só o ícone */
 @media (min-width:761px) and (max-width:1099px){
   .status{display:none}
-  .nwbtn{width:32px;padding:0;justify-content:center}
-  .nwbtn span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 }
-@media (max-width:760px){.status{display:none}}
+/* botão ☰ do menu lateral, à esquerda da logo */
+.mnbtn{flex:none;width:30px;height:30px;padding:0;border:0;border-radius:10px;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}
+.mnbtn svg{width:22px;height:22px}
+.mnbtn:hover,.mnbtn[aria-expanded="true"]{background:rgba(255,255,255,.1)}
+/* o topo tem só o menu, a busca e a conta: o aviso de conexão ("Entre para favoritar") saiu dele */
+.top .status{display:none}
 .sh-tbl .fta{font-size:10.5px;font-weight:700;color:#5d6577;background:#f1f3f7;border-radius:6px;padding:0 5px}.sh-tbl sup.ftr{font-size:10px;font-weight:700;color:#5d6577;margin-left:2px}.ftl{margin:0;padding-left:18px;font-size:12.5px;line-height:1.45;color:#5d6577}.ftl li{margin:3px 0}.ftl a{font-weight:700}
 </style>
 
 <div class="app pre">
   <header class="top">
     <div class="logo">
+      <button type="button" class="mnbtn" id="mnBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18">
       <img class="logo-ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18">
     </div>
@@ -1489,9 +1488,6 @@ html{background:#060b1c}
     </div>
     <div class="meta">
       <div class="status" id="status"><i></i><span>Conectando</span></div>
-      <a class="nwbtn nvbtn" href="/novidades" aria-label="Novidades: lançamentos" title="Lançamentos de carros 0 km no Brasil" data-ev="novidades-topo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l1.9 5.1 5.1 1.9-5.1 1.9L12 17.5l-1.9-5.1L5 10.5l5.1-1.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M18.5 15.5l.8 2 2 .8-2 .8-.8 2-.8-2-2-.8 2-.8z" fill="currentColor"/></svg><span>Novidades</span></a>
-      <a class="nwbtn" href="/noticias" aria-label="Notícias" title="Notícias de carros: preços, lançamentos e recalls" data-ev="feed-noticias"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="3.5" width="12" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M14.5 7h2a1 1 0 0 1 1 1v7a1.5 1.5 0 0 1-3 0M5.5 7h6M5.5 10h6M5.5 13h4" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg><span>Notícias</span></a>
-      <a class="nwbtn cpbtn" href="/comparar" aria-label="Comparar carros" title="Comparar carros lado a lado" data-ev="comparar-topo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg><span>Comparar</span></a>
       <button type="button" class="sbtn" id="sbtn" aria-label="Buscar carro" aria-expanded="false" aria-controls="q"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <button type="button" class="editbtn authbtn" id="loginbtn" hidden>Entrar</button>
       <button type="button" class="editbtn authbtn primary" id="signupbtn" hidden>Cadastrar</button>
@@ -1678,6 +1674,7 @@ html{background:#060b1c}
 <noscript><p style="position:fixed;inset:auto 16px 16px;z-index:50;margin:0;padding:14px 16px;border-radius:14px;background:#060b1c;color:#fff;font:600 14px/1.5 system-ui,sans-serif">Para escolher o preço, ative o JavaScript no navegador. Sem ele, veja <a href="/carros" style="color:#8fb3ff">todas as marcas e os preços</a>.</p></noscript>
 <div class="cmpbar" id="cmpBar" role="region" aria-label="Comparar carros" hidden><ol class="cmp-sl" id="cmpSl"></ol><div class="cmp-ac"><button type="button" class="cmp-x" id="cmpX">Cancelar</button><a class="cmp-go" id="cmpGo" href="/comparar" data-ev="comparar-roleta"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/><rect x="13.5" y="5" width="7.5" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.9"/></svg>Comparar</a></div></div>
 <div class="toast" id="toast" hidden aria-hidden="true"></div>
+<div class="mn" id="menu" hidden><div class="mn-fundo" data-mn-fecha></div><aside class="mn-p" id="menuP" role="dialog" aria-modal="true" aria-label="Menu" tabindex="-1"></aside></div>
 <div class="sr" id="anuncio" role="status" aria-live="polite"></div>
 
 <script src="/vendor/supabase-js-2.49.4.js"></script>
@@ -2045,6 +2042,28 @@ document.getElementById("pmVerPc").onclick=()=>{closePMenu(false);if(window.auto
 // ao escolher uma opção, o menu fecha antes e o foco volta para o ícone (os painéis devolvem o foco para ele ao fechar)
 pmenu.addEventListener("click",e=>{if(e.target.closest(".pm-item"))closePMenu(true)},true);
 document.addEventListener("click",e=>{if(!pmenu.hidden&&!e.target.closest(".pwrap"))closePMenu(false)});
+/* menu lateral (☰): o conteúdo vem de /menu.html, o mesmo das outras páginas; aqui se monta a parte da conta,
+   e os links de filtro (/?filtro=ofertas, /?filtro=black) ligam o filtro sem recarregar a página */
+{const mn=document.getElementById("menu"),mp=document.getElementById("menuP"),mb=document.getElementById("mnBtn");let pronto=null,volta=null;
+ const carrega=()=>pronto||(pronto=fetch("/menu.html").then(r=>r.ok?r.text():Promise.reject(r.status)).then(h=>{mp.innerHTML=h}).catch(()=>{pronto=null;mp.innerHTML='<div class="mn-erro" style="padding:20px 16px">Não consegui abrir o menu agora. <a href="/carros">Ver todas as marcas</a></div>'}));
+ const conta=()=>{const b=document.getElementById("mnConta");
+   if(b)b.innerHTML=!pbtn.hidden?`<span class="mn-eu"><b>${esc(document.getElementById("pmName").textContent||"Você")}</b><small>${esc(document.getElementById("pmEmail").textContent||"")}</small></span><button type="button" class="mn-btn" data-mn-acao="sair">Sair</button>`
+     :'<button type="button" class="mn-btn" data-mn-acao="entrar">Entrar</button><button type="button" class="mn-btn pri" data-mn-acao="cadastrar">Cadastrar</button>';
+   const bk=mp.querySelector('a[href="/?filtro=black"]');if(bk)bk.hidden=!(loaded&&CARS.some(isBlack))}; /* Black só quando há oferta Black */
+ const focaveis=()=>[...mp.querySelectorAll("a[href],button,summary")].filter(x=>x.offsetParent!==null);
+ const abre=async()=>{volta=document.activeElement;await carrega();conta();mn.hidden=false;mb.setAttribute("aria-expanded","true");const x=mp.querySelector(".mn-x");(x||mp).focus()};
+ const fecha=(foco=true)=>{if(mn.hidden)return;mn.hidden=true;mb.setAttribute("aria-expanded","false");if(foco&&volta&&volta.focus)volta.focus()};
+ mb.onclick=()=>mn.hidden?abre():fecha();
+ mn.addEventListener("click",e=>{
+   if(e.target.closest("[data-mn-fecha]")){fecha();return}
+   const ac=e.target.closest("[data-mn-acao]");
+   if(ac){const k=ac.dataset.mnAcao;fecha(false);document.getElementById(k==="entrar"?"loginbtn":k==="cadastrar"?"signupbtn":"pmOut").click();return}
+   const a=e.target.closest("a[href]");if(!a)return;const u=new URL(a.getAttribute("href"),location.href);
+   if(u.origin===location.origin&&u.pathname==="/"){e.preventDefault();fecha(false);const f=u.searchParams.get("filtro");if(f)aplicaFiltroLink(f)}});
+ addEventListener("keydown",e=>{if(mn.hidden)return;if(e.key==="Escape"){e.preventDefault();e.stopPropagation();fecha();return}
+   if(e.key==="Tab"){const f=focaveis();if(!f.length)return;const a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}},true);
+ /* busca o menu com antecedência, quando o navegador está à toa */
+ if("requestIdleCallback" in window)requestIdleCallback(()=>carrega(),{timeout:5000});else setTimeout(carrega,3000);}
 pmenu.addEventListener("keydown",e=>{const it=pmItems(),i=it.indexOf(document.activeElement);
   if(e.key==="Escape"){e.preventDefault();e.stopPropagation();closePMenu(true)}
   else if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();const n=it[(i+(e.key==="ArrowDown"?1:-1)+it.length)%it.length];n&&n.focus()}
@@ -2797,7 +2816,14 @@ function setCatalog(snap){lastCat=snap;
 }
 /* links das páginas próprias de cada carro: /?carro=<modelo> (e &versao=<versão>) leva a roleta até o carro e abre a ficha */
 let inicioFeito=false;
-function posicaoInicial(){if(inicioFeito)return;inicioFeito=true;if(!abrirDoLink())abrirAleatorio()}
+function posicaoInicial(){if(inicioFeito)return;inicioFeito=true;if(!abrirDoLink()){abrirAleatorio();filtroDoLink()}}
+/* links do menu e de outras páginas: /?filtro=ofertas, /?filtro=black ou /?filtro=novos ligam o filtro */
+function aplicaFiltroLink(f){const sel={ofertas:"[data-deal]",black:"[data-black]",novos:"[data-novo]"}[f];if(!sel)return false;
+  const ch=document.querySelector("#quick "+sel);
+  if(!ch){toast(f==="black"?"Não há ofertas Black agora.":f==="ofertas"?"Não há ofertas agora.":"Não há lançamentos agora.");return false}
+  if(ch.getAttribute("aria-pressed")!=="true")ch.click();return true}
+function filtroDoLink(){const q=new URLSearchParams(location.search),f=q.get("filtro");if(!f)return;q.delete("filtro");const r=q.toString();
+  history.replaceState(null,"",location.pathname+(r?"?"+r:"")+location.hash);aplicaFiltroLink(f)}
 function abrirDoLink(){
   const q=new URLSearchParams(location.search),mid=q.get("carro"),vid=q.get("versao");if(!mid&&!vid)return false;
   history.replaceState(null,"",location.pathname+location.hash);
