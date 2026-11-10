@@ -2,7 +2,7 @@
    e o sitemap.xml. A Netlify guarda cada página pronta por 1 hora (e serve a guardada enquanto
    prepara a nova), então o banco é lido poucas vezes e as páginas acompanham o que muda nele. */
 import { SITE, carregar, semAcento, FAIXAS, FAIXAS_ENTRE, TIPOS, COMBUSTIVEIS, filtrar, imagem, faixaPorSlug, lerMil, slugFaixa } from "../lib/base.mjs";
-import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc } from "../lib/paginas.mjs";
+import { paginaModelo, paginaMarca, paginaCarros, paginaLista, pagina404, esc, menuLateral } from "../lib/paginas.mjs";
 import { lerFiltros, paginaNoticias, idNoticia, rotuloNoticia } from "../lib/noticias.mjs";
 import { paginaNovidades, rotuloLancamento } from "../lib/novidades.mjs";
 import { paginaContato } from "../lib/contato.mjs";
@@ -27,6 +27,8 @@ export default async (req) => {
   const certo = caminho.length > 1 ? caminho.replace(/\/+$/, "").toLowerCase() : caminho;
   if (certo !== caminho) return new Response(null, { status: 301, headers: { Location: `${encodeURI(certo)}${url.search}`, ...CACHE_OK } });
 
+  // conteúdo do menu lateral, para a página inicial (as outras páginas já o trazem pronto); não depende do banco
+  if (caminho === "/menu.html") return html(menuLateral(), 200, { "X-Robots-Tag": "noindex" });
   // contato: não depende do banco
   if (caminho === "/contato") return html(paginaContato());
   if (caminho === "/termos") return html(paginaTermos());
@@ -150,6 +152,6 @@ function sitemap(base) {
 
 // escrito por extenso: a Netlify lê esta configuração sem rodar o código. Os tipos são os de TIPOS em netlify/lib/base.mjs.
 export const config = {
-  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/novidades", "/destaques.json", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs-com-maior-porta-malas", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
+  path: ["/carros", "/carros/*", "/carros-*", "/comparar", "/comparar/*", "/noticias", "/novidades", "/destaques.json", "/menu.html", "/contato", "/termos", "/privacidade", "/avisos/desligar", "/sitemap.xml", "/busca.json", "/suvs-com-maior-porta-malas", "/suvs", "/picapes", "/sedas", "/hatches", "/esportivos", "/vans", "/peruas", "/minivans"],
   method: ["GET", "HEAD"],
 };

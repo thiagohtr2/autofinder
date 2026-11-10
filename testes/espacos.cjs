@@ -27,6 +27,9 @@ const ESTADOS = [
   ['/', 'cartão com o selo mais longo', async (p) => { await p.evaluate(() => { const c = CARS.filter((x) => typeof isBlack === 'function' && isBlack(x)).sort((a, b) => b.bk.length - a.bk.length)[0]; c && goToCar(c, true, true); }); await p.waitForTimeout(2500); }],
   ['/', 'cartão com Oferta e Novo', async (p) => { await p.evaluate(() => { const c = CARS.find((x) => typeof isOffer === 'function' && isOffer(x) && isNew(x)); c && goToCar(c, true, true); }); await p.waitForTimeout(2500); }],
   ['/', 'busca "rampage" (Black)', async (p) => { await abreBusca(p, 'rampage'); }],
+  ['/', 'menu aberto', async (p) => { await p.click('#mnBtn'); await p.waitForTimeout(700); }],
+  ['/', 'menu com grupo aberto', async (p) => { await p.click('#mnBtn'); await p.waitForTimeout(700); await p.evaluate(() => document.querySelectorAll('#menuP details').forEach((d) => { d.open = true; })); await p.waitForTimeout(200); }],
+  ['/carros/jeep/compass', 'menu aberto (página do carro)', async (p) => { await p.click('#mnBtn'); await p.waitForTimeout(700); }],
   ['/carros/jeep/compass', 'busca do topo', async (p) => { await p.click('#tBuscaBtn'); await p.fill('#tBq', 'compass'); await p.waitForTimeout(600); }],
 ];
 async function abreBusca(p, t) {
@@ -83,7 +86,7 @@ function verifica() {
     if (a.reto && b.reto && a.r.width >= pw * 0.95 && b.r.width >= pw * 0.95) continue;
     // um mesmo painel (o mesmo fundo, sem borda nem sombra) ou linhas da mesma lista podem se tocar
     if (a.bg && a.bg === b.bg && !a.borda && !b.borda && !a.sombra && !b.sombra) continue;
-    if (a.e.parentElement === b.e.parentElement && a.e.tagName === b.e.tagName && (a.e.classList[0] || '') === (b.e.classList[0] || '') && a.r.width === b.r.width && !a.e.closest('.card')) continue; // linhas da mesma lista ou tabela
+    if (a.e.parentElement === b.e.parentElement && a.e.tagName === b.e.tagName && (a.e.classList[0] || '') === (b.e.classList[0] || '') && a.r.width === b.r.width && Math.abs(a.r.left - b.r.left) < 1 && !a.e.closest('.card')) continue; // linhas da mesma lista ou tabela (uma embaixo da outra; lado a lado não vale)
     const sobH = Math.min(a.r.right, b.r.right) - Math.max(a.r.left, b.r.left), sobV = Math.min(a.r.bottom, b.r.bottom) - Math.max(a.r.top, b.r.top);
     const vaoV = Math.max(b.r.top - a.r.bottom, a.r.top - b.r.bottom), vaoH = Math.max(b.r.left - a.r.right, a.r.left - b.r.right);
     if (sobH > 8 && vaoV > -1.5 && vaoV < 3) out.push(`encostados: ${nome(a.e)} e ${nome(b.e)} (${Math.max(0, Math.round(vaoV))} px na vertical)`);
