@@ -17,6 +17,7 @@ Margem e espaço entre blocos já geraram reclamação várias vezes. Não pode 
 
 - **Laterais:** nada encosta na lateral da tela nem sai da caixa em que está. No celular, 16 px de margem.
 - **Blocos nunca se encostam:** dois blocos com fundo, borda ou sombra (botões, cartões, painéis, linhas destacadas) ficam a pelo menos 4 px um do outro, e entre um item e um painel que pertence a ele, 6 a 8 px. Só se tocam quando formam um mesmo painel, com o mesmo fundo, ou são linhas da mesma lista.
+- **Selos e etiquetas por cima de uma foto ou caixa** (Black, Novo, "ilustrativa") também não se encostam nem se sobrepõem. A verificação confere isso; teste com o selo mais longo, porque o Safari do iPhone desenha a letra um pouco mais larga.
 - **Antes de cada envio para a prévia,** rode a verificação e só envie com "Nenhum problema de espaçamento":
   - site local: `NODE_PATH=$(npm root -g) node testes/espacos.cjs`
   - ou a prévia já publicada: `NODE_PATH=$(npm root -g) node testes/espacos.cjs https://deploy-preview-<N>--autokan.netlify.app`
