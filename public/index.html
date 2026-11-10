@@ -428,7 +428,8 @@ button,input{font:inherit;color:inherit}
 .ctag{font-size:8.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 /* cartão: o aviso de imagem ilustrativa é só um ícone no alto à direita (na ficha, com mais espaço, continua escrito);
    tocar mostra o aviso inteiro */
-.stage .ctag{position:absolute;right:0;top:3px;z-index:3;display:grid;place-items:center;width:15px;height:15px;color:#8a93a6;cursor:help}
+.stage .ctag{position:absolute;right:0;top:3px;z-index:3;display:grid;place-items:center;width:15px;height:15px;padding:0;border:0;border-radius:50%;background:none;color:#8a93a6;cursor:pointer}
+.stage .ctag[aria-expanded="true"]{color:var(--accent)}
 .stage .ctag svg{width:13px;height:13px}
 .stage .ctag::after{content:"";position:absolute;inset:-8px}
 .c-brandtop{height:auto!important;padding-bottom:7px;border-bottom:1px solid #e6edf8;gap:8px}
@@ -987,6 +988,7 @@ button.ic:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .tip .ic{width:30px;height:30px;flex:0 0 auto}
 .tip .ic svg{width:16px;height:16px}
 .tip b{display:block;font-size:13.5px;font-weight:800;margin-bottom:2px}
+.tip>div:only-child b{margin:0}
 .tip p{margin:0;font-size:12px;line-height:1.45;color:var(--muted)}
 .tip p.why,.tip p.rule{margin-top:7px;padding-top:7px;border-top:1px solid var(--line)}
 .tip p.why{color:var(--ink,#0c111c);font-weight:600}
@@ -2084,9 +2086,8 @@ function SORTFN(a,b,sa,sb){
 }
 const GEAR={"Automático (elétrico/DHT)":"DHT","Dupla embreagem":"DCT","Automático":"Aut.","Manual":"Manual","CVT":"CVT"};
 const motorOf=c=>c.pr==="híbrido leve"?"Híb. leve":c.fu==="Híbrido plug-in"?"Plug-in":(c.fu||null);
-/* aviso de imagem ilustrativa do cartão: ícone; tocar mostra o aviso inteiro */
-const CTAG='<span class="ctag" role="img" aria-label="Imagem ilustrativa" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.2v4M8 4.9v.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>';
-document.addEventListener("click",e=>{if(!e.target.closest(".stage .ctag"))return;e.stopPropagation();e.preventDefault();toast("Imagem ilustrativa, gerada por IA: detalhes podem diferir do carro real.")},true);
+/* aviso de imagem ilustrativa do cartão: ícone; tocar abre o balão (o mesmo dos pontos fortes) com "Imagem ilustrativa" */
+const CTAG='<button type="button" class="ctag" data-tip="ilus" aria-label="Imagem ilustrativa" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.2v4M8 4.9v.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>';
 function cardHTML(c,i,anim){
   const n=counts[c.id]||0,on=mine.has(c.id),mid=c.mid||c.id,ph=(photoOf(mid,c.ano)||{}).asset,own=ownPhotoKey(mid,c.ano),bs=brandSlug(c.mk),lg=logos[bs];
   const img=carImg(c),sc=scoreOf(c),cv=c.cv?Math.round(c.cv)+" cv":null,mo=motorOf(c),gr=c.cb?(GEAR[c.cb]||c.cb):null;
@@ -2235,6 +2236,7 @@ function openTip(btn){
   if(tipFor===btn)return closeTip();closeTip();const k=btn.dataset.tip;
   const cd=btn.closest("[data-id]"),car=cd&&ALLCARS.find(c=>c.id===cd.dataset.id),why=car&&car.why&&car.why[k];
   tipEl=document.createElement("div");tipEl.className="tip";tipEl.setAttribute("role","tooltip");
+  if(k==="ilus")tipEl.innerHTML="<div><b>Imagem ilustrativa</b></div>";else
   tipEl.innerHTML=`<span class="ic" data-k="${k}">${ico(k)}</span><div><b>${TAGS[k]}</b><p>${TAGDESC[k]||""}</p>${why?`<p class="why"><em>Por que este carro tem:</em> ${esc(why)}</p>`:""}${TAGRULE[k]&&TAGRULE[k]!==why?`<p class="rule"><em>Critério do Autokan:</em> ${TAGRULE[k]}</p>`:""}</div>`;
   tipEl.id="tipAtual";document.body.appendChild(tipEl);tipFor=btn;btn.setAttribute("aria-describedby","tipAtual");btn.setAttribute("aria-expanded","true");
   const r=btn.getBoundingClientRect(),w=tipEl.offsetWidth,h=tipEl.offsetHeight;
