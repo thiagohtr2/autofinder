@@ -200,8 +200,7 @@ button,input{font:inherit;color:inherit}
 .fchip[data-black]{border-color:#000;background:#000;color:#ffcf2e;font-weight:800}
 .fchip[data-black] b{color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
 .fchip[data-black]:hover{border-color:#ffcf2e}
-.fchip[data-black][aria-pressed="true"]{background:#ffcf2e;border-color:#ffcf2e;color:#000;box-shadow:0 0 0 2px rgba(255,207,46,.25)}
-.fchip[data-black][aria-pressed="true"] b{color:#000}
+.fchip[data-black][aria-pressed="true"]{background:#000;border-color:#000;color:#ffcf2e;box-shadow:inset 0 0 0 2px #fff}
 .fchip[data-novo][aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 .meta{display:flex;align-items:center;gap:12px;white-space:nowrap}
 .chiprow{display:contents}
@@ -333,8 +332,9 @@ button,input{font:inherit;color:inherit}
 .q-ano{flex:none;font:500 11px var(--body);letter-spacing:0;font-variant-numeric:tabular-nums;color:#6a6a6a}
 .q-ant{font-weight:700;color:#8a5200}
 .q-pr{text-align:right}
-.q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
-.q-bk{display:inline-block;font:800 9px/1 var(--body);letter-spacing:.07em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:3px 5px 2.5px;border-radius:3px;white-space:nowrap;vertical-align:1px}
+.q-of{font:800 8.5px/1 var(--body);color:#0f8a4b;text-transform:uppercase;letter-spacing:.06em}
+.q-tg{display:block;margin-bottom:3px;line-height:1}
+.q-bk{display:inline-block;font:800 7.5px/1 var(--body);letter-spacing:.07em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:2.5px 4px 2px;border-radius:3px;white-space:nowrap}
 .q-bk b{color:#fff;font-weight:900}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
 .q-vh{margin:6px 0 0 84px;padding:9px 12px 3px;background:#f2f5fb;border-radius:12px 12px 0 0;font:800 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none}
@@ -350,7 +350,8 @@ button,input{font:inherit;color:inherit}
 .q-vs b{font-weight:700;color:#3d4556}
 .q-vs .q-nd{font-style:italic}
 .q-vn mark{background:none;color:#1857d6}
-.q-vp{flex:none;font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap}
+.q-vp{flex:none;display:flex;align-items:center;font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap}
+.q-vpc{display:flex;flex-direction:column;align-items:flex-end}
 .q-v.hit .q-vn{color:#1857d6}
 @media (max-width:420px){.q-v,.q-vh{margin-left:12px}}
 .card.found{animation:found 1.8s var(--ease)}
@@ -1149,7 +1150,7 @@ html.deitado .note-a{font-weight:600}
   .sr-vis:has(#blkBtn:not([hidden])) .mode:not(.sort) button{padding:0 9px;font-size:11.5px}
   @media (max-width:430px){.sr-vis:has(#blkBtn:not([hidden])) .oft.onl{display:none!important}}
   @media (max-width:359px){.sr-vis:has(#blkBtn:not([hidden])){gap:4px}.sr-vis:has(#blkBtn:not([hidden])) .oft,.sr-vis:has(#blkBtn:not([hidden])) .mode:not(.sort) button{padding:0 6px;font-size:11px}}
-  .oft.blk[aria-pressed="true"]{background:#ffcf2e;color:#000;box-shadow:inset 0 0 0 1px #000,inset 0 0 0 2px #fff}
+  .oft.blk[aria-pressed="true"]{background:#000;color:#ffcf2e;box-shadow:inset 0 0 0 1px #000,inset 0 0 0 3px #fff}
   .app .sr-head .mode:not(.sort) button{height:26px;padding:0 13px;border-radius:999px;font-size:12px}
   /* atalhos de combustível dentro da caixa aberta */
   .fuq{grid-area:f;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
@@ -1359,9 +1360,10 @@ html.deitado .note-a{font-weight:600}
 .top .fchip[data-novo]:hover{border-color:#a9c6ff;color:#d3e2ff}
 .top .fchip[data-novo][aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 /* no topo escuro, o botão preto ganha borda clara para não sumir no fundo */
-.top .fchip[data-black]{border-color:rgba(255,255,255,.45)}
+.top .fchip[data-black]{background:#000;color:#ffcf2e;border-color:rgba(255,255,255,.45)}
 .top .fchip[data-black]:hover{border-color:#ffcf2e}
-.top .fchip[data-black][aria-pressed="true"]{border-color:#ffcf2e}
+.top .fchip[data-black][aria-pressed="true"]{background:#000;border-color:#000;color:#ffcf2e;box-shadow:inset 0 0 0 2px #fff}
+.top .fchip[data-black][aria-pressed="true"] b{color:#fff}
 /* contador de pessoas online (só o admin vê) */
 .onl{text-decoration:none}
 .onl .dot{width:7px;height:7px;flex:none;border-radius:50%;background:#22c55e;animation:onlpulsa 2s ease-out infinite}
@@ -2353,6 +2355,8 @@ function blackOf(x){if(!x||x.change_type!=="promocional")return null;
   const u=BLACK_RE.exec(x.source_url||"");return u?u[0].replace(/[\s_-]+/g," ").replace(/\b\w/g,l=>l.toUpperCase()):null}
 const isBlack=c=>!!(c.bk&&isReduced(c));
 /* etiqueta preta, como as de Black Friday: "BLACK" em branco e o resto em amarelo */
+/* busca: a etiqueta da oferta fica em cima do preço, para não apertar o nome da versão */
+const qTag=c=>isReduced(c)?`<span class="q-tg">${isBlack(c)?blackTag(c.bk,"q-bk",true):'<span class="q-of">oferta</span>'}</span>`:"";
 const blackTag=(name,cls,curto)=>{const [a,...b]=String(name).split(" ");return `<span class="${cls}" title="Oferta da campanha ${esc(name)}"><b>${esc(a)}</b>${b.length&&!curto?` ${esc(b.join(" "))}`:""}</span>`};
 const todayBR=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo"}).format(new Date());
 /* preço em vigor: a mudança mais recente que já começou e ainda não acabou; oferta vencida volta ao valor antigo */
@@ -2630,12 +2634,12 @@ function renderSearch(keep){if(typeof keep!=="number")keep=null; /* chamada pelo
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
       <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
         <span class="q-nm"><span class="q-nt">${hl(g.nm,q)}</span>${anoHTML(ano)}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span>${vs.length?"":`<span class="q-vs">${specHTML(c)}</span>`}</span>
-      <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?(isBlack(c)?`<br>${blackTag(c.bk,"q-bk",true)}`:'<br><span class="q-of">oferta</span>'):""}</span></li>`);
+      <span class="q-pr">${vs.length?"":qTag(c)}${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}</span></li>`);
     if(!vs.length)return;
     /* as versões ficam num painel próprio, com título, logo abaixo do carro a que pertencem */
     html.push(`<li class="q-vh" role="presentation" aria-hidden="true">Versões do ${esc(g.nm)}${g.ano?` ${g.ano}`:""}</li>`);
     vs.forEach((v,k)=>{const vi=qOpts.push({t:"v",g,c:v})-1;
-      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${(v.ano||ano)?` ${v.ano||ano}`:""}, ${specTxt(v)}, ${fmt(v.p)}${isReduced(v)?`, em oferta${isBlack(v)?` da campanha ${v.bk}`:""}`:""}`)}"><span class="q-vn"><span class="q-vl"><span class="q-vt">${hl(v.ver,q)}</span>${anoHTML(v.ano||ano)}</span><span class="q-vs">${specHTML(v)}</span></span><span class="q-vp">${isReduced(v)?(isBlack(v)?`${blackTag(v.bk,"q-bk",true)} `:'<span class="q-of">oferta</span> '):""}${fmt(v.p)}</span></li>`)})});
+      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${(v.ano||ano)?` ${v.ano||ano}`:""}, ${specTxt(v)}, ${fmt(v.p)}${isReduced(v)?`, em oferta${isBlack(v)?` da campanha ${v.bk}`:""}`:""}`)}"><span class="q-vn"><span class="q-vl"><span class="q-vt">${hl(v.ver,q)}</span>${anoHTML(v.ano||ano)}</span><span class="q-vs">${specHTML(v)}</span></span><span class="q-vp"><span class="q-vpc">${qTag(v)}<span>${fmt(v.p)}</span></span></span></li>`)})});
   qSel=qOpts.length?Math.min(Math.max(keep??0,0),qOpts.length-1):-1;
   qList.innerHTML=qOpts.length?html.join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");markSel(keep==null);
