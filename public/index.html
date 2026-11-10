@@ -53,7 +53,9 @@ ajusta();addEventListener("orientationchange",function(){setTimeout(ajusta,60)})
   --ease:cubic-bezier(.2,.8,.2,1);
 }
 *{box-sizing:border-box}
-html,body{height:100%;margin:0;overflow-x:hidden;overscroll-behavior:none}
+/* a página inicial cabe na tela e nunca rola: só a roleta, as fileiras e os painéis rolam por dentro.
+   Se a página rolar, o Safari do iPhone joga o topo para baixo do relógio, embaçado. */
+html,body{height:100%;margin:0;overflow:hidden;overscroll-behavior:none}
 /* margem lateral da página = --gl/--gr (16 px, ou a área segura do aparelho); o que vai de borda a borda desconta essa margem */
 body{--gl:max(16px,env(safe-area-inset-left,0px));--gr:max(16px,env(safe-area-inset-right,0px));background:var(--bg);color:var(--ink);font-family:var(--body);font-size:14px;line-height:1.4;-webkit-font-smoothing:antialiased;
   padding-left:var(--gl);padding-right:var(--gr)}
@@ -716,7 +718,7 @@ a.ig-b{text-decoration:none}
 .dbp-tools select{height:38px;border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:0 10px;font:600 13px var(--body);color:var(--ink)}
 .dbp-chk{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600}
 .dbp-tg{height:38px;border:1px solid var(--line);border-radius:12px;background:var(--bg);padding:0 12px;font:700 12.5px var(--body);cursor:pointer}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.sr{position:absolute;top:0;left:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)} /* preso no canto: no fim da página ele passava 1 px da tela */
 .dbp-body{flex:1;min-height:0;overflow:auto;padding:12px 22px 22px;display:flex;flex-direction:column;gap:10px}
 .dbb{flex-shrink:0;border:1px solid var(--line);border-radius:16px;overflow:hidden}
 .dbb>summary{display:flex;align-items:center;gap:12px;padding:12px 14px;cursor:pointer;list-style:none;background:var(--bg)}
@@ -1882,7 +1884,17 @@ function fitStage(){
   if(k>=1){r.style.top=r.style.height=r.style.width=r.style.bottom=r.style.transform=r.style.transformOrigin="";return}
   Object.assign(r.style,{top:"50%",bottom:"auto",height:(100/k)+"%",width:(100/k)+"%",transformOrigin:"0 50%",transform:`translateY(-50%) scale(${k})`});
 }
-addEventListener("resize",()=>{fitStage();dial.geom();dial.draw();syncRows(false)});
+/* no iPhone o "resize" dispara várias vezes por quadro quando as barras do Safari se mexem: recalcula a roleta uma vez só por quadro */
+let rzQ=0;addEventListener("resize",()=>{if(rzQ)return;rzQ=requestAnimationFrame(()=>{rzQ=0;fitStage();dial.geom();dial.draw();syncRows(false)})});
+/* iPhone: depois de fechar o teclado, voltar de outra página ou rolar, o Safari às vezes deixa a página deslocada para cima
+   e o topo fica embaixo do relógio. A página inicial nunca rola, então sempre que isso acontecer ela volta ao zero. */
+{const digitando=()=>{const a=document.activeElement;return !!a&&/^(INPUT|TEXTAREA|SELECT)$/.test(a.tagName)};
+ const zera=()=>{const se=document.scrollingElement||document.documentElement;if(scrollY||se.scrollTop||document.body.scrollTop){scrollTo(0,0);se.scrollTop=0;document.body.scrollTop=0}};
+ addEventListener("scroll",()=>{if(!digitando())zera()},{passive:true});
+ addEventListener("focusout",()=>setTimeout(()=>{if(!digitando())zera()},80));
+ if(window.visualViewport)visualViewport.addEventListener("resize",()=>{if(!digitando())zera()});
+ addEventListener("pageshow",zera);
+ document.addEventListener("visibilitychange",()=>{if(document.visibilityState==="visible")zera()});}
 const band=()=>bandAt(dial.sel);
 
 /* ---------- showroom: one row per dial value, stacked vertically ---------- */
@@ -2097,10 +2109,10 @@ function applySel(el){if(el._mode!=="full")return;const want=SELBY[el._i];
   let c=want?[...el.querySelectorAll(".card")].find(x=>x.dataset.id===want):null;if(!c)c=el.querySelector(".card");
   el.querySelectorAll(".card.sel").forEach(x=>{if(x!==c)x.classList.remove("sel")});if(c)c.classList.add("sel")}
 function fillRow(el,i,mode,keepScroll){
-  const list=listAt(i),sl=el.scrollLeft;
+  const list=listAt(i),sl=keepScroll?el.scrollLeft:0; /* ler a rolagem obriga o navegador a recalcular a página: só quando precisa */
   el._mode=mode;el._list=list;el._i=i;
   if(!list.length){el._n=0;el._order="";el.innerHTML=mode==="full"?emptyHTML(i):"";return}
-  const n=mode==="full"?Math.min(list.length,Math.max(CHUNK,el._n||0)):Math.min(list.length,9);
+  const n=mode==="full"?Math.min(list.length,Math.max(CHUNK,el._n||0)):Math.min(list.length,matchMedia("(max-width:760px)").matches?4:9);
   el._n=n;el._order=list.slice(0,n).map(c=>c.id).join();
   el.innerHTML=list.slice(0,n).map((c,k)=>mode==="full"?cardHTML(c,k):ghostHTML(c,k)).join("");
   applySel(el);
@@ -2128,7 +2140,7 @@ function syncRows(force){
     const g=mode==="ghost";
     if(el.classList.contains("ghost")!==g){el.classList.toggle("ghost",g);el.inert=g;g?el.setAttribute("aria-hidden","true"):el.removeAttribute("aria-hidden")}
   }
-  updScroller();
+  if(force||rowPos===dial.pos)updScroller(); /* as setas da fileira só depois que a roleta para (antes media a fileira a cada quadro) */
 }
 // likes changed: patch numbers in place; rebuild (with a slide) only rows whose order changed
 function refreshCounts(){
