@@ -22,4 +22,5 @@ Margem e espaço entre blocos já geraram reclamação várias vezes. Não pode 
   - site local: `NODE_PATH=$(npm root -g) node testes/espacos.cjs`
   - ou a prévia já publicada: `NODE_PATH=$(npm root -g) node testes/espacos.cjs https://deploy-preview-<N>--autokan.netlify.app`
 - **Tela, painel ou lista nova:** acrescente o estado em `ESTADOS`, no começo de `testes/espacos.cjs`. Antes de confiar no resultado, prove que a verificação pega o erro, por exemplo com `ESPACOS_SO="<estado>" ESPACOS_CSS="<regra que cola os blocos>"`.
+- **O topo é uma peça só** (`public/topo.mjs`: ☰, logo, buscar e conta), usada pelas páginas do servidor e pelo painel; a página inicial tem o mesmo topo com a busca e os filtros do computador. Mexeu no topo, rode `NODE_PATH=$(npm root -g) node testes/topo.cjs` e só envie com "Topo igual em todas as telas". O ☰ abre o menu da tela em que a pessoa está (site, painel, Banco de dados, Radar).
 - **Olhe as capturas também,** no celular (360 e 390 px) e no computador: a verificação não substitui olhar.

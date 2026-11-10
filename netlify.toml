@@ -56,6 +56,12 @@
   [headers.values]
     Content-Type = "image/x-icon"
 
+# o topo do site (☰, logo, buscar e conta), lido como módulo pelas páginas do servidor e pelo painel
+[[headers]]
+  for = "/topo.mjs"
+  [headers.values]
+    Content-Type = "text/javascript; charset=utf-8"
+
 # campos da ficha técnica, lidos pela roleta como módulo (o navegador exige o tipo JavaScript, com nosniff)
 [[headers]]
   for = "/ficha-tecnica.mjs"

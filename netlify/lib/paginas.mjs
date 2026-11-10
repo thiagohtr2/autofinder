@@ -6,6 +6,8 @@ import { secaoFicha, CSS_FICHA } from "./ficha-tecnica.mjs";
 import { secaoHistorico, CSS_HIST } from "./historico.mjs";
 import { RANKINGS, GRUPOS_RANKING, chipsRanking } from "./rankings.mjs";
 import { perguntasFicha, ldFicha, ldPerguntas } from "./perguntas.mjs";
+/* o topo (☰, logo, buscar e conta) é uma peça só, a mesma do painel: public/topo.mjs */
+import { TOPO_CSS, MENU_CSS as CSS_MENU, LUPA as LUPA_T, HAMBURGUER, FECHA_X as MN_X, topoHTML, molduraMenu } from "../../public/topo.mjs";
 
 /* ---------- formatação */
 
@@ -45,48 +47,7 @@ button{font-family:inherit}
 .pular:focus{top:12px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 /* topo */
-.top{background:var(--navy);color:#fff;position:sticky;top:0;z-index:5;padding-top:env(safe-area-inset-top)}
-.top-in{display:flex;align-items:center;gap:18px;height:60px}
-.logo{display:flex;align-items:center;flex:none}
-.logo .ico{display:none}
-.top-acts{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
-.mnbtn{flex:none;width:34px;height:34px;padding:0;border:0;border-radius:10px;background:transparent;color:#fff;display:grid;place-items:center;cursor:pointer}
-.mnbtn svg{width:22px;height:auto}
-.mnbtn:hover,.mnbtn[aria-expanded="true"]{background:rgba(255,255,255,.1)}
-.mnbtn+.logo{margin-left:-6px}
-@media (max-width:640px){.mnbtn+.logo{margin-left:0}}
-.t-ic{width:34px;height:34px;flex:none;display:grid;place-items:center;border-radius:50%;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);color:#fff;cursor:pointer;padding:0;text-decoration:none}
-.t-ic svg{width:16px;height:16px}
-.t-ic:hover,.t-ic.on{background:#fff;color:var(--navy);border-color:#fff}
-.t-conta{display:flex;align-items:center;gap:8px;position:relative}
-.t-btn{display:inline-flex;align-items:center;height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.28);color:#fff;text-decoration:none;font-weight:700;font-size:13.5px;white-space:nowrap}
-.t-btn:hover{background:rgba(255,255,255,.1)}
-.t-btn.pri{background:var(--accent);border-color:var(--accent)}
-.t-pf{width:36px;height:36px;border-radius:50%;border:1px solid rgba(255,255,255,.3);background:#eaf1ff;color:var(--accent);font:700 14px var(--display);display:grid;place-items:center;overflow:hidden;cursor:pointer;padding:0}
-.t-pf img{width:100%;height:100%;object-fit:cover}
-.t-pm{position:absolute;right:0;top:calc(100% + 10px);z-index:9;width:250px;background:#fff;color:var(--ink);border-radius:16px;box-shadow:0 24px 60px -20px rgba(6,11,28,.45),0 0 0 1px var(--line);padding:6px;display:flex;flex-direction:column}
-.t-pm[hidden]{display:none}
-.t-pm-h{display:flex;flex-direction:column;gap:2px;padding:10px 10px 8px;border-bottom:1px solid var(--line);margin-bottom:4px;min-width:0}
-.t-pm-h b{font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.t-pm-h small{font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.t-pm a,.t-pm button{display:block;width:100%;text-align:left;padding:10px;border:0;background:none;border-radius:10px;color:var(--ink);text-decoration:none;font:600 14px var(--body);cursor:pointer}
-.t-pm a:hover,.t-pm button:hover{background:var(--panel)}
-.t-pm a[hidden]{display:none}
-.t-busca{background:var(--navy);padding:0 0 12px}
-.t-busca[hidden]{display:none}
-.t-bq{display:flex;align-items:center;gap:10px;height:46px;padding:0 14px;border-radius:12px;background:#fff;color:var(--muted)}
-.t-bq svg{width:17px;height:17px;flex:none}
-.t-bq input{flex:1;min-width:0;height:100%;border:0;background:none;font:600 16px var(--body);color:var(--ink);outline:none}
-.t-br{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
-.t-br:empty{display:none}
-.t-br a{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;padding:10px 12px;border-radius:10px;color:#fff;text-decoration:none}
-.t-br a:hover,.t-br a.on{background:rgba(255,255,255,.1)}
-.t-br b{font-weight:700;font-size:15px}
-.t-ano{margin-left:7px;font-weight:500;font-size:11.5px;font-variant-numeric:tabular-nums;color:#a3a3a3}
-.t-br small{font-size:12.5px;color:#9fb1d1;white-space:nowrap}
-.t-nada{padding:10px 12px;color:#9fb1d1;font-size:14px}
-@media (max-width:640px){.logo .full{display:none}.logo .ico{display:block;transform:translateY(2px)}.top-in{gap:8px}.t-ic{width:30px;height:30px}.t-ic svg{width:14px;height:14px}.t-btn{height:30px;padding:0 12px;font-size:12.5px}.t-pf{width:32px;height:32px}.top-acts{gap:6px}}
-@media (max-width:370px){.t-btn{padding:0 10px}}
+${TOPO_CSS}
 /* trilha */
 .trilha ol{list-style:none;display:flex;flex-wrap:wrap;gap:2px 0;margin:0;padding:18px 0 6px;font-size:13px;color:var(--muted)}
 .trilha li+li::before{content:"/";margin:0 8px;color:var(--faint)}
@@ -233,17 +194,6 @@ ${["eletrico:#fbf3db:#e0a800", "hibrido:#deeee6:#11864c", "potente:#fae3e0:#d83a
 .foot a:hover{color:#fff;text-decoration:underline}
 .foot-nota{margin:28px 0 0;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:12.5px;line-height:1.6;color:#9fb1d1;max-width:90ch}
 .foot-copy{margin:10px 0 0;font-size:12.5px;color:#9fb1d1}
-/* ===== topo no padrão da bancada (aba "Design do topo", 10/11/2026) =====
-   celular (até 760 px): barra de 42 px; ☰ de 27 px (desenho de 22 × 16, traços de 2 px a cada 6 px); logo de 18 px no meio da barra, 10 px depois do ☰;
-   buscar de 30 px só com o contorno (lupa de 14); Entrar e Cadastrar com 30 px, letra de 12,5 e 13 px dos lados; 12 px entre eles e do buscar.
-   computador: barra de 64 px; ☰ de 30 px (desenho de 22 × 13, traços a cada 4,5 px); buscar de 34 px (lupa de 16);
-   Entrar e Cadastrar com 32 px, letra de 12,5 e 12 px dos lados. O texto dos botões fica no meio pela altura das maiúsculas. */
-.mnbtn .hb-pc{display:none}
-.t-btn>span{display:block;text-box:trim-both cap alphabetic}
-.t-ic{background:transparent;border-color:rgba(255,255,255,.28)}
-@media (min-width:761px){.mnbtn .hb-cel{display:none}.mnbtn .hb-pc{display:block}.top-in{height:64px}.mnbtn{width:30px;height:30px}.mnbtn+.logo{margin-left:-8px}.top-acts,.t-conta{gap:12px}.t-ic{width:34px;height:34px}.t-ic svg{width:16px;height:16px}.t-btn{height:32px;padding:0 12px;font-size:12.5px}.t-pf{width:32px;height:32px}}
-@media (max-width:760px){.top-in{height:42px;gap:8px}.mnbtn{width:27px;height:27px}.mnbtn+.logo{margin-left:2px}.logo .ico{transform:none}.top-acts,.t-conta{gap:12px}.t-ic{width:30px;height:30px}.t-ic svg{width:14px;height:14px}.t-btn{height:30px;padding:0 13px;font-size:12.5px}.t-pf{width:30px;height:30px}}
-@media (max-width:359px){.t-btn{padding:0 10px}.top-acts,.t-conta{gap:8px}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 `.replace(/\n\s*/g, "");
 
@@ -252,13 +202,10 @@ export const COMPARAR_ICO = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d
 export const urlPar = (a, b) => `/comparar/${[a.id, b.id].sort().join("-vs-")}`;
 export const ROLETA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M12 16l4-5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
 
-const LUPA_T = '<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="m14 14 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 
 /* ---------- menu lateral (botão ☰ do topo) ----------
    Tudo o que dá para fazer no site, por assunto. É o mesmo em todas as páginas: as do servidor o trazem pronto e a
    página inicial o busca em /menu.html. A parte "Sua conta" (#mnConta) é montada no navegador, conforme a pessoa entrou ou não. */
-const HAMBURGUER = '<svg class="hb-cel" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true"><path d="M1 2H21M1 8H21M1 14H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="hb-pc" viewBox="0 0 22 13" width="22" height="13" aria-hidden="true"><path d="M1 2H21M1 6.5H21M1 11H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
-const MN_X = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
 const mi = (d) => `<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
 const MN_ICO = {
   roleta: mi('<path d="M4 16a8 8 0 1 1 16 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 16l4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'),
@@ -271,48 +218,6 @@ const MN_ICO = {
   contato: mi('<path d="M5 5h14a1.6 1.6 0 0 1 1.6 1.6v8.4a1.6 1.6 0 0 1-1.6 1.6h-8l-4.6 3.6v-3.6H5a1.6 1.6 0 0 1-1.6-1.6V6.6A1.6 1.6 0 0 1 5 5z" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>'),
   doc: mi('<path d="M7 3.5h7l4 4V20a.5.5 0 0 1-.5.5h-10.5a.5.5 0 0 1-.5-.5V4a.5.5 0 0 1 .5-.5zM14 3.5V8h4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round"/>'),
 };
-const CSS_MENU = `
-.mn{position:fixed;inset:0;z-index:70}
-.mn[hidden]{display:none}
-.mn-fundo{position:absolute;inset:0;background:rgba(6,11,28,.45);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px);animation:mn-f .2s ease}
-.mn-p{position:absolute;left:0;top:0;bottom:0;width:min(330px,88vw);display:flex;flex-direction:column;background:#fff;color:#0c111c;box-shadow:24px 0 60px -24px rgba(6,11,28,.5);animation:mn-a .26s cubic-bezier(.2,.8,.2,1);outline:none;padding-top:env(safe-area-inset-top,0px);font-family:var(--body)}
-@keyframes mn-a{from{transform:translateX(-100%)}}
-@keyframes mn-f{from{opacity:0}}
-@media (prefers-reduced-motion:reduce){.mn-p,.mn-fundo{animation:none}}
-.mn-h{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;border-bottom:1px solid #e7eaf0}
-.mn-h img{display:block;height:18px;width:auto}
-.mn-x{flex:none;width:34px;height:34px;padding:0;border:1px solid #e1e5ee;border-radius:50%;background:#fff;color:#0c111c;display:grid;place-items:center;cursor:pointer}
-.mn-x svg{width:14px;height:14px}
-.mn-x:hover{border-color:#1d6bff;color:#1d6bff}
-.mn-b{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:6px 6px calc(28px + env(safe-area-inset-bottom,0px))}
-.mn-conta{display:flex;gap:8px;padding:10px 10px 4px}
-.mn-conta:empty{display:none}
-.mn-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;height:40px;padding:0 14px;border:1px solid #d6dbe5;border-radius:999px;background:#fff;color:#0c111c;font:700 14px var(--body);text-decoration:none;cursor:pointer}
-.mn-btn.pri{background:#1d6bff;border-color:#1d6bff;color:#fff}
-.mn-eu{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center}
-.mn-eu b{font-size:14.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mn-eu small{font-size:12px;color:#5d6577;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mn-conta .mn-eu+.mn-btn{flex:none}
-.mn-t{margin:18px 10px 6px;font:800 10.5px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:#5d6577}
-.mn-i{display:flex;align-items:center;gap:12px;padding:9px 10px;border-radius:12px;color:#0c111c;text-decoration:none;font-weight:700;font-size:14.5px;line-height:1.25}
-.mn-i[hidden]{display:none}
-.mn-i:hover,.mn-i:focus-visible{background:#f2f6fd}
-.mn-i svg{width:20px;height:20px;flex:none;color:#1d6bff}
-.mn-i>span{display:flex;flex-direction:column;min-width:0}
-.mn-l{display:block}
-.mn-i small{font-weight:500;font-size:12px;color:#5d6577}
-.mn-i.mn-black svg{color:#0c111c}
-.mn-i.mn-black b{display:inline-block;margin-right:4px;padding:3px 5px 2px;border-radius:3px;background:#000;color:#fff;font:900 10px/1 var(--body);letter-spacing:.06em;text-transform:uppercase}
-.mn-g summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px;border-radius:12px;font-weight:700;font-size:14px;color:#0c111c;cursor:pointer}
-.mn-g summary::-webkit-details-marker{display:none}
-.mn-g summary::after{content:"";flex:none;width:7px;height:7px;margin-right:4px;border-right:2px solid #8a93a6;border-bottom:2px solid #8a93a6;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
-.mn-g[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
-.mn-g summary:hover,.mn-g summary:focus-visible{background:#f2f6fd}
-.mn-g ul{list-style:none;margin:0 0 6px;padding:0 0 0 12px}
-.mn-g li a{display:block;padding:8px 10px;border-radius:10px;color:#2a3242;text-decoration:none;font-size:13.5px;font-weight:600}
-.mn-g li a:hover,.mn-g li a:focus-visible{background:#f2f6fd}
-.mn-erro{padding:20px 16px;color:#5d6577;font-size:14px}
-`.replace(/\n\s*/g, "");
 
 /* Black Friday no menu só na temporada (novembro até 5 de dezembro); na página inicial, só quando há oferta Black */
 const temporadaBlack = (d = new Date()) => d.getUTCMonth() === 10 || (d.getUTCMonth() === 11 && d.getUTCDate() <= 5);
@@ -345,67 +250,14 @@ ${it("/termos", MN_ICO.doc, "Termos de uso")}
 ${it("/privacidade", MN_ICO.doc, "Privacidade")}
 </nav>`.replace(/\n/g, "");
 }
-/* moldura do menu: fundo escuro + painel; o conteúdo vai dentro de #menuP */
-export const molduraMenu = (conteudo = "") => `<div class="mn" id="menu" hidden><div class="mn-fundo" data-mn-fecha></div><aside class="mn-p" id="menuP" role="dialog" aria-modal="true" aria-label="Menu" tabindex="-1">${conteudo}</aside></div>`;
 export { HAMBURGUER };
 
 function topo() {
-  return `<header class="top" id="topo"><div class="wrap top-in">
-<button type="button" class="mnbtn" id="mnBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">${HAMBURGUER}</button>
-<a class="logo" href="/" aria-label="Autokan: página inicial"><img class="full" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18"><img class="ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18"></a>
-<div class="top-acts">
-<button type="button" class="t-ic" id="tBuscaBtn" aria-label="Buscar carro" title="Buscar carro" aria-expanded="false" aria-controls="tBusca">${LUPA_T}</button>
-<span class="t-conta" id="tConta"><a class="t-btn" href="/?entrar=1"><span>Entrar</span></a><a class="t-btn pri" href="/?cadastrar=1"><span>Cadastrar</span></a></span>
-</div></div>
-<div class="t-busca" id="tBusca" hidden><div class="wrap"><label class="t-bq">${LUPA_T}<span class="sr">Buscar carro ou marca</span><input type="search" id="tBq" placeholder="Buscar carro ou marca" autocomplete="off" enterkeyhint="go"></label><ul class="t-br" id="tBr"></ul></div></div>
-</header>${molduraMenu(menuLateral())}`;
+  return topoHTML() + molduraMenu(menuLateral());
 }
 
-/* topo: busca de carros e conta da pessoa (a sessão é a mesma da roleta, guardada no navegador) */
-const SCRIPT_TOPO = `<script>(()=>{const SB=${JSON.stringify(SB_URL)},K=${JSON.stringify(SB_CHAVE)},CH="sb-"+SB.split("//")[1].split(".")[0]+"-auth-token";
-const e=t=>String(t??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
-const sa=t=>String(t||"").normalize("NFKD").replace(/[\\u0300-\\u036f]/g,"").toLowerCase();
-/* conta */
-let s=null;try{s=JSON.parse(localStorage.getItem(CH)||"null")}catch(x){}
-const u=s&&s.user,box=document.getElementById("tConta");
-if(u&&box){const m=u.user_metadata||{},nome=m.full_name||m.name||(u.email||"").split("@")[0]||"Você",av=typeof m.avatar_url==="string"&&/^https:\\/\\//.test(m.avatar_url)?m.avatar_url:"";
-  box.innerHTML='<button type="button" class="t-pf" id="tPf" aria-haspopup="menu" aria-expanded="false" aria-controls="tPm" aria-label="Sua conta" title="Sua conta">'+(av?'<img src="'+e(av)+'" alt="" referrerpolicy="no-referrer">':e(nome.trim().charAt(0).toUpperCase()))+'</button>'+
-   '<div class="t-pm" id="tPm" role="menu" aria-label="Sua conta" hidden><div class="t-pm-h"><b>'+e(nome)+'</b><small>'+e(u.email||"")+'</small></div>'+
-   '<a role="menuitem" href="/salvos">Salvos</a><a role="menuitem" href="/">Escolha o preço</a><a role="menuitem" href="/admin.html" class="t-adm" hidden>Painel de uso</a><a role="menuitem" href="/admin.html#mensagens" class="t-adm" hidden>Mensagens</a><button type="button" role="menuitem" id="tVerPc" hidden></button><a role="menuitem" href="/contato">Fale com a gente</a><button type="button" role="menuitem" id="tSair">Sair</button></div>';
-  const pf=document.getElementById("tPf"),pm=document.getElementById("tPm");
-  const abre=v=>{pm.hidden=!v;pf.setAttribute("aria-expanded",String(v))};
-  pf.onclick=x=>{x.stopPropagation();abre(pm.hidden)};document.addEventListener("click",x=>{if(!pm.hidden&&!x.target.closest("#tPm"))abre(false)});
-  document.addEventListener("keydown",x=>{if(x.key==="Escape"&&!pm.hidden){abre(false);pf.focus()}});
-  const tok=s.access_token,valido=tok&&(!s.expires_at||s.expires_at*1000>Date.now());
-  if(valido)fetch(SB+"/rest/v1/profiles?select=role&id=eq."+encodeURIComponent(u.id),{headers:{apikey:K,Authorization:"Bearer "+tok}}).then(r=>r.ok?r.json():[]).then(r=>{if(r[0]&&r[0].role==="admin"){document.querySelectorAll(".t-adm").forEach(a=>a.hidden=false);const vp=document.getElementById("tVerPc");if(vp&&window.autokanCelular&&autokanCelular()){const rot=()=>{vp.textContent=autokanVerPC()?"Ver como no celular":"Ver como no computador"};rot();vp.hidden=false;vp.onclick=()=>{abre(false);autokanVerPC(!autokanVerPC());rot()}}}}).catch(()=>{});
-  document.getElementById("tSair").onclick=()=>{(valido?fetch(SB+"/auth/v1/logout",{method:"POST",headers:{apikey:K,Authorization:"Bearer "+tok}}):Promise.resolve()).catch(()=>{}).finally(()=>{try{localStorage.removeItem(CH)}catch(x){}location.reload()})};
-}
-/* menu lateral (☰): abre por cima da página; fecha no X, no fundo escuro ou com Esc; o Tab não sai do menu enquanto ele está aberto */
-{const mn=document.getElementById("menu"),mp=document.getElementById("menuP"),mb=document.getElementById("mnBtn"),cb=document.getElementById("mnConta");let volta=null;
- if(mn&&mp&&mb){
-  if(cb){const md=(u&&u.user_metadata)||{};cb.innerHTML=u?'<span class="mn-eu"><b>'+e(md.full_name||md.name||(u.email||"").split("@")[0]||"Você")+'</b><small>'+e(u.email||"")+'</small></span><button type="button" class="mn-btn" data-mn-sair>Sair</button>':'<a class="mn-btn" href="/?entrar=1">Entrar</a><a class="mn-btn pri" href="/?cadastrar=1">Cadastrar</a>'}
-  const focaveis=()=>[...mp.querySelectorAll("a[href],button,summary")].filter(x=>x.offsetParent!==null);
-  const abre=()=>{volta=document.activeElement;mn.hidden=false;mb.setAttribute("aria-expanded","true");document.documentElement.style.overflow="hidden";const x=mp.querySelector(".mn-x");x&&x.focus()};
-  const fecha=()=>{if(mn.hidden)return;mn.hidden=true;mb.setAttribute("aria-expanded","false");document.documentElement.style.overflow="";if(volta&&volta.focus)volta.focus()};
-  mb.onclick=()=>mn.hidden?abre():fecha();
-  mn.addEventListener("click",x=>{if(x.target.closest("[data-mn-fecha]"))fecha();else if(x.target.closest("[data-mn-sair]")){const b=document.getElementById("tSair");if(b)b.click()}});
-  document.addEventListener("keydown",x=>{if(mn.hidden)return;if(x.key==="Escape"){x.preventDefault();fecha();return}
-    if(x.key==="Tab"){const f=focaveis();if(!f.length)return;const a=f[0],z=f[f.length-1];if(x.shiftKey&&document.activeElement===a){x.preventDefault();z.focus()}else if(!x.shiftKey&&document.activeElement===z){x.preventDefault();a.focus()}}});
- }}
-/* busca */
-const bb=document.getElementById("tBuscaBtn"),bx=document.getElementById("tBusca"),q=document.getElementById("tBq"),ul=document.getElementById("tBr");let dados=null,sel=-1,itens=[];
-const carrega=()=>dados||(dados=fetch("/busca.json").then(r=>r.json()).catch(()=>({m:[],b:[]})));
-const abreB=v=>{bx.hidden=!v;bb.setAttribute("aria-expanded",String(v));bb.classList.toggle("on",v);if(v){carrega();q.focus()}else{q.value="";ul.innerHTML=""}};
-bb.onclick=()=>abreB(bx.hidden);document.addEventListener("keydown",x=>{if(x.key==="Escape"&&!bx.hidden)abreB(false)});
-const rs=n=>"R$\\u00a0"+String(n).replace(/\\B(?=(\\d{3})+(?!\\d))/g,".");
-q.addEventListener("input",async()=>{const d=await carrega(),ts=sa(q.value.trim()).split(/\\s+/).filter(Boolean);sel=-1;
-  if(!ts.length){ul.innerHTML="";itens=[];return}
-  const ok=x=>ts.every(t=>x.q.includes(t)),bs=d.b.filter(ok).slice(0,3),ms=d.m.filter(ok).slice(0,8);itens=[...bs,...ms];
-  ul.innerHTML=itens.length?itens.map(x=>'<li><a href="'+e(x.u)+'"><b>'+e(x.n)+(x.a?'<span class="t-ano">'+e(String(x.a))+'</span>':'')+'</b><small>'+(x.p?(x.s?e(x.s)+" · ":"")+"a partir de "+rs(x.p):x.s?e(x.s):"marca")+'</small></a></li>').join(""):'<li class="t-nada">Nenhum carro com esse nome</li>'});
-q.addEventListener("keydown",x=>{const as=ul.querySelectorAll("a");if(!as.length)return;
-  if(x.key==="ArrowDown"||x.key==="ArrowUp"){x.preventDefault();sel=(sel+(x.key==="ArrowDown"?1:-1)+as.length)%as.length;as.forEach((a,i)=>a.classList.toggle("on",i===sel));as[sel].scrollIntoView({block:"nearest"})}
-  if(x.key==="Enter"){x.preventDefault();location.href=as[Math.max(0,sel)].getAttribute("href")}});
-})();
+/* topo: conta da pessoa, ☰ e busca (public/topo.mjs, o mesmo do painel); a sessão é a mesma da roleta, guardada no navegador */
+const SCRIPT_TOPO = `<script type="module">import{iniciaTopo}from"/topo.mjs";iniciaTopo({sb:${JSON.stringify(SB_URL)},chave:${JSON.stringify(SB_CHAVE)}})</script><script>
 /* ícone de imagem ilustrativa nas miniaturas: tocar abre um balão com "Imagem ilustrativa" (não abre o link) */
 (()=>{let t=null;const fecha=()=>{if(t){t._for.classList.remove("on");t.remove();t=null}};
 document.addEventListener("click",e=>{const i=e.target.closest(".ilus");if(!i){fecha();return}e.preventDefault();e.stopPropagation();if(t&&t._for===i){fecha();return}fecha();
