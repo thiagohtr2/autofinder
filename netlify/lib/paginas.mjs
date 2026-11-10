@@ -129,7 +129,12 @@ h3{font-weight:600;font-size:16.5px;margin:0 0 4px}
 .ext{width:12px;height:12px;display:inline-block;vertical-align:-1px;margin-left:3px}
 .foto{margin:0;position:relative;border-radius:22px;background:radial-gradient(120% 90% at 50% 100%,#eef2f8 0,#f7f9fc 60%,#fff 100%);aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden}
 .foto img{width:100%;height:100%;object-fit:contain}
-.ilus{position:absolute;right:8px;top:8px;z-index:1;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.85);color:var(--muted)}.ilus svg{width:14px;height:14px}
+.ilus{position:absolute;right:8px;top:8px;z-index:1;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.85);color:var(--muted);cursor:pointer}.ilus svg{width:14px;height:14px}
+.ilus::after{content:"";position:absolute;inset:-8px}.ilus.on{color:var(--accent)}
+/* balão do ícone de imagem ilustrativa (o mesmo desenho do balão dos pontos fortes da página inicial) */
+.tipi{position:fixed;z-index:60;width:max-content;max-width:240px;background:#fff;border-radius:14px;padding:11px 14px;box-shadow:0 0 0 1px var(--line),0 18px 40px -16px rgba(12,17,28,.35);font:800 13.5px/1.3 var(--body);color:var(--ink)}
+.tipi::after{content:"";position:absolute;left:var(--ax,50%);bottom:-6px;width:12px;height:12px;margin-left:-6px;background:#fff;transform:rotate(45deg);box-shadow:1px 1px 0 var(--line)}
+.tipi.below::after{bottom:auto;top:-6px;box-shadow:-1px -1px 0 var(--line)}
 .foto figcaption{position:absolute;right:12px;bottom:10px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.85);padding:3px 7px;border-radius:6px}
 .nov{position:absolute;left:12px;top:10px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:3px 8px;border-radius:6px}
 .foto .sem,.mc-sem{font-family:var(--display);font-weight:300;font-size:28px;color:var(--faint);letter-spacing:-.03em;padding:0 16px;text-align:center}
@@ -293,7 +298,14 @@ q.addEventListener("input",async()=>{const d=await carrega(),ts=sa(q.value.trim(
 q.addEventListener("keydown",x=>{const as=ul.querySelectorAll("a");if(!as.length)return;
   if(x.key==="ArrowDown"||x.key==="ArrowUp"){x.preventDefault();sel=(sel+(x.key==="ArrowDown"?1:-1)+as.length)%as.length;as.forEach((a,i)=>a.classList.toggle("on",i===sel));as[sel].scrollIntoView({block:"nearest"})}
   if(x.key==="Enter"){x.preventDefault();location.href=as[Math.max(0,sel)].getAttribute("href")}});
-})()</script>`;
+})();
+/* ícone de imagem ilustrativa nas miniaturas: tocar abre um balão com "Imagem ilustrativa" (não abre o link) */
+(()=>{let t=null;const fecha=()=>{if(t){t._for.classList.remove("on");t.remove();t=null}};
+document.addEventListener("click",e=>{const i=e.target.closest(".ilus");if(!i){fecha();return}e.preventDefault();e.stopPropagation();if(t&&t._for===i){fecha();return}fecha();
+  t=document.createElement("div");t.className="tipi";t.setAttribute("role","tooltip");t.textContent="Imagem ilustrativa";t._for=i;i.classList.add("on");document.body.appendChild(t);
+  const r=i.getBoundingClientRect(),w=t.offsetWidth,h=t.offsetHeight;let x=Math.max(8,Math.min(innerWidth-w-8,r.left+r.width/2-w/2)),y=r.top-h-10,b=false;if(y<8){y=r.bottom+10;b=true}
+  t.style.left=x+"px";t.style.top=y+"px";t.style.setProperty("--ax",(r.left+r.width/2-x)+"px");t.classList.toggle("below",b)},true);
+addEventListener("scroll",fecha,true);addEventListener("resize",fecha);addEventListener("keydown",e=>{if(e.key==="Escape")fecha()})})()</script>`;
 
 function rodape() {
   const col = (titulo, itens) => `<div><b>${titulo}</b><ul>${itens.map(([u, t]) => `<li><a href="${u}">${esc(t)}</a></li>`).join("")}</ul></div>`;
@@ -385,7 +397,7 @@ export function fotoTag(m, w, sizes, prioridade = false) {
 /* selo "Novo" (carro ou versão em /novidades); o título diz o tipo e a data */
 const TIPO_NOV = { carro_novo: "Carro novo lançado", nova_geracao: "Nova geração lançada", reestilizacao: "Visual novo lançado", versao_nova: "Versão nova lançada", serie_especial: "Série especial lançada" };
 /* miniaturas: o aviso de imagem ilustrativa é só um ícone; na foto principal da página do modelo continua escrito */
-export const ILUS = '<span class="ilus" role="img" aria-label="Imagem ilustrativa" title="Imagem ilustrativa: pode ter diferenças em relação ao carro real"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.2v4M8 4.9v.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>';
+export const ILUS = '<span class="ilus" role="img" aria-label="Imagem ilustrativa"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.2v4M8 4.9v.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>';
 export const seloNovidade = (l) => (l ? `<span class="nov" title="${esc(`${TIPO_NOV[l.tipo] || "Lançado"} em ${l.data_precisao === "mes" ? String(l.lancado_em).slice(5, 7) + "/" + String(l.lancado_em).slice(0, 4) : dataBr(l.lancado_em)}`)}">Novo</span>` : "");
 
 export function cartao(m, { de, extra, href } = {}) {
