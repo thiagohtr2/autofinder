@@ -95,9 +95,12 @@ function verifica() {
   const etq = [];
   document.querySelectorAll('body *').forEach((e) => {
     if (!visivel(e) || fechado(e) || ok(e)) return;
-    if (getComputedStyle(e).position !== 'absolute' || !e.textContent.trim()) return;
+    const solta = getComputedStyle(e).position === 'absolute';
+    const P = e.parentElement, noGrupo = !solta && P && getComputedStyle(P).position === 'absolute' && P.getBoundingClientRect().height < 40; // selo dentro de um grupo de selos
+    if (!solta && !noGrupo) return;
+    if (!e.textContent.trim() && !(e.matches('button,[role="img"]') && e.querySelector('svg'))) return; // texto, ou ícone que é botão/imagem
     const r = e.getBoundingClientRect(); if (r.width < 4 || r.height < 4 || r.height > 40 || r.width > 320) return;
-    etq.push({ e, r, pai: e.offsetParent });
+    etq.push({ e, r, pai: solta ? e.offsetParent : P.offsetParent });
   });
   for (let i = 0; i < etq.length; i++) for (let j = i + 1; j < etq.length; j++) {
     const a = etq[i], b = etq[j];
