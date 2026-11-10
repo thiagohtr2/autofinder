@@ -330,12 +330,17 @@ button,input{font:inherit;color:inherit}
 .q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
 .q-vh{margin:6px 0 0 84px;padding:9px 12px 3px;background:#f2f5fb;border-radius:12px 12px 0 0;font:800 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none}
-.q-v{position:relative;gap:10px;margin:0 0 0 84px;padding:8px 12px;min-height:36px;border-radius:0;background:#f2f5fb;font-size:13px}
+.q-v{position:relative;gap:10px;margin:0 0 0 84px;padding:8px 12px;min-height:36px;border-radius:0;background:#f2f5fb;font-size:13px;align-items:center}
 .q-v.last{border-radius:0 0 12px 12px;margin-bottom:8px}
 .q-v+.q-v::before{content:"";position:absolute;left:12px;right:12px;top:0;border-top:1px solid #e1e8f3}
 .q-v[aria-selected="true"],.q-v:hover{background:#e4edfc}
 .q-vp::after{content:"›";margin-left:8px;font:700 15px var(--body);color:#9aa6bd}
-.q-vn{flex:1;min-width:0;display:flex;align-items:baseline;gap:6px;font-weight:600;color:var(--ink)}
+.q-vn{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;font-weight:600;color:var(--ink)}
+.q-vl{display:flex;align-items:baseline;gap:6px;min-width:0}
+/* potência e motorização de cada versão, numa linha menor embaixo do nome */
+.q-vs{font:500 11.5px var(--body);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.q-vs b{font-weight:700;color:#3d4556}
+.q-vs .q-nd{font-style:italic}
 .q-vn mark{background:none;color:#1857d6}
 .q-vp{flex:none;font-family:var(--mono);font-size:12px;font-weight:600;white-space:nowrap}
 .q-v.hit .q-vn{color:#1857d6}
@@ -2551,6 +2556,21 @@ function searchCars(q){
   return [...by.values()].map(g=>{g.vs.sort((a,b)=>a.p-b.p);g.pick=g.hit||g.vs[0];return g})
     .sort((a,b)=>b.score-a.score||(a.mk+a.nm).localeCompare(b.mk+b.nm,"pt-BR")||(b.ano||0)-(a.ano||0)).slice(0,8);
 }
+/* "248 cv · 1.5 turbo flex híbrido": potência e motorização da versão (sem observações como autonomia, para caber numa linha) */
+const FUEL_TXT={"Flex":"flex","Gasolina":"gasolina","Diesel":"diesel","Etanol":"etanol","Elétrico":"elétrico","Híbrido":"híbrido","Plug-in":"híbrido plug-in","Híb. leve":"híbrido leve"};
+function specOf(c){
+  const raw=String(c.mo||""),cvN=c.cv?Math.round(c.cv):(+((/(\d{2,4})\s*cv\b/i.exec(raw)||[])[1])||null);
+  let m=raw.replace(/\([^)]*\)/g," ").replace(/,?\s*bateria\b[^+]*?(kWh|$)/gi," ") /* observações e bateria ficam de fora */
+    .replace(/\b(até\s+)?\d+(?:[.,]\d+)?\s*cv\b/gi," ").replace(/,?\s*combinad[oa]s?\b/gi," ") /* a potência vai à parte */
+    .replace(/\s+/g," ").replace(/\s+,/g,",").replace(/\s*\+\s*/g," + ").trim().replace(/^[+,]\s*|\s*[+,]$/g,"").trim()
+    .replace(/^(El[eé]trico|H[ií]brido)/,x=>x.toLowerCase());
+  const fu=motorOf(c),fw=FUEL_TXT[fu]||(fu?fu.toLowerCase():"");
+  if(fw&&!/flex|etanol|gasolina|diesel|el[eé]tric|h[ií]brid/i.test(m))m=m?`${m} ${fw}`:fw;
+  return {cv:cvN,m};
+}
+function specHTML(c){const s=specOf(c);
+  return `${s.cv?`<b>${s.cv} cv</b>`:'<span class="q-nd">potência não informada</span>'} · ${s.m?esc(s.m):'<span class="q-nd">motor não informado</span>'}`}
+function specTxt(c){const s=specOf(c);return `${s.cv?`${s.cv} cv`:"potência não informada"}, ${s.m||"motor não informado"}`}
 function hl(text,q){let out=esc(text);norm(q).split(/\s+/).filter(Boolean).forEach(t=>{const i=norm(text).indexOf(t);if(i>=0&&!out.includes("<mark>")){out=esc(text.slice(0,i))+"<mark>"+esc(text.slice(i,i+t.length))+"</mark>"+esc(text.slice(i+t.length))}});return out}
 /* resultados da busca: cada modelo com todas as suas versões logo abaixo, para a pessoa ir direto na que quer (a lista rola) */
 let qOpts=[];
@@ -2564,13 +2584,13 @@ function renderSearch(keep){if(typeof keep!=="number")keep=null; /* chamada pelo
     html.push(`<li class="q-item" role="option" id="qo${gi}" data-i="${gi}" aria-selected="false">
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
       <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
-        <span class="q-nm"><span class="q-nt">${hl(g.nm,q)}</span>${anoHTML(ano)}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span></span>
+        <span class="q-nm"><span class="q-nt">${hl(g.nm,q)}</span>${anoHTML(ano)}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span>${vs.length?"":`<span class="q-vs">${specHTML(c)}</span>`}</span>
       <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`);
     if(!vs.length)return;
     /* as versões ficam num painel próprio, com título, logo abaixo do carro a que pertencem */
     html.push(`<li class="q-vh" role="presentation" aria-hidden="true">Versões do ${esc(g.nm)}${g.ano?` ${g.ano}`:""}</li>`);
     vs.forEach((v,k)=>{const vi=qOpts.push({t:"v",g,c:v})-1;
-      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${(v.ano||ano)?` ${v.ano||ano}`:""}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn"><span class="q-vt">${hl(v.ver,q)}</span>${anoHTML(v.ano||ano)}</span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)})});
+      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${(v.ano||ano)?` ${v.ano||ano}`:""}, ${specTxt(v)}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn"><span class="q-vl"><span class="q-vt">${hl(v.ver,q)}</span>${anoHTML(v.ano||ano)}</span><span class="q-vs">${specHTML(v)}</span></span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)})});
   qSel=qOpts.length?Math.min(Math.max(keep??0,0),qOpts.length-1):-1;
   qList.innerHTML=qOpts.length?html.join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");markSel(keep==null);
