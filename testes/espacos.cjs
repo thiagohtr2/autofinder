@@ -21,6 +21,9 @@ const ESTADOS = [
   ['/', 'busca "chevrolet"', async (p) => { await abreBusca(p, 'chevrolet'); }],
   ['/', 'filtros abertos', async (p) => { await p.evaluate(() => openDrawer()); await p.waitForTimeout(600); }],
   ['/', 'ficha aberta', async (p) => { await p.evaluate(() => { const b = document.querySelector('.row:not(.ghost) .card.sel button.go') || document.querySelector('.showroom button.go'); b && b.click(); }); await p.waitForTimeout(900); }],
+  ['/', 'ficha com oferta', async (p) => { await p.evaluate(() => { const c = CARS.find((x) => x.pc && x.bk) || CARS.find((x) => x.pc); c && openInfo(c.id); }); await p.waitForTimeout(900); }],
+  ['/', 'filtro Black', async (p) => { await p.evaluate(() => { const q = document.querySelector('#quick [data-black]'); q && q.click(); }); await p.waitForTimeout(1800); }],
+  ['/', 'busca "rampage" (Black)', async (p) => { await abreBusca(p, 'rampage'); }],
   ['/carros/jeep/compass', 'busca do topo', async (p) => { await p.click('#tBuscaBtn'); await p.fill('#tBq', 'compass'); await p.waitForTimeout(600); }],
 ];
 async function abreBusca(p, t) {

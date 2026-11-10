@@ -196,6 +196,12 @@ button,input{font:inherit;color:inherit}
 .fchip[data-deal][aria-pressed="true"]{background:#0f8a4b;border-color:#0f8a4b;color:#fff;box-shadow:0 0 0 2px rgba(15,138,75,.2)}
 /* "Novos": carros lançados há pouco, no azul do selo dos cartões */
 .fchip[data-novo]{border-color:rgba(29,107,255,.5);background:#f2f6ff;color:#1857d6}
+/* Black Friday: preto com "Black" em branco e "Friday" em amarelo; ligado fica amarelo */
+.fchip[data-black]{border-color:#000;background:#000;color:#ffcf2e;font-weight:800}
+.fchip[data-black] b{color:#fff;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+.fchip[data-black]:hover{border-color:#ffcf2e}
+.fchip[data-black][aria-pressed="true"]{background:#ffcf2e;border-color:#ffcf2e;color:#000;box-shadow:0 0 0 2px rgba(255,207,46,.25)}
+.fchip[data-black][aria-pressed="true"] b{color:#000}
 .fchip[data-novo][aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
 .meta{display:flex;align-items:center;gap:12px;white-space:nowrap}
 .chiprow{display:contents}
@@ -328,6 +334,8 @@ button,input{font:inherit;color:inherit}
 .q-ant{font-weight:700;color:#8a5200}
 .q-pr{text-align:right}
 .q-of{font-family:var(--body);font-size:10.5px;font-weight:800;color:#0f8a4b;text-transform:uppercase;letter-spacing:.05em}
+.q-bk{display:inline-block;font:800 9px/1 var(--body);letter-spacing:.07em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:3px 5px 2.5px;border-radius:3px;white-space:nowrap;vertical-align:1px}
+.q-bk b{color:#fff;font-weight:900}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
 .q-vh{margin:6px 0 0 84px;padding:9px 12px 3px;background:#f2f5fb;border-radius:12px 12px 0 0;font:800 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none}
 .q-v{position:relative;gap:10px;margin:0 0 0 84px;padding:8px 12px;min-height:36px;border-radius:0;background:#f2f5fb;font-size:13px;align-items:center}
@@ -429,6 +437,11 @@ button,input{font:inherit;color:inherit}
 .row.ghost .ctag{display:none}
 .stage .aitag{display:none}
 /* selo "Novo": carro ou versão lançados há pouco (regras na página /novidades) */
+/* etiqueta Black no canto da foto; com o selo "Novo", o Novo desce para baixo dela */
+.stage .btag{position:absolute;left:0;top:4px;z-index:2;font:800 7.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:3px 5px 2.5px;border-radius:3px;pointer-events:none;white-space:nowrap}
+.stage .btag b{color:#fff;font-weight:900}
+.row.ghost .btag{display:none}
+.stage .btag~.ntag{top:22px}
 .stage .ntag{position:absolute;left:0;top:4.5px;z-index:2;font:800 7.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:2.5px 5px 2px;border-radius:4px;pointer-events:none}
 .row.ghost .ntag{display:none}
 /* comparar direto da roleta: botão no cartão e barra embaixo com os dois escolhidos */
@@ -521,7 +534,7 @@ body.cmp-1 .card .cmpb[aria-pressed="false"]{border-color:var(--accent);color:va
 .card.has-pc .icons{margin-top:4px}
 .card.has-pc .c-act{margin-top:5px}
 .card.has-pc .c-more{margin-top:4px}
-.sh-price+.pc-line{font-size:12.5px;margin:2px 0 4px -5px}
+.sh-price+.pc-line{font-size:12.5px;margin:2px 0 4px;padding-left:0} /* alinhado ao preço sem margem negativa (antes saía 5 px da caixa) */
 .sh-price+.pc-line svg{width:14px;height:14px}
 #pcPanel{z-index:32}
 .pc-box{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px;border-radius:16px;background:var(--panel)}
@@ -630,6 +643,10 @@ body.cmp-1 .card .cmpb[aria-pressed="false"]{border-color:var(--accent);color:va
 .info:hover{border-color:var(--accent);color:var(--accent)}
 .sheet .dr-body{gap:18px}
 .sh-price{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.02em}
+/* ficha: etiqueta da campanha Black acima do preço */
+.sh-bk{margin:8px 0 4px}
+.btag-lg{display:inline-block;font:800 10.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:4px 7px 3.5px;border-radius:4px;white-space:nowrap}
+.btag-lg b{color:#fff;font-weight:900}
 .sh-meta{font-size:12px;color:var(--muted)}
 .sh-site{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;color:var(--ink);text-decoration:none;transition:border-color .15s}
 .sh-acts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:16px}
@@ -1125,6 +1142,14 @@ html.deitado .note-a{font-weight:600}
   /* telas estreitas: Novidades, Ofertas e Modelos/Versões cabem na mesma linha */
   @media (max-width:379px){.sr-vis{gap:6px}.oft{padding:0 10px}}
   .oft[aria-pressed="true"]{background:var(--accent);color:#fff;box-shadow:inset 0 0 0 1px #dbe5f6,inset 0 0 0 2px #fff}
+  .oft.blk{background:#000;color:#fff;box-shadow:none;font-weight:900;text-transform:uppercase;letter-spacing:.04em}
+  /* com o botão Black, os quatro cabem na mesma linha: letra e respiro um pouco menores; o contador de online (só do admin) sai em telas estreitas */
+  .sr-vis:has(#blkBtn:not([hidden])){gap:5px}
+  .sr-vis:has(#blkBtn:not([hidden])) .oft{padding:0 9px;font-size:11.5px}
+  .sr-vis:has(#blkBtn:not([hidden])) .mode:not(.sort) button{padding:0 9px;font-size:11.5px}
+  @media (max-width:430px){.sr-vis:has(#blkBtn:not([hidden])) .oft.onl{display:none!important}}
+  @media (max-width:359px){.sr-vis:has(#blkBtn:not([hidden])){gap:4px}.sr-vis:has(#blkBtn:not([hidden])) .oft,.sr-vis:has(#blkBtn:not([hidden])) .mode:not(.sort) button{padding:0 6px;font-size:11px}}
+  .oft.blk[aria-pressed="true"]{background:#ffcf2e;color:#000;box-shadow:inset 0 0 0 1px #000,inset 0 0 0 2px #fff}
   .app .sr-head .mode:not(.sort) button{height:26px;padding:0 13px;border-radius:999px;font-size:12px}
   /* atalhos de combustível dentro da caixa aberta */
   .fuq{grid-area:f;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px;margin-top:10px}
@@ -1333,6 +1358,10 @@ html.deitado .note-a{font-weight:600}
 .top .fchip[data-novo]{background:rgba(29,107,255,.16);border-color:rgba(120,165,255,.6);color:#a9c6ff}
 .top .fchip[data-novo]:hover{border-color:#a9c6ff;color:#d3e2ff}
 .top .fchip[data-novo][aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+/* no topo escuro, o botão preto ganha borda clara para não sumir no fundo */
+.top .fchip[data-black]{border-color:rgba(255,255,255,.45)}
+.top .fchip[data-black]:hover{border-color:#ffcf2e}
+.top .fchip[data-black][aria-pressed="true"]{border-color:#ffcf2e}
 /* contador de pessoas online (só o admin vê) */
 .onl{text-decoration:none}
 .onl .dot{width:7px;height:7px;flex:none;border-radius:50%;background:#22c55e;animation:onlpulsa 2s ease-out infinite}
@@ -1489,7 +1518,7 @@ html{background:#060b1c}
     <section class="showroom" aria-labelledby="srTitle">
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
-        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="sr-vis"><a class="oft onl" id="onlBtn" href="/admin.html" hidden title="Pessoas no site agora (abre o painel)"><i class="dot" aria-hidden="true"></i><b>0</b><span class="ol-t"> online</span></a><button type="button" class="oft" id="novBtn" data-ev="novidades-filtro" aria-pressed="false" hidden>Novos</button><button type="button" class="oft" id="oftBtn" data-ev="ofertas" aria-pressed="false" hidden>Ofertas</button><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span></span>
+        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="sr-vis"><a class="oft onl" id="onlBtn" href="/admin.html" hidden title="Pessoas no site agora (abre o painel)"><i class="dot" aria-hidden="true"></i><b>0</b><span class="ol-t"> online</span></a><button type="button" class="oft blk" id="blkBtn" data-ev="black-filtro" aria-pressed="false" hidden><b>Black</b></button><button type="button" class="oft" id="novBtn" data-ev="novidades-filtro" aria-pressed="false" hidden>Novos</button><button type="button" class="oft" id="oftBtn" data-ev="ofertas" aria-pressed="false" hidden>Ofertas</button><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span></span>
         <span class="fuq" id="fuq" role="group" aria-label="Filtrar por combustível"></span>
         <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><b id="ajN" hidden></b></button>
       </div>
@@ -2056,7 +2085,7 @@ function cardHTML(c,i,anim){
   return `<article class="card${i===0&&sc>0?" first":""}${c.pc?" has-pc":""}${String(live?n:"–").length>1?" curto":""}" data-id="${c.id}">
     <div class="c-up">
       <div class="c-top c-brandtop"><span class="cb-mk" title="${esc(c.mk)}"><span class="cb-badge${lg?"":" ini"}">${lg?`<img src="${blobUrl(lg)}" alt="">`:esc(c.mk.slice(0,2).toUpperCase())}</span><span class="cb-name">${esc(c.mk)}</span></span><span class="rank">${String(i+1).padStart(2,"0")}</span></div>
-      <div class="stage">${img}<i class="floor"></i>${ph?'<span class="ctag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}${isNew(c)?`<span class="ntag" title="${esc(newTitle(c))}">Novo</span>`:""}
+      <div class="stage">${img}<i class="floor"></i>${isBlack(c)?blackTag(c.bk,"btag"):""}${ph?'<span class="ctag" title="Imagem ilustrativa gerada por IA; detalhes podem diferir do carro real">ilustrativa</span>':""}${isNew(c)?`<span class="ntag" title="${esc(newTitle(c))}">Novo</span>`:""}
         <div class="edit"><label>Enviar PNG<input type="file" accept="image/png,image/webp,image/jpeg" data-up="${carKey(mid,c.ano)}"></label><label class="lg">Logo ${esc(c.mk)}<input type="file" accept="image/png,image/webp,image/svg+xml" data-logo="${bs}"></label>${own?`<button type="button" data-rm="${own}">Remover foto</button>`:""}</div>
       </div>
       <h2 class="nm" title="${esc(c.nm)} ${esc(c.ver)}">${esc(c.nm)}</h2>
@@ -2300,7 +2329,7 @@ const GROUPS=[
 const F={};GROUPS.forEach(g=>F[g.key]=new Set());
 const FUQ=[["Elétrico","eletrico","Elétrico"],["Híbrido","hibrido","Híbrido"],["Híbrido plug-in","plugin","Plug-in"],["Diesel","diesel","Diesel"]];
 const vals=(g,c)=>(g.multi?g.multi(c):[g.val(c)]).filter(v=>v!=null);
-let DEAL=false,PRICE_CHANGES=[];
+let DEAL=false,BLACK_ONLY=false,PRICE_CHANGES=[];
 /* Novidades: lançamentos que ainda estão no prazo. Vale o modelo todo (lista de versões vazia) ou só as versões lançadas */
 let NEW_ONLY=false,LANC=[],NEWM=new Map(),NEWV=new Map();
 /* só para o admin: quantas pessoas estão no site agora, ao lado de "Novos"; toca e abre o painel */
@@ -2316,6 +2345,15 @@ const newOf=c=>NEWV.get(c.id)||NEWM.get(c.mid||c.id)||null,isNew=c=>!!newOf(c);
 const NEWLBL={carro_novo:"Carro novo lançado",nova_geracao:"Nova geração lançada",reestilizacao:"Visual novo lançado",versao_nova:"Versão nova lançada",serie_especial:"Série especial lançada"};
 const newTitle=c=>{const l=newOf(c);if(!l)return"";const m=/^(\d{4})-(\d{2})-(\d{2})/.exec(l.lancado_em||"");return `${NEWLBL[l.tipo]||"Lançado"}${m?` em ${l.data_precisao==="mes"?`${m[2]}/${m[1]}`:`${m[3]}/${m[2]}/${m[1]}`}`:""}`};
 const isReduced=c=>!!(c.pc&&c.pc.new_price<c.pc.old_price);
+/* campanha Black (Black Friday, Black November, Black Month, Black RAM...): vale quando a oferta em vigor cita a campanha pelo nome,
+   no motivo ou no link da fonte. Oferta "de novembro" sem o nome Black não entra. */
+const BLACK_RE=/\bblack[\s_-]+(friday|november|novembro|month|week|weekend|days?|ram|fest|sale)\b/i;
+function blackOf(x){if(!x||x.change_type!=="promocional")return null;
+  const r=BLACK_RE.exec(x.reason||"");if(r)return r[0].replace(/[\s_-]+/g," ").replace(/^black/i,"Black");
+  const u=BLACK_RE.exec(x.source_url||"");return u?u[0].replace(/[\s_-]+/g," ").replace(/\b\w/g,l=>l.toUpperCase()):null}
+const isBlack=c=>!!(c.bk&&isReduced(c));
+/* etiqueta preta, como as de Black Friday: "BLACK" em branco e o resto em amarelo */
+const blackTag=(name,cls,curto)=>{const [a,...b]=String(name).split(" ");return `<span class="${cls}" title="Oferta da campanha ${esc(name)}"><b>${esc(a)}</b>${b.length&&!curto?` ${esc(b.join(" "))}`:""}</span>`};
 const todayBR=()=>new Intl.DateTimeFormat("en-CA",{timeZone:"America/Sao_Paulo"}).format(new Date());
 /* preço em vigor: a mudança mais recente que já começou e ainda não acabou; oferta vencida volta ao valor antigo */
 function applyPrices(){const today=todayBR(),byVersion=new Map();
@@ -2323,7 +2361,7 @@ function applyPrices(){const today=todayBR(),byVersion=new Map();
   ALLCARS.forEach(c=>{if(!("p0" in c))c.p0=c.p;const list=byVersion.get(c.id)||[];
     /* a oferta só vale quando o preço da versão no banco é o da oferta (a mesma regra da página do modelo): registro solto ou encerrado não muda o preço */
     const active=list.find(x=>!x.encerrada_em&&x.new_price===c.p0&&(!x.starts_on||x.starts_on<=today)&&(!x.ends_on||x.ends_on>=today)),ended=!active&&list.find(x=>!x.encerrada_em&&x.ends_on&&x.ends_on<today&&x.new_price===c.p0);
-    c.pc=active||null;c.p=active?active.new_price:ended?ended.old_price:c.p0})}
+    c.pc=active||null;c.bk=active?blackOf(active):null;c.p=active?active.new_price:ended?ended.old_price:c.p0})}
 const PC_ICON='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 11v5M12 7.5v.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>';
 const shortDate=d=>{const m=/^\d{4}-(\d{2})-(\d{2})/.exec(d||"");return m?`${m[2]}/${m[1]}`:""};
 function priceLine(c){const x=c.pc;if(!x)return"";const promo=x.change_type==="promocional",note=promo?(x.ends_on?` · até ${shortDate(x.ends_on)}`:" · oferta"):"";
@@ -2343,8 +2381,8 @@ function closePrice(){document.getElementById("pcPanel").hidden=true;if(sheet.hi
 document.addEventListener("click",e=>{const b=e.target.closest("[data-pc]");if(b)openPrice(b.dataset.pc)});
 document.getElementById("pcClose").onclick=closePrice;
 addEventListener("keydown",e=>{if(e.key==="Escape"&&!document.getElementById("pcPanel").hidden){e.stopImmediatePropagation();closePrice()}},true);
-const matches=(c,skip)=>(!DEAL||isReduced(c))&&(!NEW_ONLY||isNew(c))&&(skip==="t"||F.t.size>0||!START_OUT.has(c.body))&&GROUPS.every(g=>g.key===skip||!F[g.key].size||vals(g,c).some(v=>F[g.key].has(v)));
-const activeCount=()=>GROUPS.reduce((n,g)=>n+F[g.key].size,(DEAL?1:0)+(NEW_ONLY?1:0));
+const matches=(c,skip)=>(!DEAL||isReduced(c))&&(!BLACK_ONLY||isBlack(c))&&(!NEW_ONLY||isNew(c))&&(skip==="t"||F.t.size>0||!START_OUT.has(c.body))&&GROUPS.every(g=>g.key===skip||!F[g.key].size||vals(g,c).some(v=>F[g.key].has(v)));
+const activeCount=()=>GROUPS.reduce((n,g)=>n+F[g.key].size,(DEAL?1:0)+(BLACK_ONLY?1:0)+(NEW_ONLY?1:0));
 const TAGICON=Object.fromEntries(Object.entries(TAGS).map(([k,v])=>[v,k]));
 const drawer=document.getElementById("drawer"),scrim=document.getElementById("scrim"),drBody=document.getElementById("drBody");
 let DRCAT="mk",BRANDCO={},DRQ="";
@@ -2405,12 +2443,13 @@ function renderDrawer(){
   document.getElementById("drGo").textContent=`Ver ${n} ${n===1?"versão":"versões"}`;
 }
 function renderPills(){
-  const reduced=CARS.filter(isReduced).length;
+  const reduced=CARS.filter(isReduced).length,blacks=CARS.filter(isBlack).length,bkl=`Black Friday: ${blacks} ${blacks===1?"versão em oferta":"versões em oferta"} de campanhas Black`;
+  const bb=document.getElementById("blkBtn");if(bb){bb.hidden=!blacks;bb.setAttribute("aria-pressed",String(BLACK_ONLY));bb.setAttribute("aria-label",bkl)}
   const ob=document.getElementById("oftBtn");if(ob){ob.hidden=!reduced;ob.setAttribute("aria-pressed",String(DEAL));ob.setAttribute("aria-label",`Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}`)}
   const novos=CARS.filter(isNew).length,nvl=`Novos: ${novos} ${novos===1?"versão lançada há pouco":"versões lançadas há pouco"}`;
   const ob2=document.getElementById("onlBtn");if(ob2){ob2.hidden=ONLINE==null;if(ONLINE!=null){ob2.querySelector("b").textContent=ONLINE;ob2.setAttribute("aria-label",`${ONLINE} ${ONLINE===1?"pessoa":"pessoas"} no site agora. Abrir o painel`)}}
   const nb=document.getElementById("novBtn");if(nb){nb.hidden=!novos;nb.setAttribute("aria-pressed",String(NEW_ONLY));nb.setAttribute("aria-label",nvl)}
-  document.getElementById("quick").innerHTML=(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}" aria-label="Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}">Ofertas</button>`:"")+(novos?`<button type="button" class="fchip" data-novo data-ev="novidades-filtro" aria-pressed="${NEW_ONLY}" aria-label="${nvl}">Novos</button>`:"")+(ONLINE!=null?`<a class="fchip onl" data-onl href="/admin.html" title="Pessoas no site agora (abre o painel)" aria-label="${ONLINE} ${ONLINE===1?"pessoa":"pessoas"} no site agora. Abrir o painel"><i class="dot" aria-hidden="true"></i><b>${ONLINE}</b> online</a>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
+  document.getElementById("quick").innerHTML=(blacks?`<button type="button" class="fchip" data-black data-ev="black-filtro" aria-pressed="${BLACK_ONLY}" aria-label="${bkl}"><b>Black</b> Friday</button>`:"")+(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}" aria-label="Ofertas: ${reduced} ${reduced===1?"carro com preço reduzido":"carros com preço reduzido"}">Ofertas</button>`:"")+(novos?`<button type="button" class="fchip" data-novo data-ev="novidades-filtro" aria-pressed="${NEW_ONLY}" aria-label="${nvl}">Novos</button>`:"")+(ONLINE!=null?`<a class="fchip onl" data-onl href="/admin.html" title="Pessoas no site agora (abre o painel)" aria-label="${ONLINE} ${ONLINE===1?"pessoa":"pessoas"} no site agora. Abrir o painel"><i class="dot" aria-hidden="true"></i><b>${ONLINE}</b> online</a>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill${g.key==="fu"&&FUQ.some(f=>f[0]===v)?" fqp":""}" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
   document.getElementById("fuq").innerHTML=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)).map(([v,k,l])=>`<button type="button" class="fq" data-fu="${v}" data-k="${k}" data-ev="comb-${k}" aria-pressed="${F.fu.has(v)}" aria-label="${v}" title="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg><span>${l}</span></button>`).join("");
@@ -2513,17 +2552,23 @@ function closeDrawer(){drawer.hidden=true;scrim.hidden=true;devolveFoco()}
 document.getElementById("fbtn").onclick=openDrawer;
 document.getElementById("drClose").onclick=closeDrawer;scrim.onclick=()=>{if(!document.getElementById("pcPanel").hidden)return closePrice();if(!authPanel.hidden)return closeAuth();if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)closeImg();else if(!sheet.hidden)closeSheet();else closeDrawer()};
 document.getElementById("drGo").onclick=closeDrawer;
-document.getElementById("drClear").onclick=()=>{DEAL=false;NEW_ONLY=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged()};
+document.getElementById("drClear").onclick=()=>{DEAL=false;BLACK_ONLY=false;NEW_ONLY=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged()};
 addEventListener("keydown",e=>{if(e.key!=="Escape")return;if(panelOpen())return closePanel();if(!newsPanel.hidden)return closeNews();if(!imgPanel.hidden)return closeImg();if(!sheet.hidden)closeSheet();else if(!drawer.hidden)closeDrawer()});
 drBody.addEventListener("click",e=>{const ob=e.target.closest(".og-btn");if(ob&&!ob.disabled){const o=ob.dataset.origin,ks=[...new Set(CARS.map(c=>c.mk))].filter(k=>(BRANDCO[k]||"Outras origens")===o);
     const on=ob.getAttribute("aria-pressed")==="true";ks.forEach(k=>on?F.mk.delete(k):F.mk.add(k));filtersChanged();const f=[...drBody.querySelectorAll(".og-btn")].find(x=>x.dataset.origin===o);f&&f.focus();return}
   const tb=e.target.closest(".dr-tab");if(tb){DRCAT=tb.dataset.cat;renderDrawer();const f=drBody.querySelector(`.dr-tab[data-cat="${DRCAT}"]`);f&&f.focus();return}const o=e.target.closest(".opt");if(!o||o.disabled)return;const set=F[o.dataset.g],v=o.dataset.v;set.has(v)?set.delete(v):set.add(v);filtersChanged();const fo=[...drBody.querySelectorAll(".opt2")].find(x=>x.dataset.v===v);fo&&fo.focus()});
 document.getElementById("oftBtn").addEventListener("click",()=>{const q=document.querySelector("#quick [data-deal]");if(q)q.click()});
 document.getElementById("novBtn").addEventListener("click",()=>{const q=document.querySelector("#quick [data-novo]");if(q)q.click()});
+document.getElementById("blkBtn").addEventListener("click",()=>{const q=document.querySelector("#quick [data-black]");if(q)q.click()});
 document.getElementById("quick").addEventListener("click",e=>{
   if(e.target.closest("[data-deal]")){DEAL=!DEAL;filtersChanged();
     /* com o filtro ligado, leva a roleta até o carro com preço reduzido mais próximo */
     if(DEAL&&!listAt(dial.sel).length){const [lo,hi]=band(),mid=(lo+hi)/2,near=CARS.filter(c=>c.p&&matches(c)).sort((a,b)=>Math.abs(K(a)-mid)-Math.abs(K(b)-mid))[0];
+      if(near)dial.goTo(clamp(VALUES.findIndex(v=>v>=K(near))))}
+    return}
+  if(e.target.closest("[data-black]")){BLACK_ONLY=!BLACK_ONLY;filtersChanged();
+    /* com o filtro ligado, leva a roleta até a oferta Black mais próxima */
+    if(BLACK_ONLY&&!listAt(dial.sel).length){const [lo,hi]=band(),mid=(lo+hi)/2,near=CARS.filter(c=>c.p&&matches(c)).sort((a,b)=>Math.abs(K(a)-mid)-Math.abs(K(b)-mid))[0];
       if(near)dial.goTo(clamp(VALUES.findIndex(v=>v>=K(near))))}
     return}
   if(e.target.closest("[data-novo]")){NEW_ONLY=!NEW_ONLY;filtersChanged();
@@ -2585,12 +2630,12 @@ function renderSearch(keep){if(typeof keep!=="number")keep=null; /* chamada pelo
       <span class="q-th">${ph?`<img src="${blobUrl(ph)}" alt="">`:`<span>${esc(g.nm)}</span>`}</span>
       <span class="q-tx"><span class="q-br">${lg?`<img src="${blobUrl(lg)}" alt="">`:""}${esc(g.mk)}</span>
         <span class="q-nm"><span class="q-nt">${hl(g.nm,q)}</span>${anoHTML(ano)}</span><span class="q-sub">${g.anterior?'<span class="q-ant">linha anterior</span> · ':""}${vs.length?`${vs.length} versões`:esc(c.ver)}</span>${vs.length?"":`<span class="q-vs">${specHTML(c)}</span>`}</span>
-      <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?'<br><span class="q-of">oferta</span>':""}</span></li>`);
+      <span class="q-pr">${vs.length?"a partir de<br>":""}${fmt(g.vs[0].p)}${!vs.length&&isReduced(c)?(isBlack(c)?`<br>${blackTag(c.bk,"q-bk",true)}`:'<br><span class="q-of">oferta</span>'):""}</span></li>`);
     if(!vs.length)return;
     /* as versões ficam num painel próprio, com título, logo abaixo do carro a que pertencem */
     html.push(`<li class="q-vh" role="presentation" aria-hidden="true">Versões do ${esc(g.nm)}${g.ano?` ${g.ano}`:""}</li>`);
     vs.forEach((v,k)=>{const vi=qOpts.push({t:"v",g,c:v})-1;
-      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${(v.ano||ano)?` ${v.ano||ano}`:""}, ${specTxt(v)}, ${fmt(v.p)}${isReduced(v)?", em oferta":""}`)}"><span class="q-vn"><span class="q-vl"><span class="q-vt">${hl(v.ver,q)}</span>${anoHTML(v.ano||ano)}</span><span class="q-vs">${specHTML(v)}</span></span><span class="q-vp">${isReduced(v)?'<span class="q-of">oferta</span> ':""}${fmt(v.p)}</span></li>`)})});
+      html.push(`<li class="q-item q-v${g.hit===v?" hit":""}${k===vs.length-1?" last":""}" role="option" id="qo${vi}" data-i="${vi}" aria-selected="false" aria-label="${esc(`${g.mk} ${g.nm} ${v.ver}${(v.ano||ano)?` ${v.ano||ano}`:""}, ${specTxt(v)}, ${fmt(v.p)}${isReduced(v)?`, em oferta${isBlack(v)?` da campanha ${v.bk}`:""}`:""}`)}"><span class="q-vn"><span class="q-vl"><span class="q-vt">${hl(v.ver,q)}</span>${anoHTML(v.ano||ano)}</span><span class="q-vs">${specHTML(v)}</span></span><span class="q-vp">${isReduced(v)?(isBlack(v)?`${blackTag(v.bk,"q-bk",true)} `:'<span class="q-of">oferta</span> '):""}${fmt(v.p)}</span></li>`)})});
   qSel=qOpts.length?Math.min(Math.max(keep??0,0),qOpts.length-1):-1;
   qList.innerHTML=qOpts.length?html.join(""):`<li class="q-empty">Nenhum carro encontrado para “${esc(q)}”.</li>`;
   qList.hidden=false;qIn.setAttribute("aria-expanded","true");markSel(keep==null);
@@ -2620,7 +2665,7 @@ function pickResult(i){const o=qOpts[i];if(!o)return;
   closeSearch();window._closeSearchBar&&window._closeSearchBar();qIn.value=`${g.mk} ${g.nm}${o.t==="v"?` ${c.ver}`:""}${g.ano?` ${g.ano}`:""}`;qIn.blur();goToCar(c,false,o.t==="v")}
 function goToCar(c,instante,exato){
   if(!garPage.hidden&&!instante){history.replaceState(null,"","/");hideGarPage()}
-  if(!matches(c)){DEAL=false;NEW_ONLY=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
+  if(!matches(c)){DEAL=false;BLACK_ONLY=false;NEW_ONLY=false;GROUPS.forEach(g=>F[g.key].clear());filtersChanged();toast(`Limpei os filtros para mostrar o ${c.mk} ${c.nm}.`)}
   const idx=clamp(VALUES.findIndex(x=>x>=K(c)));
   if(instante){rowPos=idx;dial.jumpTo(idx);syncRows(false);
     try{const row=curRow();const card=row&&row._list?levaAoCard(row,c,false):null;if(card)fixa={idx,c,ate:performance.now()+8000}}finally{revelaRoleta()}
@@ -2795,7 +2840,7 @@ async function openInfo(id){
   const ph=(photoOf(c.mid||c.id,c.ano)||{}).asset,hero=ph?`<figure class="sh-hero"><img src="${blobUrl(ph)}" alt="${esc(c.mk)} ${esc(c.nm)}"><figcaption class="aitag big" title="Imagem gerada por IA; detalhes podem diferir do carro real">ⓘ Imagem ilustrativa</figcaption></figure>`:"";
   const full=`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`,gimg="https://www.google.com/search?tbm=isch&q="+encodeURIComponent(full);
   const base=(v,src)=>`<section><div class="sh-name"><span class="sh-full">${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}</span><button type="button" class="copybtn" data-copy="${esc(`${c.mk} ${c.nm} ${c.ver}${c.ano?` ${c.ano}`:""}`)}" aria-label="Copiar nome completo" title="Copiar nome completo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button><span class="copied" aria-live="polite"></span></div>
-      <div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
+      ${isBlack(c)?`<div class="sh-bk">${blackTag(c.bk,"btag-lg")}</div>`:""}<div class="sh-price">${c.p?fmt(c.p):NA}</div>${priceLine(c)}
       <div class="sh-meta sh-pmeta">${priceMeta(c,v,src)}</div></section>
     ${shActs(c)}
     <div class="sh-links"><a class="sh-site" href="${esc(gimg)}" target="_blank" rel="noopener" data-ev="google-imagens" data-vid="${esc(c.id)}" title="Abre o Google Imagens já pesquisando este carro"><span><small>Fotos reais no Google Imagens</small><b>${esc(full)}</b></span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
