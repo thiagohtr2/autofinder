@@ -129,7 +129,8 @@ h3{font-weight:600;font-size:16.5px;margin:0 0 4px}
 .ext{width:12px;height:12px;display:inline-block;vertical-align:-1px;margin-left:3px}
 .foto{margin:0;position:relative;border-radius:22px;background:radial-gradient(120% 90% at 50% 100%,#eef2f8 0,#f7f9fc 60%,#fff 100%);aspect-ratio:16/9;display:grid;place-items:center;overflow:hidden}
 .foto img{width:100%;height:100%;object-fit:contain}
-.foto figcaption,.ilus{position:absolute;right:12px;bottom:10px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.85);padding:3px 7px;border-radius:6px}
+.ilus{position:absolute;right:8px;top:8px;z-index:1;display:grid;place-items:center;width:20px;height:20px;border-radius:50%;background:rgba(255,255,255,.85);color:var(--muted)}.ilus svg{width:14px;height:14px}
+.foto figcaption{position:absolute;right:12px;bottom:10px;font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,.85);padding:3px 7px;border-radius:6px}
 .nov{position:absolute;left:12px;top:10px;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:3px 8px;border-radius:6px}
 .foto .sem,.mc-sem{font-family:var(--display);font-weight:300;font-size:28px;color:var(--faint);letter-spacing:-.03em;padding:0 16px;text-align:center}
 @media (max-width:860px){.hero{grid-template-columns:1fr;gap:18px}.hero .foto{order:-1}}
@@ -182,7 +183,7 @@ ${["eletrico:#fbf3db:#e0a800", "hibrido:#deeee6:#11864c", "potente:#fae3e0:#d83a
 .mc:hover{border-color:rgba(29,107,255,.5);box-shadow:0 18px 36px -24px rgba(29,107,255,.55);transform:translateY(-2px)}
 .mc-ph{position:relative;aspect-ratio:16/9;background:radial-gradient(120% 90% at 50% 100%,#eef2f8 0,#f7f9fc 60%,#fff 100%);display:grid;place-items:center}
 .mc-ph img{width:100%;height:100%;object-fit:contain}
-.mc-ph .ilus{right:8px;top:8px;bottom:auto;font-size:9px;padding:2px 6px;border-radius:5px}.nov{left:8px;top:8px;font-size:9px;padding:2px 6px;border-radius:5px}
+.nov{left:8px;top:8px;font-size:9px;padding:2px 6px;border-radius:5px}
 .mc-sem{font-size:20px}
 .mc-tx{display:flex;flex-direction:column;gap:2px;padding:12px 14px 14px;flex:1}
 .mc-mk{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
@@ -383,12 +384,14 @@ export function fotoTag(m, w, sizes, prioridade = false) {
 
 /* selo "Novo" (carro ou versão em /novidades); o título diz o tipo e a data */
 const TIPO_NOV = { carro_novo: "Carro novo lançado", nova_geracao: "Nova geração lançada", reestilizacao: "Visual novo lançado", versao_nova: "Versão nova lançada", serie_especial: "Série especial lançada" };
+/* miniaturas: o aviso de imagem ilustrativa é só um ícone; na foto principal da página do modelo continua escrito */
+export const ILUS = '<span class="ilus" role="img" aria-label="Imagem ilustrativa" title="Imagem ilustrativa: pode ter diferenças em relação ao carro real"><svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.6" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M8 7.2v4M8 4.9v.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></span>';
 export const seloNovidade = (l) => (l ? `<span class="nov" title="${esc(`${TIPO_NOV[l.tipo] || "Lançado"} em ${l.data_precisao === "mes" ? String(l.lancado_em).slice(5, 7) + "/" + String(l.lancado_em).slice(0, 4) : dataBr(l.lancado_em)}`)}">Novo</span>` : "");
 
 export function cartao(m, { de, extra, href } = {}) {
   const preco = de ?? m.precoMin;
   const sub = [m.carroc, m.combs.slice(0, 2).join(" ou "), m.aVenda ? pl(m.versoes.length, "versão", "versões") : STATUS[m.breve[0]?.status] || ""].filter(Boolean).join(" · ");
-  return `<li><a class="mc" href="${href || m.url}"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 92vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}${seloNovidade(m.novidade)}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(sub)}</span>${extra ? `<span class="mc-x">${esc(extra)}</span>` : ""}<span class="mc-pr">${preco && Number.isFinite(preco) ? `<small>a partir de</small>${reais(preco)}` : "<small>preço ainda não divulgado</small>"}</span></span></a></li>`;
+  return `<li><a class="mc" href="${href || m.url}"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 92vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? ILUS : ""}${seloNovidade(m.novidade)}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(sub)}</span>${extra ? `<span class="mc-x">${esc(extra)}</span>` : ""}<span class="mc-pr">${preco && Number.isFinite(preco) ? `<small>a partir de</small>${reais(preco)}` : "<small>preço ainda não divulgado</small>"}</span></span></a></li>`;
 }
 
 const logoMarca = (b, w = 64) => `<span class="bc-lg">${b.logo ? `<img src="${imagem(b.logo, w * 2)}" alt="" width="${w}" height="${w}" loading="lazy">` : esc(b.nome.slice(0, 2).toUpperCase())}</span>`;
@@ -420,7 +423,7 @@ function filtroPreco({ acao, de, ate, versoes, titulo = "Buscar por preço" }) {
 /* card de uma versão (na lista com "Ver todas as versões"): leva à tabela de versões do carro */
 function cartaoVersao(m, v) {
   const sub = [v.motor || null, v.cambio || null].filter(Boolean).join(" · ");
-  return `<li><a class="mc" href="${m.url}#versoes"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 46vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? '<span class="ilus">Ilustrativa</span>' : ""}${seloNovidade(v.novidade)}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(v.nome || m.nome)}${v.ano ? ` · ${v.ano}` : ""}</span>${sub ? `<span class="mc-sub">${esc(sub)}</span>` : ""}<span class="mc-pr">${v.preco ? reais(v.preco) : "<small>preço não divulgado</small>"}</span></span></a></li>`;
+  return `<li><a class="mc" href="${m.url}#versoes"><span class="mc-ph">${fotoTag(m, 360, "(max-width:520px) 46vw, 260px") || `<span class="mc-sem">${esc(m.nome)}</span>`}${m.foto ? ILUS : ""}${seloNovidade(v.novidade)}</span><span class="mc-tx"><span class="mc-mk">${esc(m.marca)}</span><span class="mc-nm">${esc(m.nome)}</span><span class="mc-sub">${esc(v.nome || m.nome)}${v.ano ? ` · ${v.ano}` : ""}</span>${sub ? `<span class="mc-sub">${esc(sub)}</span>` : ""}<span class="mc-pr">${v.preco ? reais(v.preco) : "<small>preço não divulgado</small>"}</span></span></a></li>`;
 }
 
 /* lista longa: os primeiros cards já vêm na página e os outros aparecem conforme a pessoa desce */
