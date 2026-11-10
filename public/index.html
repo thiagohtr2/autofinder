@@ -68,6 +68,8 @@ button,input{font:inherit;color:inherit}
 .top{display:flex;align-items:center;gap:20px;padding-block:14px;border-bottom:1px solid var(--line);min-width:0;margin-inline:calc(-1 * var(--gl)) calc(-1 * var(--gr));padding-inline:var(--gl) var(--gr)}
 .logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.02em;white-space:nowrap}
 .logo-img{display:block;height:18px;width:auto;flex:none}
+/* a logo leva à página inicial em qualquer tela (de dentro do Banco de dados, do Radar, dos Salvos ou de uma ficha, recomeça do início) */
+.logo-a{display:flex;align-items:center;flex:none;color:inherit;text-decoration:none;border-radius:6px}
 .filters{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;min-width:0;flex:1;padding-block:2px}
 .filters::-webkit-scrollbar{display:none}
 [hidden]{display:none!important}
@@ -1534,8 +1536,7 @@ html{background:#060b1c}
   <header class="top">
     <div class="logo">
       <button type="button" class="mnbtn" id="mnBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><svg class="hb-cel" viewBox="0 0 22 16" width="22" height="16" aria-hidden="true"><path d="M1 2H21M1 8H21M1 14H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><svg class="hb-pc" viewBox="0 0 22 13" width="22" height="13" aria-hidden="true"><path d="M1 2H21M1 6.5H21M1 11H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
-      <img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18">
-      <img class="logo-ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18">
+      <a class="logo-a" href="/" aria-label="Autokan: página inicial"><img class="logo-img" src="/marca/autokan-logo-topo-escuro.png?v=6" alt="Autokan" width="168" height="18"><img class="logo-ico" src="/marca/autokan-simbolo-topo.png?v=6" alt="Autokan" width="42" height="18"></a>
     </div>
     <div class="chiprow" id="chiprow">
     <button type="button" class="fbtn" id="fbtn" aria-haspopup="dialog" aria-controls="drawer"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5h14M6 10h8M8.5 15h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Filtros<span class="fcount" id="fcount" hidden></span></button>
