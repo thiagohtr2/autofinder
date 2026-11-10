@@ -176,16 +176,19 @@ export function iniciaTopo({ sb, chave } = {}) {
   }
 
   /* menu lateral (☰): abre por cima da página; fecha no X, no fundo escuro ou com Esc; o Tab não sai do menu enquanto ele está aberto */
-  const mn = $("menu"), mp = $("menuP"), mb = $("mnBtn"), cb = $("mnConta");
+  const mn = $("menu"), mp = $("menuP"), mb = $("mnBtn");
   let volta = null;
+  /* parte "Sua conta" do menu: Entrar e Cadastrar, ou o nome e Sair. Chame de novo se trocar o conteúdo do menu */
+  const conta = () => {
+    const cb = $("mnConta"); if (!cb) return;
+    const md = (u && u.user_metadata) || {};
+    cb.innerHTML = u ? '<span class="mn-eu"><b>' + e(md.full_name || md.name || (u.email || "").split("@")[0] || "Você") + "</b><small>" + e(u.email || "") + '</small></span><button type="button" class="mn-btn" data-mn-sair>Sair</button>'
+      : '<a class="mn-btn" href="/?entrar=1">Entrar</a><a class="mn-btn pri" href="/?cadastrar=1">Cadastrar</a>';
+  };
   const abreMenu = () => { if (!mn) return; volta = document.activeElement; mn.hidden = false; mb.setAttribute("aria-expanded", "true"); document.documentElement.style.overflow = "hidden"; const x = mp.querySelector(".mn-x"); if (x) x.focus(); };
   const fechaMenu = () => { if (!mn || mn.hidden) return; mn.hidden = true; mb.setAttribute("aria-expanded", "false"); document.documentElement.style.overflow = ""; if (volta && volta.focus) volta.focus(); };
   if (mn && mp && mb) {
-    if (cb) {
-      const md = (u && u.user_metadata) || {};
-      cb.innerHTML = u ? '<span class="mn-eu"><b>' + e(md.full_name || md.name || (u.email || "").split("@")[0] || "Você") + "</b><small>" + e(u.email || "") + '</small></span><button type="button" class="mn-btn" data-mn-sair>Sair</button>'
-        : '<a class="mn-btn" href="/?entrar=1">Entrar</a><a class="mn-btn pri" href="/?cadastrar=1">Cadastrar</a>';
-    }
+    conta();
     const focaveis = () => [...mp.querySelectorAll("a[href],button,summary,input,select")].filter((x) => x.offsetParent !== null && !x.disabled);
     mb.onclick = () => (mn.hidden ? abreMenu() : fechaMenu());
     mn.addEventListener("click", (x) => {
@@ -227,5 +230,5 @@ export function iniciaTopo({ sb, chave } = {}) {
       if (x.key === "Enter") { x.preventDefault(); location.href = as[Math.max(0, sel)].getAttribute("href"); }
     });
   }
-  return { abreMenu, fechaMenu, buscar: abreB };
+  return { abreMenu, fechaMenu, buscar: abreB, conta, logado: !!u };
 }
