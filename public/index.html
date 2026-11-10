@@ -334,7 +334,7 @@ button,input{font:inherit;color:inherit}
 .q-pr{text-align:right}
 .q-of{font:800 8.5px/1 var(--body);color:#0f8a4b;text-transform:uppercase;letter-spacing:.06em}
 .q-tg{display:block;margin-bottom:3px;line-height:1}
-.q-bk{display:inline-block;font:800 7.5px/1 var(--body);letter-spacing:.07em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:2.5px 4px 2px;border-radius:3px;white-space:nowrap}
+.q-bk{display:inline-block;font:800 7.5px/1 var(--body);letter-spacing:.07em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:3.5px 4px;border-radius:3px;white-space:nowrap;text-box:trim-both cap alphabetic}
 .q-bk b{color:#fff;font-weight:900}
 .q-empty{padding:16px 12px;color:var(--muted);font-size:13px}
 .q-vh{margin:6px 0 0 84px;padding:9px 12px 3px;background:#f2f5fb;border-radius:12px 12px 0 0;font:800 10px var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);list-style:none}
@@ -380,9 +380,13 @@ button,input{font:inherit;color:inherit}
 .ro-btns.up{bottom:calc(50% + 22px);flex-direction:column-reverse}
 .ro-btns.dn{top:calc(50% + 22px)}
 .ro-btns button:not(.jump){margin-left:22px}
-.ro-btns .jump{width:auto;min-width:50px;height:30px;padding:0 8px;border-radius:9px;border:0;background:var(--accent-soft);color:#1450c8;font:700 11.5px var(--mono);letter-spacing:-.03em;display:inline-flex;align-items:baseline;justify-content:center;gap:2px;padding-top:8px;box-sizing:border-box}
+/* −50 / +50: pílula branca com borda azul delicada, texto no meio */
+.ro-btns .jump{width:auto;min-width:52px;height:30px;padding:0 10px;border-radius:999px;border:1px solid rgba(29,107,255,.3);background:#fff;color:#1450c8;font:700 11.5px var(--mono);letter-spacing:-.03em;display:inline-flex;align-items:center;justify-content:center;box-sizing:border-box;transition:background .15s,color .15s,border-color .15s}
 .ro-btns .jump small{font:700 8.5px var(--body);letter-spacing:0;opacity:.8}
-.ro-btns .jump:hover{background:var(--accent);color:#fff;box-shadow:0 8px 18px -10px rgba(29,107,255,.8)}
+/* número e "mil" juntos na mesma linha de base; o conjunto fica no meio do botão (altura das maiúsculas) */
+.ro-btns .jump .jv{display:inline-block;line-height:1;white-space:nowrap;text-box:trim-both cap alphabetic}
+.ro-btns .jump .jv small{margin-left:2px}
+.ro-btns .jump:hover{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 8px 18px -10px rgba(29,107,255,.8)}
 .ro-btns button{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:var(--bg);cursor:pointer;display:grid;place-items:center;transition:all .2s var(--ease)}
 .ro-btns button:hover{border-color:var(--accent);color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
 .ro-btns svg{width:12px;height:12px}
@@ -451,7 +455,7 @@ button,input{font:inherit;color:inherit}
 .row.ghost .btag{display:none}
 /* selos do cartão (Oferta ou Black, e Novo) lado a lado no alto à esquerda */
 .stage .stags{position:absolute;left:0;top:4px;z-index:2;display:flex;flex-wrap:wrap;align-items:center;gap:4px;max-width:calc(100% - 22px);pointer-events:none}
-.stage .stags .btag,.stage .stags .ntag{position:static;flex:none;font-size:7px;line-height:1;padding:2.5px 5px 2px;border-radius:3px}
+.stage .stags .btag,.stage .stags .ntag{position:static;flex:none;display:block;font-size:7px;line-height:1;padding:4px 5px;border-radius:3px;text-box:trim-both cap alphabetic}
 /* se um dia não couberem na mesma linha (selo Black longo e Novo), o Novo desce, sem encostar no ícone */
 .row.ghost .stags{display:none}
 .stage .ntag{position:absolute;left:0;top:4.5px;z-index:2;font:800 7.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--accent);padding:2.5px 5px 2px;border-radius:4px;pointer-events:none}
@@ -657,7 +661,7 @@ body.cmp-1 .card .cmpb[aria-pressed="false"]{border-color:var(--accent);color:va
 .sh-price{font-family:var(--mono);font-size:26px;font-weight:600;letter-spacing:-.02em}
 /* ficha: etiqueta da campanha Black acima do preço */
 .sh-bk{margin:8px 0 4px}
-.btag-lg{display:inline-block;font:800 10.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:4px 7px 3.5px;border-radius:4px;white-space:nowrap}
+.btag-lg{display:inline-block;font:800 10.5px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:#ffcf2e;background:#000;padding:5px 7px;border-radius:4px;white-space:nowrap;text-box:trim-both cap alphabetic}
 .btag-lg b{color:#fff;font-weight:900}
 .sh-meta{font-size:12px;color:var(--muted)}
 .sh-site{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:14px;padding:11px 14px;border:1px solid var(--line);border-radius:14px;color:var(--ink);text-decoration:none;transition:border-color .15s}
@@ -1057,10 +1061,10 @@ html.deitado .note-a{font-weight:600}
   .ro-band{display:none}
   .ro-btns{left:0;gap:6px;flex-direction:column;align-items:flex-start}
   .ro-btns.up{flex-direction:column-reverse}
-  .ro-btns .jump{min-width:38px;padding:0 5px;height:26px;padding-top:7px;font-size:11px}
+  .ro-btns .jump{min-width:40px;padding:0 7px;height:26px;font-size:11px}
   .ro-btns .jump small{display:none}
   .ro-btns button:not(.jump){margin-left:8px}
-  .ro-btns .jump{margin-left:0;background:#e8f0ff;box-shadow:0 0 0 3px #fff}
+  .ro-btns .jump{margin-left:0;background:#fff;box-shadow:0 0 0 3px #fff}
   .ro-btns{gap:16px}
   .ro-btns.up{bottom:calc(50% + 38px)}
   .ro-btns.dn{top:calc(50% + 38px)}
@@ -1526,7 +1530,7 @@ html{background:#060b1c}
     <div class="dial" id="dial">
       <canvas></canvas>
       <div class="readout"><span class="ro-band" id="roBand">135 – 150 mil</span><span class="ro-pill" id="dialThumb" tabindex="0" role="slider" aria-label="Orçamento máximo" aria-orientation="vertical"><span class="ro-lbl">até</span><span class="ro-val">150<small>mil</small></span></span></div>
-      <div class="ro-btns up" role="group" aria-label="Diminuir orçamento"><button type="button" data-step="-1" aria-label="Menos R$ 5 mil, pulando as faixas sem carro" title="Menos R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="-50" title="Menos R$ 50 mil">−50<small>mil</small><span class="sr"> (diminuir R$ 50 mil)</span></button></div><div class="ro-btns dn" role="group" aria-label="Aumentar orçamento"><button type="button" data-step="1" aria-label="Mais R$ 5 mil, pulando as faixas sem carro" title="Mais R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="50" title="Mais R$ 50 mil">+50<small>mil</small><span class="sr"> (aumentar R$ 50 mil)</span></button></div>
+      <div class="ro-btns up" role="group" aria-label="Diminuir orçamento"><button type="button" data-step="-1" aria-label="Menos R$ 5 mil, pulando as faixas sem carro" title="Menos R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="-50" title="Menos R$ 50 mil"><span class="jv">−50<small>mil</small></span><span class="sr"> (diminuir R$ 50 mil)</span></button></div><div class="ro-btns dn" role="group" aria-label="Aumentar orçamento"><button type="button" data-step="1" aria-label="Mais R$ 5 mil, pulando as faixas sem carro" title="Mais R$ 5 mil (pula as faixas sem carro)"><svg viewBox="0 0 16 16"><path d="M3 8h10M8 3v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><button type="button" class="jump" data-kjump="50" title="Mais R$ 50 mil"><span class="jv">+50<small>mil</small></span><span class="sr"> (aumentar R$ 50 mil)</span></button></div>
     </div>
 
     <section class="showroom" aria-labelledby="srTitle">
