@@ -38,6 +38,9 @@ const ESTADOS = [
   ['/', 'menu do banco', async (p) => { await p.evaluate(() => { openDB(); dbMenuSet(true); }); await p.waitForTimeout(1200); }],
   ['/', 'radar', async (p) => { await p.evaluate(() => openRadar()); await p.waitForTimeout(800); }],
   ['/', 'menu do radar', async (p) => { await p.evaluate(() => { openRadar(); rdMenuSet(true); }); await p.waitForTimeout(800); }],
+  /* Elétricos e híbridos: o menu aberto e o botão com uma opção escolhida (o rótulo muda para "Híbridos") */
+  ['/', 'menu Elétricos e híbridos', async (p) => { await p.evaluate(() => { const b = [...document.querySelectorAll('[data-ele]')].find((x) => x.getClientRects().length); b && b.click(); }); await p.waitForTimeout(500); }],
+  ['/', 'filtro Híbridos', async (p) => { await p.evaluate(() => { const b = [...document.querySelectorAll('[data-ele]')].find((x) => x.getClientRects().length); b && b.click(); }); await p.waitForTimeout(400); await p.evaluate(() => { const o = document.querySelector('#eleMenu [data-eleop="hibridos"]'); o && o.click(); }); await p.waitForTimeout(1800); }],
 ];
 /* o painel só aparece para o administrador; aqui ele é mostrado vazio, só para medir */
 async function mostraPainel(p) { await p.evaluate(() => { document.getElementById('gate').hidden = true; document.getElementById('app').hidden = false; }); await p.waitForTimeout(300); }

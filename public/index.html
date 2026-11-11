@@ -1480,6 +1480,27 @@ html{background:#060b1c}
 .mnbtn .hb-pc{display:none}
 .authbtn>.tb{display:block;text-box:trim-both cap alphabetic}
 .top .authbtn{font-weight:700} /* como na bancada e nas outras páginas */
+/* Elétricos e híbridos: botão que abre um menu (Elétricos, Híbridos, Híbridos plug-in, todos os eletrificados) */
+.ele-menu{position:fixed;z-index:45;min-width:236px;max-width:calc(100vw - 32px);box-sizing:border-box;padding:6px;border-radius:14px;background:#fff;box-shadow:0 0 0 1px #dbe5f6,0 16px 40px -14px rgba(12,17,28,.35);display:flex;flex-direction:column;gap:2px}
+.ele-menu[hidden]{display:none}
+.ele-menu button{display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;border:0;border-radius:10px;background:none;font:700 13.5px var(--body);color:var(--ink);text-align:left;cursor:pointer;white-space:nowrap}
+.ele-menu button:hover{background:#f2f6fd}
+.ele-menu button small{margin-left:auto;padding-left:14px;font:600 11.5px var(--mono);color:var(--muted)}
+.ele-menu button svg{width:18px;height:18px;flex:none;color:var(--accent)}
+.ele-menu button[aria-checked="true"]{background:var(--accent-soft);color:var(--accent)}
+.ele-menu .ele-limpa{font-weight:600;color:var(--muted)}
+.quick .fchip.ele .ic{width:15px;height:15px;flex:none}
+.quick .fchip.ele .cv{width:9px;height:9px;flex:none}
+@media (max-width:760px){
+  .sr-head{grid-template-columns:auto minmax(0,1fr) auto auto;grid-template-areas:"l t m a" "f f f f" "o o o o"}
+  .app .sr-head>.mode:not(.sort){grid-area:m;align-self:center;margin:0}
+  .app .sr-head>.mode:not(.sort) button{height:26px;padding:0 9px;font-size:11.5px}
+  .oft.ele{gap:5px}
+  .oft.ele .ic{width:15px;height:15px;flex:none}
+  .oft.ele .cv{width:9px;height:9px;flex:none}
+  .oft.onl{display:none!important}
+}
+@media (max-width:379px){.oft.ele .ic{display:none}.app .sr-head>.mode:not(.sort) button{padding:0 7px;font-size:11px}}
 /* Radar: no computador as escolhas (Tudo, Essenciais…) ficam na própria janela, como sempre; no celular vão para o menu do ☰ */
 .rd-estado{display:none;margin:1px 0 0;font-size:12px;font-weight:600;color:var(--muted)}
 .rdx-so{display:none}
@@ -1594,7 +1615,7 @@ html{background:#060b1c}
     <section class="showroom" aria-labelledby="srTitle">
       <div class="sr-head">
         <h1 class="sr-title" id="srTitle">R$ 105 – 150 mil</h1>
-        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="sr-vis"><a class="oft onl" id="onlBtn" href="/admin.html" hidden title="Pessoas no site agora (abre o painel)"><i class="dot" aria-hidden="true"></i><b>0</b><span class="ol-t"> online</span></a><button type="button" class="oft blk" id="blkBtn" data-ev="black-filtro" aria-pressed="false" hidden><b>Black</b></button><button type="button" class="oft" id="novBtn" data-ev="novidades-filtro" aria-pressed="false" hidden>Novos</button><button type="button" class="oft" id="oftBtn" data-ev="ofertas" aria-pressed="false" hidden>Ofertas</button><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span></span>
+        <span class="sr-right" id="srRight"><span class="sr-sub" id="srSub"></span><span class="mode sort" role="group" aria-label="Ordenar por"><span class="mode-l">Ordenar por</span><button type="button" data-sort="likes" aria-pressed="false">Favoritos</button><button type="button" data-sort="price" aria-pressed="true">Preço</button><button type="button" data-sort="strong" aria-pressed="false">Pontos fortes</button></span><span class="sr-vis"><a class="oft onl" id="onlBtn" href="/admin.html" hidden title="Pessoas no site agora (abre o painel)"><i class="dot" aria-hidden="true"></i><b>0</b><span class="ol-t"> online</span></a><button type="button" class="oft blk" id="blkBtn" data-ev="black-filtro" aria-pressed="false" hidden><b>Black</b></button><button type="button" class="oft" id="novBtn" data-ev="novidades-filtro" aria-pressed="false" hidden>Novos</button><button type="button" class="oft" id="oftBtn" data-ev="ofertas" aria-pressed="false" hidden>Ofertas</button><button type="button" class="oft ele" id="eleBtn" data-ele data-ev="eletricos-menu" aria-pressed="false" aria-haspopup="menu" aria-expanded="false" aria-controls="eleMenu" hidden></button><span class="mode" role="group" aria-label="Exibir por"><button type="button" data-mode="models" aria-pressed="true">Modelos</button><button type="button" data-mode="versions" aria-pressed="false">Versões</button></span></span></span>
         <span class="fuq" id="fuq" role="group" aria-label="Filtrar por combustível"></span>
         <button type="button" class="ajbtn" id="ajBtn" aria-expanded="false" aria-controls="srRight chiprow" aria-label="Mostrar ordem e filtros" title="Mostrar ordem e filtros" data-ev="ajustes-abrir"><svg class="aj-s" viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h8m4 0h2M3 14h2m4 0h8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="13" cy="6" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="14" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><svg class="aj-x" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.5 5.5l9 9m0-9-9 9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg><b id="ajN" hidden></b></button>
       </div>
@@ -2022,6 +2043,10 @@ const rowsEl=document.getElementById("rows");
 {const cr=document.getElementById("chiprow"),top=document.querySelector(".top"),logo=top.querySelector(".logo"),mainEl=document.querySelector(".main"),mq=matchMedia("(max-width:760px)");
  const place=()=>{if(mq.matches){if(cr.parentElement!==mainEl)mainEl.insertBefore(cr,mainEl.firstChild)}else if(cr.parentElement!==top)logo.after(cr)};
  place();mq.addEventListener?mq.addEventListener("change",place):mq.addListener(place);}
+/* celular: Modelos | Versões fica dentro da caixa da Faixa, ao lado do botão de ajustes; a linha de baixo fica para Black, Novos, Ofertas e Elétricos e híbridos */
+{const md=document.querySelector(".sr-vis .mode:not(.sort)"),vis=md&&md.parentElement,hd=document.querySelector(".sr-head"),aj=document.getElementById("ajBtn"),mq=matchMedia("(max-width:760px)");
+ const poe=()=>{if(!md||!hd||!aj)return;if(mq.matches){if(md.parentElement!==hd)hd.insertBefore(md,aj)}else if(md.parentElement!==vis)vis.appendChild(md)};
+ poe();mq.addEventListener?mq.addEventListener("change",poe):mq.addListener(poe);}
 const authPanel=document.getElementById("authPanel"),authBody=document.getElementById("authBody");
 const AUTH_MIN_PASSWORD=8;
 const AUTH_ERRORS={
@@ -2565,7 +2590,8 @@ function renderPills(){
   const novos=CARS.filter(isNew).length,nvl=`Novos: ${novos} ${novos===1?"versão lançada há pouco":"versões lançadas há pouco"}`;
   const ob2=document.getElementById("onlBtn");if(ob2){ob2.hidden=ONLINE==null;if(ONLINE!=null){ob2.querySelector("b").textContent=ONLINE;ob2.setAttribute("aria-label",`${ONLINE} ${ONLINE===1?"pessoa":"pessoas"} no site agora. Abrir o painel`)}}
   const nb=document.getElementById("novBtn");if(nb){nb.hidden=!novos;nb.setAttribute("aria-pressed",String(NEW_ONLY));nb.setAttribute("aria-label",nvl)}
-  document.getElementById("quick").innerHTML=(blacks?`<button type="button" class="fchip" data-black data-ev="black-filtro" aria-pressed="${BLACK_ONLY}" aria-label="${bkl}"><b>Black</b> Friday</button>`:"")+(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}" aria-label="Ofertas: ${reduced} ${reduced===1?"carro em oferta":"carros em oferta"}">Ofertas</button>`:"")+(novos?`<button type="button" class="fchip" data-novo data-ev="novidades-filtro" aria-pressed="${NEW_ONLY}" aria-label="${nvl}">Novos</button>`:"")+(ONLINE!=null?`<a class="fchip onl" data-onl href="/admin.html" title="Pessoas no site agora (abre o painel)" aria-label="${ONLINE} ${ONLINE===1?"pessoa":"pessoas"} no site agora. Abrir o painel"><i class="dot" aria-hidden="true"></i><b>${ONLINE}</b> online</a>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
+  const eb=document.getElementById("eleBtn");if(eb){const op=eleOpcoes(),at=eleAtual();eb.hidden=!op.length;eb.innerHTML=eleRotulo(at);eb.setAttribute("aria-pressed",String(!!at));eb.setAttribute("aria-label",eleAria(at))}
+  document.getElementById("quick").innerHTML=(blacks?`<button type="button" class="fchip" data-black data-ev="black-filtro" aria-pressed="${BLACK_ONLY}" aria-label="${bkl}"><b>Black</b> Friday</button>`:"")+(reduced?`<button type="button" class="fchip" data-deal aria-pressed="${DEAL}" aria-label="Ofertas: ${reduced} ${reduced===1?"carro em oferta":"carros em oferta"}">Ofertas</button>`:"")+(novos?`<button type="button" class="fchip" data-novo data-ev="novidades-filtro" aria-pressed="${NEW_ONLY}" aria-label="${nvl}">Novos</button>`:"")+eleChip()+(ONLINE!=null?`<a class="fchip onl" data-onl href="/admin.html" title="Pessoas no site agora (abre o painel)" aria-label="${ONLINE} ${ONLINE===1?"pessoa":"pessoas"} no site agora. Abrir o painel"><i class="dot" aria-hidden="true"></i><b>${ONLINE}</b> online</a>`:"")+GROUPS.find(g=>g.key==="t").order.filter(l=>CARS.some(c=>c.body===l)).map(l=>`<button type="button" class="fchip" data-q="${l}" aria-pressed="${F.t.has(l)}">${l}</button>`).join("");
   const pills=[];GROUPS.filter(g=>g.key!=="t").forEach(g=>F[g.key].forEach(v=>pills.push(`<button type="button" class="pill${g.key==="fu"&&FUQ.some(f=>f[0]===v)?" fqp":""}" data-g="${g.key}" data-v="${esc(v)}" aria-label="Remover filtro ${esc(v)}">${esc(v)}<span aria-hidden="true">✕</span></button>`)));
   document.getElementById("pills").innerHTML=pills.join("");
   document.getElementById("fuq").innerHTML=FUQ.filter(([v])=>CARS.some(c=>fuelOf(c)===v)).map(([v,k,l])=>`<button type="button" class="fq" data-fu="${v}" data-k="${k}" data-ev="comb-${k}" aria-pressed="${F.fu.has(v)}" aria-label="${v}" title="${v}"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[k]}</svg><span>${l}</span></button>`).join("");
@@ -2694,6 +2720,46 @@ document.getElementById("quick").addEventListener("click",e=>{
     return}
   const q=e.target.closest("[data-q]");if(!q)return;const v=q.dataset.q;F.t.has(v)?F.t.delete(v):F.t.add(v);filtersChanged()});
 document.getElementById("pills").addEventListener("click",e=>{const p=e.target.closest(".pill");if(!p)return;F[p.dataset.g].delete(p.dataset.v);filtersChanged()});
+/* ---------- Elétricos e híbridos: um botão ao lado de Ofertas e Novos que abre um menu (Elétricos, Híbridos, Híbridos plug-in
+   ou todos os eletrificados). Liga o mesmo filtro de motorização da gaveta (F.fu); tocar de novo na opção escolhida desliga. ---------- */
+const ELE=[["eletricos","Elétricos","Elétricos",["Elétrico"],"eletrico"],["hibridos","Híbridos","Híbridos",["Híbrido"],"hibrido"],["plugin","Híbridos plug-in","Plug-in",["Híbrido plug-in"],"plugin"],["todos","Todos os eletrificados","Eletrificados",["Elétrico","Híbrido","Híbrido plug-in"],"eletrico"]];
+const eleN=vs=>CARS.filter(c=>vs.includes(fuelOf(c))).length;
+function eleOpcoes(){const op=ELE.filter(o=>o[0]!=="todos"&&eleN(o[3]));return op.length>1?[...op,ELE[3]]:op}
+function eleAtual(){if(!F.fu.size)return null;return ELE.find(o=>o[3].length===F.fu.size&&o[3].every(v=>F.fu.has(v)))||null}
+const ELE_CV='<svg class="cv" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const ELE_TODOS='<path d="M4.5 4.5h6v6h-6zM13.5 4.5h6v6h-6zM4.5 13.5h6v6h-6zM13.5 13.5h6v6h-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>';
+const eleRotulo=at=>`<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${!at||at[0]==="todos"?ICONS.eletrico:ICONS[at[4]]}</svg><span>${at?at[2]:"Elétricos e híbridos"}</span>${ELE_CV}`;
+const eleAria=at=>at?`Motorização: ${at[1]}. Trocar ou desligar`:"Filtrar elétricos e híbridos";
+function eleChip(){if(!eleOpcoes().length)return"";const at=eleAtual();return `<button type="button" class="fchip ele" data-ele data-ev="eletricos-menu" aria-pressed="${!!at}" aria-haspopup="menu" aria-expanded="false" aria-controls="eleMenu" aria-label="${eleAria(at)}">${eleRotulo(at)}</button>`}
+const eleMenu=document.createElement("div");eleMenu.className="ele-menu";eleMenu.id="eleMenu";eleMenu.setAttribute("role","menu");eleMenu.setAttribute("aria-label","Elétricos e híbridos");eleMenu.hidden=true;document.body.appendChild(eleMenu);
+let eleDe=null;
+function eleFecha(foco){if(eleMenu.hidden)return;eleMenu.hidden=true;document.querySelectorAll("[data-ele]").forEach(b=>b.setAttribute("aria-expanded","false"));if(foco&&eleDe&&eleDe.isConnected)eleDe.focus();eleDe=null}
+function eleAbre(btn){
+  const at=eleAtual();eleDe=btn;
+  eleMenu.innerHTML=eleOpcoes().map(o=>`<button type="button" role="menuitemradio" aria-checked="${at===o}" data-eleop="${o[0]}"><svg viewBox="0 0 24 24" aria-hidden="true">${o[0]==="todos"?ELE_TODOS:ICONS[o[4]]}</svg><span>${o[1]}</span><small>${eleN(o[3])}</small></button>`).join("")+(at?'<button type="button" role="menuitem" class="ele-limpa" data-eleop="limpa"><span>Mostrar todos os motores</span></button>':"");
+  eleMenu.hidden=false;btn.setAttribute("aria-expanded","true");
+  const r=btn.getBoundingClientRect(),w=eleMenu.offsetWidth,h=eleMenu.offsetHeight;
+  eleMenu.style.left=Math.max(16,Math.min(innerWidth-w-16,r.left))+"px";
+  eleMenu.style.top=(r.bottom+8+h>innerHeight-8?Math.max(8,r.top-8-h):r.bottom+8)+"px";
+  (eleMenu.querySelector('[aria-checked="true"]')||eleMenu.querySelector("button")).focus({preventScroll:true});
+}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-ele]");
+  if(b){e.preventDefault();const aberto=!eleMenu.hidden&&eleDe===b;eleFecha(false);if(!aberto)eleAbre(b);return}
+  const o=e.target.closest("[data-eleop]");
+  if(o){const k=o.dataset.eleop,op=ELE.find(x=>x[0]===k),at=eleAtual();eleFecha(true);
+    F.fu.clear();if(op&&op!==at)op[3].forEach(v=>F.fu.add(v));filtersChanged();
+    /* com o filtro ligado, leva a roleta até o carro mais próximo que tenha esse motor */
+    if(F.fu.size&&!listAt(dial.sel).length){const [lo,hi]=band(),mid=(lo+hi)/2,near=CARS.filter(c=>c.p&&matches(c)).sort((a,b)=>Math.abs(K(a)-mid)-Math.abs(K(b)-mid))[0];
+      if(near)dial.goTo(clamp(VALUES.findIndex(v=>v>=K(near))))}
+    return}
+  if(!eleMenu.hidden&&!e.target.closest("#eleMenu"))eleFecha(false);
+});
+eleMenu.addEventListener("keydown",e=>{const its=[...eleMenu.querySelectorAll("button")],i=its.indexOf(document.activeElement);
+  if(e.key==="Escape"){e.preventDefault();e.stopPropagation();eleFecha(true)}
+  else if(e.key==="ArrowDown"||e.key==="ArrowUp"){e.preventDefault();its[(i+(e.key==="ArrowDown"?1:-1)+its.length)%its.length].focus()}
+  else if(e.key==="Tab")eleFecha(false)});
+addEventListener("resize",()=>eleFecha(false));addEventListener("scroll",()=>eleFecha(false),true);
 
 /* ---------- shared data ---------- */
 /* ---------- search: type-ahead by brand / model / version, jumps the dial to the car ---------- */
