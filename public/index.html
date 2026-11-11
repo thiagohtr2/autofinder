@@ -1489,18 +1489,21 @@ html{background:#060b1c}
 .ele-menu button svg{width:18px;height:18px;flex:none;color:var(--accent)}
 .ele-menu button[aria-checked="true"]{background:var(--accent-soft);color:var(--accent)}
 .ele-menu .ele-limpa{font-weight:600;color:var(--muted)}
-.quick .fchip.ele .ic{width:15px;height:15px;flex:none}
+/* ícone num círculo; com uma opção escolhida, o círculo fica azul e o ícone branco */
+.eic{display:block;flex:none;width:18px;height:18px;padding:3px;box-sizing:border-box;border-radius:50%;background:var(--panel);color:var(--ink)}
+[data-ele][aria-pressed="true"] .eic{background:var(--accent);color:#fff}
+.quick .fchip.ele .eic{width:18px;height:18px}
 .quick .fchip.ele .cv{width:9px;height:9px;flex:none}
 @media (max-width:760px){
   .sr-head{grid-template-columns:auto minmax(0,1fr) auto auto;grid-template-areas:"l t m a" "f f f f" "o o o o"}
   .app .sr-head>.mode:not(.sort){grid-area:m;align-self:center;margin:0}
   .app .sr-head>.mode:not(.sort) button{height:26px;padding:0 9px;font-size:11.5px}
   .oft.ele{gap:5px}
-  .oft.ele .ic{width:15px;height:15px;flex:none}
+  .oft.ele .eic{width:18px;height:18px}
   .oft.ele .cv{width:9px;height:9px;flex:none}
   .oft.onl{display:none!important}
 }
-@media (max-width:379px){.oft.ele .ic{display:none}.app .sr-head>.mode:not(.sort) button{padding:0 7px;font-size:11px}}
+@media (max-width:379px){.oft.ele .eic{display:none}.app .sr-head>.mode:not(.sort) button{padding:0 7px;font-size:11px}}
 /* Radar: no computador as escolhas (Tudo, Essenciais…) ficam na própria janela, como sempre; no celular vão para o menu do ☰ */
 .rd-estado{display:none;margin:1px 0 0;font-size:12px;font-weight:600;color:var(--muted)}
 .rdx-so{display:none}
@@ -2728,7 +2731,7 @@ function eleOpcoes(){const op=ELE.filter(o=>o[0]!=="todos"&&eleN(o[3]));return o
 function eleAtual(){if(!F.fu.size)return null;return ELE.find(o=>o[3].length===F.fu.size&&o[3].every(v=>F.fu.has(v)))||null}
 const ELE_CV='<svg class="cv" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5 6 8l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const ELE_TODOS='<path d="M4.5 4.5h6v6h-6zM13.5 4.5h6v6h-6zM4.5 13.5h6v6h-6zM13.5 13.5h6v6h-6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>';
-const eleRotulo=at=>`<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${!at||at[0]==="todos"?ICONS.eletrico:ICONS[at[4]]}</svg><span>${at?at[2]:"Elétricos e híbridos"}</span>${ELE_CV}`;
+const eleRotulo=at=>`<svg class="eic" viewBox="0 0 24 24" aria-hidden="true">${!at||at[0]==="todos"?ICONS.eletrico:ICONS[at[4]]}</svg><span>${at?at[2]:"Elétricos e híbridos"}</span>${ELE_CV}`;
 const eleAria=at=>at?`Motorização: ${at[1]}. Trocar ou desligar`:"Filtrar elétricos e híbridos";
 function eleChip(){if(!eleOpcoes().length)return"";const at=eleAtual();return `<button type="button" class="fchip ele" data-ele data-ev="eletricos-menu" aria-pressed="${!!at}" aria-haspopup="menu" aria-expanded="false" aria-controls="eleMenu" aria-label="${eleAria(at)}">${eleRotulo(at)}</button>`}
 const eleMenu=document.createElement("div");eleMenu.className="ele-menu";eleMenu.id="eleMenu";eleMenu.setAttribute("role","menu");eleMenu.setAttribute("aria-label","Elétricos e híbridos");eleMenu.hidden=true;document.body.appendChild(eleMenu);
