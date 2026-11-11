@@ -318,7 +318,10 @@ button,input{font:inherit;color:inherit}
 .q-item{display:flex;align-items:center;gap:12px;padding:8px 10px;border-radius:12px;cursor:pointer}
 /* resultados com fundo nunca encostam: 4 px entre carros, 6 px entre o carro e o painel das versões, 8 px depois do painel */
 .q-item:not(.q-v)+.q-item:not(.q-v){margin-top:4px}
-.q-item[aria-selected="true"],.q-item:hover{background:#f2f6fd}
+/* realce: com o mouse, ao passar por cima; com as setas do teclado, no item escolhido; no toque, só enquanto o dedo aperta (nada fica marcado) */
+@media (hover:hover){.q-item:hover{background:#f2f6fd}}
+.q-list.teclado .q-item[aria-selected="true"]{background:#f2f6fd}
+.q-item:active{background:#e8effc}
 .q-th{width:72px;height:44px;flex:0 0 auto;border-radius:10px;background:radial-gradient(ellipse at 50% 85%,var(--panel),var(--bg) 70%);display:grid;place-items:center;overflow:hidden}
 .q-th img{width:100%;height:100%;object-fit:contain}
 .q-th span{font:300 13px var(--display);color:var(--muted)}
@@ -343,7 +346,8 @@ button,input{font:inherit;color:inherit}
 .q-v{position:relative;gap:10px;margin:0 0 0 84px;padding:8px 12px;min-height:36px;border-radius:0;background:#f2f5fb;font-size:13px;align-items:center}
 .q-v.last{border-radius:0 0 12px 12px;margin-bottom:8px}
 .q-v+.q-v::before{content:"";position:absolute;left:12px;right:12px;top:0;border-top:1px solid #e1e8f3}
-.q-v[aria-selected="true"],.q-v:hover{background:#e4edfc}
+@media (hover:hover){.q-v:hover{background:#e4edfc}}
+.q-list.teclado .q-v[aria-selected="true"],.q-v:active{background:#e4edfc}
 .q-vp::after{content:"›";margin-left:8px;font:700 15px var(--body);color:#9aa6bd}
 .q-vn{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px;font-weight:600;color:var(--ink)}
 .q-vl{display:flex;align-items:baseline;gap:6px;min-width:0}
@@ -2829,11 +2833,15 @@ function markSel(semRolar){qList.querySelectorAll(".q-item").forEach(x=>x.setAtt
 function closeSearch(){qList.hidden=true;qIn.setAttribute("aria-expanded","false")}
 qIn.addEventListener("input",renderSearch);qIn.addEventListener("focus",()=>{if(qIn.value.trim())renderSearch()});
 qIn.addEventListener("keydown",e=>{
+  if((e.key==="ArrowDown"||e.key==="ArrowUp")&&qOpts.length)qList.classList.add("teclado");
   if(e.key==="ArrowDown"&&qOpts.length){e.preventDefault();qSel=(qSel+1)%qOpts.length;markSel()}
   else if(e.key==="ArrowUp"&&qOpts.length){e.preventDefault();qSel=(qSel-1+qOpts.length)%qOpts.length;markSel()}
   else if(e.key==="Enter"&&qSel>=0){e.preventDefault();pickResult(qSel)}
   else if(e.key==="Escape"){closeSearch();qIn.blur()}});
 qList.addEventListener("mousedown",e=>e.preventDefault());
+/* o realce do teclado some quando a pessoa volta a usar o dedo ou o mouse */
+qList.addEventListener("pointerdown",()=>qList.classList.remove("teclado"));
+qList.addEventListener("touchstart",()=>{},{passive:true}); /* o Safari do iPhone só mostra o efeito do toque (:active) com isto */
 qList.addEventListener("click",e=>{const li=e.target.closest(".q-item");if(!li)return;
   pickResult(+li.dataset.i)});
 document.addEventListener("click",e=>{if(!e.target.closest(".search"))closeSearch()});

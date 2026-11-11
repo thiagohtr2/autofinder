@@ -54,7 +54,8 @@ export const TOPO_CSS = `
 .t-br{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
 .t-br:empty{display:none}
 .t-br a{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:2px 12px;padding:10px 12px;border-radius:10px;color:#fff;text-decoration:none}
-.t-br a:hover,.t-br a.on{background:rgba(255,255,255,.1)}
+@media (hover:hover){.t-br a:hover{background:rgba(255,255,255,.1)}}
+.t-br a.on,.t-br a:active{background:rgba(255,255,255,.1)}
 .t-br b{font-weight:700;font-size:15px}
 .t-ano{margin-left:7px;font-weight:500;font-size:11.5px;font-variant-numeric:tabular-nums;color:#a3a3a3}
 .t-br small{font-size:12.5px;color:#9fb1d1;white-space:nowrap}
