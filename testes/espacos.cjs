@@ -9,6 +9,7 @@
    Para um caso de propósito, marque o elemento com data-espaco="ok" e explique no código por quê.
    Sai com código 1 se achar problema. */
 const { chromium } = require('playwright');
+const PNG_1PX = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 const BASE = (process.argv[2] || 'http://localhost:8791').replace(/\/$/, '');
 const SO = process.env.ESPACOS_SO || '';      // para rodar só uma parte: ESPACOS_SO="busca"
 const CSS = process.env.ESPACOS_CSS || '';    // para provar que a verificação pega um erro: ESPACOS_CSS=".q-vh{margin-top:0}"
@@ -132,6 +133,9 @@ function verifica() {
     if (SO && !`${rotulo} ${url}`.includes(SO)) return;
     const p = await b.newPage({ viewport: vp });
     await p.route('**/tracker.js', (r) => r.fulfill({ contentType: 'text/javascript', body: 'window.giroTrack=function(){}' })); // visitas de teste não contam
+    /* fotos e logos nunca vêm do Supabase nos testes: cada verificação abria centenas de fotos de ~1 MB e estourou a cota
+       de tráfego do plano grátis (13/11/2026). No lugar, uma imagem de 1 px; o espaço do cartão é o mesmo */
+    await p.route(/supabase\.co\/storage\/v1\/|\/\.netlify\/images/, (r) => r.fulfill({ contentType: 'image/png', body: Buffer.from(PNG_1PX, 'base64') }));
     const res = await p.goto(BASE + url, { waitUntil: 'networkidle' }).catch(() => null);
     if (url === '/') await p.waitForFunction(() => typeof loaded !== 'undefined' && loaded, null, { timeout: 30000 }).catch(() => {});
     await p.waitForTimeout(1500);

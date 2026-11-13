@@ -5,6 +5,7 @@
    Larguras de celular: 360, 390 e 430. Tolerância de 0,5 px. (No computador a página inicial tem a busca e os filtros
    no topo, então ele é diferente de propósito.) */
 const { chromium } = require('playwright');
+const PNG_1PX = 'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=';
 const BASE = (process.argv[2] || 'http://localhost:8791').replace(/\/$/, '');
 const LARGURAS = [[360, 780, true], [390, 844, true], [430, 932, true]];
 /* cada tela: endereço e, se preciso, o que fazer antes de medir */
@@ -40,6 +41,9 @@ const mede = () => {
     for (const [nome, url, antes] of TELAS) {
       const p = await ctx.newPage();
       await p.route(/tracker\.js/, (r) => r.abort());
+      /* fotos e logos nunca vêm do Supabase nos testes: cada verificação abria centenas de fotos de ~1 MB e estourou a cota
+         de tráfego do plano grátis (13/11/2026). No lugar, uma imagem de 1 px; o espaço do cartão é o mesmo */
+      await p.route(/supabase\.co\/storage\/v1\/|\/\.netlify\/images/, (r) => r.fulfill({ contentType: 'image/png', body: Buffer.from(PNG_1PX, 'base64') }));
       await p.goto(BASE + url, { waitUntil: 'networkidle' }).catch(() => {});
       await p.waitForTimeout(1500);
       if (antes) { await antes(p); await p.waitForTimeout(700); }
